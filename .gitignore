@@ -132,3 +132,7 @@ venv.bak/
 
 # Singularity images
 *.sif
+
+# xgenius — transient state (don't commit)
+.xgenius/markers/
+.xgenius/watcher.log
