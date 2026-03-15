@@ -194,7 +194,6 @@ if __name__ == "__main__":
         reward_clip=True,
         seed=args.seed,
         noop_max=1, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 12 (no-op is deprecated in favor of sticky action, right?)
-        full_action_space=True, # Machado et al. 2017 (Revisitng ALE: Eval protocols) Tab. 5
         repeat_action_probability=0.25, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 12
         max_episode_steps=ATARI_MAX_FRAMES # Hessel et al. 2018 (Rainbow DQN), Table 3, Max frames per episode
     )
