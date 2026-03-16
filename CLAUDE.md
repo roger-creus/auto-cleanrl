@@ -92,7 +92,12 @@ Typical issues: outdated base images, missing dependencies, wrong Python version
 - `xgenius budget` — Check remaining compute budget
 - `xgenius validate --command "python script.py"` — Dry-run safety check
 - `xgenius audit [--limit N]` — View audit log
-- `xgenius job-history [--limit N] --json` — View past jobs with walltime, resources, log file paths, and status
+- `xgenius db summary --json` — Full status overview (jobs by status, per-hypothesis breakdown)
+- `xgenius db jobs --json` — All jobs (filter: `--hypothesis-id H`, `--status running`)
+- `xgenius db job --id JOBID --json` — Single job details
+- `xgenius db active --json` — Currently running/submitted jobs
+- `xgenius db hypothesis-check --id H --json` — Check if all jobs for a hypothesis are done
+- `xgenius db hypotheses --json` — All hypotheses in DB
 - `xgenius reset` — Clear all state for a fresh research run
 
 All commands support `--json` for structured output.
@@ -101,7 +106,7 @@ All commands support `--json` for structured output.
 When a job fails:
 1. Run `xgenius errors --experiment-id EXPERIMENT_ID --json` to see tracebacks and error messages
 2. Run `xgenius logs --experiment-id EXPERIMENT_ID --json` to see full stdout
-3. Run `xgenius job-history --json` to see all jobs with their log file paths, statuses, and walltimes
+3. Run `xgenius db jobs --json` to see all jobs with their log file paths, statuses, and walltimes
 4. Log files are stored at `{scratch}/.xgenius/logs/{experiment_id}_{job_id}.out` on the cluster
 
 ### Debug Log
@@ -169,7 +174,7 @@ The xgenius.toml [safety] section defines MAXIMUM resource limits. You can reque
 - `--memory "16G"` if the job doesn't need much RAM
 - `--cpus 4` for a lightweight job
 
-Use `xgenius job-history --json` to see how long past jobs took, then adjust walltime accordingly.
+Use `xgenius db jobs --status completed --json` to see how long past jobs took, then adjust walltime accordingly.
 Use `xgenius status --json` to see pending/running jobs with their elapsed time, submit time, and pending reason.
 
 ### Two State Systems — DB + Journal
@@ -177,7 +182,7 @@ Use `xgenius status --json` to see pending/running jobs with their elapsed time,
 **SQLite DB** (`.xgenius/xgenius.db`) — AUTOMATED operational state. Updated by the watcher every cycle.
 - Job statuses (submitted/pending/running/completed/failed/etc.)
 - Walltimes, exit codes, timestamps, results_pulled flag
-- Query with: `xgenius job-history --json`, `xgenius status --json`
+- Query with: `xgenius db summary --json`, `xgenius db jobs --json`, `xgenius db active --json`
 
 **Research Journal** (`.xgenius/journal.md`) — YOUR persistent research memory. Written by you.
 - What hypotheses were tried and why
@@ -189,12 +194,12 @@ Use `xgenius status --json` to see pending/running jobs with their elapsed time,
 
 **Every session, you MUST:**
 1. Read the journal (`xgenius journal read`) to recall what previous sessions did
-2. Check the DB (`xgenius job-history --json`) for current job states
+2. Check the DB (`xgenius db summary --json`) for current job states
 3. Before exiting, write a journal entry summarizing what you did and what to do next
 
 ### Research Workflow
 1. Read `xgenius journal read` for research memory from previous sessions
-2. Check `xgenius job-history --json` for DB state (all job statuses, walltimes, etc.)
+2. Check `xgenius db summary --json` for all job states and hypothesis status
 3. Formulate a hypothesis and record it
 3. Modify code to test the hypothesis
 4. Run `xgenius sync` to push code to cluster
