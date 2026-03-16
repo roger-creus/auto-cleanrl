@@ -1,0 +1,152 @@
+[
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_munchausen_envpool.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h003 --experiment-id munchausen_breakout_s1",
+    "experiment_id": "munchausen_breakout_s1",
+    "hypothesis_id": "h003",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/pqn_munchausen_envpool.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h003 --experiment-id munchausen_qbert_s1",
+    "experiment_id": "munchausen_qbert_s1",
+    "hypothesis_id": "h003",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_munchausen_envpool.py --env-id Alien-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h003 --experiment-id munchausen_alien_s1",
+    "experiment_id": "munchausen_alien_s1",
+    "hypothesis_id": "h003",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/pqn_impala_envpool.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h004 --experiment-id impala_breakout_s1",
+    "experiment_id": "impala_breakout_s1",
+    "hypothesis_id": "h004",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_impala_envpool.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h004 --experiment-id impala_qbert_s1",
+    "experiment_id": "impala_qbert_s1",
+    "hypothesis_id": "h004",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/pqn_impala_envpool.py --env-id Alien-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h004 --experiment-id impala_alien_s1",
+    "experiment_id": "impala_alien_s1",
+    "hypothesis_id": "h004",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_decaylambda_envpool.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h005 --experiment-id decaylambda_breakout_s1",
+    "experiment_id": "decaylambda_breakout_s1",
+    "hypothesis_id": "h005",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/pqn_decaylambda_envpool.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h005 --experiment-id decaylambda_qbert_s1",
+    "experiment_id": "decaylambda_qbert_s1",
+    "hypothesis_id": "h005",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_decaylambda_envpool.py --env-id Alien-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h005 --experiment-id decaylambda_alien_s1",
+    "experiment_id": "decaylambda_alien_s1",
+    "hypothesis_id": "h005",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/pqn_crelu_envpool.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h006 --experiment-id crelu_breakout_s1",
+    "experiment_id": "crelu_breakout_s1",
+    "hypothesis_id": "h006",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_crelu_envpool.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h006 --experiment-id crelu_qbert_s1",
+    "experiment_id": "crelu_qbert_s1",
+    "hypothesis_id": "h006",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/pqn_crelu_envpool.py --env-id Alien-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h006 --experiment-id crelu_alien_s1",
+    "experiment_id": "crelu_alien_s1",
+    "hypothesis_id": "h006",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_nap_envpool.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h007 --experiment-id nap_breakout_s1",
+    "experiment_id": "nap_breakout_s1",
+    "hypothesis_id": "h007",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/pqn_nap_envpool.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h007 --experiment-id nap_qbert_s1",
+    "experiment_id": "nap_qbert_s1",
+    "hypothesis_id": "h007",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/pqn_nap_envpool.py --env-id Alien-v5 --seed 1 --total-timesteps 40000000 --output-dir /runs --hypothesis-id h007 --experiment-id nap_alien_s1",
+    "experiment_id": "nap_alien_s1",
+    "hypothesis_id": "h007",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "11:59:00"
+  }
+]
