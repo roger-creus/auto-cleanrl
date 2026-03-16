@@ -55,8 +55,8 @@ docs: <description>            — Documentation updates
 - `xgenius batch-submit --file experiments.json` — Submit multiple jobs
 - `xgenius status [--cluster NAME] [--json]` — Check job statuses
 - `xgenius cancel --cluster NAME --job-ids ID1,ID2` — Cancel specific jobs
-- `xgenius logs --experiment-id ID --json` — View job stdout (can also use --cluster NAME --job-id ID)
-- `xgenius errors --experiment-id ID --json` — View job stderr/crashes/tracebacks (can also use --cluster NAME --job-id ID)
+- `xgenius logs --experiment-id ID --json` — Read job stdout from local slurm_logs/ (also: --job-id)
+- `xgenius errors --experiment-id ID --json` — Read job errors from local slurm_logs/ (also: --job-id)
 - `xgenius check-completions [--json]` — Check for newly completed jobs
 - `xgenius reconcile --json` — Sync local job tracker with actual SLURM state (fixes stale jobs)
 
@@ -106,8 +106,8 @@ All commands support `--json` for structured output.
 When a job fails:
 1. Run `xgenius errors --experiment-id EXPERIMENT_ID --json` to see tracebacks and error messages
 2. Run `xgenius logs --experiment-id EXPERIMENT_ID --json` to see full stdout
-3. Run `xgenius db jobs --json` to see all jobs with their log file paths, statuses, and walltimes
-4. Log files are stored at `{scratch}/.xgenius/logs/{experiment_id}_{job_id}.out` on the cluster
+3. Run `xgenius db jobs --json` to see all jobs with their statuses and walltimes
+4. SLURM logs are automatically pulled to `.xgenius/slurm_logs/{hypothesis_id}/{experiment_id}/` when jobs complete
 
 ### Debug Log
 When you encounter errors (cluster issues, submission failures, crashes, unexpected behavior), append a timestamped entry to `.xgenius/DEBUG.md`. Format:
@@ -213,6 +213,7 @@ The `.xgenius/` directory contains all xgenius runtime state:
 - `.xgenius/templates/` — SBATCH job script templates (you can edit these to customize job behavior)
 - `.xgenius/journal.md` — your persistent research memory (read/write every session)
 - `.xgenius/xgenius.db` — SQLite DB with all job states (automated by watcher)
+- `.xgenius/slurm_logs/` — SLURM .out/.err files organized by hypothesis/experiment (pulled automatically by watcher)
 - `.xgenius/batches/` — archived batch submission files (auto-saved on every batch-submit)
 - `.xgenius/watcher.log` — watcher daemon activity log
 
