@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **IMPORTANT: Distribute jobs across ALL available clusters** to maximize throughput.
 
-**IMPORTANT: You MUST use the xgenius journal for EVERY hypothesis and experiment.** Record hypotheses before submitting. Record results after completion.
+**IMPORTANT: You MUST use the journal for research memory.** Every session: read journal first, write summary before exiting.
 
 
 ## xgenius — Autonomous Research Tools
@@ -47,11 +47,8 @@ docs: <description>            — Documentation updates
 ### Available Commands
 
 **Research Loop:**
-- `xgenius journal context` — Full research context: goal, hypotheses, experiments, results, what to try next
-- `xgenius journal summary` — Concise progress summary
-- `xgenius journal add-hypothesis "text" --motivation "why" --expected "outcome"` — Record a hypothesis
-- `xgenius journal add-result --experiment-id ID --metrics '{"key": value}' --analysis "text"` — Record results
-- `xgenius journal update-hypothesis --id ID --status confirmed|rejected|partially_confirmed --conclusion "text"`
+- `xgenius journal read` — Read the full research journal (your persistent memory across sessions)
+- `xgenius journal write "entry text"` — Append a timestamped entry to the journal
 
 **Job Management:**
 - `xgenius submit --cluster NAME --command "python script.py --args" [--experiment-id ID] [--hypothesis-id ID] [--gpus N] [--cpus N] [--memory "16G"] [--walltime "04:00:00"]` — Submit a job
@@ -176,9 +173,30 @@ The xgenius.toml [safety] section defines MAXIMUM resource limits. You can reque
 Use `xgenius job-history --json` to see how long past jobs took, then adjust walltime accordingly.
 Use `xgenius status --json` to see pending/running jobs with their elapsed time, submit time, and pending reason.
 
+### Two State Systems — DB + Journal
+
+**SQLite DB** (`.xgenius/xgenius.db`) — AUTOMATED operational state. Updated by the watcher every cycle.
+- Job statuses (submitted/pending/running/completed/failed/etc.)
+- Walltimes, exit codes, timestamps, results_pulled flag
+- Query with: `xgenius job-history --json`, `xgenius status --json`
+
+**Research Journal** (`.xgenius/journal.md`) — YOUR persistent research memory. Written by you.
+- What hypotheses were tried and why
+- Key findings, insights, and conclusions
+- Ideas for future investigation
+- Decisions and rationale
+- Read with: `xgenius journal read`
+- Write with: `xgenius journal write "your entry here"`
+
+**Every session, you MUST:**
+1. Read the journal (`xgenius journal read`) to recall what previous sessions did
+2. Check the DB (`xgenius job-history --json`) for current job states
+3. Before exiting, write a journal entry summarizing what you did and what to do next
+
 ### Research Workflow
-1. Run `xgenius journal context` to understand current state
-2. Formulate a hypothesis and record it
+1. Read `xgenius journal read` for research memory from previous sessions
+2. Check `xgenius job-history --json` for DB state (all job statuses, walltimes, etc.)
+3. Formulate a hypothesis and record it
 3. Modify code to test the hypothesis
 4. Run `xgenius sync` to push code to cluster
 5. Run `xgenius submit` to start experiments
@@ -189,10 +207,8 @@ Use `xgenius status --json` to see pending/running jobs with their elapsed time,
 
 The `.xgenius/` directory contains all xgenius runtime state:
 - `.xgenius/templates/` — SBATCH job script templates (you can edit these to customize job behavior)
-- `.xgenius/journal.jsonl` — research journal (hypotheses, experiments, results)
-- `.xgenius/journal_summary.md` — auto-generated research summary
-- `.xgenius/jobs.jsonl` — job tracker (job IDs, statuses, log file paths)
-- `.xgenius/audit.jsonl` — audit log of all actions
+- `.xgenius/journal.md` — your persistent research memory (read/write every session)
+- `.xgenius/xgenius.db` — SQLite DB with all job states (automated by watcher)
 - `.xgenius/batches/` — archived batch submission files (auto-saved on every batch-submit)
 - `.xgenius/watcher.log` — watcher daemon activity log
 
@@ -214,4 +230,4 @@ When you need to build/rebuild the container:
 - All commands are validated against limits in xgenius.toml [safety]
 - Commands must start with allowed prefixes (e.g., "python")
 - Resource requests are checked against max GPU/CPU/memory/walltime
-- All actions are logged to .xgenius/audit.jsonl
+- All job states tracked in .xgenius/xgenius.db (automated)
