@@ -2408,3 +2408,51 @@ Running pilots: h028(10), h029(9), h030(13), h031(12), h032(11), h033(11)
 4. Close h028 when pilot finishes — confirmed negative synergy.
 5. If h031 confirms strong: implement h034 (DrQ+SPR combination) — the novel contribution.
 6. Consider PPG (Phasic Policy Gradient) Atari adaptation as next new hypothesis.
+
+---
+**[2026-03-18 20:13 UTC]**
+
+## Session 39: Process h022-phoenix + h028-amidar correction + h028-montezumarevenge
+
+### Triggered by: h022-phoenix-s1 (fir SUCCESS), h028-montezumarevenge-s1 (rorqual SUCCESS)
+
+### Results Processed: 2 new + 1 corrected (now 656 rows)
+- h022-phoenix-s1: q4=850.44. vs PPO baseline 796 = +6.8% → TIE. h022 updated.
+- h028-amidar-s1: CORRECTED from old-format q4=31 → new-format q4=2.12 (TIE, was falsely counted as WIN)
+- h028-montezumarevenge-s1: q4=0.0 (TIE)
+
+### h028 (DrQ+QR) CLOSED
+With Amidar corrected, h028 has 0W/1L/8T (net -1) at new-format 9/15. Confirmed negative synergy — DrQ + QR-Value without CVaR is strictly worse than either technique alone. All 8 running jobs cancelled. This validates that h029's CVaR contribution is the key differentiator.
+
+### h022 (QR-Value) UPGRADED to net +2
+Corrected Qbert from LOSS to TIE (-2% is not 10%). Phoenix TIE (+6.8%). Now 3W/1L/9T (net +2) at 13/15. Missing: DoubleDunk, Solaris (both running).
+
+### 4 jobs disappeared from SLURM (reconcile): h028-amidar-s1 (fir) had CSV, no data loss.
+
+### CURRENT STANDINGS (PPO techniques)
+1. h012 (DrQ): 4W/1L/10T (net +3) — COMPLETE 15/15 3-SEED ★
+2. h031 (SPR): 3W/0L/0T (net +3) — 3/15 pilot, ALL WINS, HIGHEST POTENTIAL
+3. h022 (QR-Value): 3W/1L/9T (net +2) — 13/15 pilot (UPGRADED from net+1)
+4. h007 (S&P): 4W/2L/9T (net +2) — COMPLETE 15/15 3-SEED
+5. h029 (CVaR NOVEL): 2W/1L/4T (net +1) — 7/15 new-format only
+6. h005 (CHAIN-SP): 3W/2L/10T (net +1) — mostly 3-seed
+7. h033 (DrQ+Consistency): 1W/0L/2T (net +1) — 3/15 pilot
+8. h004 (PQN NaP): 3W/1L/11T (net +2) — PQN variant, complete
+9. h030 (SEM): 1W/1L/1T (net 0) — 3/15 pilot
+10. h032 (NoisyNets): 1W/1L/1T (net 0) — 3/15 pilot
+11. h028 (DrQ+QR): CLOSED (net -1). Negative synergy.
+
+### Active: ~95 jobs (after 8 h028 cancellations)
+Running pilots: h029(9), h030(15), h031(12), h032(11), h033(11)
+Incomplete pilots: h022(5), h027(3)
+3-seed evals: h005(1), h007(3), h008(13), h010(3), h011(5)
+
+### NEXT SESSION TODO
+1. Process h031 pilot results — TOP PRIORITY. If 3W/0L streak holds at 8+ games, fast-track DrQ+SPR combination
+2. Process h029/h030/h032/h033 pilot results
+3. Complete h022 pilot (DoubleDunk, Solaris) — if net≥+2 at 15/15, submit 3-seed eval
+4. Monitor h008 3-seed (13 running — walltime concern persists)
+5. If h031 confirms strong: implement h034 (DrQ+SPR) — the novel contribution
+6. Consider PPG (Phasic Policy Gradient) Atari adaptation
+7. Close h027 if pilot stays at net+2 with only 5/15 games (lost results)
+
