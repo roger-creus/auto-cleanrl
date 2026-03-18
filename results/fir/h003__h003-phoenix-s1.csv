@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Phoenix-v5,1,h003,h003-phoenix-s1,ppo_layernorm,10000000,7424,706.3793334960938,627.9310302734375,5244160.0,480.0
+Phoenix-v5,1,h003,h003-phoenix-s1,ppo_layernorm,40000000,30336,807.7637329101562,892.4894409179688,24504320.0,1450.0

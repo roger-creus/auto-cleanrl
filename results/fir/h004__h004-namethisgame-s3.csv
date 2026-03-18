@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+NameThisGame-v5,3,h004,h004-namethisgame-s3,pqn_nap,40000000,18944,1251.4864501953125,1602.7027587890625,23708160.0,2680.0

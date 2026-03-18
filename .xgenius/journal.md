@@ -761,3 +761,58 @@ h017 (SPO — soft TV divergence replacing PPO clipping) is the ONLY technique w
 3. Complete remaining pilots: h008, h010, h011, h015, h016, h019
 4. Still need hypotheses for: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
 5. Consider novel combinations if h017 confirms strong: h017+h013 (SPO+SpectralNorm), h017+h007 (SPO+S&P)
+
+---
+**[2026-03-18 11:20 UTC]**
+
+## Session 14: CRITICAL Analysis Bug Fix + Results Processing
+
+### MAJOR FINDING: Ratio-based analysis had a negative-value bug
+Previous sessions used ratio = hypothesis_q4 / baseline_q4 to classify wins/losses. This is WRONG for negative values:
+- PrivateEye baseline h001 = -44.5. h012 scores 502 → ratio = -11.3 → wrongly classified as LOSS. Actually a MASSIVE WIN (+1228%)!
+- h017 PrivateEye = -188 → ratio = 4.2 → wrongly classified as WIN. Actually a LOSS (-322% worse than baseline).
+
+Fixed to use absolute return difference: (hypothesis - baseline) / max(|baseline|, 10). Higher return = better, always.
+
+### CORRECTED RANKINGS (excl Amidar artifact):
+**TIER 1:**
+- h013 (Spectral Norm): 4W/3L/7T — Most wins. NameThisGame +18%, Phoenix +19%, PrivateEye (43 vs -44), Solaris +17%. BUT BattleZone -50%.
+- h008 (PQN+LSTM): 3W/0L/2T — Zero losses on 5/14 games! Breakout, Phoenix, Solaris wins. VERY promising if pattern holds.
+
+**TIER 2:**
+- h004 (PQN+NaP): 3W/2L on 10/14. MsPacman/NameThisGame/Phoenix wins. BattleZone/PrivateEye losses.
+- h012 (DrQ): 2W/2L — PrivateEye massive WIN (502 vs -44). BattleZone/MsPacman losses.
+- h007 (S&P): 2W/2L — PrivateEye went positive (34 vs -44)! Solaris +55%. BattleZone/MsPacman losses.
+
+**DOWNGRADED:**
+- h017 (SPO): 1W/1L on 9/14 — WAS '3W/0L BEST'. Only Phoenix win (+14%). PrivateEye is a LOSS. Still missing 5 games.
+
+**NEWLY CLOSED:** h009 (1W/4L), h014 (1W/5L), h015 (1W/3L)
+
+### Key Insight: BattleZone is the universal loss game
+Almost every technique loses on BattleZone. Only h020 (Dueling) and h001 baseline perform well there.
+
+### Results Processed
+- 61 new 40M result CSVs ingested (19 updated, 42 added)
+- Total experiments.csv: 438 rows
+- Updated hypotheses.csv with corrected analysis
+
+### Resubmissions (7 jobs)
+- h017-alien-s1 (fir, 28237143) — pilot gap
+- h017-battlezone-s1 (narval, 57942776) — pilot gap
+- h004-alien-s3 (rorqual, 8528197) — 3-seed gap
+- h004-privateeye-s1 (fir, 28237146) — 3-seed gap
+- h004-solaris-s3 (narval, 57942778) — 3-seed gap
+- h004-privateeye-s3 (rorqual, 8528220) — 3-seed gap
+- h004-mspacman-s2 (fir, 28237154) — 3-seed gap
+
+### Active Jobs: ~323 (240 running + 83 pending)
+Major running batches: h003(35), h004(29+7), h005(31), h007(22), h010(15), h011(15), h012(16), h013(17), h017(7+2), h018(11), h019(11), h020(10)
+
+### Next Session TODO
+1. Process any newly completed results
+2. Check h017 pilot completion (now only needs doubledunk, mspacman, solaris + resubmitted alien, battlezone)
+3. Check h008 pilot progress — if still 0 losses, consider 3-seed eval
+4. Monitor h010/h011 (IMPALA CNN) — early results very promising
+5. Once more pilots complete, start thinking about COMBINATION experiments: h013+h012 (SpectralNorm+DrQ), h013+h007 (SpectralNorm+S&P)
+6. Consider new hypotheses from unexplored categories: off-policy, ensemble, distributional RL
