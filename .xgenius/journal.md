@@ -1036,3 +1036,72 @@ SpectralNorm+S&P combination showing VERY strong early signal on Qbert. If this 
 4. Process 3-seed eval results for h004/h005/h007/h012/h013
 5. Monitor h021/h022/h024 early results
 6. If h023 confirms strong: immediate 3-seed eval submission
+
+---
+**[2026-03-18 12:51 UTC]**
+
+## Session 18: Results Processing + 2 New Hypotheses Submitted (h025, h026)
+
+### Results Processed (11 updates)
+- h003: 6 new 3-seed results at 40M. FINAL corrected: 3W/6L/6T (net -3). Wins: Alien +87%, Amidar +1305%, Breakout +14%. Major losses: PrivateEye -1526%, Solaris -72%, SpaceInvaders -63%. Already closed.
+- h004-enduro-s1: q4=0 (tie, Enduro always 0)
+- h018-amidar-s1: corrected from old-format q4=12 to real q4=2.4
+- h020: enduro=0, montezumarevenge=0 (both ties, already closed)
+
+### Updated Hypothesis Standings (corrected W/L with 10% threshold)
+
+**TIER 1 — Best single techniques (PPO pilots, all 15 games):**
+1. h005 (CHAIN-SP): 6W/3L/6T (net +3) — BEST NET. Wins Alien/Amidar/DoubleDunk/NameThisGame/Phoenix/PrivateEye. Loses BattleZone/Solaris/SpaceInvaders.
+2. h013 (SpectralNorm): 5W/3L/7T (net +2) — BEST QUALITY. Wins Amidar/NameThisGame/Phoenix/PrivateEye/Solaris. Loses BattleZone/MsPacman/Qbert.
+3. h012 (DrQ): 3W/2L/10T (net +1) — PrivateEye +1228%! Wins Amidar/Phoenix/PrivateEye. Loses BattleZone/MsPacman.
+4. h007 (S&P): 3W/2L/10T (net +1) — Wins Amidar/PrivateEye/Solaris. Loses BattleZone/MsPacman.
+
+**TIER 1 — Best PQN techniques (pilots):**
+1. h008 (LSTM): 6W/3L/3T (net +3) at 12/15 — Wins Breakout/DoubleDunk/MsPacman/Phoenix/Qbert/Solaris. Still 3 games running.
+2. h004 (NaP): 5W/2L/8T (net +3) at 15/15 — Wins Alien/MsPacman/NameThisGame/Phoenix/Solaris.
+
+**COMBINATIONS in progress:**
+- h021 (SpectralNorm+DrQ): 1W/2L at 3/15 — CONCERNING early signal
+- h023 (SpectralNorm+S&P): 2W/0L at 2/15 — VERY PROMISING (Qbert +42%!)
+- h022 (QR-Value): 1W/0L at 1/15 — too early
+- h024 (PFO): 0W/0L/1T at 1/15 — too early
+
+### New Hypotheses Submitted (30 jobs total)
+
+**h025: PPO + Dual Value Head (ClippedDoubleV)** — 15 games × 1 seed
+- Two independent V-heads, use min(V1,V2) for conservative advantage estimation
+- TD3/SAC double-Q trick applied to PPO value function
+- Reduces overestimation bias → could help games where value estimates drift
+- Novel: no systematic study of double critic for on-policy PPO
+
+**h026: PQN + NaP + LSTM** — 15 games × 1 seed
+- Best PQN combination: LSTM (h008, 6W/3L) + NaP (h004, 5W/2L)
+- Memory + plasticity: LSTM for sequence-dependent games, NaP prevents plasticity loss during recurrent training
+- NaP excludes LSTM weights to preserve gate dynamics
+- Key test: do wins compound (complementary game coverage)?
+
+### Active Jobs: ~256 (226 existing + 30 new)
+- 3-seed evals running: h003(11), h004(25), h005(34), h007(22), h012(22), h013(23)
+- Pilots running: h008(6), h010(6+6pend), h011(9+3pend), h019(9)
+- New h021-h024: ~36 running/pending
+- NEW h025(15), h026(15)
+- Closed but running: h006(1), h009(1), h014(2), h016(4), h017(5), h018(5), h020(5)
+
+### Key Insight: Amidar is a 'free win'
+PPO baseline Amidar q4=1.4 is extremely low. Almost EVERY modification shows +100-3000% wins on Amidar. This should NOT count as evidence of algorithm quality. When evaluating hypotheses, discount Amidar wins.
+
+### Unexplored Categories Still Remaining
+- Off-policy methods (DQN/Rainbow/SAC-discrete) — CleanRL has implementations
+- PPG (Phasic Policy Gradient) — CleanRL has ppg_procgen.py
+- Ensemble methods
+- DAAC (Decoupled Actor-Critic)
+- AGC (Adaptive Gradient Clipping)
+
+### Next Session TODO
+1. Process h021-h024 pilot results (these are the critical combination tests)
+2. Process h008 remaining 3 games (Alien, NameThisGame, PrivateEye)
+3. Process h010/h011 (IMPALA CNN) pilot results as they complete
+4. Process h019 (Muon) pilot results
+5. Monitor h025/h026 for early signals
+6. If h023 confirms strong across more games: IMMEDIATE 3-seed eval submission
+7. Consider implementing PPG or SAC-discrete as next algorithm-class exploration
