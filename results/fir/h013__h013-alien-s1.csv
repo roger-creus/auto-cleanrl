@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Amidar-v5,1,h008,h008-amidar-s1,pqn_lstm,40000000,65280,19.480392456054688,22.615686416625977,1271680.0,2.0
+Alien-v5,1,h013,h013-alien-s1,ppo_specnorm,40000000,58368,237.127197265625,200.0,13840640.0,110.0

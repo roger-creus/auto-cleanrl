@@ -634,3 +634,70 @@ Almost ALL PPO modifications get Amidar=31 with seed=1, while PPO baseline gets 
 5. Plan combination experiments: h007+h012, h007+h013, h007+h012+h013
 6. Still need hypotheses for: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
 7. Consider novel research directions beyond just combining techniques
+
+---
+**[2026-03-18 10:55 UTC]**
+
+## Session 12: Results Processing + 3-Seed Eval Submissions
+
+### Results Processed
+- 28 new rows added to experiments.csv (total: 277 rows)
+- New results from: h008(2), h009(5), h012(2), h013(3), h014(2), h015(2), h016(7), h017(5)
+- Pulled from all 4 clusters
+
+### h003 Full 3-Seed Analysis — CLOSED as CATASTROPHIC
+h003 (PPO+LayerNorm) 45/45 at 40M: 3W/7L/5T. CONFIRMED late-training collapse:
+- Phoenix: 0.27x (seed 2=0, seed 3=20 vs base 796)
+- Qbert: 0.31x (seeds 2,3 collapse to 0)
+- Solaris: 0.32x, SpaceInvaders: 0.36x, PrivateEye: 4.77x worse
+- Only Alien (1.85x) and BattleZone (1.26x) are genuine wins
+- LayerNorm is definitively harmful for long PPO training
+
+### Updated Pilot Rankings (all 15 games where COMPLETE)
+
+**TIER 1 — Best performers:**
+1. h013 (Spectral Norm): 5W/1L/9T on 15/15 — EXCELLENT. Solaris +34%, Phoenix +19%, Breakout 3.7x. Only Qbert -21%.
+2. h007 (Shrink&Perturb): 5W/1L/8T on 14/15 — Solaris +78%, BattleZone +16%. Only MsPacman -17%.
+3. h012 (DrQ Augment): 3W/2L/10T on 15/15 — PrivateEye Q4=502 (BEST!), BattleZone +33%.
+
+**TIER 2 — Promising but incomplete:**
+4. h016 (Sparsity): 4W/0L/6T on 10/15 — ZERO LOSSES! Missing 5 key games.
+5. h014 (Entropy Anneal): 3W/1L/8T on 12/15 — Breakout 3x. Missing 3 games.
+
+**NOTE: Amidar seed=1 artifact:** Nearly ALL PPO modifications get Amidar~31 with seed=1 (PPO base=2.2). This is a seed-specific effect, NOT a real technique advantage.
+
+### Actions Taken
+1. Submitted h012 3-seed eval: 30 jobs (15 games × seeds 2,3) across 4 clusters
+2. Submitted h013 3-seed eval: 30 jobs (15 games × seeds 2,3) across 4 clusters
+3. Resubmitted 14 disappeared pilot gaps:
+   - h008: Solaris (1)
+   - h009: Enduro, Solaris (2)
+   - h014: Enduro, SpaceInvaders (2)
+   - h015: NameThisGame (1)
+   - h016: DoubleDunk, NameThisGame, Phoenix (3)
+   - h019: BattleZone, MontezumaRevenge, MsPacman, PrivateEye, Venture (5)
+4. Updated hypotheses.csv with full analysis
+5. h020 closed as HIGH VARIANCE (5W/4L, Phoenix 0.08x, Solaris 0.15x)
+
+### Active Jobs After This Session
+- h004/h005: 40M 3-seed evals (RUNNING)
+- h007: 3-seed eval (30 jobs RUNNING, submitted session 11)
+- h008: 11 running + 1 resubmitted (12 active)
+- h009: 2 running + 2 resubmitted (needs Venture from active)
+- h010/h011: 15 running each
+- h012: 30 NEW 3-seed eval just submitted
+- h013: 30 NEW 3-seed eval just submitted + 1 pilot still running
+- h014-h016: partial pilots running + resubmits
+- h017: 8 running
+- h018: CLOSED
+- h019: 9 running + 5 resubmitted
+- h020: CLOSED
+- Total: ~350+ active jobs
+
+### Critical Next Steps
+1. When h007/h012/h013 3-seed evals complete: definitive ranking of top techniques
+2. When h004/h005 3-seed evals complete: check if CHAIN-SP shares h003's collapse
+3. Complete all remaining pilots (h008-h017, h019)
+4. Plan combination experiments: h007+h012, h007+h013, h012+h013 (top 3 techniques combined)
+5. Still need to explore: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
+6. Consider novel research directions beyond combining techniques

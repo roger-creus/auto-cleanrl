@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Amidar-v5,1,h008,h008-amidar-s1,pqn_lstm,40000000,65280,19.480392456054688,22.615686416625977,1271680.0,2.0
+Qbert-v5,1,h015,h015-qbert-s1,ppo_popart,40000000,123904,154.75205993652344,146.59091186523438,19174400.0,150.0
