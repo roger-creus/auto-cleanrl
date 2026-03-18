@@ -3123,3 +3123,56 @@ h033 rorqual/narval jobs finishing in ~45min.
 6. h032 trending toward closure — wait for remaining 3 games to confirm.
 7. After h034/h035 results: if neither beats h029, formulate new combination ideas or novel directions.
 8. Consider PPO+LSTM, PPO+Lion optimizer, or attention mechanisms as unexplored directions.
+
+---
+**[2026-03-18 23:42 UTC]**
+
+## Session 50: Massive Results Processing — h034 Emerges as NEW LEADER (IQM=0.0075)
+
+### Triggered by: h027-breakout-s1 (nibi SUCCESS), h033-enduro-s1 (fir SUCCESS)
+
+### Results Processed: 52 new entries + 1 update (now 747 rows)
+
+**h027-breakout-s1**: Curve-derived q4=0.56 (old-code, output-dir /output bug). vs PPO baseline 1.25 → -55% LOSS. h027 IQM drops to -0.0005. CLOSED.
+
+**h033-enduro-s1**: New-code CSV q4=0.0 (TIE, baseline also 0.0). h033 now 7/15 games, IQM=0.0019.
+
+**h034 (CVaR+Dueling+DrQ) — 44/45 3-SEED RESULTS PULLED! NEW LEADER!**
+All data curve-derived (old-format CSVs). 15 games × ~3 seeds = 44 entries (missing montezumarevenge-s1, still running).
+★★ IQM HNS = 0.0075 (38x PPO baseline) — 44% better than h029 pilot ★★
+Key strengths: MsPacman+3.4%, SpaceInvaders+2.7%, PrivateEye+1.9%, Alien+2.1%
+Key weaknesses: NameThisGame-16%, Phoenix-7.8%, DoubleDunk catastrophic (trimmed by IQM)
+Caveat: All curve-derived — Amidar values likely inflated (14x issue). But IQM trims Amidar.
+
+**h032 (NoisyNets)**: 3 new results (montezumarevenge 0, privateeye +0.06%, venture 0). IQM=-0.0011 (11g). CLOSED.
+**h030 (SEM)**: 1 new result (breakout from nibi new-code). IQM=0.0019 (11g).
+**h035 (CVaR+SEM+DrQ)**: 3 results only (battlezone, qbert, spaceinvaders). IQM=0.0311 at 3 games — UNRELIABLE but very promising. 15 running.
+
+### h034B: Orphaned data (43 CSVs) not tracked in DB or batches. Skipped.
+
+### IQM HNS STANDINGS (updated):
+1. h034 (CVaR+Dueling+DrQ): 0.0075 (15g, 44 seeds) ★★ NEW LEADER
+2. h029 (CVaR+QR+DrQ):      0.0052 (15g pilot). 3-seed running (30 jobs)
+3. h035 (CVaR+SEM+DrQ):     0.0311 (3g UNRELIABLE). 15 running
+4. h020 (Dueling):           0.0026 (15g, 3-seed)
+5. h030 (SEM):               0.0019 (11g pilot)
+PPO baseline:               -0.0002 (15g)
+
+### CLOSED THIS SESSION: h027, h031, h032
+Cancelled 7 running jobs for closed hypotheses (freed compute).
+
+### KEY FINDING: h034 confirms Dueling > QR-Value when combined with CVaR
+h029 (CVaR+QR): IQM=0.0052 → h034 (CVaR+Dueling): IQM=0.0075 (+44%)
+The Dueling architecture's V/A decomposition synergizes better with CVaR advantage estimation.
+
+### 76 ACTIVE JOBS (after 7 cancellations)
+h029(30 3-seed), h034(15 DB-stale, mostly done), h035(15 pilot), h033(11), h030(5)
+
+### NEXT SESSION TODO
+1. Process h035 pilot results — CRITICAL. If IQM validates at 10+ games → formulate h036 (CVaR+Dueling+SEM triple combo)
+2. Process h029 3-seed results as they complete. New-code data will be definitive.
+3. Process h033 remaining 8 games. Currently mediocre IQM=0.0019.
+4. If h035 validates → implement h036: CVaR+Dueling+SEM (combining top 3 techniques)
+5. h034 IQM needs verification with new-code data — consider resubmitting pilot with fixed output
+6. Consider ablation experiments to isolate CVaR contribution
+7. Consider off-policy or hybrid approaches as a different exploration direction

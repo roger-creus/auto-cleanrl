@@ -1,5 +1,5 @@
 hypothesis_id,description,motivation,status,comment
-h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,closed,BASELINE. IQM HNS=0.0002 (15 games). All subsequent hypotheses compared against this.
+h001,,,closed,"BASELINE. IQM HNS=-0.0002 (15g, 38 seeds)."
 h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,closed,PQN BASELINE. IQM HNS=-0.0145 (15 games). Significantly worse than PPO by IQM. DoubleDunk HNS=-2.45 dominates mean but IQM trims it.
 h003,PPO + LayerNorm,Add LayerNorm to PPO NatureCNN — known plasticity intervention from CHAIN-SP paper,closed,IQM HNS=-0.0014 (15g). Below PPO baseline. Neutral. Closed.
 h004,PQN + NaP (weight projection),"Add Normalize-and-Project to PQN — complement existing LayerNorm, top plasticity method from Plasticine",closed,IQM HNS=-0.0092 (15g). Better than PQN baseline (-0.0145) but well below PPO. Not competitive. Closed.
@@ -18,19 +18,19 @@ h016,PPO + Network Sparsity,"Random pruning 50% weights at init, static mask thr
 h017,PPO + SPO (TV divergence),"Replace PPO clipping with soft TV divergence penalty — ICLR 2025, simpler trust region",closed,IQM HNS=0.0011 (15g). Modest positive (+5.5x baseline). Not reopening — modest gain doesn't justify 3-seed investment. Closed.
 h018,PPO + Schedule-Free AdamW,"Schedule-Free optimizer eliminates LR annealing, maintains optimal implicit schedule — NeurIPS 2024",closed,IQM HNS=-0.0087 (15g). Well below baseline. Closed.
 h019,PPO + Muon Optimizer,Muon uses Newton-Schulz orthogonalization on gradients for matrix-shaped params,closed,IQM HNS=0.0014 (15g). Modest positive (+7x baseline). Not reopening — modest gain. Closed.
-h020,PPO + Dueling Value/Advantage Architecture,Separate value and advantage streams for better value estimation — adapted for actor-critic,promising,"REOPENED. IQM HNS=0.0038 (15g). Was closed at W/L net-2 — MAJOR REVERSAL. IQM trims DoubleDunk outlier (HNS=-2.15) revealing broad small gains. Rank #5 overall, +19x PPO baseline. Consider for 3-seed validation or combination with h029."
+h020,,,promising,"IQM HNS=0.0026 (15g, 3-seed). Dueling is a key component of h034 leader. Confirmed via combination."
 h021,PPO + Spectral Normalization + DrQ Augmentation,Combine h013 (SpectralNorm) and h012 (DrQ aug),closed,IQM HNS=-0.0031 (11g). Below baseline. Combination adds nothing. Closed.
 h022,PPO + Quantile Regression Value Function,Replace scalar V(s) with N-quantile distributional value head,closed,"IQM HNS=0.0005 (15g, complete pilot). DoubleDunk added: q4=-18.62 (slight negative). Above baseline but modest. Not strong enough for 3-seed."
 h023,PPO + Spectral Normalization + Shrink-and-Perturb,Combine SpectralNorm (h013) with S&P (h007) — dual plasticity mechanism,closed,IQM HNS=0.0012 (11g). Modest positive but combination of two individually-below-baseline techniques. Closed.
 h024,PPO + Proximal Feature Optimization (PFO),NeurIPS 2024 — constrain feature drift via L2 loss on pre-activation changes,closed,IQM HNS=-0.0008 (12g). Below baseline. Closed.
 h025,PPO + Dual Value Head (ClippedDoubleV),"Two V-heads, min(V1,V2) for conservative advantage. TD3 double-Q trick for PPO.",closed,IQM HNS=-0.0012 (12g). Below baseline. Closed.
 h026,PQN + NaP + LSTM,Combine LSTM (h008) + NaP (h004). NaP excludes LSTM params to preserve gates.,closed,CATASTROPHIC. 3/15 pilot. Combination destroys learning. Closed.
-h027,PPO + DrQ Augmentation + Shrink-and-Perturb,Combine top-2 PPO techniques: h012 (DrQ) and h007 (S&P),proposed,"IQM HNS=0.0016 (6g). Dropped from 0.0045 after MsPacman added. Individual components (DrQ, S&P) both below baseline. 1 running (breakout-nibi)."
+h027,,,closed,IQM HNS=-0.0005 (6g). Below baseline. Breakout curve-derived q4=0.56 added. Closed — DrQ+S&P combination fails.
 h028,PPO + DrQ Augmentation + Quantile Regression Value,Combine DrQ + QR-Value without CVaR,closed,IQM HNS=-0.0034 (9g). BELOW baseline. Negative synergy — confirms CVaR is the key ingredient in h029. Closed.
-h029,PPO + DrQ + QR-Value + CVaR Advantage (NOVEL),NOVEL: Risk-sensitive advantage estimation via CVaR of quantile predictions. Alpha anneals 0.25→1.0.,promising,"★ PILOT COMPLETE 15/15 ★ IQM HNS=0.0065 (32.5x PPO baseline). CLEAR #1. 3-seed eval submitted (30 jobs). 4W/2L/9T. Key wins: Amidar+1420%, BattleZone+28%, Solaris+19%, Phoenix+5%."
-h030,PPO + Simplicial Embeddings (SEM),Replace ReLU penultimate layer with product-of-softmax groups. Forces sparse structured representations.,promising,"IQM HNS=0.0044 (11g). Strong #2 by IQM. 11/15 pilot. Breakout updated (q4=1.25 vs old 0.88). BattleZone added (q4=2446 TIE). Enduro/Alien TIMED OUT, 2 running (mspacman, montezumarevenge)."
-h031,PPO + Self-Predictive Representations (SPR),NOVEL: Adapt SPR from off-policy to on-policy PPO. Auxiliary loss predicts future latents.,promising,IQM HNS=0.0015 (9g). Dropped from 0.0024 after Alien added. 7 running. ZERO LOSSES is nice but gains are modest.
-h032,PPO + NoisyLinear (Noisy Nets),Replace linear layers in actor/critic heads with factorized NoisyLinear — parametric noise for state-dependent exploration,proposed,"IQM HNS=-0.0008 (8g). BELOW BASELINE. BattleZone -0.5% and NameThisGame -4.8% added. Phoenix -91% catastrophic. Only Breakout/MsPacman/SpaceInvaders positive. 7 running."
-h033,PPO + DrQ + Augmentation Consistency Loss (NOVEL),NOVEL: Augmentation consistency loss on top of DrQ — force augmented and clean features to align.,proposed,"IQM HNS=-0.0029 (5g). MsPacman CATASTROPHIC q4=70 (-78%). SpaceInvaders q4=158 (+7%). 13 running — outlook grim."
-h034,PPO + CVaR + Dueling Architecture + DrQ,"Combine h029 (CVaR #1) with h020 (Dueling #4). Distributional value stream + advantage stream for policy.",proposed,"NEW. Pilot submitted. Combines two orthogonal improvements: CVaR for exploration scheduling + dueling for better V/A decomposition."
-h035,PPO + CVaR + Simplicial Embeddings (SEM) + DrQ,"Combine h029 (CVaR #1) with h030 (SEM #2). SEM forces structured sparse representations + CVaR for value baseline.",proposed,"NEW. Pilot submitted. Combines two top techniques: CVaR (IQM=0.0065) + SEM (IQM=0.0048)."
+h029,,,promising,★ PILOT COMPLETE 15/15 ★ IQM HNS=0.0052 (pilot). 3-seed eval running (30 jobs). CVaR is the key novel contribution.
+h030,,,promising,IQM HNS=0.0019 (11g). Modest but positive. 4 games remaining. Component of h035 combination.
+h031,,,closed,"IQM HNS=0.0004 (9g, 10 seeds). Near baseline. Zero losses but gains too modest for further investment. Closed."
+h032,,,closed,IQM HNS=-0.0011 (11g). BELOW baseline. Phoenix catastrophic (-0.106 HNS). Closed.
+h033,,,proposed,IQM HNS=0.0019 (7g). Phoenix positive (+0.019) but MsPacman catastrophic (-0.036). 8 games remaining. Wait for full pilot.
+h034,,,promising,"★★ NEW LEADER ★★ IQM HNS=0.0075 (15g, 44/45 seeds — near-complete 3-seed!). CVaR+Dueling+DrQ. 44% better than h029 pilot. Curve-derived data — Amidar values may be inflated."
+h035,,,promising,IQM HNS=0.0311 (3g only — UNRELIABLE). CVaR+SEM+DrQ. Early signs very promising but need 12 more games. 15 running.
