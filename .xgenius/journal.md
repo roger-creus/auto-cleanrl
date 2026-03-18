@@ -1452,3 +1452,74 @@ PQN: h008 (LSTM): 7W/3L (net +4) pilot, 3-seed eval in progress.
 6. Monitor h027 (DrQ+S&P) pilot
 7. Consider creating triple combination: DrQ + S&P + SpectNorm (h027 + h013)
 8. Still need to explore: off-policy methods (DQN/SAC-discrete), PPG, ensemble methods
+
+---
+**[2026-03-18 15:29 UTC]**
+
+## Session 25: Process 15 New Results + Resubmit 7 Gaps
+
+### Triggered by: h022-privateeye-s1 (narval SUCCESS)
+
+### Results Processed (15 new entries in experiments.csv)
+9 new rows added + 6 missing entries from pulled CSVs + 1 updated (h022-qbert-s1 old->new format).
+Fixed 50 blank env_id entries in experiments.csv from old batch format.
+Total: 550 rows.
+
+**New data:**
+- h019: +3 results (BattleZone q4=2466 WIN +15%, PrivateEye q4=-184 LOSS, MontezumaRevenge=0)
+- h021: +2 results (MsPacman q4=314 TIE, SpaceInvaders q4=137 TIE)
+- h022: +3 results (PrivateEye q4=76 WIN +156%, SpaceInvaders q4=158 TIE, MontezumaRevenge=0)
+- h024: +3 results (MsPacman q4=269 LOSS -16%, PrivateEye q4=-171 LOSS, Phoenix q4=892 WIN +12%)
+- h012: +2 results (alien-s2 q4=186, enduro-s3 q4=0)
+- h013: +3 results (breakout-s2 q4=1.34, enduro-s2 q4=0, solaris-s3 q4=2579)
+
+### UPDATED RANKINGS (mean q4 across all available seeds, 10% threshold)
+
+**PPO techniques (3-seed data):**
+1. h012 (DrQ): 4W/1L/10T (net +3) — BEST. 7/15 at 3 seeds. Amidar+27%, BattleZone+13%, Phoenix+11%, PrivateEye+272%.
+2. h007 (S&P): 3W/2L/10T (net +1) — 7/15 at 3 seeds. BattleZone+21%, PrivateEye+139%, Solaris+28%.
+3. h013 (SpectNorm): 2W/1L/12T (net +1) — 7/15 at 3 seeds. Amidar+19%, PrivateEye+124%.
+4. h005 (CHAIN-SP): 1W/1L/13T (net 0) — 2/15 at 3 seeds. Only PrivateEye win.
+
+**PPO combinations (pilots, incomplete):**
+- h022 (QR-Value): 2W/0L/3T (net +2) at 5/15 — Breakout+43%, PrivateEye+156%. VERY PROMISING.
+- h023 (SpectNorm+S&P): 1W/0L/2T (net +1) at 4/15 — Qbert+42%. Still promising.
+- h027 (DrQ+S&P): 0/15 — just submitted, waiting.
+- h021 (SpectNorm+DrQ): 1W/1L/3T (net 0) at 5/15 — Breakout catastrophic.
+- h024 (PFO): 1W/2L/1T (net -1) at 5/15 — PrivateEye LOSS.
+
+**PQN techniques:**
+- h008 (LSTM): 7W/5L/3T (net +2) — 33 3-seed jobs running.
+- h004 (NaP): 2W/1L/12T (net +1) — 13/15 at 3 seeds. Solaris-s2 outlier (q4=162 vs baseline 504).
+
+**Neutral/closed this session:** h019 (Muon) 2W/2L at 14/15 — neutral, will close when complete.
+
+### KEY FINDINGS
+1. h012 (DrQ) now confirmed as BEST PPO technique at 3-seed level: net +3.
+2. h022 (QR-Value) is the most exciting emerging result: 2W/0L at 5/15, Breakout+43% is unique.
+3. h013 improved slightly from last session (was net 0, now net +1) with new solaris-s3 data.
+4. h004 (NaP) developed a Solaris loss (s2=162 outlier) — now net +1 instead of +2.
+5. Universal MsPacman loss persists across ALL PPO modifications.
+
+### Gap Resubmissions (7 jobs)
+- h004: BattleZone-s2 (narval), MsPacman-s3 (fir)
+- h005: NameThisGame-s3 (rorqual)
+- h012: Alien-s3 (nibi), DoubleDunk-s3 (narval), NameThisGame-s3 (fir)
+- h013: Alien-s3 (rorqual, 8h walltime — previous hit time limit)
+
+### Active Jobs: ~195 (188 running + 7 newly submitted)
+- 3-seed evals: h005(16), h007(8), h008(33), h012(11+3), h013(10+1)
+- Pilots: h010(9), h011(9), h019(4), h021(9), h022(8), h023(9), h024(11), h025(11), h026(12), h027(12)
+- Closing: h003(1), h018(4), h020(3)
+
+### Next Session TODO
+1. Process h022 remaining 8 games — if zero-loss holds, IMMEDIATELY submit 3-seed eval
+2. Process h023 remaining 9 games — if Qbert+42% holds and low losses, submit 3-seed eval
+3. Process h021 remaining 9 games — if Breakout catastrophe repeats elsewhere, CLOSE
+4. Process h027 (DrQ+S&P) pilot — the top-2 combination
+5. Process h024 remaining 10 games — likely closing if PrivateEye loss holds
+6. h008 3-seed eval: 33 jobs running, should start completing soon
+7. h010/h011 IMPALA CNN: 9 jobs each, still waiting
+8. When h012/h013 3-seed evals complete, compute definitive rankings
+9. Close h019 when remaining 4 games complete
+10. CRITICAL: If h022 confirms strong, plan h022+h012 combination (QR-Value + DrQ)

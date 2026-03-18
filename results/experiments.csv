@@ -459,7 +459,7 @@ h021-amidar-s1,h021,,"ppo_specnorm_drq Amidar-v5 seed 1 (narval, 40M, old format
 h021-breakout-s1,h021,,"ppo_specnorm_drq Breakout-v5 seed 1 (nibi, 40M, old format)",Breakout-v5,1,ppo_specnorm_drq,40000000,91648,,0.0,,0.0
 h021-qbert-s1,h021,,q4 corrected from new-format CSV,Qbert-v5,1,ppo_specnorm_drq,40000000,123520,161.79,144.87,19984000.0,200.0
 h022-breakout-s1,h022,,"ppo_qr_value Breakout-v5 seed 1 (narval, 40M, old format)",Breakout-v5,1,ppo_qr_value,40000000,89216,,2.0,,2.0
-h022-qbert-s1,h022,,auto-ingested,Qbert-v5,1,ppo_atari_envpool,40000000,,150.00,,,
+h022-qbert-s1,h022,,new-format CSV,Qbert-v5,1,ppo_qr_value,40000000,122496,162.85,142.24,19948800.0,150.0
 h023-amidar-s1,h023,,q4 corrected from new-format CSV,Amidar-v5,1,ppo_specnorm_sp,40000000,70912,2.32,2.10,164352.0,9.0
 h023-breakout-s1,h023,,auto-ingested,Breakout-v5,1,ppo_atari_envpool,40000000,,0.00,,,
 h023-qbert-s1,h023,,"ppo_specnorm_sp Qbert-v5 seed 1 (narval, 40M, old format) — VERY PROMISING: 225 vs 158 base (+42%)",Qbert-v5,1,ppo_specnorm_sp,40000000,117376,,225.0,,225.0
@@ -483,54 +483,69 @@ h012-solaris-s2,h012,see hypothesis,narval 3-seed,Solaris-v5,2,ppo_aug,40000000,
 h012-venture-s2,h012,see hypothesis,narval 3-seed,Venture-v5,2,ppo_aug,40000000,18688.0,0.0,0.0,0.0,0.0
 h013-mspacman-s2,h013,see hypothesis,narval 3-seed,MsPacman-v5,2,ppo_specnorm,40000000,72832.0,328.752197265625,239.3673095703125,23943680.0,210.0
 h013-spaceinvaders-s2,h013,see hypothesis,narval 3-seed,SpaceInvaders-v5,2,ppo_specnorm,40000000,78720.0,149.243896484375,152.43902587890625,11748480.0,270.0
-h013-venture-s3,h013,see batch file,cluster=rorqual,,,,40000000,18688,0.0,0.0,0.0,0.0
-h012-amidar-s3,h012,see batch file,cluster=rorqual,,,,40000000,70656,2.79891300201416,2.818840503692627,197760.0,0.0
-h012-breakout-s3,h012,see batch file,cluster=rorqual,,,,40000000,222592,1.3709027767181396,1.3726279735565186,305152.0,3.0
-h013-doubledunk-s3,h013,see batch file,cluster=rorqual,,,,40000000,20736,-18.296297073364258,-18.074073791503906,-379392.0,-14.0
-h012-qbert-s3,h012,see batch file,cluster=rorqual,,,,40000000,123520,156.8911895751953,164.22279357910156,19379200.0,25.0
-h007-solaris-s2,h007,see batch file,cluster=rorqual,,,,40000000,6272,1964.0816650390625,1795.9183349609375,12318720.0,1820.0
-h012-phoenix-s3,h012,see batch file,cluster=rorqual,,,,40000000,28416,831.8919067382812,964.8648681640625,23639040.0,360.0
-h013-montezumarevenge-s3,h013,see batch file,cluster=rorqual,,,,40000000,73600,0.0,0.0,0.0,0.0
-h012-spaceinvaders-s3,h012,see batch file,cluster=rorqual,,,,40000000,77312,156.95364379882812,156.158935546875,12134400.0,490.0
-h012-mspacman-s3,h012,see batch file,cluster=rorqual,,,,40000000,76672,296.54425048828125,247.9966583251953,22736640.0,320.0
-h019-mspacman-s1,h019,see batch file,cluster=rorqual,,,,40000000,81920,258.234375,264.3125,21154560.0,340.0
-h013-battlezone-s3,h013,see batch file,cluster=rorqual,,,,40000000,33536,2412.213623046875,2198.473388671875,80896000.0,6000.0
-h013-privateeye-s3,h013,see batch file,cluster=rorqual,,,,40000000,14720,-73.13043212890625,48.88695526123047,-1076480.0,100.0
-h013-amidar-s2,h013,see batch file,cluster=narval,,,,40000000,70912,2.2978339195251465,2.18772554397583,162944.0,0.0
-h012-privateeye-s2,h012,see batch file,cluster=narval,,,,40000000,14720,-89.37391662597656,-36.76521682739258,-1315584.0,0.0
-h013-qbert-s2,h013,see batch file,cluster=narval,,,,40000000,122496,166.01358032226562,159.92684936523438,20336000.0,475.0
-h012-montezumarevenge-s2,h012,see batch file,cluster=narval,,,,40000000,70144,0.0,0.0,0.0,0.0
-h004-solaris-s2,h004,see batch file,cluster=nibi,,,,40000000,5888,346.521728515625,161.7391357421875,2040320.0,500.0
-h012-mspacman-s2,h012,see batch file,cluster=fir,,,,40000000,80128,280.75079345703125,260.51116943359375,22496000.0,200.0
-h013-venture-s2,h013,see batch file,cluster=fir,,,,40000000,19712,0.0,0.0,0.0,0.0
-h013-privateeye-s2,h013,see batch file,cluster=fir,,,,40000000,14720,21.53913116455078,4.208695888519287,317056.0,100.0
-h002-phoenix-s1,h002,see batch file,cluster=fir,,,,40000000,,,0.00,,
-h002-phoenix-s2,h002,see batch file,cluster=narval,,,,40000000,,,0.00,,
-h002-phoenix-s3,h002,see batch file,cluster=rorqual,,,,40000000,,,0.00,,
-h001-amidar-s2,h001,see batch file,cluster=rorqual,,,,40000000,,,0.00,,
-h001-breakout-s3,h001,see batch file,cluster=narval,,,,40000000,,,1.00,,
-h001-montezumarevenge-s3,h001,see batch file,cluster=narval,,,,40000000,,,0.00,,
-h001-montezumarevenge-s1,h001,see batch file,cluster=nibi,,,,40000000,,,0.00,,
-h001-enduro-s2,h001,see batch file,cluster=nibi,,,,40000000,,,0.00,,
-h001-enduro-s3,h001,see batch file,cluster=fir,,,,40000000,,,0.00,,
-h001-venture-s1,h001,see batch file,cluster=fir,,,,40000000,,,0.00,,
-h002-venture-s3,h002,see batch file,cluster=rorqual,,,,40000000,,,0.00,,
-h002-enduro-s1,h002,see batch file,cluster=rorqual,,,,40000000,,,0.00,,
-h002-privateeye-s2,h002,see batch file,cluster=rorqual,,,,40000000,,,0.00,,
-h002-venture-s2,h002,see batch file,cluster=narval,,,,40000000,,,0.00,,
-h002-privateeye-s3,h002,see batch file,cluster=nibi,,,,40000000,,,0.00,,
-h002-montezumarevenge-s2,h002,see batch file,cluster=fir,,,,40000000,,,0.00,,
-h002-breakout-s2,h002,see batch file,cluster=fir,,,,40000000,,,0.00,,
-h002-doubledunk-s1,h002,see batch file,"cluster=rorqual, old-format approximate",,,,,,,-24.00,,
-h002-spaceinvaders-s1,h002,see batch file,"cluster=rorqual, old-format approximate",,,,,,,285.00,,
-h002-mspacman-s2,h002,see batch file,"cluster=rorqual, old-format approximate",,,,,,,210.00,,
-h002-qbert-s3,h002,see batch file,"cluster=narval, old-format approximate",,,,,,,150.00,,
-h002-mspacman-s1,h002,see batch file,"cluster=narval, old-format approximate",,,,,,,210.00,,
-h002-doubledunk-s2,h002,see batch file,"cluster=nibi, old-format approximate",,,,,,,-24.00,,
-h002-qbert-s1,h002,see batch file,"cluster=nibi, old-format approximate",,,,,,,150.00,,
-h002-spaceinvaders-s2,h002,see batch file,"cluster=nibi, old-format approximate",,,,,,,270.00,,
-h002-mspacman-s3,h002,see batch file,"cluster=nibi, old-format approximate",,,,,,,210.00,,
-h002-doubledunk-s3,h002,see batch file,"cluster=fir, old-format approximate",,,,,,,-24.00,,
-h002-spaceinvaders-s3,h002,see batch file,"cluster=fir, old-format approximate",,,,,,,285.00,,
-h002-qbert-s2,h002,see batch file,"cluster=fir, old-format approximate",,,,,,,150.00,,
+h013-venture-s3,h013,see batch file,cluster=rorqual,Venture-v5,3,,40000000,18688,0.0,0.0,0.0,0.0
+h012-amidar-s3,h012,see batch file,cluster=rorqual,Amidar-v5,3,,40000000,70656,2.79891300201416,2.818840503692627,197760.0,0.0
+h012-breakout-s3,h012,see batch file,cluster=rorqual,Breakout-v5,3,,40000000,222592,1.3709027767181396,1.3726279735565186,305152.0,3.0
+h013-doubledunk-s3,h013,see batch file,cluster=rorqual,DoubleDunk-v5,3,,40000000,20736,-18.296297073364258,-18.074073791503906,-379392.0,-14.0
+h012-qbert-s3,h012,see batch file,cluster=rorqual,Qbert-v5,3,,40000000,123520,156.8911895751953,164.22279357910156,19379200.0,25.0
+h007-solaris-s2,h007,see batch file,cluster=rorqual,Solaris-v5,2,,40000000,6272,1964.0816650390625,1795.9183349609375,12318720.0,1820.0
+h012-phoenix-s3,h012,see batch file,cluster=rorqual,Phoenix-v5,3,,40000000,28416,831.8919067382812,964.8648681640625,23639040.0,360.0
+h013-montezumarevenge-s3,h013,see batch file,cluster=rorqual,MontezumaRevenge-v5,3,,40000000,73600,0.0,0.0,0.0,0.0
+h012-spaceinvaders-s3,h012,see batch file,cluster=rorqual,SpaceInvaders-v5,3,,40000000,77312,156.95364379882812,156.158935546875,12134400.0,490.0
+h012-mspacman-s3,h012,see batch file,cluster=rorqual,MsPacman-v5,3,,40000000,76672,296.54425048828125,247.9966583251953,22736640.0,320.0
+h019-mspacman-s1,h019,see batch file,cluster=rorqual,MsPacman-v5,1,,40000000,81920,258.234375,264.3125,21154560.0,340.0
+h013-battlezone-s3,h013,see batch file,cluster=rorqual,BattleZone-v5,3,,40000000,33536,2412.213623046875,2198.473388671875,80896000.0,6000.0
+h013-privateeye-s3,h013,see batch file,cluster=rorqual,PrivateEye-v5,3,,40000000,14720,-73.13043212890625,48.88695526123047,-1076480.0,100.0
+h013-amidar-s2,h013,see batch file,cluster=narval,Amidar-v5,2,,40000000,70912,2.2978339195251465,2.18772554397583,162944.0,0.0
+h012-privateeye-s2,h012,see batch file,cluster=narval,PrivateEye-v5,2,,40000000,14720,-89.37391662597656,-36.76521682739258,-1315584.0,0.0
+h013-qbert-s2,h013,see batch file,cluster=narval,Qbert-v5,2,,40000000,122496,166.01358032226562,159.92684936523438,20336000.0,475.0
+h012-montezumarevenge-s2,h012,see batch file,cluster=narval,MontezumaRevenge-v5,2,,40000000,70144,0.0,0.0,0.0,0.0
+h004-solaris-s2,h004,see batch file,cluster=nibi,Solaris-v5,2,,40000000,5888,346.521728515625,161.7391357421875,2040320.0,500.0
+h012-mspacman-s2,h012,see batch file,cluster=fir,MsPacman-v5,2,,40000000,80128,280.75079345703125,260.51116943359375,22496000.0,200.0
+h013-venture-s2,h013,see batch file,cluster=fir,Venture-v5,2,,40000000,19712,0.0,0.0,0.0,0.0
+h013-privateeye-s2,h013,see batch file,cluster=fir,PrivateEye-v5,2,,40000000,14720,21.53913116455078,4.208695888519287,317056.0,100.0
+h002-phoenix-s1,h002,see batch file,cluster=fir,Phoenix-v5,1,,40000000,,,0.00,,
+h002-phoenix-s2,h002,see batch file,cluster=narval,Phoenix-v5,2,,40000000,,,0.00,,
+h002-phoenix-s3,h002,see batch file,cluster=rorqual,Phoenix-v5,3,,40000000,,,0.00,,
+h001-amidar-s2,h001,see batch file,cluster=rorqual,Amidar-v5,2,,40000000,,,0.00,,
+h001-breakout-s3,h001,see batch file,cluster=narval,Breakout-v5,3,,40000000,,,1.00,,
+h001-montezumarevenge-s3,h001,see batch file,cluster=narval,MontezumaRevenge-v5,3,,40000000,,,0.00,,
+h001-montezumarevenge-s1,h001,see batch file,cluster=nibi,MontezumaRevenge-v5,1,,40000000,,,0.00,,
+h001-enduro-s2,h001,see batch file,cluster=nibi,Enduro-v5,2,,40000000,,,0.00,,
+h001-enduro-s3,h001,see batch file,cluster=fir,Enduro-v5,3,,40000000,,,0.00,,
+h001-venture-s1,h001,see batch file,cluster=fir,Venture-v5,1,,40000000,,,0.00,,
+h002-venture-s3,h002,see batch file,cluster=rorqual,Venture-v5,3,,40000000,,,0.00,,
+h002-enduro-s1,h002,see batch file,cluster=rorqual,Enduro-v5,1,,40000000,,,0.00,,
+h002-privateeye-s2,h002,see batch file,cluster=rorqual,PrivateEye-v5,2,,40000000,,,0.00,,
+h002-venture-s2,h002,see batch file,cluster=narval,Venture-v5,2,,40000000,,,0.00,,
+h002-privateeye-s3,h002,see batch file,cluster=nibi,PrivateEye-v5,3,,40000000,,,0.00,,
+h002-montezumarevenge-s2,h002,see batch file,cluster=fir,MontezumaRevenge-v5,2,,40000000,,,0.00,,
+h002-breakout-s2,h002,see batch file,cluster=fir,Breakout-v5,2,,40000000,,,0.00,,
+h002-doubledunk-s1,h002,see batch file,"cluster=rorqual, old-format approximate",DoubleDunk-v5,1,,,,,-24.00,,
+h002-spaceinvaders-s1,h002,see batch file,"cluster=rorqual, old-format approximate",SpaceInvaders-v5,1,,,,,285.00,,
+h002-mspacman-s2,h002,see batch file,"cluster=rorqual, old-format approximate",MsPacman-v5,2,,,,,210.00,,
+h002-qbert-s3,h002,see batch file,"cluster=narval, old-format approximate",Qbert-v5,3,,,,,150.00,,
+h002-mspacman-s1,h002,see batch file,"cluster=narval, old-format approximate",MsPacman-v5,1,,,,,210.00,,
+h002-doubledunk-s2,h002,see batch file,"cluster=nibi, old-format approximate",DoubleDunk-v5,2,,,,,-24.00,,
+h002-qbert-s1,h002,see batch file,"cluster=nibi, old-format approximate",Qbert-v5,1,,,,,150.00,,
+h002-spaceinvaders-s2,h002,see batch file,"cluster=nibi, old-format approximate",SpaceInvaders-v5,2,,,,,270.00,,
+h002-mspacman-s3,h002,see batch file,"cluster=nibi, old-format approximate",MsPacman-v5,3,,,,,210.00,,
+h002-doubledunk-s3,h002,see batch file,"cluster=fir, old-format approximate",DoubleDunk-v5,3,,,,,-24.00,,
+h002-spaceinvaders-s3,h002,see batch file,"cluster=fir, old-format approximate",SpaceInvaders-v5,3,,,,,285.00,,
+h002-qbert-s2,h002,see batch file,"cluster=fir, old-format approximate",Qbert-v5,2,,,,,150.00,,
 h023-phoenix-s1,h023,,new-format CSV,Phoenix-v5,1,ppo_specnorm_sp,40000000,27904,761.06,738.72,21236480.0,300.0
+h019-battlezone-s1,h019,,new-format CSV,BattleZone-v5,1,ppo_muon,40000000,34048,2330.83,2466.17,79360000.0,1000.0
+h019-privateeye-s1,h019,,new-format CSV,PrivateEye-v5,1,ppo_muon,40000000,14720,-89.28,-184.42,-1314176.0,100.0
+h021-mspacman-s1,h021,,new-format CSV,MsPacman-v5,1,ppo_specnorm_aug,40000000,75520,328.25,314.47,24789760.0,260.0
+h021-spaceinvaders-s1,h021,,new-format CSV,SpaceInvaders-v5,1,ppo_specnorm_aug,40000000,79488,145.0,136.73,11525760.0,155.0
+h022-privateeye-s1,h022,,new-format CSV,PrivateEye-v5,1,ppo_qr_value,40000000,14720,-6.41,75.65,-94336.0,100.0
+h022-spaceinvaders-s1,h022,,new-format CSV,SpaceInvaders-v5,1,ppo_qr_value,40000000,78464,149.97,158.12,11767040.0,125.0
+h024-mspacman-s1,h024,,new-format CSV,MsPacman-v5,1,ppo_pfo,40000000,71680,346.98,268.86,24871680.0,190.0
+h024-privateeye-s1,h024,,new-format CSV,PrivateEye-v5,1,ppo_pfo,40000000,14720,-114.86,-170.71,-1690752.0,0.0
+h024-phoenix-s1,h024,,new-format CSV,Phoenix-v5,1,ppo_pfo,40000000,30336,807.76,892.49,24504320.0,1450.0
+h012-alien-s2,h012,,new-format CSV,Alien-v5,2,ppo_aug,40000000,61184,195.52,185.98,11962880.0,250.0
+h012-enduro-s3,h012,,new-format CSV,Enduro-v5,3,ppo_aug,40000000,11904,0.0,0.0,0.0,0.0
+h013-breakout-s2,h013,,new-format CSV,Breakout-v5,2,ppo_specnorm,40000000,224000,1.34,1.34,299264.0,2.0
+h013-enduro-s2,h013,,new-format CSV,Enduro-v5,2,ppo_specnorm,40000000,11904,0.0,0.0,0.0,0.0
+h013-solaris-s3,h013,,new-format CSV,Solaris-v5,3,ppo_specnorm,40000000,5760,2491.56,2578.67,14351360.0,3200.0
+h022-montezumarevenge-s1,h022,,new-format CSV,MontezumaRevenge-v5,1,ppo_qr_value,40000000,70272,0.0,0.0,0.0,0.0
