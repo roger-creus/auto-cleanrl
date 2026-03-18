@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+BattleZone-v5,1,h011,h011-battlezone-s1,pqn_impala,40000000,27904,2623.853271484375,2733.945068359375,73216000.0,5000.0

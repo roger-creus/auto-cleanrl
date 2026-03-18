@@ -465,9 +465,9 @@ h023-amidar-s1,h023,,q4 corrected from new-format CSV,Amidar-v5,1,ppo_specnorm_s
 h023-breakout-s1,h023,,new-format CSV (updated),Breakout-v5,1,ppo_specnorm_sp,40000000,224000,1.3457143306732178,1.301714301109314,301440.0,0.0
 h023-qbert-s1,h023,,CORRECTED: new-format CSV from rorqual (old-format narval showed 225 = false),Qbert-v5,1,ppo_specnorm_sp,40000000,124032,150.85,155.31,18710400.0,0.0
 h024-amidar-s1,h024,,new-format CSV (updated),Amidar-v5,1,ppo_pfo,40000000,71552,2.3237924575805664,2.039355993270874,166272.0,5.0
-h024-qbert-s1,h024,,"ppo_pfo Qbert-v5 seed 1 (narval, 40M, old format)",Qbert-v5,1,ppo_pfo,40000000,116992,,150.0,,150.0
+h024-qbert-s1,h024,,"ppo_pfo Qbert-v5 seed 1 (narval, 40M, new-format). TIE (+3% vs baseline 158).",Qbert-v5,1,ppo_pfo,40000000,122240,169.08377075195312,162.48690795898438,20668800.0,275.0
 h025-alien-s1,h025,python cleanrl/ppo_atari_envpool_dualv.py --env-id Alien-v5 --seed 1,PARTIAL 10M. ppo_dualv Alien-v5 seed 1 (rorqual),Alien-v5,1,ppo_dualv,10000000,15232,207.14,186.05,3155200.0,180.0
-h025-amidar-s1,h025,,40M old-format (was 10M q4=1.54),Amidar-v5,1,ppo_dualv,40000000,66304,,31.0,,
+h025-amidar-s1,h025,,"40M new-format (was old-format q4=31). Real q4=2.60, WIN +18% vs baseline 2.2.",Amidar-v5,1,ppo_dualv,40000000,71168,2.5269784927368164,2.5971221923828125,179840.0,1.0
 h025-breakout-s1,h025,,40M old-format (was 10M q4=1.58),Breakout-v5,1,ppo_dualv,40000000,74752,,9.0,,
 h025-doubledunk-s1,h025,python cleanrl/ppo_atari_envpool_dualv.py --env-id DoubleDunk-v5 --seed 1,10M partial,DoubleDunk-v5,1,ppo_dualv,10000000,5120,-18.649999618530273,-20.0,-95488.0,-18.0
 h025-mspacman-s1,h025,,10M partial,MsPacman-v5,1,ppo_dualv,10000000,19328,287.947021484375,226.95364379882812,5565440.0,280.0
@@ -573,3 +573,12 @@ h027-qbert-s1,h027,,old-format 40M,Qbert-v5,1,ppo_aug_sp,40000000,117504,,150.0,
 h023-spaceinvaders-s1,h023,,new-format CSV,SpaceInvaders-v5,1,ppo_specnorm_sp,40000000,79616,148.0,130.84,11783040.0,80.0
 h021-namethisgame-s1,h021,,new-format CSV,NameThisGame-v5,1,ppo_specnorm_aug,40000000,15104,2263.56,2231.02,34188800.0,850.0
 h022-alien-s1,h022,,new-format CSV,Alien-v5,1,ppo_qr_value,40000000,60160,195.04,189.74,11733760.0,150.0
+h011-battlezone-s1,h011,,"pqn_impala BattleZone-v5 seed 1 (narval, 40M, new-format). LOSS -20% vs PQN baseline 3411.",BattleZone-v5,1,pqn_impala,40000000,27904,2623.853271484375,2733.945068359375,73216000.0,5000.0
+h011-phoenix-s1,h011,,"pqn_impala Phoenix-v5 seed 1 (narval, 40M, new-format). WIN +18% vs PQN baseline 86.5.",Phoenix-v5,1,pqn_impala,40000000,48768,143.989501953125,102.09973907470703,7022080.0,80.0
+h023-solaris-s1,h023,,"ppo_specnorm_sp Solaris-v5 seed 1 (fir, 40M, new-format). LOSS -22% vs PPO baseline 2280.",Solaris-v5,1,ppo_specnorm_sp,40000000,6016,2098.723388671875,1775.319091796875,12625920.0,1460.0
+h023-venture-s1,h023,,"ppo_specnorm_sp Venture-v5 seed 1 (fir, 40M, new-format). TIE (both zero).",Venture-v5,1,ppo_specnorm_sp,40000000,20224,0.0,0.0,0.0,0.0
+h023-doubledunk-s1,h023,,"ppo_specnorm_sp DoubleDunk-v5 seed 1 (narval, 40M, new-format). TIE (+2%).",DoubleDunk-v5,1,ppo_specnorm_sp,40000000,20480,-17.674999237060547,-17.549999237060547,-361984.0,-18.0
+h024-breakout-s1,h024,,"ppo_pfo Breakout-v5 seed 1 (narval, 40M, new-format). TIE (-2%).",Breakout-v5,1,ppo_pfo,40000000,224256,1.3413242101669312,1.3652968406677246,300800.0,2.0
+h024-solaris-s1,h024,,"ppo_pfo Solaris-v5 seed 1 (rorqual, 40M, new-format). TIE (-5%).",Solaris-v5,1,ppo_pfo,40000000,5760,2051.111083984375,2163.5556640625,11814400.0,2480.0
+h024-venture-s1,h024,,"ppo_pfo Venture-v5 seed 1 (rorqual, 40M, new-format). TIE (both zero).",Venture-v5,1,ppo_pfo,40000000,18304,0.0,0.0,0.0,0.0
+h025-venture-s1,h025,,"ppo_dualv Venture-v5 seed 1 (narval, 40M, new-format). TIE (both zero).",Venture-v5,1,ppo_dualv,40000000,18304,0.0,0.0,0.0,0.0

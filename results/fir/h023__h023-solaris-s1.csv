@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Solaris-v5,1,h023,h023-solaris-s1,ppo_specnorm_sp,40000000,6016,2098.723388671875,1775.319091796875,12625920.0,1460.0
