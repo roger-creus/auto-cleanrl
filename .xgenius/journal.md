@@ -1991,3 +1991,56 @@ All h008 seed-2/seed-3 jobs that completed were TIME LIMIT kills. The 23 current
 7. Consider new directions: N-step returns, PPG, noisy nets, off-policy methods, ensemble methods
 8. Universal MsPacman degradation needs investigation
 
+
+---
+**[2026-03-18 18:13 UTC]**
+
+## Session 33: Process 3 Results, Implement & Submit h030 (SEM) + h031 (SPR)
+
+### Triggered by: h013-amidar-s3 (rorqual SUCCESS)
+
+### Results Processed: 3 new entries (now 608 rows)
+- h013-amidar-s3: q4=2.49 (from log, CSV save failed /output read-only). 3-seed avg=2.58 vs baseline 2.2 = +17.3% → WIN. h013 Amidar confirmed at 3-seed.
+- h007-montezumarevenge-s3: q4=0.0 (from nibi CSV). TIE with baseline 0.
+- h004-montezumarevenge-s3: q4=0.0 (already in bank, confirmed by nibi CSV). No change.
+
+### NO STANDINGS CHANGES
+h013 stays at 3W/2L/10T (net +1). Amidar was already counted as a win.
+h007 stays at 4W/2L/9T (net +2). MontezumaRevenge was already TIE.
+
+### h013 3-SEED STATUS: 11/15 complete
+Missing: Alien-s3, Breakout-s3, Enduro-s3, Qbert-s3 (14 jobs running)
+
+### h007 3-SEED STATUS: 8/15 complete  
+Missing 7 s3 games (14 jobs running)
+
+### NEW HYPOTHESES IMPLEMENTED & SUBMITTED
+**h030 (PPO + Simplicial Embeddings)**: Replace ReLU penultimate layer with product-of-softmax groups (L=32, V=16, tau=0.1). Based on arXiv:2510.13704. Forces sparse structured representations. Zero computational overhead. 15-game pilot submitted (4h walltime).
+
+**h031 (PPO + Self-Predictive Representations — NOVEL)**: First adaptation of SPR (ICLR 2021) from off-policy to on-policy PPO. Adds auxiliary loss that trains encoder to predict its own future latent representations K=5 steps ahead via learned transition model + EMA target encoder (momentum=0.99). Uses BYOL-style asymmetric projection + prediction heads. 15-game pilot submitted (6h walltime — extra time for auxiliary computation).
+
+### ACTIVE JOBS: ~180 (150 running + 30 just submitted)
+- 3-seed evals: h004(5), h005(7), h007(14), h008(25), h012(19), h013(14)
+- Pilots: h010(3), h011(10), h022(8), h026(12), h027(10), h028(12), h029(11), h030(15), h031(15)
+
+### CURRENT RANKINGS (unchanged)
+**PPO techniques (3-seed):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — CONFIRMED BEST
+2. h007 (S&P): 4W/2L/9T (net +2)
+3. h013 (SpectNorm): 3W/2L/10T (net +1)
+4. h005 (CHAIN-SP): 3W/2L/10T (net +1)
+
+**PQN techniques:**
+1. h004 (NaP): 5W/1L/9T (net +4) — 15/15 at 3-seed
+2. h008 (LSTM): 8W/3L/4T (net +5) pilot — 3-seed in progress (25 running)
+
+### NEXT SESSION TODO
+1. Monitor h030/h031 pilots — check for early crashes
+2. Process h022 remaining 5 pilot results (8 running)
+3. Process h028/h029 pilot results
+4. Process h008 3-seed eval (25 running)
+5. Fill h005/h007/h012/h013 3-seed gaps
+6. h026 early signal very poor (net -1 at 3/15) — consider closing if stays negative
+7. If h030 or h031 shows promise: fast-track to 3-seed eval
+8. Consider implementing PPG (has cleanrl codebase) or OPR (very recent March 2026 paper)
+9. UNEXPLORED: PPG, OPR, decoupled actor-critic, CHAIN (pure churn reg distinct from h005)
