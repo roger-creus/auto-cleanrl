@@ -640,3 +640,10 @@ h032-qbert-s1,h032,,curve-derived q4 (rorqual old-code),Qbert-v5,1,ppo_noisyline
 h033-amidar-s1,h033,,curve-derived q4 (rorqual old-code),Amidar-v5,1,ppo_aug_consist,40000000,64640,30.64,33.96,1980672.0,31.0
 h033-breakout-s1,h033,,curve-derived q4 (fir old-code),Breakout-v5,1,ppo_aug_consist,40000000,73856,1.47,1.28,108800.0,5.0
 h033-qbert-s1,h033,,curve-derived q4 (narval old-code),Qbert-v5,1,ppo_aug_consist,40000000,117120,154.81,154.15,18131200.0,150.0
+h028-enduro-s1,h028,,new-format CSV (fir),Enduro-v5,1,ppo_aug_qr_value,40000000,11904,0.0,0.0,0.0,0.0
+h005-namethisgame-s3,h005,,new-format CSV (nibi),NameThisGame-v5,3,ppo_chainsp,40000000,15616,2162.541015625,2099.836181640625,33770240.0,2280.0
+h012-solaris-s3,h012,,3-seed eval (nibi CSV) COMPLETES 15/15,Solaris-v5,3,ppo_aug,40000000,5760,2104.888916015625,1613.3333740234375,12124160.0,1400.0
+h028-doubledunk-s1,h028,,new-format CSV (narval),DoubleDunk-v5,1,ppo_aug_qr_value,40000000,20352,-17.836477279663086,-17.484275817871094,-363008.0,-18.0
+h029-breakout-s1,h029,,new-format CSV (fir),Breakout-v5,1,ppo_aug_qr_cvar,40000000,221184,1.4016203880310059,1.3564814329147339,310016.0,1.0
+h029-battlezone-s1,h029,,new-format CSV (narval),BattleZone-v5,1,ppo_aug_qr_cvar,40000000,35328,2507.246337890625,3014.49267578125,88576000.0,8000.0
+h029-privateeye-s1,h029,,new-format CSV (narval),PrivateEye-v5,1,ppo_aug_qr_cvar,40000000,14720,9.965217590332031,-9.843478202819824,146688.0,0.0

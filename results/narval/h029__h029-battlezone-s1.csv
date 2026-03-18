@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+BattleZone-v5,1,h029,h029-battlezone-s1,ppo_aug_qr_cvar,40000000,35328,2507.246337890625,3014.49267578125,88576000.0,8000.0

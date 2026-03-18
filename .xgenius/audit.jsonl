@@ -3848,3 +3848,16 @@
 {"timestamp": "2026-03-18T19:10:35Z", "action": "validate_command", "allowed": true, "reason": "", "command": "python cleanrl/ppo_atari_envpool_aug_consist.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h033 --experiment-id h033-venture-s1 --output-dir /runs", "cluster": "rorqual"}
 {"timestamp": "2026-03-18T19:10:35Z", "action": "validate_job", "allowed": true, "reason": "", "cluster": "rorqual", "gpus": 1, "gpu_type": "h100_1g.10gb", "cpus": 4, "memory": "16G", "walltime": "05:00:00"}
 {"timestamp": "2026-03-18T19:10:40Z", "action": "submit", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8556722", "experiment_id": "h033-venture-s1", "command": "python cleanrl/ppo_atari_envpool_aug_consist.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h033 --experiment-id h033-venture-s1 --output-dir /runs"}
+{"timestamp": "2026-03-18T19:47:24Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8556422"}
+{"timestamp": "2026-03-18T19:47:26Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533181"}
+{"timestamp": "2026-03-18T19:47:27Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533189"}
+{"timestamp": "2026-03-18T19:47:29Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533276"}
+{"timestamp": "2026-03-18T19:47:30Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533759"}
+{"timestamp": "2026-03-18T19:47:31Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10535002"}
+{"timestamp": "2026-03-18T19:47:33Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533765"}
+{"timestamp": "2026-03-18T19:47:34Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533767"}
+{"timestamp": "2026-03-18T19:47:35Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533774"}
+{"timestamp": "2026-03-18T19:47:37Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533783"}
+{"timestamp": "2026-03-18T19:47:38Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533789"}
+{"timestamp": "2026-03-18T19:47:39Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10533803"}
+{"timestamp": "2026-03-18T19:47:42Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28285670"}

@@ -2281,3 +2281,77 @@ On-policy SPR (self-predictive representations) adapted from off-policy ICLR 202
 5. Check h008 (LSTM) 3-seed eval — 14 jobs running
 6. If h031 + DrQ combo looks good, this could be the novel contribution: on-policy SPR + augmentation
 7. Monitor for completed jobs across all hypotheses
+
+---
+**[2026-03-18 19:50 UTC]**
+
+## Session 37: Process 3 Results, Complete h012 3-Seed, Cancel Stale Jobs
+
+### Triggered by: h028-enduro-s1 (fir SUCCESS)
+
+### Results Processed: 3 new entries (now 644 rows)
+- h028-enduro-s1: q4=0.0 (Enduro, TIE — baseline also 0). h028 pilot now 4/15: 1W/1L/2T (net 0). Breakout now LOSS (-29%) with new-format CSV.
+- h005-namethisgame-s3: q4=2099.84 (nibi). 3-seed avg=2114 vs baseline 2348 = -10.0%, borderline TIE. h005 standings unchanged at 3W/1L/11T (net +2).
+- h012-solaris-s3: q4=1613.33 (nibi). 3-seed avg=2159 vs baseline 2280 = -5.3%, TIE. **h012 NOW COMPLETE AT 15/15 3-SEED: 4W/1L/10T (net +3). CONFIRMED BEST PPO.**
+
+### h027 Lost Results: namethisgame-s1 and spaceinvaders-s1 completed but CSVs not saved (old output-dir /output bug). Can't recover. h027 stuck at 5/15 pilot with 3 pending on nibi.
+
+### Cancelled 13 Stale Jobs (freed ~5 nibi slots + 1 rorqual + 1 fir):
+- h012: 6 jobs (already at 15/15 3-seed — all duplicates)
+- h013: 4 jobs (closed hypothesis, 15/15 3-seed complete)
+- h026: 3 jobs (closed hypothesis, catastrophic results)
+
+### CURRENT STANDINGS (PPO, 3-seed where available)
+1. h012 (DrQ): 4W/1L/10T (net +3) — **COMPLETE 15/15 3-SEED** ★
+2. h031 (SPR): 3W/0L/0T (net +3) — 3/15 pilot, VERY PROMISING, 12 running
+3. h022 (QR-Value): 4W/1L/7T (net +3) — 12/15 pilot, 5 running + 2 pending
+4. h005 (CHAIN-SP): 3W/1L/11T (net +2) — 15 games (3 at 2 seeds), 3 running
+5. h007 (S&P): 3W/1L/11T (net +2) — COMPLETE 15/15 3-SEED
+6. h027 (DrQ+S&P): 3W/1L/1T (net +2) — 5/15 pilot, 3 pending
+7. h033 (DrQ+Consist NOVEL): 1W/0L/2T (net +1) — 3/15 pilot, 11+4 running
+8. h004 (PQN NaP): 3W/1L/11T (net +2) — PQN variant, complete
+9. h028 (DrQ+QR): 1W/1L/2T (net 0) — 4/15 pilot, 11 running
+10. h030 (SEM): 1W/1L/1T (net 0) — 3/15 pilot, 11+4 running
+11. h032 (NoisyNets): 1W/1L/1T (net 0) — 3/15 pilot, 11+4 running
+
+### ACTIVE JOBS: ~122 (108 running + 14 pending after cancellations)
+Running pilots: h028(8), h029(7), h030(11+4), h031(12+3), h032(11+4), h033(11+4)
+3-seed gaps: h005(3), h007(4+2), h008(13), h010(3), h011(5), h022(5+2)
+
+### KEY DECISIONS
+- NOT implementing new hypotheses this session — 6 full pilots in flight (h028-h033), need results before deciding next steps
+- If h031 (SPR) maintains net +3 at 8+ games → immediately formulate h034 (DrQ+SPR combination)
+- If h022 completes pilot ≥ net+3 → submit 3-seed eval
+- PPG (Phasic Policy Gradient) identified as next unexplored algorithmic paradigm — ppg_procgen.py exists, needs Atari adaptation
+
+### NEXT SESSION TODO
+1. Process h031 (SPR) pilot results — TOP PRIORITY. If 3W streak continues, fast-track DrQ+SPR combination
+2. Process h030/h032/h033 pilot results
+3. Complete h022 pilot (3 remaining: DoubleDunk, Phoenix, Solaris)
+4. Process h028/h029 combination pilot results
+5. Monitor h008 (LSTM) 3-seed — 13 still running, many have been timing out
+6. If h031 confirms: implement h034 (DrQ+SPR)
+7. Consider PPG Atari adaptation if compute allows
+8. Fill h005 remaining 3-seed gaps (alien-s3, doubledunk-s3, qbert-s2)
+
+---
+**[2026-03-18 19:51 UTC]**
+
+### ADDENDUM Session 37: Found 4 More Results During Commit Prep
+
+**h028-doubledunk-s1**: q4=-17.48 (TIE +2.3%). h028 pilot now 5/15: 1W/1L/3T (net 0). DrQ+QR without CVaR remains mediocre.
+
+**h029 (CVaR NOVEL) — 3 new games:**
+- breakout-s1: q4=1.36 (TIE)
+- battlezone-s1: q4=3014.49 (WIN +40%!)
+- privateeye-s1: q4=-9.84 (WIN +93%!)
+
+**h029 UPGRADED TO PROMISING: 6/15 pilot: 3W/0L/3T (net +3)**
+The CVaR advantage is adding BattleZone and PrivateEye wins that h028 (DrQ+QR alone) doesn't have. This validates the novel CVaR approach — risk-sensitive advantage estimation improves performance on games with high variance returns (BattleZone, PrivateEye).
+
+### REVISED RANKINGS
+1. h012 (DrQ): net +3, 15/15 3-seed COMPLETE ★
+2. h031 (SPR): net +3, 3/15 pilot (ALL wins) — highest potential
+3. h029 (CVaR NOVEL): net +3, 6/15 pilot — NO losses, strong
+4. h022 (QR-Value): net +3, 12/15 pilot
+5. h005/h007: net +2, complete
