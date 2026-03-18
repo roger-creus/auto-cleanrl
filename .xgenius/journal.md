@@ -3015,3 +3015,111 @@ h027(2), h029(2), h030(6), h031(7), h032(11), h033(14)
 4. h030/h031 will approach 15/15 — final ranking.
 5. After full pilots: formulate CVaR combinations (CVaR+SEM, CVaR+Dueling, CVaR+SPR).
 6. h029 3-seed is the CRITICAL next submission — the novel contribution.
+
+---
+**[2026-03-18 23:14 UTC]**
+
+## Session 50: h029 Pilot Complete — 3-Seed Submitted, h034/h035 Combinations Launched
+
+### Triggered by: h033-spaceinvaders-s1 (job 28287630, fir SUCCESS)
+
+### CRITICAL MILESTONE: h029 (CVaR) Pilot COMPLETE at 15/15 Games
+Processed final 2 missing games (enduro + spaceinvaders from nibi, both 'disappeared' but had valid SLURM logs):
+- h029-enduro-s1: q4=0.0 (TIE, same as PPO baseline)
+- h029-spaceinvaders-s1: q4=151.91 (vs PPO 150.2, +1.1% TIE)
+
+### h029 FINAL PILOT IQM HNS = 0.0065 (15/15 games, seed 1)
+Down from 0.0080 at 13/15 — adding neutral Enduro/SpaceInvaders diluted it.
+Still CLEAR #1 at 32.5x above PPO baseline.
+Per-game: 4W/2L/9T. Key wins: Amidar+1420%, BattleZone+28%, Solaris+19%, Phoenix+5%.
+Key losses: DoubleDunk (noisy HNS), NameThisGame (-3.8%).
+
+### SUBMITTED h029 3-SEED EVALUATION (30 jobs, seeds 2+3, all 15 games)
+Distributed across all 4 clusters. 5h walltime. This is the definitive test.
+
+### Other Results Processed
+- h033-spaceinvaders-s1: q4=157.99 (+7% vs PPO, modest positive). h033 IQM≈-0.0029 at 5/15g.
+- h032-amidar-s1 NEW-CODE: q4=0.0 CATASTROPHIC (replaces old-code q4=38.8). h032 IQM drops 0.0067→0.0030.
+
+### NEW HYPOTHESES IMPLEMENTED AND SUBMITTED
+- h034: PPO + CVaR + Dueling Architecture + DrQ — combines h029 (#1 IQM=0.0065) with h020 (#4 IQM=0.0038). Distributional value stream + advantage stream for policy logits. 15-game pilot submitted.
+- h035: PPO + CVaR + SEM + DrQ — combines h029 (#1) with h030 (#2 IQM=0.0048). Simplicial embeddings for structured sparse representations + CVaR value baseline. 15-game pilot submitted.
+
+### IQM HNS STANDINGS (updated)
+1. h029 (CVaR NOVEL): 0.0065 (15g) ★ PILOT COMPLETE, 3-SEED RUNNING
+2. h030 (SEM): 0.0048 (10g) — 4 running
+3. h020 (Dueling): 0.0038 (15g, COMPLETE)
+4. h008 (PQN LSTM): 0.0036 (15g, COMPLETE)
+5. h032 (NoisyNets): 0.0030 (6g) — dropped from Amidar catastrophe, 9 running
+6. h031 (SPR): 0.0015 (9g) — 7 running
+PPO baseline: 0.0002 (15g)
+
+### ACTIVE JOBS (94 total)
+h027(1), h029-3seed(30), h030(4), h031(7), h032(9), h033(13), h034(15), h035(15)
+
+### NEXT SESSION TODO
+1. Process h029 3-seed results as they arrive — definitive validation
+2. Process h034/h035 pilots — do CVaR combinations beat standalone CVaR?
+3. Complete h030/h031/h032/h033 pilots for final ranking
+4. If h034 or h035 beats h029 → submit 3-seed for the winner
+5. If neither beats h029 → h029 standalone is the paper's main result
+6. Begin thinking about Phase 3: ablation studies and paper narrative
+
+---
+**[2026-03-18 23:27 UTC]**
+
+## Session 51: Process 5 New Results — h032 Drops Below Baseline, h030 Gains BattleZone
+
+### Triggered by: h032-battlezone-s1 (job 10542807, nibi SUCCESS)
+
+### Results Processed: 5 new entries + 1 update (now 696 rows)
+- h032-battlezone-s1: new-code CSV q4=2168.72 (31104 episodes). BattleZone HNS=-0.0055. LOSS.
+- h032-namethisgame-s1: log-extracted q4=2016.75 (159 episodes, output-dir bug). NameThisGame HNS=-0.0479. LOSS.
+- h030-battlezone-s1: log-extracted q4=2446.15 (262 episodes, output-dir /output bug). BattleZone HNS=+0.0025. TIE.
+- h030-breakout-s1: UPDATED from old-code q4=0.88 to resubmission log-extracted q4=1.25 (1728 episodes). HNS=-0.0156. Still LOSS but less bad.
+- h027-mspacman-s1: log-extracted q4=259.46 (596 episodes, output-dir bug). HNS=-0.0072. TIE.
+- h032-spaceinvaders-s1: UPDATED with narval new-code CSV q4=164.85 (was 164.96 log-extracted, negligible change).
+
+### h032 (NoisyNets) DROPS BELOW BASELINE: IQM=-0.0008 (8g)
+Was +0.0030 at 6g, adding BattleZone (-0.0055 HNS) and NameThisGame (-0.0479 HNS) pushed it negative.
+Per-game: Phoenix -91% catastrophe dominates, only Breakout/MsPacman/SpaceInvaders positive.
+7 jobs remaining (3 running, 5 disappeared+resubmitted). Outlook is grim.
+
+### h030 (SEM) holds at IQM=0.0044 (11g)
+BattleZone added (slight positive). Breakout updated (less bad than before). 4 games remain.
+FAILURES: enduro TIMED OUT (resubmitted to nibi with 6h walltime), alien TIMED OUT (resubmitted to rorqual, running).
+2 still running: mspacman (nibi), montezumarevenge (nibi).
+
+### h027 (DrQ+S&P) drops to IQM=0.0016 (6g)
+MsPacman was slightly negative. Not worth further investment — components individually below baseline.
+
+### 7 Jobs Disappeared (reconcile)
+h032: alien(rorqual), enduro(narval), solaris(rorqual), doubledunk(rorqual), venture(nibi) — 5 h032 jobs gone.
+h031: montezumarevenge(nibi) — 1 job gone (MontezumaRevenge typically 0 anyway).
+h033: breakout(narval) — 1 job gone.
+Not resubmitting h032 disappearances — hypothesis below baseline, not worth it.
+
+### IQM HNS STANDINGS (updated)
+1. h029 (CVaR NOVEL): 0.0065 (15g) ★ PILOT COMPLETE, 3-SEED RUNNING (30 jobs, just started)
+2. h030 (SEM): 0.0044 (11g) — 4 running/resubmitted
+3. h020 (Dueling): 0.0038 (15g, COMPLETE)
+4. h008 (PQN LSTM): 0.0036 (15g, COMPLETE)
+5. h027 (DrQ+S&P): 0.0016 (6g) — 1 running
+6. h031 (SPR): 0.0015 (9g) — 7 running
+7. h032 (NoisyNets): -0.0008 (8g) — BELOW BASELINE, 3 running
+PPO baseline: 0.0002
+
+### ACTIVE JOBS (~84)
+h029 3-seed(30), h034 pilot(15), h035 pilot(15), h033(~9), h032(3), h031(7), h030(4), h027(1)
+h029/h034/h035 freshly started (~15-25 min elapsed on 5h walltime).
+h033 rorqual/narval jobs finishing in ~45min.
+
+### NEXT SESSION TODO
+1. Process h029 3-seed results — CRITICAL definitive validation (estimated completion ~5h from now).
+2. Process h034/h035 pilot results (also ~5h). If either beats h029 standalone → huge result.
+3. Process remaining h033 pilot (9 running, some finishing soon). Likely closing as dead end.
+4. Process h030 final 4 games. If IQM holds at 15/15 → solid #2 technique for combination.
+5. Process h031 remaining 7 games.
+6. h032 trending toward closure — wait for remaining 3 games to confirm.
+7. After h034/h035 results: if neither beats h029, formulate new combination ideas or novel directions.
+8. Consider PPO+LSTM, PPO+Lion optimizer, or attention mechanisms as unexplored directions.

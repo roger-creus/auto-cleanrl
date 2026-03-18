@@ -629,7 +629,7 @@ h007-alien-s3,h007,,3-seed gap (nibi),Alien-v5,3,ppo_sp,40000000.0,60672.0,195.0
 h013-alien-s3,h013,,3-seed gap (rorqual),Alien-v5,3,ppo_specnorm,40000000.0,59008.0,206.5726623535156,213.6659393310547,12189440.0,750.0
 h029-venture-s1,h029,,new-format CSV (narval),Venture-v5,1,ppo_aug_qr_cvar,40000000.0,17920.0,0.0,0.0,0.0,0.0
 h030-amidar-s1,h030,,"SEM Amidar s1 (narval, log-extracted q4=2.39, output-dir /output bug, replaces old-code entry)",Amidar-v5,1,ppo_sem,40000000.0,556.0,,2.39,,
-h030-breakout-s1,h030,,curve-derived q4 (nibi old-code),Breakout-v5,1,ppo_sem,40000000.0,36992.0,1.37,0.88,50688.0,0.0
+h030-breakout-s1,h030,,"SEM Breakout s1 (nibi resubmission, log-extracted q4=1.25, 1728 episodes, replaces old-code 0.88)",Breakout-v5,1,ppo_sem,40000000.0,1728.0,,1.25,,
 h030-qbert-s1,h030,,curve-derived q4 (fir old-code),Qbert-v5,1,ppo_sem,40000000.0,120192.0,154.53,153.19,18572800.0,150.0
 h031-amidar-s1,h031,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_spr,40000000.0,61568.0,2.58,2.56,158848.0,33.0
 h031-breakout-s1,h031,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_spr,40000000.0,145536.0,2.01,1.94,293120.0,0.0
@@ -684,9 +684,13 @@ h030-privateeye-s1,h030,,"SEM PrivateEye s1 (rorqual, log-extracted q4=58.43, ou
 h029-phoenix-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id Phoenix-v5 --seed 1,"CVaR Phoenix s1 (nibi new-format CSV, 32256 episodes) WIN +17%",Phoenix-v5,1,ppo_aug_qr_cvar,40000000.0,32256.0,771.9444580078125,933.6508178710938,24899840.0,1590.0
 h022-doubledunk-s1,h022,,"QR-Value DoubleDunk s1 (nibi, log-extracted q4=-18.62, output-dir /output bug, 165 episodes)",DoubleDunk-v5,1,ppo_qr_value,40000000.0,165.0,-18.13,-18.62,,
 h031-alien-s1,h031,,"SPR Alien s1 (fir, log-extracted q4=207.63, output-dir /output bug, old-code, 472 episodes)",Alien-v5,1,ppo_spr,40000000.0,472.0,197.63,207.63,,
-h032-spaceinvaders-s1,h032,,"NoisyLinear SpaceInvaders s1 (narval, log-extracted q4=164.96, output-dir bug, 551 episodes)",SpaceInvaders-v5,1,ppo_noisylinear,40000000.0,551.0,208.89,164.96,,
+h032-spaceinvaders-s1,h032,,"NoisyLinear SpaceInvaders s1 (narval new-code CSV, 70528 episodes)",SpaceInvaders-v5,1,ppo_noisylinear,40000000.0,70528.0,208.89,164.85,14732800.0,155.0
 h008-venture-s2,h008,,"pqn_lstm Venture s2 (nibi, log-extracted q4=0.00, output-dir /output bug, 184 episodes)",Venture-v5,2,pqn_lstm,40000000.0,184.0,0.0,0.0,,
 h033-mspacman-s1,h033,,new-code CSV (narval),MsPacman-v5,1,ppo_aug_consist,40000000.0,78080.0,75.25,70.0,5875200.0,70.0
 h029-enduro-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id Enduro-v5 --seed 1,"CVaR Enduro s1 (nibi new-format CSV, 11904 episodes) TIE",Enduro-v5,1,ppo_aug_qr_cvar,40000000.0,11904.0,0.0,0.0,0.0,0.0
 h029-spaceinvaders-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id SpaceInvaders-v5 --seed 1,"CVaR SpaceInvaders s1 (nibi new-format CSV, 78720 episodes)",SpaceInvaders-v5,1,ppo_aug_qr_cvar,40000000.0,78720.0,147.73170471191406,151.9105682373047,11629440.0,175.0
 h033-spaceinvaders-s1,h033,,"h033 SpaceInvaders s1 (fir new-code CSV, 79104 episodes)",SpaceInvaders-v5,1,ppo_aug_consist,40000000.0,79104.0,149.126220703125,157.9935302734375,11796480.0,290.0
+h032-battlezone-s1,h032,,"NoisyLinear BattleZone s1 (nibi new-code CSV, 31104 episodes)",BattleZone-v5,1,ppo_noisylinear,40000000.0,31104.0,2308.64,2168.72,71808000.0,1000.0
+h032-namethisgame-s1,h032,,"NoisyLinear NameThisGame s1 (nibi, log-extracted q4=2016.75, 159 episodes, output-dir bug)",NameThisGame-v5,1,ppo_noisylinear,40000000.0,159.0,,2016.75,,
+h030-battlezone-s1,h030,,"SEM BattleZone s1 (nibi, log-extracted q4=2446.15, 262 episodes, output-dir /output bug)",BattleZone-v5,1,ppo_sem,40000000.0,262.0,,2446.15,,
+h027-mspacman-s1,h027,,"DrQ+S&P MsPacman s1 (nibi, log-extracted q4=259.46, 596 episodes, output-dir /output bug)",MsPacman-v5,1,ppo_aug_sp,40000000.0,596.0,,259.46,,
