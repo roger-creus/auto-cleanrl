@@ -1649,3 +1649,66 @@ Pilots: h010(12), h011(12), h021(5), h022(7), h023(8), h024(9), h025(17), h026(1
 7. Still need to explore: off-policy (DQN/SAC-discrete), ensemble methods
 8. Investigate MsPacman systematic loss — this is the biggest open question
 9. Consider h026 (PQN+NaP+LSTM) results when they arrive
+
+---
+**[2026-03-18 16:14 UTC]**
+
+## Session 28: Process 6 Results + Resubmit 15 Disappeared Jobs
+
+### Triggered by: h018-montezumarevenge-s1 (nibi SUCCESS), h020-qbert-s1 (nibi SUCCESS)
+
+### Results Processed (1 new + 5 updated)
+New: h005-amidar-s2 (nibi, new-format q4=3.15) — fills 3-seed gap
+Updated to new-format:
+- h018-battlezone-s1: old=1000 → new=2463.77 (WIN +20% vs baseline)
+- h018-montezumarevenge-s1: confirmed q4=0 (no change)
+- h020-breakout-s1: old=3.0 → new=1.37 (TIE vs baseline)
+- h020-mspacman-s1: old=210 → new=252.50 (LOSS -21%)
+- h020-qbert-s1: old=150 → new=162.49 (TIE, matches baseline exactly)
+Total: 575 rows in experiments.csv
+
+### UPDATED STANDINGS
+
+**PPO techniques (3-seed data, new-format):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — CONFIRMED BEST
+2. h007 (S&P): 4W/2L/9T (net +2)
+3. h005 (CHAIN-SP): 2W/1L/9T (net +1) — Amidar confirmed WIN at 3 seeds (+29%)
+4. h013 (SpectNorm): 3W/2L/10T (net +1)
+5. h004 (PQN+NaP): 5W/1L/9T (net +4) — TIES with h012 for best overall
+
+**PPO pilots (new-format s1 data):**
+- h016 (Sparsity): 3W/2L/7T (net +1) at 15/15 — BattleZone +41%, PrivateEye +115%
+- h017 (SPO): 3W/2L/7T (net +1) at 15/15 — Breakout +11%, Phoenix +14%, Qbert +15%
+- h019 (Muon): 3W/1L/7T (net +2) at 14/15 — BattleZone +20%, Solaris +14%
+- h018 (ScheduleFree): 2W/3L/7T (net -1) — CLOSED
+- h020 (Dueling): 2W/4L/6T (net -2) — CLOSED
+
+**PPO Combinations (pilots, incomplete):**
+- h023 (SpectNorm+S&P): 2W/1L/5T (net +1) at 8/15 — 3 games resubmitted
+- h022 (QR-Value): 3W/2L/5T (net +1) at 10/15 — doubledunk resubmitted
+- h021 (SpectNorm+DrQ): 1W/1L/7T (net 0) at 11/15 — neutral
+- h024 (PFO): 2W/2L/3T (net 0) at 7/15 — 4 games resubmitted
+- h027 (DrQ+S&P): early, 12 running
+
+### Reconcile: 19 jobs disappeared from SLURM (no results pulled)
+Resubmitted 15 disappeared jobs (excluding closed h018/h025/h005-dup):
+- h004: mspacman-s3 (fir), battlezone-s2 (narval) — 3-seed gaps
+- h007: alien-s3 (rorqual), namethisgame-s3 (nibi), montezumarevenge-s3 (fir) — 3-seed gaps
+- h011: battlezone-s1 (narval), mspacman-s1 (rorqual) — pilot gaps
+- h022: doubledunk-s1 (nibi) — pilot gap
+- h023: solaris-s1 (fir), doubledunk-s1 (narval), venture-s1 (rorqual) — pilot gaps
+- h024: montezumarevenge-s1 (nibi), venture-s1 (rorqual), solaris-s1 (fir), breakout-s1 (narval) — pilot gaps
+
+### Active: ~241 jobs (162 running + 64 pending + 15 resubmitted)
+
+### Next Session TODO:
+1. Process 3-seed eval results for h005/h007/h008/h012/h013 as they complete
+2. Complete h022/h023/h024 pilots (resubmitted games arriving)
+3. Process h010/h011 IMPALA CNN pilots (resubmitted gaps + 7/9 still running)
+4. Process h027 (DrQ+S&P) pilot
+5. Close h021 if neutral trend holds (11/15, net 0)
+6. If h022 pilot completes strong: submit 3-seed eval
+7. h008 (PQN LSTM) 3-seed eval: 37 running — biggest batch, should start completing soon
+8. h026 (NaP+LSTM): 12 running
+9. Think about novel directions beyond combinations
+10. UNEXPLORED: off-policy (DQN/SAC), ensemble methods, PPG, noisy nets

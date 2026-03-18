@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Phoenix-v5,1,h025,h025-phoenix-s1,ppo_dualv,40000000,33792,781.2120971679688,800.4545288085938,26398720.0,580.0
+Breakout-v5,1,h020,h020-breakout-s1,ppo_duel,40000000,224256,1.3413242101669312,1.3652968406677246,300800.0,2.0

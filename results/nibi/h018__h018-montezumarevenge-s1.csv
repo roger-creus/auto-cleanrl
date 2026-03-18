@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Phoenix-v5,1,h025,h025-phoenix-s1,ppo_dualv,40000000,33792,781.2120971679688,800.4545288085938,26398720.0,580.0
+MontezumaRevenge-v5,1,h018,h018-montezumarevenge-s1,ppo_schedulefree,40000000,70272,0.0,0.0,0.0,0.0
