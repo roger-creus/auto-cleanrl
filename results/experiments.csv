@@ -676,3 +676,5 @@ h008-spaceinvaders-s2,h008,,"pqn_lstm SpaceInvaders s2 (nibi, log-extracted q4=1
 h029-alien-s1,h029,,"CVaR Alien s1 (rorqual new-format CSV, 58496 episodes)",Alien-v5,1,ppo_aug_qr_cvar,40000000,58496,204.90,228.34,11985920.0,150.0
 h031-breakout-s1,h031,,"SPR Breakout s1 (narval new-code CSV, 145536 episodes) CONFIRMS WIN",Breakout-v5,1,ppo_spr,40000000,145536,2.01,1.94,,
 h031-spaceinvaders-s1,h031,,"SPR SpaceInvaders s1 (fir, log-extracted q4=150.10, output-dir /output bug)",SpaceInvaders-v5,1,ppo_spr,40000000,615,,150.10,,
+h030-namethisgame-s1,h030,,"SEM NameThisGame s1 (rorqual, log-extracted q4=2136.67, output-dir /output bug, 120 episodes)",NameThisGame-v5,1,ppo_sem,40000000,120,,2136.67,,
+h032-phoenix-s1,h032,,"NoisyLinear Phoenix s1 (narval new-code CSV, q4=74.65, 62208 episodes) CATASTROPHIC LOSS -91%",Phoenix-v5,1,ppo_noisylinear,40000000,62208,73.54,74.65,4574720.0,60.0

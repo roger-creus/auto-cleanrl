@@ -2741,3 +2741,56 @@ h008(1), h022(1), h027(3), h029(3), h030(10), h031(7), h032(15), h033(15)
    - These combinations would be the novel contribution.
 6. h030 (SEM) completion — currently modest net+1.
 
+
+---
+**[2026-03-18 21:46 UTC]**
+
+## Session 45: Process 2 New Results — h032 Phoenix CATASTROPHIC, h030 NameThisGame TIE
+
+### Triggered by: h032-phoenix-s1 (job 57959559, narval SUCCESS)
+
+### Results Processed: 2 new entries (now 681 rows)
+- h032-phoenix-s1: new-code CSV q4=74.65 (62208 episodes). vs PPO baseline 796 → -90.6% CATASTROPHIC LOSS. NoisyLinear destroys Phoenix learning.
+- h030-namethisgame-s1: log-extracted q4=2136.67 (rorqual, output-dir /output bug, 120 episodes). vs PPO baseline 2348 → -9.0% TIE.
+
+### h032 (NoisyLinear) WORSENS: 0W/2L/1T (net -2)
+4/15 pilot (3 reliable games + Phoenix new-code). LOSSES: Phoenix -91% (catastrophic), Breakout -36%. TIE: Qbert. Amidar old-format excluded.
+Phoenix q4=74.65 is astonishingly bad — agent barely learns. NoisyNets parametric noise may be overwhelming policy gradient signal.
+14 new-code jobs still running. Need to see full pilot but outlook is grim.
+
+### h030 (SEM) Gains NameThisGame TIE
+8/15 pilot: 2W/1L/5T (net +1). Modest. NameThisGame -9% is borderline TIE.
+8 running + mspacman pending (resubmitted to nibi).
+
+### No New Data for h031/h029/h033
+- h031 (SPR): 7 running. Still 2W/0L/5T (net +2, zero losses) at 9/15 pilot.
+- h029 (CVaR): 3 running (enduro, phoenix, spaceinvaders). Still 4W/1L/7T (net +3) at 12/15.
+- h033 (DrQ+Consistency): 15 running. Only 0W/0L/2T at 2 reliable games.
+
+### CURRENT STANDINGS (PPO techniques)
+1. h012 (DrQ): 4W/1L/10T (net +3) — COMPLETE 15/15 3-SEED ★ PROVEN BEST
+2. h029 (CVaR NOVEL): 4W/1L/7T (net +3) — 12/15 pilot ★ TIED FOR BEST
+3. h031 (SPR NOVEL): 2W/0L/5T (net +2) — 9/15 new-code, ZERO LOSSES ★
+4. h022 (QR-Value): 4W/2L/8T (net +2) — 14/15 pilot
+5. h007 (S&P): 4W/2L/9T (net +2) — COMPLETE 15/15 3-SEED
+6. h030 (SEM): 2W/1L/5T (net +1) — 8/15 pilot
+7. h005 (CHAIN-SP): 3W/2L/10T (net +1) — mostly 3-seed
+8. h033 (DrQ+Consistency): 0W/0L/2T (net 0) — 2 reliable games
+9. h032 (NoisyLinear): 0W/2L/1T (net -2) — 4/15 pilot, CATASTROPHIC PHOENIX
+
+PQN: h008 (LSTM): 7W/5L/3T (net +2, 1 running). h004 (NaP): 3W/1L/11T (net +2).
+
+### 53 ACTIVE JOBS
+h008(1), h022(1), h027(3), h029(3), h030(8+1pending), h031(7), h032(14), h033(15)
+
+### NEXT SESSION TODO
+1. Process h031 pilot results — TOP PRIORITY. 7 still running. Zero losses at 9/15 is remarkable.
+2. Process h029 final 3 games. If net+3 holds at 15/15 → submit 3-seed eval.
+3. Process h032/h033 full pilots. h032 likely heading for closure given catastrophic Phoenix.
+4. Complete h022 pilot (DoubleDunk). If net≥+2 at 15/15 → submit 3-seed eval.
+5. If h031 confirms net+2+ AND h029 confirms net+3:
+   - h034: DrQ + SPR (on-policy representation learning)
+   - h035: CVaR + SPR (risk-sensitive + predictive representations)
+   - These combinations could be the novel paper contribution.
+6. If h032 collapses across multiple games → close as dead end.
+
