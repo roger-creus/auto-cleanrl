@@ -635,8 +635,8 @@ h031-amidar-s1,h031,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_spr,400000
 h031-breakout-s1,h031,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_spr,40000000,145536,2.01,1.94,293120.0,0.0
 h031-qbert-s1,h031,,"SPR Qbert s1 (narval NEW CODE, log-extracted q4=162.61, replaces old-code q4=198.85)",Qbert-v5,1,ppo_spr,40000000,122240,,162.61,,
 h032-amidar-s1,h032,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_noisylinear,40000000,65280,36.26,38.80,2367232.0,34.0
-h032-breakout-s1,h032,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_noisylinear,40000000,120832,2.25,0.90,271616.0,1.0
-h032-qbert-s1,h032,,curve-derived q4 (rorqual old-code),Qbert-v5,1,ppo_noisylinear,40000000,114304,169.37,165.45,19360000.0,150.0
+h032-breakout-s1,h032,,"NoisyLinear Breakout s1 (fir new-code CSV, 191360 episodes) replaces old-code 0.90",Breakout-v5,1,ppo_noisylinear,40000000,191360,2.08,1.98,398720.0,3.0
+h032-qbert-s1,h032,,"NoisyLinear Qbert s1 (fir new-code CSV, 114432 episodes) replaces old-code 165.45",Qbert-v5,1,ppo_noisylinear,40000000,114432,133.42,125.0,15267200.0,125.0
 h033-amidar-s1,h033,,curve-derived q4 (rorqual old-code),Amidar-v5,1,ppo_aug_consist,40000000,64640,30.64,33.96,1980672.0,31.0
 h033-breakout-s1,h033,,curve-derived q4 (fir old-code),Breakout-v5,1,ppo_aug_consist,40000000,73856,1.47,1.28,108800.0,5.0
 h033-qbert-s1,h033,,curve-derived q4 (narval old-code),Qbert-v5,1,ppo_aug_consist,40000000,117120,154.81,154.15,18131200.0,150.0
@@ -678,3 +678,6 @@ h031-breakout-s1,h031,,"SPR Breakout s1 (narval new-code CSV, 145536 episodes) C
 h031-spaceinvaders-s1,h031,,"SPR SpaceInvaders s1 (fir, log-extracted q4=150.10, output-dir /output bug)",SpaceInvaders-v5,1,ppo_spr,40000000,615,,150.10,,
 h030-namethisgame-s1,h030,,"SEM NameThisGame s1 (rorqual, log-extracted q4=2136.67, output-dir /output bug, 120 episodes)",NameThisGame-v5,1,ppo_sem,40000000,120,,2136.67,,
 h032-phoenix-s1,h032,,"NoisyLinear Phoenix s1 (narval new-code CSV, q4=74.65, 62208 episodes) CATASTROPHIC LOSS -91%",Phoenix-v5,1,ppo_noisylinear,40000000,62208,73.54,74.65,4574720.0,60.0
+h032-mspacman-s1,h032,,"NoisyLinear MsPacman s1 (fir new-code CSV, 65920 episodes) WIN +14%",MsPacman-v5,1,ppo_noisylinear,40000000,65920,344.39,365.01,22702080.0,520.0
+h030-doubledunk-s1,h030,,"SEM DoubleDunk s1 (fir, log-extracted q4=-18.40, output-dir /output bug, 160 episodes)",DoubleDunk-v5,1,ppo_sem,40000000,160,,-18.40,,
+h030-privateeye-s1,h030,,"SEM PrivateEye s1 (rorqual, log-extracted q4=58.43, output-dir /output bug, 115 episodes)",PrivateEye-v5,1,ppo_sem,40000000,115,,58.43,,

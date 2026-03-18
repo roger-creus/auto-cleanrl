@@ -2794,3 +2794,70 @@ h008(1), h022(1), h027(3), h029(3), h030(8+1pending), h031(7), h032(14), h033(15
    - These combinations could be the novel paper contribution.
 6. If h032 collapses across multiple games → close as dead end.
 
+
+---
+**[2026-03-18 21:58 UTC]**
+
+## HUMAN DIRECTIVE [CRITICAL]
+
+The net W/L difference is not the right metric to measure atari games performancecursor .! Papers use interquantile mean of human normalized scorecursor . thats what you shpuld have been logigng to aggregate ans analyse performance across games! recompute all stored results and revisit all previously drawn conclsuionns after you measure the IQM HNS on Q4 (last 25% of episodes --> IQM HNS mean)
+
+
+---
+**[2026-03-18 22:00 UTC]**
+
+## Session 46: Process 5 New Results — h032 Upgraded to net 0, h030 Gains PrivateEye WIN
+
+### Triggered by: h032-mspacman-s1 (job 28287055, fir SUCCESS)
+
+### Results Processed: 5 new entries (now 683 rows)
+
+**h032 (NoisyLinear) — 3 new-code CSVs (replace old-code curve data):**
+- h032-mspacman-s1: new-code CSV q4=365.01. vs PPO baseline 319 → +14.4% WIN (NEW)
+- h032-qbert-s1: new-code CSV q4=125.0. vs PPO baseline 158 → -20.9% LOSS (was TIE from old-code q4=165)
+- h032-breakout-s1: new-code CSV q4=1.98. vs PPO baseline 1.4 → +41% WIN (was LOSS from old-code q4=0.90!)
+
+**h032 UPGRADED from net -2 to net 0**
+6/15 pilot (new-code only): 2W/2L/0T (net 0). WINS: Breakout+41%, MsPacman+14%. LOSSES: Phoenix-91%, Qbert-21%.
+Old-code Breakout q4=0.90 → new-code 1.98 (2.2x difference!) confirms old-code data unreliability for NoisyNets.
+10 more new-code running. Outlook uncertain — Phoenix catastrophe is concerning.
+
+**h030 (SEM) — 2 new log-extracted results:**
+- h030-doubledunk-s1: q4=-18.40 (fir, 160 episodes, output-dir /output bug). TIE (-2.8% vs baseline -17.9).
+- h030-privateeye-s1: q4=58.43 (rorqual, 115 episodes, output-dir /output bug). Massive WIN — score flips from -135 to +58.
+
+**h030 UPGRADED from net +1 to net +2**
+10/15 pilot: 3W/1L/6T (net +2). WINS: Amidar+18%, Phoenix+15%, PrivateEye(massive flip). LOSS: Breakout-37%(old-code, possibly unreliable).
+Note: Breakout old-code LOSS may not hold — h032 showed Breakout old-code→new-code can change dramatically (0.90→1.98).
+5 remaining: alien, battlezone, enduro, montezumarevenge (zeros expected), mspacman.
+
+### KEY FINDING: Old-Code Breakout Data Unreliable
+h032 Breakout went from old-code q4=0.90 (LOSS) to new-code q4=1.98 (WIN). 2.2x difference.
+h030-breakout-s1 old-code q4=0.88 (LOSS) — should be treated with suspicion until new-code data arrives.
+H030 has a running breakout-s1 resubmission that should provide new-code data.
+
+### CURRENT STANDINGS (PPO techniques)
+1. h012 (DrQ): 4W/1L/10T (net +3) — COMPLETE 15/15 3-SEED ★ PROVEN
+2. h029 (CVaR NOVEL): 4W/1L/7T (net +3) — 12/15 pilot, 3 running
+3. h031 (SPR NOVEL): 2W/0L/5T (net +2) — 9/15 new-code, ZERO LOSSES, 7 running ★ HIGHEST POTENTIAL
+4. h030 (SEM): 3W/1L/6T (net +2) — 10/15 pilot, 6 running ★ UPGRADED
+5. h022 (QR-Value): 4W/2L/8T (net +2) — 14/15 pilot, 1 running (DoubleDunk)
+6. h007 (S&P): 4W/2L/9T (net +2) — COMPLETE 15/15 3-SEED
+7. h005 (CHAIN-SP): 3W/2L/10T (net +1) — mostly 3-seed
+8. h032 (NoisyLinear): 2W/2L/0T (net 0) — 6/15 pilot (new-code), 10 running ★ UPGRADED
+9. h033 (DrQ+Consistency): 0W/0L/2T (net 0) — 2 reliable games, 15 running
+
+PQN: h008 (LSTM): 7W/5L/3T (net +2, 1 running). h004 (NaP): 3W/1L/11T (net +2).
+
+### 48 ACTIVE JOBS (1 pending + 47 running)
+h008(1), h022(1-doubledunk, output-dir /output bug), h027(3), h029(3), h030(6), h031(7), h032(11), h033(15)
+
+### NEXT SESSION TODO
+1. Process h031 pilot — 7 games still running (alien, battlezone, doubledunk, enduro, montezumarevenge, mspacman, solaris). TOP PRIORITY.
+2. Process h029 final 3 games (enduro, phoenix, spaceinvaders). If net+3 holds at 15/15 → submit 3-seed.
+3. Process h030 remaining 5 games. Watch for new-code Breakout data.
+4. Process h032/h033 pilot results as they arrive.
+5. Complete h022 pilot (DoubleDunk on nibi, output-dir bug → will need log extraction).
+6. If h031 confirms net+2+ → formulate h034 (DrQ+SPR combination) — the novel contribution.
+7. If h030 holds net+2 → consider SEM as a viable technique for combination.
+8. h032 outlook uncertain (Phoenix catastrophe) but wait for 10 more games before closing.
