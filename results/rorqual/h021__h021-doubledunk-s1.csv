@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+DoubleDunk-v5,1,h021,h021-doubledunk-s1,ppo_specnorm_aug,40000000,20480,-17.887500762939453,-18.200000762939453,-366336.0,-16.0

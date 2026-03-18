@@ -1523,3 +1523,68 @@ Total: 550 rows.
 8. When h012/h013 3-seed evals complete, compute definitive rankings
 9. Close h019 when remaining 4 games complete
 10. CRITICAL: If h022 confirms strong, plan h022+h012 combination (QR-Value + DrQ)
+
+---
+**[2026-03-18 15:43 UTC]**
+
+## Session 26: Process 12 New Results + Updated Pilot Standings
+
+### Triggered by: h021-enduro-s1 (rorqual), h021-breakout-s1 (fir), h022-battlezone-s1 (fir) SUCCESS
+
+### Results Processed
+9 new entries + 3 updated (old->new format) in experiments.csv (now 560 rows).
+
+**New entries:**
+- h021: +5 new-format results (battlezone q4=1970, breakout q4=1.39, doubledunk q4=-18.2, enduro q4=0, montezumarevenge q4=0)
+- h022: +2 (battlezone q4=2579 WIN +26%, enduro q4=0)
+- h023: +2 (battlezone q4=2860 WIN +39%, montezumarevenge q4=0)
+- h019: +1 (venture q4=0)
+
+**Updated entries:**
+- h021-breakout-s1: old-format q4=0 -> new-format q4=1.39 (was incorrectly classified as catastrophic loss!)
+- h023-breakout-s1: old -> new-format q4=1.30
+- h024-amidar-s1: old-format mean_return=31 -> new-format q4=2.04
+
+**CRITICAL FIX:** h021-amidar-s1 had old-format mean_return_last_25=31.0 being compared to q4 baselines. Cleared q4 field — unreliable until new-format CSV arrives. h021 Breakout was NOT catastrophic (old-format gave 0, new-format shows 1.39 = TIE).
+
+### UPDATED PILOT STANDINGS
+
+**h023 (SpectNorm+S&P): 3W/0L/3T (net +3) at 6/15 — MOST PROMISING**
+- WINS: Amidar +55%, BattleZone +39%, Qbert +42%
+- ZERO LOSSES
+- 6 running + 4 pending
+
+**h022 (QR-Value): 3W/1L/3T (net +2) at 7/15 — STRONG**
+- WINS: BattleZone +26%, Breakout +60%, PrivateEye +165%
+- LOSS: Qbert -10% (borderline)
+- Breakout +60% is UNIQUE — no other hypothesis achieves this
+- 3 running + 4 pending
+
+**h021 (SpectNorm+DrQ): 1W/0L/7T (net +1) at 8/15 — NEUTRAL**
+- Only Breakout WIN (+11%), everything else TIE
+- Combination underperforms individual techniques
+
+**h024 (PFO): 2W/2L/1T (net 0) at 5/15 — NEUTRAL**
+- Amidar +51%, Phoenix +12%, but MsPacman -16%, PrivateEye -46%
+
+**h019 (Muon): CLOSED — 3W/2L/10T (net +1) at 15/15**
+- Complete pilot. Weak positive. PrivateEye LOSS is unusual.
+
+### KEY FINDINGS
+1. h023 maintains zero-loss streak with BattleZone +39% (best single-game gain for any combination)
+2. h022 adds BattleZone +26% to its Breakout/PrivateEye wins
+3. h021 was NOT catastrophically bad — old-format data gave false Breakout=0. Real data shows neutral.
+4. Triple combination strategy: if h023 confirms, submit h023+DrQ (SpectNorm+S&P+DrQ)
+
+### Active: ~265 jobs (173 running + 92 pending)
+Still waiting for: h022/h023/h024 pilots, h027 (DrQ+S&P) pilot, h010/h011 IMPALA, 3-seed evals (h005/h007/h008/h012/h013), h026 (NaP+LSTM)
+
+### Next Session TODO
+1. Process h022/h023 remaining pilot results — if h023 stays zero-loss, IMMEDIATELY submit 3-seed eval
+2. Process h027 (DrQ+S&P) pilot results
+3. If h023 3-seed confirmed strong: create h028 = SpectNorm+S&P+DrQ (triple plasticity+augmentation)
+4. If h022 confirms strong: create h029 = QR-Value+DrQ (distributional+augmentation)
+5. Close h021 if neutral trend continues, close h024 if neutral
+6. Process 3-seed eval results for h005/h007/h008/h012/h013
+7. Check h010/h011 IMPALA CNN pilots
+8. Still unexplored: PPG, SPR, off-policy, noisy nets, ensemble methods
