@@ -2456,3 +2456,61 @@ Incomplete pilots: h022(5), h027(3)
 6. Consider PPG (Phasic Policy Gradient) Atari adaptation
 7. Close h027 if pilot stays at net+2 with only 5/15 games (lost results)
 
+
+---
+**[2026-03-18 20:28 UTC]**
+
+## Session 40: Process h008-qbert-s2, Cancel Duplicates, Frees Compute
+
+### Triggered by: h008-qbert-s2 (job 8546483, rorqual SUCCESS)
+
+### h008-qbert-s2 Result
+- Job completed training to 40M steps but CRASHED saving CSV: output-dir /output is read-only (old bug)
+- Extracted q4=223.93 from SLURM log (931 episodes logged, q4 over last 233)
+- PQN baseline Qbert q4=150 → +49% WIN. Consistent with seed 1 (q4=193.88, +29%)
+- h008 Qbert 2-seed avg: 208.9 vs baseline 150 (+39%)
+- ALL h008 s2/s3 jobs (47 running) have --output-dir /output bug. Will need log extraction for all.
+
+### h008 Updated Standings vs PQN Baseline (mostly 1-seed pilot)
+8W/3L/4T (net +5) — STRONGEST hypothesis overall!
+WINS: Alien+60%, Breakout+72%, DoubleDunk+22%, MsPacman+85%, Phoenix(vs 0), PrivateEye(vs -12), Qbert+39%(2s), Solaris+309%
+LOSSES: Amidar-29%, NameThisGame-13%, SpaceInvaders-29%
+
+### Duplicate Job Cleanup: 24 cancelled
+- 16 h022 duplicate jobs (results already exist for 13/15 games)
+- 8 h029 duplicate jobs (results already exist for 8/15 games)
+- Background agent cancelling more duplicates for h005/h007/h010/h011
+
+### No New Pilot Data for h030-h033
+- Still at 3/15 each (amidar, breakout, qbert from curve files)
+- 13-15 jobs each still running across all 4 clusters
+- h031 (SPR): 3W/0L net +3 — highest potential, waiting for more games
+
+### CURRENT STANDINGS
+**PPO variants (vs PPO baseline):**
+1. h031 (SPR): 3W/0L/0T (net +3) — 3/15 pilot, ALL WINS, HIGHEST POTENTIAL ★
+2. h012 (DrQ): 4W/1L/10T (net +3) — COMPLETE 15/15 3-SEED ★
+3. h022 (QR-Value): 3W/1L/9T (net +2) — 13/15 pilot
+4. h007 (S&P): 4W/2L/9T (net +2) — COMPLETE 15/15 3-SEED
+5. h029 (CVaR NOVEL): 2W/1L/4T (net +1) — 8/15 pilot
+6. h005 (CHAIN-SP): 3W/2L/10T (net +1) — mostly 3-seed
+7. h033 (DrQ+Consistency): 1W/0L/2T (net +1) — 3/15 pilot
+8. h030 (SEM): 1W/1L/1T (net 0) — 3/15 pilot
+9. h032 (NoisyNets): 1W/1L/1T (net 0) — 3/15 pilot
+
+**PQN variants (vs PQN baseline):**
+1. h008 (PQN+LSTM): 8W/3L/4T (net +5) — 15/15 pilot, 3-seed running ★★
+
+### Active Jobs After Cleanup: ~71 (24+ cancelled)
+Running pilots: h029(7), h030(15), h031(13), h032(13), h033(13)
+3-seed evals: h005(~1), h007(~4), h008(12), h010(3), h011(5)
+Incomplete: h022(~4 doubledunk+solaris), h027(3)
+
+### NEXT SESSION TODO
+1. Process h031 pilot results — TOP PRIORITY. If net +3 holds at 8+ games, implement h034 (DrQ+SPR)
+2. Process h030/h032/h033 pilot results as they complete
+3. Complete h029 pilot (7 remaining)
+4. Complete h022 pilot (doubledunk, solaris)
+5. Extract h008 s2/s3 q4 from SLURM logs as they complete
+6. Consider PPG (Phasic Policy Gradient) Atari adaptation as next paradigm to explore
+7. If h031 + DrQ combo (h034) looks good, this could be the novel contribution: on-policy SPR + augmentation

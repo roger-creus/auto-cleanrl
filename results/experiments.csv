@@ -654,3 +654,4 @@ h028-spaceinvaders-s1,h028,python cleanrl/ppo_aug_qr_value.py --env-id SpaceInva
 h029-mspacman-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id MsPacman-v5 --seed 1,"MsPacman s1, fir new-format CSV, 78720 episodes",MsPacman-v5,1,,40000000,78720,272.3739929199219,284.3251953125,21441280.0,280.0
 h022-phoenix-s1,h022,,new-format CSV (fir),Phoenix-v5,1,ppo_qr_value,40000000,28928,737.5220947265625,850.4425048828125,21335040.0,280.0
 h028-montezumarevenge-s1,h028,,new-format CSV (rorqual),MontezumaRevenge-v5,1,ppo_aug_qr_value,40000000,72960,0.0,0.0,0.0,0.0
+h008-qbert-s2,h008,,"pqn_lstm Qbert-v5 seed 2 (rorqual, log-extracted, output-dir /output bug)",Qbert-v5,2,pqn_lstm,40000000,931,,223.93,,
