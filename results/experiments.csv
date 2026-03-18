@@ -29,3 +29,9 @@ PrivateEye-v5_s3,h001,python cleanrl/ppo_atari_envpool.py --env-id PrivateEye-v5
 Venture-v5_s1,h002,python cleanrl/pqn_atari_envpool.py --env-id Venture-v5 --seed 1,PQN baseline Venture-v5 seed 1 (fir),Venture-v5,1,pqn,40000000,24576,0.0,0.0,0.0,0.0
 DoubleDunk-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id DoubleDunk-v5 --seed 3,PQN baseline DoubleDunk-v5 seed 3 (fir),DoubleDunk-v5,3,pqn,40000000,7424,-22.758621215820312,-24.0,-168960.0,-24.0
 DoubleDunk-v5_s2,h002,python cleanrl/pqn_atari_envpool.py --env-id DoubleDunk-v5 --seed 2,PQN baseline DoubleDunk-v5 seed 2 (nibi),DoubleDunk-v5,2,pqn,40000000,7680,-22.766666412353516,-24.0,-174848.0,-24.0
+Amidar-v5_s1,h001,python cleanrl/ppo_atari_envpool.py --env-id Amidar-v5 --seed 1,PPO baseline Amidar-v5 seed 1 (rorqual),Amidar-v5,1,ppo,40000000,71552,2.3237924575805664,2.039355993270874,166272.0,5.0
+Phoenix-v5_s1,h001,python cleanrl/ppo_atari_envpool.py --env-id Phoenix-v5 --seed 1,PPO baseline Phoenix-v5 seed 1 (fir),Phoenix-v5,1,ppo,40000000,30336,807.7637329101562,892.4894409179688,24504320.0,1450.0
+SpaceInvaders-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id SpaceInvaders-v5 --seed 3,PQN baseline SpaceInvaders-v5 seed 3 (fir),SpaceInvaders-v5,3,pqn,40000000,69248,274.14971923828125,288.1145935058594,18984320.0,270.0
+Venture-v5_s1,h001,python cleanrl/ppo_atari_envpool.py --env-id Venture-v5 --seed 1,PPO baseline Venture-v5 seed 1 (fir),Venture-v5,1,ppo,40000000,18304,0.0,0.0,0.0,0.0
+Phoenix-v5_s2,h001,python cleanrl/ppo_atari_envpool.py --env-id Phoenix-v5 --seed 2,PPO baseline (rorqual),Phoenix-v5,2,ppo,40000000,40064,742.7476196289062,760.8945922851562,29757440.0,380.0
+BattleZone-v5_s2,h002,python cleanrl/pqn_atari_envpool.py --env-id BattleZone-v5 --seed 2,PQN baseline (fir),BattleZone-v5,2,pqn,40000000,27904,2958.715576171875,3064.22021484375,82560000.0,1000.0

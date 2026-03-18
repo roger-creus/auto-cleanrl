@@ -1,0 +1,2 @@
+env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
+MsPacman-v5,3,40000000,210.00,0.00,78208,8926,h002B,h002B-mspacman-s3

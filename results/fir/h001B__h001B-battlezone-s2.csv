@@ -1,0 +1,2 @@
+env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
+BattleZone-v5,2,40000000,3000.00,0.00,35328,9347,h001B,h001B-battlezone-s2

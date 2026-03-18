@@ -82,3 +82,42 @@ But single seeds are noisy — need full 3-seed results before conclusions.
 2. When complete: full analysis with 3-seed stats per game
 3. Begin Phase 2 implementation starting with most promising directions
 4. Consider fixing the return metric (accumulate across lives) for Phase 2 scripts
+
+---
+**[2026-03-18 05:36 UTC]**
+
+## Session 2 Final Summary (closing at 36/90 results)
+
+### Baselines collected: 36/90 (PPO 17/45, PQN 19/45)
+- All nibi jobs completed (many 'disappeared' from SLURM but all had valid CSV results)
+- Jobs completing at ~2h walltime each, remaining ~54 jobs across rorqual/narval/fir
+- 1 resubmitted job (Phoenix-v5_s3 h001 on narval) — original also completed
+
+### Return Metric Issue (IMPORTANT):
+RecordEpisodeStatistics resets on infos['terminated'] which fires on every life loss.
+So info['r'] gives LAST-LIFE unclipped Atari return, not full-game return.
+All algorithms have same bias — relative comparisons are valid. Documented in experiments.csv.
+
+### Preliminary PPO vs PQN (12 games, mostly 1 seed):
+Score: PPO 3 / PQN 7 / Tie 2
+- PPO dominates: Phoenix (9x), NameThisGame (1.6x), DoubleDunk
+- PQN dominates: Amidar (15x), SpaceInvaders (2x), plus several marginal wins
+- Both fail: Breakout, MontezumaRevenge, Venture, Enduro (all ~0)
+
+### Phase 2 Scripts Prepared (NOT submitted yet — waiting for baselines):
+- h003: PPO + LayerNorm (ppo_atari_envpool_layernorm.py)
+- h004: PQN + NaP weight projection (pqn_atari_envpool_nap.py) 
+- h005: PPO + LayerNorm + CHAIN-SP (ppo_atari_envpool_chainsp.py)
+All scripts synced to all 4 clusters.
+
+### Literature Research:
+- CHAIN-SP paper: CHAIN + LayerNorm most effective for PPO plasticity on Atari
+- Plasticine benchmark: 13+ methods; normalization + churn reduction = best
+- On-policy plasticity: soft shrink+perturb + LayerNorm optimal
+- CReLU and Plasticity Injection FAILED in on-policy settings (avoid these)
+
+### Next Session TODO:
+1. Process remaining ~54 baseline results
+2. Full 3-seed analysis when baselines complete
+3. Submit Phase 2 pilots (h003/h004/h005) — 15 games x 1 seed each
+4. Consider additional hypotheses: network sparsity, SPR aux loss, RND for hard-exploration games

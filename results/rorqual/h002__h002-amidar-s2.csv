@@ -1,0 +1,2 @@
+env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
+Amidar-v5,2,40000000,32.00,0.00,64768,8276,h002,h002-amidar-s2
