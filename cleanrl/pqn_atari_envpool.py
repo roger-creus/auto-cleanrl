@@ -1,4 +1,5 @@
 # docs and experiment results can be found at https://docs.cleanrl.dev/rl-algorithms/pqn/#pqn_atari_envpoolpy
+import csv
 import os
 import random
 import time
@@ -64,6 +65,14 @@ class Args:
     """the fraction of `total_timesteps` it takes from start_e to end_e"""
     q_lambda: float = 0.65
     """the lambda for the Q-Learning algorithm"""
+
+    # results tracking
+    hypothesis_id: str = "h000"
+    """hypothesis identifier for results tracking"""
+    experiment_id: str = ""
+    """experiment identifier (auto-generated if empty)"""
+    output_dir: str = "/runs"
+    """directory to save CSV results"""
 
     # to be filled in runtime
     batch_size: int = 0
@@ -148,6 +157,8 @@ if __name__ == "__main__":
     args.batch_size = int(args.num_envs * args.num_steps)
     args.minibatch_size = int(args.batch_size // args.num_minibatches)
     args.num_iterations = args.total_timesteps // args.batch_size
+    if not args.experiment_id:
+        args.experiment_id = f"{args.env_id}_s{args.seed}"
     run_name = f"{args.env_id}__{args.exp_name}__{args.seed}__{int(time.time())}"
     if args.track:
         import wandb
@@ -175,21 +186,14 @@ if __name__ == "__main__":
 
     device = torch.device("cuda" if torch.cuda.is_available() and args.cuda else "cpu")
 
-    ATARI_MAX_FRAMES = int(
-        108000 / 4
-    )
-
     # env setup
     envs = envpool.make(
         args.env_id,
         env_type="gym",
         num_envs=args.num_envs,
-        episodic_life=False, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 6
+        episodic_life=True,
         reward_clip=True,
         seed=args.seed,
-        noop_max=1, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 12 (no-op is deprecated in favor of sticky action, right?)
-        repeat_action_probability=0.25, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 12
-        max_episode_steps=ATARI_MAX_FRAMES # Hessel et al. 2018 (Rainbow DQN), Table 3, Max frames per episode
     )
     
     envs.num_envs = args.num_envs
@@ -208,6 +212,7 @@ if __name__ == "__main__":
     dones = torch.zeros((args.num_steps, args.num_envs)).to(device)
     values = torch.zeros((args.num_steps, args.num_envs)).to(device)
     avg_returns = deque(maxlen=20)
+    all_episode_returns = []  # track all episode returns for robust metrics
 
     # TRY NOT TO MODIFY: start the game
     global_step = 0
@@ -244,13 +249,23 @@ if __name__ == "__main__":
             rewards[step] = torch.tensor(reward).to(device).view(-1)
             next_obs, next_done = torch.Tensor(next_obs).to(device), torch.Tensor(next_done).to(device)
 
+            # Collect all completed episodes at this step, log one entry per global_step
+            step_returns = []
+            step_lengths = []
             for idx, d in enumerate(next_done):
                 if d and info["lives"][idx] == 0:
-                    print(f"global_step={global_step}, episodic_return={info['r'][idx]}")
-                    avg_returns.append(info["r"][idx])
-                    writer.add_scalar("charts/avg_episodic_return", np.average(avg_returns), global_step)
-                    writer.add_scalar("charts/episodic_return", info["r"][idx], global_step)
-                    writer.add_scalar("charts/episodic_length", info["l"][idx], global_step)
+                    step_returns.append(info["r"][idx])
+                    step_lengths.append(info["l"][idx])
+            if step_returns:
+                mean_ret = np.mean(step_returns)
+                mean_len = np.mean(step_lengths)
+                for r in step_returns:
+                    avg_returns.append(r)
+                    all_episode_returns.append(r)
+                print(f"global_step={global_step}, episodic_return={mean_ret:.1f} (n={len(step_returns)})")
+                writer.add_scalar("charts/avg_episodic_return", np.average(avg_returns), global_step)
+                writer.add_scalar("charts/episodic_return", mean_ret, global_step)
+                writer.add_scalar("charts/episodic_length", mean_len, global_step)
 
         # Compute Q(lambda) targets
         with torch.no_grad():
@@ -294,6 +309,27 @@ if __name__ == "__main__":
         writer.add_scalar("losses/q_values", old_val.mean().item(), global_step)
         print("SPS:", int(global_step / (time.time() - start_time)))
         writer.add_scalar("charts/SPS", int(global_step / (time.time() - start_time)), global_step)
+
+    # Compute robust metrics and save CSV
+    if all_episode_returns:
+        returns_arr = np.array(all_episode_returns)
+        n_episodes = len(returns_arr)
+        q4_start = int(n_episodes * 0.75)
+        q4_metric = float(np.mean(returns_arr[q4_start:])) if q4_start < n_episodes else float(np.mean(returns_arr))
+        auc_metric = float(np.sum(returns_arr))
+        final_avg = float(np.mean(returns_arr[-20:])) if n_episodes >= 20 else float(np.mean(returns_arr))
+        mean_return = float(np.mean(returns_arr))
+
+        csv_filename = f"{args.hypothesis_id}__{args.experiment_id}.csv"
+        csv_path = os.path.join(args.output_dir, csv_filename)
+        os.makedirs(args.output_dir, exist_ok=True)
+        with open(csv_path, "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["env_id", "seed", "hypothesis_id", "experiment_id", "algorithm",
+                         "total_timesteps", "n_episodes", "mean_return", "q4_return", "auc", "final_avg20"])
+            w.writerow([args.env_id, args.seed, args.hypothesis_id, args.experiment_id, "pqn",
+                         args.total_timesteps, n_episodes, mean_return, q4_metric, auc_metric, final_avg])
+        print(f"Results saved to {csv_path}")
 
     envs.close()
     writer.close()

@@ -1,0 +1,1 @@
+experiment_id,hypothesis_id,command,comment,env_id,seed,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20

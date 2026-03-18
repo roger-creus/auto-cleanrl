@@ -1,0 +1,3 @@
+hypothesis_id,description,motivation,status,comment
+h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,proposed,Phase 1 baseline
+h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,proposed,Phase 1 baseline
