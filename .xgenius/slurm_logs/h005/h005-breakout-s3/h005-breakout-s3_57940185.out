@@ -1,0 +1,11550 @@
+slurmstepd: error: couldn't chdir to `/home/rogercc/'/scratch/rogercc/cleanrl'': No such file or directory: going to /tmp instead
+slurmstepd: error: couldn't chdir to `/home/rogercc/'/scratch/rogercc/cleanrl'': No such file or directory: going to /tmp instead
+sending incremental file list
+auto-cleanrl.sif
+
+sent 4,938,196,675 bytes  received 35 bytes  429,408,409.57 bytes/sec
+total size is 4,945,575,936  speedup is 1.00
+/usr/local/lib/python3.10/dist-packages/treevalue/tree/integration/torch.py:23: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  register_for_torch(TreeValue)
+/usr/local/lib/python3.10/dist-packages/treevalue/tree/integration/torch.py:24: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  register_for_torch(FastTreeValue)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/usr/local/lib/python3.10/dist-packages/tyro/_parsers.py:353: UserWarning: The field `wandb-entity` is annotated with type `<class 'str'>`, but the default value `None` has type `<class 'NoneType'>`. We'll try to handle this gracefully, but it may cause unexpected behavior.
+  warnings.warn(message)
+/usr/local/lib/python3.10/dist-packages/tyro/_parsers.py:353: UserWarning: The field `target-kl` is annotated with type `<class 'float'>`, but the default value `None` has type `<class 'NoneType'>`. We'll try to handle this gracefully, but it may cause unexpected behavior.
+  warnings.warn(message)
+SPS: 1487
+SPS: 2073
+SPS: 2336
+global_step=15872, episodic_return=0.0 (n=128)
+SPS: 1134
+SPS: 1301
+SPS: 1447
+SPS: 1525
+SPS: 1633
+SPS: 1726
+global_step=37888, episodic_return=1.0 (n=128)
+SPS: 1810
+SPS: 1877
+SPS: 1944
+SPS: 1996
+SPS: 2037
+global_step=59904, episodic_return=1.0 (n=128)
+SPS: 1901
+SPS: 1950
+SPS: 1986
+SPS: 2024
+SPS: 2058
+global_step=81920, episodic_return=1.0 (n=128)
+SPS: 2090
+SPS: 2122
+SPS: 2151
+SPS: 2176
+SPS: 2202
+SPS: 2226
+global_step=104192, episodic_return=1.0 (n=128)
+SPS: 2251
+SPS: 2273
+SPS: 2295
+SPS: 2309
+global_step=120192, episodic_return=0.0 (n=128)
+SPS: 2325
+SPS: 2342
+SPS: 2359
+SPS: 2376
+global_step=136192, episodic_return=0.0 (n=128)
+SPS: 2390
+SPS: 2402
+SPS: 2416
+SPS: 2329
+SPS: 2343
+global_step=155904, episodic_return=1.0 (n=128)
+SPS: 2354
+SPS: 2368
+SPS: 2380
+SPS: 2394
+SPS: 2290
+SPS: 2303
+SPS: 2313
+global_step=188288, episodic_return=3.0 (n=128)
+SPS: 2323
+SPS: 2334
+SPS: 2345
+SPS: 2356
+SPS: 2367
+global_step=208000, episodic_return=1.0 (n=128)
+SPS: 2378
+SPS: 2387
+SPS: 2397
+SPS: 2407
+global_step=224000, episodic_return=0.0 (n=128)
+SPS: 2414
+SPS: 2420
+SPS: 2428
+SPS: 2437
+SPS: 2444
+SPS: 2453
+global_step=249728, episodic_return=2.0 (n=128)
+SPS: 2461
+SPS: 2469
+SPS: 2477
+SPS: 2483
+SPS: 2491
+SPS: 2496
+SPS: 2503
+global_step=275328, episodic_return=2.0 (n=128)
+SPS: 2508
+SPS: 2515
+SPS: 2521
+SPS: 2526
+SPS: 2531
+global_step=297344, episodic_return=1.0 (n=128)
+SPS: 2537
+SPS: 2542
+SPS: 2546
+SPS: 2482
+SPS: 2487
+global_step=319488, episodic_return=1.0 (n=128)
+SPS: 2494
+SPS: 2499
+SPS: 2505
+SPS: 2507
+SPS: 2481
+SPS: 2486
+global_step=341504, episodic_return=1.0 (n=128)
+SPS: 2491
+SPS: 2496
+SPS: 2502
+SPS: 2508
+SPS: 2513
+global_step=363520, episodic_return=1.0 (n=128)
+SPS: 2512
+SPS: 2516
+SPS: 2519
+SPS: 2524
+global_step=379520, episodic_return=0.0 (n=128)
+SPS: 2529
+SPS: 2534
+SPS: 2539
+SPS: 2543
+SPS: 2546
+global_step=399232, episodic_return=1.0 (n=128)
+SPS: 2545
+SPS: 2548
+SPS: 2552
+SPS: 2556
+SPS: 2560
+SPS: 2563
+global_step=424832, episodic_return=2.0 (n=128)
+SPS: 2564
+SPS: 2565
+SPS: 2568
+SPS: 2570
+SPS: 2573
+SPS: 2578
+SPS: 2582
+SPS: 2586
+global_step=456704, episodic_return=3.0 (n=128)
+SPS: 2591
+SPS: 2593
+SPS: 2598
+SPS: 2601
+SPS: 2605
+global_step=476416, episodic_return=1.0 (n=128)
+SPS: 2608
+SPS: 2612
+SPS: 2616
+SPS: 2619
+SPS: 2623
+SPS: 2626
+global_step=502528, episodic_return=2.0 (n=128)
+SPS: 2629
+SPS: 2632
+SPS: 2634
+SPS: 2637
+global_step=518528, episodic_return=0.0 (n=128)
+SPS: 2639
+SPS: 2642
+SPS: 2644
+SPS: 2647
+SPS: 2649
+SPS: 2651
+SPS: 2653
+SPS: 2655
+SPS: 2657
+global_step=556928, episodic_return=4.0 (n=128)
+SPS: 2660
+SPS: 2663
+SPS: 2664
+SPS: 2667
+SPS: 2669
+SPS: 2671
+SPS: 2649
+SPS: 2651
+global_step=588800, episodic_return=3.0 (n=128)
+SPS: 2653
+SPS: 2656
+SPS: 2658
+SPS: 2659
+global_step=604800, episodic_return=0.0 (n=128)
+SPS: 2663
+SPS: 2665
+SPS: 2668
+SPS: 2670
+SPS: 2670
+SPS: 2672
+global_step=626816, episodic_return=1.0 (n=128)
+SPS: 2675
+SPS: 2677
+SPS: 2678
+SPS: 2681
+SPS: 2684
+global_step=648832, episodic_return=1.0 (n=128)
+SPS: 2686
+SPS: 2687
+SPS: 2689
+SPS: 2691
+global_step=664832, episodic_return=0.0 (n=128)
+SPS: 2692
+SPS: 2692
+SPS: 2694
+SPS: 2694
+global_step=680832, episodic_return=0.0 (n=128)
+SPS: 2696
+SPS: 2697
+SPS: 2699
+SPS: 2700
+SPS: 2702
+SPS: 2703
+global_step=705920, episodic_return=2.0 (n=128)
+SPS: 2704
+SPS: 2706
+SPS: 2708
+SPS: 2710
+SPS: 2712
+SPS: 2714
+SPS: 2716
+SPS: 2718
+SPS: 2719
+global_step=744576, episodic_return=4.0 (n=128)
+SPS: 2721
+SPS: 2722
+SPS: 2713
+SPS: 2714
+global_step=760576, episodic_return=0.0 (n=128)
+SPS: 2716
+SPS: 2640
+SPS: 2642
+SPS: 2644
+SPS: 2646
+SPS: 2648
+SPS: 2649
+global_step=788864, episodic_return=2.0 (n=128)
+SPS: 2651
+SPS: 2652
+SPS: 2653
+SPS: 2655
+SPS: 2656
+global_step=807808, episodic_return=1.0 (n=128)
+SPS: 2657
+SPS: 2658
+SPS: 2660
+SPS: 2662
+global_step=823808, episodic_return=0.0 (n=128)
+SPS: 2664
+SPS: 2664
+SPS: 2666
+SPS: 2668
+SPS: 2669
+SPS: 2670
+SPS: 2672
+SPS: 2673
+SPS: 2675
+SPS: 2677
+SPS: 2678
+SPS: 2680
+global_step=874368, episodic_return=6.0 (n=128)
+SPS: 2681
+SPS: 2683
+SPS: 2683
+SPS: 2681
+SPS: 2682
+SPS: 2683
+global_step=900096, episodic_return=2.0 (n=128)
+SPS: 2683
+SPS: 2685
+SPS: 2686
+SPS: 2687
+SPS: 2689
+SPS: 2690
+SPS: 2692
+SPS: 2693
+global_step=932480, episodic_return=3.0 (n=128)
+SPS: 2694
+SPS: 2694
+SPS: 2695
+SPS: 2697
+SPS: 2698
+SPS: 2699
+global_step=954496, episodic_return=1.0 (n=128)
+SPS: 2701
+SPS: 2702
+SPS: 2703
+global_step=970496, episodic_return=0.0 (n=128)
+SPS: 2704
+SPS: 2706
+SPS: 2707
+SPS: 2709
+SPS: 2710
+SPS: 2712
+SPS: 2713
+global_step=996096, episodic_return=2.0 (n=128)
+SPS: 2714
+SPS: 2716
+SPS: 2718
+SPS: 2719
+global_step=1012096, episodic_return=0.0 (n=128)
+SPS: 2720
+SPS: 2721
+SPS: 2723
+global_step=1028096, episodic_return=0.0 (n=128)
+SPS: 2724
+SPS: 2725
+SPS: 2726
+SPS: 2728
+global_step=1044096, episodic_return=0.0 (n=128)
+SPS: 2729
+SPS: 2730
+SPS: 2731
+SPS: 2733
+global_step=1060096, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2735
+SPS: 2737
+SPS: 2738
+SPS: 2739
+SPS: 2740
+SPS: 2741
+SPS: 2741
+global_step=1091968, episodic_return=3.0 (n=128)
+SPS: 2741
+SPS: 2741
+SPS: 2742
+SPS: 2743
+SPS: 2744
+SPS: 2744
+SPS: 2745
+SPS: 2745
+SPS: 2745
+SPS: 2745
+SPS: 2747
+SPS: 2748
+SPS: 2744
+global_step=1143040, episodic_return=6.0 (n=128)
+SPS: 2745
+SPS: 2747
+SPS: 2748
+global_step=1159040, episodic_return=0.0 (n=128)
+SPS: 2749
+SPS: 2750
+SPS: 2751
+SPS: 2751
+global_step=1175040, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2753
+SPS: 2754
+SPS: 2755
+global_step=1191040, episodic_return=0.0 (n=128)
+SPS: 2755
+SPS: 2756
+SPS: 2757
+SPS: 2758
+SPS: 2759
+SPS: 2760
+SPS: 2761
+SPS: 2762
+SPS: 2760
+SPS: 2761
+global_step=1229184, episodic_return=4.0 (n=128)
+SPS: 2762
+SPS: 2763
+SPS: 2764
+SPS: 2765
+SPS: 2766
+global_step=1251200, episodic_return=1.0 (n=128)
+SPS: 2767
+SPS: 2758
+SPS: 2759
+SPS: 2760
+SPS: 2761
+global_step=1270912, episodic_return=1.0 (n=128)
+SPS: 2762
+SPS: 2762
+SPS: 2763
+SPS: 2764
+SPS: 2765
+global_step=1290624, episodic_return=1.0 (n=128)
+SPS: 2766
+SPS: 2767
+SPS: 2767
+SPS: 2768
+SPS: 2769
+SPS: 2769
+SPS: 2770
+global_step=1322752, episodic_return=3.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2772
+SPS: 2773
+global_step=1338752, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2775
+SPS: 2776
+global_step=1354752, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2778
+SPS: 2778
+SPS: 2777
+SPS: 2776
+global_step=1376768, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2777
+global_step=1398400, episodic_return=1.0 (n=128)
+SPS: 2760
+SPS: 2751
+SPS: 2752
+SPS: 2753
+SPS: 2754
+global_step=1420416, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2755
+SPS: 2755
+SPS: 2756
+SPS: 2757
+SPS: 2758
+SPS: 2759
+global_step=1449984, episodic_return=3.0 (n=128)
+SPS: 2759
+SPS: 2760
+SPS: 2761
+SPS: 2762
+SPS: 2762
+SPS: 2763
+SPS: 2764
+global_step=1478400, episodic_return=2.0 (n=128)
+SPS: 2765
+SPS: 2765
+SPS: 2766
+SPS: 2767
+global_step=1494400, episodic_return=0.0 (n=128)
+SPS: 2767
+SPS: 2767
+SPS: 2768
+SPS: 2768
+SPS: 2769
+SPS: 2770
+SPS: 2771
+SPS: 2772
+global_step=1526400, episodic_return=3.0 (n=128)
+SPS: 2772
+SPS: 2773
+SPS: 2774
+SPS: 2775
+SPS: 2775
+global_step=1546112, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2777
+SPS: 2778
+global_step=1562112, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2780
+SPS: 2780
+global_step=1578112, episodic_return=0.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2782
+SPS: 2783
+SPS: 2783
+SPS: 2784
+SPS: 2785
+SPS: 2786
+global_step=1611136, episodic_return=4.0 (n=128)
+SPS: 2786
+SPS: 2787
+SPS: 2788
+SPS: 2788
+SPS: 2789
+SPS: 2790
+SPS: 2790
+SPS: 2791
+global_step=1643008, episodic_return=3.0 (n=128)
+SPS: 2792
+SPS: 2793
+SPS: 2793
+SPS: 2794
+global_step=1659008, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2796
+SPS: 2797
+SPS: 2797
+SPS: 2798
+SPS: 2798
+global_step=1694720, episodic_return=4.0 (n=128)
+SPS: 2799
+SPS: 2800
+SPS: 2797
+SPS: 2797
+SPS: 2798
+SPS: 2798
+global_step=1716736, episodic_return=1.0 (n=128)
+SPS: 2790
+SPS: 2791
+SPS: 2792
+SPS: 2785
+global_step=1732736, episodic_return=0.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=1758464, episodic_return=2.0 (n=128)
+SPS: 2788
+SPS: 2789
+SPS: 2789
+SPS: 2790
+SPS: 2790
+SPS: 2791
+SPS: 2791
+SPS: 2792
+SPS: 2792
+global_step=1796352, episodic_return=4.0 (n=128)
+SPS: 2793
+SPS: 2793
+SPS: 2794
+SPS: 2795
+global_step=1812352, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2797
+global_step=1834496, episodic_return=1.0 (n=128)
+SPS: 2798
+SPS: 2798
+SPS: 2799
+SPS: 2800
+global_step=1850496, episodic_return=0.0 (n=128)
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2801
+global_step=1866496, episodic_return=0.0 (n=128)
+SPS: 2801
+SPS: 2802
+SPS: 2802
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=1888768, episodic_return=1.0 (n=128)
+SPS: 2803
+SPS: 2804
+SPS: 2805
+SPS: 2805
+global_step=1904768, episodic_return=0.0 (n=128)
+SPS: 2805
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=1930368, episodic_return=2.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=1952384, episodic_return=1.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2809
+SPS: 2810
+SPS: 2810
+global_step=1972096, episodic_return=1.0 (n=128)
+SPS: 2810
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2812
+SPS: 2813
+SPS: 2813
+global_step=2001408, episodic_return=3.0 (n=128)
+SPS: 2813
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2815
+SPS: 2815
+global_step=2027520, episodic_return=2.0 (n=128)
+SPS: 2816
+SPS: 2816
+SPS: 2817
+SPS: 2817
+SPS: 2818
+global_step=2047232, episodic_return=1.0 (n=128)
+SPS: 2818
+SPS: 2818
+SPS: 2819
+SPS: 2819
+global_step=2063232, episodic_return=0.0 (n=128)
+SPS: 2819
+SPS: 2820
+SPS: 2820
+SPS: 2820
+SPS: 2820
+SPS: 2821
+global_step=2085248, episodic_return=1.0 (n=128)
+SPS: 2821
+SPS: 2822
+SPS: 2821
+SPS: 2821
+SPS: 2821
+SPS: 2822
+SPS: 2822
+global_step=2113664, episodic_return=2.0 (n=128)
+SPS: 2822
+SPS: 2823
+SPS: 2823
+SPS: 2824
+SPS: 2824
+SPS: 2824
+SPS: 2825
+SPS: 2825
+SPS: 2826
+global_step=2152192, episodic_return=4.0 (n=128)
+SPS: 2826
+SPS: 2827
+SPS: 2827
+SPS: 2827
+global_step=2168192, episodic_return=0.0 (n=128)
+SPS: 2827
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2829
+SPS: 2829
+global_step=2193792, episodic_return=2.0 (n=128)
+SPS: 2830
+SPS: 2830
+SPS: 2831
+SPS: 2831
+global_step=2209792, episodic_return=0.0 (n=128)
+SPS: 2831
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2833
+SPS: 2833
+SPS: 2834
+global_step=2239104, episodic_return=3.0 (n=128)
+SPS: 2834
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2836
+SPS: 2836
+SPS: 2837
+SPS: 2837
+global_step=2277248, episodic_return=4.0 (n=128)
+SPS: 2837
+SPS: 2837
+SPS: 2838
+SPS: 2838
+SPS: 2838
+global_step=2295808, episodic_return=1.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2840
+SPS: 2840
+SPS: 2841
+SPS: 2841
+SPS: 2841
+global_step=2329344, episodic_return=4.0 (n=128)
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2842
+SPS: 2842
+SPS: 2842
+global_step=2351360, episodic_return=1.0 (n=128)
+SPS: 2842
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+global_step=2373376, episodic_return=1.0 (n=128)
+SPS: 2844
+SPS: 2844
+SPS: 2844
+SPS: 2844
+SPS: 2845
+SPS: 2845
+global_step=2398080, episodic_return=2.0 (n=128)
+SPS: 2845
+SPS: 2846
+SPS: 2846
+SPS: 2846
+global_step=2414080, episodic_return=0.0 (n=128)
+SPS: 2846
+SPS: 2847
+SPS: 2847
+SPS: 2847
+global_step=2430080, episodic_return=0.0 (n=128)
+SPS: 2847
+SPS: 2847
+SPS: 2848
+SPS: 2848
+SPS: 2848
+global_step=2452352, episodic_return=1.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2848
+SPS: 2849
+SPS: 2848
+SPS: 2849
+SPS: 2847
+SPS: 2847
+SPS: 2848
+global_step=2487680, episodic_return=4.0 (n=128)
+SPS: 2847
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2849
+global_step=2507392, episodic_return=1.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2850
+SPS: 2850
+SPS: 2851
+SPS: 2851
+SPS: 2851
+global_step=2536064, episodic_return=2.0 (n=128)
+SPS: 2851
+SPS: 2851
+SPS: 2852
+SPS: 2852
+global_step=2552064, episodic_return=0.0 (n=128)
+SPS: 2852
+SPS: 2853
+SPS: 2853
+SPS: 2853
+SPS: 2854
+SPS: 2854
+global_step=2577664, episodic_return=2.0 (n=128)
+SPS: 2854
+SPS: 2854
+SPS: 2855
+SPS: 2855
+SPS: 2855
+SPS: 2856
+global_step=2603392, episodic_return=2.0 (n=128)
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2857
+SPS: 2857
+global_step=2623104, episodic_return=1.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=2644224, episodic_return=1.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2859
+SPS: 2859
+global_step=2660224, episodic_return=0.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2860
+SPS: 2860
+SPS: 2854
+SPS: 2854
+SPS: 2855
+global_step=2689536, episodic_return=3.0 (n=128)
+SPS: 2855
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2857
+global_step=2709504, episodic_return=1.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2858
+SPS: 2858
+global_step=2731520, episodic_return=1.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2859
+SPS: 2859
+global_step=2747520, episodic_return=0.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2860
+SPS: 2860
+SPS: 2860
+global_step=2767488, episodic_return=1.0 (n=128)
+SPS: 2860
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=2798720, episodic_return=3.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2864
+global_step=2833280, episodic_return=3.0 (n=128)
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+global_step=2852992, episodic_return=1.0 (n=128)
+SPS: 2864
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+global_step=2881280, episodic_return=2.0 (n=128)
+SPS: 2866
+SPS: 2860
+SPS: 2860
+SPS: 2860
+SPS: 2861
+global_step=2901248, episodic_return=1.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=2929536, episodic_return=2.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=2948992, episodic_return=1.0 (n=128)
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2857
+global_step=2974720, episodic_return=2.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=2990720, episodic_return=0.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=3006720, episodic_return=0.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2859
+global_step=3036288, episodic_return=3.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2860
+SPS: 2860
+SPS: 2860
+global_step=3067520, episodic_return=3.0 (n=128)
+SPS: 2860
+SPS: 2860
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2862
+SPS: 2862
+global_step=3095808, episodic_return=2.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+global_step=3117824, episodic_return=1.0 (n=128)
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+global_step=3143552, episodic_return=2.0 (n=128)
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+global_step=3159552, episodic_return=0.0 (n=128)
+SPS: 2865
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2867
+SPS: 2867
+global_step=3200896, episodic_return=5.0 (n=128)
+SPS: 2867
+SPS: 2867
+SPS: 2867
+SPS: 2868
+global_step=3216896, episodic_return=0.0 (n=128)
+SPS: 2868
+SPS: 2868
+SPS: 2868
+SPS: 2868
+global_step=3232896, episodic_return=0.0 (n=128)
+SPS: 2868
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+global_step=3252608, episodic_return=1.0 (n=128)
+SPS: 2869
+SPS: 2869
+SPS: 2869
+global_step=3268608, episodic_return=0.0 (n=128)
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+global_step=3284608, episodic_return=0.0 (n=128)
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2871
+global_step=3300608, episodic_return=0.0 (n=128)
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+global_step=3316608, episodic_return=0.0 (n=128)
+SPS: 2870
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+global_step=3347840, episodic_return=3.0 (n=128)
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2871
+global_step=3373696, episodic_return=2.0 (n=128)
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2872
+SPS: 2872
+global_step=3403520, episodic_return=3.0 (n=128)
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2873
+SPS: 2873
+SPS: 2873
+global_step=3429376, episodic_return=2.0 (n=128)
+SPS: 2873
+SPS: 2873
+SPS: 2873
+SPS: 2859
+global_step=3445376, episodic_return=0.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+global_step=3461376, episodic_return=0.0 (n=128)
+SPS: 2859
+SPS: 2860
+SPS: 2860
+global_step=3477376, episodic_return=0.0 (n=128)
+SPS: 2860
+SPS: 2860
+SPS: 2860
+SPS: 2860
+global_step=3493376, episodic_return=0.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+global_step=3509376, episodic_return=0.0 (n=128)
+SPS: 2861
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2863
+global_step=3539072, episodic_return=3.0 (n=128)
+SPS: 2863
+SPS: 2863
+SPS: 2863
+global_step=3555072, episodic_return=0.0 (n=128)
+SPS: 2863
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2865
+SPS: 2865
+global_step=3584384, episodic_return=3.0 (n=128)
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+global_step=3607168, episodic_return=2.0 (n=128)
+SPS: 2866
+SPS: 2865
+SPS: 2866
+SPS: 2866
+global_step=3623168, episodic_return=0.0 (n=128)
+SPS: 2847
+SPS: 2847
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2849
+SPS: 2849
+global_step=3654144, episodic_return=3.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+global_step=3682432, episodic_return=2.0 (n=128)
+SPS: 2850
+SPS: 2850
+SPS: 2850
+global_step=3698432, episodic_return=0.0 (n=128)
+SPS: 2851
+SPS: 2851
+SPS: 2851
+SPS: 2851
+SPS: 2851
+SPS: 2852
+SPS: 2852
+SPS: 2852
+global_step=3730048, episodic_return=3.0 (n=128)
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2853
+SPS: 2853
+SPS: 2853
+global_step=3752064, episodic_return=1.0 (n=128)
+SPS: 2853
+SPS: 2853
+SPS: 2853
+SPS: 2854
+SPS: 2854
+SPS: 2854
+global_step=3778048, episodic_return=2.0 (n=128)
+SPS: 2854
+SPS: 2855
+SPS: 2855
+SPS: 2855
+SPS: 2855
+global_step=3798016, episodic_return=1.0 (n=128)
+SPS: 2844
+SPS: 2844
+SPS: 2845
+SPS: 2845
+global_step=3814016, episodic_return=0.0 (n=128)
+SPS: 2845
+SPS: 2845
+SPS: 2845
+SPS: 2846
+SPS: 2846
+global_step=3835648, episodic_return=1.0 (n=128)
+SPS: 2846
+SPS: 2846
+SPS: 2847
+SPS: 2847
+SPS: 2847
+global_step=3857664, episodic_return=1.0 (n=128)
+SPS: 2847
+SPS: 2847
+SPS: 2848
+SPS: 2848
+global_step=3873664, episodic_return=0.0 (n=128)
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+global_step=3889664, episodic_return=0.0 (n=128)
+SPS: 2848
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2850
+SPS: 2850
+global_step=3920896, episodic_return=3.0 (n=128)
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2851
+SPS: 2851
+global_step=3948928, episodic_return=2.0 (n=128)
+SPS: 2851
+SPS: 2851
+SPS: 2851
+SPS: 2851
+SPS: 2832
+global_step=3970944, episodic_return=1.0 (n=128)
+SPS: 2832
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2831
+SPS: 2831
+SPS: 2831
+SPS: 2832
+global_step=4002560, episodic_return=3.0 (n=128)
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+global_step=4018560, episodic_return=0.0 (n=128)
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+global_step=4040576, episodic_return=1.0 (n=128)
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2834
+global_step=4056576, episodic_return=0.0 (n=128)
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+global_step=4072576, episodic_return=0.0 (n=128)
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2835
+global_step=4094592, episodic_return=1.0 (n=128)
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2836
+SPS: 2836
+global_step=4120192, episodic_return=2.0 (n=128)
+SPS: 2836
+SPS: 2836
+SPS: 2837
+SPS: 2837
+SPS: 2837
+global_step=4139904, episodic_return=1.0 (n=128)
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2837
+global_step=4155904, episodic_return=0.0 (n=128)
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2838
+global_step=4175616, episodic_return=1.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+global_step=4191616, episodic_return=0.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2840
+SPS: 2840
+SPS: 2840
+global_step=4219904, episodic_return=2.0 (n=128)
+SPS: 2840
+SPS: 2841
+SPS: 2841
+SPS: 2841
+global_step=4235904, episodic_return=0.0 (n=128)
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2842
+global_step=4251904, episodic_return=0.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+global_step=4267904, episodic_return=0.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2843
+global_step=4291328, episodic_return=2.0 (n=128)
+SPS: 2843
+SPS: 2831
+SPS: 2831
+SPS: 2831
+global_step=4307328, episodic_return=0.0 (n=128)
+SPS: 2831
+SPS: 2831
+SPS: 2831
+SPS: 2831
+global_step=4323328, episodic_return=0.0 (n=128)
+SPS: 2831
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+global_step=4345600, episodic_return=1.0 (n=128)
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2833
+SPS: 2833
+SPS: 2833
+global_step=4367616, episodic_return=1.0 (n=128)
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+global_step=4412160, episodic_return=5.0 (n=128)
+SPS: 2834
+SPS: 2835
+SPS: 2835
+SPS: 2835
+global_step=4428160, episodic_return=0.0 (n=128)
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2836
+SPS: 2835
+SPS: 2835
+SPS: 2835
+global_step=4464128, episodic_return=4.0 (n=128)
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+global_step=4480128, episodic_return=0.0 (n=128)
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2836
+SPS: 2836
+SPS: 2836
+SPS: 2836
+global_step=4505728, episodic_return=2.0 (n=128)
+SPS: 2836
+SPS: 2836
+SPS: 2836
+SPS: 2836
+global_step=4525440, episodic_return=1.0 (n=128)
+SPS: 2836
+SPS: 2836
+SPS: 2836
+SPS: 2836
+SPS: 2835
+SPS: 2835
+SPS: 2835
+global_step=4551424, episodic_return=2.0 (n=128)
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2836
+SPS: 2836
+SPS: 2836
+global_step=4577280, episodic_return=2.0 (n=128)
+SPS: 2836
+SPS: 2836
+SPS: 2836
+SPS: 2836
+SPS: 2836
+global_step=4599552, episodic_return=1.0 (n=128)
+SPS: 2836
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2838
+global_step=4628864, episodic_return=3.0 (n=128)
+SPS: 2838
+SPS: 2838
+SPS: 2838
+global_step=4644864, episodic_return=0.0 (n=128)
+SPS: 2838
+SPS: 2838
+SPS: 2839
+SPS: 2836
+SPS: 2837
+SPS: 2837
+global_step=4667520, episodic_return=2.0 (n=128)
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2838
+global_step=4704896, episodic_return=4.0 (n=128)
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2839
+global_step=4720896, episodic_return=0.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+global_step=4746752, episodic_return=2.0 (n=128)
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+global_step=4778752, episodic_return=3.0 (n=128)
+SPS: 2840
+SPS: 2840
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2840
+SPS: 2840
+global_step=4814080, episodic_return=4.0 (n=128)
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2841
+global_step=4830080, episodic_return=0.0 (n=128)
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2841
+global_step=4852352, episodic_return=1.0 (n=128)
+SPS: 2838
+SPS: 2838
+SPS: 2839
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2831
+SPS: 2831
+global_step=4883840, episodic_return=3.0 (n=128)
+SPS: 2831
+SPS: 2831
+SPS: 2831
+SPS: 2831
+global_step=4899840, episodic_return=0.0 (n=128)
+SPS: 2831
+SPS: 2832
+SPS: 2832
+SPS: 2832
+global_step=4915840, episodic_return=0.0 (n=128)
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+global_step=4949120, episodic_return=4.0 (n=128)
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+global_step=4969088, episodic_return=1.0 (n=128)
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2834
+global_step=4998144, episodic_return=3.0 (n=128)
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2833
+global_step=5014144, episodic_return=0.0 (n=128)
+SPS: 2833
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+global_step=5035264, episodic_return=1.0 (n=128)
+SPS: 2834
+SPS: 2834
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+global_step=5069568, episodic_return=3.0 (n=128)
+SPS: 2835
+SPS: 2836
+SPS: 2836
+SPS: 2836
+global_step=5085568, episodic_return=0.0 (n=128)
+SPS: 2836
+SPS: 2836
+SPS: 2837
+SPS: 2837
+SPS: 2837
+SPS: 2837
+global_step=5107840, episodic_return=1.0 (n=128)
+SPS: 2837
+SPS: 2837
+SPS: 2837
+global_step=5123840, episodic_return=0.0 (n=128)
+SPS: 2837
+SPS: 2837
+SPS: 2838
+SPS: 2838
+SPS: 2838
+global_step=5143552, episodic_return=1.0 (n=128)
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2838
+SPS: 2839
+global_step=5165568, episodic_return=1.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+global_step=5181568, episodic_return=0.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+global_step=5197568, episodic_return=0.0 (n=128)
+SPS: 2839
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+global_step=5223808, episodic_return=2.0 (n=128)
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2841
+SPS: 2842
+global_step=5245696, episodic_return=1.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2843
+global_step=5271424, episodic_return=2.0 (n=128)
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+global_step=5293440, episodic_return=1.0 (n=128)
+SPS: 2844
+SPS: 2844
+SPS: 2844
+SPS: 2844
+SPS: 2844
+SPS: 2844
+SPS: 2844
+global_step=5322240, episodic_return=3.0 (n=128)
+SPS: 2844
+SPS: 2845
+SPS: 2845
+SPS: 2845
+SPS: 2845
+global_step=5341568, episodic_return=1.0 (n=128)
+SPS: 2845
+SPS: 2845
+SPS: 2845
+global_step=5357568, episodic_return=0.0 (n=128)
+SPS: 2845
+SPS: 2845
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+global_step=5399552, episodic_return=5.0 (n=128)
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+global_step=5415552, episodic_return=0.0 (n=128)
+SPS: 2846
+SPS: 2846
+SPS: 2847
+SPS: 2847
+global_step=5435264, episodic_return=1.0 (n=128)
+SPS: 2844
+SPS: 2845
+SPS: 2845
+SPS: 2845
+SPS: 2845
+SPS: 2845
+SPS: 2845
+SPS: 2845
+global_step=5467136, episodic_return=3.0 (n=128)
+SPS: 2845
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+SPS: 2846
+global_step=5495680, episodic_return=2.0 (n=128)
+SPS: 2847
+SPS: 2847
+SPS: 2847
+SPS: 2847
+SPS: 2847
+SPS: 2847
+SPS: 2847
+global_step=5523712, episodic_return=2.0 (n=128)
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+global_step=5545728, episodic_return=1.0 (n=128)
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+global_step=5565440, episodic_return=1.0 (n=128)
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2849
+global_step=5590784, episodic_return=2.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=5612800, episodic_return=1.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=5628800, episodic_return=0.0 (n=128)
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2851
+SPS: 2851
+SPS: 2851
+SPS: 2851
+global_step=5674496, episodic_return=6.0 (n=128)
+SPS: 2851
+SPS: 2851
+SPS: 2851
+SPS: 2851
+global_step=5690496, episodic_return=0.0 (n=128)
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2852
+global_step=5710464, episodic_return=1.0 (n=128)
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2852
+SPS: 2853
+global_step=5748352, episodic_return=4.0 (n=128)
+SPS: 2853
+SPS: 2853
+SPS: 2853
+SPS: 2853
+SPS: 2853
+SPS: 2854
+global_step=5773952, episodic_return=2.0 (n=128)
+SPS: 2854
+SPS: 2854
+SPS: 2854
+SPS: 2854
+SPS: 2854
+SPS: 2854
+global_step=5796224, episodic_return=1.0 (n=128)
+SPS: 2854
+SPS: 2854
+SPS: 2854
+global_step=5812224, episodic_return=0.0 (n=128)
+SPS: 2855
+SPS: 2855
+SPS: 2855
+SPS: 2855
+SPS: 2855
+SPS: 2855
+SPS: 2855
+global_step=5840512, episodic_return=2.0 (n=128)
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2856
+global_step=5856512, episodic_return=0.0 (n=128)
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=5884544, episodic_return=2.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=5910272, episodic_return=2.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=5926272, episodic_return=0.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2859
+SPS: 2859
+SPS: 2859
+global_step=5958272, episodic_return=3.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2860
+SPS: 2860
+SPS: 2860
+global_step=6002816, episodic_return=5.0 (n=128)
+SPS: 2860
+SPS: 2860
+SPS: 2860
+SPS: 2860
+global_step=6018816, episodic_return=0.0 (n=128)
+SPS: 2860
+SPS: 2860
+SPS: 2861
+SPS: 2861
+global_step=6034816, episodic_return=0.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2862
+SPS: 2862
+global_step=6066816, episodic_return=3.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=6095104, episodic_return=2.0 (n=128)
+SPS: 2862
+SPS: 2863
+SPS: 2863
+global_step=6111104, episodic_return=0.0 (n=128)
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2864
+SPS: 2864
+global_step=6136064, episodic_return=2.0 (n=128)
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+global_step=6164480, episodic_return=2.0 (n=128)
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+global_step=6186496, episodic_return=1.0 (n=128)
+SPS: 2864
+SPS: 2864
+SPS: 2864
+SPS: 2864
+global_step=6202496, episodic_return=0.0 (n=128)
+SPS: 2864
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+global_step=6224512, episodic_return=1.0 (n=128)
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+global_step=6240512, episodic_return=0.0 (n=128)
+SPS: 2865
+SPS: 2865
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+global_step=6268544, episodic_return=2.0 (n=128)
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2867
+global_step=6284544, episodic_return=0.0 (n=128)
+SPS: 2867
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2867
+SPS: 2867
+SPS: 2867
+global_step=6316416, episodic_return=3.0 (n=128)
+SPS: 2867
+SPS: 2867
+SPS: 2867
+SPS: 2867
+SPS: 2867
+SPS: 2867
+SPS: 2868
+global_step=6345728, episodic_return=3.0 (n=128)
+SPS: 2868
+SPS: 2868
+SPS: 2868
+SPS: 2868
+SPS: 2868
+SPS: 2868
+global_step=6371328, episodic_return=2.0 (n=128)
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+global_step=6403200, episodic_return=3.0 (n=128)
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+SPS: 2869
+global_step=6435200, episodic_return=3.0 (n=128)
+SPS: 2869
+SPS: 2869
+SPS: 2869
+global_step=6451200, episodic_return=0.0 (n=128)
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+global_step=6467200, episodic_return=0.0 (n=128)
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+global_step=6502784, episodic_return=4.0 (n=128)
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2870
+SPS: 2871
+SPS: 2871
+global_step=6526592, episodic_return=2.0 (n=128)
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+global_step=6546176, episodic_return=1.0 (n=128)
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+global_step=6586112, episodic_return=5.0 (n=128)
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2873
+global_step=6611712, episodic_return=2.0 (n=128)
+SPS: 2873
+SPS: 2873
+SPS: 2873
+SPS: 2873
+SPS: 2873
+global_step=6633728, episodic_return=1.0 (n=128)
+SPS: 2873
+SPS: 2873
+SPS: 2873
+SPS: 2873
+global_step=6649728, episodic_return=0.0 (n=128)
+SPS: 2873
+SPS: 2873
+SPS: 2873
+SPS: 2873
+global_step=6665728, episodic_return=0.0 (n=128)
+SPS: 2873
+SPS: 2873
+SPS: 2873
+SPS: 2874
+SPS: 2874
+SPS: 2874
+SPS: 2874
+global_step=6694144, episodic_return=2.0 (n=128)
+SPS: 2874
+SPS: 2874
+SPS: 2874
+SPS: 2874
+SPS: 2874
+SPS: 2875
+global_step=6718080, episodic_return=2.0 (n=128)
+SPS: 2875
+SPS: 2875
+SPS: 2875
+SPS: 2875
+SPS: 2875
+global_step=6740352, episodic_return=1.0 (n=128)
+SPS: 2875
+SPS: 2875
+SPS: 2875
+SPS: 2875
+SPS: 2875
+SPS: 2876
+global_step=6763008, episodic_return=2.0 (n=128)
+SPS: 2876
+SPS: 2876
+SPS: 2876
+SPS: 2876
+global_step=6779008, episodic_return=0.0 (n=128)
+SPS: 2876
+SPS: 2876
+SPS: 2876
+SPS: 2876
+SPS: 2876
+SPS: 2876
+SPS: 2877
+global_step=6810752, episodic_return=3.0 (n=128)
+SPS: 2877
+SPS: 2877
+SPS: 2877
+SPS: 2877
+SPS: 2877
+SPS: 2877
+SPS: 2877
+global_step=6838144, episodic_return=2.0 (n=128)
+SPS: 2878
+SPS: 2878
+SPS: 2878
+SPS: 2878
+SPS: 2878
+SPS: 2878
+global_step=6864128, episodic_return=2.0 (n=128)
+SPS: 2878
+SPS: 2878
+SPS: 2878
+SPS: 2878
+global_step=6880128, episodic_return=0.0 (n=128)
+SPS: 2878
+SPS: 2879
+SPS: 2879
+SPS: 2879
+global_step=6896128, episodic_return=0.0 (n=128)
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+global_step=6918400, episodic_return=1.0 (n=128)
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+global_step=6956800, episodic_return=5.0 (n=128)
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+global_step=6979072, episodic_return=1.0 (n=128)
+SPS: 2880
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=7010944, episodic_return=3.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2882
+SPS: 2882
+global_step=7030656, episodic_return=1.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+global_step=7052672, episodic_return=1.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2883
+SPS: 2883
+global_step=7075072, episodic_return=1.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=7091072, episodic_return=0.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=7119104, episodic_return=2.0 (n=128)
+SPS: 2883
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=7153664, episodic_return=3.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=7175680, episodic_return=1.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=7191680, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=7213824, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=7235968, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=7264256, episodic_return=2.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=7286272, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7322368, episodic_return=4.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7342080, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7361792, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7377792, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7416320, episodic_return=4.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=7439744, episodic_return=2.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7471872, episodic_return=3.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7487872, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7509888, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=7529600, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2888
+SPS: 2888
+global_step=7545600, episodic_return=0.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=7561600, episodic_return=0.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=7593472, episodic_return=3.0 (n=128)
+SPS: 2888
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+global_step=7626496, episodic_return=3.0 (n=128)
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+global_step=7648512, episodic_return=1.0 (n=128)
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+global_step=7674112, episodic_return=2.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+global_step=7690112, episodic_return=0.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+global_step=7718144, episodic_return=2.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+global_step=7737216, episodic_return=1.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+global_step=7762816, episodic_return=2.0 (n=128)
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+global_step=7778816, episodic_return=0.0 (n=128)
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+global_step=7806592, episodic_return=2.0 (n=128)
+SPS: 2891
+SPS: 2891
+SPS: 2892
+SPS: 2892
+global_step=7822592, episodic_return=0.0 (n=128)
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+global_step=7838592, episodic_return=0.0 (n=128)
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2893
+SPS: 2893
+SPS: 2893
+global_step=7872640, episodic_return=3.0 (n=128)
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+global_step=7902592, episodic_return=3.0 (n=128)
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+global_step=7924608, episodic_return=1.0 (n=128)
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+global_step=7940608, episodic_return=0.0 (n=128)
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+global_step=7969664, episodic_return=3.0 (n=128)
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2893
+SPS: 2894
+SPS: 2894
+global_step=7991680, episodic_return=1.0 (n=128)
+SPS: 2894
+SPS: 2894
+SPS: 2894
+global_step=8007680, episodic_return=0.0 (n=128)
+SPS: 2894
+SPS: 2894
+SPS: 2894
+SPS: 2894
+SPS: 2894
+global_step=8027136, episodic_return=1.0 (n=128)
+SPS: 2894
+SPS: 2894
+SPS: 2894
+SPS: 2894
+global_step=8043136, episodic_return=0.0 (n=128)
+SPS: 2894
+SPS: 2894
+SPS: 2894
+SPS: 2894
+SPS: 2894
+SPS: 2894
+global_step=8065152, episodic_return=1.0 (n=128)
+SPS: 2894
+SPS: 2894
+SPS: 2894
+global_step=8081152, episodic_return=0.0 (n=128)
+SPS: 2894
+SPS: 2894
+SPS: 2894
+SPS: 2894
+global_step=8097152, episodic_return=0.0 (n=128)
+SPS: 2894
+SPS: 2895
+SPS: 2895
+SPS: 2895
+global_step=8113152, episodic_return=0.0 (n=128)
+SPS: 2895
+SPS: 2895
+SPS: 2895
+SPS: 2895
+SPS: 2895
+SPS: 2895
+SPS: 2895
+global_step=8142720, episodic_return=3.0 (n=128)
+SPS: 2895
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+global_step=8180864, episodic_return=4.0 (n=128)
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+global_step=8200576, episodic_return=1.0 (n=128)
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+global_step=8220288, episodic_return=1.0 (n=128)
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+global_step=8264576, episodic_return=5.0 (n=128)
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2897
+SPS: 2897
+global_step=8286592, episodic_return=1.0 (n=128)
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2896
+global_step=8322176, episodic_return=4.0 (n=128)
+SPS: 2896
+SPS: 2896
+SPS: 2897
+SPS: 2896
+SPS: 2896
+SPS: 2896
+SPS: 2897
+global_step=8350464, episodic_return=2.0 (n=128)
+SPS: 2897
+SPS: 2897
+SPS: 2896
+SPS: 2897
+global_step=8366464, episodic_return=0.0 (n=128)
+SPS: 2897
+SPS: 2897
+SPS: 2897
+SPS: 2897
+global_step=8382464, episodic_return=0.0 (n=128)
+SPS: 2897
+SPS: 2897
+SPS: 2897
+SPS: 2897
+global_step=8398464, episodic_return=0.0 (n=128)
+SPS: 2897
+SPS: 2897
+SPS: 2897
+SPS: 2897
+global_step=8414464, episodic_return=0.0 (n=128)
+SPS: 2897
+SPS: 2897
+SPS: 2897
+SPS: 2897
+global_step=8430464, episodic_return=0.0 (n=128)
+SPS: 2897
+SPS: 2898
+SPS: 2898
+SPS: 2898
+SPS: 2898
+SPS: 2898
+global_step=8454912, episodic_return=2.0 (n=128)
+SPS: 2898
+SPS: 2898
+SPS: 2898
+SPS: 2898
+SPS: 2898
+global_step=8476928, episodic_return=1.0 (n=128)
+SPS: 2898
+SPS: 2898
+SPS: 2898
+SPS: 2898
+SPS: 2898
+SPS: 2899
+global_step=8500352, episodic_return=2.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=8516352, episodic_return=0.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=8541952, episodic_return=2.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=8557952, episodic_return=0.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=8573952, episodic_return=0.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=8616320, episodic_return=5.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=8632320, episodic_return=0.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=8652032, episodic_return=1.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+global_step=8681728, episodic_return=3.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+global_step=8705408, episodic_return=2.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2902
+global_step=8721408, episodic_return=0.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=8747136, episodic_return=2.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=8763136, episodic_return=0.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=8785152, episodic_return=1.0 (n=128)
+SPS: 2902
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=8807168, episodic_return=1.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2904
+SPS: 2904
+global_step=8868608, episodic_return=9.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=8884608, episodic_return=0.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=8906624, episodic_return=1.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=8922624, episodic_return=0.0 (n=128)
+SPS: 2904
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=8945024, episodic_return=1.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=8974720, episodic_return=3.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9003008, episodic_return=2.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=9032320, episodic_return=3.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=9048320, episodic_return=0.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=9069824, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9105536, episodic_return=4.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9121536, episodic_return=0.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=9143552, episodic_return=1.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=9159552, episodic_return=0.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=9191424, episodic_return=3.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=9210240, episodic_return=1.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=9226240, episodic_return=0.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=9248256, episodic_return=1.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=9273216, episodic_return=2.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=9289216, episodic_return=0.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=9305216, episodic_return=0.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=9324928, episodic_return=1.0 (n=128)
+SPS: 2899
+SPS: 2899
+SPS: 2899
+SPS: 2899
+global_step=9340928, episodic_return=0.0 (n=128)
+SPS: 2899
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=9362944, episodic_return=1.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=9388544, episodic_return=2.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=9410560, episodic_return=1.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2901
+global_step=9432576, episodic_return=1.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+global_step=9458176, episodic_return=2.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2902
+global_step=9492480, episodic_return=3.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+global_step=9524352, episodic_return=3.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2901
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=9567744, episodic_return=6.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=9583744, episodic_return=0.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=9611776, episodic_return=2.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=9627776, episodic_return=0.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2903
+SPS: 2903
+global_step=9643776, episodic_return=0.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=9665792, episodic_return=1.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=9681792, episodic_return=0.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=9709824, episodic_return=2.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2904
+global_step=9739776, episodic_return=3.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9755776, episodic_return=0.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9771776, episodic_return=0.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9797376, episodic_return=2.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9829504, episodic_return=3.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9858944, episodic_return=3.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2905
+SPS: 2905
+global_step=9886080, episodic_return=3.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=9908096, episodic_return=1.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=9924096, episodic_return=0.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9949824, episodic_return=2.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=9965824, episodic_return=0.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2905
+SPS: 2905
+global_step=9985536, episodic_return=1.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=10001536, episodic_return=0.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+global_step=10021248, episodic_return=1.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2906
+global_step=10043392, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10068992, episodic_return=2.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10084992, episodic_return=0.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10107008, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10126464, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10148480, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10164480, episodic_return=0.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2907
+global_step=10180480, episodic_return=0.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10201472, episodic_return=1.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10221184, episodic_return=1.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10249344, episodic_return=2.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10274176, episodic_return=2.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10301824, episodic_return=3.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10321536, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10353408, episodic_return=3.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10381440, episodic_return=2.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10409856, episodic_return=2.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10431872, episodic_return=1.0 (n=128)
+SPS: 2905
+SPS: 2905
+SPS: 2905
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10453888, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10482432, episodic_return=2.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10514304, episodic_return=3.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+SPS: 2906
+global_step=10536320, episodic_return=1.0 (n=128)
+SPS: 2906
+SPS: 2906
+SPS: 2907
+SPS: 2906
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10568192, episodic_return=3.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10584192, episodic_return=0.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10600192, episodic_return=0.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+SPS: 2907
+global_step=10619904, episodic_return=1.0 (n=128)
+SPS: 2907
+SPS: 2907
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=10641920, episodic_return=1.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=10657920, episodic_return=0.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=10677632, episodic_return=1.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+SPS: 2900
+global_step=10699648, episodic_return=1.0 (n=128)
+SPS: 2900
+SPS: 2900
+SPS: 2901
+SPS: 2901
+global_step=10715648, episodic_return=0.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+global_step=10737664, episodic_return=1.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+global_step=10763264, episodic_return=2.0 (n=128)
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+SPS: 2901
+global_step=10788864, episodic_return=2.0 (n=128)
+SPS: 2901
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=10811136, episodic_return=1.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=10833152, episodic_return=1.0 (n=128)
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+SPS: 2902
+global_step=10852864, episodic_return=1.0 (n=128)
+SPS: 2902
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=10872576, episodic_return=1.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=10902144, episodic_return=3.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=10929408, episodic_return=3.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=10949120, episodic_return=1.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2903
+global_step=10965120, episodic_return=0.0 (n=128)
+SPS: 2903
+SPS: 2903
+SPS: 2903
+SPS: 2904
+SPS: 2904
+global_step=10987136, episodic_return=1.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=11019008, episodic_return=3.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=11050880, episodic_return=3.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=11069824, episodic_return=1.0 (n=128)
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+SPS: 2904
+global_step=11095808, episodic_return=2.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11123968, episodic_return=2.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11139968, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11161984, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11177984, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=11216384, episodic_return=5.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2884
+SPS: 2884
+global_step=11235712, episodic_return=1.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=11251712, episodic_return=0.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11283584, episodic_return=3.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11309312, episodic_return=2.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11325312, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11341312, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11357312, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11373312, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11393024, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=11409024, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=11435008, episodic_return=2.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=11473152, episodic_return=4.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=11489152, episodic_return=0.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=11505152, episodic_return=0.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2887
+global_step=11530624, episodic_return=2.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=11546624, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=11562624, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=11578624, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=11599616, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=11621632, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=11643648, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=11665792, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=11681792, episodic_return=0.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2889
+global_step=11697792, episodic_return=0.0 (n=128)
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+global_step=11713792, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=11735936, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=11755648, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=11781376, episodic_return=2.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=11803648, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+global_step=11841920, episodic_return=4.0 (n=128)
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+global_step=11876480, episodic_return=3.0 (n=128)
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+global_step=11892480, episodic_return=0.0 (n=128)
+SPS: 2889
+SPS: 2889
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+global_step=11920768, episodic_return=2.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+global_step=11942912, episodic_return=1.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+global_step=11965056, episodic_return=1.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2890
+global_step=11994368, episodic_return=3.0 (n=128)
+SPS: 2890
+SPS: 2890
+SPS: 2890
+SPS: 2891
+SPS: 2891
+global_step=12016384, episodic_return=1.0 (n=128)
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+global_step=12046336, episodic_return=3.0 (n=128)
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+global_step=12074368, episodic_return=2.0 (n=128)
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+global_step=12094080, episodic_return=1.0 (n=128)
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2891
+SPS: 2892
+global_step=12116224, episodic_return=1.0 (n=128)
+SPS: 2892
+SPS: 2892
+SPS: 2892
+global_step=12132224, episodic_return=0.0 (n=128)
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+global_step=12151296, episodic_return=1.0 (n=128)
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+SPS: 2892
+global_step=12176512, episodic_return=2.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=12198016, episodic_return=1.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+global_step=12220288, episodic_return=1.0 (n=128)
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2886
+SPS: 2887
+global_step=12248576, episodic_return=2.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=12270592, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=12286592, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=12302592, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=12324608, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=12346624, episodic_return=1.0 (n=128)
+SPS: 2887
+SPS: 2887
+SPS: 2887
+SPS: 2887
+global_step=12362624, episodic_return=0.0 (n=128)
+SPS: 2887
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=12382336, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=12404352, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=12426368, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+global_step=12446080, episodic_return=1.0 (n=128)
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2888
+SPS: 2889
+global_step=12465792, episodic_return=1.0 (n=128)
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2889
+SPS: 2883
+SPS: 2883
+SPS: 2881
+global_step=12501120, episodic_return=4.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=12520448, episodic_return=1.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=12536448, episodic_return=0.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=12559872, episodic_return=2.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=12575872, episodic_return=0.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+global_step=12597888, episodic_return=1.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+global_step=12623488, episodic_return=2.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+global_step=12639488, episodic_return=0.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2882
+global_step=12659200, episodic_return=1.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12684800, episodic_return=2.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12706944, episodic_return=1.0 (n=128)
+SPS: 2882
+SPS: 2882
+SPS: 2882
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12732544, episodic_return=2.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12754944, episodic_return=1.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12770944, episodic_return=0.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12786944, episodic_return=0.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12802944, episodic_return=0.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12824960, episodic_return=1.0 (n=128)
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+SPS: 2883
+global_step=12847616, episodic_return=2.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=12863616, episodic_return=0.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=12901760, episodic_return=4.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=12917760, episodic_return=0.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=12933760, episodic_return=0.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2885
+global_step=12949760, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=12965760, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=12987776, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13006592, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13022592, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13047552, episodic_return=2.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2884
+global_step=13071232, episodic_return=2.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=13087232, episodic_return=0.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+SPS: 2884
+global_step=13109248, episodic_return=1.0 (n=128)
+SPS: 2884
+SPS: 2884
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13128960, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13153792, episodic_return=2.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13169792, episodic_return=0.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13191808, episodic_return=1.0 (n=128)
+SPS: 2885
+SPS: 2885
+SPS: 2885
+SPS: 2885
+global_step=13207808, episodic_return=0.0 (n=128)
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2881
+SPS: 2881
+global_step=13239808, episodic_return=3.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=13271296, episodic_return=3.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=13291008, episodic_return=1.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=13316864, episodic_return=2.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=13332864, episodic_return=0.0 (n=128)
+SPS: 2881
+SPS: 2881
+SPS: 2881
+SPS: 2881
+global_step=13352576, episodic_return=1.0 (n=128)
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+global_step=13368576, episodic_return=0.0 (n=128)
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+global_step=13384576, episodic_return=0.0 (n=128)
+SPS: 2879
+SPS: 2879
+SPS: 2879
+SPS: 2879
+global_step=13400576, episodic_return=0.0 (n=128)
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+global_step=13416576, episodic_return=0.0 (n=128)
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+global_step=13438592, episodic_return=1.0 (n=128)
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2880
+SPS: 2878
+SPS: 2878
+global_step=13464192, episodic_return=2.0 (n=128)
+SPS: 2872
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+global_step=13486080, episodic_return=1.0 (n=128)
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+SPS: 2871
+global_step=13511808, episodic_return=2.0 (n=128)
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+SPS: 2872
+global_step=13544192, episodic_return=3.0 (n=128)
+SPS: 2872
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+global_step=13566208, episodic_return=1.0 (n=128)
+SPS: 2865
+SPS: 2865
+SPS: 2865
+global_step=13582208, episodic_return=0.0 (n=128)
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2865
+SPS: 2866
+SPS: 2866
+global_step=13610880, episodic_return=2.0 (n=128)
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+global_step=13645952, episodic_return=3.0 (n=128)
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+SPS: 2866
+global_step=13669376, episodic_return=2.0 (n=128)
+SPS: 2866
+SPS: 2866
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2861
+global_step=13694976, episodic_return=2.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+global_step=13720576, episodic_return=2.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=13748736, episodic_return=2.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=13770496, episodic_return=2.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+global_step=13790208, episodic_return=1.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2862
+global_step=13818368, episodic_return=2.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=13853184, episodic_return=3.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2861
+SPS: 2861
+global_step=13869184, episodic_return=0.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+global_step=13904768, episodic_return=4.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+global_step=13927936, episodic_return=2.0 (n=128)
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+SPS: 2861
+global_step=13947648, episodic_return=1.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=13963648, episodic_return=0.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=14008192, episodic_return=5.0 (n=128)
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+SPS: 2862
+global_step=14040064, episodic_return=3.0 (n=128)
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+global_step=14068096, episodic_return=2.0 (n=128)
+SPS: 2863
+SPS: 2863
+SPS: 2863
+SPS: 2863
+global_step=14084096, episodic_return=0.0 (n=128)
+SPS: 2863
+SPS: 2863
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=14106112, episodic_return=1.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=14134400, episodic_return=2.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=14150400, episodic_return=0.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=14176640, episodic_return=2.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=14202240, episodic_return=2.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=14218240, episodic_return=0.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=14237824, episodic_return=1.0 (n=128)
+SPS: 2858
+SPS: 2859
+SPS: 2859
+SPS: 2859
+global_step=14257536, episodic_return=1.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+global_step=14273536, episodic_return=0.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+global_step=14298624, episodic_return=2.0 (n=128)
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+SPS: 2859
+global_step=14326272, episodic_return=3.0 (n=128)
+SPS: 2860
+SPS: 2860
+SPS: 2860
+SPS: 2860
+global_step=14342272, episodic_return=0.0 (n=128)
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2856
+SPS: 2856
+global_step=14372096, episodic_return=3.0 (n=128)
+SPS: 2856
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=14409856, episodic_return=4.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=14431872, episodic_return=1.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=14460160, episodic_return=2.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2857
+global_step=14476160, episodic_return=0.0 (n=128)
+SPS: 2857
+SPS: 2857
+SPS: 2857
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=14501888, episodic_return=2.0 (n=128)
+SPS: 2858
+SPS: 2858
+SPS: 2858
+SPS: 2858
+global_step=14517888, episodic_return=0.0 (n=128)
+SPS: 2858
+SPS: 2856
+SPS: 2856
+SPS: 2850
+SPS: 2850
+SPS: 2850
+global_step=14543872, episodic_return=2.0 (n=128)
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+global_step=14563200, episodic_return=1.0 (n=128)
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+global_step=14579200, episodic_return=0.0 (n=128)
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+SPS: 2850
+global_step=14604928, episodic_return=2.0 (n=128)
+SPS: 2850
+SPS: 2850
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14630656, episodic_return=2.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2850
+global_step=14652288, episodic_return=1.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14678272, episodic_return=2.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14705664, episodic_return=3.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14725376, episodic_return=1.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14750976, episodic_return=2.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14782976, episodic_return=3.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14798976, episodic_return=0.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14814976, episodic_return=0.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+global_step=14836736, episodic_return=1.0 (n=128)
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+global_step=14852736, episodic_return=0.0 (n=128)
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2848
+SPS: 2849
+SPS: 2849
+SPS: 2849
+global_step=14884224, episodic_return=3.0 (n=128)
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2849
+SPS: 2846
+SPS: 2846
+SPS: 2846
+global_step=14909952, episodic_return=2.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2843
+global_step=14932352, episodic_return=1.0 (n=128)
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+global_step=14948352, episodic_return=0.0 (n=128)
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+global_step=14973184, episodic_return=2.0 (n=128)
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+global_step=14989184, episodic_return=0.0 (n=128)
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+global_step=15011200, episodic_return=1.0 (n=128)
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2843
+SPS: 2842
+SPS: 2842
+global_step=15049344, episodic_return=4.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+global_step=15069056, episodic_return=1.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+global_step=15085056, episodic_return=0.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+global_step=15101056, episodic_return=0.0 (n=128)
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+SPS: 2842
+global_step=15124736, episodic_return=2.0 (n=128)
+SPS: 2842
+SPS: 2843
+SPS: 2839
+SPS: 2839
+global_step=15140736, episodic_return=0.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+global_step=15162752, episodic_return=1.0 (n=128)
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2839
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+global_step=15194624, episodic_return=3.0 (n=128)
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2840
+global_step=15216640, episodic_return=1.0 (n=128)
+SPS: 2840
+SPS: 2840
+SPS: 2840
+SPS: 2835
+global_step=15232640, episodic_return=0.0 (n=128)
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+global_step=15248640, episodic_return=0.0 (n=128)
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+SPS: 2835
+global_step=15273984, episodic_return=2.0 (n=128)
+SPS: 2835
+SPS: 2836
+SPS: 2836
+SPS: 2836
+global_step=15289984, episodic_return=0.0 (n=128)
+SPS: 2836
+SPS: 2836
+SPS: 2836
+SPS: 2836
+global_step=15305984, episodic_return=0.0 (n=128)
+SPS: 2836
+SPS: 2836
+SPS: 2834
+SPS: 2834
+global_step=15321984, episodic_return=0.0 (n=128)
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+global_step=15337984, episodic_return=0.0 (n=128)
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+SPS: 2833
+global_step=15362944, episodic_return=2.0 (n=128)
+SPS: 2833
+SPS: 2833
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2834
+global_step=15384960, episodic_return=1.0 (n=128)
+SPS: 2834
+SPS: 2834
+SPS: 2834
+global_step=15400960, episodic_return=0.0 (n=128)
+SPS: 2834
+SPS: 2834
+SPS: 2834
+SPS: 2832
+global_step=15416960, episodic_return=0.0 (n=128)
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+SPS: 2832
+global_step=15459328, episodic_return=5.0 (n=128)
+SPS: 2832
+SPS: 2830
+SPS: 2830
+SPS: 2830
+global_step=15475328, episodic_return=0.0 (n=128)
+SPS: 2830
+SPS: 2829
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2830
+global_step=15504000, episodic_return=2.0 (n=128)
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2830
+global_step=15520000, episodic_return=0.0 (n=128)
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2830
+SPS: 2830
+global_step=15551488, episodic_return=3.0 (n=128)
+SPS: 2830
+SPS: 2830
+SPS: 2829
+SPS: 2829
+SPS: 2829
+global_step=15571200, episodic_return=1.0 (n=128)
+SPS: 2829
+SPS: 2829
+SPS: 2829
+SPS: 2828
+SPS: 2828
+global_step=15593472, episodic_return=1.0 (n=128)
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2827
+global_step=15616896, episodic_return=2.0 (n=128)
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+global_step=15645440, episodic_return=2.0 (n=128)
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+global_step=15667840, episodic_return=1.0 (n=128)
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+global_step=15690240, episodic_return=1.0 (n=128)
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+SPS: 2828
+global_step=15712512, episodic_return=1.0 (n=128)
+SPS: 2829
+SPS: 2829
+SPS: 2829
+SPS: 2829
+SPS: 2829
+SPS: 2829
+SPS: 2826
+global_step=15744000, episodic_return=3.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2825
+SPS: 2825
+SPS: 2825
+SPS: 2825
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15788544, episodic_return=5.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15810560, episodic_return=1.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15826560, episodic_return=0.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15846528, episodic_return=1.0 (n=128)
+SPS: 2826
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+global_step=15876224, episodic_return=3.0 (n=128)
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+SPS: 2827
+global_step=15912960, episodic_return=4.0 (n=128)
+SPS: 2827
+SPS: 2827
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15935232, episodic_return=1.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15951232, episodic_return=0.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15973248, episodic_return=1.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=15991936, episodic_return=1.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=16017536, episodic_return=2.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=16037248, episodic_return=1.0 (n=128)
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+SPS: 2826
+global_step=16068736, episodic_return=3.0 (n=128)
+SPS: 2826
+SPS: 2824
+SPS: 2824
+SPS: 2824
+SPS: 2824
+SPS: 2824
+SPS: 2824
+SPS: 2825
+global_step=16105088, episodic_return=4.0 (n=128)
+SPS: 2825
+SPS: 2825
+SPS: 2825
+SPS: 2825
+SPS: 2825
+SPS: 2825
+SPS: 2824
+global_step=16131200, episodic_return=2.0 (n=128)
+SPS: 2824
+SPS: 2824
+SPS: 2825
+SPS: 2825
+SPS: 2825
+global_step=16150912, episodic_return=1.0 (n=128)
+SPS: 2825
+SPS: 2825
+SPS: 2825
+SPS: 2825
+global_step=16170624, episodic_return=1.0 (n=128)
+SPS: 2825
+SPS: 2825
+SPS: 2821
+SPS: 2821
+global_step=16186624, episodic_return=0.0 (n=128)
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2822
+global_step=16207744, episodic_return=1.0 (n=128)
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2822
+global_step=16232832, episodic_return=2.0 (n=128)
+SPS: 2822
+SPS: 2822
+SPS: 2822
+global_step=16248832, episodic_return=0.0 (n=128)
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2822
+global_step=16264832, episodic_return=0.0 (n=128)
+SPS: 2822
+SPS: 2822
+SPS: 2822
+SPS: 2818
+SPS: 2818
+SPS: 2818
+SPS: 2818
+SPS: 2818
+global_step=16296320, episodic_return=4.0 (n=128)
+SPS: 2818
+SPS: 2818
+SPS: 2818
+SPS: 2818
+global_step=16312320, episodic_return=0.0 (n=128)
+SPS: 2818
+SPS: 2818
+SPS: 2818
+SPS: 2818
+SPS: 2817
+global_step=16332032, episodic_return=1.0 (n=128)
+SPS: 2817
+SPS: 2817
+SPS: 2818
+SPS: 2818
+global_step=16348032, episodic_return=0.0 (n=128)
+SPS: 2818
+SPS: 2818
+SPS: 2818
+SPS: 2818
+SPS: 2818
+global_step=16367744, episodic_return=1.0 (n=128)
+SPS: 2818
+SPS: 2817
+SPS: 2817
+SPS: 2817
+global_step=16387456, episodic_return=1.0 (n=128)
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+global_step=16403456, episodic_return=0.0 (n=128)
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+global_step=16419456, episodic_return=0.0 (n=128)
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+global_step=16435456, episodic_return=0.0 (n=128)
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+global_step=16464768, episodic_return=3.0 (n=128)
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2816
+global_step=16480768, episodic_return=0.0 (n=128)
+SPS: 2816
+SPS: 2816
+SPS: 2816
+SPS: 2813
+SPS: 2813
+global_step=16502784, episodic_return=1.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=16525952, episodic_return=2.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=16553984, episodic_return=2.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+global_step=16569984, episodic_return=0.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=16601856, episodic_return=3.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2809
+global_step=16630144, episodic_return=2.0 (n=128)
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+global_step=16662272, episodic_return=3.0 (n=128)
+SPS: 2809
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=16678272, episodic_return=0.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=16697984, episodic_return=1.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=16713984, episodic_return=0.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=16733696, episodic_return=1.0 (n=128)
+SPS: 2810
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=16765312, episodic_return=3.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=16790912, episodic_return=2.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=16815872, episodic_return=2.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2808
+global_step=16844032, episodic_return=2.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=16866048, episodic_return=1.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=16900352, episodic_return=3.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=16920064, episodic_return=1.0 (n=128)
+SPS: 2808
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=16945664, episodic_return=2.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=16961664, episodic_return=0.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=16977664, episodic_return=0.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2807
+global_step=16993664, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17015680, episodic_return=1.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17031680, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17055104, episodic_return=2.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=17073152, episodic_return=1.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=17103232, episodic_return=3.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=17125248, episodic_return=1.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2807
+SPS: 2807
+global_step=17141248, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17157248, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17173248, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17189248, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2806
+SPS: 2807
+SPS: 2807
+global_step=17205248, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17227264, episodic_return=1.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2806
+global_step=17258368, episodic_return=3.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2807
+global_step=17300224, episodic_return=5.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17316224, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17332224, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17351936, episodic_return=1.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17367936, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17383936, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17431168, episodic_return=5.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=17447168, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2773
+global_step=17463168, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17479168, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17495168, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17517184, episodic_return=1.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17533184, episodic_return=0.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17568768, episodic_return=4.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17588480, episodic_return=1.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17608192, episodic_return=1.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2769
+SPS: 2769
+global_step=17630208, episodic_return=1.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17652224, episodic_return=1.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17668224, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17693952, episodic_return=2.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17717632, episodic_return=2.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17739648, episodic_return=1.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17761408, episodic_return=1.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17790464, episodic_return=3.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17819136, episodic_return=2.0 (n=128)
+SPS: 2771
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=17840128, episodic_return=1.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=17856128, episodic_return=0.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2770
+global_step=17888000, episodic_return=3.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17904000, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=17920000, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17939968, episodic_return=1.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17955968, episodic_return=0.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=17981184, episodic_return=2.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=18014976, episodic_return=4.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=18034688, episodic_return=1.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=18062976, episodic_return=2.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=18088576, episodic_return=2.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=18110848, episodic_return=1.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=18130560, episodic_return=1.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=18162688, episodic_return=3.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=18184704, episodic_return=1.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=18207104, episodic_return=1.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=18223104, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=18245120, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=18261120, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=18284544, episodic_return=2.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=18304256, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=18336512, episodic_return=3.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=18352512, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=18372224, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=18391424, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=18416896, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=18438912, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=18454912, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=18486912, episodic_return=3.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=18502912, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=18522624, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=18548224, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=18564224, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=18580224, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2778
+global_step=18603904, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=18644224, episodic_return=4.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=18666240, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=18682240, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=18714496, episodic_return=3.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=18746368, episodic_return=3.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=18768384, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=18790400, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=18812416, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=18828416, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=18848128, episodic_return=1.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=18864128, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=18880128, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=18902144, episodic_return=1.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=18928128, episodic_return=2.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=18947328, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=18963328, episodic_return=0.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=18989312, episodic_return=2.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19014656, episodic_return=2.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19030656, episodic_return=0.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19056256, episodic_return=2.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19072256, episodic_return=0.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19091968, episodic_return=1.0 (n=128)
+SPS: 2781
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19107968, episodic_return=0.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19123968, episodic_return=0.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19139968, episodic_return=0.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19181184, episodic_return=5.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2783
+SPS: 2783
+global_step=19197184, episodic_return=0.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=19213184, episodic_return=0.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=19229184, episodic_return=0.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=19245184, episodic_return=0.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2784
+global_step=19264896, episodic_return=1.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19280896, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19296896, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19318912, episodic_return=1.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19340928, episodic_return=1.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19359616, episodic_return=1.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2785
+global_step=19375616, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19391616, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19407616, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19423616, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19451136, episodic_return=2.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19467136, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2785
+SPS: 2781
+global_step=19483136, episodic_return=0.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19504256, episodic_return=1.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19520256, episodic_return=0.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=19550208, episodic_return=3.0 (n=128)
+SPS: 2781
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19572224, episodic_return=1.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19594240, episodic_return=1.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19610240, episodic_return=0.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=19642496, episodic_return=3.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=19658496, episodic_return=0.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=19690496, episodic_return=3.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=19712512, episodic_return=1.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=19734528, episodic_return=1.0 (n=128)
+SPS: 2783
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19750528, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19776128, episodic_return=2.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19792128, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19808128, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19827840, episodic_return=1.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2785
+global_step=19843840, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19863552, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19883264, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=19902976, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19934464, episodic_return=3.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19966336, episodic_return=3.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=19986048, episodic_return=1.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=20002048, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=20030720, episodic_return=2.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=20050432, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=20070144, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=20092160, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=20108160, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=20137984, episodic_return=3.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=20153984, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=20169984, episodic_return=0.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=20192000, episodic_return=1.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=20217600, episodic_return=2.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=20239872, episodic_return=1.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2787
+SPS: 2786
+SPS: 2787
+global_step=20268160, episodic_return=2.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=20287104, episodic_return=1.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=20312064, episodic_return=2.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=20334336, episodic_return=1.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20362752, episodic_return=2.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20382464, episodic_return=1.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20398464, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20425856, episodic_return=3.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20457472, episodic_return=3.0 (n=128)
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+global_step=20477184, episodic_return=1.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20493184, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20512896, episodic_return=1.0 (n=128)
+SPS: 2788
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=20544768, episodic_return=3.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20564480, episodic_return=1.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20580480, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20602496, episodic_return=1.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20622208, episodic_return=1.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=20648192, episodic_return=2.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+global_step=20673920, episodic_return=2.0 (n=128)
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+global_step=20702080, episodic_return=2.0 (n=128)
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+global_step=20731776, episodic_return=3.0 (n=128)
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+global_step=20754048, episodic_return=1.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=20770048, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=20804608, episodic_return=3.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=20829952, episodic_return=2.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=20845952, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=20868224, episodic_return=1.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=20884224, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=20916352, episodic_return=3.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2791
+SPS: 2791
+SPS: 2791
+global_step=20938368, episodic_return=1.0 (n=128)
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+global_step=20954368, episodic_return=0.0 (n=128)
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+global_step=20996096, episodic_return=5.0 (n=128)
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+global_step=21018368, episodic_return=1.0 (n=128)
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+global_step=21034368, episodic_return=0.0 (n=128)
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+SPS: 2791
+global_step=21054080, episodic_return=1.0 (n=128)
+SPS: 2791
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+global_step=21079936, episodic_return=2.0 (n=128)
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+global_step=21095936, episodic_return=0.0 (n=128)
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+global_step=21111936, episodic_return=0.0 (n=128)
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+global_step=21139968, episodic_return=2.0 (n=128)
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+global_step=21155968, episodic_return=0.0 (n=128)
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+global_step=21175680, episodic_return=1.0 (n=128)
+SPS: 2792
+SPS: 2792
+SPS: 2792
+SPS: 2792
+global_step=21191680, episodic_return=0.0 (n=128)
+SPS: 2792
+SPS: 2793
+SPS: 2793
+SPS: 2793
+global_step=21207680, episodic_return=0.0 (n=128)
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+global_step=21233920, episodic_return=2.0 (n=128)
+SPS: 2793
+SPS: 2793
+SPS: 2793
+global_step=21249920, episodic_return=0.0 (n=128)
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+global_step=21269632, episodic_return=1.0 (n=128)
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+SPS: 2793
+global_step=21293184, episodic_return=2.0 (n=128)
+SPS: 2793
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+global_step=21324800, episodic_return=3.0 (n=128)
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+global_step=21352832, episodic_return=2.0 (n=128)
+SPS: 2794
+SPS: 2794
+SPS: 2794
+global_step=21368832, episodic_return=0.0 (n=128)
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+global_step=21390848, episodic_return=1.0 (n=128)
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+global_step=21413120, episodic_return=1.0 (n=128)
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2794
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21449088, episodic_return=4.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21478912, episodic_return=3.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21494912, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21510912, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21543168, episodic_return=3.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21559168, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21575168, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21597184, episodic_return=1.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21613184, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21629184, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2795
+SPS: 2795
+SPS: 2795
+global_step=21645184, episodic_return=0.0 (n=128)
+SPS: 2795
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+global_step=21667200, episodic_return=1.0 (n=128)
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+global_step=21683200, episodic_return=0.0 (n=128)
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+global_step=21699200, episodic_return=0.0 (n=128)
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+global_step=21724800, episodic_return=2.0 (n=128)
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+SPS: 2796
+global_step=21743488, episodic_return=1.0 (n=128)
+SPS: 2796
+SPS: 2796
+SPS: 2797
+SPS: 2797
+SPS: 2797
+global_step=21765504, episodic_return=1.0 (n=128)
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2797
+global_step=21785216, episodic_return=1.0 (n=128)
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2797
+global_step=21801216, episodic_return=0.0 (n=128)
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2797
+global_step=21817216, episodic_return=0.0 (n=128)
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2797
+global_step=21833216, episodic_return=0.0 (n=128)
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2797
+global_step=21849216, episodic_return=0.0 (n=128)
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2797
+SPS: 2798
+global_step=21871360, episodic_return=1.0 (n=128)
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+global_step=21899648, episodic_return=2.0 (n=128)
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+global_step=21915648, episodic_return=0.0 (n=128)
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+global_step=21937664, episodic_return=1.0 (n=128)
+SPS: 2798
+SPS: 2798
+SPS: 2798
+SPS: 2798
+global_step=21953664, episodic_return=0.0 (n=128)
+SPS: 2798
+SPS: 2798
+SPS: 2799
+SPS: 2799
+global_step=21969664, episodic_return=0.0 (n=128)
+SPS: 2799
+SPS: 2799
+SPS: 2798
+SPS: 2799
+SPS: 2799
+SPS: 2799
+global_step=21992064, episodic_return=1.0 (n=128)
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+global_step=22015744, episodic_return=2.0 (n=128)
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+global_step=22051968, episodic_return=4.0 (n=128)
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+global_step=22073984, episodic_return=1.0 (n=128)
+SPS: 2799
+SPS: 2799
+SPS: 2799
+SPS: 2799
+global_step=22089984, episodic_return=0.0 (n=128)
+SPS: 2800
+SPS: 2800
+SPS: 2800
+global_step=22105984, episodic_return=0.0 (n=128)
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+global_step=22121984, episodic_return=0.0 (n=128)
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+global_step=22145664, episodic_return=2.0 (n=128)
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+global_step=22173952, episodic_return=2.0 (n=128)
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+global_step=22195968, episodic_return=1.0 (n=128)
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+SPS: 2800
+global_step=22215680, episodic_return=1.0 (n=128)
+SPS: 2800
+SPS: 2801
+SPS: 2801
+SPS: 2801
+global_step=22231680, episodic_return=0.0 (n=128)
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+global_step=22247680, episodic_return=0.0 (n=128)
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+global_step=22279552, episodic_return=3.0 (n=128)
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+global_step=22301568, episodic_return=1.0 (n=128)
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+global_step=22317568, episodic_return=0.0 (n=128)
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+global_step=22337280, episodic_return=1.0 (n=128)
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2801
+global_step=22353280, episodic_return=0.0 (n=128)
+SPS: 2801
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22385152, episodic_return=3.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22407168, episodic_return=1.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22426880, episodic_return=1.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22442880, episodic_return=0.0 (n=128)
+SPS: 2801
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22458880, episodic_return=0.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22474880, episodic_return=0.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22490880, episodic_return=0.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22530560, episodic_return=5.0 (n=128)
+SPS: 2801
+SPS: 2801
+SPS: 2801
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22565120, episodic_return=3.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22581120, episodic_return=0.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22606720, episodic_return=2.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22642560, episodic_return=4.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2803
+global_step=22670976, episodic_return=2.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=22690688, episodic_return=1.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=22706688, episodic_return=0.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=22722688, episodic_return=0.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2802
+global_step=22744704, episodic_return=1.0 (n=128)
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+SPS: 2802
+global_step=22763776, episodic_return=1.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=22789376, episodic_return=2.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=22809088, episodic_return=1.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=22849280, episodic_return=4.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+SPS: 2803
+global_step=22868992, episodic_return=1.0 (n=128)
+SPS: 2803
+SPS: 2803
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+global_step=22903552, episodic_return=3.0 (n=128)
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+global_step=22925568, episodic_return=1.0 (n=128)
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+global_step=22951168, episodic_return=2.0 (n=128)
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+SPS: 2804
+global_step=22984960, episodic_return=4.0 (n=128)
+SPS: 2804
+SPS: 2805
+SPS: 2805
+SPS: 2805
+global_step=23000960, episodic_return=0.0 (n=128)
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+global_step=23016960, episodic_return=0.0 (n=128)
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+global_step=23054976, episodic_return=4.0 (n=128)
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+global_step=23070976, episodic_return=0.0 (n=128)
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+global_step=23102976, episodic_return=3.0 (n=128)
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+SPS: 2805
+global_step=23124608, episodic_return=1.0 (n=128)
+SPS: 2805
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=23144320, episodic_return=1.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=23164032, episodic_return=1.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=23185280, episodic_return=1.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=23207552, episodic_return=1.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=23223552, episodic_return=0.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=23239552, episodic_return=0.0 (n=128)
+SPS: 2806
+SPS: 2806
+SPS: 2806
+SPS: 2806
+global_step=23255552, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=23289984, episodic_return=3.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=23328128, episodic_return=4.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+global_step=23362432, episodic_return=3.0 (n=128)
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2807
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=23409792, episodic_return=6.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2807
+global_step=23425792, episodic_return=0.0 (n=128)
+SPS: 2807
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=23451520, episodic_return=2.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=23467520, episodic_return=0.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=23493120, episodic_return=2.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=23518848, episodic_return=2.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+SPS: 2808
+global_step=23538560, episodic_return=1.0 (n=128)
+SPS: 2808
+SPS: 2808
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+global_step=23564160, episodic_return=2.0 (n=128)
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+global_step=23591168, episodic_return=2.0 (n=128)
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+global_step=23621632, episodic_return=3.0 (n=128)
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+global_step=23637632, episodic_return=0.0 (n=128)
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2809
+global_step=23659648, episodic_return=1.0 (n=128)
+SPS: 2809
+SPS: 2809
+SPS: 2809
+SPS: 2810
+SPS: 2810
+global_step=23679360, episodic_return=1.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=23707648, episodic_return=2.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=23729664, episodic_return=1.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=23745664, episodic_return=0.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=23761664, episodic_return=0.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=23802496, episodic_return=5.0 (n=128)
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+SPS: 2810
+global_step=23824512, episodic_return=1.0 (n=128)
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+global_step=23860224, episodic_return=4.0 (n=128)
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+global_step=23888512, episodic_return=2.0 (n=128)
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+global_step=23914624, episodic_return=2.0 (n=128)
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+global_step=23930624, episodic_return=0.0 (n=128)
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2811
+global_step=23946624, episodic_return=0.0 (n=128)
+SPS: 2811
+SPS: 2811
+SPS: 2811
+SPS: 2812
+global_step=23962624, episodic_return=0.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+global_step=23988608, episodic_return=2.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+global_step=24027904, episodic_return=5.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+global_step=24054528, episodic_return=3.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+global_step=24070528, episodic_return=0.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+SPS: 2812
+global_step=24102400, episodic_return=3.0 (n=128)
+SPS: 2812
+SPS: 2812
+SPS: 2813
+SPS: 2813
+global_step=24118400, episodic_return=0.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=24144384, episodic_return=2.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=24160384, episodic_return=0.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=24186112, episodic_return=2.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=24202112, episodic_return=0.0 (n=128)
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+SPS: 2813
+global_step=24230144, episodic_return=2.0 (n=128)
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+global_step=24249856, episodic_return=1.0 (n=128)
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+global_step=24275712, episodic_return=2.0 (n=128)
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+global_step=24308224, episodic_return=3.0 (n=128)
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+global_step=24324224, episodic_return=0.0 (n=128)
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+global_step=24340224, episodic_return=0.0 (n=128)
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+global_step=24365952, episodic_return=2.0 (n=128)
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2814
+SPS: 2815
+SPS: 2815
+global_step=24407296, episodic_return=5.0 (n=128)
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+global_step=24438912, episodic_return=3.0 (n=128)
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+global_step=24470912, episodic_return=3.0 (n=128)
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+global_step=24498560, episodic_return=2.0 (n=128)
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+SPS: 2815
+global_step=24526848, episodic_return=2.0 (n=128)
+SPS: 2789
+SPS: 2789
+SPS: 2790
+SPS: 2790
+global_step=24542848, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=24558848, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=24574848, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=24590848, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2790
+global_step=24606848, episodic_return=0.0 (n=128)
+SPS: 2790
+SPS: 2790
+SPS: 2790
+SPS: 2774
+global_step=24622848, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=24638848, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=24654848, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=24674560, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=24690560, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=24720512, episodic_return=3.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=24736512, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=24768640, episodic_return=3.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=24788352, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=24804352, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=24820352, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=24842368, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=24858368, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=24874368, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=24890368, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=24906368, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=24922368, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=24938368, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=24964096, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2778
+global_step=25005824, episodic_return=5.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=25031808, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=25053824, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=25082368, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=25104384, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25126400, episodic_return=1.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25154688, episodic_return=2.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25180288, episodic_return=2.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25214336, episodic_return=3.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2780
+SPS: 2780
+global_step=25230336, episodic_return=0.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25246336, episodic_return=0.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25271936, episodic_return=2.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25297920, episodic_return=2.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25313920, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=25335936, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2779
+SPS: 2779
+global_step=25358080, episodic_return=1.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25374080, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25399808, episodic_return=2.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25434624, episodic_return=3.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=25469824, episodic_return=4.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25491840, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25511552, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25537152, episodic_return=2.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25559168, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=25578880, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2746
+SPS: 2746
+SPS: 2746
+global_step=25610496, episodic_return=3.0 (n=128)
+SPS: 2746
+SPS: 2746
+SPS: 2746
+SPS: 2746
+global_step=25626496, episodic_return=0.0 (n=128)
+SPS: 2746
+SPS: 2746
+SPS: 2746
+SPS: 2746
+global_step=25642496, episodic_return=0.0 (n=128)
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+global_step=25658496, episodic_return=0.0 (n=128)
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+global_step=25678208, episodic_return=1.0 (n=128)
+SPS: 2747
+SPS: 2747
+SPS: 2747
+global_step=25694208, episodic_return=0.0 (n=128)
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+global_step=25710208, episodic_return=0.0 (n=128)
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+global_step=25738496, episodic_return=2.0 (n=128)
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2747
+SPS: 2748
+global_step=25766912, episodic_return=2.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+global_step=25801600, episodic_return=3.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+global_step=25830144, episodic_return=2.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2749
+global_step=25855744, episodic_return=2.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=25875456, episodic_return=1.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=25904256, episodic_return=3.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+global_step=25920256, episodic_return=0.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+global_step=25936256, episodic_return=0.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+global_step=25958272, episodic_return=1.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+global_step=25990400, episodic_return=3.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2748
+SPS: 2749
+SPS: 2749
+global_step=26016384, episodic_return=2.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26042368, episodic_return=2.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26058368, episodic_return=0.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26080384, episodic_return=1.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26096384, episodic_return=0.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2750
+SPS: 2750
+global_step=26121984, episodic_return=2.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26141696, episodic_return=1.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26161408, episodic_return=1.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2749
+SPS: 2749
+global_step=26189696, episodic_return=2.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2750
+global_step=26205696, episodic_return=0.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26240384, episodic_return=4.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26262656, episodic_return=1.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2748
+SPS: 2748
+SPS: 2748
+global_step=26290944, episodic_return=2.0 (n=128)
+SPS: 2748
+SPS: 2748
+SPS: 2749
+SPS: 2749
+global_step=26306944, episodic_return=0.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26332672, episodic_return=2.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26348672, episodic_return=0.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26368384, episodic_return=1.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26394112, episodic_return=2.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26410112, episodic_return=0.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26438400, episodic_return=2.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26460416, episodic_return=1.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26482432, episodic_return=1.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26502144, episodic_return=1.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26518144, episodic_return=0.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26544000, episodic_return=2.0 (n=128)
+SPS: 2750
+SPS: 2751
+SPS: 2749
+SPS: 2749
+SPS: 2749
+global_step=26566144, episodic_return=1.0 (n=128)
+SPS: 2749
+SPS: 2749
+SPS: 2749
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26613888, episodic_return=5.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26629888, episodic_return=0.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26652160, episodic_return=1.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26675840, episodic_return=2.0 (n=128)
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+SPS: 2750
+global_step=26697856, episodic_return=1.0 (n=128)
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+global_step=26719872, episodic_return=1.0 (n=128)
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+global_step=26757888, episodic_return=4.0 (n=128)
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+global_step=26811520, episodic_return=7.0 (n=128)
+SPS: 2751
+SPS: 2751
+SPS: 2752
+SPS: 2752
+global_step=26827520, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=26843520, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=26865664, episodic_return=1.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=26881664, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=26913792, episodic_return=3.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=26937216, episodic_return=2.0 (n=128)
+SPS: 2752
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=26966528, episodic_return=3.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=26982528, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27004544, episodic_return=1.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27020544, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27040256, episodic_return=1.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27056256, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=27078016, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=27103616, episodic_return=2.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=27127296, episodic_return=2.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27168000, episodic_return=4.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27190272, episodic_return=1.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27212288, episodic_return=1.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27228288, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27256704, episodic_return=2.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27276416, episodic_return=1.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2751
+SPS: 2751
+SPS: 2751
+global_step=27305472, episodic_return=3.0 (n=128)
+SPS: 2751
+SPS: 2752
+SPS: 2752
+SPS: 2751
+SPS: 2752
+global_step=27327744, episodic_return=1.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27365888, episodic_return=4.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27393920, episodic_return=2.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27409920, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27432192, episodic_return=1.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27454208, episodic_return=1.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27470208, episodic_return=0.0 (n=128)
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2751
+SPS: 2752
+global_step=27507712, episodic_return=4.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27523712, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27552384, episodic_return=3.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27568384, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27584384, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27600384, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27616384, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27632384, episodic_return=0.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27664128, episodic_return=3.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27683840, episodic_return=1.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+global_step=27709312, episodic_return=2.0 (n=128)
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2752
+SPS: 2753
+global_step=27731328, episodic_return=1.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27747328, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27763328, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27789312, episodic_return=2.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27816960, episodic_return=3.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2753
+SPS: 2753
+global_step=27832960, episodic_return=0.0 (n=128)
+SPS: 2753
+SPS: 2753
+SPS: 2754
+SPS: 2754
+global_step=27848960, episodic_return=0.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=27883520, episodic_return=3.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=27905152, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=27927168, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=27957760, episodic_return=3.0 (n=128)
+SPS: 2754
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2754
+global_step=27985152, episodic_return=3.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28007168, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28045568, episodic_return=4.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28083712, episodic_return=4.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28105728, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28121728, episodic_return=0.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28141440, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28157440, episodic_return=0.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28188288, episodic_return=4.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2755
+global_step=28204288, episodic_return=0.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2754
+SPS: 2754
+global_step=28226304, episodic_return=1.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28242304, episodic_return=0.0 (n=128)
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+SPS: 2754
+global_step=28270336, episodic_return=2.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+global_step=28286336, episodic_return=0.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+global_step=28316160, episodic_return=3.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+global_step=28344576, episodic_return=2.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+global_step=28366208, episodic_return=1.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+global_step=28393984, episodic_return=2.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+global_step=28409984, episodic_return=0.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2755
+global_step=28433408, episodic_return=2.0 (n=128)
+SPS: 2755
+SPS: 2755
+SPS: 2755
+SPS: 2756
+global_step=28449408, episodic_return=0.0 (n=128)
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+global_step=28475136, episodic_return=2.0 (n=128)
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+global_step=28491136, episodic_return=0.0 (n=128)
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+global_step=28507136, episodic_return=0.0 (n=128)
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+global_step=28526848, episodic_return=1.0 (n=128)
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+global_step=28542848, episodic_return=0.0 (n=128)
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+SPS: 2756
+global_step=28564864, episodic_return=1.0 (n=128)
+SPS: 2756
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+global_step=28605568, episodic_return=5.0 (n=128)
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+global_step=28627584, episodic_return=1.0 (n=128)
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+global_step=28646656, episodic_return=1.0 (n=128)
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+global_step=28678656, episodic_return=3.0 (n=128)
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2757
+SPS: 2758
+global_step=28700672, episodic_return=1.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+global_step=28716672, episodic_return=0.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+global_step=28740096, episodic_return=2.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+global_step=28762240, episodic_return=1.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+global_step=28787840, episodic_return=2.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+global_step=28803840, episodic_return=0.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+global_step=28819840, episodic_return=0.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2758
+SPS: 2758
+global_step=28839552, episodic_return=1.0 (n=128)
+SPS: 2758
+SPS: 2758
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+global_step=28871424, episodic_return=3.0 (n=128)
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+global_step=28893696, episodic_return=1.0 (n=128)
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+global_step=28915712, episodic_return=1.0 (n=128)
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+global_step=28937600, episodic_return=1.0 (n=128)
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2759
+global_step=28953600, episodic_return=0.0 (n=128)
+SPS: 2759
+SPS: 2759
+SPS: 2759
+SPS: 2760
+SPS: 2760
+SPS: 2760
+global_step=28977280, episodic_return=2.0 (n=128)
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+global_step=28993280, episodic_return=0.0 (n=128)
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+global_step=29018880, episodic_return=2.0 (n=128)
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+global_step=29044480, episodic_return=2.0 (n=128)
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+global_step=29063296, episodic_return=1.0 (n=128)
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+global_step=29085312, episodic_return=1.0 (n=128)
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+SPS: 2760
+global_step=29105024, episodic_return=1.0 (n=128)
+SPS: 2760
+SPS: 2761
+SPS: 2761
+SPS: 2761
+global_step=29121024, episodic_return=0.0 (n=128)
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+global_step=29140608, episodic_return=1.0 (n=128)
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+global_step=29156608, episodic_return=0.0 (n=128)
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+global_step=29184896, episodic_return=2.0 (n=128)
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2761
+global_step=29200896, episodic_return=0.0 (n=128)
+SPS: 2761
+SPS: 2761
+SPS: 2761
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+global_step=29236480, episodic_return=4.0 (n=128)
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+global_step=29256192, episodic_return=1.0 (n=128)
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+global_step=29278208, episodic_return=1.0 (n=128)
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+global_step=29306112, episodic_return=2.0 (n=128)
+SPS: 2762
+SPS: 2762
+SPS: 2762
+SPS: 2762
+global_step=29322112, episodic_return=0.0 (n=128)
+SPS: 2762
+SPS: 2762
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29345792, episodic_return=2.0 (n=128)
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29365504, episodic_return=1.0 (n=128)
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29381504, episodic_return=0.0 (n=128)
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29410688, episodic_return=3.0 (n=128)
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29430144, episodic_return=1.0 (n=128)
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29451392, episodic_return=1.0 (n=128)
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29474432, episodic_return=2.0 (n=128)
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+SPS: 2763
+global_step=29509248, episodic_return=3.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29525248, episodic_return=0.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29553920, episodic_return=2.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29573888, episodic_return=1.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29589888, episodic_return=0.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29611520, episodic_return=1.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29627520, episodic_return=0.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29649536, episodic_return=1.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29675136, episodic_return=2.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2764
+SPS: 2764
+global_step=29691136, episodic_return=0.0 (n=128)
+SPS: 2764
+SPS: 2764
+SPS: 2765
+SPS: 2765
+SPS: 2765
+global_step=29710080, episodic_return=1.0 (n=128)
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+global_step=29750784, episodic_return=4.0 (n=128)
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+global_step=29770496, episodic_return=1.0 (n=128)
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+global_step=29786496, episodic_return=0.0 (n=128)
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+SPS: 2765
+global_step=29808512, episodic_return=1.0 (n=128)
+SPS: 2765
+SPS: 2765
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+global_step=29843328, episodic_return=3.0 (n=128)
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+global_step=29859328, episodic_return=0.0 (n=128)
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+global_step=29885440, episodic_return=2.0 (n=128)
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+global_step=29905152, episodic_return=1.0 (n=128)
+SPS: 2766
+SPS: 2766
+SPS: 2766
+global_step=29921152, episodic_return=0.0 (n=128)
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+SPS: 2766
+global_step=29957504, episodic_return=4.0 (n=128)
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+global_step=29979776, episodic_return=1.0 (n=128)
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+global_step=29995776, episodic_return=0.0 (n=128)
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+global_step=30017792, episodic_return=1.0 (n=128)
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+global_step=30039808, episodic_return=1.0 (n=128)
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+SPS: 2767
+global_step=30071680, episodic_return=3.0 (n=128)
+SPS: 2767
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+global_step=30103552, episodic_return=3.0 (n=128)
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+global_step=30132864, episodic_return=3.0 (n=128)
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+global_step=30148864, episodic_return=0.0 (n=128)
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2768
+global_step=30187264, episodic_return=4.0 (n=128)
+SPS: 2768
+SPS: 2768
+SPS: 2768
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+global_step=30215552, episodic_return=2.0 (n=128)
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+global_step=30231552, episodic_return=0.0 (n=128)
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+global_step=30260864, episodic_return=3.0 (n=128)
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+global_step=30280576, episodic_return=1.0 (n=128)
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+global_step=30313216, episodic_return=4.0 (n=128)
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2769
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30341504, episodic_return=2.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30357504, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30373504, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30389504, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30411520, episodic_return=1.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30433536, episodic_return=1.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30455552, episodic_return=1.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30471552, episodic_return=0.0 (n=128)
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+SPS: 2770
+global_step=30510720, episodic_return=5.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=30536320, episodic_return=2.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=30558336, episodic_return=1.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=30574336, episodic_return=0.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=30590336, episodic_return=0.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=30612352, episodic_return=1.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=30628352, episodic_return=0.0 (n=128)
+SPS: 2771
+SPS: 2771
+SPS: 2771
+SPS: 2771
+global_step=30644352, episodic_return=0.0 (n=128)
+SPS: 2771
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30669952, episodic_return=2.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30689664, episodic_return=1.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30705664, episodic_return=0.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30721664, episodic_return=0.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30737664, episodic_return=0.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30763264, episodic_return=2.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30795136, episodic_return=3.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30822784, episodic_return=2.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30838784, episodic_return=0.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+global_step=30866816, episodic_return=2.0 (n=128)
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2772
+SPS: 2773
+global_step=30892800, episodic_return=2.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=30918400, episodic_return=2.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=30944000, episodic_return=2.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=30982400, episodic_return=4.0 (n=128)
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+SPS: 2773
+global_step=31011712, episodic_return=3.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31027712, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31046016, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31067904, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31087616, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31110528, episodic_return=2.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31142016, episodic_return=3.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2775
+global_step=31169152, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31194752, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31216768, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31242752, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31258752, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31274752, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2774
+SPS: 2774
+global_step=31290752, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31310464, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31330432, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31356672, episodic_return=2.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31382272, episodic_return=2.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=31398272, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31414272, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31430272, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31455872, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31481472, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31497472, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31519616, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2776
+global_step=31547520, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31573120, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31589120, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31617536, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31633536, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31653248, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31669248, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31694976, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=31710976, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31748736, episodic_return=4.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31767680, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31783680, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31799680, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31815680, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2777
+SPS: 2777
+global_step=31841280, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=31857280, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=31885568, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=31927424, episodic_return=5.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=31949440, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=31982848, episodic_return=3.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32011392, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32043264, episodic_return=3.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32059264, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32084224, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32109824, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32135424, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32155008, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32180608, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32200320, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32225920, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32264064, episodic_return=4.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32312064, episodic_return=9.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32328064, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2777
+SPS: 2777
+global_step=32344064, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2776
+SPS: 2776
+global_step=32360064, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32376064, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32392064, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32411776, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32437504, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=32463104, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2777
+SPS: 2777
+global_step=32485504, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32511104, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32533248, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32549248, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32565248, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32581248, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2777
+SPS: 2776
+SPS: 2776
+global_step=32613120, episodic_return=3.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2777
+SPS: 2777
+global_step=32636544, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32662144, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32687872, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32703872, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=32726272, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32770688, episodic_return=5.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32786688, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32808960, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32837632, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32859392, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32887424, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2777
+SPS: 2777
+SPS: 2778
+global_step=32912768, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32928768, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32948480, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32964480, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=32986752, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33018752, episodic_return=3.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33047040, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2779
+SPS: 2779
+global_step=33063040, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=33097344, episodic_return=3.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=33113344, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=33129344, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=33161088, episodic_return=3.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=33183104, episodic_return=1.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2780
+SPS: 2780
+global_step=33205120, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33239552, episodic_return=3.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33261568, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33293440, episodic_return=3.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33320960, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33344640, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2778
+SPS: 2777
+SPS: 2777
+global_step=33382784, episodic_return=4.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33412224, episodic_return=3.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33434496, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33456896, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33488128, episodic_return=3.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33516160, episodic_return=2.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33538176, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33554176, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2777
+global_step=33570176, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33592064, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33613696, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33639296, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33659008, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33681024, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33700736, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33716736, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33748480, episodic_return=3.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33764480, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33805696, episodic_return=4.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33821696, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33837696, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=33859200, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2777
+SPS: 2777
+global_step=33878912, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33894912, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33920512, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33936512, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33958528, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33980800, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=33999616, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=34019456, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=34035456, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=34061056, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=34083072, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2775
+SPS: 2775
+global_step=34105344, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34125056, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34141056, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34166016, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34182016, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34198016, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34236288, episodic_return=4.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34252288, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34268288, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34288000, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34310016, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34326016, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34342016, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34399616, episodic_return=7.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34419328, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34435328, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34460928, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34476928, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34492928, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34539648, episodic_return=5.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34565248, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=34581248, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=34597248, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=34613248, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=34638720, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=34660736, episodic_return=1.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=34692608, episodic_return=3.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2775
+SPS: 2775
+global_step=34708608, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34734464, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34760064, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34785664, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34811264, episodic_return=2.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34827264, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34846976, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34862976, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34882688, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34902400, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34921600, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34941312, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=34957312, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=34973312, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35005312, episodic_return=3.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35041408, episodic_return=7.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35057408, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35076480, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35104896, episodic_return=2.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35120896, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35150848, episodic_return=3.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35166848, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35182848, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35198848, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35224832, episodic_return=2.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35244544, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35263616, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35279616, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35295616, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35315328, episodic_return=1.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35331328, episodic_return=0.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+SPS: 2774
+global_step=35363200, episodic_return=3.0 (n=128)
+SPS: 2774
+SPS: 2774
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=35385216, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=35401216, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=35432960, episodic_return=3.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=35452672, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=35468672, episodic_return=0.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=35488384, episodic_return=1.0 (n=128)
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+SPS: 2775
+global_step=35518080, episodic_return=3.0 (n=128)
+SPS: 2775
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35534080, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35550080, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35566080, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35582080, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35598080, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35621504, episodic_return=2.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35637504, episodic_return=0.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+SPS: 2776
+global_step=35676288, episodic_return=4.0 (n=128)
+SPS: 2776
+SPS: 2776
+SPS: 2777
+SPS: 2777
+global_step=35696000, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=35724288, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=35745664, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=35771648, episodic_return=2.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=35787648, episodic_return=0.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=35809664, episodic_return=1.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=35839360, episodic_return=3.0 (n=128)
+SPS: 2777
+SPS: 2777
+SPS: 2777
+SPS: 2777
+global_step=35855360, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=35875072, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=35891072, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=35907072, episodic_return=0.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=35928576, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=35958272, episodic_return=3.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=35977216, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=36011520, episodic_return=3.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2778
+global_step=36033536, episodic_return=1.0 (n=128)
+SPS: 2778
+SPS: 2778
+SPS: 2778
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=36059136, episodic_return=2.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=36085120, episodic_return=2.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=36106240, episodic_return=1.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=36138112, episodic_return=3.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=36169984, episodic_return=3.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+global_step=36185984, episodic_return=0.0 (n=128)
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2779
+SPS: 2780
+global_step=36208128, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36233856, episodic_return=2.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36256128, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36272128, episodic_return=0.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36288128, episodic_return=0.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36310144, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36332160, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36354176, episodic_return=1.0 (n=128)
+SPS: 2780
+SPS: 2780
+SPS: 2780
+SPS: 2780
+global_step=36370176, episodic_return=0.0 (n=128)
+SPS: 2780
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=36399872, episodic_return=3.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=36421888, episodic_return=1.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=36441344, episodic_return=1.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=36470656, episodic_return=3.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=36502272, episodic_return=3.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+global_step=36524544, episodic_return=1.0 (n=128)
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2781
+SPS: 2782
+global_step=36556672, episodic_return=3.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=36576384, episodic_return=1.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=36601984, episodic_return=2.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=36642432, episodic_return=4.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=36662144, episodic_return=1.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=36678144, episodic_return=0.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+global_step=36709888, episodic_return=3.0 (n=128)
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2782
+SPS: 2783
+SPS: 2783
+global_step=36738432, episodic_return=3.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=36760704, episodic_return=1.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=36788992, episodic_return=2.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=36817280, episodic_return=2.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=36842880, episodic_return=2.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+global_step=36871552, episodic_return=2.0 (n=128)
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2783
+SPS: 2784
+global_step=36891264, episodic_return=1.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=36919296, episodic_return=2.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=36951680, episodic_return=3.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=36983296, episodic_return=3.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=37021056, episodic_return=4.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2784
+global_step=37037056, episodic_return=0.0 (n=128)
+SPS: 2784
+SPS: 2784
+SPS: 2784
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=37082240, episodic_return=5.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=37107584, episodic_return=2.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=37129856, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=37151360, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=37167360, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=37186688, episodic_return=1.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+global_step=37202688, episodic_return=0.0 (n=128)
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2785
+SPS: 2786
+SPS: 2786
+global_step=37224960, episodic_return=1.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=37253248, episodic_return=2.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=37269248, episodic_return=0.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=37297280, episodic_return=2.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=37320704, episodic_return=2.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=37346688, episodic_return=2.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+global_step=37366400, episodic_return=1.0 (n=128)
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2786
+SPS: 2787
+global_step=37388160, episodic_return=1.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=37404160, episodic_return=0.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=37433984, episodic_return=3.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=37463808, episodic_return=3.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=37489536, episodic_return=2.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=37517440, episodic_return=2.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+SPS: 2787
+global_step=37545984, episodic_return=2.0 (n=128)
+SPS: 2787
+SPS: 2787
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37587200, episodic_return=5.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37603200, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37619200, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37635200, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37651200, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37676800, episodic_return=2.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37692800, episodic_return=0.0 (n=128)
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+SPS: 2788
+global_step=37718400, episodic_return=2.0 (n=128)
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+global_step=37744000, episodic_return=2.0 (n=128)
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2789
+SPS: 2738
+SPS: 2738
+global_step=37769600, episodic_return=2.0 (n=128)
+SPS: 2738
+SPS: 2736
+SPS: 2736
+global_step=37785600, episodic_return=0.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=37806848, episodic_return=1.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2734
+global_step=37822848, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=37838848, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=37854848, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=37870848, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=37890560, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=37912576, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=37928576, episodic_return=0.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=37969536, episodic_return=5.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=37985536, episodic_return=0.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=38001536, episodic_return=0.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=38027648, episodic_return=2.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=38053248, episodic_return=2.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=38075520, episodic_return=1.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=38091520, episodic_return=0.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+global_step=38107520, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38123520, episodic_return=0.0 (n=128)
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2733
+SPS: 2734
+global_step=38143232, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38162944, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38178944, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38200960, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38220288, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38244480, episodic_return=2.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38260480, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38286336, episodic_return=2.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38308480, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38324480, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38356096, episodic_return=3.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38381696, episodic_return=2.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38403712, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38430848, episodic_return=2.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38459008, episodic_return=2.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38484608, episodic_return=2.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38500608, episodic_return=0.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38516608, episodic_return=0.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38538624, episodic_return=1.0 (n=128)
+SPS: 2735
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38560640, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38576640, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38598784, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38630400, episodic_return=3.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38650112, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38666112, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38682112, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38704384, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38728064, episodic_return=2.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38756352, episodic_return=2.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38772352, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38788352, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38810368, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38826368, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38846080, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38868352, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38887552, episodic_return=1.0 (n=128)
+SPS: 2734
+SPS: 2734
+SPS: 2734
+global_step=38903552, episodic_return=0.0 (n=128)
+SPS: 2734
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38932736, episodic_return=3.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38951808, episodic_return=1.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38967808, episodic_return=0.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=38990080, episodic_return=1.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=39009024, episodic_return=1.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=39031040, episodic_return=1.0 (n=128)
+SPS: 2735
+SPS: 2735
+SPS: 2735
+SPS: 2735
+global_step=39051008, episodic_return=1.0 (n=128)
+SPS: 2735
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+global_step=39091840, episodic_return=4.0 (n=128)
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+global_step=39107840, episodic_return=0.0 (n=128)
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+global_step=39129856, episodic_return=1.0 (n=128)
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+global_step=39172352, episodic_return=5.0 (n=128)
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+global_step=39188352, episodic_return=0.0 (n=128)
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2736
+SPS: 2737
+global_step=39208064, episodic_return=1.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39227776, episodic_return=1.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39243776, episodic_return=0.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39263488, episodic_return=1.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39283200, episodic_return=1.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39311872, episodic_return=2.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39327872, episodic_return=0.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39349888, episodic_return=1.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2738
+SPS: 2738
+global_step=39365888, episodic_return=0.0 (n=128)
+SPS: 2738
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39395200, episodic_return=3.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39411200, episodic_return=0.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39445120, episodic_return=4.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39461120, episodic_return=0.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39496064, episodic_return=3.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39521664, episodic_return=2.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39537664, episodic_return=0.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39557376, episodic_return=1.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39577088, episodic_return=1.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2737
+SPS: 2737
+global_step=39593088, episodic_return=0.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2737
+global_step=39618816, episodic_return=2.0 (n=128)
+SPS: 2737
+SPS: 2737
+SPS: 2737
+SPS: 2738
+SPS: 2737
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2737
+SPS: 2737
+global_step=39659520, episodic_return=4.0 (n=128)
+SPS: 2737
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39694080, episodic_return=3.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39722112, episodic_return=2.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39741440, episodic_return=1.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39771264, episodic_return=3.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39800576, episodic_return=3.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39816576, episodic_return=0.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39832576, episodic_return=0.0 (n=128)
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+SPS: 2738
+global_step=39854720, episodic_return=1.0 (n=128)
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+global_step=39880704, episodic_return=2.0 (n=128)
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+global_step=39910016, episodic_return=3.0 (n=128)
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+global_step=39945728, episodic_return=4.0 (n=128)
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+SPS: 2739
+global_step=39977344, episodic_return=3.0 (n=128)
+SPS: 2739
+SPS: 2739
+SPS: 2739
+global_step=39993344, episodic_return=0.0 (n=128)
+SPS: 2739
+SPS: 2739
+Results saved to /runs/h005__h005-breakout-s3.csv
+slurmstepd: error: run_script_as_user: couldn't change working dir to /home/rogercc/'/scratch/rogercc/cleanrl': No such file or directory

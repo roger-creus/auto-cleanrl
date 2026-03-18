@@ -1,2 +1,2 @@
-env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
-Qbert-v5,1,40000000,125.00,0.00,114176,7800,h021,h021-qbert-s1
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Qbert-v5,1,h021,h021-qbert-s1,ppo_specnorm_aug,40000000,123520,161.78756713867188,144.87046813964844,19984000.0,200.0

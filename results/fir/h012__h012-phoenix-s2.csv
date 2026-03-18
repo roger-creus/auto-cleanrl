@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Phoenix-v5,2,h012,h012-phoenix-s2,ppo_aug,40000000,28672,807.7678833007812,796.9642944335938,23160320.0,280.0

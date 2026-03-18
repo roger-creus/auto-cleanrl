@@ -1334,3 +1334,121 @@ ALL PPO variants degrade on MsPacman (h005: 79%, h007: 78%, h012: 81%, h013: 82%
 4. Continue processing 3-seed eval results for h005/h007/h012/h013
 5. Check h010/h011 IMPALA CNN pilots (still only 3/15 each)
 6. Plan combination experiments once 3-seed evals solidify rankings
+
+---
+**[2026-03-18 14:39 UTC]**
+
+## Session 23: Critical Bug Fix — Cancelled 39 BAD Jobs, Fixed Script Defaults, Resubmitted h026
+
+### CRITICAL BUGS FOUND AND FIXED
+
+1. **4 scripts had 10M default total_timesteps (should be 40M):**
+   - ppo_atari_envpool_aug.py (h012), ppo_atari_envpool_chainsp.py (h005), ppo_atari_envpool_specnorm.py (h013), pqn_atari_envpool_nap_lstm.py (h026)
+   - All fixed to 40M default
+
+2. **h026 resubmissions (session 21) used WRONG SCRIPT:**
+   - Used pqn_atari_envpool_lstm.py (h008 script) instead of pqn_atari_envpool_nap_lstm.py
+   - All 15 cancelled and resubmitted with correct script
+
+3. **h012/h013/h005 gap resubmissions (session 20) ran at 10M:**
+   - Missing --total-timesteps flag combined with 10M default
+   - Cancelled 7 h012 BAD, 8 h013 BAD, 9 h005 BAD jobs
+   - All have OK counterparts still running from original batch submissions
+   - h012-montezumarevenge-s3 trained successfully but crashed saving CSV (/output read-only vs /runs)
+
+### TOTAL CANCELLED: 39 BAD jobs across all 4 clusters
+
+### Results Processed (66 new entries, 29 old-format removed)
+Net new entries after cleanup: 522 rows in experiments.csv
+
+**Key new 3-seed data:**
+- h012: 9 new results (amidar-s3, breakout-s3, montezumarevenge-s2, mspacman-s2/s3, phoenix-s3, privateeye-s2, qbert-s3, spaceinvaders-s3)
+- h013: 9 new results (amidar-s2, battlezone-s3, doubledunk-s3, montezumarevenge-s3, privateeye-s2/s3, qbert-s2, venture-s2/s3)
+- h007: solaris-s2 (1795.92)
+- h019: mspacman-s1 (264.31)
+
+### UPDATED 3-SEED RANKINGS (using clean new-format baselines):
+
+**TIER 1 — Best PPO techniques (3-seed data):**
+1. h012 (DrQ): 4W/1L/10T (net +3) — BattleZone +15%, Phoenix +11%, PrivateEye +282%
+2. h007 (S&P): 4W/1L/10T (net +3) — BattleZone +23%, PrivateEye +141%, Solaris +30%
+3. h013 (SpectralNorm): 2W/2L/11T (net 0) — DROPPED from pilot. NameThisGame -10% new loss
+4. h005 (CHAIN-SP): 2W/1L/12T (net +1) — Largely neutral
+
+**PQN:** h008 (LSTM): 8W/3L/4T (net +5) — Still dominant but pilot-only data
+
+**Closed this session:** h025 (DualValue): 2W/4L/3T at 9/15. Net -2. Closed.
+
+**KEY INSIGHT: h012 and h007 are now the clear top PPO techniques at 3-seed level.** h013 dropped — its pilot Phoenix/Qbert wins didn't hold up with more seeds. The universal MsPacman loss pattern persists across ALL techniques.
+
+### Active Jobs: ~284 (189 running + 80 pending + 15 submitted)
+- 3-seed evals: h005(25 OK), h007(~9), h008(~30), h012(~19 OK), h013(~21 OK)
+- Pilots: h010(9), h011(9), h021(~8), h022(~11), h023(~11), h024(~12)
+- h026(15 CORRECTED, just submitted)
+- h019: 12/15 pilot, ~2 running
+
+### Next Session TODO:
+1. Process more 3-seed results for h005/h007/h008/h012/h013 as they complete
+2. Check h021-h024 pilot progress — especially h023 (Qbert +42%)
+3. Process h010/h011 IMPALA CNN (still only 3/15)
+4. Close h019 when pilot completes
+5. Close h021 if negative trend continues
+6. CRITICAL NEXT STEP: Once h012/h007 3-seed evals confirm, start COMBINATION h012+h007 (DrQ + S&P)
+7. Also consider h012+h013 combination despite h013 drop — may still contribute
+8. Still need hypotheses for: off-policy (DQN), ensemble methods, PPG
+
+---
+**[2026-03-18 15:00 UTC]**
+
+## Session 24: Process New Results + Resubmit 39 Gaps + Submit h027
+
+### Triggered by: h021-qbert-s1 (fir SUCCESS), h023-amidar-s1 (fir SUCCESS)
+
+### Results Processed (3 updates)
+- h021-qbert-s1: OLD FORMAT q4=125 → NEW FORMAT q4=144.87. Baseline Qbert=158, so -8.3% = TIE (was previously classified as loss at 125). 
+- h023-amidar-s1: OLD FORMAT q4=31 → NEW FORMAT q4=2.10. Baseline Amidar=2.2, so TIE.
+- h023-phoenix-s1: NEW ENTRY. q4=738.72. Baseline Phoenix=796, so -7.2% = TIE.
+
+### h021 (SpectNorm+DrQ) pilot: 3/15 games
+- Amidar: old-format only (unreliable), Breakout: 0 (LOSS), Qbert: 144.87 (TIE, was reclassified from loss)
+- 10 more running. CONCERNING — Breakout=0 is bad, but Qbert is actually OK.
+
+### h023 (SpectNorm+S&P) pilot: 4/15 games (3 with q4 data)
+- Amidar=2.10 (TIE), Qbert=225 old-format (WIN if real), Phoenix=738.72 (TIE)
+- 1W/0L/2T at 3/15 — Qbert +42% is still the key signal, but it's old-format data. Need new-format confirmation.
+- 10 more running.
+
+### 3-Seed Gap Resubmissions (39 jobs across 4 clusters)
+Found significant uncovered gaps from session 23 cancellations (10M default bug). All scripts now have correct 40M defaults.
+- h005 (CHAIN-SP): 5 gaps (alien-s3, breakout-s2, doubledunk-s3, namethisgame-s3, qbert-s2)
+- h007 (S&P): 3 gaps (breakout-s3, privateeye-s3, solaris-s2)
+- h008 (PQN LSTM): 3 gaps (amidar-s2, mspacman-s2, qbert-s2)
+- h012 (DrQ): 15 gaps (major — mostly s2/s3 entries)
+- h013 (SpectNorm): 13 gaps
+All 39 submitted successfully.
+
+### New Hypothesis: h027 (PPO + DrQ + S&P)
+Combines the top-2 PPO techniques: h012 (DrQ, net+2) and h007 (S&P, net+2).
+- Created cleanrl/ppo_atari_envpool_aug_sp.py
+- Pilot: 15 games × 1 seed submitted across 4 clusters
+- Rationale: DrQ improves representation quality, S&P maintains plasticity. Both independently improve PrivateEye and BattleZone. Testing for synergy.
+
+### CURRENT STANDINGS (PPO techniques, 3-seed data where available)
+1. h007 (S&P): 3W/1L/11T (net +2) — BattleZone +21%, PrivateEye +139%, Solaris +78%. Loss: MsPacman -22%.
+2. h012 (DrQ): 3W/1L/11T (net +2) — Amidar +26%, BattleZone +13%, PrivateEye +472%. Loss: MsPacman -19%.
+3. h013 (SpectNorm): 3W/1L/11T (net +2) — Amidar +39%, PrivateEye +132%, Qbert +18%. Loss: MsPacman -18%.
+4. h005 (CHAIN-SP): 1W/1L/13T (net +0) — Only PrivateEye win. Largely neutral.
+
+PQN: h008 (LSTM): 7W/3L (net +4) pilot, 3-seed eval in progress.
+
+### Active Jobs: ~297 existing + 39 gap resubmissions + 15 h027 = ~351 total
+
+### Next Session TODO:
+1. Process h021-h024 pilot results as they complete
+2. Process h010/h011 IMPALA CNN pilots (still only 3/15 each)
+3. Process 3-seed eval gaps as they complete
+4. Close h019 (12/15 pilot, 0W/0L — neutral)
+5. Close h021 if negative trend continues
+6. Monitor h027 (DrQ+S&P) pilot
+7. Consider creating triple combination: DrQ + S&P + SpectNorm (h027 + h013)
+8. Still need to explore: off-policy methods (DQN/SAC-discrete), PPG, ensemble methods

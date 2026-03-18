@@ -457,10 +457,10 @@ h020-venture-s2,h020,,rorqual (old_format),Venture-v5,2,,40000000,16640.0,0.0,0.
 h020-venture-s3,h020,,nibi (old_format),Venture-v5,3,,40000000,18816.0,0.0,0.0,,0.0
 h021-amidar-s1,h021,,"ppo_specnorm_drq Amidar-v5 seed 1 (narval, 40M, old format)",Amidar-v5,1,ppo_specnorm_drq,40000000,65536,,31.0,,31.0
 h021-breakout-s1,h021,,"ppo_specnorm_drq Breakout-v5 seed 1 (nibi, 40M, old format)",Breakout-v5,1,ppo_specnorm_drq,40000000,91648,,0.0,,0.0
-h021-qbert-s1,h021,,"ppo_specnorm_drq Qbert-v5 seed 1 (fir, 40M, old format)",Qbert-v5,1,ppo_specnorm_drq,40000000,114176,,125.0,,125.0
+h021-qbert-s1,h021,,q4 corrected from new-format CSV,Qbert-v5,1,ppo_specnorm_drq,40000000,123520,161.79,144.87,19984000.0,200.0
 h022-breakout-s1,h022,,"ppo_qr_value Breakout-v5 seed 1 (narval, 40M, old format)",Breakout-v5,1,ppo_qr_value,40000000,89216,,2.0,,2.0
 h022-qbert-s1,h022,,auto-ingested,Qbert-v5,1,ppo_atari_envpool,40000000,,150.00,,,
-h023-amidar-s1,h023,,"ppo_specnorm_sp Amidar-v5 seed 1 (nibi, 40M, old format)",Amidar-v5,1,ppo_specnorm_sp,40000000,64896,,31.0,,31.0
+h023-amidar-s1,h023,,q4 corrected from new-format CSV,Amidar-v5,1,ppo_specnorm_sp,40000000,70912,2.32,2.10,164352.0,9.0
 h023-breakout-s1,h023,,auto-ingested,Breakout-v5,1,ppo_atari_envpool,40000000,,0.00,,,
 h023-qbert-s1,h023,,"ppo_specnorm_sp Qbert-v5 seed 1 (narval, 40M, old format) — VERY PROMISING: 225 vs 158 base (+42%)",Qbert-v5,1,ppo_specnorm_sp,40000000,117376,,225.0,,225.0
 h024-amidar-s1,h024,,auto-ingested,Amidar-v5,1,ppo_atari_envpool,40000000,,31.00,,,
@@ -533,3 +533,4 @@ h002-mspacman-s3,h002,see batch file,"cluster=nibi, old-format approximate",,,,,
 h002-doubledunk-s3,h002,see batch file,"cluster=fir, old-format approximate",,,,,,,-24.00,,
 h002-spaceinvaders-s3,h002,see batch file,"cluster=fir, old-format approximate",,,,,,,285.00,,
 h002-qbert-s2,h002,see batch file,"cluster=fir, old-format approximate",,,,,,,150.00,,
+h023-phoenix-s1,h023,,new-format CSV,Phoenix-v5,1,ppo_specnorm_sp,40000000,27904,761.06,738.72,21236480.0,300.0
