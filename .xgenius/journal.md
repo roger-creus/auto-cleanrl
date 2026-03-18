@@ -816,3 +816,75 @@ Major running batches: h003(35), h004(29+7), h005(31), h007(22), h010(15), h011(
 4. Monitor h010/h011 (IMPALA CNN) — early results very promising
 5. Once more pilots complete, start thinking about COMBINATION experiments: h013+h012 (SpectralNorm+DrQ), h013+h007 (SpectralNorm+S&P)
 6. Consider new hypotheses from unexplored categories: off-policy, ensemble, distributional RL
+
+---
+**[2026-03-18 11:42 UTC]**
+
+## Session 15: Data Cleanup + Results Processing + h011 Resubmission
+
+### CRITICAL FIX: experiments.csv had 47 empty rows contaminating baselines
+- Found 47 rows with empty q4_return values (skeleton rows from earlier sessions)
+- These were being averaged into baseline means, halving the effective baselines (e.g., PPO Phoenix appeared as 398 instead of 796)
+- Removed all empty rows. experiments.csv: 453 → 406 rows
+- The ANALYSIS from the data agent in this session was affected by this bug before I fixed it — only trust the corrected analysis below
+
+### Corrected Baselines (matching journal sessions 10-14):
+PPO (h001): Alien=198, BattleZone=3700, Solaris=2615, Phoenix=796, NameThisGame=2161, MsPacman=319, PrivateEye=-44.5, SpaceInvaders=147, Qbert=158
+PQN (h002): Alien=152, BattleZone=6021, Solaris=431, Phoenix=0, NameThisGame=1074, MsPacman=210, PrivateEye=-12, SpaceInvaders=280, Qbert=150
+
+### New Results Processed (15 new rows)
+- h004: alien-s3 (q4=181), qbert-s2 (q4=145), solaris-s3 (q4=532), privateeye-s3 (q4=-126)
+- h008: montezumarevenge-s1 (q4=0)
+- h009: venture-s1 (q4=0)
+- h014: doubledunk-s1 (q4=-19)
+- h015: alien-s1 (q4=189), privateeye-s1 (q4=-5.8)
+- h016: solaris-s1 (q4=1984), mspacman-s1 (q4=271)
+- h017: battlezone-s1 (q4=2015), alien-s1 (q4=205), doubledunk-s1 (q4=-18), mspacman-s1 (q4=259)
+
+### CORRECTED RANKINGS (excl Amidar s1 artifact):
+
+**TIER 1 — Best performers:**
+1. h013 (Spectral Norm): 4W/3L/7T on 14/15 — BEST WIN COUNT. Wins: NameThisGame +18%, Phoenix +19%, PrivateEye +196%, Solaris +17%. Losses: BattleZone -50%, MsPacman -10%, Qbert -21%.
+2. h008 (PQN+LSTM): 2W/0L/4T on 6/15 — ZERO LOSSES. Wins: Phoenix (489 vs 0!), Solaris +229%. 8 games running (all 15 covered with 46 running jobs).
+3. h005 (CHAIN-SP): 4W/3L/6T on 13/15 — Strong wins on PrivateEye +261%, Phoenix +22%. But BattleZone -47%, Solaris -48% losses.
+4. h004 (PQN+NaP): 4W/2L/8T on 14/15 — Good PQN improvement. Phoenix 88 vs 0, MsPacman +39%.
+
+**TIER 2 — Balanced/neutral:**
+5. h012 (DrQ): 2W/2L/10T — PrivateEye breakthrough (+1228%) but BattleZone/MsPacman losses.
+6. h007 (S&P): 2W/2L/10T — Solaris +55% but BattleZone/MsPacman losses.
+
+**CLOSED (this session):**
+- h015 (PopArt): 2W/3L/9T — Updated with new Alien/PrivateEye data. Still net negative. Closed.
+- h016 (Sparsity): 1W/3L/10T — New Solaris/MsPacman data showed losses. Closed.
+- h017 (SPO): 1W/3L/9T — Confirmed poor with new BattleZone/MsPacman losses. Closed.
+
+**TOO EARLY:** h010 (2/15, running), h011 (3/15, 9 resubmitted + 3 running), h019 (2/15, running)
+
+### Key Pattern: Universal BattleZone Degradation
+Almost EVERY PPO modification hurts BattleZone (baseline PPO=3700):
+- h013: -50%, h005: -47%, h017: -46%, h015: -41%, h004 (vs PQN): -40%
+- h007: -33%, h012: -23%, h016: -22%
+- Only h020 (Dueling, closed) improved BattleZone. This is important for combination design.
+
+### Actions Taken
+1. Cleaned experiments.csv: removed 47 empty rows
+2. Processed 15 new result CSVs
+3. Updated hypotheses.csv: closed h015, h016, h017; updated h004, h005
+4. Resubmitted 9 disappeared h011 (PQN+IMPALA) pilot games across all 4 clusters
+5. Verified h008 has all 15 games covered with running jobs
+
+### Active Jobs: ~220 (211 running + 9 newly submitted)
+- 3-seed evals running: h003(23), h004(28), h005(31), h007(22), h012(22), h013(16)
+- Pilots running: h008(46), h010(15), h011(12), h019(11)
+- Closed but still running: h006(1), h009(1), h014(1), h016(2), h017(5), h018(11), h020(10)
+
+### Next Session TODO
+1. Process h008 remaining 8 games when complete — CRITICAL: if zero-loss holds at 15/15, h008 is exceptional
+2. Process h010/h011/h019 pilot results as they come in
+3. Process 3-seed eval results for h004/h005/h007/h012/h013 — these give definitive rankings
+4. When 3-seed evals confirm top performers, plan COMBINATION experiments:
+   - h013+h012 (SpectralNorm+DrQ): both improve PrivateEye/Phoenix
+   - h013+h007 (SpectralNorm+S&P): complementary Solaris wins
+   - Consider adding element to fix BattleZone degradation
+5. Still need hypotheses for unexplored categories: off-policy (Cat 1), replay (Cat 2), distributional RL (Cat 3), ensembles (Cat 10)
+6. Consider novel research directions — the BattleZone degradation pattern suggests a systematic issue with modifying PPO that needs investigation

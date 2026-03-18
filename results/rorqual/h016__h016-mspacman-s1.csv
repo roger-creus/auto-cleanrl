@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Amidar-v5,1,h009,h009-amidar-s1,ppo_rnd,40000000,69248,2.589648723602295,2.003696918487549,179328.0,3.0
+MsPacman-v5,1,h016,h016-mspacman-s1,ppo_sparse,40000000,79744,271.8459167480469,271.1075439453125,21678080.0,210.0
