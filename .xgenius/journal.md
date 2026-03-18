@@ -211,3 +211,40 @@ The results/CLUSTER/ directories contain CSV files from BOTH the current researc
 3. Full PPO vs PQN baseline analysis once all 90 baselines are in
 4. Identify which Phase 2 methods beat baselines
 5. Begin Phase 3 hypotheses for remaining uncovered directions
+
+---
+**[2026-03-18 06:54 UTC]**
+
+## Session 5: Phase 2 Output-Dir Bug Fix + Baseline Update (72/90)
+
+### CRITICAL BUG FOUND & FIXED
+All 105 Phase 2 pilot jobs (h003-h009) had --output-dir /output in commands, but container only binds /runs. Training completed but CSV saving crashed with 'Read-only file system: /output'. All jobs wasted ~105 GPU-hours.
+
+**Fix:** Cancelled all 105 running Phase 2 jobs across 4 clusters. Resubmitted all 105 without --output-dir flag (scripts default to /runs, which is correct). All resubmissions successful.
+
+### Baseline Results Updated: 72/90 (38 PPO + 34 PQN)
+15 new results found and parsed (mostly from fir and narval pulls).
+All 15 games now have at least 2 seeds for both PPO and PQN.
+
+### PPO vs PQN Head-to-Head (15 games):
+Score: PPO 8 / PQN 4 / Tie 3
+Average Q4: PPO=540 PQN=396
+
+PPO dominates: Phoenix (9x), Solaris (4x), NameThisGame (1.6x), MsPacman, DoubleDunk, PrivateEye, Qbert, Alien
+PQN dominates: Amidar (16x), BattleZone (1.5x), SpaceInvaders (2x), Breakout (marginal)
+Both fail: Enduro (0), MontezumaRevenge (0), Venture (0)
+
+### Still missing baselines (20/90):
+h001: 7 more seeds needed (1 each for several games)
+h002: 11 more seeds needed
+
+### Current State:
+- h001/h002: ~47 baseline jobs still running
+- h003-h009: 105 Phase 2 pilots resubmitted (all running)
+- Total active: ~152 jobs across 4 clusters
+
+### Next Session TODO:
+1. Process remaining baseline results when h001/h002 complete
+2. Process Phase 2 pilot results when h003-h009 complete (this time CSVs will save correctly!)
+3. Full baseline analysis once all 90 baselines are in
+4. Identify Phase 2 winners to scale to full 3-seed evaluation

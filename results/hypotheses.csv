@@ -1,10 +1,10 @@
 hypothesis_id,description,motivation,status,comment
-h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 28/45 results (14/15 games). 25 running (Solaris all 3 seeds pending). PPO leads PQN 6-4 on head-to-head Q4. PPO dominates Phoenix (9x) and NameThisGame (1.6x).
-h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 29/45 results (15/15 games). 23 running. PQN dominates Amidar (16x) BattleZone (2x) SpaceInvaders (2x). Both fail on Breakout/Enduro/MontezumaRevenge/Venture.
-h003,PPO + LayerNorm,Add LayerNorm to PPO NatureCNN — known plasticity intervention,promising,15-game pilot running (all 15 still running). Script: ppo_atari_envpool_layernorm.py.
-h004,PQN + NaP (weight projection),Add Normalize-and-Project to PQN — complement existing LayerNorm,promising,15-game pilot running (all 15 still running). Script: pqn_atari_envpool_nap.py.
-h005,PPO + LayerNorm + CHAIN-SP,Full CHAIN-SP: LayerNorm + churn reduction loss for PPO,promising,15-game pilot running (all 15 still running). Script: ppo_atari_envpool_chainsp.py.
-h006,PPO + Symlog value transform,DreamerV3-style symlog transform on value targets for scale-invariant learning,promising,15-game pilot running (all 15 still running). Script: ppo_atari_envpool_symlog.py.
-h007,PPO + Soft Shrink-and-Perturb,Post-update weight shrinkage + noise for plasticity maintenance,promising,15-game pilot running (all 15 still running). Script: ppo_atari_envpool_sp.py.
-h008,PQN + LSTM,Add LSTM to PQN for memory-dependent games,promising,RESUBMITTED: fixed Conv2d(1->4) channel bug. All 15 resubmitted across 4 clusters. Script: pqn_atari_envpool_lstm_v2.py.
-h009,PPO + RND exploration,Random Network Distillation intrinsic motivation for hard exploration,promising,15-game pilot running (all 15 still running). Script: ppo_rnd_envpool_v2.py.
+h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,proposed,"Phase 1 baseline — 38/45 results (15/15 games). 25 running. PPO leads PQN 8-4-3. Dominates Phoenix (9x), NameThisGame (1.6x), Solaris (4x). Avg Q4=540."
+h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,proposed,"Phase 1 baseline — 34/45 results (15/15 games). 22 running. PQN dominates Amidar (16x), BattleZone (1.5x), SpaceInvaders (2x). Avg Q4=396."
+h003,PPO + LayerNorm,Add LayerNorm to PPO NatureCNN — known plasticity intervention,promising,"RESUBMITTED: fixed --output-dir /output bug (should use /runs). 15-game pilot running. Script: ppo_atari_envpool_layernorm.py."
+h004,PQN + NaP (weight projection),Add Normalize-and-Project to PQN — complement existing LayerNorm,promising,"RESUBMITTED: fixed --output-dir /output bug. 15-game pilot running. Script: pqn_atari_envpool_nap.py."
+h005,PPO + LayerNorm + CHAIN-SP,Full CHAIN-SP: LayerNorm + churn reduction loss for PPO,promising,"RESUBMITTED: fixed --output-dir /output bug. 15-game pilot running. Script: ppo_atari_envpool_chainsp.py."
+h006,PPO + Symlog value transform,DreamerV3-style symlog transform on value targets for scale-invariant learning,promising,"RESUBMITTED: fixed --output-dir /output bug. 15-game pilot running. Script: ppo_atari_envpool_symlog.py."
+h007,PPO + Soft Shrink-and-Perturb,Post-update weight shrinkage + noise for plasticity maintenance,promising,"RESUBMITTED: fixed --output-dir /output bug. 15-game pilot running. Script: ppo_atari_envpool_sp.py."
+h008,PQN + LSTM,Add LSTM to PQN for memory-dependent games,promising,"RESUBMITTED: fixed --output-dir /output bug (also had earlier Conv2d channel fix). 15-game pilot running. Script: pqn_atari_envpool_lstm_v2.py."
+h009,PPO + RND exploration,Random Network Distillation intrinsic motivation for hard exploration,promising,"RESUBMITTED: fixed --output-dir /output bug. 15-game pilot running. Script: ppo_rnd_envpool_v2.py."
