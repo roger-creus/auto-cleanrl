@@ -124,7 +124,7 @@ h004-qbert-s2,h004,see hypothesis,fir,Qbert-v5,2,pqn,40000000,120448.0,158.95324
 h004-qbert-s3,h004,,auto-ingested,Qbert-v5,3,pqn_atari_envpool,40000000,120960,156.1375732421875,154.10052490234375,18886400.0,150.0
 h004-solaris-s1,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id Solaris-v5 --seed 1,,Solaris-v5,1,pqn_nap,40000000,5120,576.0,504.0,2949120.0,700.0
 h004-solaris-s3,h004,see hypothesis,fir,Solaris-v5,3,pqn,40000000,5504.0,787.906982421875,532.093017578125,4336640.0,0.0
-h004-spaceinvaders-s1,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id SpaceInvaders-v5 --seed 1,"pqn_nap SpaceInvaders-v5 seed 1 (narval, 10M steps)",SpaceInvaders-v5,1,pqn_nap,10000000,16512.0,266.97674560546875,271.97674560546875,4408320.0,320.0
+h004-spaceinvaders-s1,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id SpaceInvaders-v5 --seed 1,upgraded 10M→40M (nibi),SpaceInvaders-v5,1,pqn_nap,40000000,68736,272.85845947265625,289.06890869140625,18755200.0,285.0
 h004-spaceinvaders-s2,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id SpaceInvaders-v5 --seed 2,"pqn_nap SpaceInvaders-v5 seed 2 (narval, 40M)",SpaceInvaders-v5,2,pqn_nap,40000000,68736.0,271.0521545410156,283.86407470703125,18631040.0,800.0
 h004-spaceinvaders-s3,h004,,,SpaceInvaders-v5,3,pqn_nap,40000000,69248,274.14971923828125,288.1145935058594,18984320.0,270.0
 h004-venture-s1,h004,,fir,Venture-v5,1,pqn_nap,40000000,24576.0,0.0,0.0,0.0,0.0
@@ -584,8 +584,8 @@ h024-solaris-s1,h024,,"ppo_pfo Solaris-v5 seed 1 (rorqual, 40M, new-format). TIE
 h024-venture-s1,h024,,"ppo_pfo Venture-v5 seed 1 (rorqual, 40M, new-format). TIE (both zero).",Venture-v5,1,ppo_pfo,40000000,18304,0.0,0.0,0.0,0.0
 h025-venture-s1,h025,,"ppo_dualv Venture-v5 seed 1 (narval, 40M, new-format). TIE (both zero).",Venture-v5,1,ppo_dualv,40000000,18304,0.0,0.0,0.0,0.0
 h025-privateeye-s1,h025,,40M new-format. q4=-94 vs baseline -117. WIN +19%.,PrivateEye-v5,1,ppo_dualv,40000000,14720,-55.75652313232422,-94.06086730957031,-820736.0,100.0
-h004-mspacman-s3,h004,,auto-ingested from h004__h004-mspacman-s3.csv,MsPacman-v5,3,pqn_nap,10000000,18176,387.9577331542969,331.9718322753906,7051520.0,210.0
-h004-battlezone-s2,h004,,auto-ingested from h004__h004-battlezone-s2.csv,BattleZone-v5,2,pqn_nap,10000000,6784,2264.15087890625,2509.43408203125,15360000.0,1000.0
+h004-mspacman-s3,h004,,upgraded 10M→40M (nibi),MsPacman-v5,3,pqn_nap,40000000,71680,342.91070556640625,307.71429443359375,24579840.0,470.0
+h004-battlezone-s2,h004,,upgraded 10M→40M (nibi),BattleZone-v5,2,pqn_nap,40000000,27904,2958.715576171875,3064.22021484375,82560000.0,1000.0
 h024-battlezone-s1,h024,,auto-ingested from h024__h024-battlezone-s1.csv,BattleZone-v5,1,ppo_pfo,40000000,34432,2449.814208984375,2364.312255859375,84352000.0,6000.0
 h024-montezumarevenge-s1,h024,,auto-ingested from h024__h024-montezumarevenge-s1.csv,MontezumaRevenge-v5,1,ppo_pfo,40000000,70272,0.0,0.0,0.0,0.0
 h005-battlezone-s3,h005,,auto-ingested from h005__h005-battlezone-s3.csv,BattleZone-v5,3,ppo_chainsp,40000000,32128,2533.864501953125,2876.494140625,81408000.0,2000.0
@@ -606,3 +606,9 @@ h029-amidar-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format p
 h029-qbert-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format pilot (NOVEL: CVaR advantage),Qbert-v5,1,ppo_aug_qr_cvar,40000000,116992,150.0,150.0,,150.0
 h013-amidar-s3,h013,see batch file,q4 from log (CSV save failed /output read-only),Amidar-v5,3,ppo_specnorm,40000000,554,2.34,2.49,,,
 h007-montezumarevenge-s3,h007,,nibi CSV (fills 3-seed gap),MontezumaRevenge-v5,3,ppo_sp,40000000,71040,0.18,0.0,12800.0,0.0
+h007-breakout-s3,h007,,3-seed eval (nibi CSV),Breakout-v5,3,ppo_sp,40000000,225024,1.3282139301300049,1.3993173837661743,298880.0,0.0
+h007-namethisgame-s3,h007,,3-seed eval (nibi CSV),NameThisGame-v5,3,ppo_sp,40000000,15616,2179.180419921875,2120.65576171875,34030080.0,2050.0
+h007-privateeye-s3,h007,,3-seed eval (nibi CSV),PrivateEye-v5,3,ppo_sp,40000000,14720,4.695652008056641,79.13043212890625,69120.0,100.0
+h007-venture-s3,h007,,3-seed eval (nibi CSV),Venture-v5,3,ppo_sp,40000000,19328,0.0,0.0,0.0,0.0
+h012-battlezone-s3,h012,,3-seed eval (nibi CSV),BattleZone-v5,3,ppo_aug,40000000,36224,2310.9541015625,2455.830322265625,83712000.0,1000.0
+h012-doubledunk-s3,h012,,3-seed eval (narval CSV),DoubleDunk-v5,3,ppo_aug,40000000,20352,-18.025157928466797,-17.849056243896484,-366848.0,-20.0

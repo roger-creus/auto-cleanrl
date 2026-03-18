@@ -2044,3 +2044,58 @@ Missing 7 s3 games (14 jobs running)
 7. If h030 or h031 shows promise: fast-track to 3-seed eval
 8. Consider implementing PPG (has cleanrl codebase) or OPR (very recent March 2026 paper)
 9. UNEXPLORED: PPG, OPR, decoupled actor-critic, CHAIN (pure churn reg distinct from h005)
+
+---
+**[2026-03-18 18:26 UTC]**
+
+## Session 34: Process 9 New Results, Update Standings
+
+### Triggered by: h013-venture-s2 (rorqual), h007-privateeye-s3 (nibi), h012-battlezone-s3 (nibi)
+
+### Results Processed: 3 updates + 6 new entries (now 614 rows)
+**Updated 10M→40M:**
+- h004-battlezone-s2: q4=3064.22 (was 2509.43 at 10M)
+- h004-mspacman-s3: q4=307.71 (was 331.97 at 10M)
+- h004-spaceinvaders-s1: q4=289.07 (was 271.98 at 10M)
+
+**New entries:**
+- h007-breakout-s3: q4=1.40 (nibi CSV, TIE)
+- h007-namethisgame-s3: q4=2120.66 (nibi CSV, TIE -10% borderline)
+- h007-privateeye-s3: q4=79.13 (nibi CSV, confirms WIN +153%)
+- h007-venture-s3: q4=0.0 (nibi CSV, TIE)
+- h012-battlezone-s3: q4=2455.83 (nibi CSV, confirms BattleZone WIN)
+- h012-doubledunk-s3: q4=-17.85 (narval CSV, TIE)
+
+### h004 STANDINGS CORRECTED: net+3 → net+2
+With full PQN baseline now available for all 15 games, h004 re-evaluated:
+- 3W/1L/11T (net +2). WINS: MsPacman+46%, Phoenix(vs 0), Solaris+15%. LOSS: PrivateEye-1338%.
+- BattleZone and Breakout dropped from WIN to TIE with full baseline comparison.
+
+### ALL h008/h011 LOGS TIMED OUT — NEVER STARTED TRAINING
+Checked 11 h008 logs + 5 h011 logs: ALL timed out during .sif image rsync. Training never started. PQN LSTM/IMPALA images are too large or clusters too slow for image transfer. h008 has 10 running and h011 has 5 running per DB — these may be on clusters with cached images.
+
+### 3-SEED STATUS
+- h007 (S&P): 12/15 complete (missing alien-s3, doubledunk-s3, solaris-s3). 4 running.
+- h012 (DrQ): 10/15 complete (missing 5 s3 games). 7 running.
+- h013 (SpectNorm): 11/15 complete (missing alien-s3, breakout-s3, enduro-s3, qbert-s3). 5 running.
+
+### UPDATED STANDINGS
+**PPO (3-seed, 15/15):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — CONFIRMED BEST PPO
+2. h007 (S&P): 4W/2L/9T (net +2)
+3. h005 (CHAIN-SP): 3W/2L/10T (net +1)
+4. h013 (SpectNorm): 3W/2L/10T (net +1)
+
+**PQN (3-seed, 15/15):**
+1. h004 (NaP): 3W/1L/11T (net +2) — corrected down from net+3
+2. h008 (LSTM): pilot net+5 but 3-seed eval stuck on timeouts
+
+### Active: 109 running, 42 pending (after reconcile, 30 disappeared)
+### Pilots still running: h022, h026, h027, h028, h029, h030, h031
+
+### NEXT SESSION TODO
+1. Process pilot results: h022 (QR-Value 10/15 so far), h027-h031
+2. Monitor h008/h011 — if ALL jobs timeout, close h011, close h008 3-seed eval (keep pilot data)
+3. Fill remaining h007/h012/h013 3-seed gaps
+4. If h030 (SEM) or h031 (SPR) show strong early signal: fast-track
+5. h026 (NaP+LSTM): early signal poor (net-1 at 3/15) — close if stays negative

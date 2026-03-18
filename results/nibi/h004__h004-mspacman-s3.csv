@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+MsPacman-v5,3,h004,h004-mspacman-s3,pqn_nap,40000000,71680,342.91070556640625,307.71429443359375,24579840.0,470.0
