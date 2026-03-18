@@ -2627,3 +2627,57 @@ Running pilots: h029(4), h030(9), h031(10), h032(15), h033(15)
 6. If h031 + DrQ combo works → this is the paper: on-policy SPR + augmentation as novel contribution.
 7. Monitor h030 (SEM) pilot completion — currently modest (net+1).
 8. Consider PPG (Phasic Policy Gradient) Atari adaptation if h031 disappoints.
+
+---
+**[2026-03-18 21:20 UTC]**
+
+## Session 43: Process 6 New Results, h031 Downgraded with New-Code Data, h010 Closed
+
+### Triggered by: h030-solaris-s1 (job 57955843, narval SUCCESS)
+
+### Results Processed: 6 new entries (now 674 rows)
+- h031-phoenix-s1: q4=895.08 (fir, log-extracted, output-dir bug). vs PPO baseline 796 → +12.4% WIN.
+- h031-privateeye-s1: q4=-148.50 (narval, log-extracted, output-dir bug). vs baseline -135 → -10% TIE (borderline).
+- h031-qbert-s1: NEW CODE q4=162.61 (narval, replaces old-code q4=198.85). vs baseline 158 → +2.9% TIE. WAS WIN (+26%) under old code!
+- h030-solaris-s1: q4=2149.09 (narval, log-extracted, output-dir bug). vs baseline 2280 → -5.7% TIE.
+- h008-enduro-s2: q4=0.00 (nibi, log-extracted, output-dir bug). TIE (baseline also 0).
+- h008-phoenix-s2: q4=574.19 (nibi, log-extracted, output-dir bug). 2-seed avg=531 vs PQN baseline 86.5 → massive WIN confirms s1.
+
+### CRITICAL FINDING: h031 (SPR) Old-Code Wins Unreliable
+New-code Qbert q4=162.61 vs old-code q4=198.85 — 22% inflation. This downgrades Qbert from WIN to TIE.
+h031 new-code only results: 1W/0L/4T (net +1). Phoenix only confirmed WIN.
+Old-code Amidar (+16%) and Breakout (+39%) wins NEED new-code verification — both still running.
+h031 dropped from net+3 (HIGHEST POTENTIAL) to net+1 pending new-code Amidar/Breakout.
+
+### h010 CLOSED — IMPALA CNN Timeouts
+3 more h010 jobs timed out (Enduro, MontezumaRevenge, Solaris) — never even started training, just library imports.
+IMPALA CNN ~2x slower than NatureCNN, needs 8h+ walltime. Not viable. Closed.
+h011 (PQN IMPALA) NameThisGame also timed out. 3 still running.
+
+### CORRECTED STANDINGS (PPO techniques)
+1. h012 (DrQ): 4W/1L/10T (net +3) — COMPLETE 15/15 3-SEED ★ PROVEN BEST
+2. h022 (QR-Value): 4W/2L/8T (net +2) — 14/15 pilot (DoubleDunk running)
+3. h007 (S&P): 4W/2L/9T (net +2) — COMPLETE 15/15 3-SEED
+4. h029 (CVaR NOVEL): 3W/1L/6T (net +2) — 11/15 pilot, 4 running
+5. h031 (SPR): 1W/0L/4T (net +1) NEW-CODE ONLY — 7/15 pilot, 8 running. DOWNGRADED.
+6. h030 (SEM): 2W/1L/4T (net +1) — 7/15 pilot, 8 running
+7. h005 (CHAIN-SP): 3W/2L/10T (net +1) — mostly 3-seed
+8. h033 (DrQ+Consistency): 0W/0L/2T (net 0) — 2 reliable games, 15 new-code running
+9. h032 (NoisyNets): 0W/1L/1T (net -1) — 2 reliable games, 15 new-code running
+
+PQN: h008 (LSTM): 7W/5L/3T (net +2, 2 running). h004 (NaP): 3W/1L/11T (net +2).
+
+### Active Jobs: ~63 running
+Running pilots: h029(4), h030(8), h031(8), h032(15), h033(15)
+Incomplete: h022(1-doubledunk), h027(3)
+3-seed: h008(2), h011(3)
+
+### NEXT SESSION TODO
+1. Process remaining h031 pilot results — Amidar/Breakout new-code data will determine if SPR is viable or mediocre
+2. Process h032/h033 new-code pilots as they complete (15 each running)
+3. Complete h029 pilot (4 remaining: alien, enduro, phoenix, spaceinvaders)
+4. Complete h022 pilot (DoubleDunk)
+5. If h031 Amidar/Breakout new-code confirm wins → still promising, formulate h034 (DrQ+SPR)
+6. If h031 collapses → focus on h012(DrQ)+h022(QR) combination or novel PPG adaptation
+7. Consider cancelling h010 remaining running jobs (already closed)
+8. Monitor h027 stuck pilot (nibi)

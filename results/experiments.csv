@@ -633,7 +633,7 @@ h030-breakout-s1,h030,,curve-derived q4 (nibi old-code),Breakout-v5,1,ppo_sem,40
 h030-qbert-s1,h030,,curve-derived q4 (fir old-code),Qbert-v5,1,ppo_sem,40000000,120192,154.53,153.19,18572800.0,150.0
 h031-amidar-s1,h031,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_spr,40000000,61568,2.58,2.56,158848.0,33.0
 h031-breakout-s1,h031,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_spr,40000000,145536,2.01,1.94,293120.0,0.0
-h031-qbert-s1,h031,,curve-derived q4 (rorqual old-code),Qbert-v5,1,ppo_spr,40000000,105344,219.02,198.85,23072000.0,150.0
+h031-qbert-s1,h031,,"SPR Qbert s1 (narval NEW CODE, log-extracted q4=162.61, replaces old-code q4=198.85)",Qbert-v5,1,ppo_spr,40000000,122240,,162.61,,
 h032-amidar-s1,h032,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_noisylinear,40000000,65280,36.26,38.80,2367232.0,34.0
 h032-breakout-s1,h032,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_noisylinear,40000000,120832,2.25,0.90,271616.0,1.0
 h032-qbert-s1,h032,,curve-derived q4 (rorqual old-code),Qbert-v5,1,ppo_noisylinear,40000000,114304,169.37,165.45,19360000.0,150.0
@@ -667,3 +667,8 @@ h030-spaceinvaders-s1,h030,,"SEM SpaceInvaders s1 (fir, log-extracted q4=158.90,
 h029-doubledunk-s1,h029,,"CVaR DoubleDunk s1 (rorqual new-format CSV, 20864 episodes)",DoubleDunk-v5,1,ppo_aug_qr_cvar,40000000,20864,-18.34,-18.15,-382720.0,-16.0
 h029-namethisgame-s1,h029,,"CVaR NameThisGame s1 (rorqual new-format CSV, 15488 episodes)",NameThisGame-v5,1,ppo_aug_qr_cvar,40000000,15488,2231.49,2426.28,34561280.0,2300.0
 h029-solaris-s1,h029,,"CVaR Solaris s1 (rorqual new-format CSV, 5632 episodes)",Solaris-v5,1,ppo_aug_qr_cvar,40000000,5632,2866.82,2563.64,16145920.0,1820.0
+h031-phoenix-s1,h031,,"SPR Phoenix s1 (fir, log-extracted q4=895.08, output-dir /output bug, NEW CODE)",Phoenix-v5,1,ppo_spr,40000000,30336,,895.08,,
+h031-privateeye-s1,h031,,"SPR PrivateEye s1 (narval, log-extracted q4=-148.50, output-dir /output bug, NEW CODE)",PrivateEye-v5,1,ppo_spr,40000000,14720,,-148.50,,
+h030-solaris-s1,h030,,"SEM Solaris s1 (narval, log-extracted q4=2149.09, output-dir /output bug)",Solaris-v5,1,ppo_sem,40000000,5632,,2149.09,,
+h008-enduro-s2,h008,,"pqn_lstm Enduro s2 (nibi, log-extracted q4=0.00, output-dir /output bug)",Enduro-v5,2,pqn_lstm,40000000,11904,,0.00,,
+h008-phoenix-s2,h008,,"pqn_lstm Phoenix s2 (nibi, log-extracted q4=574.19, output-dir /output bug)",Phoenix-v5,2,pqn_lstm,40000000,32000,,574.19,,
