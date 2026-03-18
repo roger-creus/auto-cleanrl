@@ -175,3 +175,39 @@ All distributed evenly across nibi, fir, narval, rorqual.
 3. Analyze Phase 2 pilot results — identify winners
 4. Prepare more hypotheses from uncovered categories
 5. If any Phase 2 method shows promise: run full 3-seed evaluation
+
+---
+**[2026-03-18 06:24 UTC]**
+
+## Session 4: h008 Bug Fix + Baseline Processing (57/90 baselines)
+
+### h008 Bug Fix (CRITICAL)
+Found and fixed a Conv2d channel bug in pqn_atari_envpool_lstm_v2.py: the CNN expected 1 input channel but envpool returns 4-frame-stacked observations (shape 128x4x84x84). The h008-amidar-s1 job on rorqual crashed with this error. All 14 remaining h008 jobs were cancelled and 15 resubmitted with the fix.
+
+### Baseline Results Update
+- h001 (PPO): 28/45 results, 14/15 games (missing Solaris — all 3 seeds still running)
+- h002 (PQN): 29/45 results, 15/15 games
+- Total: 57/90 baseline results collected
+
+### PPO vs PQN Head-to-Head (14 common games, matched seeds):
+Score: PPO 6 / PQN 4 / Tie 4
+- PPO dominates: Phoenix (9x), NameThisGame (1.6x), Alien, DoubleDunk, MsPacman, PrivateEye
+- PQN dominates: Amidar (16x), BattleZone (2x), SpaceInvaders (2x), Breakout (marginal)
+- Both fail: Enduro (0), MontezumaRevenge (0), Venture (0)
+- Close: Qbert (tie)
+
+### IMPORTANT: Old Iteration Data Contamination
+The results/CLUSTER/ directories contain CSV files from BOTH the current research iteration AND a previous iteration. The old iteration used experiment IDs like 'h003-game-sN' which happen to match the current iteration's experiment IDs. The parser MUST filter by DB experiment IDs AND only accept results for jobs with completed/disappeared status. For h001/h002, the 'Game-v5_sN' format is unique to the current iteration. For h003-h009, results should only be trusted once DB shows them as completed.
+
+### Current State
+- h001/h002: ~48 jobs still running across 4 clusters
+- h003-h009: all 15-game pilots running (h008 resubmitted after fix)
+- Total active: ~183 jobs across 4 clusters
+- No action needed — waiting for completions
+
+### Next Session TODO
+1. Process remaining baseline results when h001/h002 complete
+2. Process h003-h009 pilot results when they complete
+3. Full PPO vs PQN baseline analysis once all 90 baselines are in
+4. Identify which Phase 2 methods beat baselines
+5. Begin Phase 3 hypotheses for remaining uncovered directions
