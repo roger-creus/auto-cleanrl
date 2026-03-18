@@ -2099,3 +2099,71 @@ Checked 11 h008 logs + 5 h011 logs: ALL timed out during .sif image rsync. Train
 3. Fill remaining h007/h012/h013 3-seed gaps
 4. If h030 (SEM) or h031 (SPR) show strong early signal: fast-track
 5. h026 (NaP+LSTM): early signal poor (net-1 at 3/15) — close if stays negative
+
+---
+**[2026-03-18 18:42 UTC]**
+
+## Session 35: Process h012-privateeye-s3 + h013-qbert-s3, Correct h013 Standings
+
+### Triggered by: h012-privateeye-s3 (nibi SUCCESS), h013-qbert-s3 (nibi SUCCESS)
+
+### Results Processed: 5 new entries + 4 CORRECTED entries (now 619 rows)
+
+**New entries (nibi CSVs):**
+- h012-alien-s3: q4=195.60 (TIE, 3-seed avg=190.41 vs 201.96 = -5.7%)
+- h012-montezumarevenge-s3: q4=0.0 (TIE)
+- h012-namethisgame-s3: q4=1818.29 (3-seed avg=2266 vs 2507 = -9.6%, borderline TIE)
+- h012-privateeye-s3: q4=-11.93 (3-seed avg=151.09 vs -116.73, massive WIN)
+- h013-qbert-s3: q4=150.10 (3-seed avg=165.59 vs 158.44 = +4.5%, TIE)
+
+**CORRECTED entries (nibi CSV replaces log-extracted data):**
+Four h013 s3 entries had data from fir/rorqual/narval where CSV save failed (/output read-only). Log extraction captured only 200-681 episodes. Nibi runs completed properly with 18K-78K episodes at full 40M steps. Key changes:
+- h013-mspacman-s3: q4 242.11 → 429.43 (67712 vs 681 episodes)
+- h013-phoenix-s3: q4 613.73 → 712.65 (18816 vs 203 episodes)
+- h013-amidar-s3: q4 2.49 → 1.49 (71040 vs 554 episodes)
+- h013-spaceinvaders-s3: q4 129.13 → 157.25 (78336 vs 617 episodes)
+
+### h013 UPGRADED: net+1 → net+2
+MsPacman flipped from LOSS (-20%) to TIE (-0.1%) with corrected s3 data. The log-extracted q4=242 was from a flawed extraction (only 681 episodes counted). Proper nibi CSV shows q4=429.
+- OLD: 3W/2L/10T (net +1). Losses: MsPacman-20%, NameThisGame-14%.
+- NEW: 3W/1L/11T (net +2). Wins: Amidar+66%, PrivateEye+127%, Solaris+11%. Loss: NameThisGame-14%.
+
+### h012 CONFIRMED at 14/15 3-seed: 5W/1L/9T (net +4)
+Only solaris-s3 still missing. All new entries confirm existing verdicts. NameThisGame at -9.6% is borderline TIE.
+
+### Stale CSV Discovery
+Old-format CSVs in results/CLUSTER/ for h027-h031 are ALL from March 17 (previous research run). Not from current experiments. No actual pilot results yet for h030 (SEM), h031 (SPR).
+
+### UPDATED STANDINGS (3-seed where available)
+**PPO techniques:**
+1. h012 (DrQ): 5W/1L/9T (net +4) — CONFIRMED BEST PPO, 14/15 at 3-seed
+2. h007 (S&P): 4W/2L/9T (net +2) — 12/15 at 3-seed
+3. h013 (SpectNorm): 3W/1L/11T (net +2) — UPGRADED, 12/15 at 3-seed
+4. h005 (CHAIN-SP): 3W/2L/10T (net +1) — 10/15 at 3-seed
+
+**PQN techniques:**
+1. h004 (NaP): corrected net+2
+2. h008 (LSTM): pilot net+5 but 3-seed evals timing out (14 running)
+
+**Active pilots (NO results yet from current run):**
+- h022 (QR-Value): 10/15 pilot done, 8 running (5 games missing)
+- h026 (NaP+LSTM): 14 running, no current-run results
+- h027 (DrQ+S&P): 5 running, only phoenix-s1 from log
+- h028 (DrQ+QR): 12 running, no new-format results
+- h029 (DrQ+QR+CVaR NOVEL): 11 running, no new-format results
+- h030 (SEM): 11 running, no results yet
+- h031 (SPR): 12 running, no results yet
+
+### Active: 132 jobs (after reconcile)
+
+### NEXT SESSION TODO
+1. Process h030/h031 pilot results as they arrive — first proper new-format data
+2. Process h022 remaining 5 pilot results (amidar, phoenix, solaris, doubledunk, venture)
+3. Process h028/h029 pilot results (key combination+novel tests)
+4. Fill h012 solaris-s3 (last gap for 15/15 3-seed)
+5. Fill h013 remaining 3 s3 games (alien, breakout, enduro)
+6. Monitor h008 3-seed (14 running — check walltime)
+7. h026 early signal from old run was catastrophic — check new-run results before closing
+8. If h022 pilot ≥ net+3: submit 3-seed eval
+9. If h030 or h031 shows strong early signal: fast-track to 3-seed eval
+10. Consider more new hypotheses: PPG, N-step returns, off-policy, noisy nets

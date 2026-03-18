@@ -594,9 +594,9 @@ h005-phoenix-s2,h005,,auto-ingested from h005__h005-phoenix-s2.csv,Phoenix-v5,2,
 h005-privateeye-s3,h005,,auto-ingested from h005__h005-privateeye-s3.csv,PrivateEye-v5,3,ppo_chainsp,40000000,14720,82.4434814453125,86.08695983886719,1213568.0,0.0
 h005-spaceinvaders-s2,h005,,auto-ingested from h005__h005-spaceinvaders-s2.csv,SpaceInvaders-v5,2,ppo_chainsp,40000000,79616,149.08360290527344,145.1446990966797,11869440.0,125.0
 h005-venture-s3,h005,,auto-ingested from h005__h005-venture-s3.csv,Venture-v5,3,ppo_chainsp,40000000,19968,0.0,0.0,0.0,0.0
-h013-mspacman-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,"seed3 3-seed eval (from log, CSV save failed)",MsPacman-v5,3,ppo_specnorm,39954688,681,256.89,242.11,174940.0,223.5
-h013-phoenix-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,"seed3 3-seed eval (from log, CSV save failed)",Phoenix-v5,3,ppo_specnorm,39958272,203,740.1,613.73,150240.0,469.5
-h013-spaceinvaders-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,"seed3 3-seed eval (from log, CSV save failed)",SpaceInvaders-v5,3,ppo_specnorm,39988736,617,148.93,129.13,91890.0,129.5
+h013-mspacman-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,CORRECTED: nibi CSV replaces log-extracted (67712 vs 681 eps),MsPacman-v5,3,ppo_specnorm,40000000,67712,451.587890625,429.4328918457031,30577920.0,80.0
+h013-phoenix-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,CORRECTED: nibi CSV replaces log-extracted (18816 vs 203 eps),Phoenix-v5,3,ppo_specnorm,40000000,18816,763.8095092773438,712.653076171875,14371840.0,2320.0
+h013-spaceinvaders-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,CORRECTED: nibi CSV replaces log-extracted (78336 vs 617 eps),SpaceInvaders-v5,3,ppo_specnorm,40000000,78336,152.03431701660156,157.25489807128906,11909760.0,75.0
 h012-venture-s3,h012,python cleanrl/ppo_atari_envpool_aug.py,"seed3 3-seed eval (from log, CSV save failed)",Venture-v5,3,ppo_aug,39613440,142,0.0,0.0,0.0,0.0
 h027-phoenix-s1,h027,python cleanrl/ppo_atari_envpool_aug_sp.py,"pilot (from log, CSV save failed)",Phoenix-v5,1,ppo_aug_sp,39929984,250,721.8,881.59,180450.0,960.0
 h028-amidar-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilot,Amidar-v5,1,ppo_aug_qr,40000000,62592,31.0,31.0,,31.0
@@ -604,7 +604,7 @@ h028-breakout-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilo
 h028-qbert-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilot,Qbert-v5,1,ppo_aug_qr,40000000,117504,150.0,150.0,,150.0
 h029-amidar-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format pilot (NOVEL: CVaR advantage),Amidar-v5,1,ppo_aug_qr_cvar,40000000,63744,31.0,31.0,,31.0
 h029-qbert-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format pilot (NOVEL: CVaR advantage),Qbert-v5,1,ppo_aug_qr_cvar,40000000,116992,150.0,150.0,,150.0
-h013-amidar-s3,h013,see batch file,q4 from log (CSV save failed /output read-only),Amidar-v5,3,ppo_specnorm,40000000,554,2.34,2.49,,,
+h013-amidar-s3,h013,see batch file,CORRECTED: nibi CSV replaces log-extracted (71040 vs 554 eps),Amidar-v5,3,ppo_specnorm,40000000,71040,2.3387386798858643,1.4936937093734741,166144.0,1.0
 h007-montezumarevenge-s3,h007,,nibi CSV (fills 3-seed gap),MontezumaRevenge-v5,3,ppo_sp,40000000,71040,0.18,0.0,12800.0,0.0
 h007-breakout-s3,h007,,3-seed eval (nibi CSV),Breakout-v5,3,ppo_sp,40000000,225024,1.3282139301300049,1.3993173837661743,298880.0,0.0
 h007-namethisgame-s3,h007,,3-seed eval (nibi CSV),NameThisGame-v5,3,ppo_sp,40000000,15616,2179.180419921875,2120.65576171875,34030080.0,2050.0
@@ -612,3 +612,8 @@ h007-privateeye-s3,h007,,3-seed eval (nibi CSV),PrivateEye-v5,3,ppo_sp,40000000,
 h007-venture-s3,h007,,3-seed eval (nibi CSV),Venture-v5,3,ppo_sp,40000000,19328,0.0,0.0,0.0,0.0
 h012-battlezone-s3,h012,,3-seed eval (nibi CSV),BattleZone-v5,3,ppo_aug,40000000,36224,2310.9541015625,2455.830322265625,83712000.0,1000.0
 h012-doubledunk-s3,h012,,3-seed eval (narval CSV),DoubleDunk-v5,3,ppo_aug,40000000,20352,-18.025157928466797,-17.849056243896484,-366848.0,-20.0
+h012-alien-s3,h012,,3-seed eval (nibi CSV),Alien-v5,3,ppo_aug,40000000,61696,192.63485717773438,195.60165405273438,11884800.0,170.0
+h012-montezumarevenge-s3,h012,,3-seed eval (nibi CSV),MontezumaRevenge-v5,3,ppo_aug,40000000,73088,0.17513135075569153,0.0,12800.0,0.0
+h012-namethisgame-s3,h012,,3-seed eval (nibi CSV),NameThisGame-v5,3,ppo_aug,40000000,14976,2335.64111328125,1818.2906494140625,34978560.0,1220.0
+h012-privateeye-s3,h012,,3-seed eval (nibi CSV),PrivateEye-v5,3,ppo_aug,40000000,14720,-43.591304779052734,-11.930435180664062,-641664.0,-418.0
+h013-qbert-s3,h013,,3-seed eval (nibi CSV),Qbert-v5,3,ppo_specnorm,40000000,123904,156.50827026367188,150.10330200195312,19392000.0,175.0
