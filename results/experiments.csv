@@ -523,3 +523,9 @@ h025-spaceinvaders-s1,h025,,10M partial,SpaceInvaders-v5,1,ppo_dualv,10000000,18
 h026-amidar-s1,h026,,auto-ingested,Amidar-v5,1,pqn_atari_envpool,40000000,,0.00,,,
 h026-breakout-s1,h026,,auto-ingested,Breakout-v5,1,pqn_atari_envpool,40000000,,2.00,,,
 h026-qbert-s1,h026,,auto-ingested,Qbert-v5,1,pqn_atari_envpool,40000000,,0.00,,,
+h005-mspacman-s2,h005,see hypothesis,narval 3-seed,MsPacman-v5,2,ppo_chainsp,40000000,80256.0,280.1435546875,257.416259765625,22483200.0,310.0
+h005-solaris-s3,h005,see hypothesis,narval 3-seed,Solaris-v5,3,ppo_chainsp,40000000,6144.0,2191.666748046875,2723.333251953125,13465600.0,1860.0
+h012-solaris-s2,h012,see hypothesis,narval 3-seed,Solaris-v5,2,ppo_aug,40000000,5888.0,2049.13037109375,2350.434814453125,12065280.0,1660.0
+h012-venture-s2,h012,see hypothesis,narval 3-seed,Venture-v5,2,ppo_aug,40000000,18688.0,0.0,0.0,0.0,0.0
+h013-mspacman-s2,h013,see hypothesis,narval 3-seed,MsPacman-v5,2,ppo_specnorm,40000000,72832.0,328.752197265625,239.3673095703125,23943680.0,210.0
+h013-spaceinvaders-s2,h013,see hypothesis,narval 3-seed,SpaceInvaders-v5,2,ppo_specnorm,40000000,78720.0,149.243896484375,152.43902587890625,11748480.0,270.0

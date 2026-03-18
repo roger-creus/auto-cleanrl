@@ -1286,3 +1286,51 @@ ALL top PPO techniques lose on MsPacman (-10% to -22% vs baseline 319). This is 
 5. When h019 pilot completes: close as neutral
 6. INVESTIGATE: Why does MsPacman universally degrade? Analyze training curves.
 7. Consider Phase 2->3 transition once 3-seed evals confirm top techniques
+
+---
+**[2026-03-18 14:15 UTC]**
+
+## Session 22: Process 6 New Results + Corrected Analysis
+
+### Triggered by: 5 newly completed jobs
+- h005-mspacman-s2 (narval): q4=257.4
+- h005-solaris-s3 (narval): q4=2723.3
+- h012-solaris-s2 (narval): q4=2350.4
+- h013-spaceinvaders-s2 (narval): q4=152.4
+- h017-alien-s1 (fir): q4=205.2 (duplicate of existing)
+
+### Also found and added:
+- h012-venture-s2 (narval): q4=0.0 (tie)
+- h013-mspacman-s2 (narval): q4=239.4
+
+Total: 6 new entries added to experiments.csv (now 531 rows).
+
+### CRITICAL BUG FIX: Negative baseline handling in W/L analysis
+Previous sessions used ratio-based comparison (variant/baseline) which breaks for negative baselines like PrivateEye (-135) and DoubleDunk (-17.9). Fixed to use 'higher is better' with absolute threshold: WIN if variant > base + 10%*|base|.
+
+Impact: PrivateEye was incorrectly classified as LOSS for several hypotheses when it should be WIN (going from -135 to positive is clearly an improvement).
+
+### CORRECTED 3-SEED RANKINGS (partial, ongoing):
+
+1. **h012 (DrQ): 3W/1L/11T (net +2)** — WINS: Amidar, BattleZone +13%, PrivateEye +473%. LOSS: MsPacman -19%. 0/15 complete.
+2. **h013 (SpectralNorm): 3W/1L/11T (net +2)** — WINS: Amidar, PrivateEye, Qbert +18%. LOSS: MsPacman -18%. 1/15 complete.
+3. **h007 (S&P): 3W/2L/10T (net +1)** — WINS: BattleZone +21%, PrivateEye, Solaris +78%. LOSSES: Breakout, MsPacman -22%. 7/15 complete.
+4. **h005 (CHAIN-SP): 1W/1L/13T (net 0)** — WIN: PrivateEye. LOSS: MsPacman -21%. 2/15 complete.
+
+### KEY FINDING: MsPacman is UNIVERSAL LOSS
+ALL PPO variants degrade on MsPacman (h005: 79%, h007: 78%, h012: 81%, h013: 82% of 319 baseline). This is the strongest systematic pattern across all techniques. PrivateEye is UNIVERSAL WIN (all improve from -135).
+
+### Status Summary:
+- 237 active jobs (230 running, 7 submitted)
+- 3-seed evals: h004(11), h005(28), h007(11), h008(36), h012(23), h013(25) running
+- Pilots: h010(9), h011(9), h019(8), h021(11), h022(11), h023(11), h024(12), h025(11), h026(7)
+- h025: 3 early 40M old-format results (Breakout=9, Amidar=31, Qbert=150)
+- h019: 11/15 pilot, missing BattleZone/MsPacman/PrivateEye/Venture
+
+### Next Session TODO:
+1. Process h021-h024 pilot results as they come in (esp h023 Qbert +42%)
+2. Process h025/h026 40M results when proper format CSVs arrive
+3. Complete h019 pilot and close
+4. Continue processing 3-seed eval results for h005/h007/h012/h013
+5. Check h010/h011 IMPALA CNN pilots (still only 3/15 each)
+6. Plan combination experiments once 3-seed evals solidify rankings
