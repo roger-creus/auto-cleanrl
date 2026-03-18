@@ -35,3 +35,9 @@ SpaceInvaders-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id SpaceInvad
 Venture-v5_s1,h001,python cleanrl/ppo_atari_envpool.py --env-id Venture-v5 --seed 1,PPO baseline Venture-v5 seed 1 (fir),Venture-v5,1,ppo,40000000,18304,0.0,0.0,0.0,0.0
 Phoenix-v5_s2,h001,python cleanrl/ppo_atari_envpool.py --env-id Phoenix-v5 --seed 2,PPO baseline (rorqual),Phoenix-v5,2,ppo,40000000,40064,742.7476196289062,760.8945922851562,29757440.0,380.0
 BattleZone-v5_s2,h002,python cleanrl/pqn_atari_envpool.py --env-id BattleZone-v5 --seed 2,PQN baseline (fir),BattleZone-v5,2,pqn,40000000,27904,2958.715576171875,3064.22021484375,82560000.0,1000.0
+MontezumaRevenge-v5_s3,h001,python cleanrl/ppo_atari_envpool.py --env-id MontezumaRevenge-v5 --seed 3,PPO baseline MontezumaRevenge-v5 seed 3 (rorqual),MontezumaRevenge-v5,3,ppo,40000000,70912,0.0,0.0,0.0,0.0
+BattleZone-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id BattleZone-v5 --seed 3,PQN baseline BattleZone-v5 seed 3 (rorqual),BattleZone-v5,3,pqn,40000000,26496,2946.85986328125,3473.429931640625,78080000.0,4000.0
+SpaceInvaders-v5_s1,h001,python cleanrl/ppo_atari_envpool.py --env-id SpaceInvaders-v5 --seed 1,PPO baseline SpaceInvaders-v5 seed 1 (narval),SpaceInvaders-v5,1,ppo,40000000,78720,152.22764587402344,150.18699645996094,11983360.0,365.0
+MsPacman-v5_s2,h002,python cleanrl/pqn_atari_envpool.py --env-id MsPacman-v5 --seed 2,PQN baseline MsPacman-v5 seed 2 (narval),MsPacman-v5,2,pqn,40000000,80768,304.2947692871094,253.10618591308594,24577280.0,210.0
+SpaceInvaders-v5_s3,h001,python cleanrl/ppo_atari_envpool.py --env-id SpaceInvaders-v5 --seed 3,PPO baseline SpaceInvaders-v5 seed 3 (fir),SpaceInvaders-v5,3,ppo,40000000,78720,145.7886199951172,144.7073211669922,11476480.0,180.0
+Enduro-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id Enduro-v5 --seed 3,PQN baseline Enduro-v5 seed 3 (fir),Enduro-v5,3,pqn,40000000,11904,0.0,0.0,0.0,0.0

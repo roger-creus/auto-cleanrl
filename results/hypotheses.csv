@@ -1,6 +1,10 @@
 hypothesis_id,description,motivation,status,comment
-h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 11/15 games collected so far
-h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 10/15 games collected so far
-h003,PPO + LayerNorm,Add LayerNorm to PPO NatureCNN — known plasticity intervention,proposed,Script: ppo_atari_envpool_layernorm.py. Literature shows LayerNorm is most effective single intervention for PPO plasticity.
-h004,PQN + NaP (weight projection),Add Normalize-and-Project to PQN — complement existing LayerNorm,proposed,Script: pqn_atari_envpool_nap.py. NaP maintains effective learning rate by projecting weights to initial norms. NeurIPS 2024.
-h005,PPO + LayerNorm + CHAIN-SP,Full CHAIN-SP: LayerNorm + churn reduction loss for PPO,proposed,Script: ppo_atari_envpool_chainsp.py. CHAIN-SP shown most effective for PPO plasticity on Atari in recent literature.
+h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 42/90 results collected (19 PPO). 26 jobs running. PPO 5 / PQN 4 / Tie 4 on Q4 metric.
+h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 42/90 results collected (23 PQN). 23 jobs running. PQN dominates Amidar/BattleZone/SpaceInvaders.
+h003,PPO + LayerNorm,Add LayerNorm to PPO NatureCNN — known plasticity intervention,promising,15-game pilot submitted. Script: ppo_atari_envpool_layernorm.py. Literature shows LayerNorm most effective single intervention for PPO plasticity.
+h004,PQN + NaP (weight projection),Add Normalize-and-Project to PQN — complement existing LayerNorm,promising,15-game pilot submitted. Script: pqn_atari_envpool_nap.py. NaP maintains effective learning rate by projecting weights to initial norms. NeurIPS 2024.
+h005,PPO + LayerNorm + CHAIN-SP,Full CHAIN-SP: LayerNorm + churn reduction loss for PPO,promising,15-game pilot submitted. Script: ppo_atari_envpool_chainsp.py. CHAIN-SP shown most effective for PPO plasticity on Atari in recent literature.
+h006,PPO + Symlog value transform,DreamerV3-style symlog transform on value targets for scale-invariant learning,promising,15-game pilot submitted. Script: ppo_atari_envpool_symlog.py. Category: reward/return processing.
+h007,PPO + Soft Shrink-and-Perturb,Post-update weight shrinkage + noise for plasticity maintenance,promising,15-game pilot submitted. Script: ppo_atari_envpool_sp.py. Category: plasticity/regularization.
+h008,PQN + LSTM,Add LSTM to PQN for memory-dependent games,promising,15-game pilot submitted. Script: pqn_atari_envpool_lstm_v2.py. Category: memory architecture.
+h009,PPO + RND exploration,Random Network Distillation intrinsic motivation for hard exploration,promising,15-game pilot submitted. Script: ppo_rnd_envpool_v2.py. Category: exploration. Targets hard games.

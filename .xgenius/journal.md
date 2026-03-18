@@ -121,3 +121,57 @@ All scripts synced to all 4 clusters.
 2. Full 3-seed analysis when baselines complete
 3. Submit Phase 2 pilots (h003/h004/h005) — 15 games x 1 seed each
 4. Consider additional hypotheses: network sparsity, SPR aux loss, RND for hard-exploration games
+
+---
+**[2026-03-18 06:02 UTC]**
+
+## Session 3: Phase 2 Broad Exploration Launched
+
+### Results processed:
+- 6 new baseline results (MontezumaRevenge s3, BattleZone s3, SpaceInvaders s1/s3, MsPacman s2, Enduro s3)
+- Total: 42/90 baseline results in experiments.csv (19 PPO, 23 PQN)
+
+### Updated PPO vs PQN comparison (13 games, partial seeds):
+Score: PPO 5 / PQN 4 / Tie 4 on Q4 metric
+- PQN dominates: Amidar (15x), BattleZone, SpaceInvaders (2x), PrivateEye
+- PPO dominates: Phoenix (9x), NameThisGame (1.6x), Qbert, MsPacman, DoubleDunk
+- Both fail: Breakout (~1.5), Enduro (0), MontezumaRevenge (0), Venture (0)
+- Missing: Alien, Solaris (still running)
+
+### Phase 2 pilots submitted (105 new jobs total):
+h003: PPO + LayerNorm — 15 games × 1 seed (plasticity)
+h004: PQN + NaP weight projection — 15 games × 1 seed (plasticity)
+h005: PPO + CHAIN-SP — 15 games × 1 seed (plasticity + churn reduction)
+h006: PPO + Symlog value transform — 15 games × 1 seed (reward processing, DreamerV3-style)
+h007: PPO + Soft Shrink-and-Perturb — 15 games × 1 seed (plasticity/regularization)
+h008: PQN + LSTM — 15 games × 1 seed (memory architecture)
+h009: PPO + RND exploration — 15 games × 1 seed (exploration/intrinsic motivation)
+
+### Category coverage:
+- Cat 5 (Architecture/Plasticity): h003, h004, h005, h007
+- Cat 7 (Reward/return processing): h006
+- Cat 5 (Memory): h008
+- Cat 6 (Exploration): h009
+
+### Scripts created this session:
+- cleanrl/ppo_atari_envpool_symlog.py (h006) — symlog/symexp value targets
+- cleanrl/ppo_atari_envpool_sp.py (h007) — soft shrink-and-perturb after optimizer steps
+- cleanrl/pqn_atari_envpool_lstm_v2.py (h008) — adapted existing PQN LSTM with pipeline changes
+- cleanrl/ppo_rnd_envpool_v2.py (h009) — adapted existing PPO-RND with pipeline changes
+
+### Active jobs: ~49 baselines + 105 Phase 2 = ~154 total across 4 clusters
+All distributed evenly across nibi, fir, narval, rorqual.
+
+### Still uncovered research directions for future hypotheses:
+- Cat 1: Off-policy/hybrid methods
+- Cat 3: Distributional RL (C51 exists in cleanrl)
+- Cat 8: Modern optimizers (Lion, schedule-free Adam)
+- Cat 9: Representation learning (SPR, BYOL, DrQ)
+- Cat 10: Ensemble methods
+
+### Next session TODO:
+1. Process completed baseline and Phase 2 results
+2. Full baseline analysis once h001/h002 complete
+3. Analyze Phase 2 pilot results — identify winners
+4. Prepare more hypotheses from uncovered categories
+5. If any Phase 2 method shows promise: run full 3-seed evaluation
