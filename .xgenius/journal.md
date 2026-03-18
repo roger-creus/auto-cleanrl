@@ -1169,3 +1169,69 @@ All 15 games at seed=1 now have q4_return data:
 5. Plan: once top 3-seed evals confirm, start COMBINATION experiments: h012+h007, h012+h013
 6. Still need hypotheses for: off-policy (DQN variants), ensemble methods, PPG
 7. Consider novel research direction: analyze WHY DrQ (h012) and S&P (h007) both fix PrivateEye
+
+---
+**[2026-03-18 13:44 UTC]**
+
+## Session 20: Process 23 New Results + Resubmit 48 3-Seed Gaps
+
+### Results Processed (23 new/updated entries in experiments.csv)
+- 20 new rows added, 3 updated (10M->40M)
+- Total experiments.csv: 539 rows
+
+**New h005 (CHAIN-SP) 3-seed data:**
+- alien-s2: q4=198.5 (tie), amidar-s3: q4=2.18 (tie), breakout-s1: UPDATED 1.28 (40M), doubledunk-s2: q4=-18.4 (tie), enduro-s1/s3: q4=0 (tie), montezumarevenge-s2: q4=0 (tie), privateeye-s2: q4=77.0 (WIN vs -135 base), spaceinvaders-s1/s3: q4=139/147 (tie), venture-s2: q4=0 (tie)
+- NOW 11/15 games with data. Missing: MsPacman, NameThisGame, Qbert, Solaris (all in progress)
+
+**New h007 (S&P) 3-seed data (7 new):**
+- amidar-s2: q4=2.55, battlezone-s2: q4=2628 (+22% WIN), namethisgame-s2: q4=2241 (tie), phoenix-s2: q4=649 (tie), qbert-s2: q4=160 (tie), spaceinvaders-s2/s3: q4=164/159 (tie)
+- NOW 15/15 games, 5 at 3 seeds, 7 at 2 seeds
+
+**h012 (DrQ) 2 new:** amidar-s2: q4=2.31 (WIN), spaceinvaders-s2: q4=164.9 (tie)
+**h004 (PQN+NaP) 1 new:** breakout-s3: q4=1.87 (tie)
+**h025 (DualValue) 3 new but partial:** alien-s1 (10M, 186.1), doubledunk-s1 (10M, -20.0), qbert-s1 (40M old-format 150)
+
+### CORRECTED RANKINGS (using validated baselines from hypotheses.csv)
+
+**PPO techniques, pilots (15/15 games, vs PPO baseline):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — BEST. PrivateEye +472%, BattleZone +33%
+2. h013 (SpectralNorm): 5W/2L/8T (net +3) — High quality. Phoenix/Qbert/Solaris wins
+3. h005 (CHAIN-SP): 2W/0L/9T (net +2) at 11/15 — BattleZone +16%, PrivateEye +157%
+4. h007 (S&P): 3W/2L/10T (net +1) — BattleZone/PrivateEye/Solaris wins, MsPacman loss
+
+**PQN techniques:**
+1. h008 (LSTM): 7W/5L/3T (net +2) — Polarized. Huge Phoenix/PrivateEye/Solaris wins
+2. h004 (NaP): 2W/1L/12T (net +1) — MsPacman/Solaris modest wins
+
+**Combinations in progress:**
+- h023 (SpectNorm+S&P): 2/2 games WON — Qbert +42%! BEST early signal
+- h021 (SpectNorm+DrQ): 1W/2L at 3/15 — CONCERNING
+- Others too early
+
+### Gap Resubmissions (48 new jobs across 4 clusters)
+- h005: 9 gaps resubmitted (completing 3-seed eval)
+- h007: 8 gaps resubmitted
+- h008: 14 gaps resubmitted (completing 3-seed eval)
+- h012: 9 gaps resubmitted
+- h013: 8 gaps resubmitted
+Also: h019-venture-s1 gap resubmitted
+
+### Active Jobs: ~320 (271 existing + 49 new)
+- 3-seed evals running: h005(23+9), h007(5+8), h008(19+14), h012(19+9), h013(22+8)
+- Pilots running: h010(9), h011(9), h019(8+1), h021(11), h022(11), h023(11), h024(12), h025(7), h026(11)
+
+### Key Observations
+1. h012 (DrQ) remains the best PPO technique — 5W/1L with PrivateEye as the star game
+2. All top techniques share a common loss: MsPacman (-19 to -20%). This is a systematic weakness.
+3. h023 (SpectNorm+S&P) shows synergistic Qbert improvement (+42%) that neither parent has individually
+4. h019 (Muon) is essentially neutral — will close once pilot completes
+5. h025 has suspicious 10M partial results — some jobs may have terminated early
+
+### Next Session TODO
+1. Process h021-h024 pilot results as they complete — especially h023
+2. Check h010/h011 IMPALA CNN pilots (currently only 3/15)
+3. Process 3-seed eval results for h005/h007/h008/h012/h013 as resubmissions complete
+4. Close h019 when pilot is complete
+5. If h023 confirms strong: IMMEDIATELY submit 3-seed eval
+6. Think about novel hypotheses: need to explore off-policy (DQN), ensemble, PPG categories
+7. Investigate MsPacman systematic loss — what makes MsPacman resistant to our improvements?
