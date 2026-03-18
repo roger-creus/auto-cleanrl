@@ -272,3 +272,24 @@ h020-qbert-s1,h020,,"ppo_dueling Qbert-v5 seed 1 (narval, 40000000)",Qbert-v5,1,
 h020-solaris-s1,h020,,"ppo_dueling Solaris-v5 seed 1 (rorqual, 40000000)",Solaris-v5,1,ppo_dueling,40000000,5632,340.00,,,340.00
 h020-spaceinvaders-s1,h020,,"ppo_dueling SpaceInvaders-v5 seed 1 (nibi, 40000000)",SpaceInvaders-v5,1,ppo_dueling,40000000,61056,275.00,,,275.00
 h020-venture-s1,h020,,"ppo_dueling Venture-v5 seed 1 (narval, 40000000)",Venture-v5,1,ppo_dueling,40000000,17920,0.00,,,0.00
+h006-alien-s1,h006,,"40M pilot, cluster=fir",Alien-v5,1,ppo_symlog,40000000,60544,196.87103271484375,192.55813598632812,11919360.0,200.0
+h009-battlezone-s1,h009,,"40M pilot, cluster=nibi",BattleZone-v5,1,ppo_rnd,40000000,34816,2356.61767578125,2132.35302734375,82048000.0,3000.0
+h009-mspacman-s1,h009,,"40M pilot, cluster=narval",MsPacman-v5,1,ppo_rnd,40000000,78976,264.65155029296875,285.7536315917969,20901120.0,230.0
+h009-namethisgame-s1,h009,,"40M pilot, cluster=narval",NameThisGame-v5,1,ppo_rnd,40000000,16896,1667.5,1707.272705078125,28174080.0,1370.0
+h009-privateeye-s1,h009,,"40M pilot, cluster=narval",PrivateEye-v5,1,ppo_rnd,40000000,14848,-13.448275566101074,31.517240524291992,-199680.0,100.0
+h012-alien-s1,h012,,"40M pilot, cluster=narval",Alien-v5,1,ppo_aug,40000000,60672,193.69198608398438,189.66244506835938,11751680.0,100.0
+h012-doubledunk-s1,h012,,"40M pilot, cluster=fir",DoubleDunk-v5,1,ppo_aug,40000000,20480,-17.637500762939453,-18.0,-361216.0,-16.0
+h012-enduro-s1,h012,,"40M pilot, cluster=fir",Enduro-v5,1,ppo_aug,40000000,11904,0.0,0.0,0.0,0.0
+h012-privateeye-s1,h012,,"40M pilot, cluster=narval",PrivateEye-v5,1,ppo_aug,40000000,14720,141.42608642578125,501.98260498046875,2081792.0,0.0
+h012-solaris-s1,h012,,"40M pilot, cluster=rorqual",Solaris-v5,1,ppo_aug,40000000,5760,2467.111083984375,2513.77783203125,14210560.0,1720.0
+h013-battlezone-s1,h013,,"40M pilot, cluster=rorqual",BattleZone-v5,1,ppo_specnorm,40000000,34304,2078.358154296875,1850.7462158203125,71296000.0,4000.0
+h013-mspacman-s1,h013,,"40M pilot, cluster=fir",MsPacman-v5,1,ppo_specnorm,40000000,73856,284.4367370605469,286.9324035644531,21007360.0,480.0
+h013-namethisgame-s1,h013,,"40M pilot, cluster=fir",NameThisGame-v5,1,ppo_specnorm,40000000,14848,2355.862060546875,2560.3447265625,34979840.0,2230.0
+h014-alien-s1,h014,,"40M pilot, cluster=nibi",Alien-v5,1,ppo_entanneal,40000000,60288,196.70913696289062,195.03184509277344,11859200.0,180.0
+h014-battlezone-s1,h014,,"40M pilot, cluster=narval",BattleZone-v5,1,ppo_entanneal,40000000,35328,2242.753662109375,2072.4638671875,79232000.0,1000.0
+h014-namethisgame-s1,h014,,"40M pilot, cluster=nibi",NameThisGame-v5,1,ppo_entanneal,40000000,15104,2327.2880859375,2350.847412109375,35151360.0,2360.0
+h014-phoenix-s1,h014,,"40M pilot, cluster=fir",Phoenix-v5,1,ppo_entanneal,40000000,31232,778.9344482421875,713.6065673828125,24327680.0,420.0
+h014-venture-s1,h014,,"40M pilot, cluster=fir",Venture-v5,1,ppo_entanneal,40000000,18304,0.0,0.0,0.0,0.0
+h015-doubledunk-s1,h015,,"40M pilot, cluster=narval",DoubleDunk-v5,1,ppo_popart,40000000,20224,-17.607595443725586,-17.772151947021484,-356096.0,-22.0
+h015-solaris-s1,h015,,"40M pilot, cluster=nibi",Solaris-v5,1,ppo_popart,40000000,6016,1867.6595458984375,1998.2978515625,11235840.0,1960.0
+h017-venture-s1,h017,,"40M pilot, cluster=narval",Venture-v5,1,ppo_spo,40000000,18304,0.0,0.0,0.0,0.0

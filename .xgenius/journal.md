@@ -585,3 +585,52 @@ h008 (PQN LSTM), h009 (RND), h010 (IMPALA), h011 (PQN IMPALA), h016 (Sparse), h0
 4. Submit h013+h007 combination experiment if both confirm strong results
 5. Fix CSV output format in remaining scripts for future consistency
 6. Still need hypotheses for: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
+
+---
+**[2026-03-18 10:30 UTC]**
+
+## Session 11: Results Processing + h007 3-Seed Eval Submitted
+
+### Results Processed
+- 21 new rows added to experiments.csv (total: 294 rows)
+- New results for: h006 (1 game), h009 (4 games), h012 (5 games), h013 (3 games), h014 (5 games), h015 (2 games), h017 (1 game)
+- Pulled results from all 4 clusters and ran reconcile
+
+### Updated Pilot Analysis (key hypotheses with 8+ games):
+
+**TIER 1 — Top performers:**
+1. **h007 (Shrink-and-Perturb): 4W/0L/10T on 14/15** — BEST W/L ratio. ZERO losses! Solaris +78% (4054 vs 2280), PrivateEye sign reversal (34 vs -135), Breakout 3x. Missing only Enduro (always 0). **3-SEED EVAL SUBMITTED (30 jobs).**
+2. **h012 (DrQ augmentation): 3W/1L/9T on 13/15** — PrivateEye Q4=502 (!!) is best ever. BattleZone +33%. Only Breakout loss. Missing: SpaceInvaders, Venture.
+3. **h013 (Spectral Norm): 3W/1L/8T on 12/15** — Solaris +34%, Phoenix +19%, Breakout 3.6x. One Qbert loss (125 vs 158). Missing: Alien, MontezumaRevenge, PrivateEye.
+
+**TIER 2 — Decent:**
+4. **h014 (Entropy Anneal): 3W/1L/6T on 10/15** — PrivateEye improved, Breakout 3x. MsPacman -24% loss. 5 games still running.
+5. **h006 (Symlog): 0W/1L/14T on 15/15 — CLOSED.** Essentially neutral. Only MsPacman loss.
+
+**TIER 3 — Too early:**
+h008-h011, h015-h017, h019 all have <10/15 games. Need more data.
+
+### IMPORTANT FINDING: Amidar Seed=1 Artifact
+Almost ALL PPO modifications get Amidar=31 with seed=1, while PPO baseline gets 2.0. This is a seed-specific effect — PQN baseline also gets ~32. Techniques that DON'T fix Amidar with seed=1: LayerNorm (h003), CHAIN-SP (h005), symlog (h006), spectral norm (h013), PopArt (h015). The Amidar 'win' from a single seed is not informative — 3-seed eval will clarify.
+
+### Actions Taken
+1. Parsed 21 new experiment results into experiments.csv
+2. Updated hypotheses.csv with refined analysis (h006 closed, h007/h012/h013/h014 updated)
+3. Submitted h007 3-seed evaluation: 30 jobs (15 games × seeds 2,3) across all 4 clusters
+4. Resubmitted 2 disappeared h017 jobs (phoenix-s1, privateeye-s1) that had no output
+5. Reconciled DB state
+
+### Active Jobs: ~321 across 4 clusters
+- h003-h005: 40M 3-seed evals (~93 running/pending)
+- h007: 30 NEW 3-seed eval jobs just submitted
+- h008-h017, h019: pilots in progress (~168 running)
+- h018/h020: complete (closed)
+
+### Next Session TODO
+1. Process h007 3-seed results when complete — definitive comparison with PPO baseline
+2. Complete h012/h013 pilots (1-3 games remaining each) → submit 3-seed evals
+3. Process h004/h005 40M 3-seed results (check for late-training collapse like h003)
+4. Process remaining pilots (h008-h011, h014-h017, h019)
+5. Plan combination experiments: h007+h012, h007+h013, h007+h012+h013
+6. Still need hypotheses for: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
+7. Consider novel research directions beyond just combining techniques
