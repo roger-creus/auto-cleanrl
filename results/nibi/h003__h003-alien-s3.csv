@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Venture-v5,1,h020,h020-venture-s1,ppo_duel,40000000,18304,0.0,0.0,0.0,0.0
+Alien-v5,3,h003,h003-alien-s3,ppo_layernorm,40000000,60544,193.42494201660156,196.3002166748047,11710720.0,140.0

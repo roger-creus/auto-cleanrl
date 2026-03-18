@@ -965,3 +965,74 @@ Breakdown:
 4. If h024 (PFO) preserves BattleZone performance, combine with best techniques
 5. Consider implementing DAAC (separated actor-critic) or AGC as next hypotheses
 6. When enough data is in, begin planning Phase 2 → Phase 3 transition criteria
+
+---
+**[2026-03-18 12:31 UTC]**
+
+## Session 17: Results Processing + Gap Resubmissions
+
+### Results Processed (27 new/updated entries)
+- 17 new rows added to experiments.csv (total: 435 rows)
+- 7 existing entries updated with proper q4_return values from real CSVs
+- Pulled results from all 4 clusters
+
+### Key New Data:
+
+**h008 (PQN+LSTM) — NOW 12/15 games (5W/3L/4T vs PQN):**
+- Previous 'zero losses' status OVERTURNED with 7 new game results
+- NEW: BattleZone q4=2929 (-51% vs PQN base 6021), DoubleDunk q4=-18.7 (+22%), Enduro q4=0, MsPacman q4=389 (+85%), SpaceInvaders q4=198 (-29%)
+- UPDATED: Qbert q4=194 (+29%, corrected from old-format 150)
+- Still missing: Alien (running), NameThisGame (resubmitted), PrivateEye (running)
+- Now a POLARIZED hypothesis: 5 strong wins but 3 notable losses including BattleZone -51%
+
+**h004 (PQN+NaP) — 3 new 3-seed results:**
+- Amidar s3: q4=31.0, Venture s3: q4=0.0 (ties)
+- PrivateEye s2: q4=-356 (VERY bad, confirms PrivateEye loss for NaP)
+- Solaris s1: UPDATED from 10M to 40M: q4=504 (+23% vs base 431)
+
+**h003 (LayerNorm) — 7 seed-1 gaps filled, all 45/45 now recorded:**
+- All s1 results confirm pattern: collapse on Solaris (0), Venture (0), poor SpaceInvaders (150 vs base 147 = tie)
+- MsPacman s1=236, s3=263 (corrected from old-format 60)
+
+**CRITICAL CORRECTIONS:**
+- h018 Phoenix: q4 was 20 (old format) → 792.61 (real). Phoenix was actually FINE for Schedule-Free.
+- h019 Amidar: q4 was 31 (old format seed artifact) → 2.45 (real). NOT the Amidar seed=1 artifact!
+- h019 Breakout: q4 was 4 (old format) → 1.34 (real)
+
+**h021-h024 EARLY RESULTS (2-3 games each):**
+- h021 (SpectralNorm+DrQ): Qbert=125 (loss vs 158 base), Breakout=0 (bad). CONCERNING.
+- h022 (QR Value): Breakout=2 (tie)
+- h023 (SpectralNorm+S&P): Qbert=225 (+42%! vs 158 base). VERY PROMISING.
+- h024 (PFO): Qbert=150 (tie)
+- NOTE: All using old-format CSVs (mean_return_last_25)
+
+### Gap Resubmissions (11 jobs):
+- h008-namethisgame-s1 (narval)
+- h010: 7 gaps (alien, namethisgame, phoenix, solaris, spaceinvaders, venture, doubledunk, enduro) across 4 clusters
+- h019: 2 gaps (alien, doubledunk)
+
+### UPDATED RANKINGS (15-game pilots, excl Amidar artifact):
+1. h004 (PQN+NaP): 5W/2L/8T (net +3) — BEST, but PrivateEye catastrophic
+2. h008 (PQN+LSTM): 5W/3L/4T (net +2) — Polarized: big wins AND big losses
+3. h013 (SpectralNorm): 4W/2L/9T (net +2) — Consistent, diverse wins
+4. h005 (CHAIN-SP): 4W/3L/8T (net +1) — Mixed
+5. h007 (S&P): 2W/2L/11T (net 0) — Neutral
+6. h012 (DrQ): 1W/2L/12T (net -1) — PrivateEye massive win but offset by losses
+7. h014 (Entropy Anneal): 0W/3L/12T (net -3) — CLOSED
+
+### h023 EARLY SIGNAL: Qbert 225 vs 158 (+42%)
+SpectralNorm+S&P combination showing VERY strong early signal on Qbert. If this holds across more games, h023 could be the best combination. Previous single techniques both had Qbert losses (h013: -21%, h007: tie) — the combination may be synergistic.
+
+### Active Jobs: ~314 (218 running + 85 pending + 11 newly submitted)
+- 3-seed evals: h003/h004/h005/h007/h012/h013 all in progress
+- Pilots still completing: h008(3 games), h010(12 games), h011(12 games), h019(11 games)
+- New h021-h024: ~50 running/pending
+- Gap resubmissions: 11 new
+
+### Next Session TODO:
+1. Process h023 results as priority — the Qbert +42% is the strongest early signal
+2. Process remaining h008 results (3 games left) 
+3. Process h010/h011 results when complete (IMPALA CNN)
+4. Process 3-seed eval results for h004/h005/h007/h012/h013
+5. Monitor h021/h022/h024 early results
+6. If h023 confirms strong: immediate 3-seed eval submission
