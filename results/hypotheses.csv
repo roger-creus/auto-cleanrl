@@ -1,3 +1,6 @@
 hypothesis_id,description,motivation,status,comment
-h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,proposed,Phase 1 baseline
-h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,proposed,Phase 1 baseline
+h001,PPO baseline (envpool),Establish PPO performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 11/15 games collected so far
+h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,proposed,Phase 1 baseline — 10/15 games collected so far
+h003,PPO + LayerNorm,Add LayerNorm to PPO NatureCNN — known plasticity intervention,proposed,Script: ppo_atari_envpool_layernorm.py. Literature shows LayerNorm is most effective single intervention for PPO plasticity.
+h004,PQN + NaP (weight projection),Add Normalize-and-Project to PQN — complement existing LayerNorm,proposed,Script: pqn_atari_envpool_nap.py. NaP maintains effective learning rate by projecting weights to initial norms. NeurIPS 2024.
+h005,PPO + LayerNorm + CHAIN-SP,Full CHAIN-SP: LayerNorm + churn reduction loss for PPO,proposed,Script: ppo_atari_envpool_chainsp.py. CHAIN-SP shown most effective for PPO plasticity on Atari in recent literature.

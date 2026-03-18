@@ -22,3 +22,10 @@ Enduro-v5_s2,h002,python cleanrl/pqn_atari_envpool.py --env-id Enduro-v5 --seed 
 NameThisGame-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id NameThisGame-v5 --seed 3,PQN baseline NameThisGame-v5 seed 3 (nibi),NameThisGame-v5,3,pqn,40000000,18176,1308.0281982421875,1591.267578125,23774720.0,1250.0
 MontezumaRevenge-v5_s1,h001,python cleanrl/ppo_atari_envpool.py --env-id MontezumaRevenge-v5 --seed 1,PPO baseline MontezumaRevenge-v5 seed 1 (nibi),MontezumaRevenge-v5,1,ppo,40000000,70272,0.0,0.0,0.0,0.0
 Phoenix-v5_s1,h002,python cleanrl/pqn_atari_envpool.py --env-id Phoenix-v5 --seed 1,PQN baseline Phoenix-v5 seed 1 (fir),Phoenix-v5,1,pqn,40000000,69376,100.95941162109375,87.23247528076172,7004160.0,60.0
+DoubleDunk-v5_s1,h002,python cleanrl/pqn_atari_envpool.py --env-id DoubleDunk-v5 --seed 1,PQN baseline DoubleDunk-v5 seed 1 (narval),DoubleDunk-v5,1,pqn,40000000,8192,-22.90625,-24.0,-187648.0,-24.0
+Venture-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id Venture-v5 --seed 3,PQN baseline Venture-v5 seed 3 (narval),Venture-v5,3,pqn,40000000,24320,0.0,0.0,0.0,0.0
+Enduro-v5_s2,h001,python cleanrl/ppo_atari_envpool.py --env-id Enduro-v5 --seed 2,PPO baseline Enduro-v5 seed 2 (nibi),Enduro-v5,2,ppo,40000000,11904,0.0,0.0,0.0,0.0
+PrivateEye-v5_s3,h001,python cleanrl/ppo_atari_envpool.py --env-id PrivateEye-v5 --seed 3,PPO baseline PrivateEye-v5 seed 3 (nibi),PrivateEye-v5,3,ppo,40000000,14720,-148.04347229003906,-280.1043395996094,-2179200.0,0.0
+Venture-v5_s1,h002,python cleanrl/pqn_atari_envpool.py --env-id Venture-v5 --seed 1,PQN baseline Venture-v5 seed 1 (fir),Venture-v5,1,pqn,40000000,24576,0.0,0.0,0.0,0.0
+DoubleDunk-v5_s3,h002,python cleanrl/pqn_atari_envpool.py --env-id DoubleDunk-v5 --seed 3,PQN baseline DoubleDunk-v5 seed 3 (fir),DoubleDunk-v5,3,pqn,40000000,7424,-22.758621215820312,-24.0,-168960.0,-24.0
+DoubleDunk-v5_s2,h002,python cleanrl/pqn_atari_envpool.py --env-id DoubleDunk-v5 --seed 2,PQN baseline DoubleDunk-v5 seed 2 (nibi),DoubleDunk-v5,2,pqn,40000000,7680,-22.766666412353516,-24.0,-174848.0,-24.0
