@@ -127,7 +127,7 @@ class QNetwork(nn.Module):
     def __init__(self, env):
         super().__init__()
         self.network = nn.Sequential(
-            layer_init(nn.Conv2d(1, 32, 8, stride=4)),
+            layer_init(nn.Conv2d(4, 32, 8, stride=4)),
             nn.LayerNorm([32, 20, 20]),
             nn.ReLU(),
             layer_init(nn.Conv2d(32, 64, 4, stride=2)),
