@@ -647,3 +647,8 @@ h028-doubledunk-s1,h028,,new-format CSV (narval),DoubleDunk-v5,1,ppo_aug_qr_valu
 h029-breakout-s1,h029,,new-format CSV (fir),Breakout-v5,1,ppo_aug_qr_cvar,40000000,221184,1.4016203880310059,1.3564814329147339,310016.0,1.0
 h029-battlezone-s1,h029,,new-format CSV (narval),BattleZone-v5,1,ppo_aug_qr_cvar,40000000,35328,2507.246337890625,3014.49267578125,88576000.0,8000.0
 h029-privateeye-s1,h029,,new-format CSV (narval),PrivateEye-v5,1,ppo_aug_qr_cvar,40000000,14720,9.965217590332031,-9.843478202819824,146688.0,0.0
+h028-namethisgame-s1,h028,python cleanrl/ppo_aug_qr_value.py --env-id NameThisGame-v5 --seed 1,"NameThisGame s1, narval new-format CSV, 15744 episodes",NameThisGame-v5,1,,40000000,15744,2198.130126953125,2238.21142578125,34607360.0,1670.0
+h029-montezumarevenge-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id MontezumaRevenge-v5 --seed 1,"MontezumaRevenge s1, narval new-format CSV, 72960 episodes",MontezumaRevenge-v5,1,,40000000,72960,0.0,0.0,0.0,0.0
+h028-phoenix-s1,h028,python cleanrl/ppo_aug_qr_value.py --env-id Phoenix-v5 --seed 1,"Phoenix s1, fir new-format CSV, 32896 episodes",Phoenix-v5,1,,40000000,32896,687.4708251953125,649.494140625,22615040.0,540.0
+h028-spaceinvaders-s1,h028,python cleanrl/ppo_aug_qr_value.py --env-id SpaceInvaders-v5 --seed 1,"SpaceInvaders s1, fir new-format CSV, 77952 episodes",SpaceInvaders-v5,1,,40000000,77952,150.73892211914062,141.64202880859375,11750400.0,65.0
+h029-mspacman-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id MsPacman-v5 --seed 1,"MsPacman s1, fir new-format CSV, 78720 episodes",MsPacman-v5,1,,40000000,78720,272.3739929199219,284.3251953125,21441280.0,280.0

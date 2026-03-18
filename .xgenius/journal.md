@@ -2355,3 +2355,56 @@ The CVaR advantage is adding BattleZone and PrivateEye wins that h028 (DrQ+QR al
 3. h029 (CVaR NOVEL): net +3, 6/15 pilot — NO losses, strong
 4. h022 (QR-Value): net +3, 12/15 pilot
 5. h005/h007: net +2, complete
+
+---
+**[2026-03-18 20:03 UTC]**
+
+## Session 38: Process 5 New Results, Correct Standings
+
+### Triggered by: h029-montezumarevenge-s1 (narval SUCCESS)
+
+### Results Processed: 5 new entries (now 653 rows)
+- h028-namethisgame-s1: q4=2238.21 (narval, LOSS -11% vs baseline 2507)
+- h028-phoenix-s1: q4=649.49 (fir, LOSS -18% vs baseline 796)
+- h028-spaceinvaders-s1: q4=141.64 (fir, TIE -3.9%)
+- h029-montezumarevenge-s1: q4=0.0 (narval, TIE — baseline also 0)
+- h029-mspacman-s1: q4=284.33 (fir, LOSS -11% vs baseline 319)
+
+### STANDINGS CORRECTIONS (recalculated with full baseline data)
+- h005 (CHAIN-SP): CORRECTED 3W/1L→3W/2L (net+2→net+1). NameThisGame now LOSS (-16%) with s3 data.
+- h007 (S&P): CORRECTED 3W/1L→4W/2L (net+2 stays). Amidar became WIN(+78%), NameThisGame became LOSS(-12%).
+- h022 (QR-Value): CORRECTED 4W/1L→3W/2L (net+3→net+1). Qbert now borderline LOSS(-10%).
+- h028 (DrQ+QR): DOWNGRADED 1W/1L→1W/3L (net0→net-2). NameThisGame LOSS, Phoenix LOSS added.
+- h029 (CVaR NOVEL): DOWNGRADED 3W/0L→3W/1L (net+3→net+2). MsPacman LOSS added.
+
+### CORRECTED FULL RANKINGS (PPO techniques)
+1. h012 (DrQ): 4W/1L/10T (net +3) — 15/15 3-SEED ★ PROVEN BEST
+2. h031 (SPR): 3W/0L/0T (net +3) — 3/15 pilot, ALL WINS, HIGHEST POTENTIAL
+3. h007 (S&P): 4W/2L/9T (net +2) — 15/15 3-SEED
+4. h029 (CVaR NOVEL): 3W/1L/4T (net +2) — 8/15 pilot, 9 running
+5. h027 (DrQ+S&P): 3W/1L/1T (net +2) — 5/15 pilot, 3 running (stuck — lost results)
+6. h005 (CHAIN-SP): 3W/2L/10T (net +1) — 15/15 (mostly 3-seed)
+7. h022 (QR-Value): 3W/2L/7T (net +1) — 12/15 pilot, 7 running
+8. h033 (DrQ+Consistency NOVEL): 1W/0L/2T (net +1) — 3/15 pilot, 11 running
+9. h030 (SEM): 1W/1L/1T (net 0) — 3/15 pilot, 13 running
+10. h032 (NoisyNets): 1W/1L/1T (net 0) — 3/15 pilot, 11 running
+11. h028 (DrQ+QR): 1W/3L/4T (net -2) — 8/15 pilot, NEGATIVE SYNERGY
+
+### KEY INSIGHTS
+1. **3-seed data keeps correcting inflated early assessments.** h022 dropped from net+3→net+1, h005 from net+2→net+1.
+2. **h028 (DrQ+QR) confirmed bad** — combining DrQ and QR-Value creates negative synergy. Will close when pilot completes.
+3. **h029 (CVaR) dropped from net+3→net+2** but still outperforms h028, validating CVaR contribution.
+4. **h031 (SPR) remains top priority** — 3/3 wins is exceptional, but only 3 games seen. 12 running.
+5. **Common pattern**: MsPacman is a recurring LOSS across many techniques (h005, h007, h012, h022, h029).
+
+### 117 ACTIVE JOBS
+Running pilots: h028(10), h029(9), h030(13), h031(12), h032(11), h033(11)
+3-seed evals: h005(2), h007(4), h008(13), h010(3), h011(5), h022(7), h027(3)
+
+### NEXT SESSION TODO
+1. Process h031 pilot results — TOP PRIORITY. If still net+3 at 8+ games, it's the breakthrough.
+2. Process h030/h032/h033 pilot results as they arrive.
+3. Complete h029 pilot (7 remaining games) — close if stays at net+2 or lower.
+4. Close h028 when pilot finishes — confirmed negative synergy.
+5. If h031 confirms strong: implement h034 (DrQ+SPR combination) — the novel contribution.
+6. Consider PPG (Phasic Policy Gradient) Atari adaptation as next new hypothesis.
