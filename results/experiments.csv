@@ -130,7 +130,7 @@ h004-spaceinvaders-s3,h004,,,SpaceInvaders-v5,3,pqn_nap,40000000,69248,274.14971
 h004-venture-s1,h004,,fir,Venture-v5,1,pqn_nap,40000000,24576.0,0.0,0.0,0.0,0.0
 h004-venture-s2,h004,,"pqn_nap Venture-v5 seed 2 (fir, 40000000)",Venture-v5,2,pqn_nap,40000000,23296,0.0,0.0,0.0,0.0
 h004-venture-s3,h004,,"pqn_nap Venture-v5 seed 3 (narval, 40000000)",Venture-v5,3,pqn_nap,40000000,24320,0.0,0.0,0.0,0.0
-h005-alien-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Alien-v5 --seed 1,"ppo_chainsp Alien-v5 seed 1 (narval, 10M steps)",Alien-v5,1,ppo_chainsp,10000000,15232.0,204.2857208251953,220.0840301513672,3111680.0,120.0
+h005-alien-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Alien-v5 --seed 1,updated to 40M from nibi new-format CSV,Alien-v5,1,ppo_chainsp,40000000,60544,196.58,197.38,11901440.0,210.0
 h005-alien-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Alien-v5 --seed 2,"ppo_chainsp Alien-v5 seed 2 (fir, 40M)",Alien-v5,2,ppo_chainsp,40000000,59264,205.08,198.47,12153600.0,220.0
 h005-amidar-s1,h005,,,Amidar-v5,1,ppo_chainsp,40000000,71168,2.2086331844329834,2.510791301727295,157184.0,1.0
 h005-amidar-s3,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Amidar-v5 --seed 3,"ppo_chainsp Amidar-v5 seed 3 (fir, 40M)",Amidar-v5,3,ppo_chainsp,40000000,70528,2.156,2.176,152064.0,6.0
@@ -462,17 +462,17 @@ h022-breakout-s1,h022,,"ppo_qr_value Breakout-v5 seed 1 (narval, 40M, old format
 h022-qbert-s1,h022,,new-format CSV,Qbert-v5,1,ppo_qr_value,40000000,122496,162.85,142.24,19948800.0,150.0
 h023-amidar-s1,h023,,q4 corrected from new-format CSV,Amidar-v5,1,ppo_specnorm_sp,40000000,70912,2.32,2.10,164352.0,9.0
 h023-breakout-s1,h023,,new-format CSV (updated),Breakout-v5,1,ppo_specnorm_sp,40000000,224000,1.3457143306732178,1.301714301109314,301440.0,0.0
-h023-qbert-s1,h023,,"ppo_specnorm_sp Qbert-v5 seed 1 (narval, 40M, old format) — VERY PROMISING: 225 vs 158 base (+42%)",Qbert-v5,1,ppo_specnorm_sp,40000000,117376,,225.0,,225.0
+h023-qbert-s1,h023,,CORRECTED: new-format CSV from rorqual (old-format narval showed 225 = false),Qbert-v5,1,ppo_specnorm_sp,40000000,124032,150.85,155.31,18710400.0,0.0
 h024-amidar-s1,h024,,new-format CSV (updated),Amidar-v5,1,ppo_pfo,40000000,71552,2.3237924575805664,2.039355993270874,166272.0,5.0
 h024-qbert-s1,h024,,"ppo_pfo Qbert-v5 seed 1 (narval, 40M, old format)",Qbert-v5,1,ppo_pfo,40000000,116992,,150.0,,150.0
 h025-alien-s1,h025,python cleanrl/ppo_atari_envpool_dualv.py --env-id Alien-v5 --seed 1,PARTIAL 10M. ppo_dualv Alien-v5 seed 1 (rorqual),Alien-v5,1,ppo_dualv,10000000,15232,207.14,186.05,3155200.0,180.0
-h025-amidar-s1,h025,,auto-ingested,Amidar-v5,1,ppo_dualv,10000000,17920,2.0,1.5428571701049805,35840.0,1.0
-h025-breakout-s1,h025,,auto-ingested,Breakout-v5,1,ppo_dualv,10000000,55296,1.3819444179534912,1.5833333730697632,76416.0,2.0
+h025-amidar-s1,h025,,40M old-format (was 10M q4=1.54),Amidar-v5,1,ppo_dualv,40000000,66304,,31.0,,
+h025-breakout-s1,h025,,40M old-format (was 10M q4=1.58),Breakout-v5,1,ppo_dualv,40000000,74752,,9.0,,
 h025-doubledunk-s1,h025,python cleanrl/ppo_atari_envpool_dualv.py --env-id DoubleDunk-v5 --seed 1,10M partial,DoubleDunk-v5,1,ppo_dualv,10000000,5120,-18.649999618530273,-20.0,-95488.0,-18.0
 h025-mspacman-s1,h025,,10M partial,MsPacman-v5,1,ppo_dualv,10000000,19328,287.947021484375,226.95364379882812,5565440.0,280.0
 h025-namethisgame-s1,h025,,10M partial,NameThisGame-v5,1,ppo_dualv,10000000,3840,2089.333251953125,2720.666748046875,8023040.0,2340.0
 h025-phoenix-s1,h025,,10M partial,Phoenix-v5,1,ppo_dualv,10000000,8704,700.1470336914062,601.1764526367188,6094080.0,320.0
-h025-qbert-s1,h025,,auto-ingested,Qbert-v5,1,ppo_dualv,10000000,30080,180.425537109375,188.29786682128906,5427200.0,125.0
+h025-qbert-s1,h025,,40M old-format (was 10M q4=188.30),Qbert-v5,1,ppo_dualv,40000000,116608,,150.0,,
 h025-spaceinvaders-s1,h025,,10M partial,SpaceInvaders-v5,1,ppo_dualv,10000000,18432,159.51388549804688,149.72222900390625,2940160.0,60.0
 h026-amidar-s1,h026,,auto-ingested,Amidar-v5,1,pqn_atari_envpool,40000000,,0.00,,,
 h026-breakout-s1,h026,,auto-ingested,Breakout-v5,1,pqn_atari_envpool,40000000,,2.00,,,
@@ -558,3 +558,17 @@ h022-battlezone-s1,h022,,new-format CSV,BattleZone-v5,1,ppo_qr_value,40000000,34
 h023-battlezone-s1,h023,,new-format CSV,BattleZone-v5,1,ppo_specnorm_sp,40000000,33920,2622.6416015625,2860.37744140625,88960000.0,3000.0
 h023-montezumarevenge-s1,h023,,new-format CSV,MontezumaRevenge-v5,1,ppo_specnorm_sp,40000000,67456,0.0,0.0,0.0,0.0
 h019-venture-s1,h019,,new-format CSV,Venture-v5,1,ppo_muon,40000000,18304,0.0,0.0,0.0,0.0
+h021-alien-s1,h021,,new-format CSV,Alien-v5,1,ppo_specnorm_aug,40000000,61952,209.71,208.18,12992000.0,120.0
+h021-privateeye-s1,h021,,new-format CSV,PrivateEye-v5,1,ppo_specnorm_aug,40000000,14720,-129.42,81.15,-1905024.0,100.0
+h022-mspacman-s1,h022,,new-format CSV,MsPacman-v5,1,ppo_qr_value,40000000,82560,237.88,258.28,19639040.0,350.0
+h022-namethisgame-s1,h022,,new-format CSV,NameThisGame-v5,1,ppo_qr_value,40000000,15360,2269.08,2608.0,34853120.0,3670.0
+h023-enduro-s1,h023,,new-format CSV,Enduro-v5,1,ppo_specnorm_sp,40000000,11904,0.0,0.0,0.0,0.0
+h024-alien-s1,h024,,new-format CSV,Alien-v5,1,ppo_pfo,40000000,60416,197.63,207.63,11939840.0,100.0
+h024-namethisgame-s1,h024,,new-format CSV,NameThisGame-v5,1,ppo_pfo,40000000,14848,2258.45,2359.31,33533440.0,1930.0
+h025-enduro-s1,h025,,10M partial,Enduro-v5,1,ppo_dualv,10000000,2944,0.0,0.0,0.0,0.0
+h027-amidar-s1,h027,,old-format 40M,Amidar-v5,1,ppo_aug_sp,40000000,65408,,31.0,,
+h027-breakout-s1,h027,,old-format 40M,Breakout-v5,1,ppo_aug_sp,40000000,87296,,0.0,,
+h027-qbert-s1,h027,,old-format 40M,Qbert-v5,1,ppo_aug_sp,40000000,117504,,150.0,,
+h023-spaceinvaders-s1,h023,,new-format CSV,SpaceInvaders-v5,1,ppo_specnorm_sp,40000000,79616,148.0,130.84,11783040.0,80.0
+h021-namethisgame-s1,h021,,new-format CSV,NameThisGame-v5,1,ppo_specnorm_aug,40000000,15104,2263.56,2231.02,34188800.0,850.0
+h022-alien-s1,h022,,new-format CSV,Alien-v5,1,ppo_qr_value,40000000,60160,195.04,189.74,11733760.0,150.0

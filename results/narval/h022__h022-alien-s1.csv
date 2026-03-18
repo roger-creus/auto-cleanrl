@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Alien-v5,1,h022,h022-alien-s1,ppo_qr_value,40000000,60160,195.0425567626953,189.7446746826172,11733760.0,150.0
