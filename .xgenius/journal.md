@@ -1927,3 +1927,67 @@ h011 was already resubmitted with 6h walltime by a previous session (9 running w
 8. If h022 completes strong: submit 3-seed eval
 9. UNEXPLORED: SPR, PPG, N-step returns, noisy nets, off-policy methods, ensemble methods
 10. Investigate MsPacman universal degradation
+
+---
+**[2026-03-18 17:48 UTC]**
+
+## Session 32: Process h013 + h012 + h027 Results, h008 Timeout Discovery
+
+### Triggered by: h013-spaceinvaders-s3 (narval SUCCESS), h013-mspacman-s3 (fir SUCCESS)
+
+### Results Processed: 5 new entries + 1 update (now 605 rows)
+**From slurm logs (CSV save failed — /output read-only):**
+- h013-mspacman-s3: q4=242.11 (LOSS -24% vs PPO 319) — consistent MsPacman degradation
+- h013-phoenix-s3: q4=613.73 (from log)
+- h013-spaceinvaders-s3: q4=129.13 (TIE vs PPO 147)
+- h012-venture-s3: q4=0.0 (TIE)
+- h027-phoenix-s1: q4=881.59 (WIN +11% vs PPO 796)
+
+**Updated:** h025-enduro-s1 upgraded 10M→40M (q4=0.0 stays)
+
+**Also processed:** h028 (3 old-format entries: amidar/breakout/qbert), h029 (2 old-format: amidar/qbert), h026 (3 old-format: amidar/breakout/qbert — POOR results)
+
+### h008 3-SEED TIMEOUT: ALL 18 new slurm logs TIMED OUT
+All h008 seed-2/seed-3 jobs that completed were TIME LIMIT kills. The 23 currently running h008 jobs on nibi/fir/rorqual may have been resubmitted with longer walltime. Monitor these.
+
+### /output READ-ONLY ISSUE (recurring)
+5 jobs had training complete but CSV save fail: h013-mspacman-s3, h013-phoenix-s3, h013-spaceinvaders-s3, h012-venture-s3, h027-phoenix-s1. Metrics recovered from log text. Intermittent Singularity bind mount issue.
+
+### CONFIRMED STANDINGS (3-seed where available)
+**PPO techniques:**
+1. h012 (DrQ): 5W/1L/9T (net +4) — CONFIRMED BEST PPO
+2. h007 (S&P): 4W/2L/9T (net +2)
+3. h013 (SpectNorm): 3W/2L/10T (net +1) — stable
+4. h005 (CHAIN-SP): 3W/2L/10T (net +1) — stable
+
+**PQN techniques:**
+1. h008 (LSTM): 8W/3L/4T (net +5) — pilot only, 3-seed attempts timed out, 23 running
+2. h004 (NaP): 5W/1L/9T (net +4)
+
+**Active pilots:**
+- h022 (QR-Value): 3W/2L/5T (net +1) at 10/15 — 4 games still running
+- h027 (DrQ+S&P): 2W/1L/1T (net +1) at 4/15 — 10 running
+- h028 (DrQ+QR): 1W/1L/1T (net 0) at 3/15 — 12 running
+- h029 (DrQ+QR+CVaR NOVEL): 1W/0L/1T (net +1) at 2/15 — 11 running
+- h026 (NaP+LSTM): 1W/2L/0T (net -1) at 3/15 — POOR early signal, 12 running
+- h010 (PPO IMPALA): 2W/0L/1T (net +2) at 3/15 — 3 running (slow)
+- h011 (PQN IMPALA): 2W/2L/1T (net 0) at 5/15 — 10 running
+
+### Active: 146 running, 0 pending
+
+### KEY OBSERVATIONS
+1. ALL PPO modifications consistently lose on MsPacman (-17% to -24%)
+2. Combinations (h021/h023/h024/h025) consistently underperform best individual techniques
+3. DrQ (net+4) and PQN NaP (net+4) are the strongest individual innovations
+4. Old-format CSV issue: h026/h027/h028/h029 early results used stale code. Scripts have new format — later completions should produce proper CSVs
+
+### NEXT SESSION TODO
+1. Process h022 remaining pilot results (4 running: amidar, phoenix, solaris, venture)
+2. Process h027/h028/h029 pilot results as they arrive — key combination tests
+3. Monitor h008 3-seed (23 running) — check walltime adequacy
+4. Process h010/h011 IMPALA CNN pilots
+5. If h022 or h028 pilot ≥ net+3: submit 3-seed eval
+6. If h026 stays net-negative: close it
+7. Consider new directions: N-step returns, PPG, noisy nets, off-policy methods, ensemble methods
+8. Universal MsPacman degradation needs investigation
+

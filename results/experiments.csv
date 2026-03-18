@@ -142,7 +142,7 @@ h005-breakout-s3,h005,,,Breakout-v5,3,ppo_chainsp,40000000,225920,1.305382490158
 h005-doubledunk-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id DoubleDunk-v5 --seed 1,Upgraded 10M->40M. q4=-18.14634132385254,DoubleDunk-v5,1,ppo_chainsp,40000000,20992,-18.085365295410156,-18.14634132385254,-379648.0,-10.0
 h005-doubledunk-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id DoubleDunk-v5 --seed 2,"ppo_chainsp DoubleDunk-v5 seed 2 (fir, 40M)",DoubleDunk-v5,2,ppo_chainsp,40000000,20608,-17.876,-18.422,-368384.0,-20.0
 h005-enduro-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Enduro-v5 --seed 1,"UPDATED 10M->40M. ppo_chainsp Enduro-v5 seed 1 (narval, 40M)",Enduro-v5,1,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
-h005-enduro-s2,h005,,"nibi 40M. q4=0 TIE",Enduro-v5,2,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
+h005-enduro-s2,h005,,nibi 40M. q4=0 TIE,Enduro-v5,2,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
 h005-enduro-s3,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Enduro-v5 --seed 3,"ppo_chainsp Enduro-v5 seed 3 (fir, 40M)",Enduro-v5,3,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
 h005-montezumarevenge-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id MontezumaRevenge-v5 --seed 1,"ppo_chainsp MontezumaRevenge-v5 seed 1 (nibi, 10M steps)",MontezumaRevenge-v5,1,ppo_chainsp,10000000,17792.0,0.0,0.0,0.0,0.0
 h005-montezumarevenge-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id MontezumaRevenge-v5 --seed 2,"ppo_chainsp MontezumaRevenge-v5 seed 2 (narval, 40M)",MontezumaRevenge-v5,2,ppo_chainsp,40000000,69888,0.183,0.0,12800.0,0.0
@@ -156,7 +156,7 @@ h005-privateeye-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Pri
 h005-privateeye-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id PrivateEye-v5 --seed 2,"ppo_chainsp PrivateEye-v5 seed 2 (narval, 40M)",PrivateEye-v5,2,ppo_chainsp,40000000,14720,69.66,77.01,1025408.0,100.0
 h005-qbert-s1,h005,,,Qbert-v5,1,ppo_chainsp,40000000,123520,163.00518798828125,155.9844512939453,20134400.0,125.0
 h005-qbert-s3,h005,,,Qbert-v5,3,ppo_chainsp,40000000,123008,162.25286865234375,164.4120635986328,19958400.0,100.0
-h005-solaris-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Solaris-v5 --seed 1,"UPDATED 10M->40M nibi. q4=2198.72 vs baseline 2163.56=+1.6% TIE",Solaris-v5,1,ppo_chainsp,40000000,6016,2463.404296875,2198.723388671875,14819840.0,1620.0
+h005-solaris-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Solaris-v5 --seed 1,UPDATED 10M->40M nibi. q4=2198.72 vs baseline 2163.56=+1.6% TIE,Solaris-v5,1,ppo_chainsp,40000000,6016,2463.404296875,2198.723388671875,14819840.0,1620.0
 h005-solaris-s2,h005,,,Solaris-v5,2,ppo_chainsp,40000000,6016,2208.085205078125,2107.65966796875,13283840.0,2400.0
 h005-spaceinvaders-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id SpaceInvaders-v5 --seed 1,"UPDATED 10M->40M. ppo_chainsp SpaceInvaders-v5 seed 1 (narval, 40M)",SpaceInvaders-v5,1,ppo_chainsp,40000000,78208,152.05,138.72,11891840.0,145.0
 h005-spaceinvaders-s3,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id SpaceInvaders-v5 --seed 3,"ppo_chainsp SpaceInvaders-v5 seed 3 (fir, 40M)",SpaceInvaders-v5,3,ppo_chainsp,40000000,77824,154.63,147.27,12033920.0,120.0
@@ -476,9 +476,9 @@ h025-namethisgame-s1,h025,,Upgraded 10M->40M. q4=2033.6922607421875,NameThisGame
 h025-phoenix-s1,h025,,Upgraded 10M->40M. q4=800.4545288085938,Phoenix-v5,1,ppo_dualv,40000000,33792,781.2120971679688,800.4545288085938,26398720.0,580.0
 h025-qbert-s1,h025,,40M old-format (was 10M q4=188.30),Qbert-v5,1,ppo_dualv,40000000,116608,,150.0,,
 h025-spaceinvaders-s1,h025,,Upgraded 10M->40M. q4=143.99356079101562,SpaceInvaders-v5,1,ppo_dualv,40000000,79488,146.36875915527344,143.99356079101562,11634560.0,120.0
-h026-amidar-s1,h026,,auto-ingested,Amidar-v5,1,pqn_atari_envpool,40000000,,0.00,,,
-h026-breakout-s1,h026,,auto-ingested,Breakout-v5,1,pqn_atari_envpool,40000000,,2.00,,,
-h026-qbert-s1,h026,,auto-ingested,Qbert-v5,1,pqn_atari_envpool,40000000,,0.00,,,
+h026-amidar-s1,h026,,old-format CSV (mean_last25=0.0),Amidar-v5,1,pqn_atari_envpool,40000000,,0.0,0.0,,
+h026-breakout-s1,h026,,old-format CSV (mean_last25=2.0),Breakout-v5,1,pqn_atari_envpool,40000000,,2.0,2.0,,
+h026-qbert-s1,h026,,old-format CSV (mean_last25=0.0),Qbert-v5,1,pqn_atari_envpool,40000000,,0.0,0.0,,
 h005-mspacman-s2,h005,see hypothesis,narval 3-seed,MsPacman-v5,2,ppo_chainsp,40000000,80256.0,280.1435546875,257.416259765625,22483200.0,310.0
 h005-solaris-s3,h005,see hypothesis,narval 3-seed,Solaris-v5,3,ppo_chainsp,40000000,6144.0,2191.666748046875,2723.333251953125,13465600.0,1860.0
 h012-solaris-s2,h012,see hypothesis,narval 3-seed,Solaris-v5,2,ppo_aug,40000000,5888.0,2049.13037109375,2350.434814453125,12065280.0,1660.0
@@ -567,7 +567,7 @@ h022-namethisgame-s1,h022,,new-format CSV,NameThisGame-v5,1,ppo_qr_value,4000000
 h023-enduro-s1,h023,,new-format CSV,Enduro-v5,1,ppo_specnorm_sp,40000000,11904,0.0,0.0,0.0,0.0
 h024-alien-s1,h024,,new-format CSV,Alien-v5,1,ppo_pfo,40000000,60416,197.63,207.63,11939840.0,100.0
 h024-namethisgame-s1,h024,,new-format CSV,NameThisGame-v5,1,ppo_pfo,40000000,14848,2258.45,2359.31,33533440.0,1930.0
-h025-enduro-s1,h025,,10M partial,Enduro-v5,1,ppo_dualv,10000000,2944,0.0,0.0,0.0,0.0
+h025-enduro-s1,h025,,upgraded 10M→40M from fir CSV,Enduro-v5,1,ppo_dualv,40000000,2944,0.0,0.0,0.0,0.0
 h027-amidar-s1,h027,,old-format 40M,Amidar-v5,1,ppo_aug_sp,40000000,65408,,31.0,,
 h027-breakout-s1,h027,,old-format 40M,Breakout-v5,1,ppo_aug_sp,40000000,87296,,0.0,,
 h027-qbert-s1,h027,,old-format 40M,Qbert-v5,1,ppo_aug_sp,40000000,117504,,150.0,,
@@ -594,3 +594,13 @@ h005-phoenix-s2,h005,,auto-ingested from h005__h005-phoenix-s2.csv,Phoenix-v5,2,
 h005-privateeye-s3,h005,,auto-ingested from h005__h005-privateeye-s3.csv,PrivateEye-v5,3,ppo_chainsp,40000000,14720,82.4434814453125,86.08695983886719,1213568.0,0.0
 h005-spaceinvaders-s2,h005,,auto-ingested from h005__h005-spaceinvaders-s2.csv,SpaceInvaders-v5,2,ppo_chainsp,40000000,79616,149.08360290527344,145.1446990966797,11869440.0,125.0
 h005-venture-s3,h005,,auto-ingested from h005__h005-venture-s3.csv,Venture-v5,3,ppo_chainsp,40000000,19968,0.0,0.0,0.0,0.0
+h013-mspacman-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,"seed3 3-seed eval (from log, CSV save failed)",MsPacman-v5,3,ppo_specnorm,39954688,681,256.89,242.11,174940.0,223.5
+h013-phoenix-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,"seed3 3-seed eval (from log, CSV save failed)",Phoenix-v5,3,ppo_specnorm,39958272,203,740.1,613.73,150240.0,469.5
+h013-spaceinvaders-s3,h013,python cleanrl/ppo_atari_envpool_specnorm.py,"seed3 3-seed eval (from log, CSV save failed)",SpaceInvaders-v5,3,ppo_specnorm,39988736,617,148.93,129.13,91890.0,129.5
+h012-venture-s3,h012,python cleanrl/ppo_atari_envpool_aug.py,"seed3 3-seed eval (from log, CSV save failed)",Venture-v5,3,ppo_aug,39613440,142,0.0,0.0,0.0,0.0
+h027-phoenix-s1,h027,python cleanrl/ppo_atari_envpool_aug_sp.py,"pilot (from log, CSV save failed)",Phoenix-v5,1,ppo_aug_sp,39929984,250,721.8,881.59,180450.0,960.0
+h028-amidar-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilot,Amidar-v5,1,ppo_aug_qr,40000000,62592,31.0,31.0,,31.0
+h028-breakout-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilot,Breakout-v5,1,ppo_aug_qr,40000000,84096,1.0,1.0,,1.0
+h028-qbert-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilot,Qbert-v5,1,ppo_aug_qr,40000000,117504,150.0,150.0,,150.0
+h029-amidar-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format pilot (NOVEL: CVaR advantage),Amidar-v5,1,ppo_aug_qr_cvar,40000000,63744,31.0,31.0,,31.0
+h029-qbert-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format pilot (NOVEL: CVaR advantage),Qbert-v5,1,ppo_aug_qr_cvar,40000000,116992,150.0,150.0,,150.0
