@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-MontezumaRevenge-v5,1,h004,h004-montezumarevenge-s1,pqn_nap,10000000,1280,0.0,0.0,0.0,0.0
+MontezumaRevenge-v5,1,h004,h004-montezumarevenge-s1,pqn_nap,40000000,6400,0.0,0.0,0.0,0.0

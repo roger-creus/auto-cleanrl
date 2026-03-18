@@ -701,3 +701,63 @@ h003 (PPO+LayerNorm) 45/45 at 40M: 3W/7L/5T. CONFIRMED late-training collapse:
 4. Plan combination experiments: h007+h012, h007+h013, h012+h013 (top 3 techniques combined)
 5. Still need to explore: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
 6. Consider novel research directions beyond combining techniques
+
+---
+**[2026-03-18 11:09 UTC]**
+
+## Session 13: Results Processing + Corrected Analysis + Gap Resubmissions
+
+### Results Processed
+- Pulled results from all 4 clusters
+- Cleaned experiments.csv: removed old-run data (h001B, h002B, h021-h045), deduplicated baselines, fixed q4_return from old-format CSVs
+- Final experiments.csv: 396 rows (h001-h020 only)
+- Updated 21 entries with proper q4_return from CSV files (were using mean_return_last_25 proxy)
+
+### CRITICAL FINDING: Previous analysis was overoptimistic
+Earlier sessions compared single-seed pilots (seed=1) against single-seed baselines. With proper 3-seed baseline means, the picture changes DRAMATICALLY:
+- PPO baseline 3-seed means: Alien=198, BattleZone=3700, Solaris=2615, Phoenix=796, NameThisGame=2161
+- Amidar seed=1 artifact: nearly ALL PPO modifications get ~31 vs baseline 1.4 — NOT a real win
+
+### FAIR RANKINGS (excluding Amidar artifact, using 3-seed baseline):
+
+**TIER 1 — Zero losses:**
+- h017 (SPO): 3W/0L/6T on 10/15 — BEST! Breakout 1.2x, PrivateEye 4.2x, Phoenix 1.1x. 5 games still running.
+
+**TIER 2 — More wins than losses (but with caveats):**
+- h005 (CHAIN-SP): 4W/5L/5T — Phoenix/Qbert/NameThisGame wins but Solaris 0.5x collapse
+- h004 (NaP): 4W/5L/5T — Breakout/SpaceInvaders wins but Solaris 0.2x, Phoenix 0.1x COLLAPSE
+- h013 (Spectral Norm): 3W/4L/7T — Solaris/NameThisGame/Phoenix wins but BattleZone 0.5x
+
+**TIER 3 — Minimal or negative impact:**
+- h007 (S&P): 1W/3L/10T — ONLY Solaris win. Disappointing vs earlier analysis.
+- h012 (DrQ): 1W/3L/10T — PrivateEye massive -11.3x loss
+- h016 (Sparsity): 1W/2L/9T — Safe but minimal
+- h014 (Entropy Anneal): 2W/4L/7T — More losses than wins
+- h015 (PopArt): 1W/3L/8T — Minimal
+- h009 (RND): 1W/5L/7T — BAD
+
+**CLOSED as BAD:** h003 (LayerNorm collapse), h006 (neutral), h018 (Schedule-Free), h020 (high variance)
+
+### Gap Resubmissions (7 jobs)
+- h016-solaris-s1 (narval, 57942639) — disappeared pilot gap
+- h016-mspacman-s1 (nibi, 10528391) — disappeared pilot gap
+- h017-doubledunk-s1 (fir, 28236637) — disappeared pilot gap
+- h004-enduro-s2 (narval, 57942640) — disappeared 3-seed eval
+- h004-montezumarevenge-s3 (nibi, 10528684) — disappeared 3-seed eval
+- h004-namethisgame-s3 (fir, 28236642) — disappeared 3-seed eval
+- h004-phoenix-s2 (rorqual, 8527980) — disappeared 3-seed eval
+
+### Active Jobs Summary
+- ~318 active jobs across all clusters (242 running + 76 pending)
+- 3-seed evals: h004(36), h005(45), h007(31), h012(30), h013(31) — all early stage
+- Pilots still completing: h008(6/15), h010(3/15), h011(3/15), h014(14/15), h015(13/15), h016(13/15), h017(10/15), h019(3/15)
+
+### Key Insight
+h017 (SPO — soft TV divergence replacing PPO clipping) is the ONLY technique with zero losses across 10+ games. If it maintains this as remaining 5 games complete, it deserves immediate 3-seed evaluation. SPO is from ICLR 2025 and represents a genuine algorithmic innovation.
+
+### Next Session TODO
+1. Check h017 pilot completion — if 15/15 with 0 losses, submit 3-seed eval immediately
+2. Process 3-seed eval results for h004/h005/h007/h012/h013 as they come in
+3. Complete remaining pilots: h008, h010, h011, h015, h016, h019
+4. Still need hypotheses for: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
+5. Consider novel combinations if h017 confirms strong: h017+h013 (SPO+SpectralNorm), h017+h007 (SPO+S&P)

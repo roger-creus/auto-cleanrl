@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+NameThisGame-v5,1,h016,h016-namethisgame-s1,ppo_sparse,40000000,15488,2217.68603515625,2172.31396484375,34347520.0,1230.0
