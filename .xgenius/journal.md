@@ -1787,3 +1787,76 @@ This is the strongest combination pilot. If it holds at 15/15, immediate 3-seed 
 7. If h029 CVaR shows promise: plan ablation (vary alpha schedule)
 8. Consider new directions: PPG, noisy nets, off-policy methods
 9. Investigate why ALL PPO techniques lose on MsPacman (-16% to -22%)
+
+---
+**[2026-03-18 16:54 UTC]**
+
+## Session 30: Process 17 New Results, Cancel 36 Closed-Hypothesis Jobs
+
+### Triggered by: h007-venture-s3 (rorqual SUCCESS), h025-mspacman-s1 (rorqual SUCCESS)
+
+### h007-venture-s3: FAILED to save CSV
+Training completed but crashed at CSV save: OSError Read-only file system /output. Same issue as h012-montezumarevenge-s3. Venture always scores 0 across all seeds, so data loss is not impactful. h007-venture-s3 also running on nibi.
+
+### Results Processed: 17 entries (7 upgrades, 10 new)
+**Upgrades (10M→40M):**
+- h005-battlezone-s1: q4=2618 (40M)
+- h005-doubledunk-s1: q4=-18.15 (40M)
+- h005-namethisgame-s1: q4=2072 (40M)
+- h025-doubledunk-s1: q4=-18.06 (40M)
+- h025-spaceinvaders-s1: q4=144.0 (40M)
+- h025-phoenix-s1: q4=800.45 (40M)
+- h025-namethisgame-s1: q4=2034 (40M)
+
+**New entries:**
+- h004-mspacman-s3: q4=332 (10M)
+- h004-battlezone-s2: q4=2509 (10M)
+- h005-battlezone-s3: q4=2876, montezumarevenge-s3: q4=0, phoenix-s2: q4=706, privateeye-s3: q4=86, spaceinvaders-s2: q4=145, venture-s3: q4=0
+- h024-battlezone-s1: q4=2364 (WIN +15%), montezumarevenge-s1: q4=0
+- h025-mspacman-s1: q4=260 (LOSS -19%), h025-privateeye-s1: q4=-94 (WIN +19%)
+
+### h005 IMPROVED: net +1 → net +2
+h005 (CHAIN-SP) gained BattleZone win (+30% at 3 seeds) and Solaris win (+12% at 2 seeds). Now 4W/2L/9T (net +2), matching h007 (S&P). BattleZone confirmed at 3 seeds.
+
+### UPDATED RANKINGS (reliable new-format q4 only)
+
+**PPO techniques (3-seed data):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — CONFIRMED BEST. 7/15 at 3-seed, rest running.
+2. h005 (CHAIN-SP): 4W/2L/9T (net +2) — IMPROVED. 6/15 at 3-seed.
+3. h007 (S&P): 4W/2L/9T (net +2) — 7/15 at 3-seed.
+4. h013 (SpectNorm): 3W/2L/10T (net +1) — 7/15 at 3-seed.
+
+**PQN techniques:**
+1. h004 (NaP): 6W/2L/7T (net +4) — Ties with h012 for best overall.
+2. h008 (LSTM): 7W/3L/5T (net +4) pilot — 47 jobs running for 3-seed eval.
+
+**Active combinations (pilots):**
+- h022 (QR-Value): 3W/2L/5T (net +1) at 10/15 — 5 games resubmitted
+- h027 (DrQ+S&P): 1W/1L/1T (net 0) at 3/15 — 15 running
+- h028 (DrQ+QR-Value): just submitted, 15 running
+- h029 (DrQ+QR+CVaR NOVEL): just submitted, 15 running
+
+### Cancelled 36 Jobs for Closed Hypotheses
+Freed compute slots by cancelling jobs for: h003(3), h009(1), h015(1), h016(1), h018(1), h019(3), h021(4), h023(7), h024(7), h025(8).
+
+### Failed Jobs Investigated
+- h005-breakout-s2 (rorqual): Singularity image corruption. Need re-pull.
+- h005-doubledunk-s3 (fir): TIME LIMIT at 6h.
+- h010-doubledunk-s1 (rorqual): TIME LIMIT at 4h.
+- h010-enduro-s1 (rorqual): CODE BUG — expected 84 channels, got 4. Likely old code version.
+- h012-montezumarevenge-s3 (narval): Read-only /output. Training completed.
+
+### Active Jobs: ~209 (after cancellations)
+- 3-seed evals: h004(6), h005(10), h007(16), h008(47), h012(26), h013(21)
+- Pilots: h010(3), h011(10), h022(10), h026(15), h027(15), h028(15), h029(15)
+
+### Next Session TODO
+1. Process h022 remaining 5 pilot results — if net≥+2, submit 3-seed eval
+2. Process h028/h029 pilot results when available — these are the key combination+novel tests
+3. Process h026 (NaP+LSTM) pilot
+4. Process h027 (DrQ+S&P) pilot more data
+5. Process h008 3-seed eval (47 jobs — big batch)
+6. Fill h005/h007/h012/h013 3-seed gaps as they complete
+7. Process h010/h011 IMPALA CNN pilots (h010 has code bug on rorqual)
+8. UNEXPLORED directions: SPR, PPG, N-step returns, noisy nets, off-policy, ensemble methods
+9. Investigate universal MsPacman degradation across ALL PPO modifications

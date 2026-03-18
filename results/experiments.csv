@@ -135,11 +135,11 @@ h005-alien-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Alien-v5
 h005-amidar-s1,h005,,,Amidar-v5,1,ppo_chainsp,40000000,71168,2.2086331844329834,2.510791301727295,157184.0,1.0
 h005-amidar-s2,h005,,"ppo_chainsp Amidar-v5 seed 2 (nibi, new-format)",Amidar-v5,2,ppo_chainsp,40000000,70656,2.507246494293213,3.1521739959716797,177152.0,5.0
 h005-amidar-s3,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Amidar-v5 --seed 3,"ppo_chainsp Amidar-v5 seed 3 (fir, 40M)",Amidar-v5,3,ppo_chainsp,40000000,70528,2.156,2.176,152064.0,6.0
-h005-battlezone-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id BattleZone-v5 --seed 1,"ppo_chainsp BattleZone-v5 seed 1 (nibi, 10M steps)",BattleZone-v5,1,ppo_chainsp,10000000,8832.0,2579.710205078125,1956.521728515625,22784000.0,2000.0
+h005-battlezone-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id BattleZone-v5 --seed 1,Upgraded 10M->40M. q4=2617.64697265625,BattleZone-v5,1,ppo_chainsp,40000000,34816,2518.38232421875,2617.64697265625,87680000.0,1000.0
 h005-battlezone-s2,h005,,auto-ingested,BattleZone-v5,2,ppo_atari_envpool,40000000,34688,2221.402099609375,2487.0849609375,77056000.0,2000.0
 h005-breakout-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Breakout-v5 --seed 1,"UPDATED 10M->40M. ppo_chainsp Breakout-v5 seed 1 (fir, 40M)",Breakout-v5,1,ppo_chainsp,40000000,226560,1.293,1.277,292992.0,2.0
 h005-breakout-s3,h005,,,Breakout-v5,3,ppo_chainsp,40000000,225920,1.305382490158081,1.33031165599823,294912.0,0.0
-h005-doubledunk-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id DoubleDunk-v5 --seed 1,"ppo_chainsp DoubleDunk-v5 seed 1 (fir, 10M steps)",DoubleDunk-v5,1,ppo_chainsp,10000000,4864.0,-17.526315689086914,-15.789473533630373,-85248.0,-14.0
+h005-doubledunk-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id DoubleDunk-v5 --seed 1,Upgraded 10M->40M. q4=-18.14634132385254,DoubleDunk-v5,1,ppo_chainsp,40000000,20992,-18.085365295410156,-18.14634132385254,-379648.0,-10.0
 h005-doubledunk-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id DoubleDunk-v5 --seed 2,"ppo_chainsp DoubleDunk-v5 seed 2 (fir, 40M)",DoubleDunk-v5,2,ppo_chainsp,40000000,20608,-17.876,-18.422,-368384.0,-20.0
 h005-enduro-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Enduro-v5 --seed 1,"UPDATED 10M->40M. ppo_chainsp Enduro-v5 seed 1 (narval, 40M)",Enduro-v5,1,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
 h005-enduro-s3,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Enduro-v5 --seed 3,"ppo_chainsp Enduro-v5 seed 3 (fir, 40M)",Enduro-v5,3,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
@@ -147,7 +147,7 @@ h005-montezumarevenge-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-
 h005-montezumarevenge-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id MontezumaRevenge-v5 --seed 2,"ppo_chainsp MontezumaRevenge-v5 seed 2 (narval, 40M)",MontezumaRevenge-v5,2,ppo_chainsp,40000000,69888,0.183,0.0,12800.0,0.0
 h005-mspacman-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id MsPacman-v5 --seed 1,,MsPacman-v5,1,ppo_chainsp,40000000,79616,279.453369140625,251.67202758789062,22248960.0,290.0
 h005-mspacman-s3,h005,,,MsPacman-v5,3,ppo_chainsp,40000000,78336,289.95098876953125,245.62091064453125,22713600.0,210.0
-h005-namethisgame-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id NameThisGame-v5 --seed 1,"ppo_chainsp NameThisGame-v5 seed 1 (narval, 10M steps)",NameThisGame-v5,1,ppo_chainsp,10000000,3584.0,2308.21435546875,2567.142822265625,8272640.0,2420.0
+h005-namethisgame-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id NameThisGame-v5 --seed 1,Upgraded 10M->40M. q4=2072.333251953125,NameThisGame-v5,1,ppo_chainsp,40000000,15360,2222.0,2072.333251953125,34129920.0,2710.0
 h005-namethisgame-s2,h005,,,NameThisGame-v5,2,ppo_chainsp,40000000,15872,2117.338623046875,2170.322509765625,33606400.0,2100.0
 h005-phoenix-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Phoenix-v5 --seed 1,,Phoenix-v5,1,ppo_chainsp,40000000,31360,783.7142944335938,831.9183959960938,24577280.0,480.0
 h005-phoenix-s3,h005,,auto-ingested,Phoenix-v5,3,ppo_atari_envpool,40000000,28800,781.6889038085938,842.7555541992188,22512640.0,340.0
@@ -469,12 +469,12 @@ h024-qbert-s1,h024,,"ppo_pfo Qbert-v5 seed 1 (narval, 40M, new-format). TIE (+3%
 h025-alien-s1,h025,python cleanrl/ppo_atari_envpool_dualv.py --env-id Alien-v5 --seed 1,PARTIAL 10M. ppo_dualv Alien-v5 seed 1 (rorqual),Alien-v5,1,ppo_dualv,10000000,15232,207.14,186.05,3155200.0,180.0
 h025-amidar-s1,h025,,"40M new-format (was old-format q4=31). Real q4=2.60, WIN +18% vs baseline 2.2.",Amidar-v5,1,ppo_dualv,40000000,71168,2.5269784927368164,2.5971221923828125,179840.0,1.0
 h025-breakout-s1,h025,,40M old-format (was 10M q4=1.58),Breakout-v5,1,ppo_dualv,40000000,74752,,9.0,,
-h025-doubledunk-s1,h025,python cleanrl/ppo_atari_envpool_dualv.py --env-id DoubleDunk-v5 --seed 1,10M partial,DoubleDunk-v5,1,ppo_dualv,10000000,5120,-18.649999618530273,-20.0,-95488.0,-18.0
-h025-mspacman-s1,h025,,10M partial,MsPacman-v5,1,ppo_dualv,10000000,19328,287.947021484375,226.95364379882812,5565440.0,280.0
-h025-namethisgame-s1,h025,,10M partial,NameThisGame-v5,1,ppo_dualv,10000000,3840,2089.333251953125,2720.666748046875,8023040.0,2340.0
-h025-phoenix-s1,h025,,10M partial,Phoenix-v5,1,ppo_dualv,10000000,8704,700.1470336914062,601.1764526367188,6094080.0,320.0
+h025-doubledunk-s1,h025,python cleanrl/ppo_atari_envpool_dualv.py --env-id DoubleDunk-v5 --seed 1,Upgraded 10M->40M. q4=-18.061349868774414,DoubleDunk-v5,1,ppo_dualv,40000000,20864,-18.147239685058594,-18.061349868774414,-378624.0,-14.0
+h025-mspacman-s1,h025,,40M new-format. LOSS -19% vs baseline 319.,MsPacman-v5,1,ppo_dualv,40000000,80256,273.1419372558594,259.904296875,21921280.0,230.0
+h025-namethisgame-s1,h025,,Upgraded 10M->40M. q4=2033.6922607421875,NameThisGame-v5,1,ppo_dualv,40000000,16640,1771.3077392578125,2033.6922607421875,29474560.0,1550.0
+h025-phoenix-s1,h025,,Upgraded 10M->40M. q4=800.4545288085938,Phoenix-v5,1,ppo_dualv,40000000,33792,781.2120971679688,800.4545288085938,26398720.0,580.0
 h025-qbert-s1,h025,,40M old-format (was 10M q4=188.30),Qbert-v5,1,ppo_dualv,40000000,116608,,150.0,,
-h025-spaceinvaders-s1,h025,,10M partial,SpaceInvaders-v5,1,ppo_dualv,10000000,18432,159.51388549804688,149.72222900390625,2940160.0,60.0
+h025-spaceinvaders-s1,h025,,Upgraded 10M->40M. q4=143.99356079101562,SpaceInvaders-v5,1,ppo_dualv,40000000,79488,146.36875915527344,143.99356079101562,11634560.0,120.0
 h026-amidar-s1,h026,,auto-ingested,Amidar-v5,1,pqn_atari_envpool,40000000,,0.00,,,
 h026-breakout-s1,h026,,auto-ingested,Breakout-v5,1,pqn_atari_envpool,40000000,,2.00,,,
 h026-qbert-s1,h026,,auto-ingested,Qbert-v5,1,pqn_atari_envpool,40000000,,0.00,,,
@@ -582,3 +582,14 @@ h024-breakout-s1,h024,,"ppo_pfo Breakout-v5 seed 1 (narval, 40M, new-format). TI
 h024-solaris-s1,h024,,"ppo_pfo Solaris-v5 seed 1 (rorqual, 40M, new-format). TIE (-5%).",Solaris-v5,1,ppo_pfo,40000000,5760,2051.111083984375,2163.5556640625,11814400.0,2480.0
 h024-venture-s1,h024,,"ppo_pfo Venture-v5 seed 1 (rorqual, 40M, new-format). TIE (both zero).",Venture-v5,1,ppo_pfo,40000000,18304,0.0,0.0,0.0,0.0
 h025-venture-s1,h025,,"ppo_dualv Venture-v5 seed 1 (narval, 40M, new-format). TIE (both zero).",Venture-v5,1,ppo_dualv,40000000,18304,0.0,0.0,0.0,0.0
+h025-privateeye-s1,h025,,40M new-format. q4=-94 vs baseline -117. WIN +19%.,PrivateEye-v5,1,ppo_dualv,40000000,14720,-55.75652313232422,-94.06086730957031,-820736.0,100.0
+h004-mspacman-s3,h004,,auto-ingested from h004__h004-mspacman-s3.csv,MsPacman-v5,3,pqn_nap,10000000,18176,387.9577331542969,331.9718322753906,7051520.0,210.0
+h004-battlezone-s2,h004,,auto-ingested from h004__h004-battlezone-s2.csv,BattleZone-v5,2,pqn_nap,10000000,6784,2264.15087890625,2509.43408203125,15360000.0,1000.0
+h024-battlezone-s1,h024,,auto-ingested from h024__h024-battlezone-s1.csv,BattleZone-v5,1,ppo_pfo,40000000,34432,2449.814208984375,2364.312255859375,84352000.0,6000.0
+h024-montezumarevenge-s1,h024,,auto-ingested from h024__h024-montezumarevenge-s1.csv,MontezumaRevenge-v5,1,ppo_pfo,40000000,70272,0.0,0.0,0.0,0.0
+h005-battlezone-s3,h005,,auto-ingested from h005__h005-battlezone-s3.csv,BattleZone-v5,3,ppo_chainsp,40000000,32128,2533.864501953125,2876.494140625,81408000.0,2000.0
+h005-montezumarevenge-s3,h005,,auto-ingested from h005__h005-montezumarevenge-s3.csv,MontezumaRevenge-v5,3,ppo_chainsp,40000000,70912,0.0,0.0,0.0,0.0
+h005-phoenix-s2,h005,,auto-ingested from h005__h005-phoenix-s2.csv,Phoenix-v5,2,ppo_chainsp,40000000,37248,783.0927734375,705.91064453125,29168640.0,560.0
+h005-privateeye-s3,h005,,auto-ingested from h005__h005-privateeye-s3.csv,PrivateEye-v5,3,ppo_chainsp,40000000,14720,82.4434814453125,86.08695983886719,1213568.0,0.0
+h005-spaceinvaders-s2,h005,,auto-ingested from h005__h005-spaceinvaders-s2.csv,SpaceInvaders-v5,2,ppo_chainsp,40000000,79616,149.08360290527344,145.1446990966797,11869440.0,125.0
+h005-venture-s3,h005,,auto-ingested from h005__h005-venture-s3.csv,Venture-v5,3,ppo_chainsp,40000000,19968,0.0,0.0,0.0,0.0

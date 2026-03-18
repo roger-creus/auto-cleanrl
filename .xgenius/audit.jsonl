@@ -3620,3 +3620,39 @@
 {"timestamp": "2026-03-18T16:40:36Z", "action": "validate_command", "allowed": true, "reason": "", "command": "python cleanrl/ppo_atari_envpool_aug_qr_cvar.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h029 --experiment-id h029-venture-s1 --output-dir /runs", "cluster": "narval"}
 {"timestamp": "2026-03-18T16:40:36Z", "action": "validate_job", "allowed": true, "reason": "", "cluster": "narval", "gpus": 1, "gpu_type": "a100_3g.20gb", "cpus": 4, "memory": "16G", "walltime": "06:00:00"}
 {"timestamp": "2026-03-18T16:40:41Z", "action": "submit", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57953375", "experiment_id": "h029-venture-s1", "command": "python cleanrl/ppo_atari_envpool_aug_qr_cvar.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h029 --experiment-id h029-venture-s1 --output-dir /runs"}
+{"timestamp": "2026-03-18T16:52:00Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8540158"}
+{"timestamp": "2026-03-18T16:52:01Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8548858"}
+{"timestamp": "2026-03-18T16:52:03Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8548860"}
+{"timestamp": "2026-03-18T16:52:04Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57947777"}
+{"timestamp": "2026-03-18T16:52:06Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57951958"}
+{"timestamp": "2026-03-18T16:52:07Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57951985"}
+{"timestamp": "2026-03-18T16:52:09Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10526132"}
+{"timestamp": "2026-03-18T16:52:10Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10526504"}
+{"timestamp": "2026-03-18T16:52:12Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10526711"}
+{"timestamp": "2026-03-18T16:52:13Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10527797"}
+{"timestamp": "2026-03-18T16:52:14Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10527799"}
+{"timestamp": "2026-03-18T16:52:15Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10527801"}
+{"timestamp": "2026-03-18T16:52:17Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10527802"}
+{"timestamp": "2026-03-18T16:52:18Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10528391"}
+{"timestamp": "2026-03-18T16:52:19Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10525842"}
+{"timestamp": "2026-03-18T16:52:21Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530091"}
+{"timestamp": "2026-03-18T16:52:22Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530092"}
+{"timestamp": "2026-03-18T16:52:23Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530093"}
+{"timestamp": "2026-03-18T16:52:25Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530094"}
+{"timestamp": "2026-03-18T16:52:26Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530156"}
+{"timestamp": "2026-03-18T16:52:27Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530196"}
+{"timestamp": "2026-03-18T16:52:29Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530197"}
+{"timestamp": "2026-03-18T16:52:30Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530198"}
+{"timestamp": "2026-03-18T16:52:31Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530270"}
+{"timestamp": "2026-03-18T16:52:33Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530272"}
+{"timestamp": "2026-03-18T16:52:34Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530273"}
+{"timestamp": "2026-03-18T16:52:35Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10531627"}
+{"timestamp": "2026-03-18T16:52:37Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10532514"}
+{"timestamp": "2026-03-18T16:52:38Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10532515"}
+{"timestamp": "2026-03-18T16:52:39Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10532519"}
+{"timestamp": "2026-03-18T16:52:41Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10532546"}
+{"timestamp": "2026-03-18T16:52:42Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10536185"}
+{"timestamp": "2026-03-18T16:52:43Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530834"}
+{"timestamp": "2026-03-18T16:52:45Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10530835"}
+{"timestamp": "2026-03-18T16:52:48Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28255750"}
+{"timestamp": "2026-03-18T16:52:51Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28255820"}

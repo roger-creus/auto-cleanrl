@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-NameThisGame-v5,1,h025,h025-namethisgame-s1,ppo_dualv,10000000,3840,2089.333251953125,2720.666748046875,8023040.0,2340.0
+NameThisGame-v5,1,h025,h025-namethisgame-s1,ppo_dualv,40000000,16640,1771.3077392578125,2033.6922607421875,29474560.0,1550.0
