@@ -634,7 +634,7 @@ h030-qbert-s1,h030,,curve-derived q4 (fir old-code),Qbert-v5,1,ppo_sem,40000000.
 h031-amidar-s1,h031,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_spr,40000000.0,61568.0,2.58,2.56,158848.0,33.0
 h031-breakout-s1,h031,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_spr,40000000.0,145536.0,2.01,1.94,293120.0,0.0
 h031-qbert-s1,h031,,"SPR Qbert s1 (narval NEW CODE, log-extracted q4=162.61, replaces old-code q4=198.85)",Qbert-v5,1,ppo_spr,40000000.0,122240.0,,162.61,,
-h032-amidar-s1,h032,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_noisylinear,40000000.0,65280.0,36.26,38.8,2367232.0,34.0
+h032-amidar-s1,h032,,"NEW-CODE q4=0.0 CATASTROPHIC (narval CSV, replaces old-code q4=38.8)",Amidar-v5,1,ppo_noisylinear,40000000.0,71552.0,0.644,0.0,46080.0,0.0
 h032-breakout-s1,h032,,"NoisyLinear Breakout s1 (fir new-code CSV, 191360 episodes) replaces old-code 0.90",Breakout-v5,1,ppo_noisylinear,40000000.0,191360.0,2.08,1.98,398720.0,3.0
 h032-qbert-s1,h032,,"NoisyLinear Qbert s1 (fir new-code CSV, 114432 episodes) replaces old-code 165.45",Qbert-v5,1,ppo_noisylinear,40000000.0,114432.0,133.42,125.0,15267200.0,125.0
 h033-amidar-s1,h033,,curve-derived q4 (rorqual old-code),Amidar-v5,1,ppo_aug_consist,40000000.0,64640.0,30.64,33.96,1980672.0,31.0
@@ -687,3 +687,6 @@ h031-alien-s1,h031,,"SPR Alien s1 (fir, log-extracted q4=207.63, output-dir /out
 h032-spaceinvaders-s1,h032,,"NoisyLinear SpaceInvaders s1 (narval, log-extracted q4=164.96, output-dir bug, 551 episodes)",SpaceInvaders-v5,1,ppo_noisylinear,40000000.0,551.0,208.89,164.96,,
 h008-venture-s2,h008,,"pqn_lstm Venture s2 (nibi, log-extracted q4=0.00, output-dir /output bug, 184 episodes)",Venture-v5,2,pqn_lstm,40000000.0,184.0,0.0,0.0,,
 h033-mspacman-s1,h033,,new-code CSV (narval),MsPacman-v5,1,ppo_aug_consist,40000000.0,78080.0,75.25,70.0,5875200.0,70.0
+h029-enduro-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id Enduro-v5 --seed 1,"CVaR Enduro s1 (nibi new-format CSV, 11904 episodes) TIE",Enduro-v5,1,ppo_aug_qr_cvar,40000000.0,11904.0,0.0,0.0,0.0,0.0
+h029-spaceinvaders-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id SpaceInvaders-v5 --seed 1,"CVaR SpaceInvaders s1 (nibi new-format CSV, 78720 episodes)",SpaceInvaders-v5,1,ppo_aug_qr_cvar,40000000.0,78720.0,147.73170471191406,151.9105682373047,11629440.0,175.0
+h033-spaceinvaders-s1,h033,,"h033 SpaceInvaders s1 (fir new-code CSV, 79104 episodes)",SpaceInvaders-v5,1,ppo_aug_consist,40000000.0,79104.0,149.126220703125,157.9935302734375,11796480.0,290.0
