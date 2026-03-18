@@ -318,3 +318,75 @@ Distributed across nibi, fir, narval, rorqual.
 3. Prepare hypotheses for remaining uncovered categories (Cat 1, 2, 3, 8, 10)
 4. Once pilots complete: identify winners, scale to 3-seed full evaluation
 5. Consider novel combinations of winning techniques
+
+---
+**[2026-03-18 08:02 UTC]**
+
+## Session 7: Bug Fixes, Early Results Analysis, New Hypotheses (h016-h017)
+
+### Bugs Found & Fixed
+1. **h010 IMPALA CNN channel bug**: Conv2d expected 84 input channels due to `h,w,c = obs.shape` instead of `c,h,w`. All h010 rorqual jobs crashed. Fixed and resubmitted 15 jobs.
+2. **h003-h009 running at 10M not 40M**: Submission commands omitted `--total-timesteps` flag, defaulting to 10M. h010-h015 were correctly submitted with 40M. The 10M results still provide directional signal.
+
+### Phase 2 Early Results (h003/h004 at 10M steps)
+**h003 (PPO + LayerNorm, 14/15 games at 10M):**
+- avg Q4=503 at 10M vs PPO baseline avg Q4=550 at 40M
+- 8 games already match/exceed 40M baseline with 4x less training!
+- Notable: PrivateEye Q4=71 vs baseline -135 (sign reversal). NameThisGame exceeds baseline.
+- Missing: SpaceInvaders
+
+**h004 (PQN + NaP, 15/15 games at 10M):**
+- avg Q4=380 at 10M vs PQN baseline avg Q4=391 at 40M
+- 9 games match/exceed 40M baseline at only 10M!
+- Notable: BattleZone +15%, Solaris +26%, Phoenix +7% over 40M baseline
+- Only NameThisGame (68%) and PrivateEye (worse) below baseline
+
+**CONCLUSION: Both LayerNorm (h003) and NaP (h004) dramatically improve sample efficiency.**
+
+### h005 partial (PPO + CHAIN-SP): 3 games, looks similar to h003
+Alien Q4=220 (vs base 200), MsPacman Q4=294 (vs 319), PrivateEye Q4=71 (vs -135)
+
+### New Hypotheses Implemented and Submitted
+- **h016: PPO + Network Sparsity** (Cat 5, ICML 2025 oral) — Random 50% pruning at init, static mask. 15 games × 1 seed @ 40M submitted.
+- **h017: PPO + SPO/TV divergence** (Cat 4, ICLR 2025) — Replace PPO clipping with soft TV penalty. 15 games × 1 seed @ 40M submitted.
+
+### Old Iteration Data Contamination Warning
+Results directories (results/CLUSTER/) contain CSVs from BOTH old and current iterations. Old CSVs use format: env_id,seed,total_timesteps,mean_return_last_25,... Current CSVs use: env_id,seed,hypothesis_id,experiment_id,algorithm,...,q4_return,auc,final_avg20. The 'algorithm' column distinguishes current from old. h010-h015 CSVs from narval/nibi/fir are ALL from the old iteration.
+
+### Active Jobs Summary
+- h003-h009: ~107 running (10M steps, will finish soon)
+- h010: 15 resubmitted (40M, fixed IMPALA bug)
+- h011-h015: ~75 running (40M, various clusters)
+- h016: 15 submitted (40M, network sparsity)
+- h017: 15 submitted (40M, SPO/TV divergence)
+- Total active: ~227 jobs
+
+### Category Coverage Update
+- Cat 1 (Off-policy): NOT YET
+- Cat 2 (Replay): NOT YET
+- Cat 3 (Distributional): NOT YET
+- Cat 4 (Policy gradient): h014 (entropy anneal), h017 (SPO)
+- Cat 5 (Architecture/Plasticity): h003, h004, h005, h007, h008, h010, h011, h013, h016
+- Cat 6 (Exploration): h009 (RND)
+- Cat 7 (Value processing): h006 (symlog), h015 (PopArt)
+- Cat 8 (Optimization): NOT YET — schedule-free Adam, Fast TRAC are top priorities
+- Cat 9 (Representation): h012 (DrQ aug)
+- Cat 10 (Ensemble): NOT YET
+
+### Literature Findings (new this session)
+Top uncovered directions from recent literature:
+- SPO/TV divergence (ICLR 2025) — implemented as h017
+- Network Sparsity (ICML 2025 oral) — implemented as h016
+- Fast TRAC optimizer (NeurIPS 2024) — drop-in optimizer wrapper, tested on Atari
+- Schedule-Free AdamW (NeurIPS 2024) — untested in RL, high novelty
+- PFO (Proximal Feature Optimization, NeurIPS 2024) — fixes PPO representation collapse
+- Symmetric PPO (ICML 2025) — robust to non-stationary targets
+- ADDQ (Adaptive Double Q, ICML 2025) — few-line change for PQN
+
+### Next Session TODO
+1. Process completed h003-h009 pilot results (10M) — full comparison table
+2. Process h010-h015 pilot results when they complete (40M)
+3. Process h016-h017 pilot results when they complete
+4. Implement more hypotheses for uncovered categories (Cat 1, 2, 3, 8, 10)
+5. If h003/h004 confirm at 40M: begin combination experiments (LayerNorm + NaP + IMPALA)
+6. Implement: Fast TRAC optimizer, Schedule-Free Adam, PFO for PPO

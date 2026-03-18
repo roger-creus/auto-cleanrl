@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Alien-v5,1,h003,h003-alien-s1,ppo_layernorm,10000000,15360,199.8333282470703,180.3333282470703,3069440.0,220.0

@@ -170,7 +170,7 @@ class ConvSequence(nn.Module):
 class Agent(nn.Module):
     def __init__(self, envs):
         super().__init__()
-        h, w, c = envs.single_observation_space.shape
+        c, h, w = envs.single_observation_space.shape
         shape = (c, h, w)
 
         # IMPALA-style ResNet encoder: 3 ConvSequences with channels [16, 32, 32]

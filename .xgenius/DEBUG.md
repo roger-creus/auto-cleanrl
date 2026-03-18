@@ -13,3 +13,25 @@ Errors and issues encountered during autonomous research.
 **Fix:** Cancelled all running Phase 2 jobs, resubmitted 105 jobs WITHOUT `--output-dir` flag (using script default of `/runs`).
 
 **Lesson:** Always verify output paths match container bind mounts. The correct container output path is `/runs`, not `/output`.
+
+## 2026-03-18 ~08:30 — h010 IMPALA CNN channel bug (Conv2d input channels)
+
+**Problem:** All h010 (PPO + IMPALA CNN) jobs crashed with `RuntimeError: Given groups=1, weight of size [16, 84, 3, 3], expected input[128, 4, 84, 84] to have 84 channels, but got 4 channels instead`.
+
+**Root cause:** In `ppo_atari_envpool_impala.py` line 173, observation shape was unpacked as `h, w, c = envs.single_observation_space.shape`. Envpool returns CHW format (4, 84, 84), so this gave `h=4, w=84, c=84` and the first Conv layer was created with 84 input channels instead of 4.
+
+**Fix:** Changed `h, w, c` to `c, h, w` on line 173. The PQN IMPALA script (h011) was already correct (`c, h, w`). Cancelled 1 remaining h010 job, resubmitted all 15 with fix.
+
+**Impact:** ~15 GPU-minutes wasted (jobs crash immediately at first forward pass).
+
+**Lesson:** Always check observation space format — envpool uses CHW (channel-first), not HWC.
+
+## 2026-03-18 ~08:30 — h003-h009 running at 10M not 40M timesteps
+
+**Problem:** All h003-h009 Phase 2 pilot jobs were submitted WITHOUT `--total-timesteps 40000000`, so they default to the script's `total_timesteps: int = 10000000` (10M). Baselines used 40M.
+
+**Root cause:** Session 3 batch submission did not include `--total-timesteps` flag for h003-h009. Session 6 (h010-h015) correctly included it.
+
+**Impact:** h003-h009 results are at 10M steps, not directly comparable to 40M baselines. However, the 10M results still provide strong directional signal. Both h003 and h004 show excellent sample efficiency at 10M.
+
+**Lesson:** Always explicitly set `--total-timesteps 40000000` in submission commands. Do not rely on script defaults.
