@@ -38,7 +38,7 @@ class Args:
     # Algorithm specific arguments
     env_id: str = "Breakout-v5"
     """the id of the environment"""
-    total_timesteps: int = 10000000
+    total_timesteps: int = 40000000
     """total timesteps of the experiments"""
     learning_rate: float = 2.5e-4
     """the learning rate of the optimizer"""
@@ -202,21 +202,14 @@ if __name__ == "__main__":
 
     device = torch.device("cuda" if torch.cuda.is_available() and args.cuda else "cpu")
 
-    ATARI_MAX_FRAMES = int(
-        108000 / 4
-    )
-
     # env setup
     envs = envpool.make(
         args.env_id,
         env_type="gym",
         num_envs=args.num_envs,
-        episodic_life=False, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 6
+        episodic_life=True,
         reward_clip=True,
         seed=args.seed,
-        noop_max=1, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 12 (no-op is deprecated in favor of sticky action, right?)
-        repeat_action_probability=0.25, # Machado et al. 2017 (Revisitng ALE: Eval protocols) p. 12
-        max_episode_steps=ATARI_MAX_FRAMES # Hessel et al. 2018 (Rainbow DQN), Table 3, Max frames per episode
     )
     
     envs.num_envs = args.num_envs
