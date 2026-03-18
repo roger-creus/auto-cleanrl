@@ -520,3 +520,68 @@ Session 8's container rebuild (for schedulefree dep) corrupted the .sif on rorqu
 5. Analyze all Phase 2 pilots, identify winners
 6. Begin combination experiments with winning techniques
 7. Consider more hypotheses for uncovered categories (Cat 1 off-policy, Cat 2 replay, Cat 10 ensemble)
+
+---
+**[2026-03-18 10:09 UTC]**
+
+## Session 10: Phase 2 Analysis — 126 New Results
+
+### Results Processed
+- 126 new rows added to experiments.csv (total: 273 rows)
+- Pulled from all 4 clusters, cross-referenced with DB to filter old-iteration contamination
+- Ran reconcile: 296 still active, 234 completed/disappeared, 134 cancelled
+
+### KEY FINDINGS — Phase 2 Pilot Rankings
+
+**TIER 1 — Best performers (recommend full 3-seed eval):**
+1. **h013 (Spectral Norm): 4W/0L/5T on 9/15 games** — ZERO LOSSES. Phoenix +19%, Solaris +34%, Amidar +40%. Best stability-enhancing technique. Still 6 games running.
+2. **h007 (Shrink-and-Perturb): 4W/2L/8T on 14/15 games** — Solaris massive +78% (4054 vs 2280!), BattleZone +16%. Only loses: MsPacman (-17%), PrivateEye. Near-complete pilot.
+3. **h012 (DrQ augmentation): 3W/1L/4T on 8/15 games** — BattleZone +33%, Phoenix +11%. Only loss: MsPacman. 7 games running.
+
+**TIER 2 — Safe/promising:**
+4. **h015 (PopArt): 2W/0L/5T on 7/15 games** — No losses, mostly ties. Safe but modest.
+5. **h020 (Dueling): 7W/5L/3T on 15/15 games** — COMPLETE. Most raw wins (BattleZone 2.4x!) but also many losses (Phoenix 0.07x, Solaris 0.19x). High variance.
+
+**TIER 3 — Neutral/bad:**
+6. **h006 (Symlog): 2W/3L/9T on 14/15 games** — Neutral. No dramatic effects.
+7. **h003 (LayerNorm 40M): 5W/7L/3T on 15/15 games** — DISAPPOINTING. Catastrophic at 40M: Phoenix 0.01x, SpaceInvaders 0.03x, Qbert 0x. 10M results were misleading — LayerNorm causes late-training collapse.
+8. **h018 (Schedule-Free): 4W/7L/4T on 15/15 games** — BAD. Phoenix 0.02x, Solaris 0x. Closed.
+
+**TIER 4 — Too few results (3/15 games only — all show Amidar/Breakout/Qbert):**
+h008 (PQN LSTM), h009 (RND), h010 (IMPALA), h011 (PQN IMPALA), h016 (Sparse), h017 (SPO), h019 (Muon)
+
+### Critical Insight: Phoenix/Solaris/SpaceInvaders as Discriminators
+- PPO baseline is STRONG on Phoenix (796), Solaris (2280), SpaceInvaders (147)
+- Most modifications HURT these games — they're the hardest to maintain
+- h013 (Spectral Norm) is special: it IMPROVES Phoenix/Solaris while maintaining everything else
+- h007 (S&P) excels specifically on Solaris (+78%)
+- Anything that hurts Phoenix/Solaris by >50% should be considered harmful
+
+### Metric Format Issue (IMPORTANT for next sessions)
+- Baselines (h001/h002): use q4_return metric (robust, last 25% of all episodes)
+- Many Phase 2 scripts: use mean_return_last_25 (old format, noisy, only last 25 episodes)
+- Comparison uses final_avg20 from baselines when comparing with old-format results
+- Scripts h006, h012, h013, h015 have proper q4_return format
+- Scripts h003(40M), h008-h011, h014, h016-h020 have old format
+- Consider fixing CSV output in remaining scripts before combination experiments
+
+### Actions Taken
+- Resubmitted h006-alien-s1 (disappeared on fir, no output) → narval job 57940886
+- h010 results (3 games) may be from pre-bugfix batch — marked as uncertain
+- Updated hypotheses.csv with full analysis notes
+
+### Active Jobs: ~296 across 4 clusters
+- h003/h004/h005: 40M 3-seed evals (135 total, many running)
+- h006: 1 resubmitted (alien-s1)
+- h007: 1 remaining (enduro-s1)
+- h008-h017: 40M pilots (6-15 games each remaining)
+- h018: COMPLETE
+- h019-h020: 40M pilots running
+
+### Next Session TODO
+1. Process newly completed results from h006-h017 pilots
+2. Full analysis of h013 and h007 when their 15/15 pilots complete
+3. Process h004/h005 40M 3-seed results (check if LayerNorm collapse affects NaP/CHAIN-SP)
+4. Submit h013+h007 combination experiment if both confirm strong results
+5. Fix CSV output format in remaining scripts for future consistency
+6. Still need hypotheses for: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)

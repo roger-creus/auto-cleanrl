@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Breakout-v5,1,h006,h006-breakout-s1,ppo_symlog,40000000,222336,1.3615429401397705,1.4277490377426147,302720.0,0.0
+Phoenix-v5,1,h015,h015-phoenix-s1,ppo_popart,40000000,34432,748.8475952148438,765.3531494140625,25784320.0,800.0

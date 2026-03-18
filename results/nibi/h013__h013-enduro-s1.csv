@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Breakout-v5,1,h006,h006-breakout-s1,ppo_symlog,40000000,222336,1.3615429401397705,1.4277490377426147,302720.0,0.0
+Enduro-v5,1,h013,h013-enduro-s1,ppo_specnorm,40000000,11904,0.0,0.0,0.0,0.0

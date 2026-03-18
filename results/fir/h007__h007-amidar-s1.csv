@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Breakout-v5,1,h006,h006-breakout-s1,ppo_symlog,40000000,222336,1.3615429401397705,1.4277490377426147,302720.0,0.0
+Amidar-v5,1,h007,h007-amidar-s1,ppo_sp,40000000,70784,2.5931284427642822,2.656419515609741,183552.0,6.0
