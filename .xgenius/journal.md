@@ -248,3 +248,73 @@ h002: 11 more seeds needed
 2. Process Phase 2 pilot results when h003-h009 complete (this time CSVs will save correctly!)
 3. Full baseline analysis once all 90 baselines are in
 4. Identify Phase 2 winners to scale to full 3-seed evaluation
+
+---
+**[2026-03-18 07:35 UTC]**
+
+## Session 6: Baselines COMPLETE + 6 New Hypotheses Submitted
+
+### Baselines Complete: 90/90 (45 PPO + 45 PQN)
+Parsed 18 remaining baseline CSVs. All 15 games × 3 seeds for both algorithms.
+
+### FULL BASELINE ANALYSIS (15 games × 3 seeds):
+PPO avg Q4=550, PQN avg Q4=391. Score: PPO 7 / PQN 4 / Tie 4.
+
+PPO dominates:
+- Phoenix (9.2x: 796 vs 87)
+- Solaris (5.7x: 2280 vs 399)
+- NameThisGame (1.7x: 2348 vs 1381)
+- MsPacman (1.3x: 319 vs 249)
+- DoubleDunk (-17.9 vs -24.0)
+- Alien (1.1x: 200 vs 178)
+- PrivateEye (-135 vs -173)
+
+PQN dominates:
+- Amidar (14.5x: 31.7 vs 2.2!!)
+- SpaceInvaders (1.9x: 287 vs 147)
+- BattleZone (1.5x: 3296 vs 2150)
+- Breakout (1.3x: 1.8 vs 1.4)
+
+Both fail (Q4<1): Enduro(0), MontezumaRevenge(0), Venture(0)
+Tie: Qbert (158 vs 151)
+
+### Key Insights:
+1. PQN's 14.5x advantage on Amidar is remarkable — Q-learning excels at maze navigation
+2. PPO's 9.2x advantage on Phoenix — policy gradient better for reactive shooting
+3. Both algorithms completely fail on hard exploration (Enduro, MontezumaRevenge, Venture)
+4. Low variance across seeds for most games — results are stable
+5. Breakout is very low for both (~1.5) — neither algorithm learns to play well
+
+### Phase 2 Pilots Running (h003-h009):
+All 105 jobs (7 hypotheses × 15 games × 1 seed) still running. CSVs in results/ are old-iteration contamination (confirmed by different column format). Must wait for current DB jobs to complete.
+
+### NEW Phase 2 Hypotheses Submitted (h010-h015):
+90 new jobs (6 hypotheses × 15 games × 1 seed) submitted across 4 clusters:
+- h010: PPO + IMPALA CNN (Cat 5: Architecture — stronger encoder)
+- h011: PQN + IMPALA CNN (Cat 5: Architecture — stronger encoder)
+- h012: PPO + DrQ-style Random Shift Augmentation (Cat 9: Representation)
+- h013: PPO + Spectral Normalization (Cat 5: Stability)
+- h014: PPO + Entropy Annealing 0.03→0.001 (Cat 4: Policy Gradient)
+- h015: PPO + PopArt Adaptive Value Normalization (Cat 7: Value)
+
+### Active Jobs: ~106 running (h003-h009) + 90 submitted (h010-h015) = ~196 total
+Distributed across nibi, fir, narval, rorqual.
+
+### Category Coverage So Far:
+- Cat 1 (Algorithmic paradigms): NOT YET — consider SAC-discrete, DQN variants
+- Cat 2 (Experience management): NOT YET — consider replay buffers
+- Cat 3 (Distributional RL): NOT YET — consider C51, Rainbow components
+- Cat 4 (Policy gradient): h014 (entropy annealing)
+- Cat 5 (Architecture/Plasticity): h003, h004, h005, h007, h008, h010, h011, h013
+- Cat 6 (Exploration): h009 (RND)
+- Cat 7 (Reward/value processing): h006 (symlog), h015 (PopArt)
+- Cat 8 (Optimization): NOT YET — consider schedule-free Adam
+- Cat 9 (Representation): h012 (DrQ aug)
+- Cat 10 (Ensemble): NOT YET
+
+### Next Session TODO:
+1. Check h003-h009 pilot completions — analyze results
+2. Check h010-h015 pilot completions — analyze results
+3. Prepare hypotheses for remaining uncovered categories (Cat 1, 2, 3, 8, 10)
+4. Once pilots complete: identify winners, scale to 3-seed full evaluation
+5. Consider novel combinations of winning techniques

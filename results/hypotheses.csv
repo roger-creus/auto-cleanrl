@@ -8,9 +8,9 @@ h006,PPO + Symlog value transform,DreamerV3-style symlog/symexp on value targets
 h007,PPO + Soft Shrink-and-Perturb,Post-update weight shrinkage + noise for plasticity maintenance (proven in on-policy RL),promising,15-game pilot RUNNING. Script: ppo_atari_envpool_sp.py.
 h008,PQN + LSTM,"Add LSTM to PQN for memory-dependent games (Montezuma, Venture, etc.)",promising,15-game pilot RUNNING (fixed Conv2d channel bug). Script: pqn_atari_envpool_lstm_v2.py.
 h009,PPO + RND exploration,Random Network Distillation intrinsic motivation for hard exploration games,promising,15-game pilot RUNNING. Script: ppo_rnd_envpool_v2.py.
-h010,PPO + IMPALA CNN,Replace NatureCNN with IMPALA ResNet encoder — stronger visual processing with residual connections,proposed,Cat 5 Architecture. Script: ppo_atari_envpool_impala.py. Pilot pending.
-h011,PQN + IMPALA CNN,Replace NatureCNN with IMPALA ResNet encoder for PQN baseline,proposed,Cat 5 Architecture. Script: pqn_atari_envpool_impala.py. Pilot pending.
-h012,PPO + Data Augmentation (DrQ-style),DrQ-style random shift augmentation — improves representation quality and data efficiency,proposed,Cat 9 Representation. Script: ppo_atari_envpool_aug.py. Pilot pending.
-h013,PPO + Spectral Normalization,"Spectral norm on CNN layers constrains Lipschitz constant, prevents rank collapse",proposed,Cat 5 Architecture/Stability. Script: ppo_atari_envpool_specnorm.py. Pilot pending.
-h014,PPO + Entropy Annealing,"Anneal entropy coef from 0.03 to 0.001 — high early exploration, low late exploitation",proposed,Cat 4 Policy Gradient. Script: ppo_atari_envpool_entanneal.py. Pilot pending.
-h015,PPO + PopArt value normalization,Adaptive value function normalization (PopArt) for scale-invariant learning across games,proposed,Cat 7 Reward/Value. Script: ppo_atari_envpool_popart.py. Pilot pending.
+h010,PPO + IMPALA CNN,Replace NatureCNN with IMPALA ResNet encoder — stronger visual processing with residual connections,promising,Cat 5 Architecture. Script: ppo_atari_envpool_impala.py. 15-game pilot submitting.
+h011,PQN + IMPALA CNN,Replace NatureCNN with IMPALA ResNet encoder for PQN baseline,promising,Cat 5 Architecture. Script: pqn_atari_envpool_impala.py. 15-game pilot submitting.
+h012,PPO + Data Augmentation (DrQ-style),DrQ-style random shift augmentation — improves representation quality,promising,Cat 9 Representation. Script: ppo_atari_envpool_aug.py. 15-game pilot submitting.
+h013,PPO + Spectral Normalization,"Spectral norm on CNN layers constrains Lipschitz constant, prevents rank collapse",promising,Cat 5 Stability. Script: ppo_atari_envpool_specnorm.py. 15-game pilot submitting.
+h014,PPO + Entropy Annealing,"Anneal entropy coef from 0.03 to 0.001 — high early exploration, low late exploitation",promising,Cat 4 Policy Gradient. Script: ppo_atari_envpool_entanneal.py. 15-game pilot submitting.
+h015,PPO + PopArt value normalization,Adaptive value function normalization for scale-invariant learning across games,promising,Cat 7 Value. Script: ppo_atari_envpool_popart.py. 15-game pilot submitting.
