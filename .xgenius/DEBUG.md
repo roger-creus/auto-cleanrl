@@ -35,3 +35,26 @@ Errors and issues encountered during autonomous research.
 **Impact:** h003-h009 results are at 10M steps, not directly comparable to 40M baselines. However, the 10M results still provide strong directional signal. Both h003 and h004 show excellent sample efficiency at 10M.
 
 **Lesson:** Always explicitly set `--total-timesteps 40000000` in submission commands. Do not rely on script defaults.
+
+## 2026-03-18 09:30 — Rorqual container image corruption after rebuild
+
+### What happened
+Session 8 rebuilt the container to add `schedulefree` dependency (~09:03-09:11 UTC). The new .sif pushed to rorqual was corrupted — local file is 4,945,575,936 bytes but rorqual had 4,945,334,272 bytes (~242KB short).
+
+### Impact
+33 rorqual h003/h004/h005 40M 3-seed eval jobs started at ~09:13 (right after corrupt push) all failed with:
+```
+FATAL: container creation failed: image driver mount failure: squashfuse_ll exited: Something went wrong trying to read the squashfs image.
+```
+
+Also a secondary path quoting issue: `couldn't chdir to '/home/rogercc/'/scratch/rogercc/cleanrl''` (extra quotes in -H flag).
+
+### Resolution
+1. Re-pushed the image to rorqual (took ~20 min for 5GB SCP)
+2. Cancelled 16 still-running at-risk jobs
+3. 14 had already disappeared from SLURM
+4. 3 had "completed" with exit code 0 (but actually failed)
+5. Resubmitted all 33 jobs distributed across all 4 clusters
+
+### Lesson
+Container pushes to rorqual may silently truncate/corrupt the .sif. After push, should verify file size matches local file. The verify-image command only checks existence, not integrity.

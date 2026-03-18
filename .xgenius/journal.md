@@ -475,3 +475,48 @@ Total active jobs after this session: ~370
 - h018 (schedule-free pilot): 15 jobs
 - h019 (Muon pilot): 15 jobs
 - h020 (dueling pilot): 15 jobs
+
+---
+**[2026-03-18 09:54 UTC]**
+
+## Session 9: Container Fix + Partial Results (h006/h007)
+
+### Rorqual Container Corruption — FIXED
+Session 8's container rebuild (for schedulefree dep) corrupted the .sif on rorqual (~242KB short). 33 h003/h004/h005 40M 3-seed eval jobs failed with 'squashfuse_ll: Something went wrong trying to read the squashfs image'.
+- Re-pushed image (20 min SCP)
+- Cancelled/identified all 33 failed jobs
+- Resubmitted all 33 distributed across all 4 clusters
+- Jobs on other clusters (narval, nibi, fir) unaffected
+
+### New Results Added: 12 rows (h006: 7/15, h007: 5/15 at 40M)
+
+**h006 (PPO + Symlog, 40M pilot, 7/15 games):**
+- Score vs PPO: 3W / 1L / 3T
+- Wins: Phoenix (+60), PrivateEye (+22), SpaceInvaders (+10)
+- Loss: NameThisGame (-300) — significant regression
+- 8 games still running/pending
+
+**h007 (PPO + Shrink-and-Perturb, 40M pilot, 5/15 games):**
+- Score vs PPO: 1W / 2L / 2T
+- Win: PrivateEye Q4=34 vs -135 (sign reversal!)
+- Losses: MsPacman (-53), NameThisGame (-86)
+- 10 games still running/pending
+
+### Current Job Status (post-reconcile + resubmission)
+- Total active: ~250+ jobs across 4 clusters
+- h003/h004/h005: 40M 3-seed evals running (33 resubmitted)
+- h006/h007: 40M pilots partially done (8+10 games remaining)
+- h008-h009: 40M pilots running (on correct image, pre-rebuild)
+- h010-h017: 40M pilots running
+- h018-h020: pending/early running
+
+### Results Bank: 148 rows (90 baselines + 45 h003-h005@10M + 7 h006 + 5 h007 + 1 h005 duplicate)
+
+### Next Session TODO:
+1. Process h003/h004/h005 40M results when complete — definitive comparison
+2. Process remaining h006/h007 pilot results
+3. Process h008-h009 pilot results (PQN+LSTM, PPO+RND)
+4. Process h010-h020 pilot results as they complete
+5. Analyze all Phase 2 pilots, identify winners
+6. Begin combination experiments with winning techniques
+7. Consider more hypotheses for uncovered categories (Cat 1 off-policy, Cat 2 replay, Cat 10 ensemble)
