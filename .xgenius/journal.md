@@ -2681,3 +2681,63 @@ Incomplete: h022(1-doubledunk), h027(3)
 6. If h031 collapses → focus on h012(DrQ)+h022(QR) combination or novel PPG adaptation
 7. Consider cancelling h010 remaining running jobs (already closed)
 8. Monitor h027 stuck pilot (nibi)
+
+---
+**[2026-03-18 21:37 UTC]**
+
+## Session 44: Process 4 New Results, h029 Upgraded to net+3, h031 Breakout CONFIRMED
+
+### Triggered by: h008-spaceinvaders-s2 (job 10531282, nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 678 rows)
+- h008-spaceinvaders-s2: q4=194.21 (log-extracted, output-dir bug, 553 episodes). 2-seed avg=196.24 vs PQN baseline 280 → -30% LOSS (confirms s1).
+- h029-alien-s1: q4=228.34 (rorqual new-format CSV, 58496 episodes). vs PPO baseline 202 → +13% WIN. h029 upgraded from net+2 to net+3.
+- h031-breakout-s1: q4=1.94 (narval new-code curve CSV, 145536 episodes). vs PPO baseline 1.25 → +55% WIN. NEW-CODE CONFIRMS old-code WIN (old q4=1.90).
+- h031-spaceinvaders-s1: q4=150.10 (fir log-extracted, output-dir bug, 615 episodes). vs PPO baseline 147 → +2% TIE.
+
+### h029 (CVaR NOVEL) UPGRADED TO NET +3
+12/15 pilot: 4W/1L/7T (net +3, excl Amidar old-format). NOW TIES h012 (DrQ) AS BEST SINGLE TECHNIQUE.
+WINS: Alien+13%, BattleZone+47%, PrivateEye+92%, Solaris+19%.
+LOSS: MsPacman-11%.
+3 running: enduro, phoenix, spaceinvaders.
+
+### h031 (SPR) Breakout Confirmed — net +2 with ZERO LOSSES
+9/15 new-code pilot: 2W/0L/5T (net +2). Breakout +55% confirmed by new-code CSV (old-code was +52%, close match). SpaceInvaders TIE. ZERO LOSSES across 9 games is remarkable.
+If curve-derived Amidar (q4=2.56, +90%) valid → 3W/0L (net +3) at 10/15.
+8 still running, 3 disappeared and resubmitted (battlezone→fir, mspacman→narval).
+
+### h011 CLOSED — IMPALA CNN Too Slow (like h010)
+Cancelled 3 remaining h011 jobs. Same IMPALA CNN ~2x slower issue as h010. Not viable.
+
+### 4 Jobs Disappeared (reconcile)
+- h031-amidar-s1 (rorqual 8553890) — old nibi curve data exists (q4=2.56), no new-code verification
+- h031-battlezone-s1 (narval 57955875) — RESUBMITTED to fir (job 28326165)
+- h031-mspacman-s1 (rorqual 8553983) — RESUBMITTED to narval (job 57965599)  
+- h030-mspacman-s1 (rorqual 8553858) — RESUBMITTED to nibi (job 10546741)
+All resubmissions use --output-dir /runs (fixes output-dir bug).
+
+### CORRECTED STANDINGS (PPO techniques)
+1. h012 (DrQ): 4W/1L/10T (net +3) — COMPLETE 15/15 3-SEED ★ PROVEN
+2. h029 (CVaR NOVEL): 4W/1L/7T (net +3) — 12/15 pilot ★ UPGRADED
+3. h022 (QR-Value): 4W/2L/8T (net +2) — 14/15 pilot
+4. h031 (SPR NOVEL): 2W/0L/5T (net +2) — 9/15 new-code, ZERO LOSSES ★ HIGHEST POTENTIAL
+5. h007 (S&P): 4W/2L/9T (net +2) — COMPLETE 15/15 3-SEED
+6. h030 (SEM): 2W/1L/4T (net +1) — 7/15 pilot
+7. h005 (CHAIN-SP): 3W/2L/10T (net +1) — mostly 3-seed
+
+PQN: h008 (LSTM): 7W/5L/3T (net +2, 1 running: venture-s2).
+
+### 55 ACTIVE JOBS
+h008(1), h022(1), h027(3), h029(3), h030(10), h031(7), h032(15), h033(15)
+
+### NEXT SESSION TODO
+1. Process h031 pilot results — 7 still running/resubmitted. If ZERO LOSSES holds at 12+ games → formulate h034 (DrQ+SPR).
+2. Process h029 final 3 games (enduro, phoenix, spaceinvaders). If net+3 holds at 15/15 → submit 3-seed eval.
+3. Process h032/h033 full pilots as they complete (15 each running).
+4. Complete h022 pilot (DoubleDunk). If net≥+2 at 15/15 → submit 3-seed eval.
+5. If h029 and h031 both confirm strong at 15/15:
+   - h034: DrQ + SPR (representation learning combo)
+   - h035: CVaR + SPR (novel combo — risk-sensitive + predictive representations)
+   - These combinations would be the novel contribution.
+6. h030 (SEM) completion — currently modest net+1.
+
