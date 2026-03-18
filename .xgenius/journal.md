@@ -2861,3 +2861,59 @@ h008(1), h022(1-doubledunk, output-dir /output bug), h027(3), h029(3), h030(6), 
 6. If h031 confirms net+2+ → formulate h034 (DrQ+SPR combination) — the novel contribution.
 7. If h030 holds net+2 → consider SEM as a viable technique for combination.
 8. h032 outlook uncertain (Phoenix catastrophe) but wait for 10 more games before closing.
+
+---
+**[2026-03-18 22:15 UTC]**
+
+## Session 47: IQM HNS Analysis — Complete Re-evaluation per Human Directive [CRITICAL]
+
+### HUMAN DIRECTIVE ADDRESSED
+Switched from W/L counting to IQM of Human Normalized Scores (HNS) on q4 metric.
+Created analyze_iqm_hns.py for reproducible analysis.
+Re-evaluated ALL 30+ hypotheses. Results are dramatically different.
+
+### Why W/L was misleading
+DoubleDunk has human-random gap of only 2.2 points (-18.6 to -16.4), causing:
+- Tiny score changes → massive HNS swings (e.g., -2.15 for h020, +0.35 for h001)
+- W/L counting amplified these outliers
+- IQM (interquartile mean) correctly trims top/bottom 25%, removing these artifacts
+
+### NEW IQM HNS RANKINGS (top 10, PPO baseline h001=0.0002)
+1. h029 (CVaR NOVEL): 0.0080 — CLEAR LEADER (13/15g, 40x baseline)
+2. h032 (NoisyNets): 0.0052 — only 5 games, unreliable
+3. h030 (SEM): 0.0048 — 10/15g, strong
+4. h027 (DrQ+S&P): 0.0045 — only 5 games
+5. h020 (Dueling): 0.0038 — 15g, REOPENED (was closed at net-2!)
+6. h008 (PQN LSTM): 0.0036 — 15g, best PQN variant
+7. h031 (SPR NOVEL): 0.0024 — 8/15g, zero losses
+8. h019 (Muon): 0.0014 — 15g, modest
+9. h022 (QR-Value): 0.0013 — 14g
+10. h012 (DrQ): 0.0006 — 15g, barely above baseline (was 'PROVEN BEST' at net+3!)
+
+### MAJOR REVERSALS from W/L
+- h012 (DrQ): net+3 'PROVEN BEST' → IQM=0.0006 (barely above baseline). CLOSED.
+- h007 (S&P): net+2 → IQM=-0.0003 (BELOW baseline). CLOSED.
+- h005 (CHAIN-SP): net+1 → IQM=-0.0004 (BELOW baseline). CLOSED.
+- h020 (Dueling): net-2 → IQM=0.0038 (19x above baseline). REOPENED.
+- h004 (PQN NaP): 'promising' → IQM=-0.0092 (below PPO). CLOSED.
+
+### KEY INSIGHT: CVaR is the novel breakthrough
+h028 (DrQ+QR without CVaR): IQM=-0.0034 (below baseline)
+h029 (DrQ+QR+CVaR): IQM=0.0080 (40x above baseline)
+The CVaR advantage estimation is THE critical component. Adding it transforms a negative-synergy combination into the clear leader.
+
+### New h029 Result
+h029-phoenix-s1: q4=933.65, HNS=+0.027 (vs PPO 796). WIN +17%.
+h029 now at 13/15 pilot, 2 running (enduro, spaceinvaders).
+
+### ACTIVE JOBS (43 running)
+h027(3), h029(2), h030(7), h031(6), h032(10), h033(15)
+
+### Updated hypotheses.csv with IQM-based assessments for ALL hypotheses.
+
+### NEXT STEPS
+1. Complete h029 pilot (2 games) → submit 3-seed if IQM holds
+2. Complete h030/h031/h032/h033 pilots
+3. Consider h020 (Dueling) for 3-seed validation or combination with CVaR
+4. Formulate combinations: CVaR + SEM, CVaR + SPR, CVaR + Dueling
+5. The paper narrative: CVaR advantage estimation as novel contribution

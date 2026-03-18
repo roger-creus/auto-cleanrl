@@ -681,3 +681,4 @@ h032-phoenix-s1,h032,,"NoisyLinear Phoenix s1 (narval new-code CSV, q4=74.65, 62
 h032-mspacman-s1,h032,,"NoisyLinear MsPacman s1 (fir new-code CSV, 65920 episodes) WIN +14%",MsPacman-v5,1,ppo_noisylinear,40000000,65920,344.39,365.01,22702080.0,520.0
 h030-doubledunk-s1,h030,,"SEM DoubleDunk s1 (fir, log-extracted q4=-18.40, output-dir /output bug, 160 episodes)",DoubleDunk-v5,1,ppo_sem,40000000,160,,-18.40,,
 h030-privateeye-s1,h030,,"SEM PrivateEye s1 (rorqual, log-extracted q4=58.43, output-dir /output bug, 115 episodes)",PrivateEye-v5,1,ppo_sem,40000000,115,,58.43,,
+h029-phoenix-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id Phoenix-v5 --seed 1,"CVaR Phoenix s1 (nibi new-format CSV, 32256 episodes) WIN +17%",Phoenix-v5,1,ppo_aug_qr_cvar,40000000,32256,771.9444580078125,933.6508178710938,24899840.0,1590.0
