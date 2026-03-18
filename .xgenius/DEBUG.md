@@ -58,3 +58,17 @@ Also a secondary path quoting issue: `couldn't chdir to '/home/rogercc/'/scratch
 
 ### Lesson
 Container pushes to rorqual may silently truncate/corrupt the .sif. After push, should verify file size matches local file. The verify-image command only checks existence, not integrity.
+
+## 2026-03-18 ~15:30 — h027/h030/h031 output-dir /output bug (recurrence)
+
+**Problem:** h027, h030, h031 were submitted with `--output-dir /output` instead of `/runs`. Same bug as the Phase 2 issue (see 07:00 entry). h028, h029, h032, h033 correctly used `/runs`.
+
+**Impact:** New-format CSVs (with q4_return, auc, etc.) lost for h027/h030/h031 completed jobs. Watcher-generated old-format CSVs were used instead. Was able to compute q4 from curve files as a workaround.
+
+**Root cause:** Batch submission JSON files for h027/h030/h031 had hardcoded `--output-dir /output`.
+
+**Workaround:** Computed q4 metrics from `{hypothesis_id}__{experiment_id}__curve.csv` files which contain per-episode learning curves. These are saved alongside the old-format summary CSVs.
+
+**Fix:** Re-synced code to all 4 clusters. Jobs already running will still use old code (Python loads scripts at start time). Only NEW submissions will use the corrected code.
+
+**Additional finding:** Code on clusters was OLD version for ALL h030-h033 (even h032/h033 with correct output-dir). The old code produces old-format summary CSVs from the training script itself. The new-format CSV code was committed locally but not synced before submission.

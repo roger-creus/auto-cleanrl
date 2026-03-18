@@ -621,3 +621,22 @@ h005-breakout-s2,h005,see batch file,log-extracted (1764 episodes x128) rorqual,
 h013-breakout-s3,h013,see batch file,log-extracted (1735 episodes x128) nibi,Breakout-v5,3,ppo_specnorm,40000000,222080,1.3965,1.3687,,
 h013-enduro-s3,h013,see batch file,log-extracted (93 episodes) nibi,Enduro-v5,3,ppo_specnorm,40000000,11904,0.0,0.0,,
 h027-privateeye-s1,h027,see batch file,log-extracted (115 episodes) rorqual CSV save failed,PrivateEye-v5,1,ppo_aug_sp,40000000,14720,55.0957,17.2414,,
+h022-amidar-s1,h022,,new-format CSV (narval),Amidar-v5,1,ppo_qr_value,40000000,70912,2.2779784202575684,2.5090253353118896,161536.0,0.0
+h022-venture-s1,h022,,new-format CSV (narval),Venture-v5,1,ppo_qr_value,40000000,18304,0.0,0.0,0.0,0.0
+h007-doubledunk-s3,h007,,3-seed gap (nibi),DoubleDunk-v5,3,ppo_sp,40000000,20864,-17.926380157470703,-18.282209396362305,-374016.0,-20.0
+h007-solaris-s3,h007,,3-seed gap (nibi),Solaris-v5,3,ppo_sp,40000000,5888,2075.652099609375,2111.304443359375,12221440.0,800.0
+h007-alien-s3,h007,,3-seed gap (nibi),Alien-v5,3,ppo_sp,40000000,60672,195.02110290527344,194.17721557617188,11832320.0,200.0
+h013-alien-s3,h013,,3-seed gap (rorqual),Alien-v5,3,ppo_specnorm,40000000,59008,206.57266235351562,213.6659393310547,12189440.0,750.0
+h029-venture-s1,h029,,new-format CSV (narval),Venture-v5,1,ppo_aug_qr_cvar,40000000,17920,0.0,0.0,0.0,0.0
+h030-amidar-s1,h030,,curve-derived q4 (narval old-code),Amidar-v5,1,ppo_sem,40000000,62848,32.87,33.40,2065792.0,31.0
+h030-breakout-s1,h030,,curve-derived q4 (nibi old-code),Breakout-v5,1,ppo_sem,40000000,36992,1.37,0.88,50688.0,0.0
+h030-qbert-s1,h030,,curve-derived q4 (fir old-code),Qbert-v5,1,ppo_sem,40000000,120192,154.53,153.19,18572800.0,150.0
+h031-amidar-s1,h031,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_spr,40000000,61568,2.58,2.56,158848.0,33.0
+h031-breakout-s1,h031,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_spr,40000000,145536,2.01,1.94,293120.0,0.0
+h031-qbert-s1,h031,,curve-derived q4 (rorqual old-code),Qbert-v5,1,ppo_spr,40000000,105344,219.02,198.85,23072000.0,150.0
+h032-amidar-s1,h032,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_noisylinear,40000000,65280,36.26,38.80,2367232.0,34.0
+h032-breakout-s1,h032,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_noisylinear,40000000,120832,2.25,0.90,271616.0,1.0
+h032-qbert-s1,h032,,curve-derived q4 (rorqual old-code),Qbert-v5,1,ppo_noisylinear,40000000,114304,169.37,165.45,19360000.0,150.0
+h033-amidar-s1,h033,,curve-derived q4 (rorqual old-code),Amidar-v5,1,ppo_aug_consist,40000000,64640,30.64,33.96,1980672.0,31.0
+h033-breakout-s1,h033,,curve-derived q4 (fir old-code),Breakout-v5,1,ppo_aug_consist,40000000,73856,1.47,1.28,108800.0,5.0
+h033-qbert-s1,h033,,curve-derived q4 (narval old-code),Qbert-v5,1,ppo_aug_consist,40000000,117120,154.81,154.15,18131200.0,150.0

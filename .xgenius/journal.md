@@ -2223,3 +2223,61 @@ Running pilots: h022(8), h027(2), h028(12), h029(11), h030(11), h031(12), h032(1
 6. If h022 pilot completes ≥ net+3: submit 3-seed eval
 7. If h033 (novel consistency loss) outperforms h012 (DrQ alone): major finding
 8. Consider more novel directions: PPG, inverse dynamics, attention mechanisms
+
+---
+**[2026-03-18 19:36 UTC]**
+
+## Session 19: Results Processing + Scale Analysis + Code Sync
+
+### What was done:
+1. **Processed new results:**
+   - h022 (QR-Value): 7 new games ingested (amidar, alien, enduro, montezumarevenge, qbert, spaceinvaders, venture). Now 12/15 pilot: 4W/1L/7T (net +3). Amidar is borderline WIN (+14% on 1 seed). 3 still running (DoubleDunk, Phoenix, Solaris).
+   - h007 (S&P): 3-seed COMPLETE 15/15. Added alien-s3, doubledunk-s3, solaris-s3. Solaris narrowed +28%→+16% at 3-seed. Final: 3W/1L/11T (net +2).
+   - h013 (SpectNorm): 3-seed COMPLETE 15/15 with alien-s3. Stays 1W/0L/14T (net +1). CLOSED — marginal.
+   - h029 (CVaR): venture-s1 = 0 (TIE). 3/15, 10 running.
+
+2. **Computed q4 from curve files for h030-h033 (3/15 each):**
+   - h030 (SEM): 1W/1L/1T (net 0). Amidar MASSIVE WIN (+1418%), Breakout LOSS (-37%), Qbert TIE.
+   - h031 (SPR): 3W/0L/0T (net +3). ALL WINS — Amidar +16%, Breakout +39%, Qbert +26%. VERY PROMISING.
+   - h032 (NoisyNets): 1W/1L/1T (net 0). Amidar massive WIN, Breakout LOSS, Qbert TIE.
+   - h033 (DrQ+Consistency): 1W/0L/2T (net +1). Amidar WIN, Breakout TIE, Qbert TIE.
+
+3. **Discovered and fixed output-dir bug recurrence:**
+   - h027, h030, h031 used --output-dir /output (wrong) instead of /runs
+   - New-format CSVs lost for these. Used curve files as workaround.
+   - Also found that ALL h030-h033 ran OLD code on clusters (sync wasn't done before submission)
+   - Re-synced code to ALL 4 clusters. Future submissions will produce new-format CSVs.
+
+4. **Deep investigation of return scale:**
+   - Confirmed infos['reward'] in RecordEpisodeStatistics tracks envpool's reward (same for all scripts)
+   - h032 Amidar curve shows genuine learning: starts at 0, reaches 33+ by episode 2000
+   - Baseline Amidar stays at 0-2 throughout training. The improvement IS real.
+   - h031 (SPR) on same cluster (nibi) shows baseline-level Amidar (q4=2.56), confirming scale consistency.
+
+### UPDATED RANKINGS (PPO techniques):
+1. **h031 (SPR): 3W/0L/0T (net +3) — 3/15 EARLY but ALL WINS. Top priority to monitor.**
+2. h022 (QR-Value): 4W/1L/7T (net +3) — 12/15 pilot, nearly complete
+3. h012 (DrQ): 4W/1L/10T (net +3) — 14/15 at 3-seed, PROVEN BEST
+4. h005 (CHAIN-SP): 3W/1L/11T (net +2) — 15/15 3-seed
+5. h007 (S&P): 3W/1L/11T (net +2) — 15/15 3-seed COMPLETE
+6. h033 (DrQ+Consistency): 1W/0L/2T (net +1) — 3/15 early
+7. h027 (DrQ+S&P combo): 3W/1L/1T (net +2) — 5/15 pilot
+8. h004 (PQN NaP): 3W/1L/11T (net +2) — PQN baseline variant
+
+### KEY INSIGHT: h031 (SPR) is showing 3 wins out of 3 games
+On-policy SPR (self-predictive representations) adapted from off-policy ICLR 2021 paper. This is a NOVEL adaptation. If it maintains net +3 across all 15 games, it would be the best single technique alongside DrQ. Combined SPR+DrQ could be exceptional.
+
+### 148 jobs active across clusters:
+- rorqual: 31 running
+- narval: 25 running  
+- fir: 25 running
+- nibi: 32 running + 35 pending
+
+### NEXT SESSION TODO:
+1. Process h031 pilot as priority — if still net +3 at 8+ games, formulate h034 (DrQ+SPR combination)
+2. Process remaining h030/h032/h033 pilots
+3. Complete h022 pilot (3 remaining games) — if net +3 at 15/15, submit 3-seed eval
+4. Process h028/h029 combination pilots  
+5. Check h008 (LSTM) 3-seed eval — 14 jobs running
+6. If h031 + DrQ combo looks good, this could be the novel contribution: on-policy SPR + augmentation
+7. Monitor for completed jobs across all hypotheses
