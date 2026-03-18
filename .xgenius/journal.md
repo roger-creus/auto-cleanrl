@@ -2977,3 +2977,41 @@ h027(2), h029(2), h030(6), h031(7), h032(11), h033(15)
 4. If h029 at 15/15 confirms IQM≥0.005 → submit 3-seed (15 games × 3 seeds = 45 jobs).
 5. Start formulating CVaR combinations (CVaR+SEM, CVaR+Dueling, CVaR+SPR) for next phase.
 6. h027 at 5 games only — not worth further investment (DrQ+S&P components both showed poor individual IQM).
+
+---
+**[2026-03-18 22:45 UTC]**
+
+## Session 49: Process h033-mspacman-s1, Assess Active Pilots
+
+### Triggered by: h033-mspacman-s1 (job 57959455, narval SUCCESS)
+
+### Results Processed: 1 new entry (now 689 rows)
+- h033-mspacman-s1: new-code CSV q4=70.0 (78080 episodes). vs PPO baseline ~319 → -78% CATASTROPHIC LOSS.
+
+### h033 (DrQ+Consistency) WORSENS: estimated IQM≈-0.008 at 4/15 games
+4 games: Amidar q4=33.96 (HNS≈+0.016), Breakout q4=1.28 (HNS≈-0.015), Qbert q4=154.15 (HNS≈-0.001), MsPacman q4=70.0 (HNS≈-0.036 CATASTROPHIC).
+14 new-code jobs still running. Outlook is grim — the consistency loss appears to harm learning rather than help.
+
+### IQM HNS STANDINGS (unchanged from Session 48 except h033 update)
+1. h029 (CVaR NOVEL): 0.0080 (13/15g) ★ CLEAR LEADER
+2. h032 (NoisyNets): 0.0067 (6g)
+3. h030 (SEM): 0.0048 (10g)
+4. h027 (DrQ+S&P): 0.0046 (5g)
+5. h020 (Dueling): 0.0038 (15g, COMPLETE)
+6. h008 (PQN LSTM): 0.0036 (15g, COMPLETE)
+7. h031 (SPR): 0.0015 (9g)
+8. h033 (DrQ+Consist): ≈-0.008 (4g, POOR)
+
+### DISCOVERY: h034-h045 CSVs exist in results dirs but are FROM OLD RESEARCH RUN
+Found many unprocessed CSVs for h034-h045 across all clusters. Journal confirms these were from a previous run — cleaned from experiments.csv earlier ('removed old-run data h021-h045'). These are historical artifacts, NOT new results. Ignored.
+
+### 42 ACTIVE JOBS (all running, most 2-3.5h elapsed)
+h027(2), h029(2), h030(6), h031(7), h032(11), h033(14)
+
+### NEXT SESSION TODO
+1. h029 about to complete 15/15 pilot (enduro + spaceinvaders on nibi). IF IQM ≥ 0.005 at 15/15 → IMMEDIATELY submit 3-seed evaluation (45 jobs).
+2. h032 will reach 15/15 this wave — properly rank it.
+3. h033 will reach 15/15 — likely close as dead end given catastrophic MsPacman.
+4. h030/h031 will approach 15/15 — final ranking.
+5. After full pilots: formulate CVaR combinations (CVaR+SEM, CVaR+Dueling, CVaR+SPR).
+6. h029 3-seed is the CRITICAL next submission — the novel contribution.

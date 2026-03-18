@@ -686,3 +686,4 @@ h022-doubledunk-s1,h022,,"QR-Value DoubleDunk s1 (nibi, log-extracted q4=-18.62,
 h031-alien-s1,h031,,"SPR Alien s1 (fir, log-extracted q4=207.63, output-dir /output bug, old-code, 472 episodes)",Alien-v5,1,ppo_spr,40000000.0,472.0,197.63,207.63,,
 h032-spaceinvaders-s1,h032,,"NoisyLinear SpaceInvaders s1 (narval, log-extracted q4=164.96, output-dir bug, 551 episodes)",SpaceInvaders-v5,1,ppo_noisylinear,40000000.0,551.0,208.89,164.96,,
 h008-venture-s2,h008,,"pqn_lstm Venture s2 (nibi, log-extracted q4=0.00, output-dir /output bug, 184 episodes)",Venture-v5,2,pqn_lstm,40000000.0,184.0,0.0,0.0,,
+h033-mspacman-s1,h033,,new-code CSV (narval),MsPacman-v5,1,ppo_aug_consist,40000000.0,78080.0,75.25,70.0,5875200.0,70.0
