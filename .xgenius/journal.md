@@ -1712,3 +1712,78 @@ Resubmitted 15 disappeared jobs (excluding closed h018/h025/h005-dup):
 8. h026 (NaP+LSTM): 12 running
 9. Think about novel directions beyond combinations
 10. UNEXPLORED: off-policy (DQN/SAC), ensemble methods, PPG, noisy nets
+
+---
+**[2026-03-18 16:42 UTC]**
+
+## Session 29: Process 11 Results, Close 3 Hypotheses, Submit h028+h029
+
+### Triggered by: h025-amidar-s1 (narval SUCCESS)
+
+### Results Processed: 9 new entries + 2 updates (now 583 rows)
+**New entries:**
+- h011-battlezone-s1: q4=2733.95 (LOSS -20% vs PQN 3411) — IMPALA CNN hurts BattleZone
+- h011-phoenix-s1: q4=102.10 (WIN +18% vs PQN 86.5)
+- h023-solaris-s1: q4=1775.32 (LOSS -22% vs PPO 2280) — significant!
+- h023-doubledunk-s1: q4=-17.55 (TIE)
+- h023-venture-s1: q4=0 (TIE)
+- h024-breakout-s1: q4=1.37 (TIE)
+- h024-solaris-s1: q4=2163.56 (TIE)
+- h024-venture-s1: q4=0 (TIE)
+- h025-venture-s1: q4=0 (TIE)
+
+**Updates:**
+- h024-qbert-s1: old-format 150 → new-format q4=162.49 (TIE +3%)
+- h025-amidar-s1: old-format 31 → new-format q4=2.60 (WIN +18%, was claimed +2190%!)
+
+### HYPOTHESIS CLOSURES
+- **h023 (SpectNorm+S&P) CLOSED**: 1W/2L/8T (net -1) at 11/15. Solaris -22% loss killed it. Amidar +5.5% was TIE not WIN.
+- **h024 (PFO) CLOSED**: 1W/2L/7T (net -1) at 10/15. Phoenix +12% only real WIN (Amidar +51% was old-format error).
+- **h021 (SpectNorm+DrQ) CLOSED**: 1W/1L/7T (net 0) at 11/15. Neutral.
+
+### h022 (QR-Value) UPDATE: 4W/1L/5T (net +3) at 10/15 — STRONGEST
+Resubmitted 5 missing games (amidar, phoenix, solaris, doubledunk, venture) across clusters.
+This is the strongest combination pilot. If it holds at 15/15, immediate 3-seed eval.
+
+### NEW HYPOTHESES SUBMITTED
+- **h028 (DrQ + QR-Value)**: Combine top-2 PPO single techniques. 15-game pilot submitted (6h walltime).
+- **h029 (DrQ + QR-Value + CVaR Advantage) — NOVEL**: Risk-sensitive advantage estimation. Uses CVaR(alpha) of quantile predictions as pessimistic baseline for GAE → creates optimistic advantages for exploration. Alpha anneals 0.25→1.0 over training. Novel contribution.
+
+### IMPALA CNN ISSUE: h010/h011 PrivateEye timed out at 4h. IMPALA CNN is slower. Need 8h walltime for resubmissions.
+
+### UPDATED STANDINGS (all pilots, new-format q4 data only)
+
+**CONFIRMED 3-seed (15/15 complete):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — BEST PPO
+2. h004 (NaP): 5W/1L/9T (net +4) — BEST PQN
+3. h007 (S&P): 4W/2L/9T (net +2) — 2nd PPO
+4. h013 (SpectNorm): 3W/2L/10T (net +1)
+5. h005 (CHAIN-SP): 2W/1L/9T (net +1)
+
+**Pilot 15/15 (net ≤ 0, closed):**
+- h008 (LSTM): 8W/3L/4T (net +5) — 3-seed in progress (36 running!)
+- h003/h006/h009/h014-h021/h023-h025: all closed
+
+**Incomplete pilots (new-format data):**
+- h022 (QR-Value): 4W/1L/5T (net +3) at 10/15 — 5 resubmitted
+- h011 (PQN IMPALA): 1W/1L at 2/15 new-format — 7 running
+- h010 (PPO IMPALA): 0 reliable new-format — 6 running
+- h027 (DrQ+S&P): too early, 12 running
+- h026 (NaP+LSTM): no results yet, 12 running
+- h028 (DrQ+QR-Value): just submitted 15 games
+- h029 (DrQ+QR+CVaR): just submitted 15 games — NOVEL
+
+### ACTIVE JOBS: ~262 (172 running + 19 pending + 71 just submitted)
+
+### KEY INSIGHT: Combinations (h021/h023/h027) underperform best individual (h012 net+4). Only h022 (QR-Value, net+3) shows promise as a standalone technique. This suggests DrQ augmentation and distributional value estimation are the two strongest individual innovations, and we should focus on making their combination (h028) work.
+
+### NEXT SESSION TODO
+1. Process h022 remaining 5 pilot results — if ≥net+2, submit 3-seed
+2. Process h028/h029 pilot results when available
+3. Check h010/h011 IMPALA CNN pilots — resubmit timed-out games with 8h walltime
+4. Process h008 3-seed eval results (36 running — big batch)
+5. Process h026 (NaP+LSTM) pilot
+6. h027 (DrQ+S&P) pilot results
+7. If h029 CVaR shows promise: plan ablation (vary alpha schedule)
+8. Consider new directions: PPG, noisy nets, off-policy methods
+9. Investigate why ALL PPO techniques lose on MsPacman (-16% to -22%)
