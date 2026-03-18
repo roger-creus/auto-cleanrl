@@ -2917,3 +2917,63 @@ h027(3), h029(2), h030(7), h031(6), h032(10), h033(15)
 3. Consider h020 (Dueling) for 3-seed validation or combination with CVaR
 4. Formulate combinations: CVaR + SEM, CVaR + SPR, CVaR + Dueling
 5. The paper narrative: CVaR advantage estimation as novel contribution
+
+---
+**[2026-03-18 22:37 UTC]**
+
+## Session 48: Process 4 New Results, h022 Closed, 5 Jobs Resubmitted
+
+### Triggered by: h027-qbert-s1 (job 10534188, nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 687 rows)
+- h027-qbert-s1: curve-derived q4=151.53 (fir old-code, 117504 episodes). Updated from old-format q4=150.0.
+- h022-doubledunk-s1: log-extracted q4=-18.62 (nibi, output-dir bug, 165 episodes). Completes h022 at 15/15 pilot.
+- h031-alien-s1: log-extracted q4=207.63 (fir old-code, 472 episodes). vs PPO baseline 202 → +2.8% TIE.
+- h032-spaceinvaders-s1: log-extracted q4=164.96 (narval old-code, 551 episodes). vs PPO baseline 147 → +12% above.
+- h008-venture-s2: log-extracted q4=0.00 (nibi, output-dir bug, 184 episodes). TIE.
+
+### h022 (QR-Value) CLOSED — IQM drops from 0.0013 to 0.0005
+Adding DoubleDunk (q4=-18.62, slight negative HNS) pushed h022 down. Complete 15/15 pilot now at IQM=0.0005. Only 2.5x above PPO baseline. Not strong enough for 3-seed investment. Closed.
+
+### h031 (SPR) IQM drops from 0.0024 to 0.0015
+Adding Alien (q4=207.63, +2.8% vs PPO) — very modest improvement. With 9/15 games, h031 gains are small but consistently positive (zero losses). 7 games still running.
+
+### h032 (NoisyNets) IQM rises from 0.0052 to 0.0067
+Adding SpaceInvaders (q4=165, +12% vs PPO baseline). Now 6/15 games. IQM still unreliable at 6 games. 11 running.
+
+### 5 Jobs Resubmitted (output-dir /output bug + disappeared)
+- h031-solaris-s1 → rorqual (8564181) with --output-dir /runs
+- h030-montezumarevenge-s1 → nibi (10548349) with --output-dir /runs
+- h030-alien-s1 → rorqual (8564203) with --output-dir /runs
+- h030-enduro-s1 → fir (28334773) with --output-dir /runs
+- h031-alien-s1 → fir (28334776) with --output-dir /runs (old-code log data processed above)
+- h032-spaceinvaders-s1 → narval (57968704) with --output-dir /runs (old-code log data processed above)
+
+### IQM HNS STANDINGS (updated)
+1. h029 (CVaR NOVEL): 0.0080 (13/15g) ★ CLEAR LEADER
+2. h032 (NoisyNets): 0.0067 (6g only, unreliable)
+3. h030 (SEM): 0.0048 (10g)
+4. h027 (DrQ+S&P): 0.0046 (5g only, unreliable)
+5. h020 (Dueling): 0.0038 (15g, COMPLETE)
+6. h008 (PQN LSTM): 0.0036 (15g, COMPLETE)
+7. h031 (SPR): 0.0015 (9g)
+8. h022 (QR-Value): 0.0005 (15g, CLOSED)
+PPO baseline: 0.0002 (15g)
+
+### 43 ACTIVE JOBS
+h027(2), h029(2), h030(6), h031(7), h032(11), h033(15)
+
+### GAME COVERAGE STATUS
+- h029: 13/15, 2 running (enduro, spaceinvaders) → will be COMPLETE this wave
+- h030: 10/15, 6 running (alien, battlezone, breakout[resub], enduro, montezumarevenge, mspacman)
+- h031: 9/15, 7 running (alien[resub], battlezone, doubledunk, enduro, montezumarevenge, mspacman, solaris)
+- h032: 6/15, 11 running → will be COMPLETE this wave
+- h033: 3/15, 15 running → will be COMPLETE this wave
+
+### NEXT SESSION TODO
+1. Process h029 final 2 games (enduro, spaceinvaders). If IQM holds at 15/15 → IMMEDIATELY submit 3-seed evaluation.
+2. Process h030/h031/h032/h033 pilots as they complete.
+3. h032/h033 will complete 15/15 this wave — can properly rank them.
+4. If h029 at 15/15 confirms IQM≥0.005 → submit 3-seed (15 games × 3 seeds = 45 jobs).
+5. Start formulating CVaR combinations (CVaR+SEM, CVaR+Dueling, CVaR+SPR) for next phase.
+6. h027 at 5 games only — not worth further investment (DrQ+S&P components both showed poor individual IQM).
