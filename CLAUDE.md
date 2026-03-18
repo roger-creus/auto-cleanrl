@@ -39,7 +39,8 @@ docs: <description>            — Documentation updates
 **Rules:**
 - Commit BEFORE submitting experiments (so the cluster runs the committed code)
 - Commit AFTER recording results (so the journal state is preserved)
-- Push after every commit — this repo is your research record
+- Push after every commit — always push to the default branch (usually `main`): `git push origin main`
+- Check the default branch with `git remote show origin | grep HEAD` if unsure
 - Never force push or rewrite history
 - If a hypothesis breaks things, use `git revert` to undo it cleanly
 - Keep .xgenius/ state files committed (journal, jobs) so the research history is preserved in git
@@ -98,6 +99,8 @@ Typical issues: outdated base images, missing dependencies, wrong Python version
 - `xgenius db active --json` — Currently running/submitted jobs
 - `xgenius db hypothesis-check --id H --json` — Check if all jobs for a hypothesis are done
 - `xgenius db hypotheses --json` — All hypotheses in DB
+- `xgenius db hypothesis-update --id H --status S --description D --conclusion C --comment N` — Update hypothesis metadata
+- `xgenius db job-update --id JOBID --comment "notes"` — Add notes to a specific job
 - `xgenius reset` — Clear all state for a fresh research run
 
 All commands support `--json` for structured output.
