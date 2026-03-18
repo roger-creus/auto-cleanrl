@@ -1235,3 +1235,54 @@ Also: h019-venture-s1 gap resubmitted
 5. If h023 confirms strong: IMMEDIATELY submit 3-seed eval
 6. Think about novel hypotheses: need to explore off-policy (DQN), ensemble, PPG categories
 7. Investigate MsPacman systematic loss — what makes MsPacman resistant to our improvements?
+
+---
+**[2026-03-18 14:04 UTC]**
+
+## Session 21: MAJOR Data Cleanup + h025/h026 Bug Fix
+
+### Critical Fixes
+1. **h025/h026 10M bug**: Both ppo_atari_envpool_dualv.py (h025) and pqn_atari_envpool_lstm.py (h026) had total_timesteps=10000000 default instead of 40000000. All h025/h026 pilot results were at 10M — invalid. Fixed scripts, cancelled all running jobs, resubmitted 30 jobs (15 per hypothesis) across 4 clusters with corrected 40M.
+
+2. **Massive experiments.csv cleanup**: 
+   - Identified 45 old-format duplicate entries contaminating baselines
+   - Removed all duplicates (kept new-format CSV data over old-format round numbers)
+   - Fixed 54 entries with empty/incorrect q4_return values
+   - Result: 524 clean rows (was 569 with duplicates)
+
+3. **PPO baseline finally correct** (3 seeds, all 15 games):
+   - Alien=200, Amidar=2.2, BattleZone=2150, Breakout=1.4, DoubleDunk=-17.9
+   - MsPacman=319, NameThisGame=2348, Phoenix=796, PrivateEye=-135, Qbert=158
+   - Solaris=2280, SpaceInvaders=147, Enduro/MontezumaRevenge/Venture=0
+
+### CORRECTED Rankings (with proper baselines, 10% threshold)
+
+**TIER 1 — Best PPO techniques:**
+1. h007 (S&P): 4W/1L/10T (net +3) — BattleZone +21%, PrivateEye +139%, Solaris +78%
+2. h012 (DrQ): 4W/1L/10T (net +3) — BattleZone +13%, NameThisGame +23%, PrivateEye +473%
+3. h013 (SpectralNorm): 3W/1L/11T (net +2) — Amidar +41%, PrivateEye +132%, Qbert +18%
+
+**PQN techniques:**
+- h004 (NaP): 2W/0L/13T (net +2) — safe, no losses
+- h008 (LSTM): 7W/5L/3T (net +2) — polarized, huge wins AND losses
+
+**KEY OBSERVATION: MsPacman is the universal weakness.**
+ALL top PPO techniques lose on MsPacman (-10% to -22% vs baseline 319). This is a systematic issue worth investigating.
+
+### Data Processed This Session
+- 30 new entries, 16 updated (10M->40M), 42 q4 corrections, 45 duplicates removed
+- New 3-seed data: h007 (alien-s2, privateeye-s2, mspacman-s2, enduro-s2), h012 (7 new s2 entries), h013 (8 new s2/s3 entries), h005 (5 new entries), h004 (spaceinvaders-s3)
+
+### Active Jobs: ~244 (214 existing + 30 resubmitted h025/h026)
+- 3-seed evals running: h004(11), h005(30), h007(9), h008(30), h012(24), h013(24)
+- Pilots: h010(9), h011(9), h019(8), h021(11), h022(11), h023(11), h024(12)
+- NEW resubmissions: h025(15), h026(15)
+
+### Next Session TODO
+1. Process 3-seed eval results as they complete (h005/h007/h012/h013 priority)
+2. Process h010/h011 pilot results when complete — IMPALA CNN could be important
+3. Process h021-h024 pilot results — especially h023 (Qbert +42% early signal)
+4. Process h025/h026 results (now running at correct 40M)
+5. When h019 pilot completes: close as neutral
+6. INVESTIGATE: Why does MsPacman universally degrade? Analyze training curves.
+7. Consider Phase 2->3 transition once 3-seed evals confirm top techniques
