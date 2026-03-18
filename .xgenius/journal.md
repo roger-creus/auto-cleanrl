@@ -888,3 +888,80 @@ Almost EVERY PPO modification hurts BattleZone (baseline PPO=3700):
    - Consider adding element to fix BattleZone degradation
 5. Still need hypotheses for unexplored categories: off-policy (Cat 1), replay (Cat 2), distributional RL (Cat 3), ensembles (Cat 10)
 6. Consider novel research directions — the BattleZone degradation pattern suggests a systematic issue with modifying PPO that needs investigation
+
+---
+**[2026-03-18 12:11 UTC]**
+
+## Session 16: Results Processing + 4 New Hypotheses Submitted
+
+### Results Processed (6 updates)
+1. h004-alien-s1: UPDATED from 10M pilot to 40M full run (q4=176 vs old 145)
+2. h004-spaceinvaders-s2: NEW (q4=284) — matches PQN baseline SpaceInvaders
+3. h003-breakout-s2: UPDATED with real data (q4=1.39)
+4. h017-solaris-s1: NEW (q4=2352) — 10% below PPO baseline, confirms closure
+5. h018-mspacman-s1: UPDATED with real data (q4=276) — 14% below PPO baseline, confirms closure
+6. h020-namethisgame-s1: UPDATED with real data (q4=2117)
+
+### Gap Resubmissions (9 jobs)
+- h008: battlezone-s1 (narval), mspacman-s1 (fir) — pilot gaps
+- h010: battlezone-s1 (rorqual), montezumarevenge-s1 (nibi), mspacman-s1 (fir), privateeye-s1 (narval) — pilot gaps
+- h011: mspacman-s1 (rorqual), namethisgame-s1 (nibi), privateeye-s1 (narval) — pilot gaps
+
+### New Hypotheses Submitted (4 × 15 games = 60 jobs)
+
+**h021: PPO + SpectralNorm + DrQ Augmentation** (combination of h013+h012)
+- Rationale: Both showed complementary wins — SpectralNorm on Phoenix/NameThisGame/Solaris, DrQ on PrivateEye
+- 15 games × 1 seed pilot across all 4 clusters
+
+**h022: PPO + Quantile Regression Value Function** (novel)
+- Replace scalar V(s) with 32-quantile distributional value head
+- Uses quantile Huber loss for richer gradient signal and more robust value estimates
+- Distributional RL category — previously unexplored
+- 15 games × 1 seed pilot
+
+**h023: PPO + SpectralNorm + Shrink-and-Perturb** (combination of h013+h007)
+- Dual plasticity mechanism: SpectralNorm constrains CNN Lipschitz, S&P maintains weight-space plasticity on linear layers
+- 15 games × 1 seed pilot
+
+**h024: PPO + Proximal Feature Optimization (PFO)** (novel, NeurIPS 2024)
+- L2 penalty on pre-activation feature drift during PPO updates
+- Prevents representation collapse — directly addresses the universal BattleZone degradation pattern
+- Key reference: 'No Representation, No Trust' (NeurIPS 2024)
+- 15 games × 1 seed pilot
+
+### Web Research Findings (background agent)
+Literature search identified several promising directions:
+1. PFO (implemented as h024) — most promising for our specific degradation patterns
+2. DAAC (Decoupled Actor-Critic) — separate actor/critic networks + advantage auxiliary loss
+3. PPG (Phasic Policy Gradient) — already in CleanRL, needs envpool adaptation
+4. AGC (Adaptive Gradient Clipping) — per-parameter clipping instead of global
+5. CE-GPPO — fix dead gradients from PPO clipping
+
+### Active Jobs Now: ~270 (200 existing + 69 new)
+Breakdown:
+- 3-seed evals: h003(19), h004(24), h005(31), h007(22), h012(22), h013(23)
+- Pilots running: h008(7+2), h010(8+4), h011(5+3), h019(10), h020(9)
+- NEW pilots: h021(15), h022(15), h023(15), h024(15)
+- Closed but running: h006(1), h014(2), h016(2), h017(4), h018(10)
+
+### Hypothesis Coverage Summary (Phase 2)
+**Single techniques tested (14):** LayerNorm(h003), NaP(h004), CHAIN-SP(h005), Symlog(h006), S&P(h007), LSTM(h008), RND(h009), IMPALA(h010/h011), DrQ(h012), SpectralNorm(h013), EntAnnealing(h014), PopArt(h015), Sparsity(h016), SPO(h017), SchedFree(h018), Muon(h019), Dueling(h020)
+
+**Combinations (2):** SpectralNorm+DrQ(h021), SpectralNorm+S&P(h023)
+
+**Novel techniques (2):** QR-Value(h022), PFO(h024)
+
+**Unexplored categories still remaining:**
+- Off-policy methods (DQN/Rainbow/SAC-discrete)
+- Ensemble methods
+- Decoupled actor-critic (DAAC)
+- Adaptive gradient clipping (AGC)
+- PPG (Phasic Policy Gradient)
+
+### Next Session TODO
+1. Process newly completed results from h008, h010, h011, h019 pilots
+2. Process 3-seed eval results for h004/h005/h007/h012/h013
+3. Evaluate h021/h022/h023/h024 pilot results as they arrive
+4. If h024 (PFO) preserves BattleZone performance, combine with best techniques
+5. Consider implementing DAAC (separated actor-critic) or AGC as next hypotheses
+6. When enough data is in, begin planning Phase 2 → Phase 3 transition criteria

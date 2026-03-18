@@ -99,7 +99,7 @@ h003-battlezone-s1,h003,python cleanrl/ppo_atari_envpool_layernorm.py --env-id B
 h003-battlezone-s2,h003,,"ppo_layernorm BattleZone-v5 seed 2 (rorqual, 40000000)",BattleZone-v5,2,ppo_layernorm,40000000,27008.0,5000.0,5000.0,,5000.0
 h003-battlezone-s3,h003,,"ppo_layernorm BattleZone-v5 seed 3 (nibi, 40000000)",BattleZone-v5,3,ppo_layernorm,40000000,29312.0,1000.0,1000.0,,1000.0
 h003-breakout-s1,h003,python cleanrl/ppo_atari_envpool_layernorm.py --env-id Breakout-v5 --seed 1,"ppo_layernorm Breakout-v5 seed 1 (narval, 10M steps)",Breakout-v5,1,ppo_layernorm,10000000,55296.0,1.3819444179534912,1.5833333730697632,76416.0,2.0
-h003-breakout-s2,h003,,"ppo_layernorm Breakout-v5 seed 2 (rorqual, 40000000)",Breakout-v5,2,ppo_layernorm,40000000,115840.0,2.0,2.0,,2.0
+h003-breakout-s2,h003,python cleanrl/ppo_atari_envpool_layernorm.py --env-id Breakout-v5 --seed 2,"ppo_layernorm Breakout-v5 seed 2 (nibi, 40M)",Breakout-v5,2,ppo_layernorm,40000000,220544.0,1.4004642963409424,1.3929193019866943,308864.0,0.0
 h003-breakout-s3,h003,,"ppo_layernorm Breakout-v5 seed 3 (nibi, 40000000)",Breakout-v5,3,ppo_layernorm,40000000,119936.0,0.0,0.0,,0.0
 h003-doubledunk-s2,h003,,"ppo_layernorm DoubleDunk-v5 seed 2 (narval, 40000000)",DoubleDunk-v5,2,ppo_layernorm,40000000,20096.0,-17.923566818237305,-17.566879272460938,-360192.0,-22.0
 h003-doubledunk-s3,h003,,"ppo_layernorm DoubleDunk-v5 seed 3 (rorqual, 40000000)",DoubleDunk-v5,3,ppo_layernorm,40000000,14720.0,-24.0,-24.0,,-24.0
@@ -127,7 +127,7 @@ h003-spaceinvaders-s2,h003,,"ppo_layernorm SpaceInvaders-v5 seed 2 (fir, 4000000
 h003-spaceinvaders-s3,h003,,"ppo_layernorm SpaceInvaders-v5 seed 3 (narval, 40000000)",SpaceInvaders-v5,3,ppo_layernorm,40000000,62080.0,10.0,10.0,,10.0
 h003-venture-s2,h003,,"ppo_layernorm Venture-v5 seed 2 (rorqual, 40000000)",Venture-v5,2,ppo_layernorm,40000000,18944.0,0.0,0.0,,0.0
 h003-venture-s3,h003,,"ppo_layernorm Venture-v5 seed 3 (nibi, 40000000)",Venture-v5,3,ppo_layernorm,40000000,15744.0,0.0,0.0,,0.0
-h004-alien-s1,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id Alien-v5 --seed 1,"pqn_nap Alien-v5 seed 1 (rorqual, 10M steps)",Alien-v5,1,pqn_nap,10000000,18048.0,152.48226928710938,145.46099853515625,2752000.0,140.0
+h004-alien-s1,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id Alien-v5 --seed 1,"pqn_nap Alien-v5 seed 1 (narval, 40M rerun)",Alien-v5,1,pqn_nap,40000000,70784.0,187.4141082763672,176.38336181640625,13265920.0,140.0
 h004-battlezone-s1,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id BattleZone-v5 --seed 1,"pqn_nap BattleZone-v5 seed 1 (fir, 10M steps)",BattleZone-v5,1,pqn_nap,10000000,6784.0,3056.603759765625,3792.452880859375,20736000.0,7000.0
 h004-battlezone-s3,h004,,narval,BattleZone-v5,3,pqn_nap,40000000,26496.0,2946.85986328125,3473.429931640625,78080000.0,4000.0
 h004-breakout-s1,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id Breakout-v5 --seed 1,"pqn_nap Breakout-v5 seed 1 (fir, 10M steps)",Breakout-v5,1,pqn_nap,10000000,52736.0,1.7111650705337524,2.174757242202759,90240.0,2.0
@@ -312,7 +312,7 @@ h018-enduro-s3,h018,,fir (old_format),Enduro-v5,3,,40000000,11904.0,0.0,0.0,,0.0
 h018-montezumarevenge-s1,h018,,"ppo_schedulefree MontezumaRevenge-v5 seed 1 (narval, 40000000)",MontezumaRevenge-v5,1,ppo_schedulefree,40000000,154112.0,0.0,0.0,,0.0
 h018-montezumarevenge-s2,h018,,rorqual (old_format),MontezumaRevenge-v5,2,,40000000,151040.0,0.0,0.0,,0.0
 h018-montezumarevenge-s3,h018,,nibi (old_format),MontezumaRevenge-v5,3,,40000000,143744.0,0.0,0.0,,0.0
-h018-mspacman-s1,h018,,"ppo_schedulefree MsPacman-v5 seed 1 (fir, 40000000)",MsPacman-v5,1,ppo_schedulefree,40000000,71936.0,210.0,210.0,,210.0
+h018-mspacman-s1,h018,python cleanrl/ppo_atari_envpool_schedulefree.py --env-id MsPacman-v5 --seed 1,"ppo_schedulefree MsPacman-v5 seed 1 (fir, 40M)",MsPacman-v5,1,ppo_schedulefree,40000000,79872.0,271.1217956542969,275.70513916015625,21655040.0,220.0
 h018-mspacman-s2,h018,,narval (old_format),MsPacman-v5,2,,40000000,71296.0,210.0,210.0,,210.0
 h018-mspacman-s3,h018,,rorqual (old_format),MsPacman-v5,3,,40000000,70144.0,210.0,210.0,,210.0
 h018-namethisgame-s1,h018,,"ppo_schedulefree NameThisGame-v5 seed 1 (nibi, 40000000)",NameThisGame-v5,1,ppo_schedulefree,40000000,21120.0,1440.0,1440.0,,1440.0
@@ -363,7 +363,7 @@ h020-montezumarevenge-s3,h020,,rorqual (old_format),MontezumaRevenge-v5,3,,40000
 h020-mspacman-s1,h020,,"ppo_dueling MsPacman-v5 seed 1 (rorqual, 40000000)",MsPacman-v5,1,ppo_dueling,40000000,68864.0,210.0,210.0,,210.0
 h020-mspacman-s2,h020,,nibi (old_format),MsPacman-v5,2,,40000000,67968.0,940.0,940.0,,940.0
 h020-mspacman-s3,h020,,fir (old_format),MsPacman-v5,3,,40000000,67328.0,720.0,720.0,,720.0
-h020-namethisgame-s1,h020,,"ppo_dueling NameThisGame-v5 seed 1 (nibi, 40000000)",NameThisGame-v5,1,ppo_dueling,40000000,19200.0,2020.0,2020.0,,2020.0
+h020-namethisgame-s1,h020,python cleanrl/ppo_atari_envpool_duel.py --env-id NameThisGame-v5 --seed 1,"ppo_dueling NameThisGame-v5 seed 1 (fir, 40M)",NameThisGame-v5,1,ppo_duel,40000000,14848.0,2371.12060546875,2116.5517578125,35206400.0,1100.0
 h020-namethisgame-s2,h020,,fir (old_format),NameThisGame-v5,2,,40000000,19840.0,1750.0,1750.0,,1750.0
 h020-namethisgame-s3,h020,,narval (old_format),NameThisGame-v5,3,,40000000,19584.0,1320.0,1320.0,,1320.0
 h020-phoenix-s1,h020,,"ppo_dueling Phoenix-v5 seed 1 (rorqual, 40000000)",Phoenix-v5,1,ppo_dueling,40000000,53504.0,60.0,60.0,,60.0
@@ -405,3 +405,5 @@ h015-alien-s1,h015,see hypothesis,rorqual,Alien-v5,1,ppo,40000000,59904.0,194.31
 h015-privateeye-s1,h015,see hypothesis,rorqual,PrivateEye-v5,1,ppo,40000000,14720.0,-18.55652236938477,-5.808695793151856,-273152.0,100.0
 h016-mspacman-s1,h016,see hypothesis,rorqual,MsPacman-v5,1,pqn,40000000,79744.0,271.8459167480469,271.1075439453125,21678080.0,210.0
 h017-mspacman-s1,h017,see hypothesis,rorqual,MsPacman-v5,1,pqn,40000000,81408.0,263.3490600585937,259.30816650390625,21438720.0,230.0
+h004-spaceinvaders-s2,h004,python cleanrl/pqn_atari_envpool_nap.py --env-id SpaceInvaders-v5 --seed 2,"pqn_nap SpaceInvaders-v5 seed 2 (narval, 40M)",SpaceInvaders-v5,2,pqn_nap,40000000,68736.0,271.0521545410156,283.86407470703125,18631040.0,800.0
+h017-solaris-s1,h017,python cleanrl/ppo_atari_envpool_spo.py --env-id Solaris-v5 --seed 1,"ppo_spo Solaris-v5 seed 1 (nibi, 40M)",Solaris-v5,1,ppo_spo,40000000,5760.0,2294.22216796875,2352.4443359375,13214720.0,2020.0
