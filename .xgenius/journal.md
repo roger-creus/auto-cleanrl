@@ -2167,3 +2167,59 @@ Old-format CSVs in results/CLUSTER/ for h027-h031 are ALL from March 17 (previou
 8. If h022 pilot ≥ net+3: submit 3-seed eval
 9. If h030 or h031 shows strong early signal: fast-track to 3-seed eval
 10. Consider more new hypotheses: PPG, N-step returns, off-policy, noisy nets
+
+---
+**[2026-03-18 19:11 UTC]**
+
+## Session 36: Process 4 Results, Correct Standings, Submit h032+h033 Pilots
+
+### Triggered by: h012-breakout-s3 (rorqual SUCCESS)
+
+### Results Processed: 4 new entries + 1 update (now 623 rows)
+- h005-breakout-s2: q4=1.40 (log-extracted, rorqual). TIE vs PPO baseline.
+- h013-breakout-s3: q4=1.37 (log-extracted, nibi). TIE.
+- h013-enduro-s3: q4=0.0 (log-extracted, nibi). TIE.
+- h027-privateeye-s1: q4=17.24 (log-extracted, rorqual). WIN +113% vs PPO -135.
+- h022-breakout-s1: UPDATED with fir new-format CSV (q4=1.32, 222K episodes replaces old 89K).
+
+### MAJOR STANDINGS CORRECTIONS (3-seed data reveals earlier assessments were inflated)
+- **h012 (DrQ): 5W/1L→4W/1L (net+4→net+3)**. Solaris dropped WIN→TIE (+6.7% at 2 seeds).
+- **h013 (SpectNorm): 3W/1L→1W/0L (net+2→net+1)**. MAJOR DOWNGRADE. Amidar dropped +66%→+2.2% TIE, Solaris +11%→+5.3% TIE. Only WIN: PrivateEye+124%. Breakout/Enduro s3 added (both TIE). 15/15 games now (alien still 2 seeds).
+- **h007 (S&P): 4W/2L→3W/1L (net+2 stays)**. Amidar dropped WIN→TIE(+9.4%), NameThisGame dropped LOSS→TIE(-6%).
+- **h005 (CHAIN-SP): 3W/2L→3W/1L (net+1→net+2)**. NameThisGame dropped LOSS→TIE(-9.7%).
+- **h022 (QR-Value): 4W/1L→3W/1L (net+3→net+2)**. Breakout dropped WIN(+43%)→TIE(-5.4%) with proper q4 from new-format CSV.
+
+### CORRECTED RANKINGS (PPO, 3-seed where available)
+1. h012 (DrQ): 4W/1L/10T (net +3) — 14/15 at 3-seed, STILL BEST
+2. h005 (CHAIN-SP): 3W/1L/11T (net +2) — UPGRADED
+3. h007 (S&P): 3W/1L/11T (net +2) — rebalanced
+4. h022 (QR-Value): 3W/1L/6T (net +2) — 10/15 pilot, 5 running
+5. h013 (SpectNorm): 1W/0L/14T (net +1) — MAJOR DOWNGRADE
+6. h027 (DrQ+S&P): 3W/1L/1T (net +2) — 5/15 pilot, 2 running
+
+### h026 (NaP+LSTM): CLOSED — catastrophic (amidar=0, qbert=0 vs PQN baseline 31.6/151)
+
+### 3-SEED GAPS RESUBMITTED (4 jobs)
+- h007-doubledunk-s3 (nibi), h007-solaris-s3 (narval), h012-solaris-s3 (fir), h013-alien-s3 (rorqual)
+
+### NEW HYPOTHESES IMPLEMENTED & SUBMITTED
+**h032 (PPO + NoisyLinear — Noisy Nets)**: Factorized NoisyLinear layers in actor/critic heads. Parametric noise for state-dependent exploration, ent_coef=0.001. 15-game pilot (4h walltime).
+
+**h033 (PPO + DrQ + Augmentation Consistency Loss — NOVEL)**: Add explicit MSE consistency loss between clean (detached) and augmented encoder features. Asymmetric like BYOL. consist_coef=0.5. Forces augmentation-invariant representations. 15-game pilot (5h walltime).
+
+### KEY INSIGHT: 3-seed data consistently downgrades hypotheses
+Earlier assessments based on 1-2 seeds were INFLATED. Full 3-seed averages smooth out lucky seeds. h013 went from net+2 to net+1, h012 from net+4 to net+3. Lesson: don't trust incomplete seed data for win/loss classification.
+
+### ACTIVE: ~155 jobs (125 prior + 30 new h032/h033)
+Running pilots: h022(8), h027(2), h028(12), h029(11), h030(11), h031(12), h032(15), h033(15)
+3-seed evals: h004(2), h005(7), h007(5+2new), h008(14), h010(3), h011(5), h012(1+1new), h013(2+1new)
+
+### NEXT SESSION TODO
+1. Process h030/h031 pilot results — first proper new-format data expected
+2. Process h028/h029 pilot results (currently old-format only)
+3. Process h032/h033 pilot results when they arrive
+4. Monitor h008 3-seed eval (14 running — walltime concern)
+5. Fill remaining 3-seed gaps as they complete
+6. If h022 pilot completes ≥ net+3: submit 3-seed eval
+7. If h033 (novel consistency loss) outperforms h012 (DrQ alone): major finding
+8. Consider more novel directions: PPG, inverse dynamics, attention mechanisms
