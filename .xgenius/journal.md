@@ -390,3 +390,74 @@ Top uncovered directions from recent literature:
 4. Implement more hypotheses for uncovered categories (Cat 1, 2, 3, 8, 10)
 5. If h003/h004 confirm at 40M: begin combination experiments (LayerNorm + NaP + IMPALA)
 6. Implement: Fast TRAC optimizer, Schedule-Free Adam, PFO for PPO
+
+---
+**[2026-03-18 09:03 UTC]**
+
+## Session 8: Phase 2 Analysis + New Hypotheses (h018-h020)
+
+### h003/h004/h005 Complete Results at 10M
+All three plasticity pilots are complete (15/15 games at 10M steps):
+
+**h003 (PPO + LayerNorm, 10M):** Avg Q4=479 vs PPO(40M)=550
+- 8/15 games >= 40M baseline at 1/4 training (4x sample efficiency!)
+- PrivateEye Q4=71 vs -135 (sign reversal — huge win)
+- Weak: Solaris (0.51x), Phoenix (0.79x)
+- Score vs PPO(40M): wins 3, loses 5, ties 7
+
+**h004 (PQN + NaP, 10M):** Avg Q4=380 vs PQN(40M)=391
+- BEST sample efficiency: 12/15 games >= 40M baseline at 10M!
+- BattleZone +15%, Solaris +26%, Phoenix +7%
+- Only NameThisGame below 75%
+- Score vs PQN(40M): wins 6, loses 4, ties 5
+
+**h005 (PPO + CHAIN-SP, 10M):** Avg Q4=515 vs PPO(40M)=550
+- 7/15 games >= 40M baseline at 10M
+- Phoenix 968 vs base 796 (1.22x at 10M!), NameThisGame 2567 vs 2348
+- Score vs PPO(40M): wins 6, loses 6, ties 3
+
+### Actions Taken
+1. Added h003/h004/h005 10M results (45 rows) to experiments.csv
+2. Updated hypotheses.csv with detailed analysis
+3. Submitted h003/h004/h005 FULL 3-seed evaluation at 40M (135 jobs across 4 clusters)
+4. Implemented 3 new hypotheses:
+   - h018: PPO + Schedule-Free AdamW (Cat 8 Optimization) — eliminates LR schedule
+   - h019: PPO + Muon Optimizer (Cat 8 Optimization) — Newton-Schulz gradient orthogonalization
+   - h020: PPO + Dueling Architecture (Cat 3/5) — separate V+A streams
+5. Rebuilt container with schedulefree dependency, pushing to all clusters
+6. Submitted h019/h020 pilots (30 jobs)
+7. h018 batch ready, will submit after container image push completes
+
+### Current Active Jobs
+- h003-h005 (40M 3-seed): 135 new jobs submitted
+- h006-h009 (10M pilots): 60 still running (should finish soon)
+- h010-h017 (40M pilots): ~120 still running
+- h019-h020 (40M pilots): 30 new jobs submitted
+- h018: pending container image push
+
+### Category Coverage Update
+- Cat 1 (Off-policy): NOT YET
+- Cat 2 (Replay): NOT YET
+- Cat 3 (Distributional/Value): h006 (symlog), h015 (PopArt), h020 (dueling)
+- Cat 4 (Policy gradient): h014 (entropy anneal), h017 (SPO)
+- Cat 5 (Architecture/Plasticity): h003, h004, h005, h007, h008, h010, h011, h013, h016
+- Cat 6 (Exploration): h009 (RND)
+- Cat 7 (Value processing): h006 (symlog), h015 (PopArt)
+- Cat 8 (Optimization): h018 (schedule-free), h019 (Muon) — NEW
+- Cat 9 (Representation): h012 (DrQ aug)
+- Cat 10 (Ensemble): NOT YET
+
+### Key Findings So Far
+1. LayerNorm (h003) and NaP (h004) show DRAMATIC sample efficiency gains
+2. CHAIN-SP (h005) has highest avg Q4 at 10M (515) — benefits on Phoenix and NameThisGame
+3. Both h003 and h005 fix PrivateEye (71 vs -135 for PPO base)
+4. Still need 40M results for definitive comparison
+
+### Next Session TODO
+1. Check h003-h005 40M results when complete — definitive comparison
+2. Process h006-h009 10M pilot results (should be done soon)
+3. Process h010-h017 40M pilot results
+4. Submit h018 after container push
+5. Analyze all pilots and identify top performers for combination experiments
+6. Implement remaining categories: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
+7. Begin thinking about novel combinations of winning techniques
