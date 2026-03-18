@@ -461,3 +461,17 @@ All three plasticity pilots are complete (15/15 games at 10M steps):
 5. Analyze all pilots and identify top performers for combination experiments
 6. Implement remaining categories: Cat 1 (off-policy), Cat 2 (replay), Cat 10 (ensemble)
 7. Begin thinking about novel combinations of winning techniques
+
+---
+**[2026-03-18 09:11 UTC]**
+
+### Session 8 Addendum: h018 submitted
+Container with schedulefree pushed to all 4 clusters. h018 (PPO + Schedule-Free AdamW) pilot submitted: 15 games × 1 seed across rorqual/narval/nibi/fir.
+
+Total active jobs after this session: ~370
+- h003-h005 (40M 3-seed eval): 135 jobs
+- h006-h009 (10M pilots): ~60 running
+- h010-h017 (40M pilots): ~120 running 
+- h018 (schedule-free pilot): 15 jobs
+- h019 (Muon pilot): 15 jobs
+- h020 (dueling pilot): 15 jobs
