@@ -2578,3 +2578,52 @@ Incomplete: h022(1-doubledunk), h027(3)
 5. If h022 confirms net+3+ AND h031 confirms net+3+: formulate combination (h034: QR-Value + SPR).
 6. h028(DrQ+QR) had negative synergy, but h022(QR alone) is strong. Lesson: QR-Value doesn't benefit from DrQ augmentation. Worth understanding why.
 7. Extract remaining h008 s2/s3 results from SLURM logs as they complete.
+
+---
+**[2026-03-18 21:06 UTC]**
+
+## Session 42: Process 8 New Results, Discover 3 Completed h029 Games, h031 Holding Strong
+
+### Triggered by: h030-amidar-s1 (narval SUCCESS), h008-breakout-s2 (nibi SUCCESS)
+
+### Results Processed: 8 new entries (now 669 rows)
+- h030-amidar-s1: new-format q4=2.39 (replaces old-code q4=33.40, confirms 14x old-format inflation). vs PPO baseline 2.03 → +18% WIN.
+- h008-breakout-s2: log-extracted q4=1.41. 2-seed avg 1.51 vs PQN baseline 1.87 → -19% LOSS (confirms existing).
+- h031-venture-s1: log-extracted q4=0.00 (narval). TIE (baseline also 0).
+- h031-namethisgame-s1: log-extracted q4=2405.81 (fir). vs baseline 2507 → -4% TIE.
+- h030-venture-s1: log-extracted q4=0.00 (narval). TIE.
+- h030-spaceinvaders-s1: log-extracted q4=158.90 (fir). vs baseline 147 → +8% TIE.
+- h029-doubledunk-s1: new-format CSV q4=-18.15 (rorqual). TIE (-1.8%).
+- h029-namethisgame-s1: new-format CSV q4=2426.28 (rorqual). TIE (-3.2%).
+- h029-solaris-s1: new-format CSV q4=2563.64 (rorqual). WIN (+18.5%).
+
+### KEY FINDING: Old-Format Amidar Inflation Confirmed
+h030 old-code Amidar q4=33.40 vs new-code q4=2.39 — 14x inflation. This means h029/h032/h033 Amidar 'wins' (q4=31-39) are UNRELIABLE. Excluded from standings.
+
+### h030/h031 Output-Dir Bug: Both use --output-dir /output which is read-only in container (bind is /runs). All jobs crash on CSV save. Must extract q4 from SLURM logs. h029/h032/h033 use --output-dir /runs (correct).
+
+### CORRECTED STANDINGS (PPO techniques)
+1. **h031 (SPR): 3W/0L/2T (net +3) — 5/15 pilot, ZERO LOSSES** ★ HIGHEST POTENTIAL
+2. h012 (DrQ): 4W/1L/10T (net +3) — 15/15 3-SEED COMPLETE ★ PROVEN
+3. h022 (QR-Value): 4W/2L/8T (net +2) — 14/15 pilot (DoubleDunk still running)
+4. h029 (CVaR NOVEL): 3W/1L/6T (net +2) — 10/15 pilot (excl Amidar old-format)
+5. h007 (S&P): 4W/2L/9T (net +2) — 15/15 3-SEED COMPLETE
+6. h030 (SEM): 2W/1L/3T (net +1) — 6/15 pilot
+7. h033 (DrQ+Consistency): 0W/0L/2T (net 0) — 2 reliable games only
+8. h032 (NoisyNets): 0W/1L/1T (net -1) — 2 reliable games only
+
+**PQN:** h008 (LSTM): 7W/5L/3T (net +2). h004 (NaP): 3W/1L/11T (net +2).
+
+### Active Jobs: ~74 running across 4 clusters
+Running pilots: h029(4), h030(9), h031(10), h032(15), h033(15)
+3-seed evals: h008(2), h010(3), h011(4), h022(2), h027(3)
+
+### NEXT SESSION TODO
+1. **Process h031 pilot results — TOP PRIORITY.** 10 games still running (launched ~14:08, should complete ~17:30-18:00 UTC). If net+3 holds at 10+ games → this IS the breakthrough.
+2. Process h032/h033 new-code results as they complete (proper CSVs from /runs).
+3. Complete h029 pilot (4 remaining: alien, enduro, phoenix, spaceinvaders).
+4. Complete h022 pilot (DoubleDunk running).
+5. If h031 confirms strong → immediately formulate h034 (DrQ+SPR combination).
+6. If h031 + DrQ combo works → this is the paper: on-policy SPR + augmentation as novel contribution.
+7. Monitor h030 (SEM) pilot completion — currently modest (net+1).
+8. Consider PPG (Phasic Policy Gradient) Atari adaptation if h031 disappoints.

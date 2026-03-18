@@ -628,7 +628,7 @@ h007-solaris-s3,h007,,3-seed gap (nibi),Solaris-v5,3,ppo_sp,40000000,5888,2075.6
 h007-alien-s3,h007,,3-seed gap (nibi),Alien-v5,3,ppo_sp,40000000,60672,195.02110290527344,194.17721557617188,11832320.0,200.0
 h013-alien-s3,h013,,3-seed gap (rorqual),Alien-v5,3,ppo_specnorm,40000000,59008,206.57266235351562,213.6659393310547,12189440.0,750.0
 h029-venture-s1,h029,,new-format CSV (narval),Venture-v5,1,ppo_aug_qr_cvar,40000000,17920,0.0,0.0,0.0,0.0
-h030-amidar-s1,h030,,curve-derived q4 (narval old-code),Amidar-v5,1,ppo_sem,40000000,62848,32.87,33.40,2065792.0,31.0
+h030-amidar-s1,h030,,"SEM Amidar s1 (narval, log-extracted q4=2.39, output-dir /output bug, replaces old-code entry)",Amidar-v5,1,ppo_sem,40000000,556,,2.39,,
 h030-breakout-s1,h030,,curve-derived q4 (nibi old-code),Breakout-v5,1,ppo_sem,40000000,36992,1.37,0.88,50688.0,0.0
 h030-qbert-s1,h030,,curve-derived q4 (fir old-code),Qbert-v5,1,ppo_sem,40000000,120192,154.53,153.19,18572800.0,150.0
 h031-amidar-s1,h031,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_spr,40000000,61568,2.58,2.56,158848.0,33.0
@@ -659,3 +659,11 @@ h022-solaris-s1,h022,,"Solaris s1, rorqual new-format CSV, 6016 episodes",Solari
 h008-amidar-s2,h008,,"pqn_lstm Amidar s2 (nibi, log-extracted q4=14.31, output-dir /output bug)",Amidar-v5,2,pqn_lstm,40000000,505,,14.31,,
 h008-mspacman-s2,h008,,"pqn_lstm MsPacman s2 (nibi, log-extracted q4=376.07, output-dir /output bug)",MsPacman-v5,2,pqn_lstm,40000000,560,,376.07,,
 h030-phoenix-s1,h030,,"SEM Phoenix s1 (narval, log-extracted q4=915.31, output-dir /output bug)",Phoenix-v5,1,ppo_sem,40000000,255,,915.31,,
+h008-breakout-s2,h008,,"pqn_lstm Breakout s2 (nibi, log-extracted q4=1.41, output-dir /output bug)",Breakout-v5,2,pqn_lstm,40000000,1723,,1.41,,
+h031-venture-s1,h031,,"SPR Venture s1 (narval, log-extracted q4=0.00, output-dir /output bug)",Venture-v5,1,ppo_spr,40000000,143,,0.00,,
+h031-namethisgame-s1,h031,,"SPR NameThisGame s1 (fir, log-extracted q4=2405.81, output-dir /output bug)",NameThisGame-v5,1,ppo_spr,40000000,125,,2405.81,,
+h030-venture-s1,h030,,"SEM Venture s1 (narval, log-extracted q4=0.00, output-dir /output bug)",Venture-v5,1,ppo_sem,40000000,144,,0.00,,
+h030-spaceinvaders-s1,h030,,"SEM SpaceInvaders s1 (fir, log-extracted q4=158.90, output-dir /output bug)",SpaceInvaders-v5,1,ppo_sem,40000000,586,,158.90,,
+h029-doubledunk-s1,h029,,"CVaR DoubleDunk s1 (rorqual new-format CSV, 20864 episodes)",DoubleDunk-v5,1,ppo_aug_qr_cvar,40000000,20864,-18.34,-18.15,-382720.0,-16.0
+h029-namethisgame-s1,h029,,"CVaR NameThisGame s1 (rorqual new-format CSV, 15488 episodes)",NameThisGame-v5,1,ppo_aug_qr_cvar,40000000,15488,2231.49,2426.28,34561280.0,2300.0
+h029-solaris-s1,h029,,"CVaR Solaris s1 (rorqual new-format CSV, 5632 episodes)",Solaris-v5,1,ppo_aug_qr_cvar,40000000,5632,2866.82,2563.64,16145920.0,1820.0
