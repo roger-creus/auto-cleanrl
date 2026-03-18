@@ -1,2 +1,2 @@
-env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
-Solaris-v5,1,40000000,0.00,0.00,4864,9724,h018,h018-solaris-s1
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Solaris-v5,1,h018,h018-solaris-s1,ppo_schedulefree,40000000,5760,2672.888916015625,2016.0,15395840.0,2640.0

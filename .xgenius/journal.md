@@ -1105,3 +1105,67 @@ PPO baseline Amidar q4=1.4 is extremely low. Almost EVERY modification shows +10
 5. Monitor h025/h026 for early signals
 6. If h023 confirms strong across more games: IMMEDIATE 3-seed eval submission
 7. Consider implementing PPG or SAC-discrete as next algorithm-class exploration
+
+---
+**[2026-03-18 13:22 UTC]**
+
+## Session 19: CRITICAL Baseline Corrections + h008 3-Seed Eval
+
+### CRITICAL DATA FIX: Baseline values corrected from real q4_return CSVs
+Previous sessions used old-format CSVs (mean_return_last_25 proxy) for many baselines. This session rebuilt experiments.csv from git with proper (hypothesis_id, experiment_id) composite keys, preventing cross-hypothesis data contamination.
+
+**PPO (h001) CORRECTED baselines (old -> new):**
+- BattleZone: 3700 -> 2150 (MASSIVE drop — changes many 'BattleZone loss' classifications to wins)
+- Solaris: 2615 -> 2280 (moderate)
+- NameThisGame: 2161 -> 2348 (UP)
+- PrivateEye: -45 -> -135 (MUCH worse baseline)
+- Amidar: 1.4 -> 2.2 (similar)
+- MsPacman: 319 -> 319 (same)
+- Phoenix: 796 -> 796 (same)
+
+**PQN (h002) CORRECTED baselines:**
+- BattleZone: 6021 -> 3296 (MASSIVE drop)
+- Phoenix: 0 -> 86.5 (UP from zero)
+- NameThisGame: 1074 -> 1381 (UP)
+- MsPacman: 210 -> 249 (UP)
+- PrivateEye: -12 -> -173 (MUCH worse)
+
+### Impact on rankings
+
+The BattleZone correction is seismic. Previously many techniques showed 'BattleZone degradation' because baseline was inflated at 3700. Real baseline is 2150.
+
+**CORRECTED Top PPO Techniques (pilots, 15/15 games):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — BEST NET! BattleZone +33%, PrivateEye +473%, Solaris +10%
+2. h013 (SpectralNorm): 4W/2L/9T (net +2) — Phoenix +19%, Qbert +18%, Solaris +34%
+3. h007 (S&P): 3W/1L/11T (net +2) — BattleZone +21%, PrivateEye +125%, Solaris +78%
+4. h005 (CHAIN-SP): 4W/2L/9T (net +2) — Phoenix +14%, PrivateEye +153%, Qbert +17%
+
+**CORRECTED Top PQN Techniques:**
+1. h008 (LSTM): 7W/4L/4T (net +3) — CLEAR WINNER. Alien +59%, Phoenix +465%, PrivateEye +486%, Solaris +255%
+2. h004 (NaP): 2W/1L/12T (net +1) — MsPacman +17%, Solaris +30%
+
+### h008 (PQN+LSTM) — Pilot COMPLETE, 3-seed eval submitted
+All 15 games at seed=1 now have q4_return data:
+- 3 NEW this session: Alien (283 vs PQN 178, +59%), NameThisGame (1110 vs 1381, -20% LOSS), PrivateEye (667 vs -173, MASSIVE +486% WIN)
+- PrivateEye 667 is by far the highest PrivateEye score of ANY technique
+- Submitted 30 3-seed eval jobs across all 4 clusters
+
+### Data Processing
+- Rebuilt experiments.csv from git HEAD with composite keys (hypothesis_id + experiment_id)
+- 43 significant q4 value corrections
+- 129 new entries added (total: 564 rows)
+- Many old-format entries (mean_return_last_25 proxy) replaced with real q4_return
+
+### Active Jobs: ~327 (existing ~297 + 30 new h008 3-seed)
+- 3-seed evals: h004(12), h005(31), h007(10), h008(30 NEW), h012(22), h013(23)
+- Pilots: h010(9), h011(9), h019(8), h021(11), h022(11), h023(11), h024(8), h025(11), h026(9)
+- Closing: h003(2), h006(1), h008(3 old dups), h009(1), h014(2), h016(3), h017(3)
+
+### Next Session TODO
+1. Process 3-seed eval results for h004/h005/h007/h012/h013/h008 as they complete
+2. Check h019 remaining 5 games — if still 0W/0L at 15/15, CLOSE as neutral
+3. Process h021-h026 pilot results — especially h023 (Qbert +42% early signal)
+4. h010/h011 IMPALA CNN pilots still very incomplete (3/15)
+5. Plan: once top 3-seed evals confirm, start COMBINATION experiments: h012+h007, h012+h013
+6. Still need hypotheses for: off-policy (DQN variants), ensemble methods, PPG
+7. Consider novel research direction: analyze WHY DrQ (h012) and S&P (h007) both fix PrivateEye

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Alien-v5,1,h008,h008-alien-s1,pqn_lstm,40000000,62336,323.7166442871094,283.1622314453125,20179200.0,340.0
