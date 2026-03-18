@@ -142,6 +142,7 @@ h005-breakout-s3,h005,,,Breakout-v5,3,ppo_chainsp,40000000,225920,1.305382490158
 h005-doubledunk-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id DoubleDunk-v5 --seed 1,Upgraded 10M->40M. q4=-18.14634132385254,DoubleDunk-v5,1,ppo_chainsp,40000000,20992,-18.085365295410156,-18.14634132385254,-379648.0,-10.0
 h005-doubledunk-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id DoubleDunk-v5 --seed 2,"ppo_chainsp DoubleDunk-v5 seed 2 (fir, 40M)",DoubleDunk-v5,2,ppo_chainsp,40000000,20608,-17.876,-18.422,-368384.0,-20.0
 h005-enduro-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Enduro-v5 --seed 1,"UPDATED 10M->40M. ppo_chainsp Enduro-v5 seed 1 (narval, 40M)",Enduro-v5,1,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
+h005-enduro-s2,h005,,"nibi 40M. q4=0 TIE",Enduro-v5,2,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
 h005-enduro-s3,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Enduro-v5 --seed 3,"ppo_chainsp Enduro-v5 seed 3 (fir, 40M)",Enduro-v5,3,ppo_chainsp,40000000,11904,0.0,0.0,0.0,0.0
 h005-montezumarevenge-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id MontezumaRevenge-v5 --seed 1,"ppo_chainsp MontezumaRevenge-v5 seed 1 (nibi, 10M steps)",MontezumaRevenge-v5,1,ppo_chainsp,10000000,17792.0,0.0,0.0,0.0,0.0
 h005-montezumarevenge-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id MontezumaRevenge-v5 --seed 2,"ppo_chainsp MontezumaRevenge-v5 seed 2 (narval, 40M)",MontezumaRevenge-v5,2,ppo_chainsp,40000000,69888,0.183,0.0,12800.0,0.0
@@ -155,7 +156,7 @@ h005-privateeye-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Pri
 h005-privateeye-s2,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id PrivateEye-v5 --seed 2,"ppo_chainsp PrivateEye-v5 seed 2 (narval, 40M)",PrivateEye-v5,2,ppo_chainsp,40000000,14720,69.66,77.01,1025408.0,100.0
 h005-qbert-s1,h005,,,Qbert-v5,1,ppo_chainsp,40000000,123520,163.00518798828125,155.9844512939453,20134400.0,125.0
 h005-qbert-s3,h005,,,Qbert-v5,3,ppo_chainsp,40000000,123008,162.25286865234375,164.4120635986328,19958400.0,100.0
-h005-solaris-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Solaris-v5 --seed 1,"ppo_chainsp Solaris-v5 seed 1 (rorqual, 10M steps)",Solaris-v5,1,ppo_chainsp,10000000,1408.0,2154.54541015625,1365.45458984375,3033600.0,2020.0
+h005-solaris-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id Solaris-v5 --seed 1,"UPDATED 10M->40M nibi. q4=2198.72 vs baseline 2163.56=+1.6% TIE",Solaris-v5,1,ppo_chainsp,40000000,6016,2463.404296875,2198.723388671875,14819840.0,1620.0
 h005-solaris-s2,h005,,,Solaris-v5,2,ppo_chainsp,40000000,6016,2208.085205078125,2107.65966796875,13283840.0,2400.0
 h005-spaceinvaders-s1,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id SpaceInvaders-v5 --seed 1,"UPDATED 10M->40M. ppo_chainsp SpaceInvaders-v5 seed 1 (narval, 40M)",SpaceInvaders-v5,1,ppo_chainsp,40000000,78208,152.05,138.72,11891840.0,145.0
 h005-spaceinvaders-s3,h005,python cleanrl/ppo_atari_envpool_chainsp.py --env-id SpaceInvaders-v5 --seed 3,"ppo_chainsp SpaceInvaders-v5 seed 3 (fir, 40M)",SpaceInvaders-v5,3,ppo_chainsp,40000000,77824,154.63,147.27,12033920.0,120.0

@@ -1860,3 +1860,70 @@ Freed compute slots by cancelling jobs for: h003(3), h009(1), h015(1), h016(1), 
 7. Process h010/h011 IMPALA CNN pilots (h010 has code bug on rorqual)
 8. UNEXPLORED directions: SPR, PPG, N-step returns, noisy nets, off-policy, ensemble methods
 9. Investigate universal MsPacman degradation across ALL PPO modifications
+
+---
+**[2026-03-18 17:15 UTC]**
+
+## Session 31: Process h005-solaris-s1, Correct h005 Standings
+
+### Triggered by: h005-solaris-s1 (nibi SUCCESS)
+
+### Results Processed: 2 new/updated + 1 no-change
+- h005-solaris-s1: UPGRADED 10M→40M. q4=2198.72 vs baseline 2163.56 = +1.6% → TIE
+- h005-enduro-s2: NEW entry. q4=0.0 (TIE with baseline 0.0). Fills 3-seed gap.
+- h018-venture-s1: Already in bank at 40M q4=0.0. No update needed.
+
+### h005 DOWNGRADED: net+2 → net+1
+Solaris dropped from WIN to TIE. With all 3 seeds now at 40M:
+- Solaris 3-seed avg: (2198.72 + 2107.66 + 2723.33)/3 = 2343.24 vs baseline 2163.56 = +8.3% (under 10% threshold)
+h005 now: 3W/2L/10T (net +1). Wins: Amidar+93%, BattleZone+30%, PrivateEye+170%. Losses: MsPacman-21%, NameThisGame-15%.
+
+### CORRECTED PQN BASELINE: 4 games MISSING
+PQN baseline (h002) has NO DATA for DoubleDunk, MsPacman, Qbert, SpaceInvaders. This inflated h004/h008 scores.
+Corrected PQN hypothesis scores (on 11 comparable games):
+- h004 (NaP): 4W/1L/6T (net +3) — was reported as net+4-7 depending on method
+- h008 (LSTM): 5W/2L/4T (net +3) — was reported as net+5-7
+
+### h007-solaris-s3: Training completed on fir but CSV save failed (Read-only /output)
+Same error as h012-montezumarevenge-s3. Duplicate running on nibi (job 10527390) should produce CSV.
+
+### h010 IMPALA CNN: Still timing out at 4h walltime
+3 jobs running on nibi (montezumarevenge, solaris, enduro) with 4h walltime. Most h010 jobs have timed out repeatedly. IMPALA CNN needs ~3.7h compute + startup overhead = very tight at 4h. 
+h011 was already resubmitted with 6h walltime by a previous session (9 running with 6h). If h010 nibi jobs fail, resubmit with 8h.
+
+### UPDATED STANDINGS (corrected, excluding missing PQN baseline games)
+
+**PPO techniques (full 15/15 games with PPO baseline):**
+1. h012 (DrQ): 5W/1L/9T (net +4) — CONFIRMED BEST PPO
+2. h007 (S&P): 4W/2L/9T (net +2)
+3. h016 (Sparsity): 4W/2L/9T (net +2) — pilot
+4. h017 (SPO): 4W/2L/9T (net +2) — pilot
+5. h005 (CHAIN-SP): 3W/2L/10T (net +1) — DOWNGRADED
+6. h013 (SpectNorm): 3W/2L/10T (net +1)
+
+**PQN techniques (11/15 games with PQN baseline):**
+1. h004 (NaP): 4W/1L/6T (net +3) — corrected
+2. h008 (LSTM): 5W/2L/4T (net +3) — 3-seed eval running (40 jobs)
+
+**Active pilots:**
+- h022 (QR-Value): 3W/2L/5T (net +1) at 10/15 — 5 running
+- h027 (DrQ+S&P): 1W/1L/1T at 3/15 — 12 running
+- h028 (DrQ+QR-Value): just started — 12 running
+- h029 (DrQ+QR+CVaR NOVEL): just started — 11 running
+- h026 (NaP+LSTM): no results yet — 12 running
+- h010 (PPO IMPALA): old-format only at 3/15 — 3 running (timeout risk)
+- h011 (PQN IMPALA): 3W/2L/0T at 4/5 — 10 running
+
+### Active: 207 jobs running (0 pending after reconcile)
+
+### Next Session TODO
+1. Process h008 3-seed results (40 running — biggest batch, should start arriving)
+2. Process h022 remaining 5 pilot results
+3. Process h027/h028/h029 pilot results
+4. Process h026 (NaP+LSTM) pilot
+5. h010: if nibi jobs fail, resubmit ALL h010 with 8h walltime
+6. h011: monitor 6h jobs, should complete soon
+7. Fill h005/h007/h012/h013 remaining 3-seed gaps
+8. If h022 completes strong: submit 3-seed eval
+9. UNEXPLORED: SPR, PPG, N-step returns, noisy nets, off-policy methods, ensemble methods
+10. Investigate MsPacman universal degradation
