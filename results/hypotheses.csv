@@ -34,3 +34,4 @@ h032,,,closed,IQM HNS=-0.0011 (11g). BELOW baseline. Phoenix catastrophic (-0.10
 h033,,,proposed,IQM HNS=0.0019 (7g). Phoenix positive (+0.019) but MsPacman catastrophic (-0.036). 8 games remaining. Wait for full pilot.
 h034,,,promising,"★★ NEW LEADER ★★ IQM HNS=0.0075 (15g, 44/45 seeds — near-complete 3-seed!). CVaR+Dueling+DrQ. 44% better than h029 pilot. Curve-derived data — Amidar values may be inflated."
 h035,,,promising,IQM HNS=0.0311 (3g only — UNRELIABLE). CVaR+SEM+DrQ. Early signs very promising but need 12 more games. 15 running.
+h036,PPO + CVaR + Dueling + SEM + DrQ (Triple Combination),"Combine top 3 techniques: CVaR advantage (h029 IQM=0.0052), Dueling (h020 IQM=0.0026), SEM (h030 IQM=0.0019). SEM constrains shared representation via product-of-softmax before dueling streams.",proposed,"Pilot submitted (15 games × 1 seed). Combines h034 (CVaR+Dueling, IQM=0.0075) with SEM. If SEM improves representations for both streams, could exceed h034."

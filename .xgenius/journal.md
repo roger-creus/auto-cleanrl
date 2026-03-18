@@ -3176,3 +3176,32 @@ h029(30 3-seed), h034(15 DB-stale, mostly done), h035(15 pilot), h033(11), h030(
 5. h034 IQM needs verification with new-code data — consider resubmitting pilot with fixed output
 6. Consider ablation experiments to isolate CVaR contribution
 7. Consider off-policy or hybrid approaches as a different exploration direction
+
+---
+**[2026-03-18 23:52 UTC]**
+
+## Session 50 (continued): Implement and Submit h036 (CVaR+Dueling+SEM Triple Combination)
+
+### h036: PPO + CVaR + Dueling + SEM + DrQ
+Script: cleanrl/ppo_atari_envpool_cvar_duel_sem.py
+Architecture: CNN → FC → SEM embedding (32 groups × 16 vertices, softmax) → Dueling split (value quantiles + advantage logits)
+Combines: h029 CVaR advantage, h020 Dueling V/A decomposition, h030 Simplicial Embeddings, DrQ augmentation
+
+### Pilot submitted: 15 games × 1 seed across all 4 clusters
+rorqual: amidar, privateeye, namethisgame, mspacman
+nibi: alien, solaris, phoenix, venture
+fir: breakout, battlezone, qbert, montezumarevenge
+narval: enduro, doubledunk, spaceinvaders
+
+### ACTIVE JOBS: 91 total
+h029(30 3-seed), h034(15 DB-stale), h035(15 pilot), h036(15 pilot NEW), h033(11), h030(5)
+
+### CURRENT STANDINGS (IQM HNS):
+1. h034 (CVaR+Dueling+DrQ): 0.0075 (15g, 44 seeds) ★★ LEADER
+2. h029 (CVaR+QR+DrQ):      0.0052 (15g pilot). 3-seed running
+3. h035 (CVaR+SEM+DrQ):     0.0311 (3g UNRELIABLE). 15 running
+4. h020 (Dueling):           0.0026 (15g, 3-seed)
+5. h030 (SEM):               0.0019 (11g pilot)
+6. h036 (CVaR+Dueling+SEM): NEW — pilot running
+
+### NEXT SESSION: Process results for h035, h029 3-seed, h036 as they complete.
