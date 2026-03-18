@@ -604,3 +604,5 @@ h028-breakout-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilo
 h028-qbert-s1,h028,python cleanrl/ppo_atari_envpool_aug_qr.py,old-format pilot,Qbert-v5,1,ppo_aug_qr,40000000,117504,150.0,150.0,,150.0
 h029-amidar-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format pilot (NOVEL: CVaR advantage),Amidar-v5,1,ppo_aug_qr_cvar,40000000,63744,31.0,31.0,,31.0
 h029-qbert-s1,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,old-format pilot (NOVEL: CVaR advantage),Qbert-v5,1,ppo_aug_qr_cvar,40000000,116992,150.0,150.0,,150.0
+h013-amidar-s3,h013,see batch file,q4 from log (CSV save failed /output read-only),Amidar-v5,3,ppo_specnorm,40000000,554,2.34,2.49,,,
+h007-montezumarevenge-s3,h007,,nibi CSV (fills 3-seed gap),MontezumaRevenge-v5,3,ppo_sp,40000000,71040,0.18,0.0,12800.0,0.0
