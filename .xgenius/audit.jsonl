@@ -3899,3 +3899,9 @@
 {"timestamp": "2026-03-18T20:27:06Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10541668"}
 {"timestamp": "2026-03-18T20:27:07Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57957928"}
 {"timestamp": "2026-03-18T20:27:08Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57951951"}
+{"timestamp": "2026-03-18T20:43:56Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10531618"}
+{"timestamp": "2026-03-18T20:43:57Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10531620"}
+{"timestamp": "2026-03-18T20:43:58Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10531622"}
+{"timestamp": "2026-03-18T20:43:59Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10531248"}
+{"timestamp": "2026-03-18T20:44:01Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57948688"}
+{"timestamp": "2026-03-18T20:44:02Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10536556"}

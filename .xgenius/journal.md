@@ -2514,3 +2514,67 @@ Incomplete: h022(~4 doubledunk+solaris), h027(3)
 5. Extract h008 s2/s3 q4 from SLURM logs as they complete
 6. Consider PPG (Phasic Policy Gradient) Atari adaptation as next paradigm to explore
 7. If h031 + DrQ combo (h034) looks good, this could be the novel contribution: on-policy SPR + augmentation
+
+---
+**[2026-03-18 20:46 UTC]**
+
+## Session 41: Process 4 Results, h022 Surges to net+4, h008 Corrected
+
+### Triggered by: h008-amidar-s2 (job 10531224, nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 661 rows)
+- h008-amidar-s2: q4=14.31 (log-extracted, output-dir bug). Amidar 2-seed avg=18.5 vs PQN baseline 31.6 → -41.6% LOSS. Confirmed.
+- h008-mspacman-s2: q4=376.07 (log-extracted, output-dir bug). MsPacman 2-seed avg=382 vs PQN baseline 249 → +53.6% WIN. Confirmed.
+- h022-solaris-s1: q4=2757.87 (new-format CSV from rorqual, 6016 episodes). vs PPO baseline 2280 → +21.0% WIN! h022 gains a significant new win.
+- h030-phoenix-s1: q4=915.31 (log-extracted from narval, output-dir bug, 255 episodes). vs PPO baseline 796 → +15% WIN.
+
+### h022 (QR-Value) UPGRADED TO NET +4 — NOW BEST PPO SINGLE TECHNIQUE
+14/15 pilot: 5W/1L/8T (net +4). Solaris WIN is the new addition.
+WINS: Amidar+14%(trivial 2.5 vs 2.2), BattleZone+20%, NameThisGame+11%, PrivateEye+156%, Solaris+21%.
+LOSS: MsPacman-19%.
+Caveat: Amidar 'win' is essentially noise (2.5 vs 2.2 on 1 seed). Excluding it → 4W/1L (net+3) tying h012.
+Only DoubleDunk still running (nibi job 10536180). Will complete pilot soon.
+If net≥+3 at 15/15, MUST submit 3-seed eval — this is a serious contender.
+
+### h008 (PQN+LSTM) CORRECTED from net+5 to net+2
+15/15 pilot with 2-seed Amidar/MsPacman/Qbert: 7W/5L/3T (net +2).
+Previously overcounted — BattleZone was always LOSS(-14%) but wasn't in the WIN list before.
+Breakout was old-format WIN(+72%) → corrected to LOSS(-11%) with new-format data.
+Still the best PQN technique but weaker than initially thought.
+
+### h030 (SEM) gains Phoenix WIN
+4/15 pilot: 2W/1L/1T (net +1). Modest improvement. 11 still running.
+
+### Cancelled 6 duplicate jobs:
+- nibi: h008-amidar-s2(dup), h008-mspacman-s2(dup), h008-qbert-s2(2 dups)
+- narval: h008-mspacman-s2(dup)
+- nibi: h022-doubledunk-s1(1 of 2 dups — kept 10536180)
+
+### Reconcile: 78 still active, 1 newly completed.
+
+### CURRENT STANDINGS (PPO techniques)
+1. **h022 (QR-Value): 5W/1L/8T (net +4) — 14/15 pilot ★ BEST PPO**
+2. h012 (DrQ): 4W/1L/10T (net +3) — COMPLETE 15/15 3-SEED ★
+3. h031 (SPR): 3W/0L/0T (net +3) — 3/15 pilot, ALL WINS, HIGHEST POTENTIAL
+4. h007 (S&P): 4W/2L/9T (net +2) — COMPLETE 15/15 3-SEED
+5. h029 (CVaR NOVEL): 2W/1L/4T (net +1) — 8/15 pilot, 7 running
+6. h005 (CHAIN-SP): 3W/2L/10T (net +1) — mostly 3-seed
+7. h033 (DrQ+Consistency): 1W/0L/2T (net +1) — 3/15 pilot
+8. h030 (SEM): 2W/1L/1T (net +1) — 4/15 pilot
+9. h032 (NoisyNets): 1W/1L/1T (net 0) — 3/15 pilot
+
+**PQN:** h008 (LSTM): 7W/5L/3T (net +2, corrected). h004 (NaP): 3W/1L/11T (net +2).
+
+### ~78 ACTIVE JOBS (after 6 cancellations)
+Running pilots: h029(7), h030(14), h031(15), h032(15), h033(15)
+Incomplete: h022(1-doubledunk), h027(3)
+3-seed: h008(~5), h010(3), h011(4)
+
+### NEXT SESSION TODO
+1. Process h031 pilot results — TOP PRIORITY. If net+3 holds at 8+ games → breakthrough.
+2. Complete h022 pilot (DoubleDunk). If net≥+3 at 15/15 → submit 3-seed eval.
+3. Process h030/h032/h033 pilot results as they arrive.
+4. Complete h029 pilot (7 remaining). Close if it stays at net+1 or lower.
+5. If h022 confirms net+3+ AND h031 confirms net+3+: formulate combination (h034: QR-Value + SPR).
+6. h028(DrQ+QR) had negative synergy, but h022(QR alone) is strong. Lesson: QR-Value doesn't benefit from DrQ augmentation. Worth understanding why.
+7. Extract remaining h008 s2/s3 results from SLURM logs as they complete.

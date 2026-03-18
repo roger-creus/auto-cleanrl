@@ -655,3 +655,7 @@ h029-mspacman-s1,h029,python cleanrl/ppo_aug_qr_cvar.py --env-id MsPacman-v5 --s
 h022-phoenix-s1,h022,,new-format CSV (fir),Phoenix-v5,1,ppo_qr_value,40000000,28928,737.5220947265625,850.4425048828125,21335040.0,280.0
 h028-montezumarevenge-s1,h028,,new-format CSV (rorqual),MontezumaRevenge-v5,1,ppo_aug_qr_value,40000000,72960,0.0,0.0,0.0,0.0
 h008-qbert-s2,h008,,"pqn_lstm Qbert-v5 seed 2 (rorqual, log-extracted, output-dir /output bug)",Qbert-v5,2,pqn_lstm,40000000,931,,223.93,,
+h022-solaris-s1,h022,,"Solaris s1, rorqual new-format CSV, 6016 episodes",Solaris-v5,1,ppo_qr_value,40000000,6016,2532.34,2757.87,15234560.0,1920.0
+h008-amidar-s2,h008,,"pqn_lstm Amidar s2 (nibi, log-extracted q4=14.31, output-dir /output bug)",Amidar-v5,2,pqn_lstm,40000000,505,,14.31,,
+h008-mspacman-s2,h008,,"pqn_lstm MsPacman s2 (nibi, log-extracted q4=376.07, output-dir /output bug)",MsPacman-v5,2,pqn_lstm,40000000,560,,376.07,,
+h030-phoenix-s1,h030,,"SEM Phoenix s1 (narval, log-extracted q4=915.31, output-dir /output bug)",Phoenix-v5,1,ppo_sem,40000000,255,,915.31,,
