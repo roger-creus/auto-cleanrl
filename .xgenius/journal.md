@@ -3507,3 +3507,65 @@ h035 also confirmed different (SpaceInvaders q4=254 vs h029 q4=151).
 5. Investigate h034/h029 identity bug further (check __pycache__, try local reproduction)
 6. If h035 or h036 > h029 at 15 games → submit 3-seed immediately
 7. If h029 validates at IQM>0.003 with full 3-seed → proceed to Phase 3 ablations
+
+---
+**[2026-03-19 02:18 UTC]**
+
+## Session 58: Process 5 New Results + Resubmit 10 Disappeared Jobs
+
+### Triggered by: h029-privateeye-s3 (job 10548952, nibi SUCCESS)
+
+### Results Processed: 5 new entries (now 776 rows)
+- h029-privateeye-s3: q4=-47.97 (nibi, seed 3). PPO s3=-280.10 → better than PPO but negative.
+- h029-mspacman-s3: q4=278.90 (nibi, seed 3). PPO s3=256.61 → slight WIN.
+- h029-doubledunk-s2: q4=-18.73 (nibi, seed 2). PPO s2=-17.57 → slight LOSS. TIE range.
+- h035-amidar-s1: q4=3.39 (nibi, new-code). PPO 2.04 → slight improvement.
+- h035-mspacman-s1: q4=251.36 (nibi, new-code). PPO 287 → -12.5% LOSS.
+
+### h029 3-Seed Progress: 26/45 (58%)
+IQM HNS = 0.0028 (15 games, mixed seed coverage).
+Per-game: 4 WINs (Amidar/BattleZone/Phoenix/Solaris), 3 LOSSes (DoubleDunk/MsPacman/NameThisGame), 8 TIEs.
+NOTE: Amidar-s1 still inflated by curve-derived q4=31.0 (true ~2). IQM will adjust when s2 arrives.
+DoubleDunk LOSS (-0.22 HNS diff) is exaggerated by tiny human-random range (2.2 pts).
+
+### h035 (CVaR+SEM+DrQ) Pilot Progress: 5/15 games
+IQM HNS = 0.0074 (5 games — UNRELIABLE).
+2 WINs: BattleZone +32%, SpaceInvaders +70%. 1 LOSS: MsPacman -12.5%.
+MsPacman weakness mirrors h029 — likely a CVaR-inherent weakness on that game.
+
+### DISAPPEARED JOBS: 12 new disappeared on reconcile
+h029: 3 needed resubmit (enduro-s2, qbert-s3, spaceinvaders-s3)
+h035: 7 needed resubmit (breakout, doubledunk, enduro, montezumarevenge, namethisgame, privateeye, venture)
+Root cause: SLURM job records purged before watcher could track completion.
+All 10 successfully resubmitted (5 nibi, 5 fir).
+
+### ACTIVE JOBS: 48 total (38 existing + 10 resubmits)
+- h029 3-seed: 16 running + 3 resubmitted = 19 remaining
+- h030 pilot: 1 running (alien-s1, nearly done on rorqual 3:40/4:00)
+- h035 pilot: 5 running + 7 resubmitted = 12 remaining (of 15-game pilot)
+- h036 pilot: 14 running (all 12 needed games)
+
+### IQM HNS STANDINGS
+1. h035 (CVaR+SEM+DrQ): 0.0074 (5g — UNRELIABLE, 12 running)
+2. h036 (CVaR+Duel+SEM): 0.0284 (3g — UNRELIABLE, Amidar inflated, 14 running)
+3. h029 (CVaR+QR+DrQ): 0.0028 (15g, 26 entries — 3-SEED IN PROGRESS)
+4. h020 (Dueling PPO): 0.0026 (15g, 3-seed)
+5. h008 (PQN LSTM): 0.0036 (15g)
+6. h030 (SEM only): 0.0009 (14g, 1 remaining)
+7. h001 (PPO baseline): 0.0002 (15g)
+
+### KEY OBSERVATIONS
+1. h029 stabilizing at IQM~0.003 — modest but consistent improvement over PPO baseline (14x).
+2. h035 early results promising but MsPacman loss is concerning (CVaR weakness pattern).
+3. h036 early results still only curve-derived — unreliable until new-code data arrives.
+4. All three novel hypotheses (h029/h035/h036) share the CVaR advantage core.
+5. Disappeared jobs are a persistent infrastructure issue — 12 more this cycle.
+
+### NEXT SESSION TODO
+1. Process h029 remaining 19 results (~3-5h for resubmits, running ones ~1-2h)
+2. Process h035 pilot results (12 running, ~4-5h for resubmits)
+3. Process h036 pilot results (14 running, ~3-4h)
+4. Process h030-alien-s1 (nearly done)
+5. When h035 hits 15 games: definitive comparison vs h029
+6. When h036 hits 15 games: definitive comparison of triple combo
+7. If any exceed h029: submit 3-seed immediately

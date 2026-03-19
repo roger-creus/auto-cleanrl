@@ -768,3 +768,8 @@ h029-enduro-s3,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval 
 h029-doubledunk-s3,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (fir new-code),DoubleDunk-v5,3,ppo_aug_qr_cvar,40000000.0,20480.0,-17.737499237060547,-18.100000381469727,-363264.0,-18.0
 h029-namethisgame-s3,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (nibi new-code),NameThisGame-v5,3,ppo_aug_qr_cvar,40000000.0,16384.0,2076.09375,2025.0,34014720.0,2620.0
 h029-montezumarevenge-s2,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (narval new-code),MontezumaRevenge-v5,2,ppo_aug_qr_cvar,40000000.0,70144.0,0.0,0.0,0.0,0.0
+h029-privateeye-s3,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (nibi new-code),PrivateEye-v5,3,ppo_aug_qr_cvar,40000000.0,14720.0,-73.82608795166016,-47.96521759033203,-1086720.0,-207.0
+h029-mspacman-s3,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (nibi new-code),MsPacman-v5,3,ppo_aug_qr_cvar,40000000.0,79104.0,287.152099609375,278.8996887207031,22714880.0,330.0
+h029-doubledunk-s2,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (nibi new-code),DoubleDunk-v5,2,ppo_aug_qr_cvar,40000000.0,20352.0,-18.0125789642334,-18.72955894470215,-366592.0,-14.0
+h035-amidar-s1,h035,python cleanrl/ppo_atari_envpool_cvar_sem.py,pilot (nibi new-code),Amidar-v5,1,ppo_cvar_sem,40000000.0,70016.0,3.7477147579193115,3.3930530548095703,262400.0,0.0
+h035-mspacman-s1,h035,python cleanrl/ppo_atari_envpool_cvar_sem.py,pilot (nibi new-code),MsPacman-v5,1,ppo_cvar_sem,40000000.0,79104.0,272.0388488769531,251.35922241210938,21519360.0,300.0
