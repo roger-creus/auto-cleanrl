@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Phoenix-v5,1,h062,h062-phoenix-s1,dqn_noisy,40000000,36688,327.9415588378906,301.3083190917969,12031520.0,420.0

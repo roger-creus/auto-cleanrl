@@ -5343,3 +5343,73 @@ h047(2), h050(10), h055(7), h056(6), h057(10), h058(8), h059(6), h060(8), h061(1
 7. Process h061/h062/h063 full pilots
 8. INVESTIGATE h051/h056 stale code — need to sync correct scripts and resubmit
 9. When DQN components complete: rank by IQM, start Rainbow-lite combining top components
+
+---
+**[2026-03-19 15:22 UTC]**
+
+## Session 88: Process 5 New Results + Resubmit h051/h056
+
+### Triggered by: h061-alien-s1 (job 10574371, nibi SUCCESS)
+
+### Results Processed: 5 new entries (955→960 rows)
+
+**h059 DQN+PER (1 new, now 10/15):**
+- enduro-s1 (rorqual): q4=19.79 vs PPO=0.0 WIN. vs DQN=19.01 TIE (+4.1%). PER matches DQN on Enduro.
+- h059 at 10/15: 5W/3L/2T vs PPO. IQM=-0.0083. PER roughly neutral vs DQN on most games. PrivateEye +5969% vs DQN remains the standout. 5 still running.
+
+**h060 QR-DQN (1 new, now 6/15):**
+- phoenix-s1 (rorqual): q4=90.89 vs PPO=796.16 LOSS (-88.6%). vs DQN=93.03 TIE (-2.3%). FIRST LOSS for QR-DQN.
+- h060 at 6/15: 3W/1L/2T vs PPO. IQM=+0.0106. Still #2 DQN component after Munchausen. 10 running.
+
+**h061 C51 40M (2 new, now 4/15):**
+- alien-s1 (nibi): q4=322.38 vs PPO=201.96 WIN (+59.6%). Strong C51 improvement on Alien.
+- solaris-s1 (nibi): q4=622.37 vs PPO=2163.56 LOSS (-71.2%). C51 below random (1236) on Solaris.
+- h061 at 4/15: 1W/3L/0T vs PPO. IQM=-0.1419. C51 underperforming QR-DQN so far.
+
+**h062 NoisyNet DQN (1 new, now 3/15):**
+- battlezone-s1 (nibi): q4=2972.91 vs PPO=2050.58 WIN (+45.0%). vs DQN=3109.48 TIE (-4.4%). 
+- h062 at 3/15: 1W/1L/1T vs PPO. Phoenix +224% vs DQN, BattleZone slightly below DQN.
+
+### h056 PPO Wide: ALL STALE (AGAIN)
+Every new h056 CSV (fir amidar, fir phoenix, fir venture, narval phoenix/venture, nibi alien, rorqual spaceinvaders) is bit-for-bit identical to PPO baseline. Cancelled stale h056-solaris-s1 (fir, job 28398203). Only 2 genuine results in bank: mspacman (q4=255.37 LOSS) and namethisgame (q4=2119.84 LOSS). Both losses vs PPO.
+
+### Resubmissions: 18 jobs (10 h051 CReLU + 8 h056 Wide)
+Synced code to all 4 clusters. Submitted across fir/nibi/narval/rorqual, 4h walltime.
+
+h051 CReLU (10 missing games): alien(fir), amidar(nibi), battlezone(narval), breakout(rorqual), doubledunk(fir), enduro(nibi), phoenix(narval), qbert(rorqual), solaris(fir), spaceinvaders(nibi).
+
+h056 Wide (8 missing games not already running): alien(narval), amidar(rorqual), doubledunk(fir), enduro(nibi), phoenix(narval), privateeye(rorqual), solaris(fir), spaceinvaders(nibi).
+
+### DQN COMPONENT STANDINGS (updated):
+| Rank | Component    | Games | IQM dHNS   | W/L/T vs PPO | vs DQN (shared) |
+|------|-------------|-------|------------|--------------|-----------------|
+| 1    | Munchausen  | 5/15  | +0.0152    | 3/0/2        | 2W/1L/2T (5g)   |
+| 2    | QR-DQN      | 6/15  | +0.0106    | 3/1/2        | 1W/0L/5T (6g)   |
+| 3    | DQN base    | 13/15 | +0.0100    | 7/3/3        | ---              |
+| 4    | Double DQN  | 8/15  | +0.0057    | 3/2/3        | 0W/1L/7T (8g)   |
+| 5    | Dueling     | 7/15  | +0.0043    | 2/1/4        | 1W/1L/5T (7g)   |
+| 6    | PER         | 10/15 | -0.0083    | 5/3/2        | 0W/1L/8T (9g)   |
+| 7    | NoisyNet    | 3/15  | -0.0166    | 1/1/1        | 1W/0L/2T (3g)   |
+| 8    | N-step(3)   | 6/15  | -0.0224    | 2/2/2        | 1W/0L/5T (6g)   |
+| 9    | C51 40M     | 4/15  | -0.1419    | 1/3/0        | 0W/1L/1T (2g)   |
+
+KEY INSIGHTS:
+- QR-DQN got its first loss (Phoenix) but still zero DQN-relative losses in 6 shared games.
+- Munchausen holds #1 but only 5 games and mixed vs DQN (2W/1L).
+- C51 underperforming significantly — IQM -0.14, 3 losses in 4 games.
+- PER neutral vs DQN with unique PrivateEye +5969% gain.
+
+### ACTIVE JOBS: ~116 (98 existing + 18 resubmit)
+h047(2), h050(10), h051(10 new), h055(7), h056(5+8=13), h057(10), h058(8), h059(5), h060(10), h061(12), h062(13), h063(15)
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 2 remaining (alien, solaris) — complete 15-game reference
+2. h050 Munchausen: 10 remaining — validate IQM lead with more games
+3. h051 CReLU: 10 new resubmits (~4h) — complete pilot
+4. h055 Double DQN: 7 resubmit games
+5. h056 Wide: 5+8=13 running — complete pilot (2 genuine results both losses)
+6. h057/h058: 10+8 remaining — N-step/Dueling pilots
+7. h059 PER: 5 remaining
+8. h060 QR-DQN: 10 remaining — confirm #2 position
+9. h061/h062/h063: 12+13+15 remaining — C51/NoisyNet/IQN pilots
+10. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
