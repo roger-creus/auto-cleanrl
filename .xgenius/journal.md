@@ -6017,3 +6017,85 @@ h047(1), h050(4+1=5), h051(6+4=10), h055(7), h056(10+3=13), h057(9), h058(8), h0
 8. h061 C51: 4 running — 2 games left for 15/15
 9. h063 IQN: 8 running — 7 games left for 15/15
 10. When DQN components complete: design Rainbow-lite combining NoisyNet + QR-DQN/Dueling + PER
+
+---
+**[2026-03-19 18:23 UTC]**
+
+## Session 97: Process 1 New Result + Delete 5 Stale CSVs + Resubmit 17 Gaps
+
+### Triggered by: h051-doubledunk-s1 (job 57995822, narval SUCCESS)
+
+### Reconcile: 2 disappeared
+- h061-spaceinvaders-s1 (28393337, fir) — ran ~8hrs, no logs/CSV pulled. Resubmitted to rorqual.
+- h055-enduro-s1 (10582492, nibi) — ran ~4.5hrs, no logs/CSV pulled. Resubmitted to narval.
+
+### Stale CSV Cleanup: 5 files deleted from narval
+All PPO-identical (bit-for-bit matching h001 baseline values — same n_episodes, mean_return, q4_return, auc):
+- h051-breakout-s1 (q4=1.365 = h001, n_episodes=224256 = h001)
+- h051-doubledunk-s1 (q4=-18.10 = h001, n_episodes=20480 = h001)
+- h051-qbert-s1 (q4=162.49 = h001, n_episodes=122240 = h001)
+- h056-phoenix-s1 (q4=892.49 = h001, n_episodes=30336 = h001)
+- h000-BattleZone (10M steps, stale test run)
+
+h051/h056 STALE CSV PERSISTENCE: The narval output directory continues to have old PPO CSVs. Every pull brings them back. The already-banked genuine h051 narval results (mspacman q4=341.05, namethisgame q4=1676.88) coexist with stale ones. Root cause: old jobs wrote h051 CSV before code was synced, and those files persist in cluster output dirs.
+
+### Results Processed: 1 new entry (1006→1007 rows)
+
+**h056 PPO Wide (1 new, now 3/15):**
+- venture-s1 (narval): q4=0.0, n_episodes=18304 vs h001 n_episodes=18432. Different episode count confirms genuine ppo_wide run (both score 0 on Venture, but episode timing differs due to wider network). TIE with PPO.
+
+### COVERAGE SUMMARY (banked/15):
+| Hypothesis | Banked | Running | Pending | Resubmitted | Notes |
+|-----------|--------|---------|---------|-------------|-------|
+| h047 DQN  | 14/15  | 0       | 1 (fir) | 0           | Solaris only |
+| h050 Munch| 10/15  | 4       | 2       | 0           | alien,battlezone,enduro,privateeye running; phoenix pending |
+| h051 CReLU| 5/15   | 4       | 0       | 6           | WORST coverage due to stale CSV issues |
+| h055 DblDQ| 8/15   | 6       | 0       | 1 (enduro)  | Good running coverage |
+| h056 Wide | 3/15   | 7       | 0       | 5           | SECOND WORST — stale CSV issues |
+| h057 Nstep| 6/15   | 9       | 0       | 0           | All gaps covered by running |
+| h058 Duel | 7/15   | 8       | 0       | 0           | All gaps covered by running |
+| h059 PER  | 13/15  | 1       | 1       | 2           | breakout+montezumarevenge gaps |
+| h060 QRDQN| 15/15  | 0       | 0       | 0           | COMPLETE |
+| h061 C51  | 13/15  | 3       | 9       | 1           | breakout running; spaceinvaders resubmitted |
+| h062 Noisy| 15/15  | 2       | 0       | 0           | COMPLETE (2 running are stale dupes) |
+| h063 IQN  | 8/15   | 5       | 0       | 2           | breakout+solaris gaps filled |
+
+### Gap Resubmissions: 17 jobs across all 4 clusters
+Distribution: narval(5), fir(5), nibi(4), rorqual(3)
+
+h051 CReLU (6 gaps): alien(narval), amidar(narval), breakout(fir), doubledunk(fir), qbert(nibi), spaceinvaders(rorqual)
+h055 Double DQN (1 gap): enduro(narval)
+h056 Wide (5 gaps): battlezone(narval), doubledunk(fir), montezumarevenge(fir), solaris(nibi), spaceinvaders(rorqual)
+h059 PER (2 gaps): breakout(nibi), montezumarevenge(narval)
+h061 C51 (1 gap): spaceinvaders(rorqual)
+h063 IQN (2 gaps): breakout(fir), solaris(nibi)
+
+### ACTIVE JOBS: ~109 SLURM + 17 resubmit = ~126 total
+fir: 12R+21P+5new, narval: 21R+5new, nibi: 6R+15P+4new, rorqual: 9R+25P+3new
+
+### DQN COMPONENT IQM STANDINGS (unchanged from session 96):
+| Rank | Component | Games | IQM dHNS vs PPO | vs DQN |
+|------|-----------|-------|-----------------|--------|
+| 1 | DQN base | 14/15 | +0.0101 | --- |
+| 2 | Dueling | 7/15 | +0.0012 | -0.0010 |
+| 3 | NoisyNet | 15/15 | -0.0062 | -0.0003 |
+| 4 | QR-DQN | 15/15 | -0.0097 | +0.0006 |
+| 5 | PER | 13/15 | -0.0104 | -0.0001 |
+| 6 | C51 40M | 13/15 | -0.0147 | -0.0010 |
+| 7 | Double DQN | 8/15 | -0.0251 | -0.0013 |
+| 8 | Munchausen | 10/15 | -0.0278 | -0.0024 |
+| 9 | IQN | 8/15 | -0.0280 | +0.0010 |
+| 10 | N-step | 6/15 | -0.0409 | -0.0007 |
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1 pending (Solaris, fir) — MUST complete for 15-game reference
+2. h050 Munchausen: 4R+2P → approaching 15/15
+3. h051 CReLU: 4R+6 resubmit → verify non-PPO genuine results on completion
+4. h055 Double DQN: 6R+1 resubmit → approaching 15/15
+5. h056 Wide: 7R+5 resubmit → should reach 15/15
+6. h057/h058: 9R+8R → all gaps covered, should complete 15/15
+7. h059 PER: 1R+1P+2 resubmit → will complete 15/15
+8. h061 C51: 3R+1 resubmit → will complete 15/15
+9. h063 IQN: 5R+2 resubmit → will reach 15/15
+10. When all DQN components complete: recompute IQM standings, design Rainbow-lite
+11. h051/h056: PERSISTENT stale CSV issue — consider clearing cluster output dirs

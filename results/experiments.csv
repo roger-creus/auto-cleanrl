@@ -1005,3 +1005,4 @@ h062-spaceinvaders-s1,h062,,auto-ingested,SpaceInvaders-v5,1,dqn_noisy,40000000,
 h062-venture-s1,h062,,auto-ingested,Venture-v5,1,dqn_noisy,40000000,19232,2.2462563514709473,3.993344306945801,43200.0,0.0
 h063-montezumarevenge-s1,h063,,auto-ingested,MontezumaRevenge-v5,1,iqn,40000000,165152,0.0,0.0,0.0,0.0
 h063-qbert-s1,h063,,auto-ingested,Qbert-v5,1,iqn,40000000,109200,222.5201416015625,219.3003692626953,24299200.0,150.0
+h056-venture-s1,h056,python cleanrl/ppo_atari_envpool_wide.py --env-id Venture-v5 --seed 1,narval completed. PPO Wide. q4=0.0 vs PPO=0.0 TIE. Both fail Venture completely.,Venture-v5,1,ppo_wide,40000000,18304,0.0,0.0,0.0,0.0

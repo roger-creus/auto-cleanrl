@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+SpaceInvaders-v5,1,h062,h062-spaceinvaders-s1,dqn_noisy,40000000,69232,170.632080078125,171.40628051757812,11813200.0,144.0
