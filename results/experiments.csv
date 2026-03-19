@@ -746,3 +746,9 @@ h034-privateeye-s2,h034,,"curve-derived (rorqual, 14720 eps)",PrivateEye-v5,2,,,
 h034-qbert-s1,h034,,"curve-derived (rorqual, 106496 eps)",Qbert-v5,1,,,,0.0,199.6394,0.0,0.0
 h034-spaceinvaders-s2,h034,,"curve-derived (rorqual, 62208 eps)",SpaceInvaders-v5,2,,,,0.0,191.8313,0.0,0.0
 h034-venture-s3,h034,,"curve-derived (rorqual, 18304 eps)",Venture-v5,3,,,,0.0,0.0,0.0,0.0
+h033-alien-s1,h033,,"new-code CSV (nibi, 60672 eps)",Alien-v5,1,ppo_aug_consist,40000000,60672,193.69,189.6624,11751680.0,100.0
+h033-namethisgame-s1,h033,,"new-code CSV (nibi, 768 eps)",NameThisGame-v5,1,ppo_aug_consist,40000000,768,2275.0,1340.0,1747200.0,1410.0
+h033-venture-s1,h033,,"new-code CSV (rorqual, 17920 eps)",Venture-v5,1,ppo_aug_consist,40000000,17920,0.0,0.0,0.0,0.0
+h033-battlezone-s1,h033,,"new-code CSV (rorqual, 36224 eps)",BattleZone-v5,1,ppo_aug_consist,40000000,36224,2402.83,2858.6572,87040000.0,11000.0
+h033-privateeye-s1,h033,,"new-code CSV (rorqual, 14720 eps)",PrivateEye-v5,1,ppo_aug_consist,40000000,14720,141.43,501.9826,2081792.0,0.0
+h033-montezumarevenge-s1,h033,,"new-code CSV (rorqual, 72960 eps)",MontezumaRevenge-v5,1,ppo_aug_consist,40000000,72960,0.0,0.0,0.0,0.0

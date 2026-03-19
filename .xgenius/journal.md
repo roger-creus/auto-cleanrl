@@ -3205,3 +3205,58 @@ h029(30 3-seed), h034(15 DB-stale), h035(15 pilot), h036(15 pilot NEW), h033(11)
 6. h036 (CVaR+Dueling+SEM): NEW — pilot running
 
 ### NEXT SESSION: Process results for h035, h029 3-seed, h036 as they complete.
+
+---
+**[2026-03-19 00:24 UTC]**
+
+## Session 52: Process h033 New Results (6 Games), Update Standings
+
+### Triggered by: h033-alien-s1 (job 10542806, nibi SUCCESS)
+
+### Results Processed: 6 new entries (now 753 rows)
+New-code CSVs from nibi and rorqual:
+- h033-alien-s1: q4=189.66 (nibi, 60672 eps). vs PPO 202 → -6.1% TIE.
+- h033-namethisgame-s1: q4=1340.0 (nibi, 768 eps). vs PPO 2507 → -46.6% CATASTROPHIC LOSS. HNS=-0.2027.
+- h033-venture-s1: q4=0.0 (rorqual, 17920 eps). TIE.
+- h033-battlezone-s1: q4=2858.66 (rorqual, 36224 eps). vs PPO 2051 → +39.4% WIN. HNS=+0.0232.
+- h033-privateeye-s1: q4=501.98 (rorqual, 14720 eps). vs PPO -117 → massive WIN. HNS=+0.0089.
+- h033-montezumarevenge-s1: q4=0.0 (rorqual, 72960 eps). TIE.
+
+### h033 (DrQ + Consistency Loss) NOW 13/15 Games
+IQM HNS=0.0010 at 13 games. The consistency loss is a mixed bag:
+- STRONG: BattleZone +39% (best among all techniques), PrivateEye +473%, Phoenix +11%
+- CATASTROPHIC: MsPacman -78% (q4=70 vs 319), NameThisGame -47% (q4=1340 vs 2507)
+- Amidar q4=34 is old-code (14x inflation) — unreliable
+- 2 games still running on nibi: DoubleDunk, Solaris
+- Overall assessment: consistency loss helps some games but catastrophically hurts MsPacman. Not viable for full 3-seed.
+
+### Reconcile: 82 active jobs, 0 completions, 0 disappeared
+All jobs still running. No new data from other hypotheses.
+
+### IQM HNS STANDINGS (updated)
+1. h034 (CVaR+Dueling+DrQ): 0.0082 (15g, 44 seeds) ★★ LEADER
+2. h029 (CVaR+QR+DrQ): 0.0065 (15g pilot). 3-seed running (30 jobs)
+3. h030 (SEM): 0.0044 (11g) — 5 running
+4. h020 (Dueling): 0.0038 (15g, COMPLETE)
+5. h008 (PQN LSTM): 0.0036 (15g, COMPLETE)
+6. h031 (SPR): 0.0015 (9g) — CLOSED
+7. h033 (DrQ+Consistency): 0.0010 (13g) — 2 running
+PPO baseline: 0.0002
+
+### ACTIVE JOBS: 82 running
+- h029 3-seed: 30 running (nibi/narval/fir/rorqual)
+- h034 pilot: 15 running (all clusters)
+- h035 pilot: 15 running (CVaR+SEM+DrQ)
+- h036 pilot: 15 running (CVaR+Dueling+SEM — triple combination)
+- h030: 5 running (alien, mspacman, montezumarevenge, 2x enduro)
+- h033: 2 running (doubledunk, solaris)
+
+### NEXT SESSION TODO
+1. Process h029 3-seed results — CRITICAL validation (30 jobs, ~3-4h remaining)
+2. Process h034/h035/h036 pilot results when they complete (15 each, ~3-4h remaining)
+3. Process h030 remaining 4 games (alien, enduro, montezumarevenge, mspacman)
+4. Process h033 final 2 games (doubledunk, solaris)
+5. If h034 confirmed at 3-seed level: begin Phase 3 (ablation studies)
+6. If h035 or h036 beats h034: submit 3-seed for the winner
+7. Key question: does the triple combination (h036 CVaR+Dueling+SEM) outperform h034 (CVaR+Dueling)?
+

@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Qbert-v5,1,h033,h033-qbert-s1,ppo_aug_consist,40000000,123776,161.8924560546875,157.08377075195312,20038400.0,75.0
+Solaris-v5,1,h032,h032-solaris-s1,ppo_noisylinear,40000000,6016,2608.5107421875,3047.65966796875,15692800.0,2960.0

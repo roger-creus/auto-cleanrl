@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Qbert-v5,1,h033,h033-qbert-s1,ppo_aug_consist,40000000,123776,161.8924560546875,157.08377075195312,20038400.0,75.0
+NameThisGame-v5,1,h033,h033-namethisgame-s1,ppo_aug_consist,40000000,768,2275.0,1340.0,1747200.0,1410.0
