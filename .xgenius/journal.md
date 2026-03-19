@@ -5413,3 +5413,65 @@ h047(2), h050(10), h051(10 new), h055(7), h056(5+8=13), h057(10), h058(8), h059(
 8. h060 QR-DQN: 10 remaining — confirm #2 position
 9. h061/h062/h063: 12+13+15 remaining — C51/NoisyNet/IQN pilots
 10. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
+
+---
+**[2026-03-19 15:36 UTC]**
+
+## Session 89: Process 5 New Results (h060 DoubleDunk/Enduro, h061 Amidar/Phoenix, h062 DoubleDunk) + Resubmit 5 Gaps
+
+### Triggered by: h062-doubledunk-s1 (job 28394131, fir SUCCESS)
+
+### Results Processed: 5 new entries (960→965 rows)
+
+**h060 QR-DQN (2 new, now 8/15):**
+- doubledunk-s1 (fir): q4=-23.92 vs PPO=-17.83 LOSS. vs DQN=-24.00 TIE (+0.3%). All DQN variants terrible at DoubleDunk.
+- enduro-s1 (fir): q4=21.03 vs PPO=0.0 WIN. vs DQN=19.01 WIN (+10.6%). First clear QR-DQN improvement over vanilla DQN!
+- h060 at 8/15: 5W/2L/1T vs PPO. IQM dHNS=+0.0106 (#2 component). ZERO losses vs DQN (2W/0L/6T). 7 games still running.
+
+**h061 C51 40M (2 new, now 6/15):**
+- amidar-s1 (fir): q4=36.61 vs PPO=1.35 WIN (+2612%). vs DQN=34.30 WIN (+6.7%). C51 slightly better than DQN on Amidar.
+- phoenix-s1 (fir): q4=96.22 vs PPO=796.16 LOSS (-87.9%). vs DQN=93.03 TIE (+3.4%). All DQN variants bad at Phoenix.
+- h061 at 6/15: 2W/4L/0T vs PPO. IQM dHNS=-0.0936. C51 is weakest distributional method — 4 losses vs PPO in 6 games.
+
+**h062 NoisyNet DQN (1 new, now 4/15):**
+- doubledunk-s1 (fir): q4=-24.90 vs PPO=-17.83 LOSS. vs DQN=-24.00 LOSS (-3.7%). NoisyNet slightly WORSE than vanilla DQN on DoubleDunk.
+- h062 at 4/15: 1W/2L/1T vs PPO. IQM dHNS=-0.0382. Phoenix +224% vs DQN is the standout.
+
+### DQN COMPONENT IQM STANDINGS (proper interquartile mean):
+| Rank | Component    | Games | IQM dHNS   | vs PPO     | vs DQN     |
+|------|-------------|-------|------------|------------|------------|
+| 1    | Munchausen  | 5/15  | +0.0152    | 3W/1L/1T   | 2W/2L/1T   |
+| 2    | QR-DQN      | 8/15  | +0.0106    | 5W/2L/1T   | 2W/0L/6T   |
+| 3    | DQN base    | 13/15 | +0.0100    | 9W/3L/1T   | ---        |
+| 4    | Double DQN  | 8/15  | +0.0057    | 5W/3L/0T   | 0W/2L/6T   |
+| 5    | Dueling     | 7/15  | +0.0043    | 3W/2L/2T   | 1W/2L/4T   |
+| 6    | PER         | 10/15 | -0.0083    | 7W/3L/0T   | 1W/1L/7T   |
+| 7    | N-step(3)   | 6/15  | -0.0224    | 3W/2L/1T   | 1W/1L/4T   |
+| 8    | NoisyNet    | 4/15  | -0.0382    | 1W/2L/1T   | 1W/0L/3T   |
+| 9    | C51 40M     | 6/15  | -0.0936    | 2W/4L/0T   | 0W/0L/4T   |
+
+### Gap Resubmissions: 5 jobs
+- h059-battlezone-s1 (nibi), h059-qbert-s1 (narval) — PER complete pilot
+- h060-solaris-s1 (fir) — QR-DQN complete pilot
+- h061-battlezone-s1 (rorqual), h061-venture-s1 (nibi) — C51 complete pilot
+
+### KEY INSIGHTS:
+1. QR-DQN Enduro is FIRST clear win vs DQN baseline (+10.6%) — distributional RL benefits Enduro's long-horizon structure
+2. C51 underperforming compared to QR-DQN — C51 has 4 losses in 6 games vs PPO, while QR-DQN has only 2 losses in 8
+3. NoisyNet slightly hurts DoubleDunk vs vanilla DQN — exploration noise counterproductive here
+4. DoubleDunk remains universally terrible for ALL DQN variants (HNS ~ -2.4 each)
+
+### ACTIVE JOBS: ~107 total (102 existing + 5 gap resubmits)
+h047(2, ~2h left), h050(10, ~5h), h051(5 running+5 pending), h055(7, ~6h), h056(9 running+4 pending), h057(10, ~7h), h058(8, ~7h), h059(3+2=5, ~2h+8h), h060(6+1=7, ~2h+8h), h061(7+2=9, ~3h+8h), h062(11, ~3h), h063(15, ~5h)
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 2 remaining (Alien, Solaris) — ~2h — complete 15-game reference
+2. h059 PER: 3+2 gap resubmits — ~2h + 8h
+3. h060 QR-DQN: 6+1 gap resubmit — ~2h + 8h — confirm #2 position
+4. h061 C51: 7+2 gap resubmits — ~3h + 8h
+5. h062 NoisyNet: 11 remaining — ~3h
+6. h050 Munchausen: 10 remaining — ~5h — validate IQM lead
+7. h051 CReLU / h056 Wide: recently started — ~4h
+8. h055/h057/h058: 7+10+8 remaining — ~6-7h
+9. h063 IQN: 15 games — ~5h — most sophisticated distributional method
+10. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4

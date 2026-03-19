@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20,n_quantiles,huber_kappa
+Enduro-v5,1,h060,h060-enduro-s1,qrdqn,40000000,12016,17.91211700439453,21.026630401611328,215232.0,37.20000076293945,200,1.0

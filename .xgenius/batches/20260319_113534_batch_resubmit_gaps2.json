@@ -1,0 +1,52 @@
+[
+  {
+    "experiment_id": "h059-battlezone-s1",
+    "hypothesis_id": "h059",
+    "cluster": "nibi",
+    "command": "python cleanrl/dqn_atari_envpool_per.py --env-id BattleZone-v5 --seed 1",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "08:00:00"
+  },
+  {
+    "experiment_id": "h059-qbert-s1",
+    "hypothesis_id": "h059",
+    "cluster": "narval",
+    "command": "python cleanrl/dqn_atari_envpool_per.py --env-id Qbert-v5 --seed 1",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "08:00:00"
+  },
+  {
+    "experiment_id": "h060-solaris-s1",
+    "hypothesis_id": "h060",
+    "cluster": "fir",
+    "command": "python cleanrl/dqn_atari_envpool_qrdqn.py --env-id Solaris-v5 --seed 1",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "08:00:00"
+  },
+  {
+    "experiment_id": "h061-battlezone-s1",
+    "hypothesis_id": "h061",
+    "cluster": "rorqual",
+    "command": "python cleanrl/dqn_atari_envpool_c51.py --env-id BattleZone-v5 --seed 1",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "experiment_id": "h061-venture-s1",
+    "hypothesis_id": "h061",
+    "cluster": "nibi",
+    "command": "python cleanrl/dqn_atari_envpool_c51.py --env-id Venture-v5 --seed 1",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  }
+]
