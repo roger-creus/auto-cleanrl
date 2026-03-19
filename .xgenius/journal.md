@@ -3362,3 +3362,51 @@ PPO baseline: 0.0002 (15g)
 5. If h035 or h036 beats h034 at 15/15 → submit 3-seed for winner
 6. If h029 3-seed validates → definitive novel contribution
 7. Phase 3 planning: ablation studies once all pilots complete
+
+---
+**[2026-03-19 01:31 UTC]**
+
+## Session 55: Process h030-enduro-s1, h030-montezumarevenge-s1 — h030 at 14/15
+
+### Triggered by: h030-enduro-s1 (job 28334773, fir SUCCESS)
+
+### Results Processed: 2 new entries (now 763 rows)
+- h030-enduro-s1: new-code CSV (fir, 11904 eps). q4=0.0. TIE with PPO baseline.
+- h030-montezumarevenge-s1: new-code CSV (nibi, 69504 eps). q4=0.0. TIE with PPO baseline.
+
+### h030 (SEM) at 14/15 games: absolute IQM HNS=0.0009
+Essentially at baseline. SEM alone provides minimal benefit. Only alien-s1 remaining (~1.1h on rorqual).
+Per-game: 4 wins, 6 ties, 4 losses. BattleZone (+0.0114 HNS) is the only notable win.
+
+### Cancelled duplicate: h030-enduro-s1 on nibi (job 10549793) — already have fir result.
+
+### IQM HNS STANDINGS (absolute, consistent with rliable standard):
+1. h034 (CVaR+Duel+DrQ): 0.0082 (15g, 44 seeds) ** LEADER
+2. h029 (CVaR+QR+DrQ): 0.0065 (15g pilot)
+3. h035 (CVaR+SEM+DrQ): 0.0311 (3g UNRELIABLE)
+4. h036 (CVaR+Duel+SEM): 0.0284 (3g UNRELIABLE)
+5. h020 (Dueling): 0.0038 (15g, 3-seed)
+6. h008 (PQN LSTM): 0.0036 (15g)
+7. h030 (SEM): 0.0009 (14g) — near baseline
+8. h001 (PPO baseline): 0.0002 (15g)
+
+### 76 ACTIVE JOBS (after 1 cancellation)
+- h029 3-seed: 30 jobs (~2.8h remaining). CRITICAL definitive validation.
+- h034 seed 1 resubmit: 15 jobs (~2.8h remaining). New-code CSVs to replace curve-derived data.
+- h035 pilot: 15 jobs (~2.8h remaining). 3/15 games done. CRITICAL for CVaR+SEM evaluation.
+- h036 pilot: 15 jobs (~3.4h remaining). 3/15 games done. CRITICAL for triple combo evaluation.
+- h030 alien-s1: 1 job (~1.1h remaining). Final h030 pilot game.
+
+### KEY INSIGHT: SEM alone (h030) is weak but may shine in combinations
+h030 IQM=0.0009 vs h035 early IQM=0.0311 (CVaR+SEM) and h036 early IQM=0.0284 (CVaR+Duel+SEM).
+SEM might provide structured representations that help CVaR advantage estimation work better.
+This is similar to how DrQ alone (h012 IQM=0.0006) was weak but CVaR+DrQ (h029 IQM=0.0065) was strong.
+
+### NEXT SESSION TODO
+1. Process h029 3-seed results — CRITICAL validation (30 jobs, ~3h)
+2. Process h035 pilot results — compare CVaR+SEM vs h029 CVaR+QR (15 jobs, ~3h)
+3. Process h036 pilot results — compare triple combo vs h034 CVaR+Duel (15 jobs, ~3.5h)
+4. Process h034 new-code CSVs — replace curve-derived data (15 jobs, ~3h)
+5. Process h030 alien-s1 — final game for h030 pilot
+6. If h035 or h036 > h034 at full pilot → submit 3-seed immediately
+7. Begin considering Phase 3 (ablation, paper narrative)

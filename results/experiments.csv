@@ -758,3 +758,5 @@ h036-breakout-s1,h036,,"curve-derived q4 (narval, 153600 eps)",Breakout-v5,1,ppo
 h036-qbert-s1,h036,,"curve-derived q4 (rorqual, 128640 eps)",Qbert-v5,1,ppo_cvar_duel_sem,40000000,128640,261.97,279.28,0,350.0
 h033-doubledunk-s1,h033,,"new-code CSV (nibi, 20480 eps). DoubleDunk q4=-18.0. vs PPO baseline -18.1 → TIE.",DoubleDunk-v5,1,ppo_aug_consist,40000000,20480,-17.64,-18.0,-361216.0,-16.0
 h030-mspacman-s1,h030,,"new-code CSV (nibi, 80768 eps). MsPacman q4=273.84. vs PPO baseline ~319 → -14% LOSS.",MsPacman-v5,1,ppo_sem,40000000,80768,272.03,273.84,21971200.0,190.0
+h030-enduro-s1,h030,,"new-code CSV (fir, 11904 eps). Enduro q4=0.0. TIE with PPO baseline (also 0.0).",Enduro-v5,1,ppo_sem,40000000,11904,0.0,0.0,0.0,0.0
+h030-montezumarevenge-s1,h030,,"new-code CSV (nibi, 69504 eps). MontezumaRevenge q4=0.0. TIE with PPO baseline.",MontezumaRevenge-v5,1,ppo_sem,40000000,69504,0.37,0.0,25600.0,0.0

@@ -28,7 +28,7 @@ h026,PQN + NaP + LSTM,Combine LSTM (h008) + NaP (h004). NaP excludes LSTM params
 h027,,,closed,IQM HNS=-0.0005 (6g). Below baseline. Breakout curve-derived q4=0.56 added. Closed — DrQ+S&P combination fails.
 h028,PPO + DrQ Augmentation + Quantile Regression Value,Combine DrQ + QR-Value without CVaR,closed,IQM HNS=-0.0034 (9g). BELOW baseline. Negative synergy — confirms CVaR is the key ingredient in h029. Closed.
 h029,PPO + DrQ + QR-Value + CVaR Advantage,Novel CVaR advantage estimation with quantile regression value function and DrQ augmentation,promising,★ PILOT COMPLETE 15/15 ★ IQM HNS=0.0045 (15g pilot). 3-seed eval running (30 jobs). CVaR is the key novel contribution.
-h030,PPO + Simplicial Embeddings (SEM),Product-of-softmax representations for structured sparse features,promising,"IQM HNS=0.0012 (12g). MsPacman q4=274 (-14% vs PPO, LOSS). 3 games remaining (alien, enduro, montezumarevenge). Component of h035/h036 combinations."
+h030,PPO + Simplicial Embeddings (SEM),Product-of-softmax representations for structured sparse features,promising,"IQM HNS=0.0009 (14g). Enduro TIE, MontezumaRevenge TIE. 1 game remaining (alien). Near baseline — SEM alone doesn't help much. Component of h035/h036 combinations."
 h031,,,closed,"IQM HNS=0.0004 (9g, 10 seeds). Near baseline. Zero losses but gains too modest for further investment. Closed."
 h032,,,closed,IQM HNS=-0.0011 (11g). BELOW baseline. Phoenix catastrophic (-0.106 HNS). Closed.
 h033,PPO + DrQ + Augmentation Consistency Loss,Add explicit MSE consistency loss between clean (detached) and augmented encoder features,closed,"IQM HNS=0.0010 (15/15g pilot COMPLETE). DoubleDunk q4=-18.0 (TIE). Too inconsistent: Solaris+16%, BattleZone+39%, PrivateEye+473% vs MsPacman-78%, NameThisGame-47%. Closed."
