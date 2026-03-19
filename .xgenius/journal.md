@@ -5272,3 +5272,74 @@ h047(4), h050(10), h055(7), h056(~13 fir/nibi + 5 resubmit), h057(10), h058(8), 
 7. Process h060 QR-DQN remaining 11 games — zero losses, IQM #2
 8. Process h061/h062/h063 full 15-game pilots
 9. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
+
+---
+**[2026-03-19 15:06 UTC]**
+
+## Session 87: Process 11 New Results (h047 DoubleDunk/Enduro, h059 5 games, h060 Amidar, h061 2 games, h062 MontezumaRevenge)
+
+### Triggered by: h059-spaceinvaders-s1 (rorqual), h061-namethisgame-s1 (nibi), h047-doubledunk-s1 (fir)
+
+### Results Processed: 11 new entries (944→955 rows)
+
+**h047 DQN baseline (2 new, now 13/15):**
+- doubledunk-s1 (fir): q4=-24.00 vs PPO=-17.83 LOSS (HNS -1.99). DQN terrible at DoubleDunk.
+- enduro-s1 (fir): q4=19.01 vs PPO=0.0 WIN. DQN learns Enduro, PPO does not.
+- h047 at 13/15: 7W/3L/3T, IQM dHNS=+0.0082. Missing: Alien, Solaris (2 running).
+
+**h059 DQN+PER (5 new, now 9/15):**
+- spaceinvaders-s1 (rorqual): q4=263.41 vs PPO=147.36 WIN (+79%). vs DQN=252.93 TIE (+4.1%).
+- amidar-s1 (fir): q4=32.99 vs PPO=1.35 WIN (+2344%). vs DQN=34.30 TIE (-3.8%).
+- phoenix-s1 (fir): q4=92.70 vs PPO=796.16 LOSS (-88%). vs DQN=93.03 TIE.
+- venture-s1 (fir): q4=1.43 vs PPO=0.0 TIE. vs DQN=3.29 LOSS (-57%).
+- doubledunk-s1 (rorqual): q4=-23.95 vs PPO=-17.83 LOSS. vs DQN=-24.00 TIE.
+- h059 at 9/15: 4W/3L/2T vs PPO. IQM=-0.0158. PER is roughly neutral vs DQN baseline on most games. Standout: PrivateEye +5969% vs DQN (from session 85). 6 still running.
+
+**h060 QR-DQN (1 new, now 5/15):**
+- amidar-s1 (rorqual): q4=31.89 vs PPO=1.35 WIN (+2262%). vs DQN=34.30 TIE (-7%).
+- h060 at 5/15: 3W/0L/2T vs PPO — STILL ZERO LOSSES. IQM=+0.0140. 8 still running.
+
+**h061 C51-40M (2 new, now 2/15):**
+- doubledunk-s1 (nibi): q4=-23.95 vs PPO=-17.83 LOSS. All DQN variants bad at DoubleDunk.
+- namethisgame-s1 (nibi): q4=1673.13 vs PPO=2506.85 LOSS (-33%). vs DQN=1776.81 LOSS (-6%).
+- h061 at 2/15: 0W/2L/0T. Early data concerning but only 2 games. 12 still running.
+
+**h062 NoisyNet (1 new, now 2/15):**
+- montezumarevenge-s1 (nibi): q4=0.0. TIE. 13 still running.
+
+### h051 CReLU + h056 Wide: STALE CODE CONFIRMED
+Found 14 new h051 CSVs and 8 new h056 CSVs across fir/nibi/narval/rorqual. ALL match each other bit-for-bit AND match specific PPO baseline seed values:
+- h051-amidar-s1 q4=2.039 = h056-amidar-s1 = PPO amidar seed value
+- h051-phoenix-s1 q4=892.49 = h056-phoenix-s1 = PPO phoenix seed value
+- h051-alien-s1 q4=207.63 = h056-alien-s1 = PPO alien seed value
+- h051-battlezone-s1 q4=2364.31 = PPO battlezone seed value
+These are OLD runs that executed vanilla PPO code before CReLU/Wide scripts were synced. Discarded all. Need to sync correct code and resubmit.
+
+### DQN COMPONENT STANDINGS (updated):
+| Rank | Component    | Games | IQM dHNS   | W/L/T vs PPO | vs DQN       |
+|------|-------------|-------|------------|--------------|--------------|
+| 1    | Munchausen  | 5/15  | +0.0150    | 3/0/2        | 2W/1L/2T     |
+| 2    | QR-DQN      | 5/15  | +0.0140    | 3/0/2        | 1W/0L/4T     |
+| 3    | DQN base    | 13/15 | +0.0082    | 7/3/3        | ---          |
+| 4    | Dueling     | 7/15  | +0.0044    | 2/1/4        | 1W/1L/5T     |
+| 5    | Double DQN  | 8/15  | +0.0032    | 3/2/3        | 1W/1L/6T     |
+| 6    | PER         | 9/15  | -0.0158    | 4/3/2        | 2W/1L/5T     |
+| 7    | N-step(3)   | 6/15  | -0.0223    | 2/2/2        | 1W/0L/5T     |
+| 8    | NoisyNet    | 2/15  | -0.0382    | 0/1/1        | 1W/0L/1T     |
+| 9    | C51-40M     | 2/15  | -1.2195    | 0/2/0        | 1W/1L/0T     |
+
+KEY INSIGHT: DoubleDunk game crushes ALL DQN variant IQMs (HNS ~-1.97 each). This single game dominates the average. QR-DQN and Munchausen haven't hit DoubleDunk yet — their IQMs will likely drop when they do.
+
+### ACTIVE JOBS: 97 running
+h047(2), h050(10), h055(7), h056(6), h057(10), h058(8), h059(6), h060(8), h061(12), h062(13), h063(15)
+
+### NEXT SESSION TODO:
+1. Process remaining h047 (Alien, Solaris) — complete DQN baseline
+2. Process h050 Munchausen 10 games — validate IQM lead
+3. Process h055 Double DQN 7 resubmit games
+4. Process h057/h058 resubmit results (10+8)
+5. Process h059 PER 6 remaining games
+6. Process h060 QR-DQN 8 remaining games — zero losses streak?
+7. Process h061/h062/h063 full pilots
+8. INVESTIGATE h051/h056 stale code — need to sync correct scripts and resubmit
+9. When DQN components complete: rank by IQM, start Rainbow-lite combining top components
