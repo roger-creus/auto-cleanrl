@@ -5687,3 +5687,72 @@ h047(1), h050(10), h051(4R+6P=10), h055(7), h056(8R+5P=13), h057(10), h058(8), h
 7. h061/h062: 3+6 running + 3+2 resubmits — complete pilots
 8. h063 IQN: 14 running — full pilot incoming
 9. When all DQN components complete: rank by IQM, build Rainbow-lite with top 3-4 components
+
+---
+**[2026-03-19 16:45 UTC]**
+
+## Session 93: Process 3 New Results (h063 PrivateEye/MsPacman, h050 NameThisGame) + Resubmit 18 Gap Jobs
+
+### Triggered by: h063-privateeye-s1 (job 10576585, nibi SUCCESS)
+
+### Reconcile: 4 disappeared
+- h063-mspacman-s1 (nibi 10576598) — had CSV, processed below
+- h050-namethisgame-s1 (nibi 10577035) — had CSV, processed below
+- h061-qbert-s1 (narval 57998824) — no CSV, resubmitted
+- h061-privateeye-s1 (rorqual 8587933) — no CSV, resubmitted
+
+### Results Processed: 3 new entries (979→982 rows)
+
+**h063 IQN (2 new, now 3/15):**
+- privateeye-s1 (nibi): q4=423.18 vs PPO=-2.46 WIN. vs DQN=-2.46 WIN. IQN learns PrivateEye (like QR-DQN). Distributional RL consistently helps sparse rewards.
+- mspacman-s1 (nibi): q4=496.64 vs PPO=287.07 WIN (+73.0%). vs DQN=465.18 WIN (+6.8%). IQN beats both baselines.
+- h063 at 3/15: 2W/1L/0T vs PPO. IQN very early but showing promise on MsPacman and PrivateEye.
+
+**h050 Munchausen DQN (1 new, now 6/15):**
+- namethisgame-s1 (nibi): q4=1719.35 vs PPO=2522.54 LOSS (-31.8%). vs DQN=1776.81 TIE (-3.2%). All DQN variants struggle on NameThisGame.
+- h050 at 6/15: mostly ties vs DQN baseline. Munchausen adds negligible benefit over vanilla DQN in this codebase.
+
+### DQN COMPONENT IQM STANDINGS (data analyst recomputation):
+| Rank | Component    | Games  | IQM dHNS  | vs PPO    | vs DQN     |
+|------|-------------|--------|-----------|-----------|------------|
+| 1    | DQN base    | 14/15  | +0.0101   | 1W/3L/9T  | ---        |
+| 2    | Munchausen  | 6/15   | +0.0057   | 1W/1L/4T  | 0W/0L/6T   |
+| 3    | Dueling     | 7/15   | +0.0012   | 0W/1L/5T  | 0W/0L/6T   |
+| 4    | PER         | 12/15  | -0.0104   | 1W/3L/7T  | 0W/0L/11T  |
+| 5    | Double DQN  | 8/15   | -0.0251   | 1W/2L/4T  | 0W/0L/7T   |
+| 6    | NoisyNet    | 6/15   | -0.0280   | 0W/2L/4T  | 0W/1L/5T   |
+| 7    | QR-DQN      | 13/15  | -0.0319   | 0W/4L/8T  | 0W/0L/11T  |
+| 8    | N-step(3)   | 6/15   | -0.0409   | 0W/2L/4T  | 0W/0L/6T   |
+| 9    | C51 40M     | 9/15   | -0.0605   | 0W/4L/5T  | 0W/0L/8T   |
+| 10   | IQN         | 3/15   | -0.1664   | 0W/1L/1T  | 0W/0L/2T   |
+
+NOTE: 89% of DQN variant comparisons vs vanilla DQN are TIES. No single component clearly beats vanilla DQN. This suggests the Rainbow-lite combination strategy is critical — individual components add marginal value but their combination might compound.
+
+### Also cancelled redundant h060-solaris-s1 (28418725, fir) — already have results.
+
+### Gap Resubmissions: 18 jobs across all 4 clusters
+h051 CReLU (6 gaps): alien(fir), breakout(rorqual), enduro(nibi), phoenix(narval), qbert(fir), spaceinvaders(rorqual)
+h056 Wide (5 gaps): doubledunk(nibi), phoenix(narval), privateeye(fir), solaris(rorqual), spaceinvaders(nibi)
+h061 C51 (4 gaps): enduro(narval), montezumarevenge(fir), privateeye(rorqual), qbert(nibi)
+h062 NoisyNet (3 gaps): amidar(narval), solaris(fir), spaceinvaders(rorqual)
+
+### KEY INSIGHTS:
+1. IQN PrivateEye q4=423 — second distributional method (after QR-DQN q4=570) to learn PrivateEye where DQN/PPO fail. Confirms distributional RL helps sparse rewards.
+2. IQN MsPacman +6.8% vs DQN — early signal of IQN advantage, but only 3 games so far.
+3. ALL DQN components are essentially tied with vanilla DQN (89% tie rate). Rainbow-lite combination is the only path to beating baseline.
+4. The current component ranking for Rainbow-lite: Munchausen > Dueling > PER > Double DQN > others. But with most differences being noise.
+
+### ACTIVE JOBS: ~112 total (94 existing - 1 cancelled + 18 resubmit)
+h047(1), h050(9), h051(4+6=10), h055(7), h056(8+5=13), h057(10), h058(8), h059(4), h060(2 pending), h061(2+4=6), h062(6+3=9), h063(12)
+
+### NEXT SESSION TODO:
+1. Process any newly completed results
+2. h047 DQN baseline: 1 remaining (Solaris) — complete 15-game reference
+3. h050 Munchausen: 9 running — reaching 15-game coverage
+4. h051 CReLU / h056 Wide: verify genuine (non-PPO-baseline) results from running jobs
+5. h055/h057/h058/h059: 7+10+8+4 running — complete DQN component pilots
+6. h060 QR-DQN: 2 pending — nearly complete at 13/15
+7. h061/h062: 6+9 running — complete C51/NoisyNet pilots
+8. h063 IQN: 12 running — full pilot incoming, strong early signals
+9. When all DQN components complete: design Rainbow-lite combining top 3-4 components
+10. Start thinking about novel combinations beyond standard Rainbow

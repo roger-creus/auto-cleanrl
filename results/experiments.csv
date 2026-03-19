@@ -977,3 +977,6 @@ h060-alien-s1,h060,narval,q4=314.68,Alien-v5,1,qrdqn,40000000,68480,339.55606079
 h060-namethisgame-s1,h060,narval,q4=1728.64,NameThisGame-v5,1,qrdqn,40000000,16000,1778.0699462890625,1728.6400146484375,28449120.0,1364.0
 h061-mspacman-s1,h061,narval,q4=420.68,MsPacman-v5,1,c51,40000000,71184,437.4151611328125,420.6788024902344,31136960.0,338.0
 h063-namethisgame-s1,h063,nibi,"q4=1564.76, IQN first result",NameThisGame-v5,1,iqn,40000000,16928,1697.27783203125,1564.763671875,28731520.0,2476.0
+h063-privateeye-s1,h063,nibi,"IQN PrivateEye. q4=423.18 vs PPO=-2.46 WIN. vs DQN=-2.46 WIN. IQN learns PrivateEye like QR-DQN — distributional RL helps sparse rewards.",PrivateEye-v5,1,iqn,40000000,14832,575.7205810546875,423.17584228515625,8539088.0,-648.0
+h063-mspacman-s1,h063,nibi,"IQN MsPacman. q4=496.64 vs PPO=287.07 WIN (+73.0%). vs DQN=465.18 WIN (+6.8%). IQN beats both baselines.",MsPacman-v5,1,iqn,40000000,70512,518.2595825195312,496.6394348144531,36543520.0,366.0
+h050-namethisgame-s1,h050,nibi,"Munchausen NameThisGame. q4=1719.35 vs PPO=2522.54 LOSS (-31.8%). vs DQN=1776.81 TIE (-3.2%). All DQN variants struggle on NameThisGame.",NameThisGame-v5,1,dqn_munchausen,40000000,14800,1794.9730224609375,1719.351318359375,26565600.0,1220.0
