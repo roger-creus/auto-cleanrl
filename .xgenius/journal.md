@@ -5163,3 +5163,66 @@ h047(6), h050(10), h055(7), h056(15), h057(1+9=10), h058(8), h059(14), h060(11),
 5. h055/h057/h058 resubmits in ~7-8h
 6. h063 IQN in ~6h — most sophisticated distributional method
 7. When all DQN components complete: build comprehensive comparison table, identify top 3-4 for Rainbow-lite
+
+---
+**[2026-03-19 14:32 UTC]**
+
+## Session 85: Process 5 New Results (h047 MsPacman/NameThisGame, h059 MsPacman/PrivateEye, h062 Phoenix)
+
+### Triggered by: h047-mspacman-s1 (rorqual), h047-namethisgame-s1 (rorqual), h056-mspacman-s1 (nibi)
+
+### Results Processed: 5 new entries (937→942 rows)
+
+**h047 DQN baseline (2 new, now 11/15):**
+- mspacman-s1 (rorqual): q4=465.18 vs PPO=287.07 (+62% WIN). DQN excels at MsPacman.
+- namethisgame-s1 (rorqual): q4=1776.81 vs PPO=2522.54 (-30% LOSS). Below random (2292)! DQN struggles on NameThisGame.
+- h047 at 11/15: 6W/2L/3T, IQM dHNS=-0.0087. Still waiting: alien, doubledunk, enduro, solaris (~3h remaining).
+
+**h059 DQN+PER (2 new, now 3/15):**
+- mspacman-s1 (nibi): q4=450.58 vs PPO=287.07 (+57% WIN). vs DQN=465.18 TIE (-3%).
+- privateeye-s1 (nibi): q4=144.39 vs DQN=-2.46 HUGE WIN (+5969%). PER is dramatically better on PrivateEye.
+- h059 at 3/15: 1W/1L/1T vs PPO. PER shows strong PrivateEye improvement. 11 still running.
+
+**h062 NoisyNet DQN (1 new, now 1/15):**
+- phoenix-s1 (nibi): q4=301.31 vs PPO=892.49 (-66% LOSS). vs DQN=93.03 (+224% WIN).
+- NoisyNet massively improves DQN on Phoenix but still way below PPO. Too early to judge overall.
+
+**h056 PPO Wide: narval phoenix/venture CSVs are STALE (5th occurrence). nibi mspacman is duplicate of existing fir entry. No new h056 entries added.**
+
+### DQN COMPONENT vs DQN BASELINE HEAD-TO-HEAD (updated):
+| Component    | Shared | W/L/T vs DQN | Key findings               |
+|-------------|--------|--------------|----------------------------|
+| QR-DQN      | 4g     | 1W/0L/3T     | BattleZone +19%, zero loss |
+| NoisyNet    | 1g     | 1W/0L/0T     | Phoenix +224%, too early   |
+| PER         | 3g     | 1W/0L/2T     | PrivateEye +5969%          |
+| N-step(3)   | 6g     | 1W/1L/4T     | BattleZone +25%, Venture -56% |
+| Munchausen  | 5g     | 2W/2L/1T     | Mixed: SpaceInv/Break WIN, MsPac/Qbert LOSS |
+| Dueling     | 7g     | 1W/2L/4T     | Qbert -33%, PrivateEye catastrophic |
+| Double DQN  | 8g     | 0W/2L/6T     | No benefit at 40M scale   |
+
+### EARLY RAINBOW-LITE CANDIDATES (zero-loss components vs DQN):
+1. **QR-DQN** — distributional value, consistent improvement
+2. **PER** — prioritized replay, massive PrivateEye gain
+3. **NoisyNet** — exploration boost, Phoenix +224%
+4. **N-step(3)** — BattleZone strong but Venture regression
+
+### ACTIVE JOBS: 119 running
+h047(4, ~3h left), h050(10, ~6h), h055(7, ~7h), h056(14, ~1.5h), h057(10, ~8h), h058(8, ~8h), h059(11, ~3h), h060(11, ~3h), h061(15, ~4h), h062(14, ~4h), h063(15, ~6h)
+
+### EXPECTED COMPLETION TIMELINE:
+- h056 PPO Wide: ~1.5h (14 running, 4h walltime, ~2.5h elapsed)
+- h047/h059/h060: ~3h (alien/doubledunk/enduro/solaris + many DQN variant games)
+- h061/h062: ~4h (C51-40M + NoisyNet full pilots)
+- h050: ~6h (Munchausen DQN resubmit)
+- h063: ~6h (IQN full pilot)
+- h055/h057/h058: ~7-8h (DDQN/N-step/Dueling resubmits)
+
+### NEXT SESSION TODO:
+1. h056 PPO Wide resubmit should complete first — validate non-stale (SPS ~2000-2500)
+2. h047 DQN baseline: 4 remaining games (~3h) — complete 15-game reference
+3. h059 PER: 11 remaining games — strong PrivateEye signal, more data needed
+4. h060 QR-DQN: 11 remaining games — zero losses, promising distributional method
+5. h061 C51-40M: 15 games — categorical vs QR distributional comparison
+6. h062 NoisyNet: 14 remaining — Phoenix +224% vs DQN, need more games
+7. h063 IQN: 15 games — most sophisticated distributional method
+8. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
