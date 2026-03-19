@@ -1,0 +1,302 @@
+[
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Amidar-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-amidar-s1 --output-dir /runs",
+    "experiment_id": "h055-amidar-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Alien-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-alien-s1 --output-dir /runs",
+    "experiment_id": "h055-alien-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-breakout-s1 --output-dir /runs",
+    "experiment_id": "h055-breakout-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Enduro-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-enduro-s1 --output-dir /runs",
+    "experiment_id": "h055-enduro-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id PrivateEye-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-privateeye-s1 --output-dir /runs",
+    "experiment_id": "h055-privateeye-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Solaris-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-solaris-s1 --output-dir /runs",
+    "experiment_id": "h055-solaris-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id BattleZone-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-battlezone-s1 --output-dir /runs",
+    "experiment_id": "h055-battlezone-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id DoubleDunk-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-doubledunk-s1 --output-dir /runs",
+    "experiment_id": "h055-doubledunk-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id NameThisGame-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-namethisgame-s1 --output-dir /runs",
+    "experiment_id": "h055-namethisgame-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Phoenix-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-phoenix-s1 --output-dir /runs",
+    "experiment_id": "h055-phoenix-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-qbert-s1 --output-dir /runs",
+    "experiment_id": "h055-qbert-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id SpaceInvaders-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-spaceinvaders-s1 --output-dir /runs",
+    "experiment_id": "h055-spaceinvaders-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id MsPacman-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-mspacman-s1 --output-dir /runs",
+    "experiment_id": "h055-mspacman-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-venture-s1 --output-dir /runs",
+    "experiment_id": "h055-venture-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/dqn_atari_envpool_double.py --env-id MontezumaRevenge-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h055 --experiment-id h055-montezumarevenge-s1 --output-dir /runs",
+    "experiment_id": "h055-montezumarevenge-s1",
+    "hypothesis_id": "h055",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "05:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Amidar-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-amidar-s1 --output-dir /runs",
+    "experiment_id": "h056-amidar-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Alien-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-alien-s1 --output-dir /runs",
+    "experiment_id": "h056-alien-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-breakout-s1 --output-dir /runs",
+    "experiment_id": "h056-breakout-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Enduro-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-enduro-s1 --output-dir /runs",
+    "experiment_id": "h056-enduro-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id PrivateEye-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-privateeye-s1 --output-dir /runs",
+    "experiment_id": "h056-privateeye-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Solaris-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-solaris-s1 --output-dir /runs",
+    "experiment_id": "h056-solaris-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id BattleZone-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-battlezone-s1 --output-dir /runs",
+    "experiment_id": "h056-battlezone-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id DoubleDunk-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-doubledunk-s1 --output-dir /runs",
+    "experiment_id": "h056-doubledunk-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id NameThisGame-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-namethisgame-s1 --output-dir /runs",
+    "experiment_id": "h056-namethisgame-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Phoenix-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-phoenix-s1 --output-dir /runs",
+    "experiment_id": "h056-phoenix-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-qbert-s1 --output-dir /runs",
+    "experiment_id": "h056-qbert-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id SpaceInvaders-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-spaceinvaders-s1 --output-dir /runs",
+    "experiment_id": "h056-spaceinvaders-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id MsPacman-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-mspacman-s1 --output-dir /runs",
+    "experiment_id": "h056-mspacman-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-venture-s1 --output-dir /runs",
+    "experiment_id": "h056-venture-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id MontezumaRevenge-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-montezumarevenge-s1 --output-dir /runs",
+    "experiment_id": "h056-montezumarevenge-s1",
+    "hypothesis_id": "h056",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "16G",
+    "walltime": "04:00:00"
+  }
+]

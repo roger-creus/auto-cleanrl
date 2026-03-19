@@ -4150,3 +4150,56 @@ STILL UNEXPLORED:
 7. If h053 C51 works: prepare C51+PER (prioritized replay)
 8. If h054 SAC works: explore SAC+CReLU or SAC+DrQ combinations
 9. Continue exploring: ExO-PPO, wider networks, N-step returns
+
+---
+**[2026-03-19 08:30 UTC]**
+
+## Session 68: Process 4 New Results + Submit h055/h056 Pilots
+
+### Triggered by: h047-privateeye-s1 (job 10562887, nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 834 rows)
+
+**h046 PPO+LSTM (2 new, now 14/15 — already CLOSED):**
+- enduro-s1: q4=0.0 (fir, disappeared but CSV recovered). TIE.
+- solaris-s1: q4=2348.51 (narval, disappeared but CSV recovered). PPO q4=2051 → +14.5% WIN.
+h046 at 14/15: 2W/5L/7T. Solaris win is nice but doesn't change conclusion. Alien still running.
+
+**h047 DQN baseline (2 new, now 3/15):**
+- montezumarevenge-s1: q4=0.0 (nibi, disappeared but CSV recovered). TIE.
+- privateeye-s1: q4=-2.46 (nibi). PPO s2=46.64 → LOSS.
+h047 at 3/15: 1W/1L/1T. Too early to judge. 12 more running, ~30min remaining.
+
+### DISAPPEARED JOBS: 3 (all had CSVs recovered)
+- h046-enduro-s1 (fir 28363868): CSV present
+- h047-montezumarevenge-s1 (nibi 10562813): CSV present
+- h046-solaris-s1 (narval 57977155): CSV present
+
+### NEW HYPOTHESES SUBMITTED: h055 + h056 (30 jobs total)
+
+**h055: Double DQN (envpool)** — 15-game pilot across 4 clusters.
+Double DQN reduces overestimation bias: online network selects action, target network evaluates value. Key Rainbow component (Van Hasselt et al 2016). Same architecture as h047 DQN baseline.
+
+**h056: PPO + Wider NatureCNN** — 15-game pilot across 4 clusters.
+Doubles all conv channel widths (32→64, 64→128, 64→128) and hidden layer (512→1024). Tests if PPO is capacity-limited with standard NatureCNN. ~4x more parameters.
+
+### 148 ACTIVE JOBS (118 existing + 30 new)
+- h046: 1 running (alien-s1, narval — already closed)
+- h047 DQN baseline: 12 running (~30min left)
+- h048 Munchausen PPO: 15 running (~2h left)
+- h049 Gamma Annealing: 15 running (~2h left)
+- h050 Munchausen DQN: 15 running (~2.5h left)
+- h051 CReLU PPO: 15 running (~2.5h left)
+- h052 Reward Centering: 15 running (~2.5h left)
+- h053 C51: 15 running (~3h left)
+- h054 SAC-discrete: 15 running (~3h left)
+- h055 Double DQN: 15 submitted (just now)
+- h056 PPO Wide: 15 submitted (just now)
+
+### NEXT SESSION TODO
+1. Process h047 DQN baseline remaining 12 results — CRITICAL for off-policy direction
+2. Process h048-h054 pilot results as they complete
+3. Check h055/h056 for early failures
+4. If h047 DQN is competitive: prepare DQN+N-step, DQN+PER next
+5. If h056 PPO Wide works: consider Wide+Dueling combination
+6. Still unexplored: Rainbow, IQN, ExO-PPO, PPG, ensemble methods, N-step returns
