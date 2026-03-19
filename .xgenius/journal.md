@@ -6099,3 +6099,76 @@ fir: 12R+21P+5new, narval: 21R+5new, nibi: 6R+15P+4new, rorqual: 9R+25P+3new
 9. h063 IQN: 5R+2 resubmit → will reach 15/15
 10. When all DQN components complete: recompute IQM standings, design Rainbow-lite
 11. h051/h056: PERSISTENT stale CSV issue — consider clearing cluster output dirs
+
+---
+**[2026-03-19 18:40 UTC]**
+
+## Session 98: Process 9 New Results + Delete 27 Stale h051/h056 CSVs + Remove 1 Stale Banked Entry + Resubmit 3 Gaps
+
+### Triggered by: h055-doubledunk-s1 (28405893, fir SUCCESS)
+
+### Reconcile: 1 disappeared (h050-privateeye-s1, rorqual 8590188, ran ~6hrs). Pulled result successfully from rorqual — CSV was on cluster.
+
+### Stale h051/h056 CSV Cleanup: 27 files deleted
+Deleted from fir(8), narval(5), nibi(11), rorqual(3). ALL PPO-identical (q4 and n_episodes match h001 seed-1 exactly). Root cause: old jobs on cluster output dirs persist. Every pull brings them back.
+
+CRITICAL FINDING: h051-privateeye-s1 previously banked from rorqual was STALE PPO (q4=-170.71, n_eps=14720 — matches h001-privateeye-s1 from narval old format exactly). REMOVED from experiments.csv. h051 genuine bank reduced to 4/15.
+
+### Results Processed: 9 new entries (1007→1016 rows, net +8 after removing 1 stale)
+
+**h050 Munchausen DQN (2 new, now 13/15):**
+- battlezone-s1 (rorqual): q4=3613.56 vs PPO=2364.31 WIN (+53%). vs DQN=3109.48 WIN (+16.2%).
+- privateeye-s1 (rorqual): q4=-29.10. vs DQN=-2.46 LOSS. Munchausen hurts PrivateEye.
+
+**h055 Double DQN (1 new, now 10/15):**
+- enduro-s1 (nibi): q4=23.29 vs PPO=0.0 WIN. vs DQN=19.01 WIN (+22.5%). Double DQN actually helps Enduro!
+
+**h063 IQN (2 new, now 11/15):**
+- alien-s1 (nibi): q4=311.13 vs PPO=207.63 WIN (+50%). vs DQN=353.11 LOSS (-11.9%).
+- breakout-s1 (rorqual): q4=1.85 vs PPO=1.37 WIN (+35%). vs DQN=1.83 TIE.
+
+**h050-phoenix-s1, h055-doubledunk-s1, h061-spaceinvaders-s1, h063-solaris-s1 already added earlier in session from fir trigger.**
+
+### DQN COMPONENT IQM STANDINGS (updated):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T vs PPO |
+|------|-------------|--------|-----------------|----------|---------------|
+| 1    | DQN base    | 14/15  | +0.0117         | ---      | 7W/3L/3T      |
+| 2    | Dueling     | 7/15   | +0.0054         | -0.0005  | 2W/1L/3T      |
+| 3    | PPO CReLU   | 4/15   | +0.0000         | ---      | 1W/1L/2T      |
+| 4    | NoisyNet    | 15/15  | -0.0032         | +0.0003  | 8W/4L/2T      |
+| 5    | QR-DQN      | 15/15  | -0.0054         | +0.0015  | 7W/4L/3T      |
+| 6    | C51 40M     | 14/15  | -0.0099         | -0.0008  | 7W/4L/2T      |
+| 7    | PER         | 13/15  | -0.0104         | -0.0001  | 6W/4L/2T      |
+| 8    | IQN         | 11/15  | -0.0133         | +0.0006  | 4W/3L/3T      |
+| 9    | Double DQN  | 10/15  | -0.0151         | -0.0001  | 4W/3L/2T      |
+| 10   | Munchausen  | 13/15  | -0.0178         | -0.0011  | 4W/4L/4T      |
+| 11   | PPO Wide    | 3/15   | -0.0249         | ---      | 0W/1L/2T      |
+| 12   | N-step      | 6/15   | -0.0263         | -0.0005  | 2W/2L/2T      |
+
+### Gap Resubmissions: 3 jobs
+1. h056-breakout-s1 → rorqual (8609425)
+2. h056-qbert-s1 → narval (58004397)
+3. h061-breakout-s1 → nibi (10596406)
+
+### ACTIVE JOBS: ~120+ (running + pending + 3 resubmit)
+h047(1P), h050(2R+2P), h051(~70 running/pending), h055(6R), h056(6R+19P+2new), h057(9R), h058(8R), h059(2R+2P), h061(2R+10P+1new), h062(2R+10P), h063(5R+2P)
+
+### KEY INSIGHTS:
+1. h051/h056 stale CSV problem is PERSISTENT and SEVERE — old PPO jobs on clusters keep outputting results. Every pull re-downloads them. Running jobs have correct commands but cluster output dirs contain stale files. Need to wait for new jobs to overwrite stale output.
+2. DQN base remains #1 overall. No single component reliably improves IQM over vanilla DQN.
+3. Distributional methods (QR-DQN, IQN) show slight IQM improvement vs DQN base (+0.0015, +0.0006). NoisyNet also positive (+0.0003).
+4. Double DQN enduro is a bright spot (+22.5% vs DQN) — suggests addressing overestimation helps in at least some games.
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1 pending (Solaris, fir) — CRITICAL for 15-game reference
+2. h050 Munchausen: 2R on fir (alien, enduro) → will complete 15/15
+3. h051 CReLU: ~70 running/pending → VERIFY genuineness when completed (compare vs h001, must differ)
+4. h055 Double DQN: 6R → completing 15/15 (alien, battlezone, breakout, montezumarevenge, solaris)
+5. h056 Wide: 6R+19P+2 new gaps → verify genuineness
+6. h057 N-step: 9R → completing 15/15 
+7. h058 Dueling: 8R → completing 15/15
+8. h059 PER: 2R+2P → completing 15/15 (breakout, montezumarevenge)
+9. h061 C51: 1 gap (breakout, nibi) → will complete 15/15
+10. h063 IQN: 5R+2P → will reach 15/15
+11. When all DQN components complete: design Rainbow-lite combining top components
+12. When h051/h056 genuine results arrive: compare PPO CReLU and PPO Wide vs baseline

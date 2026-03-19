@@ -1,0 +1,32 @@
+[
+  {
+    "experiment_id": "h056-breakout-s1",
+    "hypothesis_id": "h056",
+    "cluster": "rorqual",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-breakout-s1 --output-dir /runs",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "experiment_id": "h056-qbert-s1",
+    "hypothesis_id": "h056",
+    "cluster": "narval",
+    "command": "python cleanrl/ppo_atari_envpool_wide.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h056 --experiment-id h056-qbert-s1 --output-dir /runs",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "experiment_id": "h061-breakout-s1",
+    "hypothesis_id": "h061",
+    "cluster": "nibi",
+    "command": "python cleanrl/dqn_atari_envpool_c51.py --env-id Breakout-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h061 --experiment-id h061-breakout-s1 --output-dir /runs",
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  }
+]
