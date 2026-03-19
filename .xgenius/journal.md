@@ -3260,3 +3260,60 @@ PPO baseline: 0.0002
 6. If h035 or h036 beats h034: submit 3-seed for the winner
 7. Key question: does the triple combination (h036 CVaR+Dueling+SEM) outperform h034 (CVaR+Dueling)?
 
+
+---
+**[2026-03-19 00:34 UTC]**
+
+## Session 53: Process h033-solaris-s1 + 3 New h036 Results, Close h033
+
+### Triggered by: h033-solaris-s1 (job 10542884, nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 757 rows)
+
+**h033-solaris-s1**: new-code CSV q4=2513.78 (nibi, 5760 eps). vs PPO baseline 2164 → +16.2%. HNS=0.1152. WIN.
+h033 now at 14/15 pilot (DoubleDunk disappeared, not tracked in DB). Final IQM HNS=0.0010.
+
+**h036 (CVaR+Dueling+SEM Triple Combo) — 3 GAMES COMPLETED!**
+All curve-derived q4:
+- h036-amidar-s1: q4=31.0 (nibi). vs baseline 1.4 → +2190%. HNS=0.0147. WIN.
+- h036-breakout-s1: q4=3.48 (narval). vs baseline 1.25 → +178%. HNS=0.0618. STRONG WIN.
+- h036-qbert-s1: q4=279.28 (rorqual). vs baseline 158.4 → +76%. HNS=0.0087. WIN.
+All 3 games positive — very promising early signs.
+
+### h033 CLOSED
+IQM HNS=0.0010 (14g). Consistency loss too inconsistent:
+- STRONG: Solaris +16% (HNS=0.115), BattleZone +39%, PrivateEye +473%
+- CATASTROPHIC: MsPacman -78%, NameThisGame -47%
+Not viable for 3-seed. Closed.
+
+### IQM HNS STANDINGS (updated)
+1. h035 (CVaR+SEM+DrQ): 0.0118 (3g — UNRELIABLE)
+2. h036 (CVaR+Duel+SEM): 0.0117 (3g — UNRELIABLE, NEW)
+3. h034 (CVaR+Duel+DrQ): 0.0066 (15g, 44 seeds) ★★ LEADER
+4. h029 (CVaR+QR+DrQ):   0.0045 (15g pilot)
+5. h008 (PQN LSTM):      0.0027 (15g)
+6. h020 (Dueling):        0.0015 (15g, 3-seed)
+7. h030 (SEM):            0.0012 (11g)
+8. h033 (Consistency):    0.0010 (14g) — CLOSED
+PPO baseline:            -0.0005 (15g)
+
+### CRITICAL NOTE ON h036 vs h035 vs h034
+h036 and h035 are both at only 3 games — IQM is unreliable. h034's 3-game IQM at start was similarly inflated. The true test is 15-game coverage.
+- h036 Breakout q4=3.48 is notably better than h034 Breakout q4=1.25 (curve-derived)
+- h036 Qbert q4=279 is also strong (h034 Qbert q4=~180)
+- All 3 early games for h036 beat h034 on same games — VERY encouraging
+
+### 80 ACTIVE JOBS
+- h029 3-seed: 30 running (seeds 2+3, all 15 games)
+- h030 pilot: 5 running (alien, enduro x2, montezumarevenge, mspacman)
+- h034 pilot: 15 DB-stale (seed 1 — but 44 curve-derived seeds already processed)
+- h035 pilot: 15 running (12 games remaining)
+- h036 pilot: 15 running (12 games remaining)
+
+### NEXT SESSION TODO
+1. Process h035/h036 pilot results as they complete — CRITICAL comparison.
+2. Process h029 3-seed results — definitive CVaR validation.
+3. Process h030 remaining 4 games.
+4. If h036 validates at 10+ games with IQM>h034: submit 3-seed immediately.
+5. If h035 and h036 are similar: h036 (triple combo) is the preferred final algorithm.
+6. Begin considering Phase 3 (ablation studies) once pilots complete.

@@ -752,3 +752,7 @@ h033-venture-s1,h033,,"new-code CSV (rorqual, 17920 eps)",Venture-v5,1,ppo_aug_c
 h033-battlezone-s1,h033,,"new-code CSV (rorqual, 36224 eps)",BattleZone-v5,1,ppo_aug_consist,40000000,36224,2402.83,2858.6572,87040000.0,11000.0
 h033-privateeye-s1,h033,,"new-code CSV (rorqual, 14720 eps)",PrivateEye-v5,1,ppo_aug_consist,40000000,14720,141.43,501.9826,2081792.0,0.0
 h033-montezumarevenge-s1,h033,,"new-code CSV (rorqual, 72960 eps)",MontezumaRevenge-v5,1,ppo_aug_consist,40000000,72960,0.0,0.0,0.0,0.0
+h033-solaris-s1,h033,,"new-code CSV (nibi, 5760 eps)",Solaris-v5,1,ppo_aug_consist,40000000,5760,2467.11,2513.78,14210560.0,1720.0
+h036-amidar-s1,h036,,"curve-derived q4 (nibi, 66432 eps)",Amidar-v5,1,ppo_cvar_duel_sem,40000000,66432,27.07,31.0,0,31.0
+h036-breakout-s1,h036,,"curve-derived q4 (narval, 153600 eps)",Breakout-v5,1,ppo_cvar_duel_sem,40000000,153600,3.09,3.48,0,4.0
+h036-qbert-s1,h036,,"curve-derived q4 (rorqual, 128640 eps)",Qbert-v5,1,ppo_cvar_duel_sem,40000000,128640,261.97,279.28,0,350.0
