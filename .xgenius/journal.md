@@ -6421,3 +6421,86 @@ fir: 8R+27P, narval: 21R, nibi: 1R+23P, rorqual: 4R+31P
 9. h063 IQN: 2R (doubledunk, enduro on narval) → will approach 15/15
 10. AWAIT h047 Solaris to finalize DQN base IQM — expect significant drop
 11. Design Rainbow-lite only after ALL components reach 15/15 with stable IQMs
+
+---
+**[2026-03-19 19:40 UTC]**
+
+## Session 102: Process 2 New Results + Delete 46 Stale CSVs + Add Missing PPO Baseline
+
+### Triggered by: h057-doubledunk-s1 (job 8591637, rorqual SUCCESS)
+
+### Reconcile: 3 disappeared
+- 28405895 (fir): h055-solaris-s1 — already banked, no impact
+- 8591656 (rorqual): h058-namethisgame-s1 — CSV recovered, result processed
+- 8591642 (rorqual): h057-qbert-s1 — already banked, no impact
+
+### Stale h051/h056 CSV Cleanup: 46 files deleted
+37 matched h001 baseline exactly (q4+n_eps identical). 9 'genuine?' files deleted: 6 already-banked duplicates + 2 cross-stale privateeye (h051 and h056 with BIT-IDENTICAL q4=-170.71) + 1 duplicate.
+
+### *** CRITICAL FIX: Added h001-privateeye-s1 ***
+Discovered h001-privateeye-s1 was MISSING from the results bank! Found CSV on rorqual: q4=-170.71. Added to experiments.csv.
+
+This dramatically changes ALL IQM calculations because PPO q4=-170.71 on PrivateEye is terrible, boosting every DQN variant that does better.
+
+### Results Processed: 2 new entries (1028→1031 rows, including baseline fix)
+
+**h057 N-step DQN (1 new, now 10/15):**
+- doubledunk-s1 (rorqual): q4=-23.89 vs PPO=-18.10 LOSS (-32%). vs DQN=-24.00 TIE (+0.4%).
+
+**h058 Dueling DQN (1 new, now 9/15):**
+- namethisgame-s1 (rorqual): q4=1478.66 vs PPO=2522.54 LOSS (-41%). vs DQN=1776.81 LOSS (-17%).
+
+### DQN COMPONENT IQM STANDINGS (MAJOR RECALCULATION after PPO PrivateEye fix):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T PPO |
+|------|-------------|--------|-----------------|----------|-----------|
+| 1    | DQN base    | 14/15  | +0.0105         | ---      | 10W/3L/1T |
+| 2    | QR-DQN      | 15/15  | +0.0101         | +0.0017  | 10W/4L/1T |
+| 3    | PER         | 13/15  | +0.0094         | +0.0002  | 9W/4L/0T  |
+| 4    | IQN         | 13/15  | +0.0092         | +0.0009  | 9W/3L/1T  |
+| 5    | Double DQN  | 15/15  | +0.0086         | +0.0000  | 9W/5L/1T  |
+| 6    | NoisyNet    | 15/15  | +0.0076         | -0.0000  | 10W/4L/1T |
+| 7    | C51 40M     | 14/15  | +0.0067         | -0.0004  | 9W/4L/1T  |
+| 8    | N-step      | 10/15  | +0.0041         | +0.0006  | 6W/3L/1T  |
+| 9    | Munchausen  | 13/15  | +0.0028         | -0.0008  | 6W/4L/3T  |
+| 10   | Dueling     | 9/15   | +0.0008         | -0.0008  | 4W/4L/1T  |
+| 11   | CReLU(PPO)  | 4/15   | +0.0000         | ---      | 1W/1L/2T  |
+| 12   | Wide(PPO)   | 4/15   | +0.0000         | ---      | 0W/2L/2T  |
+
+### KEY INSIGHT: ALL DQN components now POSITIVE vs PPO!
+The PPO PrivateEye baseline (q4=-170.71) is so bad that it pulls PPO's HNS down across the board. Every DQN component that performs even moderately on PrivateEye gets a boost.
+
+Top 3 COMPLETE components (15/15):
+1. QR-DQN: +0.0101 — best completed component, also best vs DQN (+0.0017)
+2. Double DQN: +0.0086 — recovered from last session's collapse (Solaris dragged it down)
+3. NoisyNet: +0.0076 — stable positive
+
+### COVERAGE UPDATE:
+| Hypothesis  | Banked | Running | Pending | Notes |
+|------------|--------|---------|---------|-------|
+| h047 DQN   | 14/15  | 0R      | fir     | Solaris only gap |
+| h050 Munch | 13/15  | 2R(fir) | 0P      | Alien+Enduro |
+| h051 CReLU | 4/15   | 3R      | manyP   | Stale CSV plague continues |
+| h055 DblDQN| 15/15  | 1R      | -       | COMPLETE |
+| h056 Wide  | 4/15   | 4R      | manyP   | Stale CSV plague continues |
+| h057 Nstep | 10/15  | 5R      | 0P      | All 5 gaps running! |
+| h058 Duel  | 9/15   | 6R      | 0P      | All 6 gaps running! |
+| h059 PER   | 13/15  | 2R      | 2P      | Breakout+MR covered |
+| h060 QRDQN | 15/15  | -       | -       | COMPLETE |
+| h061 C51   | 14/15  | 2R      | 8P      | Breakout pending |
+| h062 Noisy | 15/15  | 2R      | -       | COMPLETE (extra jobs) |
+| h063 IQN   | 13/15  | 3R      | 0P      | DoubleDunk+Enduro running |
+
+### ACTIVE JOBS: 28R + 81P = 109 SLURM jobs
+fir: 7R+27P, narval: 19R, nibi: 1R+23P, rorqual: 1R+31P
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: Solaris still pending on fir — CRITICAL for 15-game reference
+2. h050 Munchausen: 2R on fir → will complete 15/15
+3. h057 N-step: 5R running for all 5 gaps → will reach 15/15
+4. h058 Dueling: 6R running for all 6 gaps → will reach 15/15
+5. h059 PER: breakout pending, MR running → will reach 15/15
+6. h061 C51: breakout pending → will complete 15/15
+7. h063 IQN: 3R running → will approach 15/15
+8. h051/h056: Still plagued by stale CSVs. Need patience for genuine results.
+9. When all DQN components reach 15/15: Design Rainbow-lite combining QR-DQN + NoisyNet + possibly Dueling/N-step
+10. Consider: since ALL components beat PPO, the DQN architecture itself is the key advantage. Components add marginal vs-DQN improvement.
