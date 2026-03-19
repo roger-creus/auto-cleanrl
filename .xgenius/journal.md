@@ -6654,3 +6654,74 @@ However, WIN/LOSS record tells a different story: most DQN components WIN on 9-1
 10. When all pilots complete: finalize rankings and decide on Rainbow-lite combination
 11. Current Rainbow-lite candidates: NoisyNet (best completed, -0.0050) + QR-DQN (-0.0071). Not exciting.
 12. IQN looks best if it holds at 15/15 — but DQN family weakness on Phoenix/NTG/DD is structural
+
+---
+**[2026-03-19 20:16 UTC]**
+
+## Session 105: Process 2 New Results + Delete 33 Stale h051/h056 CSVs
+
+### Triggered by: h058-enduro-s1 (job 28408419, fir SUCCESS)
+
+### Also completed: h050-enduro-s1 (job 28400958, fir SUCCESS)
+
+### Reconcile: 1 new disappeared (57989341: h063-doubledunk-s1 on narval). Resubmitted on rorqual (job 8616666).
+
+### Stale CSV Cleanup: 33 files deleted
+ALL unbanked h051/h056 CSVs matched h001 PPO baseline (across all 3 seeds). Zero genuine new h051/h056 results. The stale CSV plague persists — every pull downloads h001 values under h051/h056 names.
+
+### Results Processed: 2 new entries (1035→1036+1=1037... actually 1033→1035 rows including enduro entries)
+Wait, recounted: 1035→now. Let me be precise: previous total was 1035, added h050-enduro-s1 + h058-enduro-s1 = 1037 total rows... actually let me just state what was banked.
+
+**h050 Munchausen DQN (1 new, now 14/15):**
+- enduro-s1 (fir): q4=30.10 vs PPO=0.0 WIN vs DQN=19.01 WIN (+58.4%). Munchausen strongly outperforms on Enduro.
+
+**h058 Dueling DQN (1 new, now 12/15):**
+- enduro-s1 (fir): q4=31.14 vs PPO=0.0 WIN vs DQN=19.01 WIN (+63.9%). Dueling also strong on Enduro.
+
+### IQM dHNS STANDINGS (recalculated):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T PPO |
+|------|-------------|--------|-----------------|----------|-----------|
+| 1    | DQN base    | 14/15  | +0.0105         | ---      | 10W/3L/1T |
+| 2    | IQN         | 14/15  | +0.0082         | +0.0003  | 10W/3L/1T |
+| 3    | Dueling     | 12/15  | +0.0022         | -0.0007  | 6W/5L/1T  |
+| 4    | CReLU(PPO)  | 4/15   | +0.0000         | ---      | 1W/1L/2T  |
+| 5    | Wide(PPO)   | 4/15   | -0.0024         | ---      | 0W/2L/2T  |
+| 6    | NoisyNet    | 15/15  | -0.0025         | +0.0003  | 10W/4L/1T |
+| 7    | QR-DQN      | 15/15  | -0.0036         | +0.0015  | 10W/4L/1T |
+| 8    | Double DQN  | 15/15  | -0.0051         | -0.0003  | 9W/5L/1T  |
+| 9    | PER         | 13/15  | -0.0083         | -0.0001  | 9W/4L/0T  |
+| 10   | C51 40M     | 14/15  | -0.0086         | -0.0008  | 9W/4L/1T  |
+| 11   | Munchausen  | 14/15  | -0.0102         | +0.0002  | 7W/4L/3T  |
+| 12   | N-step      | 11/15  | -0.0117         | +0.0003  | 7W/3L/1T  |
+
+### KEY OBSERVATION: Dueling recovered to #3!
+Adding enduro (q4=31.14, big win vs PPO and DQN) moved Dueling from last session's #12 to #3 with IQM=+0.0022. This demonstrates how volatile incomplete IQMs are — a single game can shift rankings dramatically.
+
+### COVERAGE UPDATE:
+| Hypothesis  | Banked | Running | Status |
+|------------|--------|---------|--------|
+| h047 DQN   | 14/15  | 0R+1P(fir) | Solaris pending |
+| h050 Munch | 14/15  | 1R(fir) | Alien running |
+| h051 CReLU | 4/15   | 2R(narv) | All stale, only 4 genuine ever |
+| h055 DblDQN| 15/15  | 1R(extra) | COMPLETE |
+| h056 Wide  | 4/15   | 3R(narv) | All stale, only 4 genuine ever |
+| h057 Nstep | 11/15  | 4R | All 4 gaps running |
+| h058 Duel  | 12/15  | 3R | All 3 gaps running |
+| h059 PER   | 13/15  | 2R | MR running, breakout pending(nibi) |
+| h060 QRDQN | 15/15  | 1R(extra) | COMPLETE |
+| h061 C51   | 14/15  | 3R | breakout pending(nibi) |
+| h062 Noisy | 15/15  | 2R(extra) | COMPLETE |
+| h063 IQN   | 14/15  | 1R+1resubmit | doubledunk resubmitted(rorqual) |
+
+### ACTIVE JOBS: 23R + pending gaps on fir/nibi
+
+### NEXT SESSION TODO:
+1. h050-alien: running on fir, will complete 15/15
+2. h057: 4 gaps running (alien, enduro, solaris, spaceinvaders) → will reach 15/15
+3. h058: 3 gaps running (breakout, mspacman, solaris) → will reach 15/15
+4. h059: MR running, breakout pending(nibi) → will reach 15/15
+5. h061: breakout pending(nibi) → will reach 15/15
+6. h063: doubledunk resubmitted(rorqual) → will reach 15/15
+7. h047: solaris pending(fir) — CRITICAL for finalizing DQN baseline
+8. h051/h056: stale plague continues. Only 4/15 genuine each. May need code investigation.
+9. Once all reach 15/15: finalize rankings, design Rainbow-lite experiment
