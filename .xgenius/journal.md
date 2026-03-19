@@ -3978,3 +3978,103 @@ Implementation: Adapted dqn_atari.py to envpool with 16 parallel envs, 200K repl
 4. Consider: PPO + LSTM + DrQ combination if LSTM helps
 5. Explore more paradigms: discount annealing, hybrid on/off-policy, gradient manipulation
 6. Phase 2 continues — many categories still unexplored
+
+---
+**[2026-03-19 07:16 UTC]**
+
+## Session 65: Process 2 h046 Results + Launch h048/h049 Pilots + BTR Literature Review
+
+### Triggered by: h046-venture-s1 (job 10562546, nibi SUCCESS)
+
+### Results Processed: 2 new h046 entries (now 819 rows)
+- h046-venture-s1: q4=0.0 (nibi). PPO baseline 0.0 → TIE.
+- h046-phoenix-s1: q4=825.78 (fir, disappeared but CSV recovered). PPO s1=892.49 → -7.5% slight LOSS.
+
+h046 early signal: 2/15 games. Not conclusive — Phoenix slight loss is concerning but within noise.
+
+### NEW HYPOTHESES SUBMITTED:
+**h048: PPO + Munchausen reward bonus** — 15-game pilot across 4 clusters.
+Adds α*τ*log π(a|s) to rewards during GAE computation. Munchausen RL (NeurIPS 2020) is a key component of BTR (state-of-the-art DQN, IQM 7.4 on Atari-60). Novel application to PPO.
+Hyperparameters: α=0.9, τ=0.03, clip=-1.0.
+
+**h049: PPO + Gamma Annealing** — 15-game pilot across 4 clusters.
+Linearly anneal γ from 0.95 to 0.999 over training. Shorter horizons early (faster credit assignment), longer horizons late (better long-term optimization). Motivated by discount-as-regularizer (Amit et al 2020).
+
+**h050: Munchausen DQN** — being implemented. Key BTR component for DQN.
+
+### BTR PAPER REVIEW (ICML 2025, arxiv 2411.03820):
+BTR = Beyond The Rainbow. 6 improvements on Rainbow DQN → IQM 7.4 on Atari-60.
+Key components ranked by impact:
+1. IMPALA CNN (scale=2) + adaptive max-pooling (6x6): +142% IQM
+2. Munchausen RL: reduces policy churn 11%→3.8%, increases action gap 5.5x
+3. IQN (Implicit Quantile Networks): improves fine-grained control
+4. Spectral Normalization: adds robustness
+5. Vectorized environments (64 parallel)
+6. Hyperparameter tuning: γ=0.997, lr=1e-4, target update every 500 grad steps
+
+BTR trains 200M frames (vs our 40M). But per-env data is similar to our DQN setup.
+If h047 DQN baseline works, building BTR components on top is the highest-priority direction.
+
+### ACTIVE JOBS: 58 total (28 h046/h047 running + 30 h048/h049 just submitted)
+- h046: 13 running (~2h remaining)
+- h047: 15 running (~2h remaining)
+- h048: 15 submitted (Munchausen PPO)
+- h049: 15 submitted (Gamma Annealing PPO)
+
+### NEXT SESSION TODO:
+1. Process h046 remaining 13 results — CRITICAL to determine if PPO+LSTM works
+2. Process h047 DQN baseline results — CRITICAL for off-policy direction
+3. Submit h050 (Munchausen DQN) once implementation complete
+4. Process h048/h049 early results (~4h from now)
+5. If h046 strong: prepare h051 PPO+LSTM+Dueling combination
+6. If h047 reasonable: prepare DQN+n-step, DQN+IQN improvements
+7. Continue exploring unexplored categories: ensemble, hybrid on/off-policy
+
+---
+**[2026-03-19 07:45 UTC]**
+
+## Session 66: Process h046-spaceinvaders-s1 + 4 More h046 Results + Launch h051/h052
+
+### Triggered by: h046-spaceinvaders-s1 (job 28363906, fir SUCCESS)
+
+### Results Processed: 5 new h046 entries (now 824 rows, h046 at 7/15)
+- h046-spaceinvaders-s1: q4=150.20 (fir). PPO s1=150.19 → TIE (identical).
+- h046-doubledunk-s1: q4=-18.37 (narval). PPO s1=-18.10 → TIE/slight LOSS.
+- h046-battlezone-s1: q4=2283.58 (nibi). PPO s1=2364.31 → -3.4% LOSS.
+- h046-montezumarevenge-s1: q4=0.0 (nibi). PPO s1=0.0 → TIE.
+- h046-privateeye-s1: q4=-262.61 (nibi). PPO s2=46.64 → MASSIVE LOSS. LSTM hurts PrivateEye.
+
+### h046 (PPO+LSTM) TRENDING NEGATIVE: 7/15 games, IQM=-0.0034
+0 WINS, 4 LOSSES (BattleZone, Phoenix, PrivateEye, DoubleDunk), 3 TIES (SpaceInvaders, MontezumaRevenge, Venture). 8 games remaining: Alien, Amidar, Breakout, Enduro, MsPacman, NameThisGame, Qbert, Solaris.
+
+### NEW HYPOTHESES SUBMITTED: h051 + h052 (30 jobs total)
+
+**h051: PPO + CReLU (Concatenated ReLU)** — 15-game pilot across 4 clusters.
+CReLU(x) = [ReLU(x), ReLU(-x)] preserves negative activations, preventing plasticity loss (Abbas et al 2023, Nature 2024). Halved conv channels to keep parameter count identical to base PPO. Novel application to on-policy Atari RL.
+
+**h052: PPO + Reward Centering** — 15-game pilot across 4 clusters.
+Subtract running mean reward during GAE computation (Sutton et al 2024, arxiv 2405.09999). Centers value function for better numerical stability. Beta=0.999 EMA. Simple but principled — shown to improve PPO on MuJoCo.
+
+### LITERATURE REVIEW: New Directions Found
+- ExO-PPO (arxiv 2602.09726, Feb 2026): Hybrid on/off-policy PPO with replay buffer. Outperforms PPO on Atari. Potential h053.
+- EPO (Evolutionary Policy Optimization): Combines PG with evolutionary search. 26.8% improvement on Breakout.
+- BTR paper components still highest priority for DQN direction.
+
+### 98 ACTIVE JOBS
+- h046 PPO+LSTM: 8 running (7/15 complete)
+- h047 DQN baseline: 15 running (0/15 complete)
+- h048 Munchausen PPO: 15 running (0/15 complete)
+- h049 Gamma Annealing: 15 running (0/15 complete)
+- h050 Munchausen DQN: 15 running (0/15 complete)
+- h051 CReLU PPO: 15 submitted (0/15 complete)
+- h052 Reward Centering PPO: 15 submitted (0/15 complete)
+
+### NEXT SESSION TODO
+1. Process h046 remaining 8 results → close if IQM stays negative
+2. Process h047 DQN baseline → CRITICAL for off-policy direction
+3. Process h048/h049 PPO variants
+4. Process h050 Munchausen DQN
+5. Check h051/h052 early results
+6. If h047 DQN works: implement C51/Rainbow envpool next
+7. Consider ExO-PPO (hybrid on/off-policy) as h053
+8. Phase 2 continues — explored categories: architecture (Dueling, LSTM, IMPALA, NoisyNets, SEM), loss mods (CVaR, QR, SPO, Consistency), plasticity (LayerNorm, CHAIN-SP, S&P, SpectralNorm, PFO, NaP, CReLU), exploration (RND, NoisyNets, Entropy Annealing), optimization (Muon, Schedule-Free, Symlog, PopArt, Reward Centering), data aug (DrQ), network capacity (Sparsity). Still unexplored: hybrid on/off-policy, ensemble, SAC-Discrete, C51/Rainbow envpool, wider networks.
