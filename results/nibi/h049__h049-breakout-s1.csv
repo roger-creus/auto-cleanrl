@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Breakout-v5,1,h049,h049-breakout-s1,ppo_gamma_anneal,40000000,223872,1.351057767868042,1.3607776165008545,302464.0,0.0

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+SpaceInvaders-v5,1,h054,h054-spaceinvaders-s1,sac_discrete,10000000,19376,152.85714721679688,153.52601623535156,2961760.0,166.0

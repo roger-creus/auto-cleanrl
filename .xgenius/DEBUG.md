@@ -92,3 +92,19 @@ Container pushes to rorqual may silently truncate/corrupt the .sif. After push, 
 **Impact:** h034 IQM (previously 0.0082 from curve-derived data) was based on the SAME algorithm as h029. h034 closed, 12 running jobs cancelled.
 
 **Action:** h036 (CVaR+Dueling+SEM) confirmed to produce DIFFERENT results (includes SEM which fundamentally changes representation). h035 (CVaR+SEM) also confirmed different. Both pilots still running.
+
+## 2026-03-19 07:45 — h056 PPO Wide results IDENTICAL to PPO baseline (stale code)
+
+**Problem:** h056 (PPO + Wider NatureCNN) first 3 completed results — Amidar (fir) and Phoenix (narval) are bit-for-bit identical to h001 PPO baseline (same n_episodes, mean_return, q4_return, auc, final_avg20 to full floating-point precision). MsPacman (fir) shows slight differences but SPS ~3510 matches standard PPO (wider network should have ~30-40% lower SPS due to 4x parameters).
+
+**Investigation:**
+- `ppo_atari_envpool_wide.py` on fir confirmed correct architecture (Conv2d channels 64→128→128, hidden 1024)
+- File size (16062 bytes) and timestamp match local version
+- SPS across all 3 completed jobs: 3486-3510 (consistent with standard NatureCNN, not wide)
+- Commit timestamp (08:30 UTC) vs submission time (08:27 UTC) — jobs submitted 3 min BEFORE commit
+
+**Root cause:** Most likely the sync happened before the architecture changes were fully written to disk. Jobs were submitted and started with the old file content (standard PPO copy). By the time the file was updated, Python had already loaded the old version.
+
+**Impact:** All 15 h056 jobs running stale code. 12 cancelled, 3 completed results discarded (NOT added to experiments.csv).
+
+**Action:** Synced code to all 4 clusters, verified correct content, resubmitted all 15 h056 games with 4h walltime. This is the THIRD occurrence of stale-code issue (h051 CReLU was the second, h034 dueling was the first).

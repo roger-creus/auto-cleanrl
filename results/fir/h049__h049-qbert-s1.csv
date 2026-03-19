@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Qbert-v5,1,h049,h049-qbert-s1,ppo_gamma_anneal,40000000,124032,163.4416961669922,150.59339904785156,20272000.0,175.0

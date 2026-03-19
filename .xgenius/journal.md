@@ -4667,3 +4667,51 @@ All individual Rainbow components now submitted. Once h050, h055-h062 complete (
 5. Process h059/h060/h061/h062 (7-8h from now)
 6. When all DQN components are in: compare and build Rainbow-lite
 7. h047 resubmit 7 games should complete in ~7h
+
+---
+**[2026-03-19 11:55 UTC]**
+
+## Session 76: h056 PPO Wide Stale Code Fix + Resubmit
+
+### Triggered by: h056-phoenix-s1, h056-amidar-s1, h056-mspacman-s1 (all completed)
+
+### CRITICAL FINDING: h056 results INVALID (stale code, 3rd occurrence)
+3 completed h056 results are bit-for-bit identical to PPO baseline:
+- Amidar (fir): q4=2.04, SPS=3494 — IDENTICAL to h001-amidar-s1
+- Phoenix (narval): q4=892.49, SPS=3486 — IDENTICAL to h001-phoenix-s1
+- MsPacman (fir): SPS=3510 (same as standard PPO; wide should be ~30-40% slower)
+
+Root cause: Jobs submitted at 08:27 UTC, commit at 08:30 UTC. Code synced before architecture edits were saved. All jobs loaded the old (standard PPO) code.
+
+### ACTION TAKEN:
+1. Cancelled all 12 running h056 jobs
+2. Synced code to all 4 clusters
+3. Verified wide architecture on fir (Conv2d 64→128→128, Linear 6272→1024)
+4. Resubmitted all 15 h056 games (4h walltime)
+5. Discarded 3 completed results (NOT added to experiments.csv)
+
+### ACTIVE JOBS: 157 total
+- h047 DQN baseline: 7 running (8h walltime, ~5-6h remaining)
+- h050 Munchausen DQN: 15 running (~2-4h remaining) ← should complete first
+- h051 CReLU PPO: 15 running (resubmit, 4h, ~2-3h remaining)
+- h055 Double DQN: 15 running (8h, ~4-5h remaining)
+- h056 PPO Wide: 15 running (just resubmitted, 4h)
+- h057 N-step DQN: 15 running (8h, ~5-6h remaining)
+- h058 Dueling DQN: 15 running (8h, ~5-6h remaining)
+- h059 DQN+PER: 15 running (8h, ~6-7h remaining)
+- h060 QR-DQN: 15 running (8h, ~6-7h remaining)
+- h061 C51 40M: 15 running (8h, ~6-7h remaining)
+- h062 NoisyNet DQN: 15 running (8h, ~7h remaining)
+
+### STALE-CODE PATTERN (recurring issue)
+This is the 3rd occurrence: h034, h051, now h056. Root cause: sync timing relative to code edits.
+LESSON: Always sync AFTER the final edit AND verify a newly-synced script produces different output before submitting.
+
+### NEXT SESSION TODO:
+1. h050 Munchausen DQN should complete first (~2-4h) — process all 15 results
+2. h051 CReLU resubmit (~2-3h) — process results
+3. h055 Double DQN (~4-5h) — process results
+4. h056 PPO Wide resubmit (~4h) — verify SPS is LOWER than baseline (confirms wide code is running)
+5. h047 DQN baseline remaining 7 games (~5-6h) — complete full 15-game pilot
+6. h057-h062 DQN variants (~5-7h) — process all and compare components
+7. When all DQN components are in: rank by IQM, build Rainbow-lite combining top components
