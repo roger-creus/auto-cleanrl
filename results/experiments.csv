@@ -723,7 +723,7 @@ h034-privateeye-s3,h034,,"curve-derived (nibi, 14720 eps)",PrivateEye-v5,3,,,,0.
 h034-solaris-s1,h034,,"curve-derived (nibi, 5632 eps)",Solaris-v5,1,,,,0.0,1669.0909,0.0,0.0
 h034-solaris-s2,h034,,"curve-derived (nibi, 5376 eps)",Solaris-v5,2,,,,0.0,1218.0952,0.0,0.0
 h034-spaceinvaders-s3,h034,,"curve-derived (nibi, 66432 eps)",SpaceInvaders-v5,3,,,,0.0,190.8478,0.0,0.0
-h035-spaceinvaders-s1,h035,,"curve-derived (nibi, 61056 eps)",SpaceInvaders-v5,1,,,,0.0,253.826,0.0,0.0
+h035-spaceinvaders-s1,h035,,pilot (fir new-code),SpaceInvaders-v5,1,ppo_cvar_sem,40000000,77952,154.15,140.84,12016640.0,80.0
 h034-alien-s1,h034,,"curve-derived (narval, 63616 eps)",Alien-v5,1,,,,0.0,378.169,0.0,0.0
 h034-alien-s2,h034,,"curve-derived (narval, 64256 eps)",Alien-v5,2,,,,0.0,374.0637,0.0,0.0
 h034-amidar-s3,h034,,"curve-derived (narval, 56832 eps)",Amidar-v5,3,,,,0.0,45.7207,0.0,0.0
@@ -803,3 +803,6 @@ h029-mspacman-s2,h029,,3-seed (rorqual new-code),MsPacman-v5,2,ppo_aug_qr_cvar,4
 h029-privateeye-s2,h029,,3-seed (rorqual new-code),PrivateEye-v5,2,ppo_aug_qr_cvar,40000000,14720,-7.74,33.91,-113920.0,0.0
 h030-alien-s1,h030,,pilot (rorqual new-code),Alien-v5,1,ppo_sem,40000000,59776,213.19,198.52,12743680.0,230.0
 h035-phoenix-s1,h035,,pilot (rorqual new-code),Phoenix-v5,1,ppo_cvar_sem,40000000,30976,826.90,773.39,25614080.0,480.0
+h036-battlezone-s1,h036,,pilot (fir new-code),BattleZone-v5,1,ppo_cvar_duel_sem,40000000,35456,2335.74,1765.34,82816000.0,1000.0
+h036-montezumarevenge-s1,h036,,pilot (fir new-code),MontezumaRevenge-v5,1,ppo_cvar_duel_sem,40000000,71296,0.18,0.0,12800.0,0.0
+h036-namethisgame-s1,h036,,pilot (rorqual new-code),NameThisGame-v5,1,ppo_cvar_duel_sem,40000000,15360,2266.08,2405.33,34807040.0,2910.0

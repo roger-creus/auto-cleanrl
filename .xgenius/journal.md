@@ -3793,3 +3793,58 @@ Found CSVs in results/nibi/ from unknown hypotheses (old-format headers, not in 
 - h035: 2 running (Solaris-s1, SpaceInvaders new-code update)  
 - h036: 9 running + 1 resubmitted (SpaceInvaders) = 10 remaining
 Total: ~2-4h for most completions
+
+---
+**[2026-03-19 03:15 UTC]**
+
+## Session 62: Process 4 New Results + Cancel 3 Duplicate Resubmits
+
+### Triggered by: h035-spaceinvaders-s1 (job 28336462, fir SUCCESS)
+
+### Results Processed: 4 entries (now 808 rows)
+- h035-spaceinvaders-s1: UPDATED curve→new-code q4=253.83→140.84 (fir, 77952 eps). PPO s1=150.19 → -6.2% LOSS.
+- h036-battlezone-s1: new-code CSV q4=1765.34 (fir, 35456 eps). PPO s1=2364.31 → -25.3% LOSS (below random score of 2360!). Previous curve-derived was much higher.
+- h036-montezumarevenge-s1: new-code CSV q4=0.0 (fir, 71296 eps). TIE.
+- h036-namethisgame-s1: new-code CSV q4=2405.33 (rorqual, 15360 eps). PPO s1=2522.54 → -4.6% LOSS/TIE.
+
+### DISAPPEARED: 3 jobs on reconcile (all had CSVs already pulled)
+- h036-namethisgame-s1 (rorqual 8566677): CSV present in results/rorqual/
+- h036-montezumarevenge-s1 (fir 28339905): CSV present in results/fir/
+- h036-battlezone-s1 (fir 28339885): CSV present in results/fir/
+
+### CANCELLED 3 DUPLICATE h029 RESUBMISSIONS
+- h029-enduro-s2 (nibi 10555667): already have results
+- h029-qbert-s3 (fir 28350674): already have results
+- h029-spaceinvaders-s3 (nibi 10555672): already have results
+
+### IQM HNS STANDINGS (seed-1 comparison):
+1. h029 (CVaR+QR+DrQ): IQM=0.0053 (15g) ← BEST NOVEL
+2. h008 (PQN LSTM): IQM=0.0043 (15g)
+3. h036 (CVaR+Duel+SEM+DrQ): IQM=0.0020 (10g, 2 curve-derived, 5 pending)
+4. h001 (PPO baseline): IQM=0.0016 (14g)
+5. h035 (CVaR+SEM+DrQ): IQM=-0.0004 (14g) ← BELOW BASELINE
+6. h020 (Dueling PPO): IQM=-0.0021 (15g) ← recalculated, below baseline
+
+### CRITICAL: h036 BattleZone LOSS is concerning
+h036-battlezone-s1 q4=1765 is BELOW random score (2360). This is a severe regression on a game where h029 excels (q4=2819 seed 1). The Dueling+SEM combo may be hurting representation quality on games with discrete action spaces.
+
+h036 still has Amidar (curve q4=31.0) and Qbert (curve q4=279.28) with likely inflated curve-derived data. When corrected, IQM will drop further.
+
+### h035 Near-Certain CLOSURE
+14/15 games, IQM=-0.0004. Only Solaris pending (running on rorqual). Even with a strong Solaris result, h035 cannot recover to above h029. SEM conclusively does not enhance CVaR.
+
+### h029 3-Seed: 42/45 Complete
+Only BattleZone-s3 (narval) + Solaris-s2/s3 (narval/rorqual) remaining. All-seed IQM=0.0014. Final IQM unlikely to change much.
+
+### 14 ACTIVE JOBS (after 3 cancellations + 3 disappearances)
+- h029: 3 running (BattleZone-s3, Solaris-s2, Solaris-s3) — FINAL experiments
+- h035: 1 running (Solaris-s1)
+- h036: 7 running (Amidar, DoubleDunk, Enduro, MsPacman, PrivateEye, Qbert, SpaceInvaders)
+
+### NEXT SESSION TODO
+1. Process h029 final 3 experiments when complete → definitive 3-seed conclusion
+2. Process h035-solaris-s1 → close h035
+3. Process h036 remaining 7 games → definitive 15-game comparison
+4. If h036 IQM < h029 after all 15 games: close h036, proceed to Phase 3 with h029
+5. If h036 IQM > h029: submit 3-seed immediately
+6. Begin planning Phase 3 ablations for h029 (CVaR alpha sweep, DrQ removal, QR removal)
