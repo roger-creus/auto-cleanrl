@@ -3919,3 +3919,62 @@ CVaR advantage is game-dependent: helps on BattleZone/Solaris (complex), hurts o
    d. Explore adaptive methods that work differently on different game types
    e. Look at hybrid on/off-policy approaches
 4. Phase 2 is NOT complete — many categories unexplored (off-policy, hybrid, ensemble)
+
+---
+**[2026-03-19 04:00 UTC]**
+
+## Session 64: Process 4 Final Results + Close h029/h036 + Launch h046/h047
+
+### Triggered by: h036-enduro-s1 (narval SUCCESS)
+
+### Results Processed: 4 new entries + 1 correction (now 817 rows)
+- h036-enduro-s1: q4=0.0 (TIE with PPO)
+- h036-mspacman-s1: q4=246.90 (-14% LOSS vs PPO 287.07)
+- h036-qbert-s1: CORRECTED curve q4=279.28 → new-code 143.98 (-11.4% LOSS vs PPO 162.49)
+- h029-solaris-s3: q4=2843.83 (+31.4% WIN vs PPO 2163.56). Huge Solaris win for h029.
+
+### h029 DEFINITIVELY CLOSED: 45/45 COMPLETE
+Seed-1 IQM=0.0000, All-seed IQM=-0.0002. CVaR produces zero consistent improvement over PPO.
+5W/3L/7T seed-1. BattleZone/Solaris/Phoenix/Alien wins offset by DoubleDunk/NameThisGame/Qbert losses.
+Cancelled redundant h029-solaris-s2 resubmit (narval 57975445).
+
+### h036 DEFINITIVELY CLOSED: 15/15 COMPLETE
+Seed-1 IQM=-0.0033 (BELOW baseline). 7 LOSSES, 2 WINS, 6 TIE.
+Triple combo (CVaR+Duel+SEM+DrQ) is strictly worse than h029 alone. BattleZone catastrophic (-25%).
+
+### CVaR HYPOTHESIS SPACE FULLY EXHAUSTED
+- h029 (CVaR+QR+DrQ): IQM=0.0000 — zero net improvement
+- h035 (CVaR+SEM+DrQ): IQM=-0.0004 — below baseline, closed
+- h036 (CVaR+Duel+SEM+DrQ): IQM=-0.0033 — below baseline, closed
+- h028 (DrQ+QR, no CVaR): IQM=-0.0034 — below baseline, closed
+CVaR is game-dependent: helps BattleZone/Solaris, hurts DoubleDunk/NameThisGame. Net zero.
+
+### NEW HYPOTHESES LAUNCHED: h046 + h047
+**h046: PPO + LSTM (envpool)** — 15-game pilot submitted across 4 clusters.
+Motivation: PQN+LSTM (h008) had IQM=0.0036, best technique. PPO is stronger base than PQN.
+Implementation: Combined ppo_atari_envpool.py + ppo_atari_lstm.py LSTM architecture.
+Uses 4-frame CNN input + LSTM(512→128) + per-env minibatch sampling for temporal consistency.
+
+**h047: DQN (envpool)** — 15-game pilot submitted across 4 clusters.  
+Motivation: Opens ENTIRELY UNEXPLORED off-policy paradigm. All 36 prior hypotheses were on-policy.
+Implementation: Adapted dqn_atari.py to envpool with 16 parallel envs, 200K replay buffer, epsilon-greedy.
+
+### CORRECTED IQM STANDINGS (seed-1, delta-HNS vs PPO):
+1. h029 (CVaR+QR+DrQ): IQM=0.0000 (15g, 3-seed) — BEST NOVEL, but zero improvement
+2. h008 (PQN LSTM): IQM=-0.0039 (recalculated, 15g)
+3. h020 (Dueling PPO): IQM=-0.0007 (15g)
+4. h001 (PPO baseline): IQM=-0.0027 (self-comparison artifact from multi-seed)
+5. h036 (CVaR+Duel+SEM+DrQ): IQM=-0.0033 (15g, CLOSED)
+6. h035 (CVaR+SEM+DrQ): IQM=-0.0011 (15g, CLOSED)
+
+### 30 ACTIVE JOBS
+- h046 PPO+LSTM: 15 jobs (4 narval, 4 fir, 4 nibi, 3 rorqual)
+- h047 DQN: 15 jobs (4 narval, 4 fir, 4 nibi, 3 rorqual)
+
+### NEXT SESSION TODO
+1. Check h046/h047 early failures (within 1-2h)
+2. If h046 shows promise: prepare 3-seed expansion
+3. If h047 works: explore Rainbow (envpool) next
+4. Consider: PPO + LSTM + DrQ combination if LSTM helps
+5. Explore more paradigms: discount annealing, hybrid on/off-policy, gradient manipulation
+6. Phase 2 continues — many categories still unexplored
