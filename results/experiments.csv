@@ -832,3 +832,6 @@ h046-solaris-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id Solaris-
 h047-venture-s1,h047,"python cleanrl/dqn_atari_envpool.py --env-id Venture-v5 --seed 1","nibi (new-code)",Venture-v5,1,dqn,40000000,17488,3.66,3.29,64000.0,0.0
 h047-montezumarevenge-s1,h047,"python cleanrl/dqn_atari_envpool.py --env-id MontezumaRevenge-v5 --seed 1","nibi (new-code, disappeared but CSV recovered)",MontezumaRevenge-v5,1,dqn,40000000,111920,0.0,0.0,0.0,0.0
 h047-privateeye-s1,h047,"python cleanrl/dqn_atari_envpool.py --env-id PrivateEye-v5 --seed 1","nibi (new-code)",PrivateEye-v5,1,dqn,40000000,14832,-128.35,-2.46,-1903648.0,-680.0
+h047-spaceinvaders-s1,h047,"python cleanrl/dqn_atari_envpool.py --env-id SpaceInvaders-v5 --seed 1","fir (new-code)",SpaceInvaders-v5,1,dqn,40000000,58720,242.11,252.93,14216960.0,290.0
+h047-battlezone-s1,h047,"python cleanrl/dqn_atari_envpool.py --env-id BattleZone-v5 --seed 1","nibi (new-code, disappeared but CSV recovered)",BattleZone-v5,1,dqn,40000000,23968,2932.58,3109.48,70288000.0,800.0
+h046-alien-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id Alien-v5 --seed 1","narval (new-code, disappeared but CSV recovered)",Alien-v5,1,ppo_lstm,40000000,60928,197.39,198.40,12026880.0,90.0
