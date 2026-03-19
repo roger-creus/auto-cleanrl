@@ -40,7 +40,7 @@ class Args:
     # Algorithm specific arguments
     env_id: str = "Breakout-v5"
     """the id of the environment"""
-    total_timesteps: int = 10000000
+    total_timesteps: int = 40000000
     """total timesteps of the experiments"""
     learning_rate: float = 2.5e-4
     """the learning rate of the optimizer"""
@@ -74,7 +74,7 @@ class Args:
     """the target KL divergence threshold"""
 
     # results tracking
-    hypothesis_id: str = "h000"
+    hypothesis_id: str = "h051"
     """hypothesis identifier for results tracking"""
     experiment_id: str = ""
     """experiment identifier (auto-generated if empty)"""
