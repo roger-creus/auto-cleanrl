@@ -39,3 +39,4 @@ h046,PPO + LSTM (envpool),Add LSTM temporal memory to PPO — PQN+LSTM (h008) wa
 h047,DQN (envpool),Off-policy DQN baseline with envpool — opens entirely unexplored off-policy paradigm,promising,"PILOT RUNNING (0/15). All 15 running ~2h remaining."
 h048,PPO + Munchausen reward bonus,"Add α*τ*log π(a|s) to rewards during GAE — Munchausen RL trick applied to PPO (novel, originally for DQN)",promising,"PILOT SUBMITTED (15 games × 1 seed). Munchausen reduces policy churn in DQN (BTR paper). Novel for PPO."
 h049,PPO + Gamma Annealing,"Linearly anneal discount factor γ from 0.95 to 0.999 — shorter horizons early, longer late",promising,"PILOT SUBMITTED (15 games × 1 seed). Motivated by discount-as-regularizer (Amit et al 2020)."
+h050,DQN + Munchausen (envpool),"Munchausen DQN with soft value target + log-policy bonus — key BTR component (NeurIPS 2020, ICML 2025)",promising,"PILOT SUBMITTED (15 games × 1 seed). BTR ablation shows Munchausen reduces policy churn 11%→3.8%."
