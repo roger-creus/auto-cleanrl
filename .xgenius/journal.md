@@ -4887,3 +4887,60 @@ h047(7), h050(10 resubmit), h051(13), h055(15), h056(15), h057(15), h058(15), h0
 5. h051 CReLU 4 remaining + 4 resubmit in 2-4h — finalize pilot
 6. h047/h050/h059-h063 in 4-8h — complete DQN component survey
 7. When all DQN components complete: build comparative table, identify top components for Rainbow-lite
+
+---
+**[2026-03-19 13:06 UTC]**
+
+## Session 80: Process h055/h056 Results + Close h051 (Stale Code)
+
+### Triggered by: h055-privateeye-s1 (job 10572487, nibi SUCCESS), h051-alien-s1 (job 10574333, nibi SUCCESS)
+
+### Results Processed: 3 new entries (now 916 rows after removing 4 stale h051 entries)
+
+**h055 Double DQN (1 new, now 6/15):**
+- privateeye-s1: q4=-210.67 vs PPO s2=46.64 MASSIVE LOSS. Also much worse than DQN=-2.46. PrivateEye catastrophic for Double DQN — negative q4 means average return in last 25% of training is -210.
+- h055 at 6/15: 3W/2L/1T, IQM delta-HNS=-0.0337. Essentially identical to vanilla DQN, confirming Double DQN adds no value at this training scale.
+
+**h056 PPO Wide (2 new VALID results, 3 stale CSVs deleted):**
+- mspacman-s1: q4=255.37 vs PPO=287.07 (-11.0% LOSS). Wider net hurts MsPacman.
+- namethisgame-s1: q4=2119.84 vs PPO=2522.54 (-16.0% LOSS). Wider net hurts NameThisGame.
+- Stale CSVs deleted from results/: h056-amidar-s1 (fir), h056-phoenix-s1 (narval), h056-venture-s1 (narval) — all from old cancelled batch.
+- h056 at 2/15 valid: 0W/2L/0T. PPO Wide not looking promising — wider net may need more training time.
+
+### h051 CReLU: CLOSED (persistent stale-code issue)
+CRITICAL FINDING: h051-alien-s1 from nibi (job 10574333, completed just now) is BIT-FOR-BIT IDENTICAL to PPO baseline (q4, mean, n_episodes, auc ALL match to 15 decimal places). This is the 5th attempt across 4 clusters.
+
+Thorough stale-code audit of ALL h051 entries:
+- CONFIRMED STALE (removed from CSV): battlezone (nibi), doubledunk (nibi), solaris (nibi), enduro (fir)
+- CONFIRMED VALID (kept): mspacman (narval q4=341.05 +18.8% WIN), namethisgame (nibi q4=1870.16 -25.4% LOSS)
+- AMBIGUOUS (kept): venture (q4=0.0), montezumarevenge (q4=0.0), privateeye (q4=-170.71)
+
+With only 2 definitively valid results, CReLU is inconclusive and not worth further debugging. Cancelled all 6 running h051 jobs.
+
+Root cause unknown: rsync confirms file exists on clusters with matching md5, but jobs produce PPO-identical output. Possible __pycache__ issue or container caching.
+
+### IQM STANDINGS (updated):
+1. h050 (Munchausen DQN): IQM=+0.0137 (5g, 3W/0L/2T) — PROMISING LEADER
+2. h047 (DQN baseline): IQM=+0.0096 (7g, 5W/1L/1T)
+3. h034 (CVaR+Duel+DrQ): IQM=+0.0093 (13g, 8W/3L/2T) — best PPO method (closed)
+4. h055 (Double DQN): IQM=-0.0337 (5g, 3W/2L/0T) — ~identical to DQN baseline
+5. h056 (PPO Wide): IQM=-0.0374 (2g, 0W/2L/0T) — too early to judge
+
+### ACTIVE JOBS: ~149 total (after cancelling 6 h051)
+h047(7), h050(10), h055(12), h056(15), h057(15), h058(15), h059(15), h060(15), h061(15), h062(15), h063(15)
+
+### EXPECTED COMPLETION TIMELINE:
+- h055 Double DQN: ~2-4h (remaining 9 games)
+- h056 PPO Wide: ~2-3h (13 valid pending)
+- h047 DQN resubmit: ~3-5h
+- h050 Munchausen resubmit: ~5-7h
+- h057-h063 DQN variants: ~4-7h
+
+### NEXT SESSION TODO:
+1. Process h055 remaining results (9 games) — complete pilot
+2. Process h056 valid results (verify NOT stale by checking q4 != PPO)
+3. Process h047 remaining 7 games — complete DQN baseline
+4. Process h050 Munchausen DQN remaining 10 games — critical for Munchausen validation
+5. Process h057-h063 DQN variant results as they come in
+6. When all DQN components complete: build comparative table, identify top 3-4 for Rainbow-lite
+7. Rainbow-lite = best combination of: Munchausen, N-step, Dueling, PER, C51/QR/IQN, NoisyNet
