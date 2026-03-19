@@ -6725,3 +6725,78 @@ Adding enduro (q4=31.14, big win vs PPO and DQN) moved Dueling from last session
 7. h047: solaris pending(fir) — CRITICAL for finalizing DQN baseline
 8. h051/h056: stale plague continues. Only 4/15 genuine each. May need code investigation.
 9. Once all reach 15/15: finalize rankings, design Rainbow-lite experiment
+
+---
+**[2026-03-19 20:57 UTC]**
+
+## Session 106: Process 5 New Results (1 triggered + 4 recovered) + Delete 43 Stale h051/h056 CSVs
+
+### Triggered by: h058-breakout-s1 (job 8591652, rorqual SUCCESS)
+
+### Results Processed: 5 new entries (1037→1042 rows including header)
+
+**h058 Dueling DQN (2 new, now 14/15):**
+- breakout-s1 (rorqual): q4=1.98 vs PPO=1.37 WIN (+45%). vs DQN=1.80 WIN (+10%). Both near zero.
+- mspacman-s1 (nibi, recovered from disappeared): q4=249.30 vs PPO=287.07 LOSS (-13.2%). vs DQN=465.18 BIG LOSS (-46.4%).
+
+**h057 N-step DQN (3 new, now 14/15):**
+- enduro-s1 (narval, recovered): q4=29.09 vs PPO=0.0 WIN. vs DQN=19.01 WIN (+53%).
+- solaris-s1 (narval, recovered): q4=332.38 vs PPO=1031.70 BIG LOSS (-67.8%).
+- spaceinvaders-s1 (fir, recovered): q4=276.12 vs PPO=150.19 WIN (+83.8%). vs DQN=252.93 WIN (+9.2%).
+
+### Stale CSV Cleanup: 7 stale + 6 processed/duplicate + 36 new stale from pulls = 49 total deletions
+
+### h050-alien-s1 Resubmitted: job 58013246 on narval (previous fir job hit TIME LIMIT)
+
+### IQM dHNS STANDINGS (updated):
+| Rank | Component    | Games    | IQM dHNS vs PPO | vs DQN   | W/L/T PPO |
+|------|-------------|----------|-----------------|----------|-----------|
+| 1    | DQN base    | 14/15    | +0.0105         | ---      | 9W/3L/2T  |
+| 2    | IQN         | 14/15    | +0.0082         | +0.0003  | 9W/3L/2T  |
+| 3    | Dueling     | 14/15    | +0.0036         | -0.0005  | 7W/6L/1T  |
+| 4    | CReLU(PPO)  | 4/15     | +0.0000         | ---      | 1W/1L/2T  |
+| 5    | Wide(PPO)   | 4/15     | -0.0024         | ---      | 0W/2L/2T  |
+| 6    | NoisyNet    | COMPLETE | -0.0025         | +0.0003  | 9W/4L/2T  |
+| 7    | QR-DQN      | COMPLETE | -0.0036         | +0.0015  | 9W/4L/2T  |
+| 8    | Double DQN  | COMPLETE | -0.0051         | -0.0003  | 8W/5L/2T  |
+| 9    | N-step      | 14/15    | -0.0077         | +0.0022  | 9W/4L/1T  |
+| 10   | PER         | 13/15    | -0.0083         | -0.0001  | 9W/4L/0T  |
+| 11   | C51 40M     | 14/15    | -0.0086         | -0.0008  | 9W/4L/1T  |
+| 12   | Munchausen  | 14/15    | -0.0102         | +0.0002  | 8W/5L/1T  |
+
+### KEY FINDINGS:
+1. N-step has BEST vs-DQN improvement at +0.0022! It genuinely helps DQN.
+2. QR-DQN +0.0015 vs DQN is second best improvement.
+3. NoisyNet +0.0003 vs DQN is modest but positive.
+4. Dueling HURTS vs DQN (-0.0005) despite being #3 vs PPO.
+5. Double DQN HURTS vs DQN (-0.0003).
+6. N-step Solaris loss (-67.8% vs PPO) is catastrophic but shared with all DQN variants.
+
+### COVERAGE:
+| Hypothesis  | Banked | Gap | Status |
+|------------|--------|-----|--------|
+| h047 DQN   | 14/15  | Solaris | pending(fir) |
+| h050 Munch | 14/15  | Alien | resubmitted(narval) |
+| h051 CReLU | 4/15   | 11 games | stale plague, running(narval) |
+| h055 DblDQN| 15/15  | COMPLETE | --- |
+| h056 Wide  | 4/15   | 11 games | stale plague, running(narval) |
+| h057 Nstep | 14/15  | Alien | running(fir) |
+| h058 Duel  | 14/15  | Solaris | running(narval) |
+| h059 PER   | 13/15  | BK+MR | running/pending |
+| h060 QRDQN | 15/15  | COMPLETE | --- |
+| h061 C51   | 14/15  | Breakout | pending(nibi) |
+| h062 Noisy | 15/15  | COMPLETE | --- |
+| h063 IQN   | 14/15  | DD | pending(rorqual) |
+
+### ACTIVE: 14R + 81P = 95 SLURM jobs
+
+### NEXT SESSION TODO:
+1. Process remaining results as they come in
+2. h057/h058 each need 1 more game for 15/15
+3. h059/h061/h063 each need 1-2 more games
+4. h050 needs Alien (resubmitted)
+5. h047 needs Solaris (pending on fir) — CRITICAL for finalizing DQN baseline
+6. h051/h056: still plague. Running on narval but producing stale results.
+7. When most pilots reach 15/15: design Rainbow-lite combining best components
+8. Best vs-DQN improvements: N-step (+0.0022) > QR-DQN (+0.0015) > NoisyNet (+0.0003)
+9. Consider: Rainbow-lite = DQN + N-step + QR-DQN + NoisyNet (skip Dueling/Double/PER)
