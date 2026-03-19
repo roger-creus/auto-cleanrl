@@ -1,0 +1,6 @@
+sending incremental file list
+auto-cleanrl.sif
+
+sent 4,938,196,675 bytes  received 35 bytes  395,055,736.80 bytes/sec
+total size is 4,945,575,936  speedup is 1.00
+python: can't open file '/src/cleanrl/dqn_atari_envpool_noisylinear.py': [Errno 2] No such file or directory

@@ -6864,3 +6864,60 @@ BUT: h056-battlezone-s1 is STALE (q4=2364.31 matches h001 PPO exactly). No genui
 8. When all complete: Rainbow-lite = DQN + QR-DQN (best +0.0006) ± N-step (+0.0003)
 9. Skip Dueling (hurts) and Double DQN (hurts). NoisyNet neutral.
 10. Consider: IQN itself may be better than any combination — it's a more principled distributional approach.
+
+---
+**[2026-03-19 23:07 UTC]**
+
+## Session 108: No New Results (Duplicate Triggers) + 48 Stale CSV Cleanup
+
+### Triggered by: h061-enduro-s1 (nibi), h062-spaceinvaders-s1 (nibi), h060-mspacman-s1 (fir), h062-solaris-s1 (fir)
+All 4 triggered jobs were ALREADY BANKED in previous sessions. No new experiment rows added.
+
+### Stale CSV Cleanup: 48 files deleted
+- 24 h051 CSVs (all stale, matching h001 PPO baseline across nibi/fir/narval/rorqual)
+- 24 h056 CSVs (all stale, matching h001 PPO baseline across nibi/fir/narval/rorqual)
+- Zero genuine new h051/h056 results. The stale plague persists with 100% hit rate.
+
+### COMPLETION STATUS:
+| Hypothesis  | Banked | Gap | Coverage |
+|------------|--------|-----|----------|
+| h047 DQN   | 14/15  | Solaris | 1P(fir) |
+| h050 Munch | 14/15  | Alien | 1R(narval) |
+| h051 CReLU | 4/15   | 11 games | 7R+19P but ALL STALE |
+| h053 C51   | 15/15  | COMPLETE | --- |
+| h054 SAC   | 14/15  | Solaris | closed, won't resubmit |
+| h055 DblDQN| 15/15  | COMPLETE | --- |
+| h056 Wide  | 4/15   | 11 games | 4R+19P but ALL STALE |
+| h057 Nstep | 15/15  | COMPLETE | --- |
+| h058 Duel  | 15/15  | COMPLETE | --- |
+| h059 PER   | 13/15  | BK+MR | 1P(nibi)+1R(narval) |
+| h060 QRDQN | 15/15  | COMPLETE | --- |
+| h061 C51ep | 14/15  | Breakout | 1P(nibi) |
+| h062 Noisy | 15/15  | COMPLETE | --- |
+| h063 IQN   | 14/15  | DoubleDunk | 1P(rorqual) |
+
+### IQM dHNS STANDINGS (recalculated from all banked data):
+| Rk | Component  | Games    | IQM vPPO | IQM vDQN | W/L/T PPO |
+|----|-----------|----------|----------|----------|-----------|
+| 1  | DQN base  | 14/15    | +0.0090  | ---      | 9W/3L/2T  |
+| 2  | IQN       | 14/15    | +0.0067  | -0.0004  | 9W/3L/2T  |
+| 3  | NoisyNet  | COMPLETE | -0.0050  | -0.0003  | 9W/4L/2T  |
+| 4  | QR-DQN    | COMPLETE | -0.0071  | +0.0006  | 9W/4L/2T  |
+| 5  | Double DQN| COMPLETE | -0.0089  | -0.0010  | 8W/5L/2T  |
+| 6  | N-step    | COMPLETE | -0.0091  | +0.0003  | 10W/4L/1T |
+| 7  | C51 40M   | COMPLETE | -0.0122  | -0.0020  | 8W/4L/3T  |
+| 8  | C51 40Mep | 14/15    | -0.0126  | -0.0010  | 9W/4L/1T  |
+| 9  | PER       | 13/15    | -0.0135  | -0.0001  | 9W/4L/0T  |
+| 10 | Dueling   | COMPLETE | -0.0146  | -0.0014  | 7W/7L/1T  |
+| 11 | Munchausen| 14/15    | -0.0149  | -0.0011  | 8W/5L/1T  |
+
+### ACTIVE: 22R + 60P = 82 SLURM jobs
+
+### NEXT SESSION TODO:
+1. Continue processing results as they complete
+2. h050-alien(narval), h059-MR(narval) running — should complete soon
+3. h047-solaris, h059-breakout, h061-breakout, h063-doubledunk pending
+4. h051/h056: 100% stale. 26R+23P running/pending. Need code-level investigation — the training scripts may be writing results to wrong output paths, causing the watcher to pull h001 results instead.
+5. When remaining pilots complete: finalize all DQN component rankings
+6. Rainbow-lite candidates: QR-DQN (+0.0006 vs DQN, only positive) + N-step (+0.0003)
+7. Consider IQN as standalone best — if doubledunk doesn't crash it too much
