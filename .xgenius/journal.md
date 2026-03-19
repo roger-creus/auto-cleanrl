@@ -3690,3 +3690,106 @@ These are from the h034 resubmission batch. Since h034 = h029 (identical, duelin
 4. Process h030-alien-s1 (resubmit on nibi)
 5. When h029 3-seed is fully done: definitive comparison vs h020/h008
 6. Consider Phase 3 planning if all pilots complete
+
+---
+**[2026-03-19 03:04 UTC]**
+
+## Session 61: Process h036-alien-s1 + h036-solaris-s1 + h029-phoenix-s3 + h035-alien-s1
+
+### Triggered by: h036-alien-s1 (job 10550269, nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 800 rows)
+- h036-alien-s1: new-code CSV q4=203.22 (nibi, 61312 eps). PPO s1=207.63 → -2.1% TIE.
+- h036-solaris-s1: new-code CSV q4=2459.11 (nibi, 5760 eps). PPO s1=2163.56 → +13.7% WIN!
+- h029-phoenix-s3: new-code CSV q4=745.41 (rorqual, 32640 eps). PPO s1=892.49 → -16.5% LOSS. Phoenix now 3-seed complete.
+- h035-alien-s1: new-code CSV q4=201.32 (rorqual, 60288 eps). PPO s1=207.63 → -3.0% TIE.
+
+### DISAPPEARED: 5 jobs on reconcile (h036-solaris-s1 already had CSV)
+- h036-spaceinvaders-s1 (narval): DISAPPEARED. Resubmitted to nibi (10561010).
+- h029-privateeye-s2 (rorqual): DISAPPEARED. Resubmitted to nibi (10560993).
+- h029-mspacman-s2 (rorqual): DISAPPEARED. Resubmitted to narval (57976180).
+- h029-alien-s3 (rorqual): DISAPPEARED. Resubmitted to fir (28358068).
+- h035-phoenix-s1 (rorqual): Was already disappeared, discovered NOT resubmitted. Resubmitted to narval (57976182).
+
+### IQM HNS STANDINGS (seed-1 comparison, 15 PPO baselines):
+1. h036 (CVaR+Duel+SEM+DrQ): 0.0048 (7g — 2 CURVE-derived, 8 running)
+2. h035 (CVaR+SEM+DrQ): 0.0015 (11g — Solaris/Phoenix pending)
+3. h029 (CVaR+QR+DrQ): 0.0012 (14g, 39/45 — 6 remaining)
+4. h001 (PPO baseline): ~0.0002
+
+### h036 SOLARIS WIN IS PROMISING
+h036-solaris-s1 q4=2459 (+14% over PPO 2164). This is the strongest absolute game score for h036 so far. Solaris is a challenging game where PPO already does well. Combined with h036's BattleZone/Qbert wins (curve-derived, need confirmation), the triple combo may be showing genuine strength on complex games.
+
+Phoenix is a clear LOSS (-20.4%) — similar to h029-phoenix-s2 loss pattern. CVaR seems to hurt Phoenix performance consistently.
+
+### h029 3-Seed: 39/45 Complete
+Phoenix now complete (s1=933.65, s2=755.63, s3=745.41). Average=811.56 vs PPO 892.49 → -9% LOSS on Phoenix.
+6 remaining: Alien-s3, BattleZone-s3, MsPacman-s2, PrivateEye-s2, Solaris-s2/s3.
+3 running (BattleZone/Solaris s2+s3) + 3 resubmitted (Alien-s3/MsPacman-s2/PrivateEye-s2).
+
+### UNKNOWN h038-h045 EXPERIMENTS
+Found CSVs in results/nibi/ for h038 through h045 with OLD-format headers. These are NOT in the xgenius DB and have no slurm logs. They appear to be quick single-game probes (1 game each: Qbert or Amidar) run by the human outside xgenius. NOT processing into results bank.
+
+### 23 ACTIVE JOBS (18 existing + 5 resubmits)
+- h029 3-seed: 3 running + 3 resubmitted = 6 remaining
+- h030 pilot: 1 running (alien-s1 nibi resubmit)
+- h035 pilot: 2 running (solaris/spaceinvaders) + 1 resubmitted (phoenix) = 3 remaining (of 15g pilot)
+- h036 pilot: 9 running + 1 resubmitted (spaceinvaders) = 10 remaining (of 15g pilot)
+
+### NEXT SESSION TODO
+1. Process remaining h029 3-seed (6 experiments, ~4-5h for resubmits)
+2. Process h035 remaining 2 games (Solaris ~1h, Phoenix ~5h resubmit)
+3. Process h036 remaining 8-9 games (9 running ~2h, SpaceInvaders ~5h)
+4. Process h030-alien-s1 (nibi resubmit, ~5h)
+5. When h035 pilot completes (15g): definitive comparison vs h029
+6. When h036 pilot completes (15g): definitive comparison — IF IQM > h029, submit 3-seed
+7. h036 Amidar/Qbert curve-derived entries will be corrected when those games complete
+
+---
+**[2026-03-19 03:06 UTC]**
+
+## Session 61 ADDENDUM: 5 More Results from Rorqual Pull
+
+### CSVs from disappeared rorqual jobs were actually on scratch — results valid!
+The rorqual pull recovered 5 CSVs from jobs that disappeared from SLURM tracking:
+- h029-alien-s3: q4=218.40 (rorqual). PPO s1=207.63 → +5.2% WIN. Alien now 3-seed complete.
+- h029-mspacman-s2: q4=250.40 (rorqual). PPO s1=287.07 → -12.8% LOSS. MsPacman now 3-seed complete.
+- h029-privateeye-s2: q4=33.91 (rorqual). PPO s2=46.64 → TIE. PrivateEye now 3-seed complete.
+- h030-alien-s1: q4=198.52 (rorqual). PPO s1=207.63 → -4.4% TIE/LOSS. h030 now 15/15 COMPLETE.
+- h035-phoenix-s1: q4=773.39 (rorqual). PPO s1=892.49 → -13.3% LOSS. h035 now 14/15 (only Solaris missing).
+
+### CANCELLED 5 unnecessary resubmissions + h030-alien-s1 nibi resubmit
+Cancelled: h029-privateeye-s2 (nibi), h029-mspacman-s2 (narval), h029-alien-s3 (fir), h035-phoenix-s1 (narval), h030-alien-s1 (nibi).
+Only h036-spaceinvaders-s1 resubmission (nibi 10561010) kept.
+
+### h029 3-Seed: 42/45 Complete
+Only 3 remaining: BattleZone-s3 (narval), Solaris-s2 (narval), Solaris-s3 (rorqual).
+
+### h030 CLOSED: IQM=-0.0006 (14g, BELOW baseline)
+SEM alone does not improve PPO. 3W/6L/5T. Closed.
+
+### h035 Near-Complete: 14/15 games, IQM=0.0002 (13g)
+Phoenix LOSS (-13.3%) drops h035 to near-baseline. SEM doesn't enhance CVaR. Only Solaris pending.
+h035 is DISAPPOINTING and will likely be closed after Solaris arrives.
+
+### DEFINITIVE IQM HNS STANDINGS (all seed-1 comparison):
+1. h036 (CVaR+Duel+SEM+DrQ): 0.0048 (7g — 2 CURVE inflate, 8 games pending)
+2. h029 (CVaR+QR+DrQ): 0.0012 (14g, 42/45 — 3 running) ← BEST NOVEL
+3. h035 (CVaR+SEM+DrQ): 0.0002 (13g — near baseline, disappointing)
+4. h030 (SEM only): -0.0006 (14g — BELOW baseline, CLOSED)
+5. h001 (PPO baseline): ~0.0002
+
+### CRITICAL INSIGHT: CVaR hypothesis space ALMOST fully explored
+h029 (CVaR+QR+DrQ) = IQM 0.0012 — modest but consistent improvement.
+h035 (CVaR+SEM+DrQ) = 0.0002 — SEM doesn't help CVaR. Near baseline.
+h036 (CVaR+Duel+SEM+DrQ) = 0.0048 but UNRELIABLE (curve-derived Amidar/Qbert inflate).
+When h036 pilot completes, we'll have definitive comparison. If h036 drops to ~h029 level, CVaR gives ~6x above PPO baseline and that's the ceiling.
+
+### h038-h045 MYSTERY EXPERIMENTS
+Found CSVs in results/nibi/ from unknown hypotheses (old-format headers, not in DB). Quick single-game probes run by the human outside xgenius. Noted but not processed.
+
+### 15 ACTIVE JOBS (after 5 cancellations)
+- h029: 3 running (BattleZone-s3, Solaris-s2/s3) — final experiments
+- h035: 2 running (Solaris-s1, SpaceInvaders new-code update)  
+- h036: 9 running + 1 resubmitted (SpaceInvaders) = 10 remaining
+Total: ~2-4h for most completions

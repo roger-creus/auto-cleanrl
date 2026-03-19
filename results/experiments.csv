@@ -794,3 +794,12 @@ h029-breakout-s2,h029,,3-seed (fir new-code),Breakout-v5,2,ppo_aug_qr_cvar,40000
 h029-amidar-s2,h029,,3-seed (rorqual new-code),Amidar-v5,2,ppo_aug_qr_cvar,40000000,,,2.43,,
 h029-venture-s3,h029,,3-seed (rorqual new-code),Venture-v5,3,ppo_aug_qr_cvar,40000000,,,0.0,,
 h029-phoenix-s2,h029,,3-seed (narval new-code),Phoenix-v5,2,ppo_aug_qr_cvar,40000000,35456,763.61,755.63,27074560,420.0
+h036-alien-s1,h036,,pilot (nibi new-code),Alien-v5,1,ppo_cvar_duel_sem,40000000,61312,198.60,203.22,12176640.0,210.0
+h036-solaris-s1,h036,,pilot (nibi new-code),Solaris-v5,1,ppo_cvar_duel_sem,40000000,5760,2346.22,2459.11,13514240.0,4520.0
+h029-phoenix-s3,h029,,3-seed (rorqual new-code),Phoenix-v5,3,ppo_aug_qr_cvar,40000000,32640,727.18,745.41,23735040.0,280.0
+h035-alien-s1,h035,,pilot (rorqual new-code),Alien-v5,1,ppo_cvar_sem,40000000,60288,205.86,201.32,12410880.0,250.0
+h029-alien-s3,h029,,3-seed (rorqual new-code),Alien-v5,3,ppo_aug_qr_cvar,40000000,60032,209.47,218.40,12574720.0,200.0
+h029-mspacman-s2,h029,,3-seed (rorqual new-code),MsPacman-v5,2,ppo_aug_qr_cvar,40000000,82688,246.97,250.40,20421120.0,220.0
+h029-privateeye-s2,h029,,3-seed (rorqual new-code),PrivateEye-v5,2,ppo_aug_qr_cvar,40000000,14720,-7.74,33.91,-113920.0,0.0
+h030-alien-s1,h030,,pilot (rorqual new-code),Alien-v5,1,ppo_sem,40000000,59776,213.19,198.52,12743680.0,230.0
+h035-phoenix-s1,h035,,pilot (rorqual new-code),Phoenix-v5,1,ppo_cvar_sem,40000000,30976,826.90,773.39,25614080.0,480.0
