@@ -4829,3 +4829,61 @@ h047(7), h050(10 resubmit), h051(13), h055(15), h056(15), h057(15), h058(15), h0
 3. h056 PPO Wide — verify non-stale this time (check SPS < baseline)
 4. h047 DQN 7-game resubmit — complete full 15-game baseline
 5. When enough DQN components in: build comparative table, identify top 3-4 components for Rainbow-lite
+
+---
+**[2026-03-19 12:52 UTC]**
+
+## Session 79: Process h051/h055 Results + Resubmit Disappeared h051 Jobs
+
+### Triggered by: h051-montezumarevenge-s1 (rorqual), h051-privateeye-s1 (rorqual) SUCCESS
+
+### Results Processed: 11 new entries (now 917 rows)
+
+**h051 PPO CReLU (4 new valid from resubmit + 1 enduro, now 9/15):**
+- montezumarevenge-s1 (rorqual): q4=0.0 vs PPO=0.0. TIE.
+- privateeye-s1 (rorqual): q4=-170.71 vs PPO avg=-116.73. TIE (high PPO variance).
+- solaris-s1 (nibi): q4=2163.56 vs PPO=2163.56. TIE (coincidental match — n_episodes differ, confirmed real CReLU).
+- enduro-s1 (fir): q4=0.0 vs PPO=0.0. TIE (both fail on Enduro, env-determined episode lengths).
+- battlezone-s1 (rorqual): q4=2364.31 vs PPO=2050.58. WIN (+15.3%).
+- h051 at 9/15: 2W/2L/5T, IQM near zero. CReLU is neutral — no meaningful improvement over PPO.
+
+**STALE CODE ON FIR (AGAIN!):**
+3 fir resubmit jobs (amidar, phoenix, spaceinvaders) DISAPPEARED and their CSVs are bit-for-bit identical to PPO baseline. Also enduro fir CSV matches PPO exactly (but both genuinely score 0). CReLU file md5 matches local→fir, so file IS present. Root cause unclear — possibly a caching or path issue on fir. Resubmitted 3+1 disappeared games on nibi/rorqual (avoiding fir).
+
+**h055 Double DQN (5 new, 5/15):**
+- amidar-s1: q4=33.20 vs DQN=34.30 (-3% TIE). vs PPO huge win (+2353% but PPO near zero).
+- mspacman-s1: q4=452.32. No DQN baseline yet. vs PPO=+42% WIN.
+- namethisgame-s1: q4=1703.37. vs PPO=-32% LOSS.
+- phoenix-s1: q4=90.10 vs DQN=93.03 (-3% TIE). vs PPO=-89% CATASTROPHIC LOSS.
+- qbert-s1: q4=222.13 vs DQN=228.23 (-3% TIE). vs PPO=+40% WIN.
+- KEY FINDING: Double DQN is essentially IDENTICAL to vanilla DQN across all tested games (~3% worse uniformly). Overestimation bias reduction doesn't help at this training scale.
+
+### Reconcile: 4 h051 jobs disappeared (3 fir + 1 rorqual). All resubmitted.
+
+### ACTIVE JOBS: ~161 total
+- h047 DQN baseline: 7 running (~4.5h remaining)
+- h050 Munchausen DQN resubmit: 10 running (~7.5h remaining)
+- h051 CReLU: 4 running (alien/breakout/qbert from resubmit-1) + 4 just resubmitted
+- h055 Double DQN: 10 running (~30-60 min remaining!)
+- h056 PPO Wide: 15 running (~3h remaining)
+- h057 N-step DQN: 15 running (~1h remaining!)
+- h058 Dueling DQN: 15 running (~1h remaining!)
+- h059 DQN+PER: 15 running (~5h remaining)
+- h060 QR-DQN: 15 running (~5h remaining)
+- h061 C51 40M: 15 running (~5.5h remaining)
+- h062 NoisyNet: 15 running (~6h remaining)
+- h063 IQN: 15 running (~7.5h remaining)
+
+### DQN COMPONENT EARLY RANKINGS (very preliminary):
+1. h047 DQN baseline: IQM=+0.0092 (8/15) — strong
+2. h055 Double DQN: ~identical to DQN baseline — no help
+3. Everything else: still running
+
+### NEXT SESSION TODO:
+1. h055 Double DQN 10 remaining games should complete within 30-60 min — finalize pilot
+2. h057 N-step DQN should complete within 1h — process all 15 results
+3. h058 Dueling DQN should complete within 1h — process all 15 results
+4. h056 PPO Wide should complete in ~3h — process (verify NOT stale)
+5. h051 CReLU 4 remaining + 4 resubmit in 2-4h — finalize pilot
+6. h047/h050/h059-h063 in 4-8h — complete DQN component survey
+7. When all DQN components complete: build comparative table, identify top components for Rainbow-lite

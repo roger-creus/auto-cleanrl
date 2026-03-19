@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Qbert-v5,1,h055,h055-qbert-s1,double_dqn,40000000,116000,227.92758178710938,222.1310272216797,26439600.0,250.0
