@@ -5929,3 +5929,91 @@ h047(1), h050(5+1=6), h051(5+5=10), h055(7), h056(9+4=13), h057(10), h058(8), h0
 10. h062 NoisyNet: 6 active → will reach 15/15
 11. h063 IQN: 9 active → will reach 15/15
 12. When all DQN components complete: IQM analysis, design Rainbow-lite, start novel research phase
+
+---
+**[2026-03-19 17:52 UTC]**
+
+## Session 96: Process 10 New Results + Delete 7 Stale CSVs + Resubmit 9 Gaps
+
+### Triggered by: h062-breakout-s1 (job 57987801, narval SUCCESS)
+
+### Reconcile: 1 completed (h062-breakout-s1 narval), 1 disappeared (h047-solaris-s1 narval 57987194 — ran 8hrs, TIME LIMIT, no CSV)
+
+### Stale h051/h056 CSV Cleanup: 7 files deleted
+All PPO-identical (q4 values matching h001 bit-for-bit):
+- h051-breakout-s1 (narval), h051-qbert-s1 (narval), h051-battlezone-s1 (rorqual), h051-enduro-s1 (rorqual)
+- h056-phoenix-s1 (narval), h056-spaceinvaders-s1 (rorqual), h056-venture-s1 (narval)
+Root cause unchanged: old jobs on cluster output dirs persist. Every pull brings them back.
+
+### Results Processed: 10 new entries (996→1006 rows)
+
+**h050 Munchausen DQN (1 new, now 10/15):**
+- montezumarevenge-s1 (rorqual): q4=0.0. All methods fail MR. Expected.
+
+**h060 QR-DQN (1 new, COMPLETE 15/15):**
+- mspacman-s1 (narval): q4=479.42 vs PPO=287.07 WIN (+67%). vs DQN=465.18 WIN (+3.1%).
+- FINAL: IQM dHNS=-0.0097 vs PPO. 10W/3L/1T vs PPO. Essentially tied with vanilla DQN.
+
+**h061 C51 40M (1 new, now 13/15):**
+- qbert-s1 (narval): q4=238.52 vs PPO=162.49 WIN (+47%). vs DQN=228.23 WIN (+4.5%).
+- Missing: Breakout, SpaceInvaders. Both running.
+
+**h062 NoisyNet DQN (5 new, COMPLETE 15/15):**
+- breakout-s1 (narval): q4=1.77 vs PPO=1.37 WIN (+30%). vs DQN baseline TBD.
+- mspacman-s1 (narval): q4=546.01 vs PPO=287.07 WIN (+90%). 
+- privateeye-s1 (rorqual): q4=25.89 vs PPO=-2.46 WIN. NoisyNet exploration helps PrivateEye.
+- spaceinvaders-s1 (narval): q4=171.41 vs PPO=150.19 WIN (+14%).
+- venture-s1 (narval): q4=3.99 vs PPO=0.0 WIN.
+- FINAL: IQM dHNS=-0.0062 vs PPO. 10W/3L/1T. Best non-vanilla DQN component.
+
+**h063 IQN (2 new, now 8/15):**
+- montezumarevenge-s1 (rorqual): q4=0.0. Expected.
+- qbert-s1 (rorqual): q4=219.30 vs PPO=162.49 WIN (+35%). vs DQN=228.23 TIE (-3.9%).
+
+### DQN COMPONENT IQM STANDINGS (recomputed):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN     |
+|------|-------------|--------|-----------------|------------|
+| 1    | DQN base    | 14/15  | +0.0101         | ---        |
+| 2    | Dueling     | 7/15   | +0.0012         | -0.0010    |
+| 3    | NoisyNet    | 15/15  | -0.0062         | -0.0003    |
+| 4    | QR-DQN      | 15/15  | -0.0097         | +0.0006    |
+| 5    | PER         | 13/15  | -0.0104         | -0.0001    |
+| 6    | C51 40M     | 13/15  | -0.0147         | -0.0010    |
+| 7    | Double DQN  | 8/15   | -0.0251         | -0.0013    |
+| 8    | Munchausen  | 10/15  | -0.0278         | -0.0024    |
+| 9    | IQN         | 8/15   | -0.0280         | +0.0010    |
+| 10   | N-step      | 6/15   | -0.0409         | -0.0007    |
+
+### KEY INSIGHT: NoisyNet is the best DQN component (IQM=-0.0062) followed by QR-DQN (-0.0097). Both complete at 15/15. But ALL components have negative IQM vs vanilla DQN. No component improves over base DQN on average. Rainbow-lite with top 3 (NoisyNet+QR-DQN+Dueling or PER) still the plan, hoping for synergy.
+
+### h050-phoenix-s1: Previous fir job (28401170) had no CSV — checked logs show earlier narval job (57983981) CANCELLED due to TIME LIMIT. Resubmitted to nibi.
+
+### Gap Resubmissions: 9 jobs
+1. h047-solaris-s1 → fir (28433565) — DQN baseline last game
+2. h050-phoenix-s1 → nibi (10593863) — Munchausen gap
+3. h051-alien-s1 → fir (28433735)
+4. h051-breakout-s1 → rorqual (8608002)
+5. h051-qbert-s1 → nibi (10593865)
+6. h051-spaceinvaders-s1 → rorqual (8608003)
+7. h056-doubledunk-s1 → fir (28434036)
+8. h056-solaris-s1 → rorqual (8608006)
+9. h056-spaceinvaders-s1 → nibi (10593868)
+
+### h051/h056 GENUINENESS: All 23 active h051/h056 jobs verified — correct scripts (crelu.py/wide.py with proper args). Code synced to all clusters.
+
+### ACTIVE JOBS: ~78 running + ~18 pending + 9 resubmit ≈ 105 total
+h047(1), h050(4+1=5), h051(6+4=10), h055(7), h056(10+3=13), h057(9), h058(8), h059(3), h061(4), h063(8)
+
+### COMPLETE PILOTS: h053(15/15), h060(15/15), h062(15/15)
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1 remaining (Solaris, fir) — MUST complete for 15-game reference
+2. h050 Munchausen: 5 running — approaching 15/15
+3. h051 CReLU: 10 active — verify non-PPO genuine results when completed
+4. h055 Double DQN: 7 running — will complete 15/15
+5. h056 Wide: 13 active — verify genuine results
+6. h057/h058: 9+8 running — complete N-step/Dueling pilots
+7. h059 PER: 3 running — 2 games left for 15/15
+8. h061 C51: 4 running — 2 games left for 15/15
+9. h063 IQN: 8 running — 7 games left for 15/15
+10. When DQN components complete: design Rainbow-lite combining NoisyNet + QR-DQN/Dueling + PER
