@@ -738,7 +738,7 @@ h034-qbert-s3,h034,,"curve-derived (narval, 108032 eps)",Qbert-v5,3,,,,0.0,191.5
 h034-solaris-s3,h034,,"curve-derived (narval, 5632 eps)",Solaris-v5,3,,,,0.0,1167.2727,0.0,0.0
 h034-spaceinvaders-s1,h034,,"curve-derived (narval, 65408 eps)",SpaceInvaders-v5,1,,,,0.0,186.0078,0.0,0.0
 h034-venture-s2,h034,,"curve-derived (narval, 17664 eps)",Venture-v5,2,,,,0.0,0.0,0.0,0.0
-h035-qbert-s1,h035,,"curve-derived (narval, 112000 eps)",Qbert-v5,1,,,,0.0,167.2286,0.0,0.0
+h035-qbert-s1,h035,,"pilot (narval new-code, was curve-derived q4=167.23)",Qbert-v5,1,ppo_cvar_sem,40000000,121984,171.98,205.61,20979200,150.0
 h034-breakout-s3,h034,,"curve-derived (rorqual, 140160 eps)",Breakout-v5,3,,,,0.0,1.8785,0.0,0.0
 h034-montezumarevenge-s2,h034,,"curve-derived (rorqual, 124672 eps)",MontezumaRevenge-v5,2,,,,0.0,0.0,0.0,0.0
 h034-phoenix-s1,h034,python cleanrl/ppo_atari_envpool_cvar_duel.py,"new-code (narval) — WARNING: identical to h029-phoenix-s1, possible bug",Phoenix-v5,1,ppo_cvar_duel,40000000.0,32256.0,771.9444580078125,933.6508178710938,24899840.0,1590.0
@@ -754,7 +754,7 @@ h033-privateeye-s1,h033,,"new-code CSV (rorqual, 14720 eps)",PrivateEye-v5,1,ppo
 h033-montezumarevenge-s1,h033,,"new-code CSV (rorqual, 72960 eps)",MontezumaRevenge-v5,1,ppo_aug_consist,40000000,72960,0.0,0.0,0.0,0.0
 h033-solaris-s1,h033,,"new-code CSV (nibi, 5760 eps)",Solaris-v5,1,ppo_aug_consist,40000000,5760,2467.11,2513.78,14210560.0,1720.0
 h036-amidar-s1,h036,,"curve-derived q4 (nibi, 66432 eps)",Amidar-v5,1,ppo_cvar_duel_sem,40000000,66432,27.07,31.0,0,31.0
-h036-breakout-s1,h036,,"curve-derived q4 (narval, 153600 eps)",Breakout-v5,1,ppo_cvar_duel_sem,40000000,153600,3.09,3.48,0,4.0
+h036-breakout-s1,h036,,"pilot (fir new-code, was curve-derived q4=3.48)",Breakout-v5,1,ppo_cvar_duel_sem,40000000,221696,1.39,1.33,308224,1.0
 h036-qbert-s1,h036,,"curve-derived q4 (rorqual, 128640 eps)",Qbert-v5,1,ppo_cvar_duel_sem,40000000,128640,261.97,279.28,0,350.0
 h033-doubledunk-s1,h033,,"new-code CSV (nibi, 20480 eps). DoubleDunk q4=-18.0. vs PPO baseline -18.1 → TIE.",DoubleDunk-v5,1,ppo_aug_consist,40000000,20480,-17.64,-18.0,-361216.0,-16.0
 h030-mspacman-s1,h030,,"new-code CSV (nibi, 80768 eps). MsPacman q4=273.84. vs PPO baseline ~319 → -14% LOSS.",MsPacman-v5,1,ppo_sem,40000000,80768,272.03,273.84,21971200.0,190.0
@@ -793,3 +793,4 @@ h029-spaceinvaders-s3,h029,,3-seed (fir new-code),SpaceInvaders-v5,3,ppo_aug_qr_
 h029-breakout-s2,h029,,3-seed (fir new-code),Breakout-v5,2,ppo_aug_qr_cvar,40000000,,,1.36,,
 h029-amidar-s2,h029,,3-seed (rorqual new-code),Amidar-v5,2,ppo_aug_qr_cvar,40000000,,,2.43,,
 h029-venture-s3,h029,,3-seed (rorqual new-code),Venture-v5,3,ppo_aug_qr_cvar,40000000,,,0.0,,
+h029-phoenix-s2,h029,,3-seed (narval new-code),Phoenix-v5,2,ppo_aug_qr_cvar,40000000,35456,763.61,755.63,27074560,420.0

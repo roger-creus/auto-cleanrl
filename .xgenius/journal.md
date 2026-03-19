@@ -3638,3 +3638,55 @@ breakout (fir), doubledunk (nibi), montezumarevenge (nibi), namethisgame (fir), 
 4. When h035 completes 15g: compare vs h029 definitively
 5. When h036 completes 15g: if IQM > h029, submit 3-seed
 6. If h029 3-seed validates (IQM>0.002 at 45/45): begin Phase 3 ablations
+
+---
+**[2026-03-19 02:44 UTC]**
+
+## Session 60: Process h029-phoenix-s2 + h035-qbert-s1 + h036-breakout-s1 Correction
+
+### Triggered by: h029-phoenix-s2 (narval SUCCESS) + h035-qbert-s1 (narval SUCCESS)
+
+### Results Processed: 3 entries (now 796 rows)
+- h029-phoenix-s2: new-code CSV q4=755.63 (narval, 35456 eps). PPO s2 q4=760.89 → TIE.
+- h035-qbert-s1: UPDATED curve→new-code q4=167.23→205.61 (narval, 121984 eps). PPO s1 q4=162.49 → +26.5% above PPO but TIE by HNS threshold.
+- h036-breakout-s1: CORRECTED curve→new-code q4=3.48→1.33 (fir, 221696 eps). PPO s1 q4=1.30 → TIE. Curve-derived was 2.6x inflated!
+
+### CRITICAL: h036 Breakout Correction Drops IQM
+h036 IQM was 0.0078 (session 59) → now 0.0003 (5g). The curve-derived Breakout q4=3.48 was massively wrong (true q4=1.33). h036 Amidar (q4=31.0) and Qbert (q4=279.28) are still curve-derived and likely similarly inflated. h036 may drop to near-zero once all corrected.
+
+### DISAPPEARED: 5 jobs on reconcile
+- h030-alien-s1 (rorqual): TIMED OUT (4h walltime). Resubmitted on nibi with 5h walltime (job 10559610).
+- h029-solaris-s2 (narval): DISAPPEARED. Resubmitted on narval (job 57975445).
+- h029-venture-s3, h029-breakout-s2, h029-amidar-s2: disappeared but already had results.
+
+### h034B Results: 34 unprocessed CSVs found across all clusters
+These are from the h034 resubmission batch. Since h034 = h029 (identical, dueling bug), these h034B results are just h029 duplicates. NOT processing.
+
+### ABSOLUTE IQM HNS STANDINGS:
+1. h020 (Dueling PPO): 0.0038 (15g, 3-seed) ** BEST COMPLETED
+2. h008 (PQN LSTM): 0.0036 (15g)
+3. h029 (CVaR+QR+DrQ): 0.0020 (15g, 38/45 3-seed) ← NOVEL
+4. h035 (CVaR+SEM+DrQ): 0.0016 (12g pilot, 3 remaining)
+5. h030 (SEM only): 0.0009 (14g, alien resubmitted)
+6. h036 (CVaR+Duel+SEM): 0.0003 (5g, UNRELIABLE, curve-derived data dropping fast)
+7. h001 (PPO baseline): 0.0002 (15g)
+
+### 27 ACTIVE JOBS (25 existing + 2 resubmits)
+- h029 3-seed: 6 running + 1 resubmit = 7 remaining (38/45 complete)
+- h035 pilot: 4 running (alien, solaris, phoenix, spaceinvaders for new-code)
+- h036 pilot: 13 running (10 new games + resubmits for corrected data)
+- h030 pilot: 1 resubmit (alien-s1)
+
+### KEY OBSERVATIONS
+1. h029 3-seed stabilizing at IQM=0.0020. Still 10x above PPO baseline but below h020 (0.0038) and h008 (0.0036).
+2. Curve-derived data continues to be unreliable. h036 breakout was 2.6x inflated, h036 amidar likely 14x inflated.
+3. h035 improved slightly (0.0011→0.0016) with qbert new-code update. 3 games remaining.
+4. All novel CVaR hypotheses (h029/h035/h036) are below engineering baselines (h020/h008) on reliable data.
+
+### NEXT SESSION TODO
+1. Process h029 remaining 7 experiments when they complete (~3-4h)
+2. Process h035 final 3 games (alien, solaris, phoenix) 
+3. Process h036 remaining 10+ games — CRITICAL for definitive comparison
+4. Process h030-alien-s1 (resubmit on nibi)
+5. When h029 3-seed is fully done: definitive comparison vs h020/h008
+6. Consider Phase 3 planning if all pilots complete
