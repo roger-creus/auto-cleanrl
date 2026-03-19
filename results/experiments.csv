@@ -817,3 +817,8 @@ h036-mspacman-s1,h036,,pilot (rorqual new-code),MsPacman-v5,1,ppo_cvar_duel_sem,
 h029-solaris-s3,h029,,3-seed (rorqual new-code),Solaris-v5,3,ppo_aug_qr_cvar,40000000,6016,2514.47,2843.83,15127040.0,1540.0
 h046-venture-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id Venture-v5 --seed 1","nibi (new-code)",Venture-v5,1,ppo_lstm,40000000,17536,0.0,0.0,0.0,0.0
 h046-phoenix-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id Phoenix-v5 --seed 1","fir (new-code, disappeared but CSV recovered)",Phoenix-v5,1,ppo_lstm,40000000,33664,867.98,825.78,29219840.0,320.0
+h046-spaceinvaders-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id SpaceInvaders-v5 --seed 1","fir (new-code)",SpaceInvaders-v5,1,ppo_lstm,40000000,78336,150.77,150.20,11810560.0,110.0
+h046-doubledunk-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id DoubleDunk-v5 --seed 1","narval (new-code)",DoubleDunk-v5,1,ppo_lstm,40000000,20736,-18.38,-18.37,-381184.0,-20.0
+h046-battlezone-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id BattleZone-v5 --seed 1","nibi (new-code)",BattleZone-v5,1,ppo_lstm,40000000,34304,2190.30,2283.58,75136000.0,2000.0
+h046-montezumarevenge-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id MontezumaRevenge-v5 --seed 1","nibi (new-code)",MontezumaRevenge-v5,1,ppo_lstm,40000000,70272,0.0,0.0,0.0,0.0
+h046-privateeye-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id PrivateEye-v5 --seed 1","nibi (new-code)",PrivateEye-v5,1,ppo_lstm,40000000,14720,-144.33,-262.61,-2124544.0,0.0
