@@ -4523,3 +4523,64 @@ h055(15), h056(15), h057(15), h058(15), h059(15), h060(15)
 3. h053 C51 has 4 remaining (alien, enduro, solaris, venture) — critical for full pilot
 4. Watch for DQN variants (h055-h060) first results
 5. When enough results in: evaluate which DQN components are best, plan Rainbow-lite
+
+---
+**[2026-03-19 10:18 UTC]**
+
+## Session 74: Process 7 New Results + Close h052 + Fix h051 Sync Issue + Submit h061
+
+### Triggered by: h052-privateeye-s1 (rorqual SUCCESS), h048-spaceinvaders-s1 (nibi SUCCESS), h049-spaceinvaders-s1 (nibi SUCCESS)
+
+### Results Processed: 7 new entries (now 876 rows)
+
+**h048 PPO Munchausen (1 new, now 3/15):**
+- spaceinvaders-s1: q4=137.66 vs PPO=150.19. -8.3% LOSS.
+- Running tally: 0W/2L/1T. Phoenix -18% and SpaceInvaders -8% are both losses. Not looking good.
+
+**h049 PPO Gamma Anneal (1 new, now 3/15):**
+- spaceinvaders-s1: q4=154.69 vs PPO=150.19. +3.0% TIE.
+- Running tally: 0W/0L/3T. Completely neutral so far on 3 games.
+
+**h051 PPO CReLU (3 new, but ALL INVALIDATED):**
+- battlezone-s1: q4=2364.31 IDENTICAL to PPO baseline
+- breakout-s1: q4=1.37 IDENTICAL to PPO baseline  
+- enduro-s1: q4=0.0 same as PPO (both zero)
+- CRITICAL FINDING: ALL h051 results are bit-for-bit identical to PPO baseline. Including previously recorded Qbert (162.49) and MontezumaRevenge (0.0). This means h051 was running the PPO baseline code, not CReLU. Likely a code sync issue where the cluster had stale code.
+- ACTION: Cancelled all 7 running h051 jobs. Resynced code to all 4 clusters. Verified ppo_atari_envpool_crelu.py exists on clusters. Resubmitted all 15 games fresh.
+
+**h052 PPO Reward Centering (2 new, now 7/15 — CLOSED):**
+- namethisgame-s1: q4=2246.89 vs PPO=2522.54. -10.9% LOSS.
+- privateeye-s1: q4=-85.11 vs PPO s2=46.64. MASSIVE LOSS.
+- Running tally: 0W/3L/4T. Reward centering clearly hurts PPO on clipped Atari rewards.
+- ACTION: Closed hypothesis. Cancelled 8 remaining jobs.
+
+### HYPOTHESIS CLOSED: h052 (PPO Reward Centering)
+Reward centering subtracts running mean from rewards. With Atari's reward clipping already in [-1,1], this doesn't help and actually hurts (Phoenix, NameThisGame, PrivateEye all losses). 0W/3L/4T at 7/15 — definitively a dud.
+
+### h051 CReLU RESUBMITTED (15 jobs, after fresh sync)
+Previous results invalidated. All 15 games resubmitted across nibi/fir/rorqual/narval with 4h walltime.
+
+### NEW HYPOTHESIS SUBMITTED: h061 C51 at 40M steps (15 jobs)
+h053 C51 at 10M steps showed IQM delta-HNS=+0.0067 at only 25% of training budget, beating PPO at 40M on 7/11 games. Running C51 at full 40M steps should produce dramatically better results. This is our strongest off-policy direction.
+
+### ACTIVE JOBS: ~212 total
+Running from previous: h047(7), h048(9), h049(10), h050(15), h053(1), h054(5), h055(15), h056(15), h057(15), h058(15), h059(15), h060(15)
+Just submitted: h051-resubmit(15), h061(15)
+
+### IQM STANDINGS (unchanged):
+1. h047 (DQN 40M): IQM=0.0092 (8g) ★★★ BEST
+2. h053 (C51 10M): IQM=+0.0067 (11g) — at only 25% budget!
+3. h020 (Dueling PPO): IQM=0.0038 (15g, 3-seed)
+4. h008 (PQN LSTM): IQM=0.0036 (15g)
+5. h001 (PPO baseline): IQM=0.0002 (15g)
+
+### NEXT SESSION TODO:
+1. h048/h049 should complete within ~1h — process all 15 games each
+2. h053 C51 last game should complete soon — finalize pilot
+3. h054 SAC-discrete remaining 5 games
+4. h056 PPO Wide pilot should complete in ~2.5h
+5. h047 DQN resubmitted 7 games (8h walltime, ~7h remaining)
+6. h051 CReLU resubmit should start completing in ~4h
+7. h061 C51 at 40M — 8h walltime, critical results
+8. DQN variants (h055/h057/h058/h059/h060) — 6-7h remaining
+9. When h061 C51-40M and DQN variants complete: combine best components into Rainbow-lite
