@@ -4213,3 +4213,10 @@
 {"timestamp": "2026-03-19T02:16:59Z", "action": "validate_command", "allowed": true, "reason": "", "command": "python cleanrl/ppo_atari_envpool_cvar_sem.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h035 --experiment-id h035-venture-s1 --output-dir /runs", "cluster": "fir"}
 {"timestamp": "2026-03-19T02:16:59Z", "action": "validate_job", "allowed": true, "reason": "", "cluster": "fir", "gpus": 1, "gpu_type": "nvidia_h100_80gb_hbm3_1g.10gb", "cpus": 4, "memory": "16G", "walltime": "05:00:00"}
 {"timestamp": "2026-03-19T02:17:10Z", "action": "submit", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28350934", "experiment_id": "h035-venture-s1", "command": "python cleanrl/ppo_atari_envpool_cvar_sem.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h035 --experiment-id h035-venture-s1 --output-dir /runs"}
+{"timestamp": "2026-03-19T02:28:16Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28350721"}
+{"timestamp": "2026-03-19T02:28:18Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10555736"}
+{"timestamp": "2026-03-19T02:28:19Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10555907"}
+{"timestamp": "2026-03-19T02:28:22Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28350914"}
+{"timestamp": "2026-03-19T02:28:25Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28350934"}
+{"timestamp": "2026-03-19T02:32:53Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28350842"}
+{"timestamp": "2026-03-19T02:32:55Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10556079"}

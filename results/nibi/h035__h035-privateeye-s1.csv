@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+PrivateEye-v5,1,h035,h035-privateeye-s1,ppo_cvar_sem,40000000,14720,-339.1478271484375,-204.7652130126953,-4992256.0,-1000.0

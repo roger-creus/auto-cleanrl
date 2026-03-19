@@ -3569,3 +3569,72 @@ All 10 successfully resubmitted (5 nibi, 5 fir).
 5. When h035 hits 15 games: definitive comparison vs h029
 6. When h036 hits 15 games: definitive comparison of triple combo
 7. If any exceed h029: submit 3-seed immediately
+
+---
+**[2026-03-19 02:33 UTC]**
+
+## Session 59: Process 20 New Results — h029 at 37/45, h035 at 12/15, h036 at 5/15
+
+### Triggered by: h036-venture-s1 (job 10550281, nibi SUCCESS)
+
+### Results Processed: 20 new entries + 1 update (now 794 rows)
+
+**h029 3-seed (11 new entries, now 37/45):**
+- alien-s2: q4=200.72 (narval). vs PPO 201.96 → TIE.
+- qbert-s2: q4=158.75 (fir). vs PPO 158.44 → TIE.
+- qbert-s3: q4=176.77 (narval). Slightly above PPO.
+- battlezone-s2: q4=2817.84 (fir). vs PPO 2050.58 → +37% WIN.
+- namethisgame-s2: q4=2192.39 (rorqual). vs PPO 2506.85 → -13% LOSS.
+- montezumarevenge-s3: q4=0.0 (narval). TIE.
+- enduro-s2: q4=0.0 (nibi). TIE.
+- spaceinvaders-s3: q4=160.66 (fir). Slightly above PPO.
+- breakout-s2: q4=1.36 (fir). TIE.
+- amidar-s2: q4=2.43 (rorqual). CONFIRMS s1 curve-derived q4=31.0 was 14x INFLATED.
+- venture-s3: q4=0.0 (rorqual). TIE.
+
+**h035 pilot (7 new entries, now 12/15):**
+- breakout-s1: q4=1.26 (narval). TIE with PPO.
+- doubledunk-s1: q4=-17.64 (fir). TIE.
+- enduro-s1: q4=0.0 (fir). TIE.
+- montezumarevenge-s1: q4=0.0 (narval). TIE.
+- namethisgame-s1: q4=2513.11 (nibi). TIE with PPO.
+- privateeye-s1: q4=-204.77 (nibi). LOSS vs PPO (-116.73). -75% worse.
+- venture-s1: q4=0.0 (rorqual). TIE.
+- battlezone-s1: UPDATED curve→new-code q4=3172→2636 (narval).
+
+**h036 pilot (2 new entries, now 5/15):**
+- phoenix-s1: q4=710.44 (nibi). vs PPO 796.16 → -11% LOSS. First h036 loss!
+- venture-s1: q4=0.0 (nibi). TIE.
+
+### CANCELLED 7 DUPLICATE h035 JOBS
+Cancelled resubmissions where original results already pulled:
+breakout (fir), doubledunk (nibi), montezumarevenge (nibi), namethisgame (fir), venture (fir), enduro (fir), privateeye (nibi).
+
+### IQM HNS STANDINGS (updated, absolute):
+1. h036 (CVaR+Duel+SEM+DrQ): 0.0078 (5g — STILL UNRELIABLE, 13 running)
+2. h020 (Dueling PPO): 0.0038 (15g, 3-seed — BEST COMPLETED)
+3. h008 (PQN LSTM): 0.0036 (15g — SOLID)
+4. h029 (CVaR+QR+DrQ): 0.0023 (15g, 37/45 entries — 3-SEED IN PROGRESS)
+5. h035 (CVaR+SEM+DrQ): 0.0011 (12g — WEAK, worse than h029)
+6. h030 (SEM): 0.0009 (14g — near baseline)
+7. h001 (PPO baseline): 0.0002 (15g)
+
+### KEY INSIGHTS
+1. h029 stabilizing at IQM=0.0023 as more 3-seed data arrives. Amidar-s2 (q4=2.43) confirms s1 curve-derived (31.0) was massively inflated. True Amidar improvement is +80%, not +2190%.
+2. h035 (CVaR+SEM+DrQ) at 12g is WEAKER than h029 at same game count. SEM doesn't help CVaR. IQM=0.0011 vs h029's 0.0023.
+3. h036 Phoenix is first LOSS (-11%). With 5 games, IQM=0.0078 is still high but will likely come down. Key question: does Dueling+SEM add enough to beat h029?
+4. h020 Dueling PPO (0.0038) and h008 PQN LSTM (0.0036) remain the strongest COMPLETED hypotheses.
+
+### 33 ACTIVE JOBS (after 7 cancellations + completions)
+- h029 3-seed: 14 running (8 remaining experiments)
+- h030 pilot: 1 running (alien-s1, possibly lost)
+- h035 pilot: 5 running (alien, solaris, phoenix + qbert/spaceinvaders for new-code update)
+- h036 pilot: 13 running (10 games remaining)
+
+### NEXT SESSION TODO
+1. Process h029 remaining 8 experiments (alien-s3, privateeye-s2, solaris-s2/s3, battlezone-s3, phoenix-s2/s3, mspacman-s2)
+2. Process h035 final 3 games (alien, solaris, phoenix)
+3. Process h036 remaining 10 games — CRITICAL for definitive comparison
+4. When h035 completes 15g: compare vs h029 definitively
+5. When h036 completes 15g: if IQM > h029, submit 3-seed
+6. If h029 3-seed validates (IQM>0.002 at 45/45): begin Phase 3 ablations

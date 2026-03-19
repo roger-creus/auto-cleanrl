@@ -706,7 +706,7 @@ h034-namethisgame-s2,h034,,"curve-derived (fir, 20992 eps)",NameThisGame-v5,2,,,
 h034-phoenix-s3,h034,,"curve-derived (fir, 39040 eps)",Phoenix-v5,3,,,,0.0,264.5902,0.0,0.0
 h034-qbert-s2,h034,,"curve-derived (fir, 108032 eps)",Qbert-v5,2,,,,0.0,193.0095,0.0,0.0
 h034-venture-s1,h034,,"curve-derived (fir, 18176 eps)",Venture-v5,1,,,,0.0,0.0,0.0,0.0
-h035-battlezone-s1,h035,,"curve-derived (fir, 27520 eps)",BattleZone-v5,1,,,,0.0,3172.093,0.0,0.0
+h035-battlezone-s1,h035,,"pilot (narval new-code, was curve-derived q4=3172.093)",BattleZone-v5,1,ppo_cvar_sem,40000000,33792,2594.70,2636.36,87680000,0.0
 h032-montezumarevenge-s1,h032,,"new-code CSV (nibi, 60544 eps)",MontezumaRevenge-v5,1,,,,0.0,0.0,0.0,0.0
 h032-privateeye-s1,h032,,"new-code CSV (nibi, 14720 eps)",PrivateEye-v5,1,,,,0.0,68.6957,0.0,0.0
 h032-venture-s1,h032,,"new-code CSV (nibi, 20992 eps)",Venture-v5,1,,,,0.0,0.0,0.0,0.0
@@ -773,3 +773,23 @@ h029-mspacman-s3,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eva
 h029-doubledunk-s2,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (nibi new-code),DoubleDunk-v5,2,ppo_aug_qr_cvar,40000000.0,20352.0,-18.0125789642334,-18.72955894470215,-366592.0,-14.0
 h035-amidar-s1,h035,python cleanrl/ppo_atari_envpool_cvar_sem.py,pilot (nibi new-code),Amidar-v5,1,ppo_cvar_sem,40000000.0,70016.0,3.7477147579193115,3.3930530548095703,262400.0,0.0
 h035-mspacman-s1,h035,python cleanrl/ppo_atari_envpool_cvar_sem.py,pilot (nibi new-code),MsPacman-v5,1,ppo_cvar_sem,40000000.0,79104.0,272.0388488769531,251.35922241210938,21519360.0,300.0
+h029-alien-s2,h029,,3-seed (narval new-code),Alien-v5,2,ppo_aug_qr_cvar,40000000,60288,205.65,200.72,12398080,200.0
+h029-qbert-s2,h029,,3-seed (fir new-code),Qbert-v5,2,ppo_aug_qr_cvar,40000000,122880,159.95,158.75,19654400,50.0
+h029-battlezone-s2,h029,,3-seed (fir new-code),BattleZone-v5,2,ppo_aug_qr_cvar,40000000,34432,2434.94,2817.84,83840000,0.0
+h029-namethisgame-s2,h029,,3-seed (rorqual new-code),NameThisGame-v5,2,ppo_aug_qr_cvar,40000000,14976,2304.79,2192.39,34516480,1150.0
+h029-montezumarevenge-s3,h029,,3-seed (narval new-code),MontezumaRevenge-v5,3,ppo_aug_qr_cvar,40000000,73088,0.18,0.0,12800,0.0
+h035-breakout-s1,h035,,pilot (narval new-code),Breakout-v5,1,ppo_cvar_sem,40000000,220416,1.43,1.26,314240,4.0
+h035-doubledunk-s1,h035,,pilot (fir new-code),DoubleDunk-v5,1,ppo_cvar_sem,40000000,20864,-17.90,-17.64,-373504,-20.0
+h035-enduro-s1,h035,,pilot (fir new-code),Enduro-v5,1,ppo_cvar_sem,40000000,11904,0.0,0.0,0.0,0.0
+h035-montezumarevenge-s1,h035,,pilot (narval new-code),MontezumaRevenge-v5,1,ppo_cvar_sem,40000000,74624,0.69,0.0,51200,0.0
+h035-namethisgame-s1,h035,,pilot (nibi new-code),NameThisGame-v5,1,ppo_cvar_sem,40000000,15232,2262.60,2513.11,34464000,2090.0
+h035-privateeye-s1,h035,,pilot (nibi new-code),PrivateEye-v5,1,ppo_cvar_sem,40000000,14720,-339.15,-204.77,-4992256,-1000.0
+h035-venture-s1,h035,,pilot (rorqual new-code),Venture-v5,1,ppo_cvar_sem,40000000,16768,0.0,0.0,0,0.0
+h036-phoenix-s1,h036,,pilot (nibi new-code),Phoenix-v5,1,ppo_cvar_duel_sem,40000000,40704,766.51,710.44,31200000,2150.0
+h036-venture-s1,h036,,pilot (nibi new-code),Venture-v5,1,ppo_cvar_duel_sem,40000000,18176,0.0,0.0,0,0.0
+h029-enduro-s2,h029,,3-seed (nibi new-code),Enduro-v5,2,ppo_aug_qr_cvar,40000000,11904,0.0,0.0,0.0,0.0
+h029-qbert-s3,h029,,3-seed (narval new-code),Qbert-v5,3,ppo_aug_qr_cvar,40000000,123264,153.30,176.77,18896000,50.0
+h029-spaceinvaders-s3,h029,,3-seed (fir new-code),SpaceInvaders-v5,3,ppo_aug_qr_cvar,40000000,79616,148.85,160.66,11850880,150.0
+h029-breakout-s2,h029,,3-seed (fir new-code),Breakout-v5,2,ppo_aug_qr_cvar,40000000,,,1.36,,
+h029-amidar-s2,h029,,3-seed (rorqual new-code),Amidar-v5,2,ppo_aug_qr_cvar,40000000,,,2.43,,
+h029-venture-s3,h029,,3-seed (rorqual new-code),Venture-v5,3,ppo_aug_qr_cvar,40000000,,,0.0,,
