@@ -4993,3 +4993,74 @@ h047(7), h050(10), h055(8), h056(15), h057(10+1 resubmit), h058(14), h059(15), h
 6. h050 Munchausen DQN 10 resubmit (5-8h) — critical validation
 7. h059-h063 (PER, QR-DQN, C51-40M, NoisyNet, IQN) — all 15 games each (5-8h)
 8. When enough DQN components complete: rank by IQM improvement over DQN baseline, build Rainbow-lite
+
+---
+**[2026-03-19 13:47 UTC]**
+
+## Session 82: Process h055/h057/h058 Results (9 new entries, 931 total)
+
+### Triggered by: h058-privateeye-s1 (nibi SUCCESS), h057-amidar-s1 (fir SUCCESS)
+
+### Results Processed: 9 new entries (929→931 rows)
+
+**h055 Double DQN (1 new, now 8/15):**
+- spaceinvaders-s1 (rorqual): q4=273.32 vs PPO=150.19 WIN (+82.0%). vs DQN=252.93 WIN (+8.1%).
+- h055 at 8/15: 4W/2L/1T vs PPO. IQM delta-HNS=-0.0151. Confirms ~identical to vanilla DQN.
+- 4 h055 jobs newly disappeared (montezumarevenge/narval, doubledunk/rorqual, solaris/fir, battlezone/narval) — NO CSVs on clusters.
+- Resubmitted 7 missing games (alien, battlezone, breakout, doubledunk, enduro, montezumarevenge, solaris) on fir/nibi/rorqual, 8h walltime.
+
+**h057 N-step DQN (2 new, now 6/15):**
+- amidar-s1 (fir): q4=32.27 vs PPO=2.04 WIN (+1482%). vs DQN=34.30 TIE (-5.9%).
+- battlezone-s1 (nibi): q4=3891.80 vs PPO=2364.31 WIN (+64.6%). vs DQN=3109.48 WIN (+25.2%). STRONG N-step improvement!
+- h057 at 6/15: 2W/2L/2T vs PPO. IQM=-0.0263. BattleZone is a notable win vs DQN baseline.
+- 10 still running.
+
+**h058 Dueling DQN (6 new, now 7/15):**
+- battlezone-s1 (nibi): q4=3354.41 vs DQN=3109.48 WIN (+7.9%). vs PPO=2364.31 WIN (+41.9%).
+- montezumarevenge-s1 (nibi): q4=0.0 TIE (all algorithms score 0).
+- privateeye-s1 (nibi): q4=-150.40 vs DQN=-2.46 LOSS. Dueling struggles on PrivateEye.
+- venture-s1 (nibi): q4=5.31 vs DQN=3.29 WIN (+61.1%). Small absolute values.
+- amidar-s1 (fir, disappeared but CSV recovered): q4=32.55 vs DQN=34.30 TIE (-5.1%).
+- qbert-s1 (rorqual, disappeared but CSV recovered): q4=152.46 vs DQN=228.23 LOSS (-33.2%).
+- h058 at 7/15: 3W/1L/2T vs PPO. IQM=+0.0019. Mixed results — BattleZone+Venture wins, Qbert loss.
+- 8 still running.
+
+**h056 PPO Wide: STALE CODE PERSISTS**
+fir amidar, narval phoenix/venture CSVs all match PPO baseline exactly (bit-for-bit). These are from OLD cancelled batch. 15 resubmit jobs still running. Deleted stale CSVs (they keep reappearing on pull).
+
+### DQN COMPONENT COMPARISON TABLE (updated):
+| Component    | Games | IQM dHNS | W/L/T vs PPO | W/L/T vs DQN |
+|-------------|-------|----------|--------------|---------------|
+| DQN base    | 8/15  | +0.0096  | 4W/1L/2T     | ---           |
+| Munchausen  | 5/15  | +0.0137  | 3W/0L/2T     | 1W/1L/1T      |
+| Double      | 8/15  | -0.0151  | 4W/2L/1T     | 0W/2L/4T      |
+| N-step(3)   | 6/15  | -0.0263  | 2W/2L/2T     | 1W/1L/3T      |
+| Dueling     | 7/15  | +0.0019  | 3W/1L/2T     | 1W/1L/3T      |
+
+KEY OBSERVATIONS:
+- Munchausen DQN remains the early IQM leader (+0.0137)
+- N-step DQN has strong BattleZone improvement (+25% vs DQN) but negative overall IQM
+- Dueling DQN is neutral vs DQN baseline overall (small positive IQM)
+- Double DQN confirmed no benefit at 40M training scale
+- Still waiting for: PER (h059), QR-DQN (h060), C51 40M (h061), NoisyNet (h062), IQN (h063)
+
+### ACTIVE JOBS: ~134 total
+- h047 DQN baseline: 7 running (remaining pilot games)
+- h050 Munchausen DQN: 10 running (resubmit)
+- h055 Double DQN: 7 running (just resubmitted)
+- h056 PPO Wide: 15 running (resubmit, 4h walltime)
+- h057 N-step DQN: 10 running
+- h058 Dueling DQN: 8 running
+- h059 DQN+PER: 15 running
+- h060 QR-DQN: 15 running
+- h061 C51 40M: 15 running
+- h062 NoisyNet: 15 running
+- h063 IQN: 15 running
+
+### NEXT SESSION TODO:
+1. Process h057/h058 remaining results as they complete
+2. Process h056 resubmit results — verify NOT stale (check q4 != PPO baseline)
+3. Process h047 DQN baseline remaining games — complete 15-game reference
+4. Process h050 Munchausen resubmit — critical for validating early lead
+5. Process h059-h063 DQN variant results — complete Rainbow component survey
+6. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4 components

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Venture-v5,1,h058,h058-venture-s1,dqn_dueling,40000000,18096,2.7409372329711914,5.305039882659912,49600.0,0.0
