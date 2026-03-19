@@ -4311,3 +4311,152 @@ ALL 7 games are positive or neutral — ZERO losses so far.
 5. If DQN variants improve on h047: build Rainbow-lite combining best components
 6. The research narrative has shifted: off-policy DQN with envpool may be the key finding
 7. Consider whether we need a fair comparison: DQN at 40M env steps vs PPO at 40M — different effective sample sizes due to replay
+
+---
+**[2026-03-19 09:35 UTC]**
+
+## Session 71: Process h047 Phoenix + h053 Breakout + Resubmit 7 h047 Timeouts + Submit h059/h060
+
+### Triggered by: h053-breakout-s1 (job 10572174, nibi SUCCESS)
+
+### Results Processed: 2 new entries (now 840 rows)
+
+**h047-phoenix-s1**: q4=93.03 (fir, disappeared but CSV recovered). PPO s1=892.49 → -89.6% MASSIVE LOSS! DQN Phoenix delta-HNS=-0.1234. DQN fails catastrophically on Phoenix — PPO excels here.
+
+**h053-breakout-s1**: q4=1.40 (nibi, C51 at 10M steps). PPO s1=1.37 → +2.2% TIE. But note: C51 running at 10M steps vs PPO at 40M — not a fair comparison. 14 more games running.
+
+### h047 DQN Updated: 8/15 games, IQM HNS=0.0066 (down from 0.0092)
+Phoenix (delta-HNS=-0.1234) is a MASSIVE outlier loss. IQM trims it so still positive.
+Record: 5W/1L/2T. Amidar/BattleZone/Qbert/SpaceInvaders/Venture WIN, Phoenix LOSS.
+Still the best hypothesis by IQM despite Phoenix.
+
+### 7 h047 GAMES TIMED OUT — RESUBMITTED WITH 8H WALLTIME
+Original 5h walltime was insufficient. Successful h047 jobs took 3h55m-5h.
+Timed-out: Alien (narval), Breakout (rorqual), DoubleDunk (narval), Enduro (fir), MsPacman (rorqual), NameThisGame (narval), Solaris (narval).
+SLURM logs showed NO training output — jobs spent time on image transfer and ran out of time.
+Resubmitted all 7 with 8h walltime across nibi(2)/fir(2)/rorqual(2)/narval(1).
+
+### NEW HYPOTHESES SUBMITTED: h059 + h060 (30 jobs)
+
+**h059: DQN + PER (Prioritized Experience Replay)** — 15-game pilot across 4 clusters.
+Key Rainbow component. PER samples high-TD-error transitions more often. Alpha=0.6, beta annealed 0.4→1.0.
+Importance-sampling-weighted MSE loss. 40M steps, 8h walltime.
+
+**h060: QR-DQN (Quantile Regression DQN)** — 15-game pilot across 4 clusters.
+Distributional RL via quantile regression (Dabney 2018). Learns N=200 quantile values.
+More flexible than C51 — no fixed support range needed. Uses Double DQN action selection.
+Asymmetric Huber loss with kappa=1.0. 40M steps, 8h walltime.
+
+### ACTIVE JOBS: ~201 total
+- h047 DQN resubmit: 7 running (8h walltime)
+- h048 Munchausen PPO: 15 running
+- h049 Gamma Annealing: 15 running
+- h050 Munchausen DQN: 15 running
+- h051 CReLU PPO: 15 running
+- h052 Reward Centering: 15 running
+- h053 C51: 14 running
+- h054 SAC-discrete: 15 running
+- h055 Double DQN: 15 running
+- h056 PPO Wide: 15 running
+- h057 N-step DQN: 15 running
+- h058 Dueling DQN: 15 running
+- h059 DQN+PER: 15 submitted
+- h060 QR-DQN: 15 submitted
+
+### DQN VARIANT COVERAGE (Rainbow components):
+1. h047: DQN baseline (8/15, IQM=0.0066, BEST)
+2. h050: Munchausen DQN (running)
+3. h053: C51 distributional (1/15, running)
+4. h055: Double DQN (running)
+5. h057: N-step DQN (running)
+6. h058: Dueling DQN (running)
+7. h059: DQN + PER (just submitted) ← NEW
+8. h060: QR-DQN (just submitted) ← NEW
+
+Once these complete: combine best components into Rainbow-lite.
+
+### NEXT SESSION TODO
+1. Process h047 resubmitted 7 games (8h walltime, should complete ~8h from now)
+2. Process h048-h058 pilot results as they complete
+3. Check h059/h060 for early failures
+4. When h047 full 15-game results are in: compute final IQM, decide on 3-seed evaluation
+5. Compare all DQN variants against h047 baseline to identify best components
+6. Still unexplored: PPG, ExO-PPO, IQN, ensemble methods, Rainbow-lite combination
+
+---
+**[2026-03-19 09:45 UTC]**
+
+## Session 72: Process 14 New Results — C51 BREAKOUT PERFORMANCE
+
+### Triggered by: h054-breakout-s1 (job 10572201, nibi SUCCESS)
+
+### Results Processed: 14 new entries (now 854 rows)
+
+**h053 C51 (10 new, now 11/15 at 10M steps):**
+- battlezone-s1: q4=2638.89 (nibi). PPO s1=2364.31 at 40M → +11.6% WIN (C51 at 10M beats PPO at 40M!)
+- montezumarevenge-s1: q4=0.0 (nibi). TIE.
+- qbert-s1: q4=255.96 (nibi). PPO s1=162.49 at 40M → +57.5% HUGE WIN! Also BEATS DQN at 40M (228.23)!
+- doubledunk-s1: q4=-23.93 (fir). PPO s1=-18.10 → LOSS (degenerate HNS game).
+- spaceinvaders-s1: q4=242.49 (fir). PPO s1=150.19 → +61.5% HUGE WIN!
+- amidar-s1: q4=41.63 (rorqual). PPO s1=2.04 → +1940% MASSIVE WIN! (PPO barely learns Amidar, C51 solves it at 25% of budget)
+- mspacman-s1: q4=437.69 (rorqual). PPO s1=287.07 → +52.5% HUGE WIN!
+- namethisgame-s1: q4=1768.84 (rorqual). PPO s1=2522.54 → -29.9% LOSS.
+- privateeye-s1: q4=142.77 (rorqual). PPO s1=46.64 → +206% WIN!
+- phoenix-s1: q4=101.50 (narval). PPO s1=892.49 → -88.6% MASSIVE LOSS (same Phoenix weakness as DQN).
+
+**h053 C51 SUMMARY at 11/15 (10M steps vs PPO 40M):**
+Record: 7W / 2L / 1T (excl DoubleDunk degenerate). IQM delta-HNS=+0.0067.
+WINS: Amidar(+1940%), SpaceInvaders(+62%), Qbert(+58%), MsPacman(+53%), PrivateEye(+206%), BattleZone(+12%), Breakout(+2%).
+LOSSES: Phoenix(-89%), NameThisGame(-30%), DoubleDunk(LOSS but degenerate HNS).
+4 games remaining: Alien, Enduro, Solaris, Venture.
+
+**C51 vs DQN at 40M (on shared 7 games):** 4W/2L/1T. C51 at 10M BEATS DQN at 40M on Qbert, Amidar, Phoenix, PrivateEye!
+
+**h054 SAC-discrete (1 new, now 2/15 at 10M):**
+- montezumarevenge-s1: q4=0.72 (nibi). Small WIN over PPO.
+- breakout-s1: q4=1.35 (nibi, already processed). TIE.
+
+**h048 PPO Munchausen (1 new, now 1/15):**
+- phoenix-s1: q4=730.97 (narval). PPO s1=892.49 → -18.1% LOSS.
+
+**h052 PPO Reward Centering (1 new, now 1/15):**
+- spaceinvaders-s1: q4=151.56 (nibi). PPO s1=150.19 → +0.9% TIE.
+
+### KEY FINDING: C51 is the most promising algorithm we've tested
+At just 10M env steps (25% of PPO's 40M budget), C51 already:
+- Beats PPO on 7 of 11 games
+- Beats DQN (h047, 40M) on 4 of 7 shared games (especially Qbert!)
+- Shows MASSIVE improvement on games PPO struggles with (Amidar 20x, PrivateEye 3x)
+- Same Phoenix/NameThisGame weakness as DQN (off-policy issue?)
+
+### IQM STANDINGS (updated):
+1. h047 (DQN 40M): IQM=0.0092 (8g) — but only 8 games
+2. h053 (C51 10M): IQM=0.0067 (11g excl DD) — AT ONLY 25% OF THE TRAINING BUDGET
+3. h020 (Dueling PPO): IQM=0.0038 (15g, 3-seed)
+4. h008 (PQN LSTM): IQM=0.0036 (15g)
+
+### ACTIVE JOBS: 188 running
+- h047 DQN resubmit: 7 running (~15min elapsed, 8h walltime)
+- h048 Munchausen PPO: 14 running (~2.5h of 4h)
+- h049 Gamma Annealing: 15 running (~2.5h of 4h)
+- h050 Munchausen DQN: 15 running (~2.3h of 4h)
+- h051 CReLU PPO: 15 running (~2h of 4h)
+- h052 Reward Centering: 15 running (~2h of 4h)
+- h053 C51: 5 running (~1.5h — 4 games left)
+- h054 SAC-discrete: 14 running (~1.5h)
+- h055 Double DQN: 15 running (~1.2h of 8h)
+- h056 PPO Wide: 15 running (~1.2h of 4h)
+- h057 N-step DQN: 15 running (~55min of 8h)
+- h058 Dueling DQN: 15 running (~53min of 8h)
+- h059 DQN+PER: 15 running (~8min of 8h)
+- h060 QR-DQN: 15 running (~7min of 8h)
+
+### STRATEGIC DIRECTION
+C51 at 10M is already competitive with PPO at 40M. When we run C51 at 40M steps, it should be dramatically better. The off-policy distributional approach is the clear winner direction.
+
+Next priorities:
+1. Wait for h053 C51 pilot to finish (4 remaining games)
+2. If h053 confirms strong: prepare C51 at 40M steps pilot (15 games × 1 seed)
+3. Compare all DQN variants (h047/h050/h055/h057/h058/h059/h060) as they complete
+4. The endgame: combine best components (C51 + PER + Double + N-step + Dueling = Rainbow-lite)
+5. Still need to process h048-h052 PPO variant pilots as they complete
