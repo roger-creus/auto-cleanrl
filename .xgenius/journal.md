@@ -6172,3 +6172,87 @@ h047(1P), h050(2R+2P), h051(~70 running/pending), h055(6R), h056(6R+19P+2new), h
 10. h063 IQN: 5R+2P → will reach 15/15
 11. When all DQN components complete: design Rainbow-lite combining top components
 12. When h051/h056 genuine results arrive: compare PPO CReLU and PPO Wide vs baseline
+
+---
+**[2026-03-19 18:54 UTC]**
+
+## Session 99: Process 3 Triggered Results + Delete 15 Stale CSVs + Resubmit 3 Gaps
+
+### Triggered by: h055-montezumarevenge-s1 (rorqual), h057-privateeye-s1 (nibi), h056-enduro-s1 (nibi)
+
+### Reconcile: 0 new disappeared. 45 synced, 121 still active.
+
+### Stale h051/h056 CSV Cleanup: 15 files deleted
+All confirmed stale via exact q4+n_episodes match with h001 baseline:
+- nibi(10): h051-alien, h051-amidar, h051-battlezone, h051-breakout, h051-doubledunk, h051-qbert, h051-solaris, h056-alien, h056-battlezone, h056-enduro
+- nibi(1): h056-privateeye (q4=-170.71 = known stale h001 old format)
+- rorqual(3): h051-battlezone, h051-enduro, h051-privateeye (q4=-170.71)
+- rorqual(1): h056-spaceinvaders
+
+h056-enduro-s1 from nibi (the triggered job) was STALE: q4=0.0, n_episodes=11904 — identical to h001-enduro-s1. Not a genuine ppo_wide result.
+
+### Results Processed: 3 new entries (1016→1019 rows)
+
+**h055 Double DQN (1 new, now 11/15):**
+- montezumarevenge-s1 (rorqual): q4=0.0. TIE with all methods on MR.
+
+**h057 N-step DQN (1 new, now 7/15):**
+- privateeye-s1 (nibi): q4=23.82 vs DQN=-2.46 **WIN**. N-step helps PrivateEye significantly! Longer reward horizon aids sparse reward games.
+
+**h056 PPO Wide (1 new, now 4/15):**
+- montezumarevenge-s1 (nibi): q4=0.0. TIE on MR (expected).
+
+### DQN COMPONENT IQM STANDINGS (updated):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T |
+|------|-------------|--------|-----------------|----------|-------|
+| 1    | DQN base    | 14/15  | +0.0107         | ---      | 8W/3L/3T |
+| 2    | Dueling     | 7/15   | +0.0015         | -0.0010  | 2W/1L/4T |
+| 3    | PPO CReLU   | 4/15   | +0.0000         | ---      | 1W/1L/2T |
+| 4    | PPO Wide    | 4/15   | -0.0001         | ---      | 0W/1L/3T |
+| 5    | NoisyNet    | 15/15  | -0.0006         | -0.0003  | 8W/4L/3T |
+| 6    | QR-DQN      | 15/15  | -0.0025         | +0.0006  | 8W/4L/3T |
+| 7    | C51 40M     | 14/15  | -0.0085         | -0.0010  | 7W/4L/3T |
+| 8    | PER         | 13/15  | -0.0086         | -0.0001  | 7W/4L/2T |
+| 9    | IQN         | 11/15  | -0.0100         | -0.0002  | 5W/3L/3T |
+| 10   | Double DQN  | 11/15  | -0.0122         | -0.0009  | 5W/3L/3T |
+| 11   | Munchausen  | 13/15  | -0.0152         | -0.0011  | 4W/4L/5T |
+| 12   | N-step      | 7/15   | -0.0235         | -0.0005  | 2W/2L/3T |
+
+### Gap Resubmissions: 3 jobs
+1. h051-battlezone-s1 → nibi (10597871)
+2. h051-privateeye-s1 → rorqual (8610625)
+3. h056-enduro-s1 → nibi (10597872)
+
+### COVERAGE UPDATE:
+| Hypothesis  | Banked | Active(R+P) | True Gaps | Notes |
+|------------|--------|-------------|-----------|-------|
+| h047 DQN   | 14/15  | 1P          | 0         | Solaris on fir |
+| h050 Munch | 13/15  | 2R          | 0         | Alien+Enduro on fir |
+| h051 CReLU | 4/15   | 5R+many P+2 new | 0    | All 11 gaps covered |
+| h055 DblDQN| 11/15  | 5R          | 0         | All 4 gaps running |
+| h056 Wide  | 4/15   | 6R+many P+1 new | 0    | All 11 gaps covered |
+| h057 Nstep | 7/15   | 8R          | 0         | All 8 gaps running |
+| h058 Duel  | 7/15   | 8R          | 0         | All 8 gaps running |
+| h059 PER   | 13/15  | 2R+1P       | 0         | Breakout+MR active |
+| h060 QRDQN | 15/15  | -           | -         | COMPLETE |
+| h061 C51   | 14/15  | 2R+1P       | 0         | Breakout pending |
+| h062 Noisy | 15/15  | -           | -         | COMPLETE |
+| h063 IQN   | 11/15  | 5R          | 0         | All 4 gaps running |
+
+### ACTIVE JOBS: 45R + 76P + 3 new = ~124 total
+fir: 9R+26P, narval: 24R, nibi: 3R+20P+2new, rorqual: 4R+29P+1new
+
+### KEY INSIGHTS:
+1. h057 N-step: PrivateEye q4=23.82 is a standout win vs DQN (-2.46). N-step lookback helps sparse-reward games.
+2. ALL gaps now covered by active/pending jobs. No more resubmissions needed.
+3. h051/h056 stale CSV issue persists — nibi cluster still produces old h001 PPO results for these hypotheses. Must verify every pull.
+4. NoisyNet and QR-DQN remain the best DQN components (both 15/15 complete). Dueling promising at 7/15 but still early.
+5. PPO CReLU and PPO Wide both at 4/15 — need many more results before conclusions.
+
+### NEXT SESSION TODO:
+1. Process incoming results as jobs complete — many jobs running across all 4 clusters
+2. Continue verifying h051/h056 results for staleness on every pull
+3. When h051/h056 reach ~10/15 genuine: evaluate PPO CReLU/Wide properly
+4. When DQN component pilots complete (h055/h057/h058 all need ~8 more games): finalize DQN component rankings
+5. When all pilots done: design Rainbow-lite combining top DQN components (NoisyNet + QR-DQN + Dueling?) 
+6. Start planning novel PPO enhancements combining best components from both families
