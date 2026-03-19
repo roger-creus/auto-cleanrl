@@ -6256,3 +6256,94 @@ fir: 9R+26P, narval: 24R, nibi: 3R+20P+2new, rorqual: 4R+29P+1new
 4. When DQN component pilots complete (h055/h057/h058 all need ~8 more games): finalize DQN component rankings
 5. When all pilots done: design Rainbow-lite combining top DQN components (NoisyNet + QR-DQN + Dueling?) 
 6. Start planning novel PPO enhancements combining best components from both families
+
+---
+**[2026-03-19 19:07 UTC]**
+
+## Session 100: Process 5 New Results + Delete 21 Stale h051/h056 CSVs + Resubmit 3 Gaps
+
+### Triggered by: h063-battlezone-s1 (rorqual), h055-breakout-s1 (rorqual), h051-solaris-s1 (narval), h056-amidar-s1 (narval), h056-alien-s1 (narval)
+
+### Reconcile: 3 disappeared
+- h051-phoenix-s1 (57999022, narval) — no logs/CSV. Pending on fir (28421224).
+- 57989342, 10586395 — not found in DB (likely old jobs).
+
+### Stale CSV Cleanup: 21 files deleted
+narval(6): h051-battlezone/breakout/doubledunk/phoenix/qbert, h056-phoenix — all q4+n_eps match h001 s1 exactly.
+nibi(11): h051-alien/amidar/battlezone/breakout/doubledunk/qbert/solaris, h056-alien/battlezone/enduro/privateeye — all stale.
+rorqual(4): h051-battlezone/enduro/privateeye, h056-spaceinvaders — stale.
+
+**CROSS-HYPOTHESIS STALENESS:** h051-privateeye-s1 (rorqual) and h056-privateeye-s1 (nibi) had BIT-IDENTICAL values (mean=-114.86, q4=-170.71, auc=-1690752) despite being different architectures (CReLU vs Wide). Two different architectures with same seed cannot produce identical results. Both are stale PPO output.
+
+### Results Processed: 5 new entries (1019→1024 rows)
+
+**h063 IQN (2 new, now 13/15):**
+- battlezone-s1 (rorqual): q4=3466.95 vs PPO=2364.31 WIN (+47%). vs DQN=3109.48 WIN (+11.5%).
+- spaceinvaders-s1 (narval): q4=250.88 vs PPO=150.19 WIN (+67%). vs DQN=252.93 TIE (-0.8%).
+
+**h055 Double DQN (2 new, now 13/15):**
+- breakout-s1 (rorqual): q4=1.76 vs PPO=1.37 WIN (+29%). vs DQN=1.80 TIE (-2.2%).
+- battlezone-s1 (nibi): q4=3585.67 vs PPO=2364.31 WIN (+52%). vs DQN=3109.48 WIN (+15.3%).
+
+**h057 N-step DQN (1 new, now 8/15):**
+- breakout-s1 (nibi): q4=1.95 vs PPO=1.37 WIN (+43%). vs DQN=1.80 WIN (+8.3%).
+
+### IQM dHNS STANDINGS (MAJOR SHIFT!):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T |
+|------|-------------|--------|-----------------|----------|-------|
+| 1    | DQN base    | 14/15  | +0.0128         | ---      | 8W/3L/3T |
+| 2    | IQN         | 13/15  | +0.0117         | +0.0007  | 7W/3L/3T |
+| 3    | Double DQN  | 13/15  | +0.0114         | +0.0000  | 7W/3L/3T |
+| 4    | N-step      | 8/15   | +0.0061         | -0.0001  | 3W/2L/3T |
+| 5    | Dueling     | 7/15   | +0.0050         | -0.0005  | 2W/1L/4T |
+| 6    | NoisyNet    | 15/15  | +0.0024         | +0.0003  | 8W/4L/3T |
+| 7    | QR-DQN      | 15/15  | +0.0010         | +0.0015  | 8W/4L/3T |
+| 8    | PPO CReLU   | 4/15   | +0.0000         | ---      | 1W/1L/2T |
+| 9    | PPO Wide    | 4/15   | -0.0001         | ---      | 0W/1L/3T |
+| 10   | C51 40M     | 15/15  | -0.0024         | -0.0015  | 8W/4L/3T |
+| 11   | PER         | 13/15  | -0.0041         | -0.0001  | 7W/4L/2T |
+| 12   | C51 40M v2  | 14/15  | -0.0048         | -0.0008  | 7W/4L/3T |
+| 13   | Munchausen  | 13/15  | -0.0103         | -0.0011  | 4W/4L/5T |
+
+### KEY INSIGHT — MAJOR RANKING CHANGES:
+1. **IQN jumped from #9 (-0.0100) to #2 (+0.0117)**! BattleZone (+47%) and SpaceInvaders (+67%) were big wins. IQN is now the BEST DQN component vs PPO.
+2. **Double DQN jumped from #10 (-0.0122) to #3 (+0.0114)**! BattleZone (+52%) was the big swing game.
+3. **N-step improved from #12 to #4**. Breakout (+43%) helped.
+4. IQM is sensitive to which games are included — rankings shift significantly as pilots approach 15/15. This is why we MUST complete all 15 games before drawing conclusions.
+5. All three top DQN components (IQN, Double DQN, N-step) now POSITIVE vs PPO. DQN family is strong.
+6. NoisyNet and QR-DQN (both 15/15 complete) are stable positives vs PPO.
+
+### Gap Resubmissions: 3 jobs
+1. h051-solaris-s1 → rorqual (8611775) — CReLU, last untracked gap
+2. h056-alien-s1 → fir (28438838) — Wide, lost to stale
+3. h056-amidar-s1 → nibi (10599165) — Wide, lost to stale
+
+### COVERAGE UPDATE:
+| Hypothesis  | Banked | Active(R+P) | Notes |
+|------------|--------|-------------|-------|
+| h047 DQN   | 14/15  | 1P(fir)     | Solaris only |
+| h050 Munch | 13/15  | 2R+2P       | Alien+Enduro(fir), Phoenix(nibi+fir) |
+| h051 CReLU | 4/15   | 3R+many P+1 new | Still plagued by stale CSVs |
+| h055 DblDQN| 13/15  | 3R(fir+narval) | Alien+Solaris(fir), Enduro(narval) |
+| h056 Wide  | 4/15   | 4R+many P+2 new | Alien(fir)+Amidar(nibi) resubmitted |
+| h057 Nstep | 8/15   | 7R          | All gaps running |
+| h058 Duel  | 7/15   | 8R          | All gaps running |
+| h059 PER   | 13/15  | 1R+1P       | Breakout(nibi)+MR(narval) |
+| h061 C51v2 | 14/15  | 2R+1P       | Breakout(nibi) only gap |
+| h063 IQN   | 13/15  | 4R(narval)  | DoubleDunk+Enduro running |
+
+### ACTIVE JOBS: ~34R + ~65P + 3 new = ~102 total
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1P (Solaris, fir) — MUST complete for 15-game reference
+2. h050 Munchausen: 2R+2P → will reach 15/15 soon
+3. h051 CReLU: 3R + many P + 1 new — verify genuineness on every completion
+4. h055 Double DQN: 3R → completing 15/15 (Alien, Solaris, Enduro)
+5. h056 Wide: 4R + many P + 2 new → verify genuineness
+6. h057 N-step: 7R → all gaps running
+7. h058 Dueling: 8R → all gaps running
+8. h059 PER: 1R+1P → completing 15/15
+9. h061 C51 v2: 1P(Breakout, nibi) → completing 15/15
+10. h063 IQN: 4R → DoubleDunk+Enduro will complete 15/15
+11. When more pilots complete: track IQM stability — rankings are volatile at <15 games
+12. Plan Rainbow-lite: IQN + Double DQN + NoisyNet looks promising now that IQN and Double DQN are positive
