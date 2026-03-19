@@ -5226,3 +5226,49 @@ h047(4, ~3h left), h050(10, ~6h), h055(7, ~7h), h056(14, ~1.5h), h057(10, ~8h), 
 6. h062 NoisyNet: 14 remaining — Phoenix +224% vs DQN, need more games
 7. h063 IQN: 15 games — most sophisticated distributional method
 8. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
+
+---
+**[2026-03-19 14:54 UTC]**
+
+## Session 86: Process h059-alien-s1, Fix h056 Stale Code on narval/rorqual
+
+### Triggered by: h056-spaceinvaders-s1 (rorqual SUCCESS), h059-alien-s1 (nibi SUCCESS)
+
+### Results Processed: 1 new entry (now 944 rows)
+
+**h059 DQN+PER (1 new, now 4/15):**
+- alien-s1 (nibi): q4=309.90 vs PPO=207.63 (+49.3% WIN). DQN baseline for Alien not yet available.
+- h059 at 4/15: 2W/1L/1T vs PPO. IQM=+0.0097. PER showing strong Alien and MsPacman wins. PrivateEye +5969% vs DQN. NameThisGame loss.
+
+**h056 PPO Wide: STALE CODE ON narval/rorqual (6th occurrence)**
+- rorqual h056-spaceinvaders-s1: q4=150.19 — BIT-FOR-BIT IDENTICAL to PPO h001-spaceinvaders-s1. STALE.
+- narval h056-phoenix-s1: q4=892.49 — identical to PPO. STALE.
+- narval h056-venture-s1: q4=0.0 — identical to PPO. STALE.
+- ROOT CAUSE: narval/rorqual clusters had old code from before wide script changes.
+- FIX: Synced code to narval/rorqual. Cancelled all 14 stale h056 jobs (8 narval, 6 rorqual). Resubmitted 5 missing games (breakout, battlezone, qbert, montezumarevenge, venture) on fir/nibi where code is verified correct. Other games already running on fir/nibi.
+
+### DQN COMPONENT STANDINGS (updated IQM delta-HNS vs PPO):
+| Rank | Component    | Games | IQM dHNS   | W/L/T vs PPO |
+|------|-------------|-------|------------|--------------|
+| 1    | Munchausen  | 5/15  | +0.0179    | 3/1/1        |
+| 2    | QR-DQN      | 4/15  | +0.0123    | 2/0/2        |
+| 3    | PER         | 4/15  | +0.0097    | 2/1/1        |
+| 4    | DQN base    | 11/15 | +0.0096    | 6/2/3        |
+| 5    | Double DQN  | 8/15  | +0.0057    | 3/2/3        |
+| 6    | Dueling     | 7/15  | +0.0013    | 2/1/4        |
+| 7    | N-step(3)   | 6/15  | +0.0006    | 2/2/2        |
+| 8    | NoisyNet    | 1/15  | -0.0764    | 0/1/0        |
+
+### ACTIVE JOBS: ~117 total (after cancelling 14 h056 + adding 5 resubmit)
+h047(4), h050(10), h055(7), h056(~13 fir/nibi + 5 resubmit), h057(10), h058(8), h059(10), h060(11), h061(15), h062(14), h063(15)
+
+### NEXT SESSION TODO:
+1. Process h056 fir/nibi results as they complete (verify SPS ~2000-2500 NOT ~3500)
+2. Process h047 remaining 4 games (alien, doubledunk, enduro, solaris) — complete DQN baseline
+3. Process h050 Munchausen 10 remaining games — validate IQM lead
+4. Process h055 Double DQN 7 resubmit games
+5. Process h057/h058 resubmit games (9+8)
+6. Process h059 PER remaining 10 games — PER looking promising (IQM #3)
+7. Process h060 QR-DQN remaining 11 games — zero losses, IQM #2
+8. Process h061/h062/h063 full 15-game pilots
+9. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4

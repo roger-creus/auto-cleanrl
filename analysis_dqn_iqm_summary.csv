@@ -1,0 +1,9 @@
+hypothesis_id,method,iqm,n_games,wins,losses,ties,mean_delta_hns,min_delta,max_delta,rank,status
+h050,Munchausen DQN,0.01788,5,3,1,1,0.02639,-0.00579,0.09216,1,BEST
+h060,QR-DQN,0.01229,4,2,0,2,0.01795,0.0,0.04722,2,Promising
+h059,PER,0.0097,4,2,1,1,-0.02454,-0.13733,0.01979,3,Neutral
+h047,DQN (Base),0.00961,11,6,2,3,-0.00595,-0.12682,0.06942,4,Baseline
+h055,Double DQN,0.00566,8,3,2,3,-0.01537,-0.13957,0.08283,5,Marginal
+h058,Dueling DQN,0.00134,7,2,1,4,-0.00716,-0.10932,0.03744,6,Minimal
+h057,N-step DQN,0.00061,6,2,2,2,-0.02735,-0.12722,0.05287,7,Minimal
+h062,NoisyNet DQN,-0.07635,1,0,1,0,-0.07635,-0.07635,-0.07635,8,Insufficient
