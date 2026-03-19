@@ -4460,3 +4460,66 @@ Next priorities:
 3. Compare all DQN variants (h047/h050/h055/h057/h058/h059/h060) as they complete
 4. The endgame: combine best components (C51 + PER + Double + N-step + Dueling = Rainbow-lite)
 5. Still need to process h048-h052 PPO variant pilots as they complete
+
+---
+**[2026-03-19 09:53 UTC]**
+
+## Session 73: Process 14 New Results — h048/h049/h051/h052/h054 Early Results
+
+### Triggered by: h054-mspacman-s1 (rorqual SUCCESS) + h052-enduro-s1 (nibi SUCCESS)
+
+### Results Processed: 14 new entries (now 870 rows)
+
+**New results by hypothesis:**
+
+**h048 PPO Munchausen (2 new, now 2/15):**
+- phoenix-s1: q4=731 (-18% LOSS, already processed last session)
+- venture-s1: q4=0 (TIE, fir disappeared/CSV recovered)
+2/15: 0W/1L/1T. Phoenix loss is concerning. 13 still running.
+
+**h049 PPO Gamma Annealing (2 new, now 2/15):**
+- amidar-s1: q4=2.10 (TIE, fir disappeared/CSV recovered)
+- venture-s1: q4=0 (TIE, fir disappeared/CSV recovered)
+2/15: 0W/0L/2T. No improvement yet. 13 still running.
+
+**h051 PPO CReLU (2 new, now 2/15):**
+- montezumarevenge-s1: q4=0.0 (TIE, nibi disappeared/CSV recovered)
+- qbert-s1: q4=162.49 (TIE vs PPO=162.49, nibi disappeared/CSV recovered)
+2/15: 0W/0L/2T. Perfectly neutral. 15 running.
+
+**h052 PPO Reward Centering (3 new, now 5/15):**
+- enduro-s1: q4=0.0 (TIE)
+- phoenix-s1: q4=722.84 (-19% LOSS, narval disappeared/CSV recovered)
+- venture-s1: q4=0.0 (TIE, narval disappeared/CSV recovered)
+- doubledunk-s1: q4=-18.05 (TIE, nibi disappeared/CSV recovered)
+5/15: 0W/1L/4T. Looks like a dud — reward centering doesn't help PPO on Atari (rewards already clipped).
+
+**h054 SAC-discrete at 10M (3 new, now 7/15):**
+- mspacman-s1: q4=475.84 (+66% WIN! SAC-discrete at 10M beats PPO at 40M)
+- namethisgame-s1: q4=2071.19 (-18% LOSS)
+- amidar-s1: q4=1.82 (TIE, both terrible)
+- battlezone-s1: q4=2383.06 (TIE)
+- doubledunk-s1: q4=-18.80 (TIE, fir disappeared/CSV recovered)
+7/15 at 10M: 1W/1L/5T. MsPacman is notable win. SAC-discrete learns Amidar poorly (q4=1.82 vs C51's 41.6). 9 running.
+
+### DISAPPEARED JOBS: 7 newly disappeared, all CSVs recovered from pulls
+- h049-amidar-s1 (fir), h048-venture-s1 (fir), h049-venture-s1 (fir)
+- h054-namethisgame-s1 (rorqual), h052-spaceinvaders-s1 (nibi), h054-battlezone-s1 (nibi), h054-amidar-s1 (rorqual)
+
+### 179 ACTIVE JOBS:
+h047(7), h048(13), h049(13), h050(15), h051(15), h052(10), h053(4), h054(9),
+h055(15), h056(15), h057(15), h058(15), h059(15), h060(15)
+
+### KEY OBSERVATIONS:
+1. PPO variants (h048 Munchausen, h049 Gamma, h051 CReLU, h052 Reward Centering) all showing NEUTRAL or NEGATIVE results so far. PPO is hard to improve on Atari.
+2. h052 Reward Centering is looking like a dud (0W/1L/4T at 5 games). Makes sense — rewards are already clipped to [-1,1] on Atari.
+3. SAC-discrete (h054) at 10M is mixed — MsPacman is a big win but overall neutral. Compare with C51 which beats PPO at 10M easily.
+4. DQN direction remains by far the most promising. h047 DQN IQM=0.0096, all other PPO modifications are near zero.
+5. C51 (h053) IQM dragged down by DoubleDunk degenerate HNS and Phoenix loss. Excluding degenerate games, C51 at 10M would be very strong.
+
+### NEXT SESSION TODO:
+1. Process h047 remaining 7 resubmitted results (should complete ~3-5h from now)
+2. Process h048-h060 results as they continue completing
+3. h053 C51 has 4 remaining (alien, enduro, solaris, venture) — critical for full pilot
+4. Watch for DQN variants (h055-h060) first results
+5. When enough results in: evaluate which DQN components are best, plan Rainbow-lite

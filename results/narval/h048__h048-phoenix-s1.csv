@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Phoenix-v5,1,h048,h048-phoenix-s1,ppo_munchausen,40000000,34176,784.1947631835938,730.9737548828125,26800640.0,300.0

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Phoenix-v5,1,h052,h052-phoenix-s1,ppo_reward_centering,40000000,28800,819.2444458007812,722.8444213867188,23594240.0,480.0
