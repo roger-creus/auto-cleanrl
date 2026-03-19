@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20,n_quantiles,huber_kappa
+Solaris-v5,1,h060,h060-solaris-s1,qrdqn,40000000,5024,484.9681396484375,252.73886108398438,2436480.0,68.0,200,1.0

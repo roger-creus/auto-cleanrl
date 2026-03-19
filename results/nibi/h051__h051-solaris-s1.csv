@@ -1,2 +1,0 @@
-env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Solaris-v5,1,h051,h051-solaris-s1,ppo_crelu,40000000,5760,2051.111083984375,2163.5556640625,11814400.0,2480.0

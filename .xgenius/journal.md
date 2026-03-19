@@ -5475,3 +5475,76 @@ h047(2, ~2h left), h050(10, ~5h), h051(5 running+5 pending), h055(7, ~6h), h056(
 8. h055/h057/h058: 7+10+8 remaining — ~6-7h
 9. h063 IQN: 15 games — ~5h — most sophisticated distributional method
 10. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
+
+---
+**[2026-03-19 15:54 UTC]**
+
+## Session 90: Process 4 New Results (h060 Venture/Solaris, h061 Venture/BattleZone) + Resubmit 12 Gap Jobs
+
+### Triggered by: h060-venture-s1 (job 8587710, rorqual SUCCESS)
+
+### Results Processed: 4 new entries (965→969 rows)
+
+**h060 QR-DQN (2 new, now 10/15):**
+- venture-s1 (rorqual): q4=3.01 vs PPO=0.0 WIN. vs DQN=3.29 TIE (-8.5%).
+- solaris-s1 (rorqual): q4=252.74 vs PPO=2163.56 LOSS (-88.3%). DQN variants collapse on Solaris.
+- h060 at 10/15: 5W/3L/2T vs PPO. IQM dHNS=-0.0202 (#6 in DQN components). Solaris and Phoenix drag IQM heavily. Still 0 losses vs DQN on 6 shared games (2W/0L/6T via Enduro+BattleZone wins). 5 still running (alien/privateeye/namethisgame/mspacman on narval + spaceinvaders resubmitted on rorqual).
+
+**h061 C51 40M (2 new, now 8/15):**
+- venture-s1 (rorqual): q4=3.62 vs PPO=0.0 WIN. vs DQN=3.29 WIN (+10.0%).
+- battlezone-s1 (rorqual): q4=3015.36 vs PPO=2364.31 WIN (+27.5%). vs DQN=2932.58 WIN (+2.8%).
+- h061 at 8/15: 4W/4L/0T vs PPO. IQM dHNS=-0.0605. Weakest distributional method. 7 still running.
+
+### DQN COMPONENT IQM STANDINGS (recomputed with data analyst agent):
+| Rank | Component    | Games  | IQM dHNS  | vs PPO    | vs DQN     |
+|------|-------------|--------|-----------|-----------|------------|
+| 1    | Munchausen  | 5/15   | +0.0090   | 2W/0L/3T  | 1W/3L/1T   |
+| 2    | DQN base    | 13/15  | +0.0072   | 7W/4L/2T  | ---        |
+| 3    | Double DQN  | 8/15   | +0.0055   | 4W/3L/1T  | 2W/1L/5T   |
+| 4    | Dueling     | 7/15   | +0.0008   | 3W/3L/1T  | 3W/3L/1T   |
+| 5    | PER         | 10/15  | -0.0171   | 6W/4L/0T  | 0W/2L/8T   |
+| 6    | QR-DQN      | 10/15  | -0.0202   | 5W/3L/2T  | 2W/2L/6T   |
+| 7    | N-step(3)   | 6/15   | -0.0409   | 2W/3L/1T  | 1W/2L/3T   |
+| 8    | NoisyNet    | 4/15   | -0.0456   | 1W/2L/1T  | 1W/0L/3T   |
+| 9    | C51 40M     | 8/15   | -0.0605   | 4W/4L/0T  | 1W/1L/6T   |
+
+NOTE: IQMs shifted compared to earlier sessions due to recomputation with proper HNS formula and IQM trimming. Munchausen at #1 only has 5 games — DoubleDunk/Phoenix/Solaris will likely tank it. Vanilla DQN at #2 is the robust baseline. Double DQN at #3 shows consistent performance.
+
+### h051/h056 STALE CODE INVESTIGATION:
+- Investigated stale CSVs for h051 CReLU and h056 Wide
+- Verified scripts ARE correctly synced to all 4 clusters (correct file sizes, CReLU class present)
+- The stale CSVs were from OLD completed jobs (before code fix), NOT from session 88 resubmissions
+- Session 88 resubmission jobs are STILL RUNNING/PENDING (5 running for h051, 9 running for h056)
+- Cleaned up 21 stale h051 CSVs and 8 stale h056 CSVs from results/
+- 5 h051 pending jobs had silently disappeared from SLURM — resubmitted
+- 4 h056 pending jobs also disappeared — resubmitted
+
+### Resubmissions: 12 total jobs
+1. h060-spaceinvaders-s1 → rorqual (disappeared from fir)
+2. h062-alien-s1 → fir (disappeared from nibi)
+3. h062-amidar-s1 → rorqual (disappeared from fir)
+4. h051-alien-s1 → rorqual (pending disappeared)
+5. h051-breakout-s1 → fir (pending disappeared)
+6. h051-doubledunk-s1 → narval (pending disappeared)
+7. h051-qbert-s1 → rorqual (pending disappeared)
+8. h051-solaris-s1 → narval (pending disappeared)
+9. h056-amidar-s1 → narval (pending disappeared)
+10. h056-doubledunk-s1 → rorqual (pending disappeared)
+11. h056-privateeye-s1 → fir (pending disappeared)
+12. h056-solaris-s1 → rorqual (pending disappeared)
+
+### ACTIVE JOBS: ~105 total
+h047(2), h050(10), h051(5 running + 5 resubmit = 10), h055(7), h056(9 running + 4 resubmit = 13), h057(10), h058(8), h059(4 running + 1 pending), h060(4 running + 1 resubmit = 5), h061(7), h062(9 running + 2 resubmit = 11), h063(15)
+
+### NEXT SESSION TODO:
+1. Process any newly completed results from the 105 running/pending jobs
+2. h047 DQN baseline: 2 remaining (Alien, Solaris) — complete 15-game reference
+3. h050 Munchausen: 10 remaining — will likely drop from #1 when DoubleDunk/Phoenix/Solaris hit
+4. h051 CReLU: 10 games total (5 running + 5 resubmit) — VERIFY these produce genuine (non-PPO-baseline) results
+5. h055 Double DQN: 7 remaining
+6. h056 Wide: 9 running + 4 resubmit = 13 — same VERIFY concern
+7. h057/h058: 10+8 remaining
+8. h059 PER: 4 running + 1 pending
+9. h060 QR-DQN: 4 running + 1 resubmit = 5
+10. h061/h062/h063: 7+11+15 remaining
+11. When DQN components complete: rank by IQM, design Rainbow-lite combining top components
