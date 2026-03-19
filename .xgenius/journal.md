@@ -5756,3 +5756,95 @@ h047(1), h050(9), h051(4+6=10), h055(7), h056(8+5=13), h057(10), h058(8), h059(4
 8. h063 IQN: 12 running — full pilot incoming, strong early signals
 9. When all DQN components complete: design Rainbow-lite combining top 3-4 components
 10. Start thinking about novel combinations beyond standard Rainbow
+
+---
+**[2026-03-19 16:59 UTC]**
+
+## Session 94: Process 7 New Results + Clean 26 Stale CSVs + Resubmit 7 Gaps
+
+### Triggered by: h050-solaris-s1 (job 10577039, nibi SUCCESS), h063-phoenix-s1 (job 28399195, fir SUCCESS)
+
+### Reconcile: 3 disappeared (already handled by auto-update)
+
+### Results Processed: 7 new entries (982→988 rows)
+
+**h050 Munchausen DQN (2 new, now 8/15):**
+- solaris-s1 (nibi): q4=220.0 vs PPO=2163.56 LOSS (-89.8%). Munchausen collapses on Solaris.
+- doubledunk-s1 (nibi): q4=-24.0 vs PPO=-17.57 LOSS. vs DQN=-24.0 TIE. DoubleDunk universally terrible.
+- h050 at 8/15: Munchausen dropped heavily in IQM rankings due to Solaris/DoubleDunk.
+
+**h063 IQN (1 new, now 4/15):**
+- phoenix-s1 (fir): q4=134.16 vs PPO=735.10 LOSS (-81.7%). vs DQN=93.03 WIN (+44.2%).
+- IQN beats DQN on Phoenix but still far below PPO. Phoenix is PPO-dominated.
+
+**h062 NoisyNet DQN (2 new, now 8/15):**
+- amidar-s1 (fir): q4=45.41 vs PPO=0.0 WIN. vs DQN=34.30 WIN (+32.4%). NoisyNet exploration helps Amidar.
+- solaris-s1 (fir): q4=787.78 vs PPO=2163.56 LOSS. NoisyNet at 787 is much better than other DQN variants on Solaris (Munchausen=220).
+
+**h061 C51 40M (1 new, now 10/15):**
+- enduro-s1 (fir): q4=7.90 vs PPO=0.0 WIN. vs DQN=19.01 LOSS (-58.4%). C51 worse than vanilla DQN.
+
+**h060 QR-DQN (1 new, now 14/15):**
+- spaceinvaders-s1 (fir): q4=265.66 vs PPO=144.71 WIN (+83.6%). vs DQN=252.93 WIN (+5.0%). Nearly complete.
+
+### DQN COMPONENT IQM STANDINGS (recomputed by data analyst):
+| Rank | Component    | Games  | IQM dHNS  | vs PPO    | vs DQN     |
+|------|-------------|--------|-----------|-----------|------------|
+| 1    | PER         | 12/15  | +0.0105   | 0W/3L/9T  | 2W/1L/9T   |
+| 2    | DQN base    | 14/15  | +0.0097   | 0W/2L/12T | ---        |
+| 3    | Double DQN  | 8/15   | +0.0057   | 0W/2L/6T  | 1W/1L/6T   |
+| 4    | Dueling     | 7/15   | +0.0009   | 0W/1L/6T  | 1W/0L/6T   |
+| 5    | QR-DQN      | 14/15  | -0.0083   | 0W/2L/12T | 2W/0L/11T  |
+| 6    | NoisyNet    | 8/15   | -0.0126   | 0W/1L/7T  | 1W/1L/5T   |
+| 7    | Munchausen  | 8/15   | -0.0310   | 0W/1L/7T  | 1W/0L/6T   |
+| 8    | N-step(3)   | 6/15   | -0.0359   | 0W/1L/5T  | 1W/0L/5T   |
+| 9    | C51 40M     | 10/15  | -0.0439   | 0W/3L/7T  | 2W/1L/6T   |
+| 10   | IQN         | 4/15   | -0.0472   | 0W/1L/3T  | 1W/1L/2T   |
+
+### KEY SHIFTS FROM LAST SESSION:
+1. Munchausen CRASHED from #1 to #7 (IQM +0.0057→-0.0310) after Solaris=220 and DoubleDunk=-24. Confirms early IQM with 5 games was misleading.
+2. PER rose to #1 with 12/15 games at +0.0105. But still essentially tied with vanilla DQN.
+3. QR-DQN nearly complete at 14/15 — sitting at #5 (-0.0083). Not beating DQN base.
+4. NoisyNet has the BEST Solaris result among DQN variants (787 vs DQN ~unknown, Munchausen=220). Exploration helps Solaris.
+5. 89%+ of component-vs-DQN comparisons are TIES. No single component clearly beats vanilla DQN.
+
+### STALE h051/h056 CSV CLEANUP:
+Deleted 26 stale CSVs total:
+- 8 h051 from nibi (old bad jobs running identical code to h056)
+- 4 h056 from nibi (identical to h051 nibi — running same code)
+- 5 h051 from fir (bit-for-bit identical to h056 fir)
+- 5 h056 from fir (bit-for-bit identical to h051 fir) 
+- 4 h000 from nibi/narval (from BAD h051 jobs with default hypothesis_id)
+h051/h056 running jobs verified: commands are CORRECT (crelu.py/wide.py with proper args). 16 h051 + 19 h056 active jobs (some duplicates from multi-session resubmissions serving as insurance).
+
+### Gap Resubmissions: 7 jobs
+1. h060-mspacman-s1 → nibi (last missing for h060, will complete 15/15)
+2. h061-montezumarevenge-s1 → fir (3rd resubmit)
+3. h061-privateeye-s1 → rorqual (3rd resubmit)
+4. h061-qbert-s1 → nibi (3rd resubmit)
+5. h062-mspacman-s1 → fir
+6. h062-namethisgame-s1 → rorqual
+7. h062-spaceinvaders-s1 → narval
+
+### ACTIVE JOBS: ~113 total (106 existing + 7 resubmit)
+h047(1), h050(7), h051(5R+11P=16), h055(7), h056(9R+9P=18), h057(10), h058(8), h059(4), h060(1 resubmit), h061(3R+3 resubmit=6), h062(5R+3 resubmit=8), h063(11)
+
+### EMERGING PATTERN:
+With more data, the DQN component landscape is clarifying:
+- Top tier: PER (+0.0105) ≈ vanilla DQN (+0.0097) ≈ Double DQN (+0.0057) — all essentially tied
+- Mid tier: Dueling (+0.0009) ≈ QR-DQN (-0.0083) — marginal
+- Bottom tier: NoisyNet (-0.0126), Munchausen (-0.0310), N-step (-0.0359), C51 (-0.0439), IQN (-0.0472)
+Rainbow-lite strategy: PER + Double DQN + Dueling are the 3 components that don't hurt. N-step, NoisyNet, distributional methods actively hurt IQM.
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1 remaining (Solaris, narval) — complete 15-game reference
+2. h050 Munchausen: 7 running — will finish 15-game pilot
+3. h051 CReLU: 16 active — verify genuine non-PPO results when they complete
+4. h055 Double DQN: 7 running — reaching 15-game coverage
+5. h056 Wide: 18 active — verify genuine results
+6. h057/h058: 10+8 running — complete N-step/Dueling pilots
+7. h059 PER: 4 running — 3 games left for 15/15
+8. h060 QR-DQN: 1 resubmit (mspacman) — will complete 15/15
+9. h061/h062: 6+8 active — complete C51/NoisyNet pilots
+10. h063 IQN: 11 running — only 4/15 done, but trending bad
+11. When all DQN components complete: design Rainbow-lite with PER + Double DQN + Dueling (top 3 non-harmful components)

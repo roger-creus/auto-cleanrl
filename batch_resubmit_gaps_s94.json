@@ -1,0 +1,72 @@
+[
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/qrdqn_atari_envpool.py --env-id MsPacman-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h060 --experiment-id h060-mspacman-s1 --output-dir /output",
+    "experiment_id": "h060-mspacman-s1",
+    "hypothesis_id": "h060",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/c51_atari_envpool.py --env-id MontezumaRevenge-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h061 --experiment-id h061-montezumarevenge-s1 --output-dir /output",
+    "experiment_id": "h061-montezumarevenge-s1",
+    "hypothesis_id": "h061",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/c51_atari_envpool.py --env-id PrivateEye-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h061 --experiment-id h061-privateeye-s1 --output-dir /output",
+    "experiment_id": "h061-privateeye-s1",
+    "hypothesis_id": "h061",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/c51_atari_envpool.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h061 --experiment-id h061-qbert-s1 --output-dir /output",
+    "experiment_id": "h061-qbert-s1",
+    "hypothesis_id": "h061",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "cluster": "fir",
+    "command": "python cleanrl/dqn_atari_envpool_noisy.py --env-id MsPacman-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h062 --experiment-id h062-mspacman-s1 --output-dir /output",
+    "experiment_id": "h062-mspacman-s1",
+    "hypothesis_id": "h062",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "cluster": "rorqual",
+    "command": "python cleanrl/dqn_atari_envpool_noisy.py --env-id NameThisGame-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h062 --experiment-id h062-namethisgame-s1 --output-dir /output",
+    "experiment_id": "h062-namethisgame-s1",
+    "hypothesis_id": "h062",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  },
+  {
+    "cluster": "narval",
+    "command": "python cleanrl/dqn_atari_envpool_noisy.py --env-id SpaceInvaders-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h062 --experiment-id h062-spaceinvaders-s1 --output-dir /output",
+    "experiment_id": "h062-spaceinvaders-s1",
+    "hypothesis_id": "h062",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "08:00:00"
+  }
+]
