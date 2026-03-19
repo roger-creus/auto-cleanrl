@@ -4715,3 +4715,66 @@ LESSON: Always sync AFTER the final edit AND verify a newly-synced script produc
 5. h047 DQN baseline remaining 7 games (~5-6h) — complete full 15-game pilot
 6. h057-h062 DQN variants (~5-7h) — process all and compare components
 7. When all DQN components are in: rank by IQM, build Rainbow-lite combining top components
+
+---
+**[2026-03-19 12:09 UTC]**
+
+## Session 77: Process h050 Results + Implement & Submit IQN (h063)
+
+### Triggered by: h050-breakout-s1 (nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 909 rows)
+
+**h050 Munchausen DQN (3 new, now 3/15):**
+- breakout-s1: q4=2.03 vs PPO=1.37 (+48.4% but both near zero absolute). TIE.
+- mspacman-s1: q4=280.64 vs PPO=287.07 (-2.2%). TIE. (nibi disappeared, CSV recovered)
+- spaceinvaders-s1: q4=287.50 vs PPO=150.19 (+91.4% WIN!), vs DQN=252.93 (+13.7% WIN).
+3/15: 1W/0L/2T. SpaceInvaders is a big win for Munchausen DQN. 12 still running.
+
+**h049 PPO Gamma Anneal (1 new, now 10/15 — already CLOSED):**
+- doubledunk-s1: q4=-17.34 vs PPO=-18.10 (+4.2% TIE). CSV recovered from cancelled fir job.
+
+### h056 OLD CSVs: Found h056-namethisgame (fir) and h056-venture (narval) from the OLD stale-code batch. These jobs were 'cancelled' but had already completed training (40M steps in CSV). SKIPPING — cannot trust stale-code results. Wait for resubmit to complete.
+
+### NEW HYPOTHESIS: h063 IQN (Implicit Quantile Networks)
+BTR paper identifies IQN as the 2nd most impactful Rainbow component (after Munchausen).
+Unlike QR-DQN (fixed quantiles) or C51 (fixed atoms), IQN:
+- Samples random tau from U(0,1) each forward pass
+- Uses cosine embedding: cos(pi * i * tau) for i=1..64
+- Projects to feature space and multiplies element-wise with CNN features
+- More flexible: can represent ANY quantile function
+
+Implementation: cleanrl/iqn_atari_envpool.py
+- N=64 training quantiles, K=32 policy quantiles (per IQN paper)
+- DDQN-style action selection
+- Same replay buffer and epsilon schedule as other DQN variants
+Submitted all 15 games × 1 seed, 8h walltime, across 4 clusters.
+
+### COMPLETE RAINBOW COMPONENT COVERAGE (10 variants now):
+h047 (DQN base), h050 (Munchausen), h055 (Double), h057 (N-step), h058 (Dueling),
+h059 (PER), h060 (QR-DQN), h061 (C51-40M), h062 (NoisyNet), h063 (IQN)
+
+### ACTIVE JOBS: ~169 total (154 + 15 new h063)
+h047(7), h050(12), h051(15), h055(15), h056(15), h057(15), h058(15),
+h059(15), h060(15), h061(15), h062(15), h063(15)
+
+### EXPECTED COMPLETION TIMELINE:
+- h050 Munchausen DQN: ~20 min (12 at 4.7h/5h)
+- h055 Double DQN: ~1.5h
+- h057 N-step DQN: ~1.8h
+- h058 Dueling DQN: ~1.8h
+- h051 CReLU PPO: ~2.2h
+- h056 PPO Wide: ~3.9h
+- h047 DQN resubmit: ~5.5h
+- h059 DQN+PER: ~5.5h
+- h060 QR-DQN: ~5.5h
+- h061 C51-40M: ~6.3h
+- h062 NoisyNet: ~6.5h
+- h063 IQN: ~8h (just submitted)
+
+### NEXT SESSION TODO:
+1. h050 should finish imminently — process all 15 results
+2. h055/h057/h058 within 2h — process DQN variant results
+3. h051/h056 within 2-4h — process PPO variant results
+4. When enough DQN components complete: start comparative analysis
+5. When ALL complete: rank by IQM, build Rainbow-lite combining top 3-4 components
