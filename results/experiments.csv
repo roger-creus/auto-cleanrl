@@ -930,3 +930,4 @@ h058-privateeye-s1,h058,,nibi completed. Dueling DQN PrivateEye. q4=-150.40 vs D
 h058-venture-s1,h058,,nibi completed. Dueling DQN Venture. q4=5.31 vs PPO=0.0 TIE (small). vs DQN=3.29 WIN (+61.1%). Small absolute values.,Venture-v5,1,dqn_dueling,40000000,18096,2.7409372329711914,5.305039882659912,49600.0,0.0
 h058-amidar-s1,h058,,fir completed. Dueling DQN Amidar. q4=32.55 vs PPO=2.04 WIN (+1496%). vs DQN=34.30 TIE (-5.1%).,Amidar-v5,1,dqn_dueling,40000000,66656,31.65866470336914,32.55352783203125,2110240.0,51.599998474121094
 h058-qbert-s1,h058,,rorqual completed. Dueling DQN Qbert. q4=152.46 vs PPO=162.49 TIE (-6.2%). vs DQN=228.23 LOSS (-33.2%).,Qbert-v5,1,dqn_dueling,40000000,125440,154.87245178222656,152.46173095703125,19427200.0,150.0
+h047-breakout-s1,h047,,nibi completed. DQN Breakout. q4=1.80 vs PPO=1.37 (+32% but both near zero). TIE. HNS delta=+0.0153.,Breakout-v5,1,dqn,40000000,207856,1.754676342010498,1.8040951490402222,364720.0,2.200000047683716

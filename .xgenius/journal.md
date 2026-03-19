@@ -5064,3 +5064,39 @@ KEY OBSERVATIONS:
 4. Process h050 Munchausen resubmit — critical for validating early lead
 5. Process h059-h063 DQN variant results — complete Rainbow component survey
 6. When all DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4 components
+
+---
+**[2026-03-19 14:09 UTC]**
+
+## Session 83: Process h047-breakout-s1, h056 Still Stale
+
+### Triggered by: h047-breakout-s1 (job 10573525, nibi SUCCESS)
+
+### Results Processed: 1 new entry (now 932 rows)
+
+**h047 DQN baseline (1 new, now 9/15):**
+- breakout-s1 (nibi): q4=1.80 vs PPO=1.37 (+32% but both near zero). HNS delta=+0.0153. TIE.
+- h047 at 9/15: 6W/1L/2T, IQM dHNS=+0.0084. 6 games still running (alien, doubledunk, enduro, mspacman, namethisgame, solaris).
+
+**h056 PPO Wide: STILL STALE (4th occurrence)**
+fir amidar q4=2.039 and narval phoenix q4=892.489 are bit-for-bit identical to PPO baseline. These are from the OLD cancelled batch, not the resubmit. 15 resubmit jobs still running with ~2h remaining. Will verify on next wake: wide code should show SPS ~2000-2500 (vs ~3494 for standard PPO).
+
+### DQN COMPONENT STANDINGS (updated):
+1. h050 (Munchausen DQN): IQM=+0.0137 (5g, 3W/0L/2T) — LEADER
+2. h047 (DQN baseline): IQM=+0.0084 (9g, 6W/1L/2T)
+3. h055 (Double DQN): IQM=+0.0051 (8g, 4W/3L/1T) — ~identical to vanilla DQN
+4. h058 (Dueling DQN): IQM=+0.0039 (7g, 3W/2L/2T)
+5. h057 (N-step n=3): IQM=-0.0263 (6g, 3W/2L/1T) — BattleZone +25% vs DQN
+
+### ACTIVE JOBS: 114 running
+h047(6), h050(10), h055(7), h056(15), h057(1-battlezone resubmit), h059(15), h060(15), h061(15), h062(15), h063(15)
+
+### NEXT SESSION TODO:
+1. h056 resubmit should complete (~2h) — verify NOT stale (SPS < 2500)
+2. h055 7 resubmit games completing — finalize DDQN pilot
+3. h047 remaining 6 games — complete DQN baseline
+4. h050 10 resubmit games — validate Munchausen lead
+5. h057 1 remaining (battlezone) — finalize
+6. h058 8 remaining games — complete Dueling pilot
+7. h059-h063 (PER, QR-DQN, C51-40M, NoisyNet, IQN) all 15 games each
+8. When all DQN components complete: rank by IQM, build Rainbow-lite
