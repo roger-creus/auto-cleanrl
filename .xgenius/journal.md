@@ -4944,3 +4944,52 @@ h047(7), h050(10), h055(12), h056(15), h057(15), h058(15), h059(15), h060(15), h
 5. Process h057-h063 DQN variant results as they come in
 6. When all DQN components complete: build comparative table, identify top 3-4 for Rainbow-lite
 7. Rainbow-lite = best combination of: Munchausen, N-step, Dueling, PER, C51/QR/IQN, NoisyNet
+
+---
+**[2026-03-19 13:15 UTC]**
+
+## Session 81: Process h055/h057/h058 Results (6 new entries)
+
+### Triggered by: h058-phoenix-s1 (job 28386766, fir SUCCESS)
+
+### Results Processed: 6 new entries (now 922 rows)
+
+**h055 Double DQN (1 new, now 7/15):**
+- venture-s1: q4=0.73 vs PPO=0.0 TIE, vs DQN=3.29 worse (-78%). Both near zero.
+- h055 at 7/15: 3W/3L/1T vs PPO. Confirms DDQN ~identical to vanilla DQN.
+
+**h057 N-step DQN (4 new, now 4/15):**
+- phoenix-s1: q4=89.50 vs PPO=892.49 CATASTROPHIC (-90%), vs DQN=93.03 TIE (-4%)
+- namethisgame-s1: q4=1774.47 vs PPO=2522.54 LOSS (-30%). No DQN baseline yet.
+- montezumarevenge-s1: q4=0.0 TIE (all algs score 0)
+- venture-s1: q4=1.45 vs PPO=0.0 TIE, vs DQN=3.29 worse (-56%, tiny numbers)
+- h057 at 4/15: 1W/2L/1T vs PPO. Phoenix/NameThisGame losses match DQN pattern.
+
+**h058 Dueling DQN (1 new, now 1/15):**
+- phoenix-s1: q4=87.65 vs PPO=892.49 CATASTROPHIC (-90%), vs DQN=93.03 TIE (-6%)
+- Too early to judge overall. 14 still running.
+
+### DISAPPEARED JOBS: 9 newly disappeared (4 h055, 5 h057)
+- h055: amidar(nibi), phoenix(fir), qbert(narval), venture(fir) — ALL have CSVs, already processed
+- h057: phoenix(fir), namethisgame(narval), montezumarevenge(nibi), venture(nibi) — ALL have CSVs, processed
+- h057-battlezone-s1 (nibi): NO CSV, resubmitted to nibi (job 10577794)
+
+### STALE CODE: h056 narval CSVs (phoenix, venture) pulled again — deleted. Previously identified as stale in session 80.
+
+### DQN VARIANT EARLY COMPARISON (vs DQN baseline, where available):
+- h055 Double DQN: ~identical to vanilla DQN (-3% across all games)
+- h057 N-step (n=3): Phoenix TIE (-4%), Venture worse (-56% tiny), overall neutral
+- h058 Dueling: Phoenix TIE (-6%), too early
+
+### ACTIVE JOBS: 140 total
+h047(7), h050(10), h055(8), h056(15), h057(10+1 resubmit), h058(14), h059(15), h060(15), h061(15), h062(15), h063(15)
+
+### NEXT SESSION TODO:
+1. h055 remaining 8 games (3-5h) — complete pilot, compare systematically vs DQN
+2. h056 resubmit (15 games, 4h walltime) — validate non-stale results
+3. h057 remaining 10+1 games (5-7h) — first N-step DQN full pilot
+4. h058 remaining 14 games (5-7h) — first Dueling DQN full pilot
+5. h047 DQN baseline 7 resubmit (3-5h) — complete 15-game baseline
+6. h050 Munchausen DQN 10 resubmit (5-8h) — critical validation
+7. h059-h063 (PER, QR-DQN, C51-40M, NoisyNet, IQN) — all 15 games each (5-8h)
+8. When enough DQN components complete: rank by IQM improvement over DQN baseline, build Rainbow-lite
