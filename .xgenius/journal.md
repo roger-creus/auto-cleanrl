@@ -6347,3 +6347,77 @@ rorqual(4): h051-battlezone/enduro/privateeye, h056-spaceinvaders — stale.
 10. h063 IQN: 4R → DoubleDunk+Enduro will complete 15/15
 11. When more pilots complete: track IQM stability — rankings are volatile at <15 games
 12. Plan Rainbow-lite: IQN + Double DQN + NoisyNet looks promising now that IQN and Double DQN are positive
+
+---
+**[2026-03-19 19:27 UTC]**
+
+## Session 101: Process 4 New Results + Delete 44 Stale h051/h056 CSVs + h055 COMPLETE
+
+### Triggered by: h055-alien-s1 (28405853, fir SUCCESS)
+
+### Reconcile: 0 new disappeared. 116 still active.
+
+### Stale CSV Cleanup: 44 files deleted total
+20 h051 + 12 h056 initial + 6 h051 narval re-pulled + 3 h056 narval re-pulled + 12 fir/rorqual re-pulled. ALL match h001 s1 baseline exactly (q4+n_eps identical). Persistent issue: every cluster pull re-downloads stale CSVs.
+
+### Results Processed: 4 new entries (1024→1028 rows)
+
+**h055 Double DQN (2 new, NOW 15/15 COMPLETE!):**
+- alien-s1 (fir): q4=318.72 vs PPO=207.63 WIN (+53.5%). vs DQN=336.73 TIE (-5.3%).
+- solaris-s1 (fir): q4=302.60 vs PPO=2163.56 LOSS (-86%). MASSIVE drop. DQN family collapses on Solaris.
+
+**h058 Dueling DQN (1 new, now 8/15):**
+- alien-s1 (nibi): q4=149.93 vs PPO=207.63 LOSS (-27.8%). vs DQN=336.73 LOSS (-55.5%). Dueling HURTS on Alien.
+
+**h057 N-step DQN (1 new, now 9/15):**
+- qbert-s1 (rorqual): q4=205.02 vs PPO=162.49 WIN (+26.2%). vs DQN=228.23 LOSS (-10.2%).
+
+### *** CRITICAL FINDING: h055 Double DQN IQM COLLAPSE ***
+h055 went from IQM=+0.0122 at 14/15 games to IQM=-0.0002 at 15/15 games!
+Solaris (q4=302.60 vs PPO=2163.56) was a -86% loss that destroyed the IQM.
+This PROVES that <15 game IQMs are UNRELIABLE. Rankings shift dramatically when the missing games (especially Solaris, Phoenix) are outliers.
+
+### DQN COMPONENT IQM STANDINGS (updated):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T PPO |
+|------|-------------|--------|-----------------|----------|-----------|
+| 1    | DQN base    | 14/15  | +0.0128         | ---      | 10W/3L/1T |
+| 2    | IQN         | 13/15  | +0.0117         | +0.0007  | 8W/3L/2T  |
+| 3    | N-step      | 9/15   | +0.0056         | -0.0004  | 5W/2L/2T  |
+| 4    | NoisyNet    | 15/15  | +0.0024         | +0.0003  | 10W/4L/1T |
+| 5    | Dueling     | 8/15   | +0.0015         | -0.0010  | 3W/2L/3T  |
+| 6    | QR-DQN      | 15/15  | +0.0010         | +0.0015  | 10W/4L/1T |
+| 7    | CReLU(PPO)  | 4/15   | +0.0000         | ---      | 1W/1L/2T  |
+| 8    | Wide(PPO)   | 4/15   | -0.0001         | ---      | 0W/1L/3T  |
+| 9    | Double DQN  | 15/15  | -0.0002         | -0.0003  | 8W/4L/3T  |
+| 10   | PER         | 13/15  | -0.0041         | -0.0001  | 8W/4L/1T  |
+| 11   | C51 40M     | 14/15  | -0.0048         | -0.0008  | 8W/4L/2T  |
+| 12   | Munchausen  | 13/15  | -0.0103         | -0.0011  | 6W/4L/3T  |
+
+### IMPLICATIONS FOR RAINBOW-LITE:
+With h055 completing, we now have 3 STABLE (15/15) DQN components:
+- NoisyNet: +0.0024 (best stable component)
+- QR-DQN: +0.0010 (second best stable)
+- Double DQN: -0.0002 (neutral — not worth including)
+
+DQN base will likely ALSO drop when Solaris completes (h047 pending on fir).
+The DQN family's weakness on Solaris and Phoenix means combining components may not help.
+
+BEST candidates for Rainbow-lite: NoisyNet + QR-DQN (both positive, both 15/15 proven).
+Dueling at 8/15 (+0.0015) may add value. IQN at 13/15 (+0.0117) looks great but may also collapse on Solaris.
+N-step at 9/15 (+0.0056) is also at risk.
+
+### ACTIVE JOBS: 34R + 81P = 115 total
+fir: 8R+27P, narval: 21R, nibi: 1R+23P, rorqual: 4R+31P
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1P (Solaris, fir) — CRITICAL for 15-game reference IQM
+2. h050 Munchausen: 2R (alien+enduro, fir ~6:49) — will reach 15/15 soon
+3. h051 CReLU: many running/pending — verify genuineness on every completion
+4. h056 Wide: many running/pending — verify genuineness
+5. h057 N-step: 7R → will approach 15/15 (alien, mspacman, spaceinvaders on fir; enduro, solaris on narval; doubledunk, qbert on rorqual)
+6. h058 Dueling: 7R → will approach 15/15
+7. h059 PER: 1R (montezumarevenge, narval) → will reach 15/15 (breakout pending)
+8. h061 C51: breakout pending → will complete 15/15
+9. h063 IQN: 2R (doubledunk, enduro on narval) → will approach 15/15
+10. AWAIT h047 Solaris to finalize DQN base IQM — expect significant drop
+11. Design Rainbow-lite only after ALL components reach 15/15 with stable IQMs
