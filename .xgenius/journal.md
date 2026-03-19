@@ -4078,3 +4078,75 @@ Subtract running mean reward during GAE computation (Sutton et al 2024, arxiv 24
 6. If h047 DQN works: implement C51/Rainbow envpool next
 7. Consider ExO-PPO (hybrid on/off-policy) as h053
 8. Phase 2 continues — explored categories: architecture (Dueling, LSTM, IMPALA, NoisyNets, SEM), loss mods (CVaR, QR, SPO, Consistency), plasticity (LayerNorm, CHAIN-SP, S&P, SpectralNorm, PFO, NaP, CReLU), exploration (RND, NoisyNets, Entropy Annealing), optimization (Muon, Schedule-Free, Symlog, PopArt, Reward Centering), data aug (DrQ), network capacity (Sparsity). Still unexplored: hybrid on/off-policy, ensemble, SAC-Discrete, C51/Rainbow envpool, wider networks.
+
+---
+**[2026-03-19 08:14 UTC]**
+
+## Session 67: Process h046 (12/15 CLOSED) + h047 First Result + Submit h053/h054
+
+### Triggered by: h046-amidar-s1 (job 28363813, fir SUCCESS)
+
+### Results Processed: 6 new entries (now 830 rows)
+
+**h046 PPO+LSTM (5 new, now 12/15):**
+- amidar-s1: q4=1.90 (fir). PPO s1=2.04 → -6.9% LOSS.
+- namethisgame-s1: q4=2019.0 (narval). PPO s1=2522.5 → -20.0% BIG LOSS.
+- breakout-s1: q4=1.32 (rorqual). PPO s1=1.37 → -3.6% TIE.
+- mspacman-s1: q4=260.5 (rorqual). PPO s1=287.1 → -9.3% LOSS.
+- qbert-s1: q4=175.2 (rorqual). PPO s1=162.5 → +7.8% WIN (only win!).
+
+**h047 DQN baseline (1 new, now 1/15):**
+- venture-s1: q4=3.29 (nibi). PPO s1=0.0 → small WIN (DQN learns some Venture, PPO cannot).
+
+### h046 CLOSED: 12/15 games, IQM delta-HNS=-0.0021
+Record: 1W/5L/6T. Only Qbert win (+7.8%). Severe losses: NameThisGame (-20%), PrivateEye (-663%), MsPacman (-9.3%). LSTM adds temporal memory but hurts PPO performance — the additional LSTM layer may reduce feature extraction capacity, and per-env minibatch sampling may be suboptimal.
+3 remaining games (Alien, Enduro, Solaris) still running but cannot save IQM. Closed without waiting.
+
+### NEW HYPOTHESES SUBMITTED: h053 + h054 (30 jobs total)
+
+**h053: C51 Categorical DQN (envpool)** — 15-game pilot across 4 clusters.
+Distributional RL: learns full return distribution instead of expected value. Key Rainbow component. Uses 51 atoms with support [-10, 10]. Same architecture/hyperparams as h047 DQN but with categorical projection loss.
+10M steps (DQN-style training, same as h047).
+
+**h054: SAC-discrete (envpool)** — 15-game pilot across 4 clusters.
+Maximum entropy RL for discrete actions. Actor-critic with twin Q-networks, automatic entropy tuning. Fundamentally different optimization landscape — entropy regularization encourages exploration and robustness.
+10M steps. Uses separate Actor and twin SoftQNetworks.
+
+### ACTIVE JOBS: ~122 total
+- h046: 3 running (alien, enduro, solaris — ~1h left, already closed)
+- h047 DQN: 14 running (~1h left)
+- h048 Munchausen PPO: 15 running (~3h left)
+- h049 Gamma Annealing: 15 running (~3h left)
+- h050 Munchausen DQN: 15 running (~3.5h left)
+- h051 CReLU PPO: 15 running (~3.5h left)
+- h052 Reward Centering: 15 running (~3.5h left)
+- h053 C51: 15 submitted (just now)
+- h054 SAC-discrete: 15 submitted (just now)
+
+### EXPLORATION STATUS — Phase 2 coverage:
+EXPLORED (closed or running):
+- On-policy PPO variants: baseline, LayerNorm, CHAIN-SP, DrQ, SpecNorm, EntAnneal, PopArt, Dual-V, QR, Symlog, NaP, S&P, Muon, Schedule-Free, SPO, PFO, LSTM, NoisyNets, SEM, SPR, Dueling, CVaR combos, Munchausen(running), Gamma Annealing(running), CReLU(running), Reward Centering(running)
+- PQN variants: baseline, NaP, IMPALA, LSTM
+- Off-policy DQN: baseline(running), Munchausen(running), C51(submitted)
+- Off-policy SAC-discrete: submitted
+- Architecture: NatureCNN, IMPALA CNN, LSTM, Dueling
+
+STILL UNEXPLORED:
+- Rainbow (full), IQN, QR-DQN standalone
+- Hybrid on/off-policy (ExO-PPO)
+- PPG (Phasic Policy Gradient)
+- Ensemble methods, multi-head Q
+- Wider/deeper networks
+- N-step returns for DQN
+- Lion/AGC optimization
+
+### NEXT SESSION TODO
+1. Process h047 DQN baseline results (14 remaining, ~1h) — CRITICAL for off-policy direction
+2. Process h046 final 3 games (Alien, Enduro, Solaris) if not already done
+3. Process h048/h049/h050 results as they complete (~3-4h)
+4. Process h051/h052 results (~3-4h)
+5. Check h053/h054 for early failures
+6. If h047 DQN is competitive: prepare DQN+n-step, DQN+IQN, full Rainbow components
+7. If h053 C51 works: prepare C51+PER (prioritized replay)
+8. If h054 SAC works: explore SAC+CReLU or SAC+DrQ combinations
+9. Continue exploring: ExO-PPO, wider networks, N-step returns
