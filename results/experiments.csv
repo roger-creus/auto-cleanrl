@@ -755,7 +755,7 @@ h033-montezumarevenge-s1,h033,,"new-code CSV (rorqual, 72960 eps)",MontezumaReve
 h033-solaris-s1,h033,,"new-code CSV (nibi, 5760 eps)",Solaris-v5,1,ppo_aug_consist,40000000,5760,2467.11,2513.78,14210560.0,1720.0
 h036-amidar-s1,h036,,"pilot (rorqual new-code, was curve-derived q4=31.0)",Amidar-v5,1,ppo_cvar_duel_sem,40000000,71168,2.2877697944641113,3.1870503425598145,162816.0,1.0
 h036-breakout-s1,h036,,"pilot (fir new-code, was curve-derived q4=3.48)",Breakout-v5,1,ppo_cvar_duel_sem,40000000,221696,1.39,1.33,308224,1.0
-h036-qbert-s1,h036,,"curve-derived q4 (rorqual, 128640 eps)",Qbert-v5,1,ppo_cvar_duel_sem,40000000,128640,261.97,279.28,0,350.0
+h036-qbert-s1,h036,,pilot (fir new-code) CORRECTED curve q4=279.28→143.98,Qbert-v5,1,ppo_cvar_duel_sem,40000000,123392,160.84,143.98,19846400.0,150.0
 h033-doubledunk-s1,h033,,"new-code CSV (nibi, 20480 eps). DoubleDunk q4=-18.0. vs PPO baseline -18.1 → TIE.",DoubleDunk-v5,1,ppo_aug_consist,40000000,20480,-17.64,-18.0,-361216.0,-16.0
 h030-mspacman-s1,h030,,"new-code CSV (nibi, 80768 eps). MsPacman q4=273.84. vs PPO baseline ~319 → -14% LOSS.",MsPacman-v5,1,ppo_sem,40000000,80768,272.03,273.84,21971200.0,190.0
 h030-enduro-s1,h030,,"new-code CSV (fir, 11904 eps). Enduro q4=0.0. TIE with PPO baseline (also 0.0).",Enduro-v5,1,ppo_sem,40000000,11904,0.0,0.0,0.0,0.0
@@ -812,3 +812,6 @@ h036-doubledunk-s1,h036,,pilot (narval new-code),DoubleDunk-v5,1,ppo_cvar_duel_s
 h036-spaceinvaders-s1,h036,,pilot (narval new-code),SpaceInvaders-v5,1,ppo_cvar_duel_sem,40000000,77440,153.47933959960938,152.63636779785156,11885440.0,110.0
 h035-solaris-s1,h035,,pilot (rorqual new-code),Solaris-v5,1,ppo_cvar_sem,40000000,5632,2625.0,3485.45458984375,14784000.0,1460.0
 h036-privateeye-s1,h036,,pilot (rorqual new-code),PrivateEye-v5,1,ppo_cvar_duel_sem,40000000,14720,-6.756521701812744,56.90434646606445,-99456.0,0.0
+h036-enduro-s1,h036,,pilot (narval new-code),Enduro-v5,1,ppo_cvar_duel_sem,40000000,11904,0.0,0.0,0.0,0.0
+h036-mspacman-s1,h036,,pilot (rorqual new-code),MsPacman-v5,1,ppo_cvar_duel_sem,40000000,81664,257.41,246.90,21021440.0,240.0
+h029-solaris-s3,h029,,3-seed (rorqual new-code),Solaris-v5,3,ppo_aug_qr_cvar,40000000,6016,2514.47,2843.83,15127040.0,1540.0
