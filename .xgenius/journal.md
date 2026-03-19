@@ -4778,3 +4778,54 @@ h059(15), h060(15), h061(15), h062(15), h063(15)
 3. h051/h056 within 2-4h — process PPO variant results
 4. When enough DQN components complete: start comparative analysis
 5. When ALL complete: rank by IQM, build Rainbow-lite combining top 3-4 components
+
+---
+**[2026-03-19 12:32 UTC]**
+
+## Session 78: Process h050/h051 Results + Resubmit h050 Missing Games
+
+### Triggered by: h051-namethisgame-s1 (nibi SUCCESS), h051-doubledunk-s1 (nibi SUCCESS)
+
+### Results Processed: 4 new entries (now 907 rows, after removing 5 stale h051 entries)
+
+**h050 Munchausen DQN (2 new CSVs recovered, now 5/15):**
+- amidar-s1: q4=32.0 vs PPO=1.35 (WIN +2264%), vs DQN=34.3 (TIE -6.7%). fir CSV recovered.
+- qbert-s1: q4=169.84 vs PPO=158.44 (TIE +7.2%), vs DQN=228.23 (LOSS -25.6%). fir CSV recovered.
+- Running tally: 3W/1L/1T vs PPO. SpaceInvaders (+91%) is the standout win. Vs DQN baseline, Munchausen is slightly worse on amidar/qbert but better on SpaceInvaders.
+
+**h050 FAILURE ANALYSIS:**
+- narval (4 games): Jobs hung after container import — 18 lines of output over 8h, no training progress. Working directory path has spurious quotes. Script never started training.
+- fir (doubledunk, venture): Timed out at 5h walltime before completing 40M steps.
+- rorqual (enduro, namethisgame, privateeye): No SLURM logs at all — completely lost.
+- nibi (montezumarevenge): No SLURM logs.
+- ACTION: Resubmitted 10 missing games on fir/rorqual/nibi (avoiding narval), 8h walltime.
+
+**h051 PPO CReLU (2 new valid results):**
+- doubledunk-s1: q4=-18.10 vs PPO=-17.83. TIE (-1.5%). nibi completed.
+- namethisgame-s1: UPDATED from nibi proper completion (q4=1870.16, replacing narval disappeared q4=1676.88). Still a LOSS (-25.4%) vs PPO=2506.85.
+- Removed 5 stale-code entries (montezumarevenge, qbert, battlezone, breakout, enduro — all identical to PPO baseline, confirmed from stale batch).
+- Valid tally: 4/15 games — 0W/1L/3T. CReLU not looking promising. 13 resubmit jobs still running.
+
+### ACTIVE JOBS: 165 total (155 existing + 10 h050 resubmit)
+h047(7), h050(10 resubmit), h051(13), h055(15), h056(15), h057(15), h058(15), h059(15), h060(15), h061(15), h062(15), h063(15)
+
+### EXPECTED COMPLETIONS:
+- h051 CReLU: ~1-3h (13 running, 4h walltime)
+- h055 Double DQN: ~0.5-2h (15 running, ~6h elapsed)
+- h057 N-step DQN: ~1-3h
+- h058 Dueling DQN: ~1-3h
+- h047 DQN baseline resubmit: ~3-5h (7 running, 8h walltime)
+- h056 PPO Wide: ~2-3h (15 running, 4h walltime)
+- h059 DQN+PER: ~3-5h
+- h060 QR-DQN: ~3-5h
+- h061 C51 40M: ~3-5h
+- h062 NoisyNet: ~4-6h
+- h063 IQN: ~6-7h
+- h050 resubmit: ~5-8h (just submitted)
+
+### NEXT SESSION TODO:
+1. h055/h057/h058 DQN variants should complete first — process and rank against h047 baseline
+2. h051 CReLU resubmit completing — finish pilot analysis
+3. h056 PPO Wide — verify non-stale this time (check SPS < baseline)
+4. h047 DQN 7-game resubmit — complete full 15-game baseline
+5. When enough DQN components in: build comparative table, identify top 3-4 components for Rainbow-lite
