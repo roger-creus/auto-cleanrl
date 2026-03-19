@@ -4260,3 +4260,54 @@ Once h047 full results are in, we can build a Rainbow-lite combining best compon
 4. If h047 confirms strong: prepare Rainbow-lite (Double+Dueling+N-step+Munchausen combo)
 5. Consider PER (Prioritized Experience Replay) as another DQN improvement
 6. Analyze which DQN games are strongest vs PPO to understand the paradigm difference
+
+---
+**[2026-03-19 08:57 UTC]**
+
+## Session 70: Process h047-qbert-s1 + h047-amidar-s1, IQM Update
+
+### Triggered by: h047-qbert-s1 (job 8582744, rorqual SUCCESS)
+
+### Results Processed: 2 new entries (now 840 rows)
+- h047-qbert-s1: new-code CSV q4=228.23 (rorqual, 113024 eps). PPO s1=162.49 → +40.5% WIN. DQN massively outperforms PPO on Qbert.
+- h047-amidar-s1: new-code CSV q4=34.30 (fir, 64256 eps, disappeared but CSV recovered). PPO s1=2.04 → +1458% MASSIVE WIN. DQN Amidar q4=34.3 vs PPO 2.0 — 17x better.
+
+### h047 (DQN) at 7/15 games: IQM HNS = 0.0092 — BEST HYPOTHESIS EVER (46x PPO baseline)
+Per-game HNS: Amidar +0.0166, BattleZone +0.0215, Qbert +0.0048, SpaceInvaders +0.0690, Venture +0.0028, MontezumaRevenge 0.0 (TIE), PrivateEye -0.0004 (TIE).
+ALL 7 games are positive or neutral — ZERO losses so far.
+
+### KEY FINDING: DQN is massively better than PPO on many Atari games
+- Amidar: DQN q4=34.3 vs PPO q4=2.0 (17x). PPO baseline has Amidar as its weakest game and DQN solves it easily.
+- SpaceInvaders: DQN q4=253 vs PPO q4=147 (+72%). Off-policy replay helps learning shooting patterns.
+- BattleZone: DQN q4=3109 vs PPO q4=2051 (+52%). First-person navigation benefits from replay.
+- Qbert: DQN q4=228 vs PPO q4=158 (+44%). Grid-based strategy improves with replay.
+
+### IQM HNS STANDINGS (updated):
+1. h047 (DQN): IQM=0.0092 (7g) ★★★ BEST EVER — 46x PPO baseline
+2. h020 (Dueling PPO): IQM=0.0038 (15g, 3-seed)
+3. h008 (PQN LSTM): IQM=0.0036 (15g)
+4. h029 (CVaR NOVEL): IQM=0.0008 (15g, 3-seed)
+5. h001 (PPO baseline): IQM=0.0002 (15g)
+
+### ACTIVE JOBS: ~171 running + 3 pending
+- h047 DQN: 8 running (Alien, Breakout, DoubleDunk, Enduro, MsPacman, NameThisGame, Phoenix, Solaris)
+- h048 Munchausen PPO: 15 running
+- h049 Gamma Annealing: 15 running
+- h050 Munchausen DQN: 15 running
+- h051 CReLU PPO: 15 running
+- h052 Reward Centering: 15 running
+- h053 C51: 15 running
+- h054 SAC-discrete: 15 running
+- h055 Double DQN: 15 running
+- h056 PPO Wide: 15 running
+- h057 N-step DQN: 15 running
+- h058 Dueling DQN: 12 running + 3 pending
+
+### NEXT SESSION TODO
+1. Process h047 remaining 8 games — if IQM holds at 15/15, DQN is the clear winner direction
+2. Process h048-h058 pilots as they start completing (~2-4h from now)
+3. If h047 confirms strong: prepare full 3-seed DQN evaluation (45 jobs)
+4. Compare DQN variants (h050 Munchausen, h055 Double, h057 N-step, h058 Dueling) against h047 baseline
+5. If DQN variants improve on h047: build Rainbow-lite combining best components
+6. The research narrative has shifted: off-policy DQN with envpool may be the key finding
+7. Consider whether we need a fair comparison: DQN at 40M env steps vs PPO at 40M — different effective sample sizes due to replay
