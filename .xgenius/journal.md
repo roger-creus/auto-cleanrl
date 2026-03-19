@@ -6576,3 +6576,81 @@ However, WIN/LOSS record tells a different story: most DQN components WIN on 9-1
 4. When all pilots reach 15/15: finalize component rankings
 5. Consider WIN rate vs IQM — components with 9-10W/15 may still be worth combining
 6. Plan Rainbow-lite: despite negative IQMs, combining wins across games could yield net positive
+
+---
+**[2026-03-19 20:03 UTC]**
+
+## Session 104: Process 3 New Results + Delete 33 Stale h051/h056 CSVs
+
+### Triggered by: h058-doubledunk-s1 (57991783, narval SUCCESS), h058-spaceinvaders-s1 (28408530, fir SUCCESS)
+
+### Reconcile: 1 new disappeared
+- 28408409 (fir): h057-mspacman-s1 — CSV recovered and banked!
+
+### Stale CSV Cleanup: 33 files deleted
+21 h051 CSVs + 12 h056 CSVs, all matching h001 PPO baseline exactly (q4 identical to 15+ decimal places). The stale plague continues unabated — every pull downloads new copies of old h001 results under h051/h056 names.
+
+### Results Processed: 3 new entries (1032→1035 rows)
+
+**h058 Dueling DQN (2 new, now 11/15):**
+- doubledunk-s1 (narval): q4=-24.0 vs PPO=-18.10 LOSS (-33%). vs DQN=-24.0 TIE. Dueling matches DQN exactly.
+- spaceinvaders-s1 (fir): q4=294.16 vs PPO=150.19 WIN (+96%). vs DQN=252.93 WIN (+16.3%). Big Dueling win!
+
+**h057 N-step DQN (1 new, now 11/15):**
+- mspacman-s1 (fir, recovered from disappeared): q4=398.65 vs PPO=287.07 WIN (+39%). vs DQN=465.18 LOSS (-14.3%).
+
+### IQM dHNS STANDINGS (recalculated):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T PPO |
+|------|-------------|--------|-----------------|----------|-----------|
+| 1    | DQN base    | 14/15  | +0.0090         | ---      | 7W/3L/4T  |
+| 2    | IQN         | 14/15  | +0.0067         | -0.0004  | 7W/3L/4T  |
+| 3    | CReLU(PPO)  | 4/15   | +0.0000         | ---      | 1W/1L/2T  |
+| 4    | Wide(PPO)   | 4/15   | -0.0024         | ---      | 0W/1L/3T  |
+| 5    | NoisyNet    | 15/15  | -0.0050         | -0.0003  | 8W/4L/3T  |
+| 6    | QR-DQN      | 15/15  | -0.0071         | +0.0006  | 8W/4L/3T  |
+| 7    | Double DQN  | 15/15  | -0.0089         | -0.0010  | 7W/4L/4T  |
+| 8    | C51 40M     | 14/15  | -0.0126         | -0.0010  | 7W/4L/3T  |
+| 9    | PER         | 13/15  | -0.0135         | -0.0001  | 6W/4L/3T  |
+| 10   | N-step      | 11/15  | -0.0166         | -0.0006  | 4W/3L/4T  |
+| 11   | Munchausen  | 13/15  | -0.0203         | -0.0011  | 4W/4L/5T  |
+| 12   | Dueling     | 11/15  | -0.0214         | -0.0019  | 3W/4L/4T  |
+
+### KEY FINDINGS:
+1. Only DQN base (+0.0090) and IQN (+0.0067) remain positive vs PPO. Both at 14/15 and may drop on missing games (Solaris for DQN, DoubleDunk for IQN).
+2. ALL DQN components except QR-DQN are NEGATIVE vs base DQN. The components don't improve on DQN — they slightly hurt it.
+3. Dueling (-0.0214 vs PPO, -0.0019 vs DQN) is now WORST component. Phoenix -90% and NameThisGame -41% devastate it.
+4. N-step (-0.0166 vs PPO) also struggling. Phoenix -90% loss dominates.
+5. DQN family collectively loses badly on Phoenix (~93 vs PPO~892), NameThisGame (~1776 vs ~2522), DoubleDunk (~-24 vs ~-18). These 3 games drag ALL DQN components down.
+6. Best COMPLETED components (15/15): NoisyNet (-0.0050), QR-DQN (-0.0071), Double DQN (-0.0089). All negative but NoisyNet least negative.
+
+### COVERAGE (all gaps covered by running/pending):
+| Hypothesis  | Banked | Running | Pending | Notes |
+|------------|--------|---------|---------|-------|
+| h047 DQN   | 14/15  | 0       | 1(fir)  | Solaris only |
+| h050 Munch | 13/15  | 2(fir)  | 2       | Alien+Enduro R, Phoenix P |
+| h051 CReLU | 4/15   | 2(narv) | 26      | Stale plague, only 4 genuine |
+| h055 DblDQN| 15/15  | 1(extra)| 0       | COMPLETE |
+| h056 Wide  | 4/15   | 3(narv) | 23      | Stale plague, only 4 genuine |
+| h057 Nstep | 11/15  | 4       | 0       | All 4 gaps running |
+| h058 Duel  | 11/15  | 4       | 0       | All 4 gaps running |
+| h059 PER   | 13/15  | 2(narv) | 2       | MR+Qbert R, Breakout P |
+| h060 QRDQN | 15/15  | 1(extra)| 3       | COMPLETE |
+| h061 C51   | 14/15  | 3       | 11      | Breakout gap covered |
+| h062 Noisy | 15/15  | 2(extra)| 10      | COMPLETE |
+| h063 IQN   | 14/15  | 2(narv) | 2       | DoubleDunk R, Breakout+Solaris P |
+
+### ACTIVE: 26R + 80P = 106 SLURM jobs. All gaps covered.
+
+### NEXT SESSION TODO:
+1. Continue processing results as jobs complete
+2. Watch for h047-solaris: will finalize DQN baseline IQM (expect significant drop)
+3. h057 approaching 15/15: Alien, Enduro, Solaris, SpaceInvaders running
+4. h058 approaching 15/15: Breakout, Enduro, MsPacman, Solaris running
+5. h050 approaching 15/15: Alien, Enduro running
+6. h059 approaching 15/15: MR running, Breakout pending
+7. h061 approaching 15/15: Breakout running/pending
+8. h063 approaching 15/15: DoubleDunk running, Breakout+Solaris pending
+9. h051/h056: 26P+23P but all produce stale data. These may never produce genuine results.
+10. When all pilots complete: finalize rankings and decide on Rainbow-lite combination
+11. Current Rainbow-lite candidates: NoisyNet (best completed, -0.0050) + QR-DQN (-0.0071). Not exciting.
+12. IQN looks best if it holds at 15/15 — but DQN family weakness on Phoenix/NTG/DD is structural
