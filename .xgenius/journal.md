@@ -5100,3 +5100,66 @@ h047(6), h050(10), h055(7), h056(15), h057(1-battlezone resubmit), h059(15), h06
 6. h058 8 remaining games — complete Dueling pilot
 7. h059-h063 (PER, QR-DQN, C51-40M, NoisyNet, IQN) all 15 games each
 8. When all DQN components complete: rank by IQM, build Rainbow-lite
+
+---
+**[2026-03-19 14:25 UTC]**
+
+## Session 84: Process h059/h060 Results + Resubmit h057/h058 Missing Games
+
+### Triggered by: h059-namethisgame-s1 (nibi SUCCESS), h060-battlezone-s1 (nibi SUCCESS)
+
+### Results Processed: 5 new entries (now 937 rows)
+
+**h059 DQN+PER (1 new, 1/15):**
+- namethisgame-s1 (nibi): q4=1716.31 vs PPO=2506.85 (-31.5% LOSS). Below random score (2292). vs DQN baseline not yet available for NameThisGame.
+- h059 at 1/15: 0W/1L/0T. Too early to judge. 14 running.
+
+**h060 QR-DQN (4 new, 4/15):**
+- battlezone-s1 (nibi): q4=3695.26 vs PPO=2050.58 (+80.2% WIN). vs DQN=3109.48 (+18.8% WIN). Strong distributional RL benefit.
+- breakout-s1 (nibi): q4=1.85 vs PPO=1.25 TIE (+47.6% but tiny absolute). vs DQN=1.80 TIE (+2.5%).
+- montezumarevenge-s1 (nibi): q4=0.0. TIE (all algorithms score 0).
+- qbert-s1 (nibi): q4=209.82 vs PPO=158.44 (+32.4% WIN). vs DQN=228.23 (-8.1% slight regression).
+- h060 at 4/15: 2W/0L/2T vs PPO, IQM dHNS=+0.0180. ZERO LOSSES so far — very promising.
+
+### Resubmissions: 17 jobs (9 h057 + 8 h058)
+h057 N-step DQN missing 9 games: alien, breakout, doubledunk, enduro, mspacman, privateeye, qbert, solaris, spaceinvaders.
+h058 Dueling DQN missing 8 games: alien, breakout, doubledunk, enduro, mspacman, namethisgame, solaris, spaceinvaders.
+All submitted across fir/nibi/rorqual/narval, 8h walltime.
+
+### DQN COMPONENT STANDINGS (updated, multi-seed PPO baseline):
+| Component    | Games | IQM dHNS | W/L/T vs PPO |
+|-------------|-------|----------|--------------|
+| Munchausen  | 5/15  | +0.0264  | 2W/1L/2T     |
+| QR-DQN      | 4/15  | +0.0180  | 2W/0L/2T     |
+| DQN base    | 9/15  | +0.0044  | 5W/1L/3T     |
+| Dueling     | 7/15  | -0.0072  | 3W/2L/2T     |
+| Double      | 8/15  | -0.0154  | 4W/3L/1T     |
+| N-step(3)   | 6/15  | -0.0274  | 2W/2L/2T     |
+| PER         | 1/15  | -0.1373  | 0W/1L/0T     |
+
+KEY: QR-DQN is the #2 component after Munchausen. Zero losses in 4 games is very encouraging for distributional RL.
+
+### ACTIVE JOBS: ~124 total (107 existing + 17 resubmit)
+h047(6), h050(10), h055(7), h056(15), h057(1+9=10), h058(8), h059(14), h060(11), h061(15), h062(15), h063(15)
+
+### EXPECTED COMPLETION TIMELINE:
+- h047 DQN baseline: ~3h remaining (6 running, 8h walltime, ~5h elapsed)
+- h050 Munchausen: ~6h remaining (10 running, 8h walltime, ~2h elapsed)
+- h055 Double DQN: ~7h remaining (7 running, 8h walltime, ~0.5h elapsed)
+- h056 PPO Wide: ~1.5h remaining (15 running, 4h walltime, ~2.5h elapsed)
+- h057 N-step: ~7h (battlezone in ~7h, 9 new resubmit ~8h)
+- h058 Dueling: ~8h (8 just resubmitted)
+- h059 PER: ~3h remaining (14 running, 8h walltime, ~5h elapsed)
+- h060 QR-DQN: ~3h remaining (11 running, 8h walltime, ~5h elapsed)
+- h061 C51 40M: ~4h remaining (15 running, 8h walltime, ~4h elapsed)
+- h062 NoisyNet: ~4h remaining (15 running, 8h walltime, ~4h elapsed)
+- h063 IQN: ~6h remaining (15 running, 8h walltime, ~2h elapsed)
+
+### NEXT SESSION TODO:
+1. h056 PPO Wide should complete first (~1.5h) — validate NOT stale, process results
+2. h047/h059/h060 completing in ~3h — process DQN baseline + PER + QR-DQN
+3. h050 Munchausen in ~6h — validate early IQM lead
+4. h061/h062 in ~4h — C51 40M and NoisyNet results
+5. h055/h057/h058 resubmits in ~7-8h
+6. h063 IQN in ~6h — most sophisticated distributional method
+7. When all DQN components complete: build comprehensive comparison table, identify top 3-4 for Rainbow-lite
