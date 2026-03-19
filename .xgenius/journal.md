@@ -5548,3 +5548,77 @@ h047(2), h050(10), h051(5 running + 5 resubmit = 10), h055(7), h056(9 running + 
 9. h060 QR-DQN: 4 running + 1 resubmit = 5
 10. h061/h062/h063: 7+11+15 remaining
 11. When DQN components complete: rank by IQM, design Rainbow-lite combining top components
+
+---
+**[2026-03-19 16:10 UTC]**
+
+## Session 91: Process 4 New Results + Cancel 15 BAD Jobs + Resubmit 9 Correct Jobs
+
+### Triggered by: h051-amidar-s1 (10588357, nibi), h051-enduro-s1 (10588369, nibi), h051-spaceinvaders-s1 (10588379, nibi)
+
+### CRITICAL FINDING: Session 88 resubmissions had INCOMPLETE COMMANDS
+The triggered h051 jobs saved CSVs as h000__Amidar-v5_s1.csv (wrong hypothesis_id=h000, only 10M steps, wrong experiment_id). Root cause: session 88 batch submission omitted --total-timesteps 40000000 --hypothesis-id h051 --experiment-id h051-xxx-s1 arguments.
+
+ALL session 88 resubmissions for h051 AND h056 had this bug. Cancelled 15 BAD jobs:
+- h051: 7 BAD (fir 28414722/28414910/28415232, narval 57994538/57994542, rorqual 8601041/8601315)
+- h056: 8 BAD (narval 57994545/57994552, rorqual 8601603/8601983, fir 28415302/28415613, nibi 10588387/10588395)
+
+Deleted stale CSVs:
+- 3 h000__*.csv from nibi (output of BAD h051 runs)
+- 8 h051__*.csv from nibi (old stale PPO-identical results — ALL had values bit-for-bit matching PPO h001 s1)
+- 1 h056__h056-alien-s1.csv from nibi (PPO-identical stale)
+- 2 h056 duplicate CSVs from nibi (mspacman/namethisgame already in bank from fir)
+- 1 h056-privateeye suspicious CSV (no completed job tracked)
+
+### Resubmitted 9 CORRECT jobs (batch_h051_h056_fix.json):
+- h051: amidar(nibi), enduro(rorqual), spaceinvaders(fir), battlezone(narval), phoenix(fir)
+- h056: alien(narval), enduro(nibi), phoenix(rorqual), spaceinvaders(rorqual)
+
+### Results Processed: 4 new entries (969→973 rows)
+
+**h047 DQN Baseline (1 new, now 14/15):**
+- alien-s1 (nibi): q4=336.73 vs PPO=207.63 WIN (+62.2%). DQN strong on Alien.
+- Only Solaris left (running on narval 57987194).
+
+**h060 QR-DQN (1 new, now 11/15):**
+- privateeye-s1 (narval): q4=570.41 vs PPO=-2.46 WIN. vs DQN=-2.46 WIN. QR-DQN learns PrivateEye where vanilla DQN and PPO both fail. Massive absolute gain. 4 games left.
+
+**h062 NoisyNet DQN (2 new, now 6/15):**
+- enduro-s1 (rorqual): q4=6.24 vs PPO=0.0 WIN. vs DQN=19.01 LOSS (-67.2%). NoisyNet severely hurts Enduro.
+- alien-s1 (nibi): q4=331.94 vs PPO=207.63 WIN (+59.9%). vs DQN=336.73 TIE (-1.4%).
+- h062 at 6/15: 2W/2L/2T vs PPO. NoisyNet neutral overall, hurts Enduro specifically.
+
+### DQN COMPONENT IQM STANDINGS (updated):
+| Rank | Component    | Games  | IQM dHNS  | vs PPO    | vs DQN     |
+|------|-------------|--------|-----------|-----------|------------|
+| 1    | Munchausen  | 5/15   | +0.0175   | 3W/0L/2T  | 1W/1L/3T   |
+| 2    | DQN base    | 14/15  | +0.0104   | 7W/3L/4T  | ---        |
+| 3    | PER         | 10/15  | +0.0095   | 5W/3L/2T  | 1W/1L/8T   |
+| 4    | QR-DQN      | 11/15  | +0.0066   | 4W/3L/4T  | 2W/0L/8T   |
+| 5    | Double DQN  | 8/15   | +0.0055   | 3W/2L/3T  | 1W/1L/6T   |
+| 6    | NoisyNet    | 6/15   | +0.0036   | 2W/2L/2T  | 1W/2L/3T   |
+| 7    | Dueling     | 7/15   | +0.0013   | 2W/1L/4T  | 0W/0L/7T   |
+| 8    | N-step      | 6/15   | +0.0006   | 2W/2L/2T  | 1W/0L/5T   |
+| 9    | C51 40M     | 8/15   | -0.0605   | 3W/4L/1T  | 1W/1L/5T   |
+
+### KEY INSIGHTS:
+1. QR-DQN PrivateEye +570 absolute (vs DQN -2.46) — biggest single-game win for any component. QR-DQN's distributional approach helps with sparse rewards.
+2. NoisyNet BADLY hurts Enduro (-67% vs DQN). Random exploration counterproductive in Enduro's structured driving.
+3. h047 DQN baseline nearly complete at 14/15. Strong overall: +0.0104 IQM, 7W vs PPO.
+4. QR-DQN zero losses vs DQN baseline (2W/0L/8T in 10 shared games). Most consistent component improvement.
+
+### ACTIVE JOBS: 85 running + 10 pending = 95 total
+h047(1R), h050(10R), h051(4R+6P=10), h055(7R), h056(8R+4P=12), h057(10R), h058(8R), h059(4R), h060(3R), h061(7R), h062(8R), h063(15R)
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1 remaining (Solaris, narval) — complete 15-game reference
+2. h050 Munchausen: 10 running — validate #1 IQM with more games
+3. h051 CReLU: 4 running + 6 pending = 10 — VERIFY these produce genuine non-PPO results
+4. h055 Double DQN: 7 running
+5. h056 Wide: 8 running + 4 pending = 12 — VERIFY genuine results
+6. h057/h058: 10+8 running — N-step/Dueling complete pilots
+7. h059 PER: 4 running — 5 games left
+8. h060 QR-DQN: 3 running — 4 games left, confirm zero DQN losses
+9. h061/h062: 7+8 running — C51/NoisyNet complete pilots
+10. h063 IQN: 15 running — most sophisticated distributional method, no results yet
+11. When DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
