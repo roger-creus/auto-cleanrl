@@ -6504,3 +6504,75 @@ fir: 7R+27P, narval: 19R, nibi: 1R+23P, rorqual: 1R+31P
 8. h051/h056: Still plagued by stale CSVs. Need patience for genuine results.
 9. When all DQN components reach 15/15: Design Rainbow-lite combining QR-DQN + NoisyNet + possibly Dueling/N-step
 10. Consider: since ALL components beat PPO, the DQN architecture itself is the key advantage. Components add marginal vs-DQN improvement.
+
+---
+**[2026-03-19 19:54 UTC]**
+
+## Session 103: Process 1 New Result + Delete 33 Stale h051/h056 CSVs
+
+### Triggered by: h051-enduro-s1 (job 57999912, narval SUCCESS)
+
+### Reconcile: 2 more disappeared
+- 57999046 (narval): h051-phoenix-s1 — no CSV/logs, pending elsewhere
+- 57989340 (narval): old job, not found in current context
+
+### Stale CSV Cleanup: 33 files deleted
+21 h051 CSVs deleted (all match h001 baseline exactly): narval(7), fir(4), nibi(7), rorqual(3). 
+12 h056 CSVs deleted: narval(3), fir(4), nibi(4), rorqual(1). All match h001 PPO baseline.
+NOTE: h051-enduro-s1 from narval (the triggered job!) was STALE — q4=0.0, n_eps=11904, identical to h001.
+NOTE: h056-phoenix-s1 from narval was STALE — q4=892.49, identical to h001.
+Found 2 duplicate genuine h056 CSVs (mspacman, namethisgame from nibi) — already banked from fir. Not re-banked.
+
+### Results Processed: 1 new entry (1031→1032 rows)
+
+**h063 IQN (1 new, now 14/15):**
+- enduro-s1 (narval): q4=1.24 vs PPO=0.0 WIN (near zero). vs DQN=19.01 BIG LOSS (-93.5%). IQN barely trains on Enduro.
+
+### IQM dHNS STANDINGS (recalculated with consistent method):
+| Rank | Component    | Games  | IQM dHNS vs PPO | vs DQN   | W/L/T PPO |
+|------|-------------|--------|-----------------|----------|-----------|
+| 1    | DQN base    | 14/15  | +0.0105         | ---      | 10W/3L/1T |
+| 2    | IQN         | 14/15  | +0.0082         | +0.0003  | 10W/3L/1T |
+| 3    | CReLU(PPO)  | 4/15   | +0.0000         | ---      | 1W/1L/2T  |
+| 4    | Dueling     | 9/15   | -0.0009         | -0.0019  | 4W/4L/1T  |
+| 5    | Wide(PPO)   | 4/15   | -0.0024         | ---      | 0W/2L/2T  |
+| 6    | NoisyNet    | 15/15  | -0.0025         | +0.0003  | 10W/4L/1T |
+| 7    | QR-DQN      | 15/15  | -0.0036         | +0.0015  | 10W/4L/1T |
+| 8    | Double DQN  | 15/15  | -0.0051         | -0.0003  | 9W/5L/1T  |
+| 9    | PER         | 13/15  | -0.0083         | -0.0001  | 9W/4L/0T  |
+| 10   | C51 40M     | 14/15  | -0.0086         | -0.0008  | 9W/4L/1T  |
+| 11   | Munchausen  | 13/15  | -0.0149         | -0.0011  | 6W/4L/3T  |
+| 12   | N-step      | 10/15  | -0.0165         | +0.0006  | 6W/3L/1T  |
+
+### KEY INSIGHT: IQM recalculation
+Previous sessions reported much higher IQMs (e.g., QR-DQN at +0.0101, NoisyNet at +0.0076). Consistent recalculation now shows most DQN components NEGATIVE vs PPO. The issue: DQN family loses big on Phoenix, NameThisGame, DoubleDunk, and Solaris. These losses dominate the IQM even after 25% trimming.
+
+Only DQN base (+0.0105 at 14/15, missing Solaris which will likely crash it) and IQN (+0.0082 at 14/15, also missing DoubleDunk) remain positive. Both will likely drop when their missing games complete.
+
+However, WIN/LOSS record tells a different story: most DQN components WIN on 9-10/15 games! The issue is that losses are LARGE (Phoenix -80%, NameThisGame -30%, Solaris -85%) while wins are modest (+20-40%). HNS amplifies this asymmetry.
+
+### COVERAGE:
+| Hypothesis  | Banked | SLURM(R+P) | Notes |
+|------------|--------|-------------|-------|
+| h047 DQN   | 14/15  | 0R+1P(fir) | Solaris only gap |
+| h050 Munch | 13/15  | 2R+2P      | Alien+Enduro(fir) |
+| h051 CReLU | 4/15   | 2R+26P     | All 11 gaps covered, stale risk |
+| h055 DblDQN| 15/15  | COMPLETE   | Extra job running |
+| h056 Wide  | 4/15   | 3R+23P     | All 11 gaps covered, stale risk |
+| h057 Nstep | 10/15  | 4R+1R(fir) | All 5 gaps running |
+| h058 Duel  | 9/15   | 6R         | All 6 gaps running |
+| h059 PER   | 13/15  | 2R+2P      | Breakout+MR covered |
+| h060 QRDQN | 15/15  | COMPLETE   | Extra jobs |
+| h061 C51   | 14/15  | 3R+10P     | Breakout pending(nibi) |
+| h062 Noisy | 15/15  | COMPLETE   | Extra jobs |
+| h063 IQN   | 14/15  | 2R+2P      | DoubleDunk running(narval) |
+
+### ACTIVE: 28R + 79P = 107 SLURM jobs across all clusters
+
+### NEXT SESSION TODO:
+1. Continue processing results as jobs complete
+2. Verify every h051/h056 completion for staleness
+3. Watch for h047-solaris to finalize DQN baseline IQM
+4. When all pilots reach 15/15: finalize component rankings
+5. Consider WIN rate vs IQM — components with 9-10W/15 may still be worth combining
+6. Plan Rainbow-lite: despite negative IQMs, combining wins across games could yield net positive

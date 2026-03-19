@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+NameThisGame-v5,1,h058,h058-namethisgame-s1,dqn_dueling,40000000,15232,1550.4306640625,1478.655517578125,23616160.0,1562.0
