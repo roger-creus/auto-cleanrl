@@ -4203,3 +4203,60 @@ Doubles all conv channel widths (32→64, 64→128, 64→128) and hidden layer (
 4. If h047 DQN is competitive: prepare DQN+N-step, DQN+PER next
 5. If h056 PPO Wide works: consider Wide+Dueling combination
 6. Still unexplored: Rainbow, IQN, ExO-PPO, PPG, ensemble methods, N-step returns
+
+---
+**[2026-03-19 08:49 UTC]**
+
+## Session 69: Process h047 SpaceInvaders/BattleZone + h046 Alien (FINAL) + Submit h057/h058
+
+### Triggered by: h047-spaceinvaders-s1 (job 28364061, fir SUCCESS)
+
+### Results Processed: 3 new entries (now 837 rows)
+
+**h046 PPO+LSTM (1 new, now 15/15 FINAL):**
+- alien-s1: q4=198.40 (narval, disappeared but CSV recovered). PPO s1=207.63 → -4.4% TIE.
+h046 DEFINITIVELY CLOSED at 15/15: IQM=-0.0015. 1W/8L/6T. LSTM hurts PPO.
+
+**h047 DQN baseline (2 new, now 5/15):**
+- spaceinvaders-s1: q4=252.93 (fir). PPO s1=150.19 → +68.4% HUGE WIN!
+- battlezone-s1: q4=3109.48 (nibi, disappeared but CSV recovered). PPO s1=2364.31 → +31.5% WIN!
+
+### h047 DQN VERY STRONG at 5/15: 3W/0L/2T, mean delta-HNS=+0.0183
+This is BY FAR the best hypothesis we've seen — 5x higher mean delta-HNS than h020 (previous best at IQM=0.0038).
+Games so far: BattleZone (+31.5%), SpaceInvaders (+68.4%), Venture (WIN), MontezumaRevenge (TIE), PrivateEye (TIE).
+DQN at 40M steps with envpool massively outperforms PPO on shooting/combat games.
+10 games still running: Alien, Amidar, Breakout, DoubleDunk, Enduro, MsPacman, NameThisGame, Phoenix, Qbert, Solaris.
+
+### NEW HYPOTHESES SUBMITTED: h057 + h058 (30 jobs)
+
+**h057: N-step DQN (n=3, envpool)** — 15-game pilot across 4 clusters.
+3-step returns for better credit assignment. Key Rainbow component (Hessel 2018).
+Uses per-environment deque buffer that accumulates transitions and computes discounted n-step returns.
+Flushes on episode boundaries. TD target: R_n + γ^3 * max_a Q_target(s_n, a).
+
+**h058: Dueling DQN (envpool)** — 15-game pilot across 4 clusters.
+Dueling architecture: V(s) + A(s,a) - mean(A) for better state-value estimation.
+Shared CNN encoder, separate V-stream and A-stream with 512-dim hidden layers.
+
+### ACTIVE JOBS: 175 total (145 + 30 new)
+Running from previous: h047(10), h048(15), h049(15), h050(15), h051(15), h052(15), h053(15), h054(15), h055(15), h056(15)
+Just submitted: h057(15), h058(15)
+
+### DQN DIRECTION IS THE MOST PROMISING
+h047 DQN baseline at 5/15 is already showing massive improvement over PPO.
+We now have 7 DQN variants running/submitted:
+- h047: DQN baseline (5/15, VERY STRONG)
+- h050: Munchausen DQN (running)
+- h053: C51 (running)
+- h055: Double DQN (running)
+- h057: N-step DQN (just submitted)
+- h058: Dueling DQN (just submitted)
+Once h047 full results are in, we can build a Rainbow-lite combining best components.
+
+### NEXT SESSION TODO
+1. Process h047 remaining 10 results — CRITICAL
+2. Process h048-h056 pilot results as they complete
+3. Check h057/h058 for early failures
+4. If h047 confirms strong: prepare Rainbow-lite (Double+Dueling+N-step+Munchausen combo)
+5. Consider PER (Prioritized Experience Replay) as another DQN improvement
+6. Analyze which DQN games are strongest vs PPO to understand the paradigm difference
