@@ -3410,3 +3410,41 @@ This is similar to how DrQ alone (h012 IQM=0.0006) was weak but CVaR+DrQ (h029 I
 5. Process h030 alien-s1 — final game for h030 pilot
 6. If h035 or h036 > h034 at full pilot → submit 3-seed immediately
 7. Begin considering Phase 3 (ablation, paper narrative)
+
+---
+**[2026-03-19 01:48 UTC]**
+
+## Session 56: Process h029-amidar-s3 + h029-venture-s2 (3-Seed Results)
+
+### Triggered by: h029-amidar-s3 (job 10548945, nibi SUCCESS)
+
+### Results Processed: 2 new entries (now 764 rows)
+- h029-amidar-s3: new-code CSV q4=2.17 (nibi, 71424 eps). HNS=-0.0021. Near baseline.
+- h029-venture-s2: new-code CSV q4=0.0 (narval, 18688 eps). HNS=0.0. TIE.
+
+### CRITICAL: Amidar Curve-Derived Data is ~14x Inflated
+h029-amidar-s1 curve-derived q4=31.0 vs h029-amidar-s3 new-code q4=2.17. PPO baseline Amidar q4≈2.03.
+The curve-derived Amidar data is massively wrong (14x). This affects ALL curve-derived Amidar entries:
+- h029-amidar-s1: q4=31.0 (should be ~2)
+- h034-amidar-s1/s2/s3: q4=45-50 (should be ~2)
+IQM trims extremes so impact is limited, but per-game analysis for Amidar is unreliable from curve data.
+When h034/h035/h036 new-code results arrive, Amidar will be corrected.
+
+### h029 Current Status: 17/45 entries (15 seed-1 + 2 new 3-seed)
+Per-entry IQM HNS = 0.0040 (mixed curve-derived + new-code data)
+Per-game IQM HNS = 0.0056 (15 games, seed-1 dominated)
+28 h029 3-seed jobs still running (seeds 2+3). ~2.5h remaining.
+
+### 74 ACTIVE JOBS
+- h029 3-seed: 28 running (seeds 2+3, most ~2.5-3h elapsed of 5h walltime)
+- h030 pilot: 1 running (alien-s1 on rorqual, 3h+ elapsed of 4h walltime)
+- h034 pilot: 15 running (new-code resubmissions)
+- h035 pilot: 15 running (CVaR+SEM+DrQ)
+- h036 pilot: 15 running (CVaR+Dueling+SEM triple combo)
+
+### NEXT SESSION TODO
+1. Process remaining h029 3-seed results (28 jobs, ~2h remaining)
+2. Process h034/h035/h036 new-code results when they complete
+3. Process h030-alien-s1 final pilot game
+4. When h029 3-seed is complete: compute definitive IQM with all new-code data
+5. The big question: does h034 or h036 beat h029 with reliable data?

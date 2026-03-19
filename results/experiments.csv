@@ -760,3 +760,5 @@ h033-doubledunk-s1,h033,,"new-code CSV (nibi, 20480 eps). DoubleDunk q4=-18.0. v
 h030-mspacman-s1,h030,,"new-code CSV (nibi, 80768 eps). MsPacman q4=273.84. vs PPO baseline ~319 → -14% LOSS.",MsPacman-v5,1,ppo_sem,40000000,80768,272.03,273.84,21971200.0,190.0
 h030-enduro-s1,h030,,"new-code CSV (fir, 11904 eps). Enduro q4=0.0. TIE with PPO baseline (also 0.0).",Enduro-v5,1,ppo_sem,40000000,11904,0.0,0.0,0.0,0.0
 h030-montezumarevenge-s1,h030,,"new-code CSV (nibi, 69504 eps). MontezumaRevenge q4=0.0. TIE with PPO baseline.",MontezumaRevenge-v5,1,ppo_sem,40000000,69504,0.37,0.0,25600.0,0.0
+h029-amidar-s3,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (nibi new-code),Amidar-v5,3,ppo_aug_qr_cvar,40000000.0,71424.0,2.148745536804199,2.1684587001800537,153472.0,0.0
+h029-venture-s2,h029,python cleanrl/ppo_atari_envpool_aug_qr_cvar.py,3-seed eval (narval new-code),Venture-v5,2,ppo_aug_qr_cvar,40000000.0,18688.0,0.0,0.0,0.0,0.0
