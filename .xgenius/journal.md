@@ -5848,3 +5848,84 @@ Rainbow-lite strategy: PER + Double DQN + Dueling are the 3 components that don'
 9. h061/h062: 6+8 active — complete C51/NoisyNet pilots
 10. h063 IQN: 11 running — only 4/15 done, but trending bad
 11. When all DQN components complete: design Rainbow-lite with PER + Double DQN + Dueling (top 3 non-harmful components)
+
+---
+**[2026-03-19 17:23 UTC]**
+
+## Session 95: Process 8 New Results + Delete 16 Stale h051/h056 CSVs + Resubmit 15 Gaps
+
+### Triggered by: h050-venture-s1 (8590191, rorqual SUCCESS), h063-amidar-s1 (28399103, fir SUCCESS)
+
+### STALE h051/h056 CSVs — ROOT CAUSE IDENTIFIED
+Pulled 16 h051/h056 CSVs from fir/rorqual — ALL were PPO-IDENTICAL (bit-for-bit matching h001 baseline: same n_episodes, mean_return, q4_return, auc). Confirmed by comparing against h001-amidar-s1 (q4=2.039...), h001-phoenix-s1 (q4=892.49...), h001-spaceinvaders-s1 (q4=150.19...), h001-battlezone-s1 (q4=2364.31...).
+
+Deleted 16 stale CSVs: 5 h051 from fir, 5 h051 from rorqual, 3 h056 from fir (excl already-in-bank mspacman/namethisgame), 3 h056 from rorqual.
+
+Verified code is on all clusters: ppo_atari_envpool_crelu.py (17005 bytes, matching local) and ppo_atari_envpool_wide.py (16062 bytes, matching local) both exist on fir/rorqual/narval/nibi. The stale CSVs are from OLD jobs that ran before code sync; currently running jobs should produce genuine results. Re-synced all 4 clusters as precaution.
+
+### Results Processed: 8 new entries (988→996 rows)
+
+**h050 Munchausen DQN (1 new, now 9/15):**
+- venture-s1 (rorqual): q4=0.97 vs PPO=0.0 WIN (tiny). vs DQN=3.29 LOSS (-70.5%). Munchausen hurts Venture performance.
+
+**h059 PER (1 new, now 13/15):**
+- solaris-s1 (fir): q4=309.25 vs PPO=2163.56 LOSS (-85.7%). DQN Solaris TBD. PER terrible on Solaris. 3 running.
+
+**h061 C51 40M (2 new, now 12/15):**
+- montezumarevenge-s1 (rorqual): q4=0.0 vs PPO=0.0 TIE. All methods fail MontezumaRevenge.
+- privateeye-s1 (rorqual): q4=-143.37 vs PPO=-2.46 LOSS. vs DQN=-2.46 LOSS. C51 much worse on PrivateEye.
+
+**h062 NoisyNet DQN (2 new, now 10/15):**
+- qbert-s1 (fir): q4=287.48 vs PPO=162.49 WIN (+77%). vs DQN=228.23 WIN (+26.0%). NoisyNet strong on Qbert!
+- namethisgame-s1 (rorqual): q4=1790.04 vs PPO=2522.54 LOSS. vs DQN=1776.81 TIE (+0.7%). All DQN variants lose NameThisGame.
+
+**h063 IQN (2 new, now 6/15):**
+- amidar-s1 (fir): q4=34.27 vs PPO=2.04 WIN (+1580%). vs DQN=34.30 TIE (-0.1%). IQN matches vanilla DQN on Amidar.
+- venture-s1 (fir): q4=1.05 vs PPO=0.0 TIE. vs DQN=3.29 LOSS (-68.1%). IQN below DQN on Venture.
+
+### DQN COMPONENT IQM STANDINGS (recomputed):
+| Rank | Component    | Games  | IQM dHNS  |
+|------|-------------|--------|-----------|
+| 1    | DQN base    | 13/15  | +0.0101   |
+| 2    | Dueling     | 6/15   | +0.0012   |
+| 3    | PER         | 12/15  | -0.0104   |
+| 4    | QR-DQN      | 13/15  | -0.0142   |
+| 5    | Double DQN  | 7/15   | -0.0251   |
+| 6    | Munchausen  | 9/15   | -0.0348   |
+| 7    | C51 40M     | 11/15  | -0.0388   |
+| 8    | NoisyNet    | 10/15  | -0.0397   |
+| 9    | N-step      | 6/15   | -0.0409   |
+| 10   | IQN         | 5/15   | -0.0581   |
+
+### Gap Resubmissions: 15 jobs across all 4 clusters
+- h050-phoenix-s1 → fir
+- h051: alien(fir), breakout(rorqual), enduro(narval), qbert(nibi), spaceinvaders(rorqual) — 5 gaps
+- h056: doubledunk(fir), privateeye(narval), solaris(nibi), spaceinvaders(rorqual) — 4 gaps
+- h060-mspacman-s1 → fir (completes 15/15)
+- h061-qbert-s1 → narval
+- h062: mspacman(nibi), venture(rorqual) — 2 gaps
+- h063-alien-s1 → narval
+
+### ACTIVE JOBS: ~78 total (63 existing + 15 resubmit)
+h047(1), h050(5+1=6), h051(5+5=10), h055(7), h056(9+4=13), h057(10), h058(8), h059(3), h060(1), h061(3+1=4), h062(4+2=6), h063(8+1=9)
+
+### KEY INSIGHTS:
+1. ALL DQN components have negative IQM vs PPO except vanilla DQN base. No component improves over base DQN.
+2. NoisyNet shows strongest individual game win: Qbert +26% vs DQN. But hurts Enduro (-67%).
+3. IQN matching DQN on every game so far (ties/slight losses). Most sophisticated distributional method adds nothing.
+4. C51 PrivateEye catastrophic (-143 vs DQN -2.46). Categorical discretization hurts sparse reward games.
+5. h051/h056 stale code issue: OLD job CSVs persist on cluster output dirs. Need to verify new job results are genuine when they complete.
+
+### NEXT SESSION TODO:
+1. h047 DQN baseline: 1 remaining (Solaris on narval) — complete 15-game reference
+2. h050 Munchausen: 6 active → will reach 15/15 (Phoenix last gap)
+3. h051 CReLU: 10 active — VERIFY genuineness of new completions (compare vs PPO, must differ)
+4. h055 Double DQN: 7 running → will complete 15/15
+5. h056 Wide: 13 active — VERIFY genuineness
+6. h057/h058: 10+8 running → complete N-step/Dueling pilots
+7. h059 PER: 3 running → will complete 15/15
+8. h060 QR-DQN: 1 resubmit → will complete 15/15 (last game MsPacman)
+9. h061 C51: 4 active → will reach 15/15
+10. h062 NoisyNet: 6 active → will reach 15/15
+11. h063 IQN: 9 active → will reach 15/15
+12. When all DQN components complete: IQM analysis, design Rainbow-lite, start novel research phase

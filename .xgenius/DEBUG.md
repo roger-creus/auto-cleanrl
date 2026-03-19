@@ -108,3 +108,11 @@ Container pushes to rorqual may silently truncate/corrupt the .sif. After push, 
 **Impact:** All 15 h056 jobs running stale code. 12 cancelled, 3 completed results discarded (NOT added to experiments.csv).
 
 **Action:** Synced code to all 4 clusters, verified correct content, resubmitted all 15 h056 games with 4h walltime. This is the THIRD occurrence of stale-code issue (h051 CReLU was the second, h034 dueling was the first).
+
+## 2026-03-19 17:20 — h051/h056 stale CSVs persist despite correct cluster code
+16 CSVs pulled from fir/rorqual for h051 (CReLU) and h056 (Wide) were bit-for-bit identical to PPO h001 baseline.
+Verified: ppo_atari_envpool_crelu.py (17005 bytes) and ppo_atari_envpool_wide.py (16062 bytes) exist on ALL 4 clusters with correct file sizes matching local.
+Root cause: OLD jobs from sessions 88-90 (which ran before code was properly synced or with incomplete commands) completed and left output CSVs in /scratch/rogercc/runs/. The watcher pulled these stale CSVs when triggered.
+Currently running jobs (submitted with correct commands AND code present on cluster) should produce genuine results.
+Deleted 16 stale CSVs. Re-synced all clusters as precaution.
+Resubmitted 15 gap-filling jobs across all 4 clusters.
