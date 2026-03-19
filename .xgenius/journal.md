@@ -3317,3 +3317,48 @@ h036 and h035 are both at only 3 games — IQM is unreliable. h034's 3-game IQM 
 4. If h036 validates at 10+ games with IQM>h034: submit 3-seed immediately.
 5. If h035 and h036 are similar: h036 (triple combo) is the preferred final algorithm.
 6. Begin considering Phase 3 (ablation studies) once pilots complete.
+
+---
+**[2026-03-19 00:42 UTC]**
+
+## Session 54: Process h033-doubledunk-s1 (Final), h030-mspacman-s1 New
+
+### Triggered by: h033-doubledunk-s1 (job 10542810, nibi SUCCESS)
+
+### Results Processed: 2 entries (now 759 rows)
+- h033-doubledunk-s1: new-code CSV q4=-18.0 (nibi, 20480 eps). vs PPO baseline -18.1 → TIE. Completes h033 at 15/15 pilot.
+- h030-mspacman-s1: new-code CSV q4=273.84 (nibi, 80768 eps). vs PPO baseline ~319 → -14% LOSS. h030 now 12/15.
+
+### h033 CLOSED AT 15/15 PILOT COMPLETE
+Absolute IQM HNS=0.0042. DoubleDunk was the final game — TIE (q4=-18.0 vs baseline -18.1).
+Full assessment: Consistency loss is too game-dependent. Strong on BattleZone/Solaris/PrivateEye but catastrophic on MsPacman/NameThisGame. Not viable.
+
+### h030 (SEM) drops to IQM=0.0012 (12g)
+MsPacman added (q4=274, -14% vs PPO). 3 games remaining: alien, enduro, montezumarevenge (all running on rorqual/fir/nibi, ~2h into 4h walltime).
+
+### IQM HNS STANDINGS (absolute, all updated):
+1. h035 (CVaR+SEM+DrQ): 0.0311 (3g — UNRELIABLE)
+2. h036 (CVaR+Duel+SEM): 0.0284 (3g — UNRELIABLE)
+3. h034 (CVaR+Duel+DrQ): 0.0082 (15g, 44 seeds) ★★ LEADER
+4. h029 (CVaR+QR+DrQ): 0.0065 (15g pilot)
+5. h033 (DrQ+Consistency): 0.0042 (15g, CLOSED)
+6. h020 (Dueling): 0.0038 (15g, 3-seed)
+7. h008 (PQN LSTM): 0.0036 (15g)
+8. h030 (SEM): 0.0012 (12g)
+PPO baseline: 0.0002 (15g)
+
+### 80 ACTIVE JOBS (all running)
+- h029 3-seed: 30 running (seeds 2+3, ~1.5h into 5h walltime)
+- h034: 15 running (DB stale, 44/45 processed, montezumarevenge-s1 still running)
+- h035 pilot: 15 running (~1.5h into 5h)
+- h036 pilot: 15 running (~47min into 5h)
+- h030: 4 running (alien, enduro x2, montezumarevenge, ~2h into 4h)
+
+### NEXT SESSION TODO
+1. Process h029 3-seed results — DEFINITIVE validation (estimated completion ~3.5h)
+2. Process h035/h036 pilot results (estimated completion ~3.5-4.5h)
+3. Process h030 final 3 games (estimated completion ~2h)
+4. Process h034 montezumarevenge-s1 when it completes (45/45)
+5. If h035 or h036 beats h034 at 15/15 → submit 3-seed for winner
+6. If h029 3-seed validates → definitive novel contribution
+7. Phase 3 planning: ablation studies once all pilots complete
