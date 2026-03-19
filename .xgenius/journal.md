@@ -6800,3 +6800,67 @@ Adding enduro (q4=31.14, big win vs PPO and DQN) moved Dueling from last session
 7. When most pilots reach 15/15: design Rainbow-lite combining best components
 8. Best vs-DQN improvements: N-step (+0.0022) > QR-DQN (+0.0015) > NoisyNet (+0.0003)
 9. Consider: Rainbow-lite = DQN + N-step + QR-DQN + NoisyNet (skip Dueling/Double/PER)
+
+---
+**[2026-03-19 22:35 UTC]**
+
+## Session 107: Process 2 New Results + Delete 26 Stale CSVs — h057 & h058 NOW COMPLETE
+
+### Triggered by: h056-battlezone-s1 (job 58003744, narval SUCCESS)
+BUT: h056-battlezone-s1 is STALE (q4=2364.31 matches h001 PPO exactly). No genuine h056 result.
+
+### Reconcile: 6 synced, 0 new disappeared, 87 still active
+
+### Stale CSV Cleanup: 26 files deleted
+12 h051 CSVs (all stale, matching h001 PPO baseline exactly on narval/nibi)
+9 h056 CSVs (all stale on narval, duplicates on nibi — already-banked genuine ones on fir preserved)
+5 h000 stray CSVs (old test results)
+
+### Results Processed: 2 new entries (1041→1043 rows)
+
+**h057 N-step DQN (1 new, NOW 15/15 COMPLETE!):**
+- alien-s1 (fir, recovered from disappeared): q4=273.06 vs PPO=207.63 WIN (+31.5%). vs DQN=336.73 LOSS (-18.9%).
+
+**h058 Dueling DQN (1 new, NOW 15/15 COMPLETE!):**
+- solaris-s1 (narval): q4=272.04 vs PPO=2163.56 BIG LOSS (-87.4%). DQN family catastrophic on Solaris.
+
+### COMPLETE DQN COMPONENTS (all 15/15) — FINAL RANKINGS:
+| Rk | Component  | IQM vPPO  | IQM vDQN  | W/L/T PPO  | W/L/T DQN  |
+|----|-----------|-----------|-----------|------------|------------|
+| 1  | NoisyNet  | -0.0008   | -0.0003   | 10W/4L/1T  | 7W/5L/2T   |
+| 2  | QR-DQN    | -0.0027   | +0.0006   | 10W/4L/1T  | 5W/5L/4T   |
+| 3  | Double DQN| -0.0038   | -0.0010   | 9W/5L/1T   | 3W/8L/3T   |
+| 4  | N-step    | -0.0051   | +0.0003   | 10W/4L/1T  | 4W/7L/3T   |
+| 5  | Dueling   | -0.0105   | -0.0014   | 7W/7L/1T   | 4W/7L/3T   |
+
+### KEY INSIGHTS:
+1. NoisyNet is BEST completed component vs PPO (-0.0008, nearly matches PPO IQM).
+2. QR-DQN is ONLY component that genuinely improves DQN (+0.0006). Best combo partner.
+3. N-step barely positive vs DQN (+0.0003). Most value from wins on Enduro/BattleZone/SpaceInvaders.
+4. Dueling is WORST completed component (-0.0105 vs PPO, -0.0014 vs DQN). Hurts Alien(-55.5%), MsPacman(-46.4%), Qbert(-33.2%) vs DQN.
+5. Double DQN HURTS DQN (-0.0010). Counter-intuitive but consistent.
+6. DQN base itself (14/15, missing Solaris) is +0.0105 vs PPO — still the best by far. But Solaris will crush it.
+7. IQN (14/15, missing DoubleDunk) at +0.0075 vs PPO — second best. But slightly negative vs DQN (-0.0004).
+
+### REMAINING GAPS (all covered):
+| Hypothesis  | Banked | Gap | Coverage |
+|------------|--------|-----|----------|
+| h047 DQN   | 14/15  | Solaris | pending(fir) |
+| h050 Munch | 14/15  | Alien | running(narval) |
+| h059 PER   | 13/15  | BK+MR | pending(nibi) + running(narval) |
+| h061 C51   | 14/15  | Breakout | pending(nibi) |
+| h063 IQN   | 14/15  | DoubleDunk | pending(rorqual) |
+
+### ACTIVE: 6 running + 81 pending = 87 total SLURM jobs
+
+### NEXT SESSION TODO:
+1. Process remaining results as they complete
+2. h047-solaris will FINALIZE DQN baseline (expect big drop from +0.0105)
+3. h063-doubledunk will finalize IQN (DoubleDunk is DQN weakness, expect IQN to drop)
+4. h059 needs 2 more games for 15/15
+5. h061 needs 1 more game for 15/15
+6. h050 needs Alien for 15/15
+7. h051/h056: stale plague unrelenting. 26 more stale CSVs this session. 4/15 genuine each.
+8. When all complete: Rainbow-lite = DQN + QR-DQN (best +0.0006) ± N-step (+0.0003)
+9. Skip Dueling (hurts) and Double DQN (hurts). NoisyNet neutral.
+10. Consider: IQN itself may be better than any combination — it's a more principled distributional approach.

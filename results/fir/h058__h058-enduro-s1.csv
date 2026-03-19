@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Enduro-v5,1,h058,h058-enduro-s1,dqn_dueling,40000000,12016,26.87616539001465,31.141145706176758,322944.0,44.599998474121094
