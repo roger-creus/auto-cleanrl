@@ -815,3 +815,5 @@ h036-privateeye-s1,h036,,pilot (rorqual new-code),PrivateEye-v5,1,ppo_cvar_duel_
 h036-enduro-s1,h036,,pilot (narval new-code),Enduro-v5,1,ppo_cvar_duel_sem,40000000,11904,0.0,0.0,0.0,0.0
 h036-mspacman-s1,h036,,pilot (rorqual new-code),MsPacman-v5,1,ppo_cvar_duel_sem,40000000,81664,257.41,246.90,21021440.0,240.0
 h029-solaris-s3,h029,,3-seed (rorqual new-code),Solaris-v5,3,ppo_aug_qr_cvar,40000000,6016,2514.47,2843.83,15127040.0,1540.0
+h046-venture-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id Venture-v5 --seed 1","nibi (new-code)",Venture-v5,1,ppo_lstm,40000000,17536,0.0,0.0,0.0,0.0
+h046-phoenix-s1,h046,"python cleanrl/ppo_atari_envpool_lstm.py --env-id Phoenix-v5 --seed 1","fir (new-code, disappeared but CSV recovered)",Phoenix-v5,1,ppo_lstm,40000000,33664,867.98,825.78,29219840.0,320.0
