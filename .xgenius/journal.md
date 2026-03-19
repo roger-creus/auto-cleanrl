@@ -3448,3 +3448,62 @@ Per-game IQM HNS = 0.0056 (15 games, seed-1 dominated)
 3. Process h030-alien-s1 final pilot game
 4. When h029 3-seed is complete: compute definitive IQM with all new-code data
 5. The big question: does h034 or h036 beat h029 with reliable data?
+
+---
+**[2026-03-19 02:06 UTC]**
+
+## Session 57: Process h029 3-Seed Results + CRITICAL h034 Bug Discovery
+
+### Triggered by: h029-enduro-s3 (job 28336055, fir SUCCESS)
+
+### Results Processed: 6 new h029 3-seed entries (now 769 total experiments)
+- h029-breakout-s3: q4=1.33 (narval). TIE with PPO.
+- h029-spaceinvaders-s2: q4=150.93 (nibi). TIE with PPO.
+- h029-enduro-s3: q4=0.0 (fir). TIE with PPO.
+- h029-doubledunk-s3: q4=-18.10 (fir). TIE with PPO.
+- h029-namethisgame-s3: q4=2025.0 (nibi). LOSS vs PPO (q4=2507).
+- h029-montezumarevenge-s2: q4=0.0 (narval). TIE with PPO.
+Also updated h029-qbert-s1 with new-code data: q4=146.70 (was 150.0 from old format).
+
+### h029 3-Seed Progress: 23/45 (51%)
+Seed 1: 15/15 complete. Seed 2: 3/15 complete. Seed 3: 5/15 complete.
+Current IQM HNS (per-game avg, 15 games): 0.0029. Still positive but modest.
+
+### CRITICAL BUG: h034 = h029 (Dueling Not Working)
+Pulled new-code CSVs for h034-phoenix-s1, h034-qbert-s1, h034-spaceinvaders-s1.
+ALL THREE are IDENTICAL to h029 results to 13 decimal places (same q4, auc, n_episodes).
+This means h034's Dueling architecture is NOT producing different training dynamics.
+- Verified code on cluster matches local (md5sum identical)
+- Local test confirms architectures should produce different outputs
+- Root cause unknown (stale __pycache__? CUDA issue?)
+
+### ACTION: h034 CLOSED, 12 running jobs CANCELLED
+h034 was previously the 'leader' at IQM=0.0082. This was based on curve-derived data from what is effectively the SAME algorithm as h029. Cancelled all 12 remaining h034 jobs.
+
+### CORRECTED IQM HNS STANDINGS:
+1. h035 (CVaR+SEM+DrQ): 0.0311 (3g curve-derived — UNRELIABLE, pilot running)
+2. h036 (CVaR+Duel+SEM+DrQ): 0.0284 (3g curve-derived — UNRELIABLE, pilot running)
+3. h020 (Dueling PPO): 0.0038 (15g, 3-seed — SOLID)
+4. h008 (PQN LSTM): 0.0036 (15g — SOLID)
+5. h029 (CVaR+QR+DrQ): 0.0029 (15g, 23 entries — 3-SEED IN PROGRESS)
+6. h030 (SEM only): 0.0009 (14g, 1 remaining)
+7. h001 (PPO baseline): 0.0002 (15g)
+
+### KEY: h036 IS genuinely different (confirmed by Qbert q4=279 vs h029 q4=147)
+h036 includes SEM embedding which fundamentally changes representation.
+h035 also confirmed different (SpaceInvaders q4=254 vs h029 q4=151).
+
+### 54 ACTIVE JOBS (after 12 h034 cancellations)
+- h029 3-seed: 23 running (~2.3h remaining)
+- h035 pilot: 15 running (~2.2h remaining)
+- h036 pilot: 15 running (~2.8h remaining)
+- h030: 1 running (alien-s1, nearly done)
+
+### NEXT SESSION TODO
+1. Process h029 3-seed results (23 jobs, ~2h remaining) — CRITICAL definitive data
+2. Process h035 pilot results (15 jobs, ~2h) — compare CVaR+SEM vs h029
+3. Process h036 pilot results (15 jobs, ~3h) — compare triple combo
+4. Process h030-alien-s1 (nearly done)
+5. Investigate h034/h029 identity bug further (check __pycache__, try local reproduction)
+6. If h035 or h036 > h029 at 15 games → submit 3-seed immediately
+7. If h029 validates at IQM>0.003 with full 3-seed → proceed to Phase 3 ablations

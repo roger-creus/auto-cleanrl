@@ -4171,3 +4171,15 @@
 {"timestamp": "2026-03-18T23:51:48Z", "action": "validate_job", "allowed": true, "reason": "", "cluster": "fir", "gpus": 1, "gpu_type": "nvidia_h100_80gb_hbm3_1g.10gb", "cpus": 4, "memory": "16G", "walltime": "05:00:00"}
 {"timestamp": "2026-03-18T23:51:58Z", "action": "submit", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28339905", "experiment_id": "h036-montezumarevenge-s1", "command": "python cleanrl/ppo_atari_envpool_cvar_duel_sem.py --env-id MontezumaRevenge-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h036 --experiment-id h036-montezumarevenge-s1 --output-dir /runs"}
 {"timestamp": "2026-03-19T01:26:04Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10549793"}
+{"timestamp": "2026-03-19T02:03:04Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10549453"}
+{"timestamp": "2026-03-19T02:03:04Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57969899"}
+{"timestamp": "2026-03-19T02:03:05Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8565204"}
+{"timestamp": "2026-03-19T02:03:06Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10549458"}
+{"timestamp": "2026-03-19T02:03:06Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28336271"}
+{"timestamp": "2026-03-19T02:03:06Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57969907"}
+{"timestamp": "2026-03-19T02:03:07Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8565210"}
+{"timestamp": "2026-03-19T02:03:07Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57969931"}
+{"timestamp": "2026-03-19T02:03:08Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28336279"}
+{"timestamp": "2026-03-19T02:03:09Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8565240"}
+{"timestamp": "2026-03-19T02:03:10Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "rorqual", "job_id": "8565247"}
+{"timestamp": "2026-03-19T02:03:11Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28336305"}

@@ -72,3 +72,23 @@ Container pushes to rorqual may silently truncate/corrupt the .sif. After push, 
 **Fix:** Re-synced code to all 4 clusters. Jobs already running will still use old code (Python loads scripts at start time). Only NEW submissions will use the corrected code.
 
 **Additional finding:** Code on clusters was OLD version for ALL h030-h033 (even h032/h033 with correct output-dir). The old code produces old-format summary CSVs from the training script itself. The new-format CSV code was committed locally but not synced before submission.
+
+## 2026-03-19 02:00 — h034 new-code results IDENTICAL to h029
+
+**Issue:** h034 (CVaR+Dueling+DrQ) produces results identical to h029 (CVaR+QR+DrQ) to 13 decimal places on all 3 games tested (Phoenix, Qbert, SpaceInvaders). Same n_episodes, mean_return, q4_return, auc, final_avg20.
+
+**Investigation:**
+- Verified code on fir cluster matches local (md5sum identical)
+- Local test confirms architectures DO produce different outputs with same seed
+- Both scripts use `torch.manual_seed(1)`, CNN backbone is identical, heads differ (h034 adds hidden layers for value/advantage streams)
+- The architectures are structurally different: h029 has direct Linear heads, h034 has 2-layer Sequential heads with ReLU
+- Yet the training trajectories are perfectly identical across 40M steps
+
+**Root cause:** Unknown. Possible theories:
+1. Stale __pycache__/.pyc files on cluster from older version of h034 that was identical to h029
+2. Some PyTorch/CUDA determinism quirk that makes different architectures converge to identical behavior
+3. Singularity container caching issue
+
+**Impact:** h034 IQM (previously 0.0082 from curve-derived data) was based on the SAME algorithm as h029. h034 closed, 12 running jobs cancelled.
+
+**Action:** h036 (CVaR+Dueling+SEM) confirmed to produce DIFFERENT results (includes SEM which fundamentally changes representation). h035 (CVaR+SEM) also confirmed different. Both pilots still running.
