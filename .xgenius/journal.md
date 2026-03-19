@@ -5622,3 +5622,68 @@ h047(1R), h050(10R), h051(4R+6P=10), h055(7R), h056(8R+4P=12), h057(10R), h058(8
 9. h061/h062: 7+8 running — C51/NoisyNet complete pilots
 10. h063 IQN: 15 running — most sophisticated distributional method, no results yet
 11. When DQN components complete: rank by IQM, build Rainbow-lite combining top 3-4
+
+---
+**[2026-03-19 16:31 UTC]**
+
+## Session 92: Process 4 New Results (h060 Alien/NameThisGame, h061 MsPacman, h063 NameThisGame) + Delete Stale + Resubmit 6 Gaps
+
+### Triggered by: h060-alien-s1 (job 57987312, narval SUCCESS)
+
+### STALE h051/h056 from narval — AGAIN
+4 narval CSVs (h051-breakout-s1, h051-qbert-s1, h056-phoenix-s1, h056-venture-s1) were PPO-identical. These were from CANCELLED older jobs (57987599/57987606 for h051, 57985686/57985695 for h056) that ran stale code. Deleted all 4. The currently running h051/h056 jobs were submitted AFTER code sync and should produce genuine results.
+
+### Results Processed: 4 new entries (975→979 rows)
+
+**h060 QR-DQN (2 new, now 13/15):**
+- alien-s1 (narval): q4=314.68 vs PPO=207.63 WIN (+51.6%). vs DQN=336.73 LOSS (-6.5%). First QR-DQN loss vs DQN.
+- namethisgame-s1 (narval): q4=1728.64 vs PPO=2522.54 LOSS (-31.5%). vs DQN=1776.81 TIE (-2.7%). All DQN variants bad at NameThisGame.
+- h060 at 13/15: 6W/4L/3T vs PPO. ZERO losses vs DQN in 10 shared games (2W/0L/10T after Alien loss). Wait — Alien WAS a loss vs DQN (-6.5%). So now 2W/1L/10T.
+
+**h061 C51 40M (1 new, now 9/15):**
+- mspacman-s1 (narval): q4=420.68 vs PPO=287.07 WIN (+46.5%). vs DQN=465.18 LOSS (-9.6%).
+- h061 at 9/15: 5W/4L/0T vs PPO.
+
+**h063 IQN (1 new, now 1/15):**
+- namethisgame-s1 (nibi): q4=1564.76 vs PPO=2522.54 LOSS (-38.0%). vs DQN=1776.81 LOSS (-11.9%).
+- IQN first result is a loss. NameThisGame below random (2292.3). All DQN family struggles here.
+
+### Reconcile: 8 disappeared, 1 completed
+Disappeared: h061-enduro(fir), h062-spaceinvaders(narval), h062-solaris(fir), h060-mspacman(narval), h061-montezumarevenge(rorqual), h060-namethisgame(narval), h061-qbert(narval), h061-mspacman(narval). Last two had CSVs already pulled.
+Completed: h063-namethisgame-s1 (nibi) — pulled and processed.
+
+### DQN COMPONENT IQM STANDINGS (from data analyst recomputation):
+| Rank | Component    | Games  | IQM dHNS  | vs PPO     | vs DQN     |
+|------|-------------|--------|-----------|------------|------------|
+| 1    | Munchausen  | 5/15   | +0.0137   | 4W/1L/0T   | 2W/2L/1T   |
+| 2    | DQN base    | 14/15  | +0.0117   | 7W/3L/4T   | ---        |
+| 3    | Dueling     | 7/15   | +0.0054   | 2W/2L/3T   | 0W/0L/7T   |
+| 4    | PER         | 11/15  | -0.0054   | 6W/3L/2T   | 0W/2L/9T   |
+| 5    | Double DQN  | 8/15   | -0.0151   | 4W/2L/2T   | 2W/1L/5T   |
+| 6    | NoisyNet    | 6/15   | -0.0166   | 2W/2L/2T   | 1W/2L/3T   |
+| 7    | N-step(3)   | 6/15   | -0.0263   | 2W/2L/2T   | 1W/2L/3T   |
+| 8    | QR-DQN      | 13/15  | -0.0319   | 6W/4L/3T   | 2W/1L/10T  |
+| 9    | C51 40M     | 9/15   | -0.0447   | 5W/4L/0T   | 1W/1L/7T   |
+| 10   | IQN         | 1/15   | N/A       | 0W/1L/0T   | 0W/1L/0T   |
+
+### Gap Resubmissions: 6 jobs
+- h060-mspacman-s1 → fir (disappeared from narval)
+- h061-enduro-s1 → nibi (disappeared from fir)
+- h061-montezumarevenge-s1 → rorqual (disappeared from rorqual)
+- h061-qbert-s1 → narval (disappeared from narval)
+- h062-solaris-s1 → fir (disappeared from fir)
+- h062-spaceinvaders-s1 → nibi (disappeared from narval)
+
+### ACTIVE JOBS: 75 running + ~18 pending ≈ 93 total
+h047(1), h050(10), h051(4R+6P=10), h055(7), h056(8R+5P=13), h057(10), h058(8), h059(4), h060(2P+1resubmit), h061(3R+3resubmit), h062(6R+2resubmit), h063(14)
+
+### NEXT SESSION TODO:
+1. h047: 1 remaining (Solaris, narval) — complete DQN baseline
+2. h050: 10 running — validate Munchausen #1 position
+3. h051/h056: Verify genuine results when completed
+4. h055/h057/h058: 7+10+8 running — complete pilots
+5. h059: 4 running — 3 games left
+6. h060: 2 pending + 1 resubmit — 2 games left for full pilot
+7. h061/h062: 3+6 running + 3+2 resubmits — complete pilots
+8. h063 IQN: 14 running — full pilot incoming
+9. When all DQN components complete: rank by IQM, build Rainbow-lite with top 3-4 components
