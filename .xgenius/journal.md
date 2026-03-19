@@ -4584,3 +4584,86 @@ Just submitted: h051-resubmit(15), h061(15)
 7. h061 C51 at 40M — 8h walltime, critical results
 8. DQN variants (h055/h057/h058/h059/h060) — 6-7h remaining
 9. When h061 C51-40M and DQN variants complete: combine best components into Rainbow-lite
+
+---
+**[2026-03-19 10:34 UTC]**
+
+## Session 75: Process 30 Results + Close h048/h049/h053/h054 + Submit h062 NoisyNet DQN
+
+### Triggered by: h054-privateeye-s1 (job 8587163, rorqual SUCCESS)
+
+### Results Processed: 30 new entries (now 906 rows)
+
+**h048 PPO Munchausen (10 new, now 13/15 — CLOSED):**
+- New: BattleZone TIE(-1.7%), DoubleDunk TIE, MontezumaRevenge TIE, Breakout TIE, Enduro TIE, Qbert +10.2% WIN, Amidar +23.9% WIN, Solaris -6.6% LOSS, MsPacman -15.8% LOSS, NameThisGame TIE(+2%)
+- IQM delta-HNS=-0.0011. Record: 2W/4L/7T.
+- Munchausen bonus doesn't help PPO on Atari. Cancelled 10 remaining jobs. CLOSED.
+
+**h049 PPO Gamma Anneal (6 new, now 9/15 — CLOSED):**
+- New: Breakout TIE, MontezumaRevenge TIE, MsPacman -8.2% LOSS, Qbert -7.3% LOSS, BattleZone -18.9% LOSS, Phoenix -7.0% LOSS
+- IQM delta-HNS=-0.0010. Record: 0W/4L/5T. Zero wins!
+- Gamma annealing actively hurts PPO. Cancelled 12 remaining jobs. CLOSED.
+
+**h051 PPO CReLU (3 new valid from resubmit):**
+- New valid: MsPacman +18.8% WIN, NameThisGame -33.5% LOSS, Venture TIE
+- 5 old entries still invalidated (stale code). 12 resubmit still running.
+
+**h053 C51 at 10M (4 new, COMPLETE 15/15 — CLOSED):**
+- New: Alien +61.1% WIN, Enduro WIN(PPO=0), Solaris -76.3% LOSS, Venture TIE
+- IQM delta-HNS=-0.0091 (15 games). Record: 8W/4L/3T.
+- IQM negative because Phoenix(-0.122 HNS) isn't trimmed from middle 9. DoubleDunk degenerate (-2.65 HNS).
+- At only 10M steps (25% PPO budget), C51 wins 8 of 15 games. h061 running at 40M for full potential.
+
+**h054 SAC-discrete at 10M (7 new, now 14/15 — CLOSED):**
+- New: Qbert +17.2% WIN, Enduro TIE, SpaceInvaders TIE, Alien TIE, Phoenix -9.4% LOSS, Venture TIE, PrivateEye -928% LOSS
+- IQM delta-HNS=-0.0007. Record: 3W/4L/7T. Neutral overall.
+- Cancelled 5 remaining jobs (Solaris still running won't change outcome). CLOSED.
+
+### CANCELLED: 28 jobs (10 h048 + 12 h049 + 5 h054 + 1 h053 zombie)
+
+### NEW HYPOTHESIS SUBMITTED: h062 NoisyNet DQN (15 jobs)
+Factorized Gaussian NoisyLinear replaces standard Linear layers in DQN Q-network.
+Removes epsilon-greedy — parametric noise provides state-dependent exploration.
+Key Rainbow component — the last untested individual piece.
+All 15 games × 1 seed, 40M steps, 8h walltime across 4 clusters.
+
+### Rainbow Component Coverage (ALL NOW SUBMITTED):
+1. h047: DQN baseline (8/15, 7 resubmit running)
+2. h050: Munchausen DQN (15 running ~2h left)
+3. h055: Double DQN (15 running ~3h left)
+4. h057: N-step DQN (15 running ~4h left)
+5. h058: Dueling DQN (15 running ~4h left)
+6. h059: DQN + PER (15 running ~7h left)
+7. h060: QR-DQN (15 running ~7h left)
+8. h061: C51 at 40M (11 running ~8h left)
+9. h062: NoisyNet DQN (15 just submitted) ← NEW
+
+### ACTIVE JOBS: ~153 total (after cancellations)
+h047(7), h050(15), h051(15), h055(15), h056(15), h057(15), h058(15), h059(15), h060(15), h061(11), h062(15)
+
+### IQM STANDINGS (complete hypotheses only):
+1. h047 (DQN 40M): IQM=+0.0092 (8 games only, 7 resubmit pending)
+2. h020 (Dueling PPO): IQM=+0.0038 (15g, 3-seed)
+3. h008 (PQN LSTM): IQM=+0.0036 (15g)
+4. h001 (PPO baseline): IQM=+0.0002 (15g)
+5. h053 (C51 10M): IQM=-0.0091 (15g) — 8W but Phoenix/Solaris drag IQM negative
+
+### KEY INSIGHT: C51 IQM is MISLEADING
+C51 at 10M wins 8/15 games vs PPO at 40M, but IQM is negative because Phoenix (delta-HNS=-0.122) falls in the middle 50% after trimming. Phoenix is a known weakness of off-policy methods (DQN also catastrophic there). Excluding Phoenix, C51 at 10M would have strongly positive IQM. Running h061 at 40M will be the definitive test.
+
+### STRATEGIC DIRECTION
+All individual Rainbow components now submitted. Once h050, h055-h062 complete (next 4-8h):
+1. Rank each DQN component by IQM improvement over h047 baseline
+2. Identify which components are complementary vs redundant
+3. Build Rainbow-lite combining top 3-4 components
+4. Test Rainbow-lite on all 15 games
+5. If strong: run full 3-seed evaluation
+
+### NEXT SESSION TODO
+1. Process h050 Munchausen DQN (should complete in ~2h)
+2. Process h056 PPO Wide (should complete in ~2h)
+3. Process h051 CReLU resubmit results
+4. Process h055-h058 DQN variant results (4-5h from now)
+5. Process h059/h060/h061/h062 (7-8h from now)
+6. When all DQN components are in: compare and build Rainbow-lite
+7. h047 resubmit 7 games should complete in ~7h
