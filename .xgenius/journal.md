@@ -3848,3 +3848,74 @@ Only BattleZone-s3 (narval) + Solaris-s2/s3 (narval/rorqual) remaining. All-seed
 4. If h036 IQM < h029 after all 15 games: close h036, proceed to Phase 3 with h029
 5. If h036 IQM > h029: submit 3-seed immediately
 6. Begin planning Phase 3 ablations for h029 (CVaR alpha sweep, DrQ removal, QR removal)
+
+---
+**[2026-03-19 03:28 UTC]**
+
+## Session 63: Process 7 New Results — h029 at 44/45, h035 CLOSED (15/15), h036 at 13/15
+
+### Triggered by: h029-battlezone-s3 (narval SUCCESS)
+
+### Results Processed: 6 new entries + 1 update + 1 correction (now 813 rows)
+
+**h029 3-seed (2 new entries, now 44/45):**
+- battlezone-s3: q4=1988.59 (narval, 33664 eps). PPO s3=1736.84 → +14.5% WIN. BattleZone 3-seed avg=2607.
+- solaris-s2: q4=2268.70 (narval, 5888 eps). PPO s1=2163.56 → +4.9%. Solaris now 2/3 seeds.
+
+**CRITICAL CORRECTION: h029-amidar-s1 old-format q4=31.0 → estimated 2.30**
+This entry used old-format logging (mean_return_last_25). Seeds 2/3 show q4=2.43/2.17 with new-code, confirming the 31.0 was ~14x inflated (same pattern as h036-amidar). Estimated true q4=2.30 from seed average. This drops h029 seed-1 IQM from 0.0045 → 0.0025.
+
+**h035 pilot (1 new entry, NOW COMPLETE 15/15):**
+- solaris-s1: q4=3485.45 (rorqual, recovered from disappeared job). PPO s1=2163.56 → +61% HUGE WIN! Best single-game result across ALL hypotheses.
+- CLOSED h035. Final IQM HNS=-0.0004. 5W/5L/5T. Solaris massive win but 5 losses cancel it. SEM does not enhance CVaR.
+
+**h036 pilot (3 new entries + 1 correction, now 13/15):**
+- doubledunk-s1: q4=-18.92 (narval). PPO s1=-18.10 → LOSS.
+- spaceinvaders-s1: q4=152.64 (narval). PPO s1=150.19 → TIE.
+- privateeye-s1: q4=56.90 (rorqual). TIE/slight WIN.
+- amidar-s1: CORRECTED curve q4=31.0 → new-code q4=3.19. MASSIVE correction.
+
+### DISAPPEARED: 4 jobs (all had CSVs recovered from cluster pulls)
+- h035-solaris-s1 (rorqual 8565287): CSV recovered → added to results.
+- h036-amidar-s1 (rorqual 8566629): CSV recovered → corrected in results.
+- h036-privateeye-s1 (rorqual 8566632): CSV recovered → added to results.
+- h036-doubledunk-s1 (narval 57971169): CSV recovered → added to results.
+
+### CANCELLED: h036-spaceinvaders-s1 nibi resubmit (10561010) — narval CSV already pulled.
+
+### CORRECTED IQM HNS STANDINGS:
+1. h008 (PQN LSTM): seed-1 IQM=0.0033, all-seed IQM=0.0027 (23 entries)
+2. h029 (CVaR+QR+DrQ): seed-1 IQM=0.0025, all-seed IQM=0.0000 (44 entries) ← NOVEL
+3. h001 (PPO baseline): seed-1 IQM=-0.0001
+4. h035 (CVaR+SEM+DrQ): IQM=-0.0004 (CLOSED)
+5. h036 (CVaR+Duel+SEM+DrQ): IQM=-0.0021 (13/15, 3 running)
+6. h020 (Dueling PPO): seed-1 IQM=-0.0024, all-seed IQM=0.0015
+
+### CRITICAL INSIGHT: h029 all-seed IQM is essentially ZERO
+h029 seed-1 IQM=0.0025 but all-seed IQM=0.0000. The 3-seed data reveals h029 is NOT consistently above PPO. It wins on BattleZone (+0.71%), DoubleDunk, Phoenix, Solaris, SpaceInvaders but loses on Breakout, MsPacman, NameThisGame. Net effect: zero improvement over baseline.
+
+### CVaR HYPOTHESIS SPACE: NEARLY FULLY EXPLORED
+- h029 (CVaR+QR+DrQ) = all-seed IQM 0.0000 — no consistent improvement
+- h035 (CVaR+SEM+DrQ) = IQM -0.0004 — CLOSED, SEM hurts
+- h036 (CVaR+Duel+SEM+DrQ) = IQM -0.0021 (13g, 1 curve-derived) — trending negative
+- h028 (DrQ+QR, no CVaR) = IQM -0.0034 — CVaR was the key but even with it, not enough
+
+CVaR advantage is game-dependent: helps on BattleZone/Solaris (complex), hurts on Breakout/NameThisGame (simple reward structure). The net effect across 15 games is approximately zero.
+
+### 5 ACTIVE JOBS
+- h029-solaris-s3 (rorqual): running — completes h029 at 45/45
+- h029-solaris-s2 (narval): showing running in DB but CSV already pulled
+- h036-enduro-s1 (narval): running — needed for 14/15
+- h036-qbert-s1 (fir): running — will correct curve-derived entry
+- h036-mspacman-s1 (rorqual): running — needed for 15/15
+
+### NEXT SESSION TODO
+1. Process h029-solaris-s3 → DEFINITIVELY CLOSE h029 at 45/45
+2. Process h036 remaining 3 games → close h036
+3. BEGIN NEW DIRECTIONS. CVaR space is exhausted. Need fundamentally new approaches:
+   a. Look at off-policy methods (DQN/Rainbow components in CleanRL)
+   b. Try PPO + LSTM (h008 PQN+LSTM was best, but PPO+LSTM untried)
+   c. Consider n-step returns for PPO
+   d. Explore adaptive methods that work differently on different game types
+   e. Look at hybrid on/off-policy approaches
+4. Phase 2 is NOT complete — many categories unexplored (off-policy, hybrid, ensemble)

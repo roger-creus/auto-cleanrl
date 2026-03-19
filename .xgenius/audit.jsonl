@@ -4246,3 +4246,7 @@
 {"timestamp": "2026-03-19T03:04:50Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "narval", "job_id": "57976182"}
 {"timestamp": "2026-03-19T03:04:54Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28358068"}
 {"timestamp": "2026-03-19T03:04:59Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10559610"}
+{"timestamp": "2026-03-19T03:14:38Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10555667"}
+{"timestamp": "2026-03-19T03:14:41Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "fir", "job_id": "28350674"}
+{"timestamp": "2026-03-19T03:14:42Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10555672"}
+{"timestamp": "2026-03-19T03:22:21Z", "action": "cancel", "allowed": true, "reason": "", "cluster": "nibi", "job_id": "10561010"}
