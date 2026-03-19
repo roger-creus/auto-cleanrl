@@ -116,3 +116,23 @@ Root cause: OLD jobs from sessions 88-90 (which ran before code was properly syn
 Currently running jobs (submitted with correct commands AND code present on cluster) should produce genuine results.
 Deleted 16 stale CSVs. Re-synced all clusters as precaution.
 Resubmitted 15 gap-filling jobs across all 4 clusters.
+
+## 2026-03-19 23:30 — h051/h056 stale plague root cause diagnosed
+
+**Problem:** h051 (CReLU) and h056 (Wide) experiments produced stale results matching h001 PPO baseline exactly for 100+ sessions. Only 4/15 genuine results for each after dozens of resubmissions across all clusters.
+
+**Root cause:** Some resubmission batches omitted `--hypothesis-id` and `--total-timesteps` flags. The scripts defaulted to `hypothesis_id="h000"` and `total_timesteps=10000000` (10M). This caused:
+1. Results saved to wrong filenames (e.g., `h000__BattleZone-v5_s1.csv` instead of `h051__h051-battlezone-s1.csv`)
+2. Training ran for only 10M steps instead of 40M
+3. The watcher pulled OLD leftover h001 CSVs from the output directory instead of genuine h051/h056 results
+
+Additionally, many correctly-flagged jobs were stuck running 44+ hours (SLURM elapsed MM:SS misread as HH:MM — actually only 44 minutes). Jobs with stale code on cluster ignored the new flags since the script version didn't have those CLI args.
+
+**Fix:**
+- Changed default `total_timesteps` from 10M to 40M in both scripts
+- Changed default `hypothesis_id` to "h051" (crelu) and "h056" (wide)
+- Synced fresh code to all 4 clusters
+- Cancelled 74 wasted/duplicate jobs
+- Resubmitted 22 jobs (11 h051 + 11 h056) with correct flags and fresh code
+
+**Lesson:** Always use explicit flags AND update defaults when scripts are used for a specific hypothesis. Never rely on defaults being correct across resubmissions.

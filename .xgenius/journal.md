@@ -6921,3 +6921,85 @@ All 4 triggered jobs were ALREADY BANKED in previous sessions. No new experiment
 5. When remaining pilots complete: finalize all DQN component rankings
 6. Rainbow-lite candidates: QR-DQN (+0.0006 vs DQN, only positive) + N-step (+0.0003)
 7. Consider IQN as standalone best — if doubledunk doesn't crash it too much
+
+---
+**[2026-03-19 23:55 UTC]**
+
+## Session 109: Stale Plague Root Cause Found + Massive Cleanup + h051/h056 Resubmission
+
+### Triggered by: h051-battlezone-s1 (job 10597871, nibi SUCCESS)
+BUT: result is STALE (q4=2364.31 matches h001 PPO exactly). Zero new genuine results this session.
+
+### ROOT CAUSE OF h051/h056 STALE PLAGUE FOUND!
+Diagnosed the issue that has plagued h051/h056 for many sessions:
+1. The nibi job (10597871) saved to /runs/h000__BattleZone-v5_s1.csv — WRONG filename
+2. Command was: python cleanrl/ppo_atari_envpool_crelu.py --env-id BattleZone-v5 --seed 1 (NO --hypothesis-id, NO --total-timesteps)
+3. Script defaults: hypothesis_id='h000', total_timesteps=10M (not 40M!)
+4. So the script ran with wrong hypothesis_id and only 10M steps
+5. The stale CSVs matched h001 PPO because the watcher found OLD leftover files in the output directory
+
+### FIX APPLIED:
+- Changed default total_timesteps from 10M to 40M in both scripts
+- Changed default hypothesis_id to h051 (crelu) and h056 (wide)
+- Committed and pushed the fix
+- Synced fresh code to ALL 4 clusters
+
+### MASSIVE CLEANUP: Cancelled 74 wasted/duplicate jobs
+- 21 pending rorqual h051/h056 jobs (wrong flags, stale queue)
+- 3 BROKEN h056 jobs (no --hypothesis-id or --total-timesteps)
+- 23 fir jobs: stuck h051/h056 + already-banked duplicates (h060, h061, h062, h063)
+- 1 narval duplicate (h055-enduro, already COMPLETE)
+- 16 nibi jobs: stuck h051/h056 + already-banked duplicates
+- 10 rorqual duplicates (already-banked h061, h062, h060)
+Total freed: 74 jobs across all clusters
+
+### RESUBMITTED: 22 h051/h056 + 1 h061
+- 11 h051 missing games: distributed across fir/nibi/narval/rorqual with correct flags
+- 11 h056 missing games: distributed across fir/nibi/narval/rorqual with correct flags
+- 1 h061-breakout-s1: resubmitted on narval (disappeared from nibi queue)
+
+### STALE CSV CLEANUP: 16 files deleted (9 h051 + 7 h056, all on nibi)
+
+### REMAINING CRITICAL JOBS (5 from before + 22 new + 1 resubmit):
+1. h047-solaris-s1 on fir (37min elapsed, running) — finalizes DQN baseline
+2. h050-alien-s1 on narval (2h48m elapsed, running) — finalizes Munchausen
+3. h059-montezumarevenge-s1 on narval (5h22m, running) — PER gap
+4. h059-breakout-s1 on nibi (41min, running) — PER gap
+5. h063-doubledunk-s1 on rorqual (pending) — finalizes IQN
+6. 22 h051/h056 resubmissions (fresh code, correct flags)
+7. h061-breakout-s1 on narval (resubmitted) — finalizes C51 40M
+
+### IQM dHNS STANDINGS (unchanged from session 108):
+| Rk | Component  | Games    | IQM vPPO | IQM vDQN | Notes |
+|----|-----------|----------|----------|----------|-------|
+| 1  | DQN base  | 14/15    | +0.0090  | ---      | Missing Solaris |
+| 2  | IQN       | 14/15    | +0.0067  | -0.0004  | Missing DoubleDunk |
+| 3  | NoisyNet  | COMPLETE | -0.0050  | -0.0003  | |
+| 4  | QR-DQN    | COMPLETE | -0.0071  | +0.0006  | BEST vs DQN |
+| 5  | Double DQN| COMPLETE | -0.0089  | -0.0010  | Hurts DQN |
+| 6  | N-step    | COMPLETE | -0.0091  | +0.0003  | |
+| 7  | C51 40M   | COMPLETE | -0.0122  | -0.0020  | |
+| 8  | C51 40Mep | 14/15    | -0.0126  | -0.0010  | Missing Breakout |
+| 9  | PER       | 13/15    | -0.0135  | -0.0001  | Missing BK+MR |
+| 10 | Dueling   | COMPLETE | -0.0146  | -0.0014  | Hurts DQN |
+| 11 | Munchausen| 14/15    | -0.0149  | -0.0011  | Missing Alien |
+
+### COVERAGE STATUS:
+| Hypothesis  | Banked | Gap | Status |
+|------------|--------|-----|--------|
+| h047 DQN   | 14/15  | Solaris | running(fir) |
+| h050 Munch | 14/15  | Alien | running(narval) |
+| h051 CReLU | 4/15   | 11 games | RESUBMITTED x11 (fresh code!) |
+| h056 Wide  | 4/15   | 11 games | RESUBMITTED x11 (fresh code!) |
+| h059 PER   | 13/15  | BK+MR | running(nibi+narval) |
+| h061 C51ep | 14/15  | Breakout | resubmitted(narval) |
+| h063 IQN   | 14/15  | DoubleDunk | pending(rorqual) |
+
+### NEXT SESSION TODO:
+1. Check if h051/h056 resubmissions produce GENUINE results (this is the acid test!)
+2. Process results for h047-solaris (will finalize DQN baseline IQM)
+3. Process results for h050-alien, h059-BK/MR, h061-breakout, h063-doubledunk
+4. When all pilots reach 15/15: finalize complete IQM rankings
+5. Design Rainbow-lite experiment: DQN + QR-DQN (+0.0006) + N-step (+0.0003) at minimum
+6. Consider if IQN itself is the best standalone component (currently #2)
+7. PPO improvements: if h051 CReLU and h056 Wide produce genuine results at 15/15, compare to PPO baseline
