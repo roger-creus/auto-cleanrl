@@ -7116,3 +7116,73 @@ Both triggered results are STALE — episodic returns are BIT-FOR-BIT identical 
 3. Based on diagnostic results: either fix the container/bind mount issue or abandon h051/h056
 4. Design Rainbow-lite: DQN + QR-DQN (+0.0006) + N-step (+0.0003) — the only positive vs-DQN components
 5. Consider IQN as standalone best if doubledunk doesn't crash it
+
+---
+**[2026-03-20 05:48 UTC]**
+
+## Session 112: Process h059-Breakout (COMPLETE 15/15) + h051 Stale Plague Deep Investigation
+
+### Triggered by: h051-spaceinvaders-s1 (job 10622340, nibi SUCCESS)
+BUT: result is STALE — bit-for-bit identical to h001 PPO baseline (same q4, mean_return, auc, n_episodes).
+
+### NEW RESULT: h059-breakout-s1 (PER DQN) — COMPLETES h059 at 15/15
+- Breakout q4=1.846 vs PPO=1.365 (+35%) vs DQN=1.804 (+2.3%)
+- Both near zero on Breakout (trivial game for all)
+- h059 PER FINAL: IQM dHNS=-0.0049 vs PPO (10W/4L/1T), +0.0001 vs DQN (5W/5L/4T)
+- PER is neutral vs DQN. Big wins on BattleZone/SpaceInvaders, catastrophic on Solaris/Phoenix/NameThisGame.
+- CLOSED h059.
+
+### h051/h056 STALE PLAGUE: DEFINITIVE PROOF + DEEPER DIAGNOSTICS
+1. SMOKING GUN: compared SLURM episodic returns line-by-line between h051-spaceinvaders (CReLU, nibi) and h001-spaceinvaders (PPO, narval). IDENTICAL at EVERY global_step. Same actions, same trajectories.
+2. BUT: genuine h051 results (MsPacman, NameThisGame from earlier submissions) show COMPLETELY DIFFERENT episodic returns from PPO. The CReLU code DOES work when it works.
+3. Diagnostic jobs (session 111) confirmed correct CReLU architecture loads at init on both fir and nibi.
+4. Key difference: genuine results came from jobs submitted at 10:13 UTC Mar 19. Stale results from 02:57 UTC Mar 20. Between these: session 109 synced new code (only default changes). Same CReLU architecture in both.
+5. MYSTERY REMAINS: why do post-sync jobs produce PPO-identical results while pre-sync jobs don't?
+
+### ACTIONS TAKEN:
+- Added definitive diagnostics to CReLU script: parameter hash at init, first-action logging, CReLU architecture assertions (will ABORT if wrong architecture loads)
+- Added same diagnostics to Wide script
+- Synced fresh code to ALL 4 clusters
+- Deleted ALL stale h051/h056 CSVs from ALL 4 cluster output dirs
+- Cancelled 2 stale h051 pending jobs (pre-diagnostic code)
+- Resubmitted h051-alien-s1 on rorqual + h051-breakout-s1 on fir with fresh diagnostic code
+
+### OTHER JOB ACTIONS:
+- h050-alien-s1: CANCELLED DUE TO TIME LIMIT (both narval attempts, 4h+8h). Resubmitted on fir with 8h walltime (job 28509826)
+- h059-breakout-s1: recovered from disappeared nibi job (10595037). Results saved before job was removed from SLURM.
+- h061-breakout-s1: cancelled on narval (time limit). Still pending on nibi (job 10596406).
+
+### COMPLETE DQN COMPONENT RANKINGS (all 15/15):
+| Rk | Component  | IQM vPPO | IQM vDQN | W/L/T PPO | W/L/T DQN |
+|----|-----------|----------|----------|-----------|-----------|
+| 1  | DoubleDQN | -0.0011  | +0.0000  | 9W/4L/2T  | 4W/6L/4T  |
+| 2  | NoisyNet  | -0.0021  | -0.0001  | 9W/4L/2T  | 2W/5L/7T  |
+| 3  | QR-DQN    | -0.0043  | +0.0000  | 9W/4L/2T  | 4W/4L/6T  |
+| 4  | PER       | -0.0049  | +0.0001  | 10W/4L/1T | 5W/5L/4T  |
+| 5  | N-step    | -0.0057  | +0.0006  | 9W/4L/2T  | 5W/5L/4T  |
+| 6  | Dueling   | -0.0101  | +0.0007  | 6W/6L/3T  | 6W/4L/4T  |
+
+### KEY INSIGHT:
+- vs PPO: DoubleDQN (-0.0011) is closest. All negative.
+- vs DQN: N-step (+0.0006) and Dueling (+0.0007) are best. But these are worst vs PPO!
+- Rainbow-lite: combining N-step + Dueling would improve DQN but may not beat PPO
+
+### REMAINING GAPS:
+| Hypothesis | Banked | Gap | Status |
+|-----------|--------|-----|--------|
+| h047 DQN  | 14/15  | Solaris | running(fir), ~6.6h, should complete soon |
+| h050 Munch| 14/15  | Alien | resubmitted(fir) 8h walltime |
+| h051 CReLU| 4/15   | 11 games | 2 resubmitted with diagnostic code |
+| h056 Wide | 4/15   | 11 games | no active jobs (will resubmit after h051 diagnostic) |
+| h061 C51  | 14/15  | Breakout | pending(nibi) |
+| h063 IQN  | 14/15  | DoubleDunk | running(rorqual), ~5.4h |
+
+### ACTIVE: h047-solaris(fir R), h063-doubledunk(rorqual R), h050-alien(fir P), h051-alien(rorqual P), h051-breakout(fir P), h061-breakout(nibi P), h061-venture(nibi P)
+
+### NEXT SESSION TODO:
+1. Check h051 diagnostic results — parameter hash + first actions will DEFINITIVELY show if CReLU is being used
+2. Process h047-solaris (finalizes DQN baseline IQM) and h063-doubledunk (finalizes IQN)
+3. Process h050-alien when it completes
+4. If h051 diagnostics show correct params but stale results: abandon h051/h056 as unsolvable container issue
+5. When all pilots reach 15/15: design Rainbow-lite experiment
+6. Rainbow-lite = DQN + N-step (+0.0006) + Dueling (+0.0007) as minimum combo

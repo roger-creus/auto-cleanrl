@@ -223,18 +223,27 @@ if __name__ == "__main__":
     envs = RecordEpisodeStatistics(envs)
     assert isinstance(envs.action_space, gym.spaces.Discrete), "only discrete action space is supported"
 
-    # Diagnostic: verify correct script and architecture
+    agent = Agent(envs).to(device)
+
+    # DEFINITIVE DIAGNOSTICS: verify CReLU architecture and unique parameters
     import hashlib
     _script_path = os.path.abspath(__file__)
     with open(_script_path, 'rb') as _f:
         _script_hash = hashlib.md5(_f.read()).hexdigest()
     print(f"[ARCH DIAG] Script path: {_script_path}")
     print(f"[ARCH DIAG] Script MD5: {_script_hash}")
-    agent = Agent(envs).to(device)
     total_params = sum(p.numel() for p in agent.parameters())
     print(f"[ARCH DIAG] Agent total parameters: {total_params}")
     print(f"[ARCH DIAG] Network: {agent.network}")
     print(f"[ARCH DIAG] Conv1 weight shape: {list(agent.network[0].weight.shape)}")
+    # Parameter hash — unique fingerprint of initial weights
+    _param_bytes = b''.join(p.data.cpu().numpy().tobytes() for p in agent.parameters())
+    _param_hash = hashlib.md5(_param_bytes).hexdigest()
+    print(f"[ARCH DIAG] Parameter hash at init: {_param_hash}")
+    # Architecture assertion — abort if not CReLU
+    assert isinstance(agent.network[1], CReLU), f"FATAL: Expected CReLU at layer 1, got {type(agent.network[1])}"
+    assert isinstance(agent.network[3], CReLU), f"FATAL: Expected CReLU at layer 3, got {type(agent.network[3])}"
+    print(f"[ARCH DIAG] CReLU assertions PASSED")
     optimizer = optim.Adam(agent.parameters(), lr=args.learning_rate, eps=1e-5)
 
     # ALGO Logic: Storage setup
@@ -276,6 +285,11 @@ if __name__ == "__main__":
             next_obs, reward, next_done, info = envs.step(action.cpu().numpy())
             rewards[step] = torch.tensor(reward).to(device).view(-1)
             next_obs, next_done = torch.Tensor(next_obs).to(device), torch.Tensor(next_done).to(device)
+
+            # Log first actions for staleness detection
+            if global_step == args.num_envs:
+                print(f"[ARCH DIAG] First actions (10): {action[:10].tolist()}")
+                print(f"[ARCH DIAG] First obs hash: {hashlib.md5(next_obs.cpu().numpy().tobytes()).hexdigest()}")
 
             # Collect all completed episodes at this step, log one entry per global_step
             step_returns = []
