@@ -7525,3 +7525,114 @@ Record: 4W/0L/0T vs IQN. IQM dHNS vs IQN ~+1.50 (exceptional).
 4. When h067 reaches more games: if it maintains 4W/0L vs IQN it is THE breakthrough finding
 5. h067+h066 combo (h068) is the most important experiment — combines two best innovations
 6. h061-breakout on fir: 5th attempt, just resubmitted
+
+---
+**[2026-03-20 18:23 UTC]**
+
+## Session 119: Bank h051-breakout (stale) + h066-battlezone recovered + Resubmit 4 h066 gaps
+
+### Triggered by: h051-breakout-s1 (job 28509861, fir SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+1. **h051-breakout-s1** (PPO+CReLU): q4=1.37 — IDENTICAL to PPO baseline (1.37). Another stale plague confirmation. h051 already closed.
+
+2. **h066-battlezone-s1** (IQN+OQE): RECOVERED from narval disappeared. q4=3726.05 vs PPO=2364.31 WIN (+57.6%). vs IQN=3466.95 WIN (+7.5%). OQE improves BattleZone modestly.
+
+### h066 OQE UPDATED TALLY (4/15 games — 3W/0L/1T vs IQN):
+| Game | OQE q4 | IQN q4 | Delta | Result |
+|------|--------|--------|-------|--------|
+| MsPacman | 514.10 | 496.64 | +3.5% | WIN |
+| PrivateEye | 471.08 | 423.18 | +11.3% | WIN |
+| NameThisGame | 1680.44 | 1697.28 | -1.0% | TIE |
+| BattleZone | 3726.05 | 3466.95 | +7.5% | WIN |
+
+OQE consistently positive vs IQN. PrivateEye +11.3% and BattleZone +7.5% are meaningful improvements. Novel exploration technique is working!
+
+### RESUBMISSIONS: 4 h066 gap games
+- h066-alien-s1: nibi (job 10652109)
+- h066-breakout-s1: narval (job 58049601)
+- h066-qbert-s1: fir (job 28582378)
+- h066-montezumarevenge-s1: nibi (job 10652111)
+These 4 had disappeared from narval/nibi without CSVs. All other h066 games covered by running jobs.
+
+### CLEANUP: Cancelled 2 stale h061 pending jobs on nibi (venture already banked, breakout running on fir).
+
+### ACTIVE JOBS: ~63 total
+- h064 (NoisyNet+N-step): 14 running, ~3h/4h → completing within ~1h (IMMINENT)
+- h065 (IQN+N-step): 10 running, ~3h/6h → completing in ~3h
+- h066 (OQE): 7 running + 4 resubmitted = 11 total
+- h067 (Replay+Resets): 8 running, 2.5-7h/8h → narval enduro/doubledunk/spaceinvaders finishing soon
+- h068 (OQE+Replay): 15 running, ~1h/8h → ~7h remaining
+- h050 (Munch alien): 1 running, fir ~3h/8h
+- h061 (C51 breakout): 1 running, fir just started
+
+### COVERAGE STATUS:
+| Hypothesis | Banked | Running | Missing |
+|-----------|--------|---------|---------|
+| h050 Munch | 14/15 | 1 (alien-fir) | 0 |
+| h061 C51 | 14/15 | 1 (breakout-fir) | 0 |
+| h064 Rainbow-A | 1/15 | 14 | 0 |
+| h065 IQN+N-step | 5/15 | 10 | 0 |
+| h066 OQE | 4/15 | 11 | 0 (all resubmitted) |
+| h067 Replay+Resets | 4/15 | 8 | 3 (covered by running) |
+| h068 OQE+Replay | 0/15 | 15 | 0 |
+
+ALL experiments fully covered. No gaps.
+
+### NEXT SESSION TODO:
+1. CRITICAL: Process h064 results — 14 jobs completing within ~1h. This will give full 15/15 for Rainbow-lite A.
+2. Process h067 narval completions (enduro/doubledunk/spaceinvaders at 6.7h/8h)
+3. Process h065/h066 results from fir/narval as they complete
+4. h068 OQE+Replay: first results expected in ~7h
+5. When h066/h067 reach 15/15: comprehensive comparison — these are the two most promising innovations
+6. If h066 OQE maintains 3W/0L/1T: MAJOR FINDING for novel exploration
+7. If h067 Replay maintains 4W/0L/0T: STRONGEST signal vs IQN
+
+---
+**[2026-03-20 18:32 UTC]**
+
+## Session 120: Fix h066 resubmission bug + resubmit 4 gap games
+
+### Triggered by: h066-breakout-s1 (job 58049601, narval) — reported SUCCESS but actually FAILED
+
+### BUG FOUND: Last session's resubmissions used WRONG script filename
+Previous session resubmitted 4 h066 games (alien, breakout, qbert, montezumarevenge) with command 'python cleanrl/dqn_atari_envpool_iqn_oqe.py' but the correct file is 'python cleanrl/iqn_atari_envpool_oqe.py'. All 4 would have failed.
+
+Additionally, h066-breakout-s1 original attempt (58035489) was CANCELLED DUE TO TIME LIMIT at 6h. So 8h walltime needed.
+
+### ACTIONS:
+1. Cancelled 3 wrongly-submitted jobs: nibi 10652109 (alien), nibi 10652111 (montezumarevenge), fir 28582378 (qbert)
+2. Resubmitted all 4 with CORRECT command and 8h walltime:
+   - h066-alien-s1: nibi (job 10652314)
+   - h066-breakout-s1: narval (job 58049769) — 8h walltime
+   - h066-qbert-s1: fir (job 28584004)
+   - h066-montezumarevenge-s1: nibi (job 10652354)
+
+### COVERAGE STATUS:
+| Hypothesis | Banked | Running | Resubmitted | ETA |
+|-----------|--------|---------|-------------|-----|
+| h050 Munch | 14/15 | 1R(fir ~3h/8h) | 0 | ~5h |
+| h061 C51 | 14/15 | 1R(fir ~14min/6h) | 0 | ~6h |
+| h064 Rainbow-A | 1/15 | 14R (2.5-3h/4h) | 0 | ~1-1.5h |
+| h065 IQN+N-step | 5/15 | 10R (2.5-3h/6h) | 0 | ~3h |
+| h066 OQE | 4/15 | 7R (2.5-3h/6h) | 4 resubmitted (8h) | ~3-8h |
+| h067 Replay+Resets | 4/15 | 11R (1-6.8h/8h) | 0 | ~1-7h |
+| h068 OQE+Replay | 0/15 | 15R (~1h/8h) | 0 | ~7h |
+
+### ALL HYPOTHESIS TALLIES (no change from last session):
+| Hyp | Games | IQM dHNS vIQN | W/L/T IQN |
+|-----|-------|--------------|-----------|
+| h067 Replay+Resets | 4/15 | ~+1.50 | 4/0/0 |
+| h066 OQE | 4/15 | ~+0.07 | 3/0/1 |
+| h065 IQN+N-step | 5/15 | ~+0.05 | 3/1/1 |
+| h064 NoisyNet+N-step | 1/15 | ~+0.40 | 1/0/0 |
+| h068 OQE+Replay | 0/15 | — | — |
+
+### NEXT SESSION TODO:
+1. CRITICAL: h064 fir/narval/nibi jobs completing within ~1-1.5h — will give 14 new games, completing to 15/15!
+2. h067 narval enduro/doubledunk/spaceinvaders at 6h50m/8h — ~1h from completion
+3. h065/h066 running jobs completing in ~3h
+4. h068 first results in ~7h
+5. h066 resubmitted gap games need 8h — check for crashes
+6. When h064 reaches 15/15: first full comparison of Rainbow-lite A (NoisyNet+N-step)
