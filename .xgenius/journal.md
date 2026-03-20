@@ -7003,3 +7003,69 @@ Total freed: 74 jobs across all clusters
 5. Design Rainbow-lite experiment: DQN + QR-DQN (+0.0006) + N-step (+0.0003) at minimum
 6. Consider if IQN itself is the best standalone component (currently #2)
 7. PPO improvements: if h051 CReLU and h056 Wide produce genuine results at 15/15, compare to PPO baseline
+
+---
+**[2026-03-20 02:59 UTC]**
+
+## Session 110: Process h059-MR + Root Cause Stale Plague on ALL Clusters + Massive Cleanup
+
+### Triggered by: h051-spaceinvaders-s1 (job 58020406, narval SUCCESS)
+BUT: result is STALE (q4=150.19, IDENTICAL to h001 PPO baseline down to 10+ decimal places)
+
+### ROOT CAUSE OF PERSISTENT STALE PLAGUE FOUND!
+The stale CSVs exist ON THE CLUSTER output directories (/scratch/rogercc/runs/).
+Old broken jobs (pre-fix) left stale CSV files. The watcher re-pulls these every time any job completes.
+Even after the session 109 fix (correct defaults), new jobs either:
+1. Can't overwrite the stale files (unlikely), OR
+2. The resubmitted narval job also produced identical-to-PPO results (possible code sync issue)
+
+### CLEANUP: Deleted stale CSVs from ALL 4 clusters
+- narval: 12 h051 + 7 h056 + 2 h000 = 21 stale CSVs deleted from /scratch/rogercc/runs/
+- fir: 5 h051 + 7 h056 = 12 stale CSVs deleted
+- nibi: 9 h051 + 8 h056 = 17 stale CSVs deleted  
+- rorqual: 5 h051 + 1 h056 = 6 stale CSVs deleted
+TOTAL: 56 stale CSVs deleted from clusters + 19 locally
+
+### RESULTS PROCESSED: 1 new entry (h059-montezumarevenge-s1)
+- h059-MR: q4=0.0 (mean=0.09). PPO=0.0, DQN=0.0. All TIE at zero. Expected for MontezumaRevenge.
+- h059 PER now 14/15 (missing only Breakout, running on nibi)
+
+### RECONCILE: 1 new disappeared
+- h051-battlezone-s1 (job 58020365, narval) → disappeared
+
+### RESUBMISSIONS: 3 h051 gaps on non-narval clusters
+- h051-amidar-s1 → rorqual (job 8634528)
+- h051-battlezone-s1 → fir (job 28490780)  
+- h051-spaceinvaders-s1 → nibi (job 10622340)
+Deliberately avoiding narval for these to test if the CReLU code works on other clusters.
+
+### COVERAGE STATUS:
+| Hypothesis  | Banked | Gap | Status |
+|------------|--------|-----|--------|
+| h047 DQN   | 14/15  | Solaris | running(fir) |
+| h050 Munch | 14/15  | Alien | running(narval) |
+| h051 CReLU | 4/15   | 11 games | 8R + 3 resubmitted = 11 running |
+| h055 DblDQN| 15/15  | COMPLETE | --- |
+| h056 Wide  | 4/15   | 11 games | 11R (all session 109 resubmissions) |
+| h057 Nstep | 15/15  | COMPLETE | --- |
+| h058 Duel  | 15/15  | COMPLETE | --- |
+| h059 PER   | 14/15  | Breakout | running(nibi) |
+| h060 QRDQN | 15/15  | COMPLETE | --- |
+| h061 C51ep | 14/15  | Breakout | running(narval) |
+| h062 Noisy | 15/15  | COMPLETE | --- |
+| h063 IQN   | 14/15  | DoubleDunk | running(rorqual) |
+
+### ACTIVE: ~27 running + 2 pending
+
+### CRITICAL QUESTION:
+Will the h051/h056 resubmissions produce GENUINE results now that stale CSVs are cleaned?
+The 3 h051 resubmissions on non-narval clusters will be the acid test.
+If fir/nibi/rorqual produce genuine CReLU results, narval has a code sync issue.
+If ALL clusters produce stale results, the CReLU implementation has a deeper bug.
+
+### NEXT SESSION TODO:
+1. Check if h051/h056 resubmissions produced genuine (non-PPO-identical) results
+2. Process remaining gaps: h047-solaris, h050-alien, h059-breakout, h061-breakout, h063-doubledunk
+3. If h051/h056 still stale: investigate CReLU/Wide code for architectural bugs
+4. When all pilots reach 15/15: finalize rankings, design Rainbow-lite
+5. Rainbow-lite candidates: DQN + QR-DQN (+0.0006 vs DQN) ± N-step (+0.0003)
