@@ -7425,3 +7425,48 @@ Key findings:
 5. When h066/h067 reach 15/15: KEY DECISION — OQE and Replay are both positive vs IQN, consider combining
 6. Next hypothesis candidates: IQN+OQE+Replay (combine best two), IQN+OQE+N-step (combine novel+orthogonal)
 
+
+---
+**[2026-03-20 17:27 UTC]**
+
+## Session 117: Bank h067-amidar + Launch h068 (OQE + Replay combination)
+
+### Triggered by: h067-amidar-s1 (job 10639918, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 1 genuine
+1. **h067-amidar-s1** (IQN+Replay+Resets): q4=60.59 vs PPO=2.04 WIN (+2870%). vs DQN=34.30 WIN (+76.6%). vs IQN=34.27 WIN (+76.8%). Replay ratio nearly DOUBLES IQN performance on Amidar!
+
+### h067 RUNNING TALLY (3/15 games):
+- Amidar: +76.8% vs IQN (WIN)
+- Phoenix: +91.1% vs IQN (WIN)
+- Venture: +263% vs IQN (WIN)
+- IQM dHNS vs IQN: ~+0.014 (3W/0L/0T). STRONGEST signal of any hypothesis!
+
+### NEW HYPOTHESIS LAUNCHED: h068 (IQN + OQE + Replay + Resets)
+Combines the two best IQN innovations:
+- OQE (h066): optimistic quantile exploration (2W/0L/1T vs IQN)
+- Replay+Resets (h067): higher replay ratio + periodic soft resets (3W/0L/0T vs IQN)
+These are orthogonal: OQE improves exploration quality, replay improves sample efficiency.
+Script: cleanrl/iqn_atari_envpool_oqe_replay.py
+15 jobs submitted: 5 narval, 5 nibi, 5 fir. 8h walltime.
+
+### OTHER ACTIONS:
+- h061-breakout-s1: resubmitted on narval (disappeared from nibi queue again)
+- h061-venture-s1: confirmed already banked, marked nibi job as disappeared
+
+### ACTIVE JOBS: ~68 total
+- h064: 14 running (fir/nibi/narval) — completing in ~2h
+- h065: 10 running (fir/nibi/narval) — completing in ~2-4h
+- h066: 12 running (fir/nibi/narval) — narval finishing any minute now (~5h40m/6h)
+- h067: 12 running (fir/nibi/narval) — completing in ~2-6h
+- h068: 15 submitted (narval/nibi/fir) — NEW, 8h walltime
+- h050: 1 running (fir) — ~1.8h/8h
+- h051: 2 running (fir/nibi) — diagnostic code
+
+### NEXT SESSION TODO:
+1. Process wave of h066 narval completions (breakout/battlezone/qbert/montezumarevenge — imminent!)
+2. Process h064/h065 results from nibi/narval as they complete
+3. Start processing h067 results from narval (~5.5h/8h)
+4. Watch h068 for crashes — first combination experiment
+5. When h064/h065/h066/h067 reach 15/15: comprehensive comparison of all IQN variants
+6. Key decision: if h068 OQE+Replay composes well, prepare 3-seed evaluation
