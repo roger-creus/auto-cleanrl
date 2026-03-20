@@ -7636,3 +7636,55 @@ Additionally, h066-breakout-s1 original attempt (58035489) was CANCELLED DUE TO 
 4. h068 first results in ~7h
 5. h066 resubmitted gap games need 8h — check for crashes
 6. When h064 reaches 15/15: first full comparison of Rainbow-lite A (NoisyNet+N-step)
+
+---
+**[2026-03-20 20:06 UTC]**
+
+## Session 121: Bank h066-phoenix + h067-doubledunk + Resubmit h064 (14 games) + h067 (2 games)
+
+### Triggered by: h066-phoenix-s1 (job 28544380, fir SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+1. **h066-phoenix-s1** (IQN+OQE): q4=139.71 vs PPO=892.49 LOSS (-84.3%). vs IQN=134.16 WIN (+4.1%). Modest OQE improvement on Phoenix.
+2. **h067-doubledunk-s1** (IQN+Replay+Resets): q4=-23.12 vs PPO=-18.10 LOSS. vs IQN=-22.59 LOSS (-2.4%). First h067 loss vs IQN on DoubleDunk.
+
+### UPDATED TALLIES (5 games each):
+| Hyp | Games | W/L/T IQN | Key Results |
+|-----|-------|-----------|-------------|
+| h066 OQE | 5/15 | **5/0/0** | UNDEFEATED. MsPac+3.5%, PE+11.3%, NTG+7.4%, BZ+7.5%, Phoenix+4.1% |
+| h067 Replay | 5/15 | **4/1/0** | Phoenix+91%, Venture+263%, Amidar+77%, Solaris+98%, DD-2.4% |
+| h065 IQN+N-step | 5/15 | 3/1/1 | BZ+18%, SI+11%, Break+4%, Qbert-7%, MR TIE |
+| h064 Rainbow-A | 1/15 | — | Only Phoenix so far |
+
+### TIMEOUT FAILURES DISCOVERED:
+1. **h064 (Rainbow-lite NoisyNet+N-step)**: ALL 5 fir jobs (4h walltime) timed out. ALL 9 nibi/narval jobs (4h) also disappeared (reconciled). Script runs slower than expected. RESUBMITTED all 14 games with 8h walltime across fir/nibi/narval.
+2. **h067-enduro-s1 and h067-spaceinvaders-s1**: TIMED OUT at 8h on narval. IQN+replay is slower due to 4x replay ratio. Resubmitted with 10h walltime on nibi and fir.
+3. **h067-doubledunk-s1**: Completed on narval but CSV not auto-pulled. Manually pulled and banked.
+
+### RESUBMISSIONS: 16 total
+- h064: 14 games (alien, amidar, breakout, enduro, battlezone, doubledunk, mspacman, namethisgame, privateeye, qbert, spaceinvaders, solaris, venture, montezumarevenge) × 8h walltime across fir/nibi/narval
+- h067-enduro-s1: nibi 10h, h067-spaceinvaders-s1: fir 10h
+
+### ACTIVE JOBS: ~61 total
+- h065 IQN+N-step: 10 running (fir 4.5h/6h, nibi 4h/6h, narval 4h/6h) — COMPLETING WITHIN ~1-2h
+- h066 OQE: 10 running (fir/nibi/narval, various 4-6h/6-8h) + resubmissions ~1.5h in
+- h067 Replay: 8 running (fir 4.5h/8h, nibi 4h/8h, narval 4h/8h) + 2 resubmitted
+- h068 OQE+Replay: 15 running (~2.5h/8h on fir/nibi/narval)
+- h064 Rainbow-A: 14 just submitted (8h walltime)
+- h050: 1 running (fir ~4.5h/8h)
+- h061: 1 running (fir ~1.75h/6h)
+
+### KEY OBSERVATION — h066 OQE IS THE STANDOUT:
+OQE (Optimistic Quantile Exploration) is UNDEFEATED across 5 games (5W/0L/0T vs IQN). While the individual margins are modest (+3.5% to +11.3%), the consistency is remarkable. This is a genuinely novel exploration technique with zero losses. If it maintains this across 15 games it's a publishable finding.
+
+h067 Replay+Resets has larger individual wins (up to +263%) but just recorded its first loss (DoubleDunk -2.4%). Still very strong at 4W/1L.
+
+### NEXT SESSION TODO:
+1. IMMINENT: h065 results from fir/nibi/narval (~1-2h, 10 games to bank, will complete to 15/15!)
+2. h066 fir/narval 6h jobs completing within ~1.5h (amidar/solaris/venture/enduro/spaceinvaders)
+3. h067 fir/nibi/narval 8h jobs completing in ~3-4h
+4. h068 OQE+Replay first results in ~5.5h
+5. h064 Rainbow-A 14 resubmitted 8h jobs in ~8h
+6. When h066 reaches 15/15: If OQE maintains 5W/0L, this is a MAJOR FINDING
+7. When h067/h068 reach 15/15: Compare all IQN variants for the best combination
