@@ -7318,3 +7318,62 @@ These are orthogonal improvements that should compose well.
 5. The OQE technique (h066) is the most novel thing we've done — watch carefully
 6. h067 will be slower but should show if replay ratio + resets help IQN
 7. Continue monitoring h050-alien and h051 diagnostic results
+
+---
+**[2026-03-20 16:02 UTC]**
+
+## Session 115: Process h066 OQE Results + Rorqual Rescue (23 resubmissions)
+
+### Triggered by: h066-privateeye-s1 (nibi SUCCESS), h066-mspacman-s1 (nibi SUCCESS)
+
+### NEW RESULTS BANKED: 5 genuine
+1. h065-battlezone-s1 (IQN+N-step): q4=4095.55 vs PPO=2364.31 WIN (+73.2%). vs IQN=3466.95 WIN (+18.1%). N-step HELPS IQN on BattleZone!
+2. h065-breakout-s1 (IQN+N-step): q4=1.92 vs PPO=1.37 WIN. vs IQN=1.85 WIN (+3.8%). Trivial game.
+3. h065-spaceinvaders-s1 (IQN+N-step): q4=278.67 vs PPO=150.19 WIN (+85.5%). vs IQN=250.88 WIN (+11.1%). N-step boosts IQN on SpaceInvaders.
+4. h066-mspacman-s1 (IQN+OQE): q4=514.10 vs PPO=287.07 WIN (+79.1%). vs IQN=496.64 WIN (+3.5%). OQE slight boost.
+5. h066-privateeye-s1 (IQN+OQE): q4=471.08 vs PPO=-170.71 MASSIVE WIN. vs IQN=423.18 WIN (+11.3%). OQE HELPS on exploration-heavy game!
+
+### OQE EARLY ANALYSIS (h066 — 2/15 games):
+- MsPacman: +3.5% over IQN (slight, but exploration game)
+- PrivateEye: +11.3% over IQN (SIGNIFICANT — PrivateEye is hard-exploration)
+- OQE's optimistic quantile sampling is doing what we intended: biasing toward optimistic outcomes early in training drives better exploration of PrivateEye. This is the most novel technique we've developed.
+
+### h065 IQN+N-step EARLY (5/15 games):
+- BattleZone: +18.1% vs IQN. Qbert: -6.7%. SpaceInvaders: +11.1%. Breakout: +3.8%. MR: TIE.
+- N-step helps IQN on 3/5 games, hurts on 1 (Qbert). Too early to conclude.
+
+### RORQUAL CLUSTER DOWN: All nodes unavailable (ReqNodeNotAvail)
+- 16 jobs stuck pending on rorqual since submission (~14h ago)
+- Cancelled ALL 16 rorqual pending jobs
+- Resubmitted on nibi (12) and narval (11) = 23 new submissions
+- Jobs include: h051-alien, h064 (9 games), h065 (6 games), h066 (3 games), h067 (4 games)
+
+### h066-namethisgame-s1: Was running on nibi (job 10639912) but disappeared from SLURM between DB check and status check. No CSV pulled. Either just completed (watcher will pick up) or disappeared (resubmission not needed since it wasn't in rorqual batch). Will check next session.
+
+### COVERAGE STATUS:
+| Hypothesis | Banked | Gap | Active |
+|-----------|--------|-----|--------|
+| h050 Munch| 14/15  | Alien | running(fir ~23min) |
+| h051 CReLU| 4/15   | 11 games | 2R (fir breakout, nibi alien) |
+| h061 C51  | 14/15  | Breakout | pending(nibi) |
+| h064 Rainbow-A| 1/15 | 14 games | 5R(fir) + 9 submitted(nibi/narval) |
+| h065 IQN+N | 5/15 | 10 games | 4R(fir) + 6 submitted(nibi/narval) |
+| h066 OQE  | 2/15  | 13 games | 9R(nibi/fir/narval) + 3 submitted(nibi/narval) + 1 unknown(namethisgame) |
+| h067 Replay| 0/15  | 15 games | 11R(nibi/fir/narval) + 4 submitted(nibi/narval) |
+
+### LITERATURE REVIEW: Searched for recent (2024-2026) distributional RL exploration papers.
+Key findings:
+- Quantile-based exploration bonuses (DPE, upper-quantile) are well-motivated and show strong Atari results
+- Beyond The Rainbow (BTR, 2024) achieves IQM 7.4-7.6 on Atari-60 vs Rainbow's 2.7
+- Epistemic vs aleatoric uncertainty distinction: our OQE captures optimistic aleatoric uncertainty; epistemic uncertainty (ensemble disagreement) is another promising direction
+- Several 2025 papers on optimistic exploration using distributional information align with our OQE approach
+
+### NEXT SESSION TODO:
+1. Process h066/h067 results as they complete — OQE results are CRITICAL (most novel technique)
+2. Check h066-namethisgame status (completed or disappeared?)
+3. Process h050-alien and h061-breakout when they complete (finalize both at 15/15)
+4. If h066 OQE consistently beats IQN across 15 games: MAJOR FINDING, prepare for 3-seed evaluation
+5. When h064/h065 complete: compare Rainbow-lite A (NoisyNet+Nstep) vs B (IQN+Nstep)
+6. Next hypothesis ideas: IQN + OQE + N-step combo, or IQN + variance-based epistemic exploration bonus
+7. h051/h056 CReLU/Wide: mostly abandoned but 2 diagnostic jobs running on fir/nibi
+
