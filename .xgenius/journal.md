@@ -7258,3 +7258,63 @@ These are orthogonal improvements that should compose well.
 4. If both positive: consider combining all three (IQN + N-step + NoisyNet)
 5. h051/h056: if diagnostic jobs produce genuine results, resubmit all 11 games. If stale: abandon.
 6. Start thinking about novel innovations beyond component combination
+
+---
+**[2026-03-20 11:40 UTC]**
+
+## Session 114: Process 3 New Results + Two Novel Hypotheses (h066 OQE, h067 Replay) + Resubmit h064 Gaps
+
+### Triggered by: h065-montezumarevenge-s1 (job 10632579, nibi SUCCESS)
+
+### NEW RESULTS PROCESSED: 3 genuine + 1 recovered
+1. h064-phoenix-s1 (Rainbow-lite NoisyNet+N-step): q4=188.31 vs PPO=892.49 LOSS (-78.9%). vs DQN=93.03 WIN (+102.4%). But WORSE than NoisyNet alone (301.31) — N-step drags NoisyNet down on Phoenix. Interesting negative synergy.
+2. h065-qbert-s1 (IQN+N-step): q4=204.51 vs PPO=162.49 WIN (+25.9%). vs DQN=228.23 LOSS (-10.4%). vs IQN alone=219.30 LOSS (-6.7%). N-step drags IQN down on Qbert too.
+3. h065-montezumarevenge-s1: All zeros. Expected.
+4. h061-venture-s1: Already banked from rorqual (recovered from disappeared state).
+
+### EARLY h064/h065 OBSERVATIONS:
+- N-step appears to HURT both NoisyNet (Phoenix) and IQN (Qbert) on specific games
+- Only 1-2 games each — too early to draw conclusions
+- But concerning: the +0.0006 vs DQN advantage of N-step alone may not compose with other components
+
+### DISAPPEARED h064 JOBS ON NIBI: 3 killed immediately (amidar, solaris, venture)
+- Root cause: chdir error with embedded quotes in working directory path
+- Resubmitted: h064-amidar on rorqual, h064-solaris on fir, h064-venture on narval
+
+### TWO NOVEL HYPOTHESES DESIGNED AND SUBMITTED:
+1. **h066: IQN + Optimistic Quantile Exploration (OQE) [NOVEL]** — 15 jobs
+   - During action selection: sample tau from U(beta_t, 1.0) instead of U(0,1)
+   - beta_t anneals from 0.5 to 0.0 over first 50% of training
+   - Early: upper-half quantiles -> optimistic, directed exploration (UCB-like)
+   - Late: full distribution -> standard mean-value exploitation
+   - Training loss unchanged (standard IQN with tau ~ U(0,1))
+   - This is a NOVEL technique: uses IQN distributional information for principled exploration
+   - No external bonuses (RND/ICM) or random epsilon needed for optimism
+
+2. **h067: IQN + Higher Replay Ratio + Periodic Soft Resets** — 15 jobs
+   - Increase from 1 to 4 gradient updates per env step batch (replay ratio ~2)
+   - Periodic soft resets of value head every 200K steps (shrink 80%)
+   - Inspired by BBF but applied to IQN distributional RL
+   - 8h walltime (4x slower due to 4x gradient updates)
+
+### COVERAGE STATUS:
+| Hypothesis | Banked | Gap | Active |
+|-----------|--------|-----|--------|
+| h050 Munch| 14/15  | Alien | pending(fir) |
+| h051 CReLU| 4/15   | 11 games | 2P (alien-rorqual, breakout-fir) |
+| h061 C51  | 14/15  | Breakout | running(narval ~2h) |
+| h064 Rainbow| 1/15  | 14 games | 4R(narval) + 10P(fir/rorqual/nibi resubmits) |
+| h065 IQN+N | 2/15  | 13 games | 5R(narval/nibi) + 8P(fir/rorqual) |
+| h066 OQE  | 0/15  | all | 15 submitted |
+| h067 Replay| 0/15  | all | 15 submitted |
+
+### ACTIVE: 10R + 53P = 63 SLURM jobs across all clusters
+
+### NEXT SESSION TODO:
+1. Process h064/h065 results as narval jobs complete (~2h remaining)
+2. Process h061-breakout when it completes (finalizes C51 at 15/15)
+3. Watch for h066/h067 first results — check they don't crash
+4. If h064/h065 show N-step hurts consistently: N-step may not compose well with other components
+5. The OQE technique (h066) is the most novel thing we've done — watch carefully
+6. h067 will be slower but should show if replay ratio + resets help IQN
+7. Continue monitoring h050-alien and h051 diagnostic results
