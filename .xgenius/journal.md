@@ -7849,3 +7849,55 @@ These will bring h065 to 14/15 (only solaris remaining → resubmitted on nibi 8
 5. h068 first results in ~4h
 6. h064 results in ~6.5h
 7. h050-alien and h061-breakout completing in ~2-2.5h
+
+---
+**[2026-03-20 21:50 UTC]**
+
+## Session 125: Bank h066-spaceinvaders-s1 (OQE 9th non-loss) + Submit h065 backups
+
+### Triggered by: h066-spaceinvaders-s1 (job 58042305, narval) — SUCCESS
+
+### NEW RESULT BANKED: 1
+
+**h066-spaceinvaders-s1** (IQN+OQE): q4=262.71 vs PPO=150.19 WIN (+74.9%). vs IQN=250.88 WIN (+4.7%). OQE continues its unbeaten streak.
+
+### h066 OQE UPDATED TALLY (9/15 games — ZERO LOSSES):
+| Game | q4 | vs IQN | Delta | Result |
+|------|-----|--------|-------|--------|
+| MsPacman | 514.10 | 496.64 | +3.5% | WIN |
+| PrivateEye | 471.08 | 423.18 | +11.3% | WIN |
+| BattleZone | 3726.05 | 3466.95 | +7.5% | WIN |
+| Phoenix | 139.71 | 134.16 | +4.1% | WIN |
+| SpaceInvaders | 262.71 | 250.88 | +4.7% | WIN |
+| DoubleDunk | -22.45 | -22.59 | +0.6% | WIN |
+| Venture | 3.62 | 1.05 | +244.8% | WIN |
+| NTG | 1680.44 | 1697.28 | -1.0% | TIE |
+| Amidar | 33.98 | 34.27 | -0.8% | TIE |
+
+7W/0L/2T — UNDEFEATED after 9/15 games. The two TIEs are within noise (-0.8% and -1.0%).
+
+### CANCELLED: h066-spaceinvaders-s1 backup on fir (job 28635334) — narval succeeded.
+
+### h065 TIMEOUT RISK: 3 narval jobs at 5:52/6:00
+h065-alien, h065-namethisgame, h065-enduro on narval all at 5:52/6:00 (8 min from timeout). Pre-submitted 8h backups:
+- h065-alien-s1: nibi (job 10662240, 8h)
+- h065-namethisgame-s1: fir (job 28641439, 8h)
+- h065-enduro-s1: fir (job 28641547, 8h)
+
+### ACTIVE JOBS: ~55 total
+- h050: 1R (fir alien 6:20/8h → ~1.5h)
+- h061: 1R (fir breakout 3:30/6h → ~2.5h)
+- h064 Rainbow-A: 14R (fir 1.5h/8h, narval 0.5-1.5h/8h, nibi 12min/8h → ~6.5-8h)
+- h065 IQN+N-step: 3R narval (5:52/6h IMMINENT) + 4R backups (nibi/fir 8h) + 1R nibi solaris 8h
+- h066 OQE: 6R (narval breakout 3:12/8h, nibi alien/MR 3:14/8h, fir qbert 3:10/8h, nibi solaris/enduro 5min/8h → ~5-8h)
+- h067 Replay: fir 4R at 6:22/8h (~1.5h), narval PE/MsPac 5:48/8h (~2h), nibi alien/NTG 5:48/8h (~2h), nibi SI 12min/10h, fir enduro 13min/10h
+- h068 OQE+Replay: 15R at ~4:20/8h → ~3.5h for first results
+
+### NEXT SESSION TODO:
+1. h067 fir results (breakout/BZ/qbert/MR) completing in ~1.5h → h067 reaches 9/15
+2. h067 narval/nibi results (PE/MsPac/alien/NTG) in ~2h → h067 reaches 13/15
+3. h068 first results in ~3.5h — KEY test of OQE+Replay combination
+4. h065 narval jobs complete or time out within minutes — backups already submitted
+5. h066 remaining 6 games completing in ~5-8h → approaches 15/15
+6. h064 Rainbow-A results in ~6.5-8h
+7. When h066 reaches 15/15: If ZERO losses maintained → MAJOR PUBLISHABLE FINDING
