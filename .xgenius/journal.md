@@ -7470,3 +7470,58 @@ Script: cleanrl/iqn_atari_envpool_oqe_replay.py
 4. Watch h068 for crashes — first combination experiment
 5. When h064/h065/h066/h067 reach 15/15: comprehensive comparison of all IQN variants
 6. Key decision: if h068 OQE+Replay composes well, prepare 3-seed evaluation
+
+---
+**[2026-03-20 18:14 UTC]**
+
+## Session 118: Bank h067-solaris + Confirm h051 stale plague + Resubmit h061-breakout
+
+### Triggered by: h051-alien-s1 (job 10648101, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+1. **h067-solaris-s1** (IQN+Replay+Resets): q4=1374.76 vs PPO=2163.56 LOSS (-36.5%). vs DQN=304.33 WIN (+351.8%). vs IQN=696.07 WIN (+97.5%). Replay ratio nearly DOUBLES IQN on Solaris! This is one of IQN's weakest games and replay+resets brings it much closer to PPO.
+
+2. **h051-alien-s1** (PPO+CReLU): q4=207.63 — IDENTICAL to PPO baseline (207.63). Final confirmation of stale plague. Closed h051 and h056 permanently.
+
+### h067 RUNNING TALLY (4/15 games — STRONGEST hypothesis):
+| Game | q4 | vs IQN | Delta |
+|------|-----|--------|-------|
+| Amidar | 60.59 | 34.27 | +76.8% WIN |
+| Phoenix | 256.43 | 134.16 | +91.1% WIN |
+| Venture | 3.81 | 1.05 | +263% WIN |
+| Solaris | 1374.76 | 696.07 | +97.5% WIN |
+Record: 4W/0L/0T vs IQN. IQM dHNS vs IQN ~+1.50 (exceptional).
+
+### ALL HYPOTHESIS RUNNING TALLIES:
+| Hyp | Games | IQM dHNS vIQN | W/L/T IQN | Notes |
+|-----|-------|--------------|-----------|-------|
+| h067 Replay+Resets | 4/15 | ~+1.50 | 4/0/0 | STRONGEST. All large wins. |
+| h066 OQE | 3/15 | ~+0.07 | 2/0/1 | Modest but consistent. PrivateEye +11.3% key. |
+| h065 IQN+N-step | 5/15 | ~+0.05 | 3/1/1 | Moderate. BZ+SI wins, Qbert loss. |
+| h064 NoisyNet+N-step | 1/15 | ~+0.40 | 1/0/0 | Only Phoenix so far. |
+| h068 OQE+Replay | 0/15 | — | — | All 15 running, ~45min in. |
+
+### ACTIONS:
+- Closed h051 (CReLU) and h056 (Wide CNN) as stale plague — permanently abandoned
+- Resubmitted h061-breakout-s1 on fir (job 28578738) — 5th attempt to complete C51 at 15/15
+- All other jobs running normally: 59 running across 4 clusters
+
+### COVERAGE:
+| Hypothesis | Banked | Running | ETA |
+|-----------|--------|---------|-----|
+| h050 Munch | 14/15 | 1R(fir ~3h/8h) | ~5h |
+| h061 C51 | 14/15 | 1 resubmitted(fir) | ~6h |
+| h064 Rainbow-A | 1/15 | 14R (2-3h in) | ~1-2h |
+| h065 IQN+N-step | 5/15 | 10R (2-3h in) | ~1-3h |
+| h066 OQE | 3/15 | 7R (2-3h in) | ~1-3h |
+| h067 Replay+Resets | 4/15 | 11R (2-7h in) | ~1-6h |
+| h068 OQE+Replay | 0/15 | 15R (~45min in) | ~7h |
+
+### NEXT SESSION TODO:
+1. CRITICAL: Process h064/h065/h066 results — narval/nibi/fir jobs at 2-3h should complete within 1-2h
+2. Process h067 narval jobs (doubledunk/enduro/spaceinvaders at 6.5h/8h — completing soon)
+3. Watch h068 for crashes (first combo experiment, ~45min in so far)
+4. When h067 reaches more games: if it maintains 4W/0L vs IQN it is THE breakthrough finding
+5. h067+h066 combo (h068) is the most important experiment — combines two best innovations
+6. h061-breakout on fir: 5th attempt, just resubmitted
