@@ -7377,3 +7377,51 @@ Key findings:
 6. Next hypothesis ideas: IQN + OQE + N-step combo, or IQN + variance-based epistemic exploration bonus
 7. h051/h056 CReLU/Wide: mostly abandoned but 2 diagnostic jobs running on fir/nibi
 
+
+---
+**[2026-03-20 17:13 UTC]**
+
+## Session 116: Process h067 Phoenix+Venture + h066 NameThisGame
+
+### Triggered by: h067-phoenix-s1 (nibi SUCCESS), h067-venture-s1 (nibi SUCCESS)
+
+### NEW RESULTS BANKED: 3 genuine
+
+1. **h067-phoenix-s1** (IQN+Replay+Resets): q4=256.43 vs PPO=892.49 LOSS (-71.3%). vs IQN=134.16 WIN (+91.1%). Higher replay ratio massively boosts IQN on Phoenix.
+2. **h067-venture-s1** (IQN+Replay+Resets): q4=3.81 vs PPO=0.0 WIN. vs IQN=1.05 WIN (+263%). Replay ratio helps Venture too.
+3. **h066-namethisgame-s1** (IQN+OQE): q4=1680.44 vs PPO=2522.54 LOSS (-33.4%). vs IQN=1564.76 WIN (+7.4%). OQE positive on NameThisGame.
+
+### RUNNING TALLIES:
+| Hyp | Games | IQM dHNS vPPO | IQM dHNS vIQN | W/L/T IQN |
+|-----|-------|--------------|--------------|-----------|
+| h066 OQE | 3/15 | -0.0343 | +0.0078 | 2W/0L/1T |
+| h067 Replay | 2/15 | -0.0475 | +0.0106 | 2W/0L/0T |
+| h065 IQN+N-step | 5/15 | +0.0313 mean | +0.0095 mean | - |
+| h064 NoisyNet+N-step | 1/15 | -0.1086 | +0.0147 | - |
+
+### KEY OBSERVATIONS:
+- h067 (IQN+Replay+Resets) shows STRONGEST early signal vs IQN: +91.1% Phoenix, +263% Venture. Both games where IQN struggles. Replay ratio clearly helping.
+- h066 (OQE) consistently positive vs IQN: 2W/0L/1T across 3 games. PrivateEye +11.3% and NameThisGame +7.4% are meaningful exploration-game wins.
+- All 4 hypotheses have FULL 15-game coverage via running jobs (54 total active).
+- Narval h066 jobs (breakout, battlezone, qbert, montezumarevenge) at 5.5h/6h — expect completion within ~30 min.
+- h050-alien running on fir (~1.7h/8h). h061-breakout pending on nibi. Both finalizers.
+
+### COVERAGE STATUS:
+| Hypothesis | Banked | Active | Notes |
+|-----------|--------|--------|-------|
+| h050 Munch | 14/15 | 1R(fir) | Alien finalizer |
+| h051 CReLU | 4/15 | 2R(nibi,fir) | Diagnostic code, likely stale plague |
+| h061 C51 | 14/15 | 2P(nibi) | Breakout+Venture(already banked) |
+| h064 Rainbow-A | 1/15 | 14R(all clusters) | All 14 missing covered |
+| h065 IQN+N-step | 5/15 | 10R(all clusters) | All 10 missing covered |
+| h066 OQE | 3/15 | 12R(all clusters) | All 12 missing covered |
+| h067 Replay | 2/15 | 13R(all clusters) | All 13 missing covered |
+
+### NEXT SESSION TODO:
+1. Process wave of h066 narval completions (~30 min)
+2. Process h064/h065 results from fir/nibi (~2-3h)
+3. h067 has longest walltime (8h) — results will trickle in over next 6h
+4. When h064/h065 reach 15/15: compare Rainbow-lite A (NoisyNet+N-step) vs B (IQN+N-step) vs IQN alone
+5. When h066/h067 reach 15/15: KEY DECISION — OQE and Replay are both positive vs IQN, consider combining
+6. Next hypothesis candidates: IQN+OQE+Replay (combine best two), IQN+OQE+N-step (combine novel+orthogonal)
+
