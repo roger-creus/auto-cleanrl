@@ -7799,3 +7799,53 @@ ALL experiments fully covered. No gaps.
 5. h064 Rainbow-A: 9 running + 7 pending, results in ~7h
 6. When h065 reaches 15/15: COMPREHENSIVE comparison with full IQM dHNS calculation
 7. When h066 reaches 15/15: If OQE maintains 7W/0L, this is THE publication headline finding
+
+---
+**[2026-03-20 21:38 UTC]**
+
+## Session 124: h067-enduro FAILED (wrong script) + Resubmit 5 gap experiments
+
+### Triggered by: h067-enduro-s1 (job 10659113, nibi) — reported SUCCESS but actually FAILED
+
+### BUG: h067-enduro-s1 (job 10659113) used wrong script name
+Job used 'dqn_atari_envpool_iqn_replay.py' instead of 'iqn_atari_envpool_replay.py'. File not found error. This was from a previous session's resubmission that had the wrong script name.
+Resubmitted on fir (job 28634198, 10h walltime).
+
+### TIMEOUT DISCOVERIES:
+1. h065-solaris-s1 (fir job 28518305): CANCELLED DUE TO TIME LIMIT at 6h. Resubmitted on nibi (job 10661946, 8h).
+2. h066-solaris-s1 (fir job 28544359): CANCELLED DUE TO TIME LIMIT at 6h. Resubmitted on nibi (job 10661953, 8h).
+3. h066-enduro-s1 (narval job 58042302): Currently at 5:38/6h — likely to time out. Pre-submitted backup on nibi (job 10661956, 8h).
+4. h066-spaceinvaders-s1 (narval job 58042305): Currently at 5:37/6h — likely to time out. Pre-submitted backup on fir (job 28635334, 8h).
+
+### COVERAGE STATUS:
+| Hypothesis | Banked | Running | Resubmitted | Gap |
+|-----------|--------|---------|-------------|-----|
+| h050 Munch | 14/15 | 1(fir alien 6h/8h) | 0 | 0 |
+| h061 C51 | 14/15 | 1(fir breakout 3h/6h) | 0 | 0 |
+| h064 Rainbow-A | 1/15 | 14(~1.5h/8h) | 0 | 0 |
+| h065 IQN+N-step | 11/15 | 3(narval IMMINENT 5:38/6h) | 1(solaris nibi 8h) | 0 |
+| h066 OQE | 8/15 | 4(alien/breakout/MR/qbert ~3h/8h) + 2(narval enduro/SI near timeout) | 3(solaris/enduro/SI 8h backups) | 0 |
+| h067 Replay | 5/15 | 8(fir/nibi/narval 5.5-6h/8h) | enduro(fir 10h) + SI(nibi 10h) | 0 |
+| h068 OQE+Replay | 0/15 | 15(~4h/8h) | 0 | 0 |
+
+### IMMINENT COMPLETIONS (~20min):
+- h065-alien-s1 (narval 5:39/6h)
+- h065-namethisgame-s1 (narval 5:38/6h)
+- h065-enduro-s1 (narval 5:38/6h)
+These will bring h065 to 14/15 (only solaris remaining → resubmitted on nibi 8h)
+
+### KEY TALLIES (unchanged):
+| Hyp | Games | W/L/T IQN |
+|-----|-------|-----------|
+| h066 OQE | 8/15 | 7/0/1 UNDEFEATED |
+| h067 Replay | 5/15 | 4/1/0 |
+| h065 N-step | 11/15 | 7/3/1 |
+
+### NEXT SESSION TODO:
+1. IMMINENT: Bank h065 narval results (alien, namethisgame, enduro) → h065 reaches 14/15
+2. h067 fir jobs completing in ~2h (breakout, battlezone, qbert, MR)
+3. h067 nibi/narval jobs in ~2.5h (alien, namethisgame, privateeye, mspacman)
+4. h066 narval enduro/spaceinvaders either complete or time out within 20min — backups running
+5. h068 first results in ~4h
+6. h064 results in ~6.5h
+7. h050-alien and h061-breakout completing in ~2-2.5h
