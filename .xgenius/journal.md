@@ -7069,3 +7069,50 @@ If ALL clusters produce stale results, the CReLU implementation has a deeper bug
 3. If h051/h056 still stale: investigate CReLU/Wide code for architectural bugs
 4. When all pilots reach 15/15: finalize rankings, design Rainbow-lite
 5. Rainbow-lite candidates: DQN + QR-DQN (+0.0006 vs DQN) ± N-step (+0.0003)
+
+---
+**[2026-03-20 03:36 UTC]**
+
+## Session 111: h051/h056 Deep Stale Plague Investigation + Diagnostic Jobs
+
+### Triggered by: h051-enduro-s1 (nibi SUCCESS), h056-spaceinvaders-s1 (nibi SUCCESS)
+Both triggered results are STALE — episodic returns are BIT-FOR-BIT identical to h001 PPO baseline.
+
+### New results processed: 0 genuine, 3 stale (discarded)
+- h051-enduro-s1 (nibi): STALE. q4=0.0, identical to h001. SPS=3545 (vanilla PPO speed, not CReLU ~5353)
+- h056-spaceinvaders-s1 (nibi): STALE. q4=150.19, identical to h001 to float precision. Episodic returns diff=ZERO across ALL 40M steps
+- h056-breakout-s1 (narval): STALE. q4=1.365, identical to h001
+- h051-phoenix-s1 (narval): STALE. q4=892.49, identical to h001. SPS=3613 (vanilla speed)
+
+### Stale CSVs cleaned: 6 local files deleted (h000, stale h051/h056, already-banked)
+
+### DEEP INVESTIGATION FINDINGS:
+1. Code verified CORRECT on ALL 4 clusters via SSH cat — wider/CReLU architectures present
+2. SPS analysis proves the issue: stale runs have vanilla-PPO SPS (~3545), genuine CReLU runs have ~5353 SPS
+3. All GENUINE h051/h056 results came from jobs submitted at 10:13 UTC (BEFORE session 109 fix at 19:47)
+4. All STALE h051/h056 results came from jobs submitted at 23:52 UTC (AFTER session 109 fix sync)
+5. The code was correct both before and after the fix — only defaults changed
+6. Despite verified correct code on cluster disk, Singularity container serves vanilla PPO architecture
+7. Root cause UNKNOWN but likely NFS caching or Singularity bind mount issue
+8. No __pycache__ on clusters (excluded by rsync)
+
+### DIAGNOSTIC JOBS SUBMITTED:
+- h056diag-spaceinvaders (nibi, job 10624800, 100K steps) — prints script path, MD5, Conv1 weight shape
+- h051diag-spaceinvaders (fir, job 28498396, 100K steps) — same diagnostics
+- SBATCH templates updated with PYTHONDONTWRITEBYTECODE=1
+
+### ACTIVE CRITICAL JOBS (non-h051/h056):
+- h047-solaris-s1 (fir): DQN baseline finalizer, ~4.5h running
+- h050-alien-s1 (narval): Munchausen finalizer, ~6.5h running  
+- h059-breakout-s1 (nibi): PER finalizer, ~4h running
+- h061-breakout-s1 (narval): C51 40M finalizer, ~4h running
+- h063-doubledunk-s1 (rorqual): IQN finalizer, ~3h running
+
+### 10 h051/h056 jobs still running (all likely stale based on SPS pattern)
+
+### NEXT SESSION TODO:
+1. Check diagnostic job results — they will DEFINITIVELY show if Singularity serves wrong code
+2. Process h047/h050/h059/h061/h063 completions to finalize all DQN component pilots
+3. Based on diagnostic results: either fix the container/bind mount issue or abandon h051/h056
+4. Design Rainbow-lite: DQN + QR-DQN (+0.0006) + N-step (+0.0003) — the only positive vs-DQN components
+5. Consider IQN as standalone best if doubledunk doesn't crash it

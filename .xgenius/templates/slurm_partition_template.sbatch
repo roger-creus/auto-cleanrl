@@ -21,4 +21,4 @@ rsync -avz $SCRATCH/{{IMAGE_NAME}} $SLURM_TMPDIR
         --bind {{OUTPUT_DIR_IN_CLUSTER}}:{{OUTPUT_DIR_IN_CONTAINER}} \
         --workdir /src \
         $SLURM_TMPDIR/{{IMAGE_NAME}} \
-        bash -c "cd /src && {{COMMAND}}"
+        bash -c "export PYTHONDONTWRITEBYTECODE=1 && cd /src && {{COMMAND}}"

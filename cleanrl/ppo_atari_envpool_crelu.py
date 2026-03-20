@@ -223,7 +223,18 @@ if __name__ == "__main__":
     envs = RecordEpisodeStatistics(envs)
     assert isinstance(envs.action_space, gym.spaces.Discrete), "only discrete action space is supported"
 
+    # Diagnostic: verify correct script and architecture
+    import hashlib
+    _script_path = os.path.abspath(__file__)
+    with open(_script_path, 'rb') as _f:
+        _script_hash = hashlib.md5(_f.read()).hexdigest()
+    print(f"[ARCH DIAG] Script path: {_script_path}")
+    print(f"[ARCH DIAG] Script MD5: {_script_hash}")
     agent = Agent(envs).to(device)
+    total_params = sum(p.numel() for p in agent.parameters())
+    print(f"[ARCH DIAG] Agent total parameters: {total_params}")
+    print(f"[ARCH DIAG] Network: {agent.network}")
+    print(f"[ARCH DIAG] Conv1 weight shape: {list(agent.network[0].weight.shape)}")
     optimizer = optim.Adam(agent.parameters(), lr=args.learning_rate, eps=1e-5)
 
     # ALGO Logic: Storage setup
