@@ -7688,3 +7688,53 @@ h067 Replay+Resets has larger individual wins (up to +263%) but just recorded it
 5. h064 Rainbow-A 14 resubmitted 8h jobs in ~8h
 6. When h066 reaches 15/15: If OQE maintains 5W/0L, this is a MAJOR FINDING
 7. When h067/h068 reach 15/15: Compare all IQN variants for the best combination
+
+---
+**[2026-03-20 20:30 UTC]**
+
+## Session 122: Bank h065-doubledunk + h065-phoenix (recovered) — h065 now 7/15
+
+### Triggered by: h065-doubledunk-s1 (job 10648151, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+1. **h065-doubledunk-s1** (IQN+N-step): q4=-22.44 vs PPO=-18.10 LOSS. vs IQN=-22.59 WIN (+0.7%). Marginal N-step improvement on DoubleDunk.
+2. **h065-phoenix-s1** (IQN+N-step): q4=174.29 vs PPO=892.49 LOSS (-80.5%). vs IQN=134.16 WIN (+29.9%). N-step significantly boosts IQN on Phoenix.
+
+### h065 UPDATED TALLY (7/15 games — 5W/1L/1T vs IQN):
+| Game | q4 | vs IQN | Delta | Result |
+|------|-----|--------|-------|--------|
+| BattleZone | 4095.55 | 3466.95 | +18.1% | WIN |
+| SpaceInvaders | 278.67 | 250.88 | +11.1% | WIN |
+| Phoenix | 174.29 | 134.16 | +29.9% | WIN |
+| Breakout | 1.92 | 1.85 | +3.8% | WIN |
+| DoubleDunk | -22.44 | -22.59 | +0.7% | WIN |
+| Qbert | 204.51 | 219.30 | -6.7% | LOSS |
+| MontezumaRevenge | 0.0 | 0.0 | TIE | TIE |
+
+### ALL HYPOTHESIS TALLIES:
+| Hyp | Games | W/L/T IQN | Key Signal |
+|-----|-------|-----------|------------|
+| h067 Replay+Resets | 5/15 | 4/1/0 | Large wins (+77-263%) but DoubleDunk LOSS |
+| h066 OQE | 5/15 | 5/0/0 | UNDEFEATED. Consistent +3-11% improvements |
+| h065 IQN+N-step | 7/15 | 5/1/1 | Strong. Phoenix +29.9%, BZ +18.1% |
+| h064 NoisyNet+N-step | 1/15 | 1/0/0 | Only Phoenix. 14 resubmitted 8h |
+| h068 OQE+Replay | 0/15 | — | All 15 running (~3h/8h) |
+
+### ACTIVE JOBS SUMMARY:
+- h065: 8 running (fir 3 at 5h/6h IMMINENT, narval 3 at 4.5h/6h, nibi 2 at 4.5h/6h)
+- h066: 10 running (fir 3 at 5h/6h IMMINENT, narval 3, nibi 4 including resubmissions)
+- h067: 8 running + 2 resubmitted (fir 5 at 5h/8h, narval 2 at 4.5h/8h, nibi 2 at 4.5h/8h)
+- h068: 15 running (~3h/8h across all clusters)
+- h064: 7 running + 7 pending (all fresh 8h resubmissions, ~23min)
+- h050: 1 running (fir 5h/8h)
+- h061: 1 running (fir 2h/6h)
+
+### NEXT SESSION TODO:
+1. IMMINENT (~30-60min): h065 fir jobs (solaris/amidar/venture), h066 fir jobs (amidar/solaris/venture). 6 results incoming!
+2. h065 narval/nibi jobs completing in ~1.5h (alien/namethisgame/enduro + privateeye/mspacman). h065 will reach 15/15!
+3. h066 narval/nibi jobs in ~1.5-6h. h066 approaching 15/15.
+4. h067 fir jobs in ~3h. h067 approaching 15/15.
+5. h068 first results in ~5h. KEY test of OQE+Replay combination.
+6. h064 results in ~7h.
+7. When h065/h066/h067 reach 15/15: comprehensive IQN variant comparison.
