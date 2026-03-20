@@ -7186,3 +7186,75 @@ BUT: result is STALE — bit-for-bit identical to h001 PPO baseline (same q4, me
 4. If h051 diagnostics show correct params but stale results: abandon h051/h056 as unsolvable container issue
 5. When all pilots reach 15/15: design Rainbow-lite experiment
 6. Rainbow-lite = DQN + N-step (+0.0006) + Dueling (+0.0007) as minimum combo
+
+---
+**[2026-03-20 07:16 UTC]**
+
+## Session 113: Complete DQN Rankings + Two Rainbow-lite Hypotheses Launched
+
+### Triggered by: h047-solaris-s1 (job 28433565, fir SUCCESS)
+
+### NEW RESULTS PROCESSED: 2 genuine
+1. h047-solaris-s1 (DQN baseline): q4=304.33 vs PPO=2163.56 LOSS (-85.9%). DQN collapses on Solaris like all DQN variants. COMPLETES h047 at 15/15.
+2. h063-doubledunk-s1 (IQN): q4=-22.59 vs PPO=-18.10 LOSS. vs DQN=-24.00 WIN (+5.9%). IQN improves over DQN on DoubleDunk. COMPLETES h063 at 15/15.
+
+### h051 DIAGNOSTIC RESULT (session 111):
+- CReLU architecture DOES load correctly on fir (845655 params, CReLU layers confirmed)
+- SPS ~3500 on fir (which is normal for CReLU — NOT an indicator of staleness)
+- Stale plague mystery remains. Code is correct, architecture loads, but results are PPO-identical.
+- 3 pending h051/h056 jobs with diagnostic code still running (h050-alien fir, h051-alien rorqual, h051-breakout fir)
+
+### FINAL DQN COMPONENT IQM DELTA-HNS RANKINGS (all 15/15 where available):
+| Rk | Component  | IQM vPPO | IQM vDQN | W/L/T DQN |
+|----|-----------|----------|----------|-----------|
+| 1  | NoisyNet  | -0.0050  | +0.0003  | 4W/3L/8T  |
+| 2  | QR-DQN    | -0.0071  | +0.0003  | 4W/1L/10T |
+| 3  | DQN base  | -0.0076  | ---      | ---       |
+| 4  | PER       | -0.0080  | -0.0001  | 3W/1L/11T |
+| 5  | IQN       | -0.0088  | +0.0011  | 5W/2L/8T  |
+| 6  | Double DQN| -0.0089  | -0.0009  | 3W/1L/11T |
+| 7  | N-step    | -0.0091  | +0.0006  | 5W/2L/8T  |
+| 8  | C51 40M   | -0.0126  | -0.0008  | 3W/3L/8T  | (14/15)
+| 9  | Dueling   | -0.0146  | -0.0016  | 4W/4L/7T  |
+| 10 | Munchausen| -0.0149  | -0.0016  | 4W/3L/7T  | (14/15)
+
+### KEY INSIGHT: COMPLEMENTARITY ANALYSIS
+N-step and NoisyNet win on DIFFERENT games:
+- N-step: BattleZone, Breakout, Enduro, SpaceInvaders
+- NoisyNet: Amidar, MsPacman, Phoenix, Solaris, NameThisGame
+- IQN: DoubleDunk (massive +0.64 HNS recovery), BattleZone, Solaris
+These are orthogonal improvements that should compose well.
+
+### TWO RAINBOW-LITE HYPOTHESES LAUNCHED:
+1. h064 — DQN + NoisyNet + N-step (n=3): 15 jobs submitted across all 4 clusters
+   Combines two best orthogonal improvements. NoisyNet replaces epsilon-greedy.
+2. h065 — IQN + N-step (n=3): 15 jobs submitted across all 4 clusters
+   Combines best single component (IQN) with best orthogonal improvement (N-step).
+   IQN already uses DDQN-style action selection internally.
+
+### OTHER ACTIONS:
+- h061-breakout-s1: resubmitted on narval (was gone from nibi queue). Finalizes C51 40M at 15/15.
+- Closed h047 and h063 in hypotheses.csv.
+
+### ACTIVE JOBS: 33 total
+- 15 h064 (Rainbow-lite A: NoisyNet + N-step) — 4h walltime
+- 15 h065 (Rainbow-lite B: IQN + N-step) — 6h walltime
+- 1 h061-breakout-s1 (C51 finalizer) — narval
+- 1 h050-alien-s1 (Munchausen finalizer) — fir, pending
+- 1 h051-alien-s1 (CReLU diagnostic) — rorqual, pending
+
+### REMAINING GAPS:
+| Hypothesis | Banked | Gap | Status |
+|-----------|--------|-----|--------|
+| h050 Munch| 14/15  | Alien | pending(fir) |
+| h051 CReLU| 4/15   | 11 games | 2 pending with diagnostic code |
+| h056 Wide | 4/15   | 11 games | no active jobs |
+| h061 C51  | 14/15  | Breakout | resubmitted(narval) |
+
+### NEXT SESSION TODO:
+1. Process h064/h065 results as they complete — these are the most important experiments now
+2. Process h050-alien and h061-breakout when they finish
+3. If h064 or h065 beats DQN baseline significantly: expand to 3-seed full evaluation
+4. If both positive: consider combining all three (IQN + N-step + NoisyNet)
+5. h051/h056: if diagnostic jobs produce genuine results, resubmit all 11 games. If stale: abandon.
+6. Start thinking about novel innovations beyond component combination
