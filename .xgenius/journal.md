@@ -8723,3 +8723,46 @@ Replay alone (282.19) > OQE+Replay (278.37) > Rainbow-lite (254.38) > DQN-NoisyN
 3. After narval batch: h067-enduro/NTG START on narval (~13:07 UTC)
 4. ~9h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
 5. When h066-breakout completes: FINAL OQE VERDICT
+
+---
+**[2026-03-21 11:54 UTC]**
+
+## Session 144: Bank h067-breakout-s1 (Breakout LOSS -20.6%) — h067 now 13/15 (7W/5L/1T)
+
+### Triggered by: h067-breakout-s1 (job 58067094, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h067 IQN+Replay+Resets (1 new, now 13/15):**
+1. h067-breakout-s1: q4=1.47 vs IQN=1.85 LOSS (-20.6%). Replay HURTS Breakout — worse than IQN(1.85), Rainbow-lite(2.04), and N-step(1.92). Near-zero game but replay makes it even worse.
+- h067 tally: 7W/5L/1T (MsPac+12.3%, Qbert+28.7%, Solaris+97.5%, Phoenix+91.1%, Amidar+76.8%, Alien+38.1%, Venture+263% | Breakout-20.6%, DD-2.4%, SI-20.6%, BZ-29.6%, PE-88.1% | MR TIE)
+- 2 remaining: enduro(narval+nibi P), NTG(fir R ~8.9h)
+
+### CLUSTER STATUS (~11:54 UTC):
+**Narval (4R+3P):** h068-breakout/MR/phoenix at ~9.5h/10h (~30min left!). h064-enduro at ~8.2h/10h (~1.8h). PENDING: h067-enduro(est 13:07), h067-NTG(est 13:07), h068-alien(est 15:17).
+**Nibi (2R+3P):** h068-NTG/SI at ~8.2h/10h (~1.8h). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4R):** h066-breakout/h064-solaris/h067-NTG/h068-alien at ~1.1h/10h (~8.9h left).
+
+### COVERAGE:
+| Hyp | Banked | Running | Pending | W/L/T | Key Signal |
+|-----|--------|---------|---------|-------|------------|
+| h066 OQE | 14/15 | 1R(fir breakout ~8.9h) | 1(nibi backup) | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h064 Rainbow | 13/15 | 2R(narval enduro ~1.8h, fir solaris ~8.9h) | 1(nibi backup) | 9/3/1 | Near-complete. |
+| h067 Replay | 13/15 | 1R(fir NTG ~8.9h) | 2P(enduro narval+nibi) | 7/5/1 | WEAK. 5th LOSS (Breakout). Replay consistently hurts many games. |
+| h068 OQE+Rep | 9/15 | 5R(narval ~30min, nibi ~1.8h) + 1R(fir alien ~8.9h) | 0 | 6/3/0 | Batch incoming ~30min (3 from narval). |
+
+### KEY TAKEAWAY:
+h067 Replay at 7W/5L/1T is now clearly the weakest combination. Compare:
+- h066 OQE: 9W/0L/5T at 14/15 — DOMINANT
+- h064 Rainbow-lite: 9W/3L/1T at 13/15 — STRONG
+- h067 Replay: 7W/5L/1T at 13/15 — MEDIOCRE
+- h068 OQE+Replay: 6W/3L/0T at 9/15 — PENDING (most games still to come)
+
+h067's high replay ratio (4x gradient updates) causes catastrophic failures on specific games (PE -88%, BZ -30%, Breakout -21%, SI -21%). OQE alone (h066) completely avoids these failures.
+
+### NEXT SESSION TODO:
+1. ~30min: narval batch (h068-breakout/MR/phoenix) = 3 new results
+2. ~1.8h: nibi batch (h068-NTG/SI) + h064-enduro = 3 new results
+3. After running batch: pending jobs START (h067-enduro, h067-NTG, h066-breakout, h064-solaris)
+4. ~8.9h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
+5. When h066-breakout completes: FINAL OQE VERDICT — if non-loss -> 10W/0L/5T = MAJOR FINDING
