@@ -8028,3 +8028,56 @@ Submitted: h065 (2), h066 (1), h067 (8), h068 (11)
 4. ~5h: h067-SI(nibi) + h067-enduro(fir)
 5. ~9.5h: h067/h068 narval jobs, h066-breakout(fir)
 6. When h066 reaches 15/15: If ZERO losses maintained → MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 02:51 UTC]**
+
+## Session 128: Bank h064-venture + h066-solaris — OQE 14/15, STILL UNDEFEATED (9W/0L/5T)
+
+### Triggered by: h064-venture-s1 (job 28594237, fir SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h064 Rainbow-lite NoisyNet+N-step (1 new, now 6/15):**
+1. h064-venture-s1: q4=5.17 vs IQN=1.05 WIN (+391.4%). NoisyNet+N-step massively improves sparse-reward Venture.
+- h064 tally: 4W/1L/1T (Venture+391%, NTG+59%, Phoenix+40%, DD+14% | Amidar-10% | MR TIE)
+
+**h066 IQN+OQE (1 new, now 14/15):**
+2. h066-solaris-s1: q4=904.98 vs IQN=696.07 WIN (+30.0%). OQE gives significant +30% boost on Solaris.
+- h066 tally: **9W/0L/5T — STILL UNDEFEATED after 14/15 games!** Only Breakout remaining (pending on fir).
+
+### h066 OQE FULL TALLY (14/15, using h063 IQN as baseline):
+| Game | q4 | vs IQN | Delta | Result |
+|------|-----|--------|-------|--------|
+| Venture | 3.62 | 1.05 | +243.6% | WIN |
+| Enduro | 2.32 | 1.24 | +87.8% | WIN |
+| Solaris | 904.98 | 696.07 | +30.0% | WIN |
+| PrivateEye | 471.08 | 423.18 | +11.3% | WIN |
+| BattleZone | 3726.05 | 3466.95 | +7.5% | WIN |
+| NTG | 1680.44 | 1564.76 | +7.4% | WIN |
+| SpaceInvaders | 262.71 | 250.88 | +4.7% | WIN |
+| Phoenix | 139.71 | 134.16 | +4.1% | WIN |
+| MsPacman | 514.10 | 496.64 | +3.5% | WIN |
+| DoubleDunk | -22.45 | -22.59 | +0.6% | TIE |
+| Qbert | 218.18 | 219.30 | -0.5% | TIE |
+| Alien | 310.64 | 311.13 | -0.2% | TIE |
+| Amidar | 33.98 | 34.27 | -0.8% | TIE |
+| MR | 0.00 | 0.00 | 0.0% | TIE |
+
+### GAP FIX: h064-mspacman-s1 resubmitted on nibi (job 10673234, 10h). Both previous fir jobs disappeared.
+
+### ACTIVE JOBS (~31 running + ~15 pending):
+**h064 (6/15 banked):** 8 running (fir: alien/enduro/qbert ~1.3h; narval: breakout/PE/solaris ~1.5-2.5h; nibi: BZ/SI ~2.75h) + 1 pending (nibi mspacman)
+**h065 (11/15 banked):** 3 running (narval NTG 0.3h/10h; nibi solaris/alien ~3h) + 1 pending (nibi enduro)
+**h066 (14/15 banked):** 1 pending (fir breakout 10h)
+**h067 (6/15 banked):** 5 running (fir enduro 5h/10h; narval breakout/mspacman/qbert 0.3h/10h; nibi SI 5h/10h) + 4 pending
+**h068 (4/15 banked):** 3 running (narval breakout/MR/phoenix 0.3h/10h) + 8 pending
+
+### NEXT SESSION TODO:
+1. IMMINENT (~1.3h): h064 fir results (alien/enduro/qbert) → h064 reaches 9/15
+2. ~2-3h: h064 narval+nibi results → h064 reaches 14/15
+3. ~3h: h065 nibi (solaris/alien) → h065 reaches 13/15
+4. ~5h: h067-SI(nibi) + h067-enduro(fir)
+5. ~9.7h: h067/h068 narval jobs, h065-NTG(narval)
+6. When h066-breakout completes: FINAL VERDICT on OQE's undefeated streak
+7. When h064 reaches 15/15: Compare Rainbow-lite vs individual components
