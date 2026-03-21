@@ -7965,3 +7965,66 @@ Submitted: h065 (2), h066 (1), h067 (8), h068 (11)
 6. When h066 reaches 15/15: If ZERO losses maintained → MAJOR PUBLISHABLE FINDING (novel optimistic quantile exploration for IQN, consistently positive across ALL games with zero losses)
 7. CRITICAL COMPARISON: h066 (OQE alone) vs h068 (OQE+Replay). If h068 continues losing, OQE alone is the better approach — simpler and more robust.
 
+
+---
+**[2026-03-21 02:37 UTC]**
+
+## Session 127: Bank h066-qbert + 3 h064 results — OQE 13/15, STILL UNDEFEATED
+
+### Triggered by: h066-qbert-s1 (job 28584004, fir SUCCESS)
+
+### NEW RESULTS BANKED: 4
+
+**h066 IQN+OQE (1 new, now 13/15):**
+1. h066-qbert-s1: q4=218.18 vs IQN=219.30 TIE (-0.5%). OQE neutral on Qbert. 5th TIE — all within noise.
+- h066 tally: **8W/0L/5T — UNDEFEATED after 13/15 games!** Only breakout and solaris remaining.
+
+**h064 Rainbow-lite NoisyNet+N-step (3 new, now 5/15):**
+2. h064-amidar-s1: q4=31.0 vs IQN=34.27 LOSS (-9.5%). NoisyNet+N-step hurts Amidar.
+3. h064-namethisgame-s1: q4=2491.14 vs IQN=1564.76 WIN (+59.2%). Big improvement on NTG.
+4. h064-montezumarevenge-s1: q4=0.0 vs IQN=0.0 TIE. Hard exploration.
+- h064 tally: 3W/1L/1T (Phoenix+40.3%, DD+14.4%, NTG+59.2% | Amidar-9.5% | MR TIE)
+
+### DISAPPEARED JOBS:
+- h066-breakout-s1 (narval 58049769): Timed out at 8h. Resubmitted on fir (28686773, 10h). 4th attempt.
+- h064-amidar/NTG/MR (nibi): Completed normally, results banked above.
+- h066-enduro-s1 (nibi 10661956): Duplicate backup completed — same data as already banked (q4=2.32).
+
+### UPDATED TALLIES:
+| Hyp | Games | W/L/T IQN | Key Signal |
+|-----|-------|-----------|------------|
+| h066 OQE | 13/15 | **8/0/5** | UNDEFEATED. 2 remaining (breakout/solaris). |
+| h067 Replay | 6/15 | 5/1/0 | Strongest individual margins. Many running/pending. |
+| h065 N-step | 11/15 | 7/3/1 | Mixed. 4 remaining (alien/solaris/enduro/NTG). |
+| h064 Rainbow | 5/15 | 3/1/1 | Good: 3 big wins. 8 running. |
+| h068 OQE+Replay | 4/15 | 2/2/0 | CONCERNING. 2 losses already. Many pending. |
+
+### ACTIVE JOBS: ~30 total
+**Fir (5 running):**
+- h064: alien(6.5h/8h), enduro(6.5h/8h), qbert(6.5h/8h), venture(6.5h/8h) → ~1.5h
+- h067-enduro(5h/10h) → ~5h
+- h066-breakout (just submitted, 10h)
+
+**Narval (7 running):**
+- h064: breakout(6.3h/8h), PE(5.6h/8h), solaris(5.3h/8h) → ~1.5-2.5h
+- h065-NTG(0.1h/10h), h067-breakout/mspacman/qbert(0.1h/10h) → ~9.5h
+- h068: breakout/MR/phoenix(0.1h/10h) → ~9.5h
+
+**Nibi (5 running + 8 pending):**
+- h064: BZ(5h/8h), SI(5h/8h) → ~3h
+- h065: solaris(5h/8h), alien(4.75h/8h) → ~3h
+- h066: solaris(5h/8h) → ~3h
+- h067-SI(5h/10h) → ~5h
+- Pending: h065-enduro, h067-BZ/MR/PE, h068-amidar/enduro/NTG/SI
+
+**Rorqual (6 pending):**
+- h067: enduro/NTG
+- h068: alien/DD/mspacman/qbert
+
+### NEXT SESSION TODO:
+1. IMMINENT (~1.5h): h064 fir results (alien/enduro/qbert/venture) → h064 reaches 9/15
+2. ~2-3h: h064 narval (breakout/PE/solaris) + nibi (BZ/SI) → h064 reaches 14-15/15
+3. ~3h: h065 nibi (alien/solaris) + h066 nibi (solaris) → h066 reaches 14/15
+4. ~5h: h067-SI(nibi) + h067-enduro(fir)
+5. ~9.5h: h067/h068 narval jobs, h066-breakout(fir)
+6. When h066 reaches 15/15: If ZERO losses maintained → MAJOR PUBLISHABLE FINDING
