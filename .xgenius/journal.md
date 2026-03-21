@@ -8999,3 +8999,71 @@ Replay alone (h067)=429.59 > OQE+Replay (h068)=419.49 > DQN=353.11 > IQN=311.13 
 3. After narval: h067+h068 complete at 15/15 → FINAL COMPARISON
 4. When all 4 hypotheses complete: close phase, compute final IQMs, plan next steps (h069 Rainbow-OQE?)
 
+
+---
+**[2026-03-21 18:29 UTC]**
+
+## Session 150: Bank h064-solaris-s1 (+138.2% WIN) — h064 COMPLETE 15/15 at 11W/3L/1T
+
+### Triggered by: h064-solaris-s1 (job 28723783, fir SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h064 Rainbow-lite (FINAL — 15/15 games COMPLETE):**
+1. h064-solaris-s1: q4=1658.26 vs IQN=696.07 WIN (+138.2%). Rainbow-lite massively improves Solaris over IQN. N-step+NoisyNet are the key components.
+
+### h064 FINAL RESULTS (15/15 games):
+| Game | h064 q4 | IQN q4 | delta% | W/L |
+|------|---------|--------|--------|-----|
+| Enduro | 21.97 | 1.24 | +1673% | WIN |
+| Venture | 5.17 | 1.05 | +391% | WIN |
+| Solaris | 1658.26 | 696.07 | +138% | WIN |
+| NTG | 2491.14 | 1564.76 | +59% | WIN |
+| BZ | 5310.42 | 3466.95 | +53% | WIN |
+| Phoenix | 188.31 | 134.16 | +40% | WIN |
+| Qbert | 254.38 | 219.30 | +16% | WIN |
+| DD | -19.35 | -22.59 | +14% | WIN |
+| MsPac | 555.97 | 496.64 | +12% | WIN |
+| Breakout | 2.04 | 1.85 | +10% | WIN |
+| SI | 270.00 | 250.88 | +8% | WIN |
+| MR | 0.00 | 0.00 | 0% | TIE |
+| Amidar | 31.00 | 34.27 | -10% | LOSS |
+| Alien | 275.49 | 311.13 | -12% | LOSS |
+| PE | 0.00 | 423.18 | -100% | LOSS |
+
+**IQM delta-HNS vs IQN: +0.0133** (STRONG)
+**IQM delta-HNS vs PPO: +0.0093** (BEATS PPO!)
+
+h064 is the STRONGEST method overall — beats both IQN and PPO on IQM. This is the best engineering baseline.
+
+### CANCELLED JOBS:
+- nibi h064-solaris-s1 backup (10695395) — cancelled
+- narval h067-NTG backup (58069590) — cancelled (fir completing first)
+
+### CROSS-HYPOTHESIS COMPARISON (all complete or near-complete):
+| Hyp | Games | W/L/T | IQM vs IQN | IQM vs PPO | Status |
+|-----|-------|-------|------------|------------|--------|
+| h064 Rainbow-lite | 15/15 | 11/3/1 | +0.0133 | +0.0093 | COMPLETE - STRONGEST |
+| h066 OQE | 15/15 | 9/1/5 | +0.0025 | -0.0051 | COMPLETE - MOST CONSISTENT |
+| h067 Replay | 13/15 | 7/5/1 | TBD | TBD | 2 remaining |
+| h068 OQE+Replay | 13/15 | 8/5/0 | TBD | TBD | 2 remaining |
+
+### CLUSTER STATUS (~18:30 UTC / ~14:30 local):
+**Fir (1R):** h067-NTG at 7:44/10h (~2.2h left). Completes ~20:45 UTC.
+**Narval (3P):** h067-enduro, h068-MR, h068-phoenix. All est start 22:49 UTC (~4.3h).
+**Nibi (1P):** h067-enduro (backup).
+
+### REMAINING GAMES:
+| Hyp | Banked | Remaining | Est completion |
+|-----|--------|-----------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | 13/15 | NTG(fir ~2.2h), enduro(narval/nibi P) | ~21 Mar 21:00 UTC NTG, ~22 Mar 09:00 UTC enduro |
+| h068 | 13/15 | MR+phoenix(narval P) | ~22 Mar 11:00 UTC |
+
+### NEXT SESSION TODO:
+1. ~2.2h: h067-NTG completes on fir → bank result, h067 at 14/15
+2. ~4.3h: narval pending jobs START (h067-enduro, h068-MR, h068-phoenix)
+3. After narval jobs complete (~10-12h later): h067+h068 COMPLETE at 15/15
+4. When all 4 hypotheses complete: FINAL COMPARISON + close phase
+5. PLAN: After all complete, implement h069 'Rainbow-OQE' = IQN + NoisyNet + N-step + OQE
