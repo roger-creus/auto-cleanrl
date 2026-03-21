@@ -8898,3 +8898,104 @@ N-step is the dominant component for NTG — Rainbow-lite at 2491 is near-PPO.
 3. Nibi pending: h066-breakout, h064-solaris, h067-enduro — all waiting for slot.
 4. When h066-breakout completes: FINAL OQE VERDICT — if non-loss -> 10W/0L/5T = MAJOR PUBLISHABLE FINDING.
 5. When all 4 hypotheses reach 15/15: FINAL COMPARISON + close phase.
+
+---
+**[2026-03-21 16:42 UTC]**
+
+## Session 148: Bank h066-breakout-s1 (Breakout LOSS -3.1%) — h066 COMPLETE 15/15 at 9W/1L/5T
+
+### Triggered by: h066-breakout-s1 (job 28723755, fir SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h066 IQN+OQE (FINAL — 15/15 games complete):**
+1. h066-breakout-s1: q4=1.79 vs IQN=1.85 LOSS (-3.1%). Near-zero game (both ~1.8 out of max 864). delta-HNS = -0.002 (negligible).
+
+### h066 FINAL TALLY: 9W/1L/5T vs IQN
+WINS: Venture+244%, Enduro+88%, Solaris+30%, PE+11.3%, BZ+7.5%, NTG+7.4%, SI+4.7%, Phoenix+4.1%, MsPac+3.5%
+TIES: Alien, Qbert, Amidar, MontezumaRevenge, DD (all within ±1%)
+LOSSES: Breakout -3.1% (near-zero game, trivially small)
+IQM delta-HNS vs IQN: +0.0025 (all trimmed values positive or zero!)
+IQM delta-HNS vs PPO: -0.0051 (still below PPO by IQM)
+
+### CROSS-HYPOTHESIS IQM COMPARISON (vs IQN):
+- h064 Rainbow-lite (14/15): +0.0083 — STRONGEST (engineering baseline)
+- h066 OQE (15/15): +0.0025 — MOST CONSISTENT (9W/1L/5T, novel method)
+- h067 Replay (13/15): +0.0019 — INCONSISTENT (7W/5L/1T)
+- h068 OQE+Replay (12/15): +0.0005 — WEAKEST (interference between components)
+
+### CROSS-HYPOTHESIS IQM COMPARISON (vs PPO):
+- h064 Rainbow-lite: +0.0112 — BEATS PPO!
+- h067 Replay: +0.0076 — BEATS PPO!
+- h068 OQE+Replay: +0.0069 — BEATS PPO!
+- h066 OQE: -0.0051 — below PPO (IQN baseline is far below PPO)
+
+### KEY INSIGHT: OQE IS PUBLISHABLE BUT NEEDS A STRONGER BASE
+OQE consistently improves IQN (9W/1L/5T) but IQN itself is below PPO. Rainbow-lite (IQN+NoisyNet+N-step) BEATS PPO. The natural next step:
+**Rainbow-OQE = IQN + NoisyNet + N-step + OQE** = best engineering + novel method
+
+### CLUSTER STATUS (~12:40 local / ~16:40 UTC):
+**Fir (3R):** h064-solaris, h067-NTG, h068-alien at ~6h/10h (~4h left).
+**Narval (5P):** h067-enduro, h067-NTG, h068-alien, h068-MR, h068-phoenix — all PENDING (Priority).
+**Nibi (3P):** h066-breakout(backup), h064-solaris(backup), h067-enduro — all PENDING (Priority).
+
+### REMAINING GAMES:
+| Hyp | Banked | Remaining | W/L/T |
+|-----|--------|-----------|-------|
+| h066 OQE | **15/15 COMPLETE** | — | 9/1/5 |
+| h064 Rainbow | 14/15 | solaris(fir ~4h) | 10/3/1 |
+| h067 Replay | 13/15 | NTG(fir ~4h), enduro(P) | 7/5/1 |
+| h068 OQE+Rep | 12/15 | alien(fir ~4h), MR+phoenix(P) | 7/5/0 |
+
+### NEXT SESSION TODO:
+1. ~4h: fir batch (h064-solaris, h067-NTG, h068-alien) = 3 results
+2. When h064-solaris completes: h064 COMPLETE at 15/15 → compute final Rainbow-lite IQM
+3. After fir: narval/nibi pending jobs eventually start
+4. When h067/h068 complete at 15/15: close all four hypotheses, compute final comparison
+5. PLAN: Implement h069 'Rainbow-OQE' = IQN + NoisyNet + N-step + OQE (novel combination)
+6. If Rainbow-OQE beats Rainbow-lite: OQE adds novel value on top of best engineering
+
+
+---
+**[2026-03-21 18:07 UTC]**
+
+## Session 149: Bank h068-alien-s1 (+34.8% WIN) — h068 now 13/15 (8W/5L)
+
+### Triggered by: h068-alien-s1 (job 28723790, fir SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h068 IQN+OQE+Replay (1 new, now 13/15):**
+1. h068-alien-s1: q4=419.49 vs IQN=311.13 WIN (+34.8%). Replay alone (h067)=429.59 > OQE+Replay (h068)=419.49. Adding OQE slightly REDUCES replay benefit on Alien. Replay is the dominant component.
+- h068 tally: 8W/5L/0T (Alien+34.8%, Qbert+26.9%, MsPac+13.1%, Amidar+80.8%, Solaris+57.6%, PE+3.0%, Enduro+295%, NTG+13.8% | BZ-15.4%, Venture-100%, DD-1.3%, Breakout-23.0%, SI-19.9%)
+- 2 remaining: MR+phoenix (narval PENDING)
+
+### CANCELLED BACKUP JOBS:
+- narval h068-alien-s1 (58069613) — already completed on fir
+- nibi h066-breakout-s1 (10695392) — already completed on fir (session 148)
+
+### CLUSTER STATUS (~18:06 UTC / ~14:06 local):
+**Fir (2R):** h064-solaris (7:20/10h ~2.6h left), h067-NTG (7:20/10h ~2.6h left).
+**Narval (4P):** h067-enduro, h067-NTG (backup), h068-MR, h068-phoenix. All PENDING (Priority).
+**Nibi (2P):** h064-solaris (backup), h067-enduro.
+
+### COVERAGE:
+| Hyp | Banked | Running/Pending | W/L/T | Key Signal |
+|-----|--------|-----------------|-------|------------|
+| h066 OQE | **15/15 COMPLETE** | — | 9/1/5 | DOMINANT. Only Breakout loss (-3.1%). |
+| h064 Rainbow | 14/15 | 1R(fir solaris ~2.6h) + 1P(nibi) | 10/3/1 | Near-complete. |
+| h067 Replay | 13/15 | 1R(fir NTG ~2.6h) + 2P(enduro narval+nibi) | 7/5/1 | WEAK. 5 losses. |
+| h068 OQE+Rep | 13/15 | 2P(narval MR+phoenix) | 8/5/0 | Alien WIN. Replay drives wins but causes consistent losses. |
+
+### ALIEN HIERARCHY:
+Replay alone (h067)=429.59 > OQE+Replay (h068)=419.49 > DQN=353.11 > IQN=311.13 > OQE(h066)=310.64 > Rainbow-lite(h064)=275.49 > PPO=207.63
+- Replay ratio is the dominant factor for Alien — it helps IQN learn more from each transition
+- OQE contributes nothing on Alien (310.64 ≈ IQN 311.13)
+- Adding OQE to replay slightly HURTS (~2% reduction)
+
+### NEXT SESSION TODO:
+1. ~2.6h: fir batch (h064-solaris, h067-NTG) = 2 results → h064 COMPLETE at 15/15!
+2. After fir: narval pending (h067-enduro, h068-MR/phoenix) START
+3. After narval: h067+h068 complete at 15/15 → FINAL COMPARISON
+4. When all 4 hypotheses complete: close phase, compute final IQMs, plan next steps (h069 Rainbow-OQE?)
+

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Alien-v5,1,h068,h068-alien-s1,iqn_oqe_replay,40000000,68288,408.67620849609375,419.493896484375,27907680.0,438.0
