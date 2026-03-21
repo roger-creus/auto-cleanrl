@@ -8514,3 +8514,45 @@ All 4 fir pending jobs (h066-breakout, h064-solaris, h067-NTG, h068-alien) stuck
 4. After nibi/narval batches: pending jobs START (h066-breakout, h064-solaris, h067-enduro, h067-NTG, h068-alien)
 5. ~13-16h: h066-breakout completes = FINAL OQE VERDICT
 6. When h066 finishes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 10:37 UTC]**
+
+## Session 139: Bank h068-qbert-s1 (+26.9% WIN) — OQE+Replay SYNERGY on Qbert
+
+### Triggered by: h068-qbert-s1 (job 10674571, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h068 IQN+OQE+Replay (1 new, now 7/15):**
+1. h068-qbert-s1: q4=278.37 vs IQN=219.30 WIN (+26.9%). SYNERGY: h068=278.37 > Rainbow-lite(254.38) > OQE(218.18) > IQN(219.30). OQE+Replay combination dominates all individual components on Qbert. MsPac and Qbert both show genuine synergy — OQE+Replay is not just an additive combination.
+- h068 tally: 5W/2L/0T (Qbert+26.9%, Amidar+80.8%, Solaris+57.6%, MsPac+13.1%, PE+3.0% | BZ-15.4%, Venture-100%)
+- 8 remaining: breakout/MR/phoenix(narval ~1.8h), enduro/NTG/SI/DD(nibi ~3h), alien(narval+fir PENDING)
+
+### CLUSTER STATUS (~10:36 UTC):
+**Narval (7R+3P):** h067-breakout/mspacman/qbert at 8:10/10h (~1.8h left). h068-breakout/MR/phoenix at 8:10/10h (~1.8h left). h064-enduro at 6:54/10h (~3.1h left). PENDING: h067-enduro/NTG, h068-alien.
+**Nibi (6R+3P):** h067-BZ/PE at 6:54/10h (~3.1h left). h068-enduro/NTG/SI/DD at 6:54/10h (~3.1h left). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4P):** h066-breakout, h064-solaris, h067-NTG, h068-alien — all stuck Priority 8+ hours.
+
+### COVERAGE:
+| Hyp | Banked | Running | Pending | W/L/T | Key Signal |
+|-----|--------|---------|---------|-------|------------|
+| h066 OQE | 14/15 | 0 | 2(breakout nibi+fir) | 9/0/5 | UNDEFEATED. FINAL game pending. |
+| h064 Rainbow | 13/15 | 1(enduro ~3h) | 2(solaris nibi+fir) | 9/3/1 | Near-complete. |
+| h067 Replay | 8/15 | 5(narval ~1.8h, nibi ~3h) | 3(enduro, NTG) | 5/2/1 | Strong wins. Batch incoming. |
+| h068 OQE+Rep | 7/15 | 7(narval ~1.8h, nibi ~3h) | 1(alien) | 5/2/0 | Qbert SYNERGY! Improving. |
+| h065 N-step | **15/15 CLOSED** | — | — | 8/3/4 | Done. |
+| h061 C51 | **15/15 CLOSED** | — | — | 5/6/3 | Done. |
+
+### KEY OBSERVATIONS:
+- h068 SYNERGY is REAL: Qbert (278.37 vs OQE 218.18 vs IQN 219.30) and MsPac (561.47 vs OQE 514.10 vs IQN 496.64) both show OQE+Replay outperforms either component alone.
+- h068 still has 2 losses (BZ-15.4%, Venture-100%) vs h066's 0 losses at 14 games. h068 may not be strictly better despite synergistic gains.
+- Narval batch (~1.8h) will deliver 6 results (h067×3 + h068×3) — critical for both hypotheses.
+- After nibi running batch completes: pending jobs (h066-breakout, h064-solaris, h067-enduro) will START.
+
+### NEXT SESSION TODO:
+1. ~1.8h: narval batch (h067-breakout/mspacman/qbert, h068-breakout/MR/phoenix) = 6 new results
+2. ~3h: nibi batch (h067-BZ/PE, h068-enduro/NTG/SI/DD) = 6 new results + h064-enduro (narval)
+3. After running batch: h066-breakout/h064-solaris/h067-enduro START (~10h after)
+4. ~12-14h: h066-breakout completes = FINAL OQE VERDICT
+5. When h066 finishes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
