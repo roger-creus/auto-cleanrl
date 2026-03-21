@@ -9067,3 +9067,57 @@ h064 is the STRONGEST method overall — beats both IQN and PPO on IQM. This is 
 3. After narval jobs complete (~10-12h later): h067+h068 COMPLETE at 15/15
 4. When all 4 hypotheses complete: FINAL COMPARISON + close phase
 5. PLAN: After all complete, implement h069 'Rainbow-OQE' = IQN + NoisyNet + N-step + OQE
+
+---
+**[2026-03-21 20:40 UTC]**
+
+## Session 151: Bank h067-NTG (+18.0% WIN) — h067 at 14/15 (8W/5L/1T). Submit h069 Rainbow-OQE pilot (15 games).
+
+### Triggered by: h067-namethisgame-s1 (job 28723789, fir SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h067 IQN+Replay (1 new, now 14/15):**
+1. h067-namethisgame-s1: q4=1846.13 vs IQN=1564.76 WIN (+18.0%). Replay ratio boosts NTG. Replay(1846)>OQE+Replay(1780)>DQN(1777)>IQN(1565). h067 now 14/15, 8W/5L/1T.
+
+### h067 IQM (14/15, missing enduro):
+- IQM delta-HNS vs IQN: +0.0038
+- IQM delta-HNS vs PPO: -0.0135
+- PrivateEye catastrophic loss (-0.2409 dHNS) pulls IQM down heavily.
+
+### NEW HYPOTHESIS SUBMITTED: h069 Rainbow-OQE
+**h069 = IQN + NoisyNet + N-step + OQE** — combines Rainbow-lite (h064, best engineering: IQM +0.0133 vs IQN, +0.0093 vs PPO) with novel OQE exploration (h066, most consistent: 9W/1L/5T).
+
+Key insight: NoisyNet provides undirected weight-space exploration noise, OQE provides directed optimistic value-space exploration via biased quantile sampling, N-step improves credit assignment. All three are orthogonal enhancements to IQN.
+
+**Architecture:** IQNNoisyNetwork = CNN encoder (standard Conv2d) → NoisyLinear(3136,512) → cosine quantile embedding → element-wise multiply → NoisyLinear(512, n_actions). No epsilon-greedy (NoisyNet replaces it). OQE anneals tau sampling from U(0.5,1) to U(0,1).
+
+Submitted 15 experiments across 3 clusters (5 each: nibi/narval/fir). All succeeded.
+
+### CLUSTER STATUS (~20:40 UTC / ~16:40 local):
+**Running/Pending from previous hypotheses:**
+- h067-enduro-s1: Running on nibi (~1.2h elapsed / ~7h total)
+- h067-enduro-s1: Pending on narval (backup, est start 20:24)
+- h068-MR-s1: Pending on narval (est start 20:27, walltime 12h)
+- h068-phoenix-s1: Pending on narval (est start 20:27, walltime 12h)
+
+**h069 Rainbow-OQE (NEW — 15 jobs submitted):**
+- nibi: alien, breakout, MR, phoenix, solaris (5 jobs)
+- narval: amidar, DD, mspacman, PE, SI (5 jobs)
+- fir: BZ, enduro, NTG, qbert, venture (5 jobs)
+
+### COVERAGE:
+| Hyp | Banked | Remaining | W/L/T | IQM vs IQN |
+|-----|--------|-----------|-------|------------|
+| h064 Rainbow-lite | **15/15 COMPLETE** | — | 11/3/1 | +0.0133 |
+| h066 OQE | **15/15 COMPLETE** | — | 9/1/5 | +0.0025 |
+| h067 Replay | 14/15 | enduro(nibi R ~6h) | 8/5/1 | +0.0038 (14g) |
+| h068 OQE+Replay | 13/15 | MR+phoenix(narval P) | 8/5/0 | TBD |
+| h069 Rainbow-OQE | 0/15 | ALL 15 submitted | — | NEW |
+
+### NEXT SESSION TODO:
+1. h067-enduro-s1 completes on nibi (~6h) → h067 COMPLETE at 15/15 → compute final IQM
+2. narval pending: h068-MR/phoenix start ~20:27, h067-enduro backup
+3. h069 first results start completing (~7-10h after queue start)
+4. When h067/h068 complete: close both, compute final comparison
+5. When h069 results arrive: compare vs h064 and h066 — does OQE add value to Rainbow-lite?
