@@ -8349,3 +8349,48 @@ Submitted backups for at-risk and rorqual-stuck jobs:
 3. ~8-9h: massive batch (h064-enduro/mspacman, h065×2, h067×5+, h068×7+, h061-breakout)
 4. ~9.5h: h066-breakout FINAL OQE VERDICT
 5. When h066-breakout completes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 09:01 UTC]**
+
+## Session 135: Bank h064-mspacman-s1 (13/15) + Resubmit h066-breakout + h064-solaris + h067-enduro
+
+### Triggered by: h064-mspacman-s1 (job 10673234, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h064 Rainbow-lite NoisyNet+N-step (1 new, now 13/15):**
+1. h064-mspacman-s1: q4=555.97 vs IQN=496.64 WIN (+11.9%). Consistent improvement from NoisyNet+N-step on MsPacman.
+- h064 tally: 9W/3L/1T (MsPac+11.9%, BZ+53.2%, NTG+59.2%, Phoenix+40.3%, Venture+391%, Qbert+16%, DD+14.4%, Breakout+10%, SI+7.6% | Alien-11.5%, Amidar-9.5%, PE-100% | MR TIE)
+- 2 remaining: solaris (resubmitted), enduro (narval running ~4.7h)
+
+### CRITICAL FAILURES DISCOVERED:
+1. **h066-breakout fir (28686773):** CANCELLED by SLURM at 22:48 — never started training. Just rsyncing sif when cancelled.
+2. **h064-solaris narval (58055410):** CANCELLED DUE TO TIME LIMIT — hit chdir embedded-quotes bug, never trained.
+3. **h067-enduro nibi (10659113):** FAILED — same chdir embedded-quotes bug. Python couldn't find script at /src/cleanrl/.
+
+All three failures from OLD template with embedded quotes in chdir path. Current template is fixed.
+
+### RESUBMISSIONS (7 jobs):
+- h066-breakout-s1: fir (28723755, 10h) + nibi (10695392, 10h) — CRITICAL FINAL OQE GAME
+- h064-solaris-s1: fir (28723783, 10h) + nibi (10695395, 10h) — needed for 15/15
+- h067-enduro-s1: nibi (10695400, 10h) — previous nibi failed with chdir bug
+- h067-namethisgame-s1: fir (28723789, 10h) — backup for narval pending job
+- h068-alien-s1: fir (28723790, 10h) — backup for narval pending job
+
+### COVERAGE STATUS:
+| Hyp | Banked | Running/Pending | W/L/T | Key Signal |
+|-----|--------|-----------------|-------|------------|
+| h066 OQE | 14/15 | 2(fir+nibi breakout) | 9/0/5 | UNDEFEATED. FINAL game resubmitted. |
+| h064 Rainbow | 13/15 | 3(narval enduro ~4.7h, fir+nibi solaris) | 9/3/1 | Strong! 9 wins including MsPac+12%. |
+| h067 Replay | 7/15 | 8R+3resubmits | 5/2/0 | Strong wins but 2 losses. 8 games remaining. |
+| h068 OQE+Replay | 4/15 | 11R+1resubmit | 2/2/0 | CONCERNING. Many running. |
+| h065 N-step | 13/15 | 2R(NTG narval, enduro nibi) | 8/4/1 | Near-complete. |
+| h061 C51 | 14/15 | 1R(breakout nibi) | — | 7th attempt on cursed breakout. |
+
+### NEXT SESSION TODO:
+1. ~4.7h: h064-enduro (narval) → h064 reaches 14/15
+2. ~8-10h: h066-breakout (fir/nibi), h064-solaris (fir/nibi)
+3. ~5-10h: massive batch of h067/h068 completions
+4. When h066-breakout completes: FINAL OQE VERDICT — if non-loss → 10W/0L/5T = MAJOR FINDING
+5. When h064 reaches 15/15: Full Rainbow-lite vs OQE comparison
