@@ -7901,3 +7901,67 @@ h065-alien, h065-namethisgame, h065-enduro on narval all at 5:52/6:00 (8 min fro
 5. h066 remaining 6 games completing in ~5-8h → approaches 15/15
 6. h064 Rainbow-A results in ~6.5-8h
 7. When h066 reaches 15/15: If ZERO losses maintained → MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 02:29 UTC]**
+
+## Session 126: Bank 9 results (h064-dd, h066×3, h067-alien, h068×4) + Resubmit 22 gaps
+
+### Triggered by: h064-doubledunk-s1 (job 58055404, narval SUCCESS)
+
+### NEW RESULTS BANKED: 9
+
+**h064 Rainbow-lite NoisyNet+N-step (1 new, now 2/15):**
+1. h064-doubledunk-s1: q4=-19.35 vs IQN=-22.59 WIN (+14.4%). NoisyNet+N-step helps DoubleDunk significantly.
+- h064 tally: 2W/0L (Phoenix+40.3%, DoubleDunk+14.4%)
+
+**h066 IQN+OQE (3 new, now 12/15):**
+2. h066-alien-s1: q4=310.64 vs IQN=311.13 TIE (-0.2%). OQE neutral on Alien.
+3. h066-enduro-s1: q4=2.32 vs IQN=1.24 WIN (+87.2%). Near-zero scores but OQE slightly better.
+4. h066-montezumarevenge-s1: q4=0.0 vs IQN=0.0 TIE. Hard exploration game.
+- h066 tally: **8W/0L/4T — STILL UNDEFEATED after 12/15 games!** The 4 TIEs are all within noise (MR 0.0 tie, Alien -0.2%, Amidar -0.8%, NTG -1.0%).
+
+**h067 IQN+Replay+Resets (1 new, now 6/15):**
+5. h067-alien-s1: q4=429.59 vs IQN=311.13 WIN (+38.1%). Replay ratio boosts Alien significantly.
+- h067 tally: 5W/1L (Alien+38.1%, Phoenix+91.1%, Venture+263%, Amidar+76.8%, Solaris+97.5% | DD-2.4%)
+
+**h068 IQN+OQE+Replay (4 new, first results!):**
+6. h068-battlezone-s1: q4=2931.68 vs IQN=3466.95 LOSS (-15.4%). Combined approach WORSE than IQN alone!
+7. h068-privateeye-s1: q4=436.08 vs IQN=423.18 WIN (+3.0%). Slight improvement.
+8. h068-solaris-s1: q4=1096.98 vs IQN=696.07 WIN (+57.6%). Big win from replay component.
+9. h068-venture-s1: q4=0.0 vs IQN=1.05 LOSS (-100%). Catastrophic! OQE alone got +244.8% on Venture.
+- h068 tally: 2W/2L. EARLY CONCERN: Adding replay ratio to OQE appears to HURT, not help.
+
+### KEY INSIGHT: OQE + Replay may be WORSE than OQE alone
+h068 already has 2 losses (BZ -15.4%, Venture -100%) after only 4 games, while h066 OQE alone has ZERO losses after 12 games. The replay ratio may interfere with OQE's optimistic exploration — higher replay ratio means more gradient updates per step, which could make the Q-values change faster and destabilize the optimistic quantile selection. Venture is the clearest signal: OQE alone +244.8%, OQE+Replay -100%.
+
+### RESUBMISSIONS: 22 experiments across nibi/narval/rorqual (10h walltime)
+Many fir jobs disappeared around midnight (cluster-wide issue). Narval h067 jobs timed out at 8h.
+- h065: 2 gaps (enduro, NTG)
+- h066: 1 gap (qbert)
+- h067: 8 gaps (BZ, breakout, enduro, MR, mspacman, NTG, PE, qbert)
+- h068: 11 gaps (alien, amidar, breakout, DD, enduro, MR, mspacman, NTG, phoenix, qbert, SI)
+All submitted with 10h walltime. Distributed across nibi (8), narval (6), rorqual (8).
+
+### UPDATED TALLIES:
+| Hyp | Games | W/L/T IQN | Key Signal |
+|-----|-------|-----------|------------|
+| h066 OQE | 12/15 | **8/0/4** | UNDEFEATED. 3 remaining (breakout/solaris/qbert). |
+| h067 Replay | 6/15 | 5/1/0 | Strongest individual margins (76-263% wins). 8 resubmitted. |
+| h065 N-step | 11/15 | 7/3/1 | Mixed. 2 running + 2 resubmitted. |
+| h064 Rainbow | 2/15 | 2/0/0 | Too early. 8 running. |
+| h068 OQE+Replay | 4/15 | 2/2/0 | CONCERNING. 2 losses already. 11 resubmitted. |
+
+### ACTIVE/PENDING JOBS: 14 running + 22 freshly submitted = 36 total
+Running: h064 (8 on nibi/narval), h065 (2 on nibi), h066 (2 on narval/nibi), h067 (1 on nibi SI)
+Submitted: h065 (2), h066 (1), h067 (8), h068 (11)
+
+### NEXT SESSION TODO:
+1. h064 results (nibi/narval 8h) — expect completions in ~4-6h
+2. h065 remaining 4 games → reaches 15/15 for comprehensive analysis
+3. h066 remaining 3 games (breakout/solaris running, qbert resubmitted) → approaches 15/15
+4. h067 9 more games resubmitted → approaches 15/15
+5. h068 11 more games resubmitted → full picture of OQE+Replay combination
+6. When h066 reaches 15/15: If ZERO losses maintained → MAJOR PUBLISHABLE FINDING (novel optimistic quantile exploration for IQN, consistently positive across ALL games with zero losses)
+7. CRITICAL COMPARISON: h066 (OQE alone) vs h068 (OQE+Replay). If h068 continues losing, OQE alone is the better approach — simpler and more robust.
+
