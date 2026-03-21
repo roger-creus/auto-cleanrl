@@ -8689,3 +8689,37 @@ Replay alone (282.19) > OQE+Replay (278.37) > Rainbow-lite (254.38) > DQN-NoisyN
 4. ~9.4h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
 5. When h066-breakout completes: FINAL OQE VERDICT
 
+
+---
+**[2026-03-21 11:38 UTC]**
+
+## Session 143: Bank h067-mspacman-s1 (+12.3% WIN) — h067 now 12/15
+
+### Triggered by: h067-mspacman-s1 (job 58067097, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h067 IQN+Replay+Resets (1 new, now 12/15):**
+1. h067-mspacman-s1: q4=557.57 vs IQN=496.64 WIN (+12.3%). Replay alone (557.57) nearly matches OQE+Replay (561.47). Both beat OQE alone (514.10). Replay component is the primary driver on MsPacman; OQE adds negligible benefit.
+- h067 tally: 7W/4L/1T (MsPac+12.3%, Qbert+28.7%, Solaris+97.5%, Phoenix+91.1%, Amidar+76.8%, Alien+38.1%, Venture+263% | DD-2.4%, SI-20.6%, BZ-29.6%, PE-88.1% | MR TIE)
+- 3 remaining: breakout(narval ~40min), enduro(narval+nibi P), NTG(fir R ~9h)
+
+### CLUSTER STATUS (~11:36 UTC):
+**Narval (5R+3P):** h067-breakout+h068-breakout/MR/phoenix at ~9:10/10h (~50min left). h064-enduro at 7:54/10h (~2h left). PENDING: h067-enduro (est 13:07), h067-NTG (est 13:07), h068-alien (est 15:17).
+**Nibi (2R+3P):** h068-NTG/SI at ~7:54/10h (~2h left). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4R):** h066-breakout/h064-solaris/h067-NTG/h068-alien at 0:52/10h (~9h left).
+
+### COVERAGE:
+| Hyp | Banked | Running | Pending | W/L/T | Key Signal |
+|-----|--------|---------|---------|-------|------------|
+| h066 OQE | 14/15 | 1R(fir breakout ~9h) | 1(nibi) | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h064 Rainbow | 13/15 | 2R(narval enduro ~2h, fir solaris ~9h) | 1(nibi) | 9/3/1 | Near-complete. |
+| h067 Replay | 12/15 | 2R(narval breakout ~40min, fir NTG ~9h) | 2P(enduro narval+nibi) | 7/4/1 | MsPac WIN. 3 remaining. |
+| h068 OQE+Rep | 9/15 | 5R(narval ~40min, nibi ~2h) + 1R(fir alien ~9h) | 0 | 6/3/0 | 6 games incoming. |
+
+### NEXT SESSION TODO:
+1. ~40min: narval batch (h067-breakout, h068-breakout/MR/phoenix) = 4 new results
+2. ~2h: narval h064-enduro + nibi h068-NTG/SI = 3 new results
+3. After narval batch: h067-enduro/NTG START on narval (~13:07 UTC)
+4. ~9h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
+5. When h066-breakout completes: FINAL OQE VERDICT
