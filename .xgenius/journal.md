@@ -8766,3 +8766,52 @@ h067's high replay ratio (4x gradient updates) causes catastrophic failures on s
 3. After running batch: pending jobs START (h067-enduro, h067-NTG, h066-breakout, h064-solaris)
 4. ~8.9h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
 5. When h066-breakout completes: FINAL OQE VERDICT — if non-loss -> 10W/0L/5T = MAJOR FINDING
+
+---
+**[2026-03-21 12:00 UTC]**
+
+## Session 145: Bank h068-breakout-s1 (Breakout LOSS -23.0%) — h068 now 10/15 (6W/4L)
+
+### Triggered by: h068-breakout-s1 (job 58067103, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h068 IQN+OQE+Replay (1 new, now 10/15):**
+1. h068-breakout-s1: q4=1.42 vs IQN=1.85 LOSS (-23.0%). Replay DESTROYS Breakout — even worse than h067 replay alone (q4=1.47). OQE+Replay (1.42) < Replay alone (1.47) < IQN (1.85) < N-step (1.95) < Rainbow-lite (2.04). Adding OQE to replay makes Breakout even worse.
+- h068 tally: 6W/4L/0T (Qbert+26.9%, MsPac+13.1%, Amidar+80.8%, Solaris+57.6%, PE+3.0%, Enduro+295% | Breakout-23.0%, BZ-15.4%, Venture-100%, DD-1.3%)
+- 5 remaining: MR/phoenix(narval ~30min), NTG/SI(nibi ~1.7h), alien(fir ~8.7h)
+
+### CLUSTER STATUS (~08:00 local / ~12:00 UTC):
+**Narval (3R+3P):** h068-MR/phoenix at ~9:30/10h (~30min left!). h064-enduro at 8:16/10h (~1.7h). PENDING: h067-enduro(13:07), h067-NTG(13:07), h068-alien(15:17).
+**Nibi (2R+3P):** h068-NTG/SI at ~8:17/10h (~1.7h). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4R):** h066-breakout/h064-solaris/h067-NTG/h068-alien at ~1:14/10h (~8.7h left).
+
+### COVERAGE:
+| Hyp | Banked | Running | W/L/T | Key Signal |
+|-----|--------|---------|-------|------------|
+| h066 OQE | 14/15 | 1R(fir breakout ~8.7h) + 1P(nibi) | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h064 Rainbow | 13/15 | 2R(narval enduro ~1.7h, fir solaris ~8.7h) | 9/3/1 | Near-complete. |
+| h067 Replay | 13/15 | 1R(fir NTG ~8.7h) + 2P(enduro) | 7/5/1 | WEAK. 5 losses confirmed. |
+| h068 OQE+Rep | 10/15 | 3R(narval ~30min, nibi ~1.7h) + 1R(fir alien ~8.7h) | 6/4/0 | 4th LOSS (Breakout). Replay component adds consistent losses. |
+
+### KEY OBSERVATION: BREAKOUT HIERARCHY
+Breakout q4 scores across all methods:
+- Rainbow-lite (h064): 2.04 — BEST
+- NoisyNet (h032): 1.98
+- Dueling (h058): 1.98
+- N-step (h057): 1.95
+- N-step IQN (h065): 1.92
+- IQN (h063): 1.85
+- DQN (h047): 1.80
+- Replay alone (h067): 1.47 — replay HURTS
+- OQE+Replay (h068): 1.42 — OQE makes replay WORSE
+- PPO (h001): 1.37 — baseline
+
+Replay ratio 4x is catastrophic for Breakout. OQE exacerbates it. The shared failure pattern between h067 and h068 confirms the replay component is the culprit.
+
+### NEXT SESSION TODO:
+1. ~30min: narval batch (h068-MR/phoenix) = 2 new results
+2. ~1.7h: nibi batch (h068-NTG/SI) + narval h064-enduro = 3 new results
+3. After narval/nibi batch: pending jobs START (h067-enduro, h067-NTG, h066-breakout, h064-solaris)
+4. ~8.7h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
+5. When h066-breakout completes: FINAL OQE VERDICT — if non-loss -> 10W/0L/5T = MAJOR FINDING
