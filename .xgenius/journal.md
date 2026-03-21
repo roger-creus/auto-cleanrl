@@ -8599,3 +8599,52 @@ All 4 fir Priority jobs finally started at ~10:45 UTC after being stuck 8+ hours
 3. ~9.5h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
 4. When h066-breakout completes: FINAL OQE VERDICT — if non-loss → 10W/0L/5T = MAJOR FINDING
 5. When h064 reaches 15/15: Full Rainbow-lite analysis
+
+---
+**[2026-03-21 11:05 UTC]**
+
+## Session 141: Bank h068-enduro-s1 (+295% WIN) + h067-BZ-s1 (-30% LOSS) + h067-PE-s1 (-88% LOSS)
+
+### Triggered by: h068-enduro-s1 (job 10672450, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 3
+
+**h067 IQN+Replay+Resets (2 new, now 10/15):**
+1. h067-battlezone-s1: q4=2441.08 vs IQN=3466.95 LOSS (-29.6%). Replay HURTS BattleZone — worse than all components (OQE=3726, N-step=4096, Rainbow=5310).
+2. h067-privateeye-s1: q4=50.53 vs IQN=423.18 LOSS (-88.1%). CATASTROPHIC. Replay DESTROYS PrivateEye learning. OQE=471, N-step=512. Replay ratio kills sparse-reward games.
+- h067 tally: 5W/4L/1T (Solaris+97.5%, Phoenix+91.1%, Amidar+76.8%, Alien+38.1%, Venture+263% | DD-2.4%, SI-20.6%, BZ-29.6%, PE-88.1% | MR TIE)
+- 5 remaining: breakout/mspacman/qbert(narval ~1.4h), NTG(fir R), enduro(nibi+narval P)
+
+**h068 IQN+OQE+Replay (1 new, now 9/15):**
+3. h068-enduro-s1: q4=4.88 vs IQN=1.24 WIN (+294.8%). Both near-zero but big relative improvement. Better than OQE alone (2.32) but worse than N-step alone (8.29).
+- h068 tally: 6W/3L/0T (Qbert+26.9%, MsPac+13.1%, Amidar+80.8%, Solaris+57.6%, PE+3.0%, Enduro+295% | BZ-15.4%, Venture-100%, DD-1.3%)
+- 6 remaining: breakout/MR/phoenix(narval ~1.5h), NTG/SI(nibi ~2.7h), alien(fir R)
+
+### KEY OBSERVATION: h067 REPLAY IS WEAKENING
+h067 at 5W/4L/1T is now the weakest of the active IQN combination hypotheses. The replay ratio kills learning on sparse-reward games (PE -88%) and BattleZone (-30%). Compare:
+- h066 OQE: 9W/0L/5T (14/15) — UNDEFEATED
+- h067 Replay: 5W/4L/1T (10/15) — CONCERNING
+- h068 OQE+Rep: 6W/3L/0T (9/15) — mixed, synergy on some games but replay losses persist
+
+OQE alone (h066) consistently avoids the losses that replay introduces. The replay component adds wins on some games (Amidar, Solaris, Phoenix) but at the cost of devastating losses on others (PE, BZ).
+
+### CLUSTER STATUS (~07:02 local / ~11:02 UTC):
+**Narval (7R+3P):** h067-breakout/mspacman/qbert + h068-breakout/MR/phoenix at ~8.5h/10h (~1.5h left). h064-enduro at 7:20/10h (~2.7h left). PENDING: h067-enduro (est 11:43), h067-NTG (est 11:49), h068-alien (est 12:35).
+**Nibi (2R+3P):** h068-NTG/SI at ~7:20/10h (~2.7h left). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4R):** h066-breakout, h064-solaris, h067-NTG, h068-alien — all running (elapsed ambiguous, may be nearing completion).
+
+### COVERAGE:
+| Hyp | Banked | Running | W/L/T | Key Signal |
+|-----|--------|---------|-------|------------|
+| h066 OQE | 14/15 | 1R(fir)+1P(nibi) breakout | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h064 Rainbow | 13/15 | 1R(narval enduro ~2.7h) + fir solaris | 9/3/1 | Near-complete. |
+| h067 Replay | 10/15 | 3R(narval ~1.4h) + fir NTG + 2P(enduro) | 5/4/1 | WEAKENING. BZ/PE losses are bad. |
+| h068 OQE+Rep | 9/15 | 3R(narval ~1.5h) + 2R(nibi ~2.7h) + fir alien | 6/3/0 | Mixed. Synergy real but replay losses persist. |
+
+### NEXT SESSION TODO:
+1. ~1.5h: narval batch 1 (h067-breakout/mspacman/qbert, h068-breakout/MR/phoenix) = 6 results
+2. ~2.7h: narval h064-enduro + nibi h068-NTG/SI = 3 results
+3. After narval/nibi batch: pending jobs START (h067-enduro×2, h067-NTG, h068-alien)
+4. Fir batch (h066-breakout, h064-solaris, h067-NTG, h068-alien) = timing unclear
+5. When h066-breakout completes: FINAL OQE VERDICT
+6. When all running finish: close h067 and h068, compare final tallies
