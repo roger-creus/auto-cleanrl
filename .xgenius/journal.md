@@ -8556,3 +8556,46 @@ All 4 fir pending jobs (h066-breakout, h064-solaris, h067-NTG, h068-alien) stuck
 3. After running batch: h066-breakout/h064-solaris/h067-enduro START (~10h after)
 4. ~12-14h: h066-breakout completes = FINAL OQE VERDICT
 5. When h066 finishes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 10:48 UTC]**
+
+## Session 140: Bank h068-doubledunk-s1 (DD LOSS -1.3%) — h068 now 8/15 (5W/3L)
+
+### Triggered by: h068-doubledunk-s1 (job 10674532, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h068 IQN+OQE+Replay (1 new, now 8/15):**
+1. h068-doubledunk-s1: q4=-22.88 vs IQN=-22.59 LOSS (-1.3%). Slightly worse than IQN. DoubleDunk is a third loss for h068 (after BZ-15.4% and Venture-100%).
+- h068 tally: 5W/3L/0T (Qbert+26.9%, Amidar+80.8%, Solaris+57.6%, MsPac+13.1%, PE+3.0% | BZ-15.4%, Venture-100%, DD-1.3%)
+- 7 remaining: breakout/MR/phoenix(narval ~1.6h), enduro/NTG/SI(nibi ~3h), alien(fir ~9.5h)
+
+### GREAT NEWS: Fir jobs UNSTUCK!
+All 4 fir Priority jobs finally started at ~10:45 UTC after being stuck 8+ hours:
+- h066-breakout-s1 (28723755, fir) — RUNNING! 2:30 elapsed. CRITICAL FINAL OQE GAME.
+- h064-solaris-s1 (28723783, fir) — RUNNING! Will complete h064 at 15/15.
+- h067-namethisgame-s1 (28723789, fir) — RUNNING! Backup for NTG.
+- h068-alien-s1 (28723790, fir) — RUNNING! Last h068 game.
+
+### CLUSTER STATUS (~10:47 UTC):
+**Narval (7R+3P):** h067-breakout/mspacman/qbert + h068-breakout/MR/phoenix at ~8:20/10h (~1.6h left). h064-enduro at 7:04/10h (~3h left). PENDING: h067-enduro/NTG, h068-alien (start 12:35).
+**Nibi (5R+3P):** h067-BZ/PE + h068-enduro/NTG/SI at ~7:05/10h (~3h left). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4R):** h066-breakout/h064-solaris/h067-NTG/h068-alien at 2:30/10h (~9.5h left. ALL JUST STARTED!)
+
+### COVERAGE:
+| Hyp | Banked | Running | Pending | W/L/T | Key Signal |
+|-----|--------|---------|---------|-------|------------|
+| h066 OQE | 14/15 | 1(fir breakout ~9.5h) | 1(nibi backup) | 9/0/5 | UNDEFEATED. FINAL game RUNNING ON FIR! |
+| h064 Rainbow | 13/15 | 2(narval enduro ~3h, fir solaris ~9.5h) | 1(nibi backup) | 9/3/1 | 2 remaining. |
+| h067 Replay | 8/15 | 6R+2P | 1P | 5/2/1 | Narval batch ~1.6h. |
+| h068 OQE+Rep | 8/15 | 6R+1P(fir alien) | 1P | 5/3/0 | DD adds 3rd loss. Narval batch ~1.6h. |
+| h065 N-step | **15/15 CLOSED** | — | — | 8/3/4 | Done. |
+| h061 C51 | **15/15 CLOSED** | — | — | 5/6/3 | Done. |
+
+### NEXT SESSION TODO:
+1. ~1.6h: narval batch (h067-breakout/mspacman/qbert, h068-breakout/MR/phoenix) = 6 new results
+2. ~3h: nibi batch (h067-BZ/PE, h068-enduro/NTG/SI) + h064-enduro = 6 new results
+3. ~9.5h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
+4. When h066-breakout completes: FINAL OQE VERDICT — if non-loss → 10W/0L/5T = MAJOR FINDING
+5. When h064 reaches 15/15: Full Rainbow-lite analysis
