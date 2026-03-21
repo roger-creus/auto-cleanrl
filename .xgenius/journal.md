@@ -8648,3 +8648,44 @@ OQE alone (h066) consistently avoids the losses that replay introduces. The repl
 4. Fir batch (h066-breakout, h064-solaris, h067-NTG, h068-alien) = timing unclear
 5. When h066-breakout completes: FINAL OQE VERDICT
 6. When all running finish: close h067 and h068, compare final tallies
+
+---
+**[2026-03-21 11:21 UTC]**
+
+## Session 142: Bank h067-qbert-s1 (+28.7% WIN) — Replay alone beats OQE+Replay on Qbert
+
+### Triggered by: h067-qbert-s1 (job 58067102, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h067 IQN+Replay+Resets (1 new, now 11/15):**
+1. h067-qbert-s1: q4=282.19 vs IQN=219.30 WIN (+28.7%). Replay ALONE (282.19) > OQE+Replay (278.37) > Rainbow-lite (254.38) > OQE (218.18) > IQN (219.30). Replay component is the DOMINANT factor on Qbert — OQE adds nothing.
+- h067 tally: 6W/4L/1T (Qbert+28.7%, Solaris+97.5%, Phoenix+91.1%, Amidar+76.8%, Alien+38.1%, Venture+263% | DD-2.4%, SI-20.6%, BZ-29.6%, PE-88.1% | MR TIE)
+- 4 remaining: breakout/mspacman(narval ~1h), enduro(narval+nibi P), NTG(fir R)
+
+### CLUSTER STATUS (~07:20 local / ~11:20 UTC):
+**Narval (6R+3P):** h067-breakout/mspacman at ~8:53/10h (~1.1h left). h068-breakout/MR/phoenix at ~8:53/10h (~1.1h left). h064-enduro at 7:37/10h (~2.4h left). PENDING: h067-enduro/NTG (est 13:07), h068-alien (est 15:17).
+**Nibi (2R+3P):** h068-NTG/SI at 7:38/10h (~2.4h left). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4R):** h066-breakout/h064-solaris/h067-NTG/h068-alien at 35min/10h (~9.4h left.
+
+### COVERAGE:
+| Hyp | Banked | Running | Pending | W/L/T | Key Signal |
+|-----|--------|---------|---------|-------|------------|
+| h066 OQE | 14/15 | 1R(fir breakout ~9.4h) | 1(nibi) | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h064 Rainbow | 13/15 | 2R(narval enduro ~2.4h, fir solaris ~9.4h) | 1(nibi) | 9/3/1 | Near-complete. |
+| h067 Replay | 11/15 | 3R(narval ~1.1h, fir NTG ~9.4h) | 2P(enduro) | 6/4/1 | Qbert WIN. Mixed: strong individual wins but 4 losses. |
+| h068 OQE+Rep | 9/15 | 5R(narval ~1.1h, nibi ~2.4h) + 1R(fir alien ~9.4h) | 0 | 6/3/0 | Replay adds wins but still 3 losses. |
+
+### KEY INSIGHT ON QBERT HIERARCHY:
+Replay alone (282.19) > OQE+Replay (278.37) > Rainbow-lite (254.38) > DQN-NoisyNet (287.48) > IQN (219.30) > OQE (218.18)
+- For Qbert, NoisyNet is king (287.48), with Replay a close second (282.19).
+- OQE adds NO value on Qbert.
+- The h068 OQE+Replay combination is slightly WORSE than Replay alone — OQE may be slightly hurting the replay component.
+
+### NEXT SESSION TODO:
+1. ~1.1h: narval batch (h067-breakout/mspacman, h068-breakout/MR/phoenix) = 5 new results
+2. ~2.4h: narval h064-enduro + nibi h068-NTG/SI = 3 new results
+3. After narval/nibi batch: pending jobs START (h067-enduro, h067-NTG, h068-alien)
+4. ~9.4h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
+5. When h066-breakout completes: FINAL OQE VERDICT
+
