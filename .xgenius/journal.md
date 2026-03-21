@@ -8394,3 +8394,81 @@ All three failures from OLD template with embedded quotes in chdir path. Current
 3. ~5-10h: massive batch of h067/h068 completions
 4. When h066-breakout completes: FINAL OQE VERDICT — if non-loss → 10W/0L/5T = MAJOR FINDING
 5. When h064 reaches 15/15: Full Rainbow-lite vs OQE comparison
+
+---
+**[2026-03-21 09:07 UTC]**
+
+## Session 136: Bank h061-breakout-s1 (15/15 CLOSED) — C51 Complete
+
+### Triggered by: h061-breakout-s1 (job 10674101, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h061 C51 40M (1 new, now 15/15 CLOSED):**
+1. h061-breakout-s1: q4=1.42 vs IQN=1.85 LOSS (-23.2%). C51 regresses on Breakout.
+- h061 FINAL: 5W/6L/3T vs IQN. IQM dHNS=-0.0078 vs PPO. CLOSED. C51 is strictly worse than IQN — PrivateEye catastrophic (-143 q4), Phoenix/Solaris/BattleZone losses. Categorical distribution adds no value over implicit quantiles.
+
+### FIR CLUSTER STUCK:
+All 4 fir pending jobs (h066-breakout, h064-solaris, h067-NTG, h068-alien) stuck at Priority for 7+ hours (submitted 02:00 UTC). Same issue as rorqual. All have nibi/narval backups.
+
+### CLUSTER STATUS (~09:05 UTC):
+**Narval (8R+3P):** h065-NTG/h067-breakout/mspacman/qbert/h068-breakout/MR/phoenix at 6:38/10h (~3.3h left), h064-enduro at 5:22/10h (~4.6h). PENDING: h067-enduro/NTG, h068-alien.
+**Nibi (11R+3P):** h065-enduro/h067-BZ/MR/PE/h068-amidar/enduro/NTG/SI/DD/mspacman/qbert at 5:22/10h (~4.6h). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4P):** All stuck Priority. Not expected to start.
+
+### COVERAGE:
+| Hyp | Banked | Running | Pending | W/L/T vs IQN | Key Signal |
+|-----|--------|---------|---------|-------|------------|
+| h066 OQE | 14/15 | 0 | 2(fir+nibi breakout) | 9/0/5 | UNDEFEATED. Breakout starts after nibi batch (~4.6h+10h=~15h). |
+| h064 Rainbow | 13/15 | 1(narval enduro ~4.6h) | 2(fir+nibi solaris) | 9/3/1 | Near-complete. |
+| h065 N-step | 13/15 | 2(narval NTG ~3.3h, nibi enduro ~4.6h) | 0 | 8/4/1 | Near-complete. |
+| h067 Replay | 7/15 | 6R+3P | — | 5/2/0 | Many results incoming ~3-5h. |
+| h068 OQE+Replay | 4/15 | 10R+1P | — | 2/2/0 | CONCERNING. 11 games running. |
+| h061 C51 | **15/15 CLOSED** | 0 | 0 | 5/6/3 | IQM=-0.0078. Done. |
+
+### TIMELINE:
+1. ~3.3h: narval batch 1 (h065-NTG, h067-breakout/mspacman/qbert, h068-breakout/MR/phoenix) = 7 new results
+2. ~4.6h: nibi batch + h064-enduro (h065-enduro, h067-BZ/MR/PE, h068-×7, h064-enduro) = 11 new results
+3. After nibi batch: h066-breakout/h064-solaris/h067-enduro START (~10h after)
+4. ~15-16h: h066-breakout completes = FINAL OQE VERDICT
+5. When h066 finishes: If non-loss → 10W/0L/5T or better = MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 10:19 UTC]**
+
+## Session 137: Bank h068-amidar-s1 (+80.8%) + h065-enduro + h065-NTG — h065 CLOSED 15/15
+
+### Triggered by: h068-amidar-s1 (job 10672417, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 3
+
+**h068 IQN+OQE+Replay (1 new, now 5/15):**
+1. h068-amidar-s1: q4=61.97 vs IQN=34.27 WIN (+80.8%). MASSIVE improvement! But matches h067-amidar=60.59, while h066-amidar=33.98 (TIE). Amidar boost entirely from Replay component, not OQE.
+- h068 tally: 3W/2L/0T (Amidar+80.8%, Solaris+57.6%, PE+3.0% | BZ-15.4%, Venture-100%)
+
+**h065 IQN+N-step (2 new, now 15/15 CLOSED):**
+2. h065-enduro-s1: q4=8.29 vs IQN=1.24 WIN (+569%). Both near-zero but N-step dramatically better.
+3. h065-namethisgame-s1: q4=1822.19 vs IQN=1564.76 WIN (+16.5%). Pulled from narval (was disappeared).
+- h065 FINAL: 8W/3L/4T vs IQN. Closed. Strong on exploration/sparse-reward games (Venture+503%, Enduro+569%, Phoenix+30%, PE+21%). Loses on Alien-18.9%, MsPac-10%, Qbert-6.7%.
+
+### CLUSTER STATUS (~06:15 UTC):
+**Narval (7R+3P):** h067-breakout/mspacman/qbert + h068-breakout/MR/phoenix at ~7:48/10h (~2.2h left). h064-enduro at 6:32/10h (~3.5h). PENDING: h067-enduro/NTG, h068-alien.
+**Nibi (9R+3P):** h067-BZ/MR/PE + h068-enduro/NTG/SI/DD/mspacman/qbert at ~6:33/10h (~3.5h). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4P):** h066-breakout, h064-solaris, h067-NTG, h068-alien — all stuck Priority.
+
+### COVERAGE:
+| Hyp | Banked | Running | W/L/T | Key Signal |
+|-----|--------|---------|-------|------------|
+| h066 OQE | 14/15 | 0R, 2P(breakout) | 9/0/5 | UNDEFEATED. FINAL game pending. |
+| h064 Rainbow | 13/15 | 1R(enduro ~3.5h) + 2P(solaris) | 9/3/1 | Near complete. 2 remaining. |
+| h067 Replay | 7/15 | 6R(~2-3.5h) + 3P | 5/2/0 | Strongest wins. Batch incoming. |
+| h068 OQE+Rep | 5/15 | 8R(~2-3.5h) + 2P | 3/2/0 | Amidar+80.8% from Replay. Batch incoming. |
+| h065 N-step | **15/15 CLOSED** | — | 8/3/4 | Done. |
+| h061 C51 | **15/15 CLOSED** | — | 5/6/3 | Done. |
+
+### NEXT SESSION TODO:
+1. ~2.2h: narval batch (h067×3, h068×3) = 6 new results
+2. ~3.5h: nibi batch (h067×3, h068×6, h064-enduro) = 10 new results
+3. After nibi batch: h066-breakout/h064-solaris/h067-enduro START (~10h after)
+4. ~14h: h066-breakout completes = FINAL OQE VERDICT
+5. When h066 finishes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING

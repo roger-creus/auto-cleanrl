@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Amidar-v5,1,h068,h068-amidar-s1,iqn_oqe_replay,40000000,57856,59.90790939331055,61.9657096862793,3466032.0,73.5999984741211
