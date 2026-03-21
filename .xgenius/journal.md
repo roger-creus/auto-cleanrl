@@ -8133,3 +8133,58 @@ Fir backup (28686773, 10h) is PENDING — will start once current fir jobs finis
 6. ~4h: h067 fir/nibi enduro/SI results
 7. ~9h: narval jobs (h065-NTG, h067×3, h068×3)
 8. When h066-breakout completes: FINAL OQE VERDICT — if non-loss, 10W/0L/5T or better = MAJOR FINDING
+
+---
+**[2026-03-21 03:40 UTC]**
+
+## Session 130: Bank h064-alien + h064-privateeye (8/15) + Submit 8 backups
+
+### Triggered by: h064-alien-s1 (job 28594120, fir SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h064 Rainbow-lite NoisyNet+N-step (2 new, now 8/15):**
+1. h064-alien-s1: q4=275.49 vs IQN=311.13 LOSS (-11.5%). NoisyNet+N-step hurts Alien.
+2. h064-privateeye-s1: q4=0.0 vs IQN=423.18 LOSS (-100%). CATASTROPHIC collapse on PrivateEye! Mean=41.44 but last 25% is zero.
+- h064 tally: 4W/3L/1T (Venture+391%, NTG+59%, Phoenix+40%, DD+14% | Alien-11.5%, Amidar-10%, PE-100% | MR TIE)
+- h064 is mixed — strong on sparse-reward/easy games, catastrophic on PrivateEye
+
+### CLUSTER STATE:
+- All SLURM queues checked. Rorqual: 6 jobs stuck PENDING (Priority) for 5+ hours.
+- Fir h064-enduro/qbert at 7:30/8h — logs show container started but may timeout.
+- Narval h064-breakout at 7:24/8h — should complete ~36min.
+- Nibi h064-BZ/SI at 6:04/8h — ~2h left.
+
+### BACKUPS SUBMITTED: 8 jobs (narval 5, nibi 3)
+Submitted backups for at-risk and rorqual-stuck jobs:
+- h064-enduro-s1 (narval 58069549, 10h) — backup for fir job about to timeout
+- h064-qbert-s1 (narval 58069556, 10h) — backup for fir job about to timeout
+- h067-enduro-s1 (narval 58069580, 10h) — backup for rorqual stuck
+- h067-namethisgame-s1 (narval 58069590, 10h) — backup for rorqual stuck
+- h068-alien-s1 (narval 58069613, 10h) — backup for rorqual stuck
+- h068-doubledunk-s1 (nibi 10674532, 10h) — backup for rorqual stuck
+- h068-mspacman-s1 (nibi 10674570, 10h) — backup for rorqual stuck
+- h068-qbert-s1 (nibi 10674571, 10h) — backup for rorqual stuck
+
+### UPDATED COVERAGE:
+| Hyp | Banked | Running/Pending | W/L/T | Key Signal |
+|-----|--------|-----------------|-------|------------|
+| h066 OQE | 14/15 | 1P (fir breakout) | 9/0/5 | UNDEFEATED. Last game pending. |
+| h067 Replay | 6/15 | 9R+5P | 5/1/0 | Strongest wins. Many running. |
+| h065 N-step | 13/15 | 2R+1P | 8/4/1 | Mixed. NTG running. |
+| h064 Rainbow | 8/15 | 6R+1P+2 backups | 4/3/1 | Mixed. PE catastrophe. |
+| h068 OQE+Replay | 4/15 | 3R+8P+3 backups | 2/2/0 | CONCERNING. |
+
+### ACTIVE JOBS (~33 running + ~20 pending):
+**Narval (12):** h064-breakout(7.4h/8h), h064-solaris(6.4h/8h), h065-NTG(1.2h/10h), h067-breakout/mspacman/qbert(1.2h/10h), h068-breakout/MR/phoenix(1.1h/10h), h064-enduro/qbert backups(new), h067-enduro/NTG backups(new), h068-alien backup(new)
+**Nibi (3R+9P):** h064-BZ/SI(6h/8h), h067-SI(6h/10h) + pending: h065-enduro, h067-BZ/MR/PE, h068-amidar/enduro/NTG/SI + 3 new backups
+**Fir (3):** h064-enduro/qbert(7.5h/8h), h067-enduro(6h/10h), h066-breakout(PENDING)
+**Rorqual (6P):** h067-enduro/NTG, h068-alien/DD/mspacman/qbert — all stuck Priority
+
+### NEXT SESSION TODO:
+1. IMMINENT (~30min): h064-breakout(narval), h064-enduro/qbert(fir may timeout)
+2. ~2h: h064-BZ/SI(nibi), h064-solaris(narval) → h064 approaches 15/15
+3. ~4h: h067-SI(nibi), h067-enduro(fir)
+4. ~9h: narval batch (h065-NTG, h067×3, h068×3, backups)
+5. h066-breakout on fir: needs to START first (pending behind enduro/qbert/h067-enduro)
+6. When h066-breakout completes: FINAL OQE VERDICT
