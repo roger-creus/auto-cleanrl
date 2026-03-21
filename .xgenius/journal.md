@@ -8860,3 +8860,41 @@ Replay ratio 4x is catastrophic for Breakout. OQE exacerbates it. The shared fai
 4. narval pending: h067-enduro/NTG, h068-alien, then h068-MR/phoenix resubmits
 5. When h066-breakout completes: FINAL OQE VERDICT — if non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
 6. When all 4 hypotheses reach 15/15: FINAL COMPARISON + close phase
+
+---
+**[2026-03-21 12:45 UTC]**
+
+## Session 147: Bank h068-namethisgame-s1 (+13.8% WIN) — h068 now 12/15 (7W/5L)
+
+### Triggered by: h068-namethisgame-s1 (job 10672459, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h068 IQN+OQE+Replay (1 new, now 12/15):**
+1. h068-namethisgame-s1: q4=1780.20 vs IQN=1564.76 WIN (+13.8%). OQE+Replay (1780) > OQE alone (1680) > IQN (1565). Replay adds significant value on NTG, similar to N-step IQN (1822). Below Rainbow-lite (2491) which has N-step+NoisyNet.
+- h068 tally: 7W/5L/0T (Qbert+26.9%, MsPac+13.1%, Amidar+80.8%, Solaris+57.6%, PE+3.0%, Enduro+295%, NTG+13.8% | BZ-15.4%, Venture-100%, DD-1.3%, Breakout-23.0%, SI-19.9%)
+- 3 remaining: MR/phoenix(narval P), alien(fir R ~8h)
+
+### NTG HIERARCHY:
+Rainbow-lite(2491) > PPO(2523) > N-step IQN(1822) > NoisyNet(1790) > OQE+Replay(1780) > DQN(1777) > N-step DQN(1774) > Munchausen(1719) > PER(1716) > OQE(1680) > IQN(1565)
+N-step is the dominant component for NTG — Rainbow-lite at 2491 is near-PPO.
+
+### CLUSTER STATUS (~13:00 UTC):
+**Narval (5P):** h067-enduro(est 13:57), h067-NTG(est 14:18), h068-alien(est 14:18), h068-MR(est 14:18), h068-phoenix(est 12:58). All pending.
+**Nibi (3P):** h066-breakout, h064-solaris, h067-enduro. All pending.
+**Fir (4R):** h066-breakout/h064-solaris/h067-NTG/h068-alien at ~2h/10h (~8h left).
+
+### COVERAGE:
+| Hyp | Banked | Running/Pending | W/L/T | Key Signal |
+|-----|--------|-----------------|-------|------------|
+| h066 OQE | 14/15 | 1R(fir breakout ~8h) + 1P(nibi) | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h064 Rainbow | 14/15 | 1R(fir solaris ~8h) + 1P(nibi) | 10/3/1 | Near-complete. |
+| h067 Replay | 13/15 | 1R(fir NTG ~8h) + 2P(enduro narval+nibi) | 7/5/1 | WEAK. 5 losses. |
+| h068 OQE+Rep | 12/15 | 1R(fir alien ~8h) + 2P(narval MR+phoenix) | 7/5/0 | NTG WIN. Mixed results persist. |
+
+### NEXT SESSION TODO:
+1. ~8h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results. THIS IS THE BIG ONE.
+2. Narval pending: h067-enduro/NTG start ~14:00-14:18. h068-phoenix start ~12:58. h068-MR/alien start ~14:18.
+3. Nibi pending: h066-breakout, h064-solaris, h067-enduro — all waiting for slot.
+4. When h066-breakout completes: FINAL OQE VERDICT — if non-loss -> 10W/0L/5T = MAJOR PUBLISHABLE FINDING.
+5. When all 4 hypotheses reach 15/15: FINAL COMPARISON + close phase.
