@@ -8815,3 +8815,48 @@ Replay ratio 4x is catastrophic for Breakout. OQE exacerbates it. The shared fai
 3. After narval/nibi batch: pending jobs START (h067-enduro, h067-NTG, h066-breakout, h064-solaris)
 4. ~8.7h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
 5. When h066-breakout completes: FINAL OQE VERDICT — if non-loss -> 10W/0L/5T = MAJOR FINDING
+
+---
+**[2026-03-21 12:39 UTC]**
+
+## Session 146: Bank h064-enduro-s1 (+1673% WIN) + h068-spaceinvaders-s1 (-19.9% LOSS) — h064 at 14/15, h068 at 11/15
+
+### Triggered by: h064-enduro-s1 (job 58069549, narval SUCCESS) + h068-spaceinvaders-s1 (job 10672464, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h064 Rainbow-lite (1 new, now 14/15):**
+1. h064-enduro-s1: q4=21.97 vs IQN=1.24 WIN (+1673%). IQN was catastrophic on Enduro (q4=1.24 vs DQN=19.01). Rainbow-lite at 21.97 BEATS even DQN (19.01). N-step/NoisyNet restore Enduro competence.
+- h064 tally: 10W/3L/1T. 1 remaining: solaris (fir R ~8h).
+
+**h068 IQN+OQE+Replay (1 new, now 11/15):**
+2. h068-spaceinvaders-s1: q4=200.81 vs IQN=250.88 LOSS (-19.9%). Replay hurts SpaceInvaders — identical to h067 replay alone (199.08). OQE alone=262.71. Replay component is the culprit.
+- h068 tally: 6W/5L/0T. 4 remaining: MR+phoenix (RESUBMITTED narval 12h), NTG (nibi ~1h), alien (fir ~8h).
+
+### DISCOVERED: h068-MR and h068-phoenix TIMED OUT on narval (10h walltime, MIG A100 too slow for 4x replay). Resubmitted both with 11:59:00 walltime (jobs 58077666, 58077667).
+
+### CLUSTER STATUS (~12:35 UTC):
+**Narval (3P+2P new):** h067-enduro(est 12:58), h067-NTG(est 13:04), h068-alien(est 13:11). NEW: h068-MR+phoenix resubmitted.
+**Nibi (1R+3P):** h068-NTG at ~9h/10h (~1h left). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4R):** h066-breakout/h064-solaris/h067-NTG/h068-alien at ~2h/10h (~8h left).
+
+### COVERAGE:
+| Hyp | Banked | Running/Pending | W/L/T | Key Signal |
+|-----|--------|-----------------|-------|------------|
+| h066 OQE | 14/15 | 1R(fir breakout ~8h)+1P(nibi) | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h064 Rainbow | 14/15 | 1R(fir solaris ~8h)+1P(nibi) | 10/3/1 | Enduro HUGE WIN. Near-complete. |
+| h067 Replay | 13/15 | 1R(fir NTG)+2P(enduro narval+nibi) | 7/5/1 | WEAK. Waiting. |
+| h068 OQE+Rep | 11/15 | 1R(nibi NTG ~1h)+1R(fir alien ~8h)+2P(narval MR+phoenix resubmit) | 6/5/0 | 5th LOSS (SI). Weakest combination. |
+
+### KEY OBSERVATIONS:
+1. h064 Rainbow-lite at 10W/3L/1T is now the STRONGEST combination by win count. Only h066 (9W/0L/5T) is arguably better due to zero losses.
+2. h068 at 6W/5L confirms replay ratio HURTS more than helps when combined with OQE. The replay component introduces losses on BZ/Venture/DD/Breakout/SI that OQE alone avoids entirely.
+3. Enduro hierarchy: Rainbow-lite(21.97) > DQN(19.01) > N-step IQN(8.29) > OQE(2.32) > IQN(1.24) > PPO(0.0). N-step is the key component for Enduro.
+
+### NEXT SESSION TODO:
+1. ~1h: nibi h068-NTG completion → bank result, h068 at 12/15
+2. ~8h: fir batch (h066-breakout FINAL!, h064-solaris, h067-NTG, h068-alien) = 4 results
+3. After nibi NTG: pending jobs START (h066-breakout, h064-solaris, h067-enduro on nibi)
+4. narval pending: h067-enduro/NTG, h068-alien, then h068-MR/phoenix resubmits
+5. When h066-breakout completes: FINAL OQE VERDICT — if non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+6. When all 4 hypotheses reach 15/15: FINAL COMPARISON + close phase
