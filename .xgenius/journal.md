@@ -8081,3 +8081,55 @@ Submitted: h065 (2), h066 (1), h067 (8), h068 (11)
 5. ~9.7h: h067/h068 narval jobs, h065-NTG(narval)
 6. When h066-breakout completes: FINAL VERDICT on OQE's undefeated streak
 7. When h064 reaches 15/15: Compare Rainbow-lite vs individual components
+
+---
+**[2026-03-21 03:23 UTC]**
+
+## Session 129: Bank h065 alien+solaris (13/15) + h050 alien (15/15 CLOSED) + Resubmit h061-breakout
+
+### Triggered by: h065-solaris-s1 (job 10661946, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 3
+
+**h065 IQN+N-step (2 new, now 13/15):**
+1. h065-solaris-s1: q4=842.21 vs IQN=696.07 WIN (+21.0%). N-step boosts IQN on Solaris.
+2. h065-alien-s1: q4=252.32 vs IQN=311.13 LOSS (-18.9%). N-step hurts IQN on Alien significantly.
+- h065 tally: 8W/4L/1T vs IQN. Mixed — N-step helps exploration games (Venture+502%, PE+21%, Solaris+21%) but hurts others (Alien-19%, MsPac-10%).
+
+**h050 DQN+Munchausen (1 new, now 15/15 CLOSED):**
+3. h050-alien-s1: q4=170.92 vs DQN=336.73 LOSS (-49.2%). Alien is Munchausen's worst game.
+- h050 final: 4W/9L/2T vs DQN. CLOSED. Munchausen clearly inferior to base DQN.
+
+### h066-breakout INVESTIGATION:
+narval job 58049601 (marked 'completed') actually FAILED — embedded quotes in chdir path caused wrong working directory, code not found at /src/cleanrl/. No CSV produced. This is the known narval template issue with embedded quotes.
+Fir backup (28686773, 10h) is PENDING — will start once current fir jobs finish (~45min).
+
+### RESUBMISSION:
+- h061-breakout-s1: Resubmitted on nibi (job 10674101, 10h). 7th attempt — 6 previous all disappeared/cancelled. C51 breakout is cursed.
+
+### COVERAGE STATUS:
+| Hypothesis | Banked | Running | Pending | Notes |
+|-----------|--------|---------|---------|-------|
+| h050 Munch | **15/15 CLOSED** | 0 | 0 | 4W/9L/2T. Done. |
+| h061 C51 | 14/15 | 0 | 1(nibi breakout) | breakout resubmitted 7th time |
+| h064 Rainbow | 6/15 | 8(fir alien/enduro/qbert ~45min; narval breakout/PE/solaris ~1-2h; nibi BZ/SI ~2h) | 1(nibi mspacman) | IMMINENT |
+| h065 N-step | 13/15 | 1(narval NTG ~9h) | 1(nibi enduro) | 8W/4L/1T |
+| h066 OQE | 14/15 | 0 | 1(fir breakout ~45min start) | **9W/0L/5T UNDEFEATED** |
+| h067 Replay | 6/15 | 5(fir enduro 4h; nibi SI 4h; narval breakout/mspacman/qbert 9h) | 4(nibi BZ/MR/PE; rorqual enduro/NTG) | 5W/1L/0T |
+| h068 OQE+Replay | 4/15 | 3(narval breakout/MR/phoenix 9h) | 8(nibi+rorqual) | 2W/2L — concerning |
+
+### ACTIVE JOBS BY CLUSTER:
+**Fir (5):** h064-alien(7:15/8h), h064-enduro(7:15/8h), h064-qbert(7:14/8h), h067-enduro(5:42/10h), h066-breakout(PENDING)
+**Nibi (3R+9P):** h064-BZ(5:46/8h), h064-SI(5:46/8h), h067-SI(5:46/10h) + 9 pending
+**Narval (10):** h064-breakout(7:06/8h), h064-PE(6:23/8h), h064-solaris(6:06/8h), h065-NTG(0:52/10h), h067-breakout/mspacman/qbert(0:52/10h), h068-breakout/MR/phoenix(0:52/10h)
+**Rorqual (6P):** h067-enduro/NTG, h068-alien/DD/mspacman/qbert — all pending
+
+### NEXT SESSION TODO:
+1. IMMINENT (~45min): h064 fir results (alien/enduro/qbert) → h064 reaches 9/15
+2. IMMINENT (~1h): h064-breakout (narval) → h064 reaches 10/15
+3. ~1-2h: h064 narval PE/solaris → h064 reaches 12/15
+4. ~2h: h064 nibi BZ/SI → h064 reaches 14/15 (only mspacman pending)
+5. ~45min after fir jobs finish: h066-breakout starts on fir
+6. ~4h: h067 fir/nibi enduro/SI results
+7. ~9h: narval jobs (h065-NTG, h067×3, h068×3)
+8. When h066-breakout completes: FINAL OQE VERDICT — if non-loss, 10W/0L/5T or better = MAJOR FINDING
