@@ -8472,3 +8472,45 @@ All 4 fir pending jobs (h066-breakout, h064-solaris, h067-NTG, h068-alien) stuck
 3. After nibi batch: h066-breakout/h064-solaris/h067-enduro START (~10h after)
 4. ~14h: h066-breakout completes = FINAL OQE VERDICT
 5. When h066 finishes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 10:24 UTC]**
+
+## Session 138: Bank h067-montezumarevenge-s1 (TIE) + h068-mspacman-s1 (+13.1%)
+
+### Triggered by: h067-montezumarevenge-s1 (job 10672328, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h067 IQN+Replay+Resets (1 new, now 8/15):**
+1. h067-montezumarevenge-s1: q4=0.0 vs IQN=0.0 TIE. Hard exploration game — no algo solves MR at 40M.
+- h067 tally: 5W/2L/1T (Solaris+97.5%, Phoenix+91.1%, Amidar+76.8%, Alien+38.1%, Venture+263% | DD-2.4%, SI-20.6% | MR TIE)
+- 7 remaining: BZ/PE(nibi ~3h), breakout/mspacman/qbert(narval ~2h), enduro(nibi P), NTG(narval P/fir P)
+
+**h068 IQN+OQE+Replay (1 new, now 6/15):**
+2. h068-mspacman-s1: q4=561.47 vs IQN=496.64 WIN (+13.1%). SYNERGY: h068=561.47 > OQE alone(514.10) > IQN(496.64). OQE+Replay genuinely better than either component alone on MsPacman.
+- h068 tally: 4W/2L/0T (MsPac+13.1%, Amidar+80.8%, Solaris+57.6%, PE+3.0% | BZ-15.4%, Venture-100%)
+- 9 remaining: breakout/MR/phoenix(narval ~2h), enduro/NTG/SI/DD/qbert(nibi ~3h), alien(narval P/fir P)
+
+### CLUSTER STATUS (~10:22 UTC):
+**Narval (6R+3P):** h067-breakout/mspacman/qbert + h068-breakout/MR/phoenix at ~8h/10h (~2h left). h064-enduro at 6:39/10h (~3.3h). PENDING: h067-enduro/NTG, h068-alien.
+**Nibi (7R+3P):** h067-BZ/PE + h068-enduro/NTG/SI/DD/qbert at ~6:40/10h (~3.3h). PENDING: h066-breakout, h064-solaris, h067-enduro.
+**Fir (4P):** h066-breakout, h064-solaris, h067-NTG, h068-alien — all stuck Priority.
+
+### COVERAGE:
+| Hyp | Banked | Running | W/L/T | Key Signal |
+|-----|--------|---------|-------|------------|
+| h066 OQE | 14/15 | 0R, 2P(breakout) | 9/0/5 | UNDEFEATED. FINAL game pending. |
+| h064 Rainbow | 13/15 | 1R(enduro ~3h) + 2P(solaris) | 9/3/1 | Near complete. |
+| h067 Replay | 8/15 | 5R(~2-3h) + 2 games P | 5/2/1 | MR=TIE, strongest individual wins. |
+| h068 OQE+Rep | 6/15 | 8R(~2-3h) + 1P | 4/2/0 | MsPac shows SYNERGY (+13.1% vs IQN, beats OQE alone). Still 2 losses. |
+| h065 N-step | **15/15 CLOSED** | — | 8/3/4 | Done. |
+| h061 C51 | **15/15 CLOSED** | — | 5/6/3 | Done. |
+
+### NEXT SESSION TODO:
+1. ~2h: narval batch (h067×3, h068×3) = 6 new results
+2. ~3h: h064-enduro (narval) → h064 reaches 14/15
+3. ~3.3h: nibi batch (h067×2, h068×5) = 7 new results
+4. After nibi/narval batches: pending jobs START (h066-breakout, h064-solaris, h067-enduro, h067-NTG, h068-alien)
+5. ~13-16h: h066-breakout completes = FINAL OQE VERDICT
+6. When h066 finishes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
