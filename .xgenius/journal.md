@@ -8188,3 +8188,40 @@ Submitted backups for at-risk and rorqual-stuck jobs:
 4. ~9h: narval batch (h065-NTG, h067×3, h068×3, backups)
 5. h066-breakout on fir: needs to START first (pending behind enduro/qbert/h067-enduro)
 6. When h066-breakout completes: FINAL OQE VERDICT
+
+---
+**[2026-03-21 03:47 UTC]**
+
+## Session 131: Bank h064-breakout-s1 (9/15) — Rainbow-lite Breakout WIN +10%
+
+### Triggered by: h064-breakout-s1 (job 58055384, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h064 Rainbow-lite NoisyNet+N-step (1 new, now 9/15):**
+1. h064-breakout-s1: q4=2.04 vs IQN=1.85 WIN (+10.0%). Near-zero Breakout game but consistent improvement from NoisyNet+N-step.
+- h064 tally: 5W/3L/1T (Breakout+10%, Venture+391%, NTG+59%, Phoenix+40%, DD+14% | Alien-11.5%, Amidar-10%, PE-100% | MR TIE)
+
+### CLUSTER STATUS:
+**Fir (4):** h064-enduro(7:42/8h ~18min left!), h064-qbert(7:42/8h ~18min!), h067-enduro(6:09/10h), h066-breakout(PENDING — will start when fir slots free up)
+**Nibi (16R):** h064-BZ/SI(6:13/8h ~1:47), h067-SI(6:13/10h ~3:47), plus 13 others at 3:48/10h (~6h)
+**Narval (9R+4P):** h064-solaris(6:34/8h ~1:26), h064-enduro backup(3min/10h), h065-NTG+h067×3+h068×3(~1:20/10h ~8:40), plus 4 PENDING
+**Rorqual (6P):** All stuck Priority — covered by nibi/narval backups.
+
+### COVERAGE:
+| Hyp | Banked | Running | Missing Games |
+|-----|--------|---------|---------------|
+| h064 Rainbow | 9/15 | 6 | BZ(nibi ~1:47), SI(nibi ~1:47), Solaris(narval ~1:26), Enduro(fir 18min/narval 10h), Qbert(fir 18min/narval P), MsPac(nibi ~6h) |
+| h066 OQE | 14/15 | 0R+1P | Breakout (fir PENDING, starts when slot opens ~18min) |
+| h067 Replay | 6/15 | 7 | BZ/MR/PE(nibi ~6h), breakout/mspacman/qbert(narval ~8:40), SI(nibi ~3:47), enduro(fir ~3:51/narval P), NTG(narval ~8:40/rorqual P) |
+| h068 OQE+Replay | 4/15 | 7 | amidar/enduro/NTG/SI/DD/mspacman/qbert(nibi ~6-10h), breakout/MR/phoenix(narval ~8:40), alien(narval P/rorqual P) |
+| h065 N-step | 13/15 | 2 | enduro(nibi ~10h), NTG(narval ~8:40) |
+| h061 C51 | 14/15 | 1 | breakout(nibi ~10h) |
+
+### NEXT SESSION TODO:
+1. IMMINENT (~18min): h064-enduro/qbert fir may timeout → backups on narval cover them
+2. ~1.5h: h064-BZ/SI/Solaris complete → h064 reaches 12/15
+3. ~3-4h: h067-SI/enduro complete
+4. h066-breakout starts on fir when slot opens (~18min) → FINAL OQE VERDICT ~10h later
+5. ~6-10h: massive batch of nibi/narval completions for h067/h068
+6. When h066-breakout completes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
