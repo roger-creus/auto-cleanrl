@@ -8225,3 +8225,86 @@ Submitted backups for at-risk and rorqual-stuck jobs:
 4. h066-breakout starts on fir when slot opens (~18min) → FINAL OQE VERDICT ~10h later
 5. ~6-10h: massive batch of nibi/narval completions for h067/h068
 6. When h066-breakout completes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+
+---
+**[2026-03-21 03:57 UTC]**
+
+## Session 132: Bank h064-spaceinvaders-s1 (10/15) — Rainbow-lite SI WIN +7.6%
+
+### Triggered by: h064-spaceinvaders-s1 (job 10658950, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h064 Rainbow-lite NoisyNet+N-step (1 new, now 10/15):**
+1. h064-spaceinvaders-s1: q4=270.0 vs IQN=250.88 WIN (+7.6%). NoisyNet+N-step consistently improves SpaceInvaders.
+- h064 tally: 6W/3L/1T (SI+7.6%, Breakout+10%, DD+14.4%, Phoenix+40.3%, NTG+59.2%, Venture+391.4% | Amidar-9.5%, Alien-11.5%, PE-100% | MR TIE)
+
+### CLUSTER STATUS:
+- h064-enduro (fir 28594192): At 7:51/8h, may timeout. Narval backup (58069549) running 12min.
+- h064-qbert (fir 28594231): At 7:50/8h, may timeout. Narval backup (58069556) PENDING (Priority).
+- h064-solaris (narval 58055410): 6:42/8h → ~1.3h remaining.
+- h064-BZ (nibi 10658667): 6:22/8h → ~1.6h remaining.
+- h064-mspacman (nibi 10673234): 12min/10h → ~9.5h remaining.
+- h066-breakout (fir 28686773): JUST STARTED (3:15 elapsed of 10h)! FINAL OQE GAME.
+
+### COVERAGE STATUS:
+| Hyp | Banked | Running | Pending | W/L/T | Key Signal |
+|-----|--------|---------|---------|-------|------------|
+| h066 OQE | 14/15 | 1(fir breakout ~10h) | 0 | 9/0/5 | UNDEFEATED. FINAL game running. |
+| h064 Rainbow | 10/15 | 4(BZ ~1.6h, Solaris ~1.3h, Enduro backup ~9.5h, MsPac ~9.5h) | 1(Qbert narval P) | 6/3/1 | Mixed but more wins than losses. |
+| h067 Replay | 6/15 | 7(SI ~3.6h, Enduro fir ~3.7h, breakout/mspacman/qbert narval ~8.5h, BZ/MR/PE nibi ~9.5h) | 2(enduro/NTG narval P) | 5/1/0 | Strong wins, many running. |
+| h068 OQE+Replay | 4/15 | 10(narval breakout/MR/phoenix ~8.5h; nibi amidar/enduro/NTG/SI/DD/mspacman/qbert ~9.5h) | 1(alien narval P) | 2/2/0 | CONCERNING — 2 losses already. |
+| h065 N-step | 13/15 | 2(NTG narval ~8.5h, Enduro nibi ~9.5h) | 0 | 8/4/1 | Near-complete. |
+| h061 C51 | 14/15 | 1(breakout nibi ~9.5h) | 0 | — | Last game running. |
+
+### NEXT SESSION TODO:
+1. IMMINENT (~1.3h): h064-solaris (narval) → h064 reaches 11/15
+2. IMMINENT (~1.6h): h064-BZ (nibi) → h064 reaches 12/15
+3. ~3.6h: h067-SI (nibi), h067-enduro (fir)
+4. ~8-10h: massive batch completions (h064-enduro/MsPac, h065×2, h067×5+, h068×10+, h061-breakout)
+5. ~10h: h066-breakout FINAL OQE VERDICT
+6. When h066-breakout completes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+7. When h064 reaches 15/15: Full Rainbow-lite analysis vs OQE
+
+
+---
+**[2026-03-21 04:06 UTC]**
+
+## Session 133: Bank h064-qbert-s1 (11/15) — Rainbow-lite Qbert WIN +16.0%
+
+### Triggered by: h064-qbert-s1 (job 28594231, fir SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h064 Rainbow-lite NoisyNet+N-step (1 new, now 11/15):**
+1. h064-qbert-s1: q4=254.38 vs IQN=219.30 WIN (+16.0%). Strong improvement from NoisyNet+N-step on Qbert.
+- h064 tally: 7W/3L/1T (Qbert+16%, Breakout+10%, DD+14.4%, Phoenix+40.3%, NTG+59.2%, SI+7.6%, Venture+391% | Alien-11.5%, Amidar-9.5%, PE-100% | MR TIE)
+
+### CLEANUP:
+- Cancelled narval h064-qbert backup (58069556) — original completed.
+- Cancelled 6 stuck rorqual jobs (0:00 elapsed, Priority): h067-enduro/NTG, h068-alien/DD/mspacman/qbert. All have nibi/narval backups already.
+- h064-enduro fir (28594192): DISAPPEARED after 4h. Narval backup (58069549) running at 21min.
+
+### CLUSTER STATUS:
+**Fir (2):** h067-enduro(6:27/10h), h066-breakout(13min/10h FINAL OQE GAME!)
+**Narval (8R+3P):** h064-solaris(6:52/8h ~1h), h064-enduro backup(21min/10h), h065-NTG(1:38/10h), h067-breakout/mspacman/qbert(1:38/10h), h068-breakout/MR/phoenix(1:35/10h) + 3 PENDING (h067-enduro/NTG, h068-alien backups)
+**Nibi (14R):** h064-BZ(6:31/8h ~1.5h), h067-SI(6:31/10h), h065-enduro(22min/10h), h067-BZ/MR/PE(22min/10h), h068-amidar/enduro/NTG/SI/DD/mspacman/qbert(22min/10h), h064-mspacman(22min/10h), h061-breakout(22min/10h)
+
+### COVERAGE:
+| Hyp | Banked | Running | W/L/T | Key Signal |
+|-----|--------|---------|-------|------------|
+| h066 OQE | 14/15 | 1(fir breakout 13min/10h) | 9/0/5 | UNDEFEATED. FINAL game running! |
+| h067 Replay | 6/15 | 9(fir+narval+nibi) | 5/1/0 | Strongest wins. Many running. |
+| h065 N-step | 13/15 | 2(narval NTG, nibi enduro) | 8/4/1 | Near-complete. |
+| h064 Rainbow | 11/15 | 4(solaris ~1h, BZ ~1.5h, enduro 9.5h, mspacman 9.5h) | 7/3/1 | Good: more wins than losses. |
+| h068 OQE+Replay | 4/15 | 11(nibi+narval) | 2/2/0 | CONCERNING. |
+| h061 C51 | 14/15 | 1(nibi breakout) | — | Last game. |
+
+### NEXT SESSION TODO:
+1. IMMINENT (~1h): h064-solaris (narval) → h064 reaches 12/15
+2. ~1.5h: h064-BZ (nibi) → h064 reaches 13/15
+3. ~3.5h: h067-enduro (fir), h067-SI (nibi)
+4. ~8-10h: massive batch completions (h064-enduro/mspacman, h065×2, h067×5+, h068×10+, h061-breakout)
+5. ~10h: h066-breakout FINAL OQE VERDICT
+6. When h066-breakout completes: If non-loss → 10W/0L/5T = MAJOR PUBLISHABLE FINDING
+7. When h064 reaches 15/15: Full Rainbow-lite analysis
