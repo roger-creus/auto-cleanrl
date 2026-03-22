@@ -10246,3 +10246,49 @@ Qbert has very dense rewards and fast feedback. N-step's delayed bootstrap hurts
 1. ~4h: rorqual h070-solaris-s1 → h070 COMPLETE 15/15 → FINAL VERDICT
 2. CLOSE h070 with complete analysis
 3. Begin Phase 3 planning: 3-seed evaluation of h064 (Rainbow-lite) + h066 (OQE, novel) + baselines
+
+---
+**[2026-03-22 17:53 UTC]**
+
+## Session 174: h070 COMPLETE 15/15 — CLOSED. Phase 3 LAUNCHED (96 jobs).
+
+### Triggered by: h070-solaris-s1 (job 8825842, rorqual SUCCESS)
+
+### h070 FINAL RESULT BANKED:
+h070-solaris-s1: q4=668.14 vs IQN=696.07 LOSS (-4.0%). vs h064=1658.26 LOSS (-59.7%).
+NEGATIVE SYNERGY: OQE+N-step combined (668) is WORSE than OQE alone (905) or N-step alone (842) on Solaris.
+
+### h070 FINAL VERDICT (15/15 COMPLETE):
+IQM dHNS: +0.0014 vs IQN (7W/4L/4T), -0.0107 vs h064 (3W/9L/3T).
+OQE CANNOT replace NoisyNet. h070 CLOSED.
+
+KEY INSIGHT: OQE and NoisyNet are COMPLEMENTARY exploration strategies:
+- NoisyNet: weight-space noise → undirected → helps DENSE reward (Enduro, BZ, NTG, MsPac, DD)
+- OQE: value-space optimism → directed → helps SPARSE reward (PrivateEye, Venture)
+Neither subsumes the other. They are orthogonal.
+
+### PHASE 2 COMPLETE — FULL RANKING (vs IQN):
+1. h064 Rainbow-lite (IQN+NoisyNet+N-step): IQM +0.0133 (11W/3L/1T) — BEST ENGINEERING
+2. h069 Rainbow-OQE (h064+OQE): IQM +0.0088 (12W/2L/1T) — OQE redundant with NoisyNet
+3. h066 IQN+OQE: IQM +0.0057 (9W/1L/5T) — NOVEL, ESSENTIALLY UNDEFEATED
+4. h068 IQN+OQE+Replay: IQM +0.0039 (9W/4L/2T)
+5. h067 IQN+Replay+Resets: IQM +0.0020 (9W/5L/1T)
+6. h070 IQN+OQE+N-step: IQM +0.0014 (7W/4L/4T)
+7. h065 IQN+N-step: IQM +0.0011 (8W/3L/4T)
+8. h063 IQN baseline: 0.0000
+
+### PHASE 3 LAUNCHED:
+Submitted 96 jobs across 4 clusters (narval/nibi/fir/rorqual):
+- h063 (IQN baseline): 30 jobs (seeds 2,3 × 15 games)
+- h064 (Rainbow-lite): 30 jobs (seeds 2,3 × 15 games)
+- h066 (OQE novel): 30 jobs (seeds 2,3 × 15 games)
+- h001 (PPO gaps): 6 jobs (fill missing seeds)
+
+All jobs ~11h walltime. Expected completion: ~8-10h from now (~03:00-05:00 UTC Mar 23).
+
+### NEXT SESSION TODO:
+1. Wait for Phase 3 jobs to complete (~8-10h)
+2. When jobs arrive: bank results, compute 3-seed IQM with confidence intervals
+3. After all 3 seeds complete for h063/h064/h066: produce final comparison table
+4. Consider additional ablation seeds (h065 N-step, h062 NoisyNet) if needed
+5. Begin paper narrative: OQE as novel exploration for distributional RL
