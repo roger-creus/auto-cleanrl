@@ -9415,3 +9415,106 @@ h069 is essentially IDENTICAL to Rainbow-lite (h064) on 4 of 6 games (Alien/Amid
 4. Cancel duplicate fir jobs when nibi batch completes
 5. When h069 reaches 15/15: FINAL comparison vs h064 and h066
 6. PRELIMINARY CONCLUSION: OQE appears redundant with NoisyNet. NoisyNet weight-space noise already provides sufficient exploration, making OQE's optimistic quantile sampling unnecessary. If this holds across remaining 9 games, then OQE is specifically valuable ONLY without NoisyNet (as in h066).
+
+---
+**[2026-03-22 05:31 UTC]**
+
+## Session 158: Bank h069-doubledunk-s1 (WIN +5.4% vs IQN) — h069 at 7/15 (4W/2L/1T)
+
+### Triggered by: h069-doubledunk-s1 (job 58086001, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — 7th result:**
+1. h069-doubledunk-s1: q4=-21.37 vs IQN=-22.59 WIN (+5.4%). vs Rainbow-lite(h064)=-19.35 LOSS (-10.4%). DoubleDunk is a tricky game (all negative scores). h069 improves over IQN but falls short of Rainbow-lite which scored -19.35 (much better).
+
+### h069 RESULTS TABLE (7/15):
+| Game | h069 q4 | IQN q4 | h064 q4 | h069 vs IQN | h069 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 245.90 | 134.16 | 188.31 | WIN +83.3% | WIN +30.6% |
+| Solaris | 1207.42 | 696.07 | 1658.26 | WIN +73.5% | LOSS -27.2% |
+| Breakout | 2.04 | 1.85 | 2.04 | WIN +10.2% | TIE +0.1% |
+| DoubleDunk | -21.37 | -22.59 | -19.35 | WIN +5.4% | LOSS -10.4% |
+| MR | 0.00 | 0.00 | 0.00 | TIE 0% | TIE 0% |
+| Amidar | 31.0 | 34.27 | 31.0 | LOSS -9.5% | TIE 0% |
+| Alien | 275.35 | 311.13 | 275.49 | LOSS -11.5% | TIE -0.05% |
+
+h069 tally: 4W/2L/1T vs IQN. vs Rainbow-lite: 1W/2L/4T.
+
+### EMERGING PATTERN:
+OQE adds value vs Rainbow-lite ONLY on Phoenix (+30.6%). On DoubleDunk and Solaris, h069 is WORSE than h064. On Alien/Amidar/Breakout/MR, h069 ≈ h064 (identical). NoisyNet seems to subsume OQE's exploration benefit on most games. OQE's optimistic quantile selection helps only when weight-space noise (NoisyNet) fails to explore high-value regions.
+
+### CLUSTER STATUS (~05:30 UTC / ~01:30 local Mar 22):
+**Narval (5R):** h069-mspacman(7:04/10h ~3h), h069-PE(6:58/10h ~3h), h069-SI(6:55/10h ~3h), h068-MR(7:21/12h ~4.7h), h068-phoenix(7:17/12h ~4.7h)
+**Nibi (5R):** h069-BZ/enduro/NTG/qbert/venture (3:22/10h ~3-5h left)
+**Fir (5R):** h069-BZ/enduro/NTG/qbert/venture (1:34-2:17/10h — backups)
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | **15/15 COMPLETE** | — | DONE |
+| h068 | 13/15 | MR+phoenix(narval ~4.7h) | ~Mar 22 10:00 UTC |
+| h069 | 7/15 | 3R narval(~3h) + 5R nibi(~3-5h) + 5R fir(backups) | narval ~08:30, nibi ~09:00-11:00 |
+
+### NEXT SESSION TODO:
+1. ~3h: narval h069 (mspacman/PE/SI) complete → bank 3. KEY: PE where h064 LOST (-100% vs IQN)!
+2. ~3-5h: nibi h069 (BZ/enduro/NTG/qbert/venture) complete → bank 5. KEY: Enduro (+1673% h064 WIN) and Venture (+391% h064 WIN)
+3. ~4.7h: narval h068 (MR/phoenix) complete → h068 COMPLETE 15/15 → close
+4. Cancel fir duplicates when nibi results arrive
+5. When h069 reaches 15/15: FINAL comparison vs h064 and h066 → decide if OQE adds value to Rainbow-lite or is redundant with NoisyNet
+
+---
+**[2026-03-22 06:07 UTC]**
+
+## Session 159: Bank h069-mspacman-s1 (LOSS -0.7% vs IQN) + h069-spaceinvaders-s1 (WIN +7.6%) — h069 at 9/15 (5W/3L/1T)
+
+### Triggered by: h069-mspacman-s1 (job 58086008, narval SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — 8th+9th results:**
+1. h069-mspacman-s1: q4=493.28 vs IQN=496.64 LOSS (-0.7%). vs Rainbow-lite(h064)=555.97 LOSS (-11.3%). OQE makes MsPacman WORSE than h064. MsPacman is a score-dense game where NoisyNet+N-step already optimal.
+2. h069-spaceinvaders-s1: q4=270.0 vs IQN=250.88 WIN (+7.6%). vs Rainbow-lite(h064)=270.0 TIE (0%). Exactly matches h064. OQE adds nothing on SI.
+
+### h069 RESULTS TABLE (9/15):
+| Game | h069 q4 | IQN q4 | h064 q4 | h069 vs IQN | h069 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 245.90 | 134.16 | 188.31 | WIN +83.3% | WIN +30.6% |
+| Solaris | 1207.42 | 696.07 | 1658.26 | WIN +73.5% | LOSS -27.2% |
+| Breakout | 2.04 | 1.85 | 2.04 | WIN +10.2% | TIE +0.1% |
+| SpaceInvaders | 270.0 | 250.88 | 270.0 | WIN +7.6% | TIE 0% |
+| DoubleDunk | -21.37 | -22.59 | -19.35 | WIN +5.4% | LOSS -10.4% |
+| MR | 0.00 | 0.00 | 0.00 | TIE 0% | TIE 0% |
+| MsPacman | 493.28 | 496.64 | 555.97 | LOSS -0.7% | LOSS -11.3% |
+| Amidar | 31.0 | 34.27 | 31.0 | LOSS -9.5% | TIE 0% |
+| Alien | 275.35 | 311.13 | 275.49 | LOSS -11.5% | TIE -0.05% |
+
+### INTERIM IQM (9/15):
+- vs IQN: IQM dHNS = +0.0072 (5W/3L/1T) — DoubleDunk dHNS=+0.5545 dominates
+- vs h064 Rainbow-lite: IQM dHNS = -0.0019 (1W/3L/5T) — OQE HURTS h064. DoubleDunk -0.9182, Solaris -0.0407, MsPacman -0.0094 against only Phoenix +0.0089
+
+### CONCLUSION SO FAR:
+OQE is REDUNDANT with NoisyNet. On 5 of 9 games h069=h064 (exact TIE). On 3 games OQE HURTS (DoubleDunk/Solaris/MsPacman). Only on Phoenix does OQE help (+30.6% over h064). NoisyNet weight-space noise already provides sufficient exploration. OQE's optimistic quantile selection is only beneficial WITHOUT NoisyNet (as in h066 where OQE alone showed 7W/2L/6T vs IQN).
+
+### CLUSTER STATUS (~06:10 UTC / ~02:10 local Mar 22):
+**Narval (3R):** h069-PE(7:33/10h ~2.5h left), h068-MR(7:56/12h ~4h), h068-phoenix(7:53/12h ~4h)
+**Nibi (5R):** h069-BZ/enduro/NTG/qbert/venture(~4h/10h ~6h left)
+**Fir (5R):** h069-BZ/enduro/NTG/qbert/venture(~2.5h/10h ~7.5h left — backups)
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | **15/15 COMPLETE** | — | DONE |
+| h068 | 13/15 | MR+phoenix(narval ~4h) | ~Mar 22 10:00 UTC |
+| h069 | 9/15 | PE(narval ~2.5h) + BZ/enduro/NTG/qbert/venture(nibi ~6h, fir ~7.5h) | PE ~08:30, batch ~12:00 UTC |
+
+### NEXT SESSION TODO:
+1. ~2.5h: h069-PE (narval) completes → bank. KEY: h064 LOST -100% vs IQN on PE! Does OQE help?
+2. ~4h: h068-MR/phoenix (narval) complete → h068 COMPLETE 15/15 → compute final IQM → close
+3. ~6h: nibi h069 batch (BZ/enduro/NTG/qbert/venture) → bank 5. KEY: Enduro (+1673% h064 WIN), Venture (+391% h064 WIN)
+4. Cancel fir backups when nibi batch completes
+5. When h069 reaches 15/15: FINAL comparison → likely conclusion: OQE redundant with NoisyNet, confirm h064 Rainbow-lite as best variant
