@@ -9912,3 +9912,56 @@ NoisyNet in h064 provides something OQE does not: undirected weight-space explor
 3. When h070 complete: FINAL verdict. Expected: h064 Rainbow-lite wins, OQE not a NoisyNet replacement.
 4. h066 OQE remains the NOVEL publishable contribution (standalone, not as NoisyNet replacement)
 5. After h070: Phase 3 planning — 3-seed evaluation of h064 + h066 + PPO/DQN baselines
+
+---
+**[2026-03-22 13:47 UTC]**
+
+## Session 168: Bank h070-enduro-s1 (WIN +468% vs IQN, LOSS -68% vs h064) — h070 at 9/15
+
+### Triggered by: h070-enduro-s1 (job 58099445, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step — 9th result:**
+1. h070-enduro-s1: q4=7.04 vs IQN=1.24 WIN (+468.8%). vs Rainbow-lite(h064)=21.97 LOSS (-68.0%). vs N-step(h065)=8.29 LOSS (-15.1%). vs OQE(h066)=2.32 WIN (+203.1%). OQE+N-step massively beats IQN baseline on Enduro but NoisyNet+N-step (h064) is 3x better. Interestingly OQE HURTS N-step on Enduro: h065(N-step alone)=8.29 vs h070(OQE+N-step)=7.04 (-15.1%).
+
+### h070 RESULTS TABLE (9/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | vs IQN | vs h064 |
+|------|---------|--------|---------|--------|---------|
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+| Enduro | 7.04 | 1.24 | 21.97 | WIN +468% | LOSS -68.0% |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| NTG | 1859.11 | 1564.76 | 2491.14 | WIN +18.8% | LOSS -25.4% |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | WIN +9.9% | TIE +2.1% |
+| Amidar | 32.68 | 34.27 | 31.0 | TIE -4.6% | WIN +5.4% |
+| DoubleDunk | -22.62 | -22.59 | -19.35 | TIE -0.1% | LOSS -16.9% |
+| MsPacman | 443.41 | 496.64 | 555.97 | LOSS -10.7% | LOSS -20.2% |
+| Alien | 252.45 | 311.13 | 275.49 | LOSS -18.9% | LOSS -8.4% |
+
+### INTERIM IQM (9/15):
+- vs IQN: IQM dHNS=+0.0016 (5W/2L/2T) — WEAKER than at 8/15 (+0.0032). Enduro's large relative win (+468%) barely moves HNS because both scores are near-zero (7/860 human).
+- vs h064 Rainbow-lite: IQM dHNS=-0.0193 (1W/6L/2T) — WORSE than at 8/15 (-0.0149). Enduro -68% is devastating.
+
+### ENDURO ANALYSIS: NoisyNet is critical for Enduro
+- IQN: 1.24 (near-zero, catastrophic)
+- h066 OQE: 2.32 (OQE barely helps)
+- h070 OQE+N-step: 7.04 (N-step helps but OQE HURTS vs N-step alone)
+- h065 N-step: 8.29 (N-step alone is better than OQE+N-step!)
+- h064 NoisyNet+N-step: 21.97 (NoisyNet makes the real difference — 3x h070)
+Enduro requires persistent, undirected exploration that NoisyNet's weight perturbation provides. OQE's optimistic quantile selection is not enough.
+
+### VERDICT SOLIDIFYING: OQE CANNOT replace NoisyNet.
+h070 vs h064 is 1W/6L/2T with IQM -0.0193. On games where h070 and h064 diverge, NoisyNet provides strictly more value. The only h070 WIN (Amidar +5.4%) is marginal. h064's LOSSes are large: Enduro(-68%), BattleZone(-26%), NTG(-25.4%), MsPacman(-20.2%), DoubleDunk(-16.9%), Alien(-8.4%).
+
+### REMAINING 6 GAMES — can they change the verdict?
+Even PrivateEye (h066-OQE=423 vs h064=0) would only add ~+0.006 dHNS. With current deficit of -0.0193, h070 would need massive wins on 4+ of 6 remaining games to close the gap. Extremely unlikely.
+
+### CLUSTER STATUS (~09:46 UTC / ~05:46 local Mar 22):
+**Narval (2R):** breakout (7:15/10h, ~2:45 left), MR (7:13/10h, ~2:47 left) → ~12:30 UTC
+**Rorqual (4R):** PE/qbert/solaris/venture (2:45/10h, ~7:15 left) → ~17:00 UTC
+
+### NEXT SESSION TODO:
+1. ~2-3h: narval h070-breakout/MR → bank 2 → h070 at 11/15
+2. ~7h: rorqual h070-PE/qbert/solaris/venture → h070 COMPLETE 15/15 → FINAL verdict
+3. When h070 complete: close h070, finalize ablation ranking, begin Phase 3 planning
+4. Phase 3: 3-seed evaluation of h064 (Rainbow-lite) + h066 (OQE) + baselines
