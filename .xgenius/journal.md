@@ -10717,3 +10717,48 @@ h064-phoenix-s3 q4=76.90 vs s1=188.31 — a 59% drop. This is the biggest seed v
 3. ~7h: fir s3 batch completes — bank remaining
 4. When all 45/45 for each: compute IQM with confidence intervals
 5. Final comparison: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline vs h001 PPO
+
+---
+**[2026-03-22 23:05 UTC]**
+
+## Session 186: Bank h064-doubledunk-s2 + cancel duplicate h001 jobs + early Phase 3 comparison
+
+### Triggered by: h064-doubledunk-s2 (job 28939211, fir SUCCESS)
+
+### RESULT BANKED: 1
+h064-doubledunk-s2: Rainbow-lite DoubleDunk-v5 seed 2, q4=-22.51 (vs s1=-19.35). Worse seed 2 — closer to IQN range.
+
+### HOUSEKEEPING:
+- Cancelled 2 duplicate h001 jobs (battlezone-s2 on fir 29021317, doubledunk-s3 on nibi 10756504) — already banked from earlier completions. h001 is 45/45 COMPLETE.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 21/45 (15 s1, 2 s2, 4 s3)
+- h064 Rainbow-lite: 19/45 (15 s1, 1 s2, 3 s3)
+- h066 IQN+OQE: 16/45 (15 s1, 1 s2, 0 s3)
+
+### EARLY SEED-1 IQM COMPARISON (all 15 games, seed 1 only):
+| Algorithm | IQM dHNS | Median | Game Wins |
+|-----------|----------|--------|-----------|
+| Rainbow-lite (h064) | 0.0149 | 0.0117 | 7/15 |
+| IQN+OQE (h066) | 0.0045 | 0.0032 | 1/15 |
+| IQN (h063) | 0.0042 | 0.0042 | 2/15 |
+| PPO (h001) | -0.0001 | 0.0000 | 5/15 |
+
+Rainbow-lite (NoisyNet+N-step) is clearly the best engineering approach. OQE adds minimal benefit over vanilla IQN (+0.0003 IQM). PPO wins on DoubleDunk, NameThisGame, Phoenix, Solaris (games where DQN variants struggle with negative HNS).
+
+### 76 ACTIVE JOBS:
+- fir: 24 running (s2 batch ~5h18m/10h, s3 resubmitted ~44m/10h)
+- narval: 31 running (s2 batch ~5h20m/10h, s3 resubmitted ~45m/10h)
+- nibi: 20 running + 3 pending (mix ~1-5h/10h)
+
+### TIMELINE:
+- ~3-5h: Seed-2 batch completes on fir/narval/nibi (~08:00-10:00 UTC Mar 23)
+- ~7-9h: Resubmitted seed-3 batch completes (~12:00-14:00 UTC Mar 23)
+- Full Phase 3 completion: ~14:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they complete
+2. When 2+ seeds available: compute 2-seed averages for interim signal
+3. After all 3 seeds: final IQM with bootstrap confidence intervals
+4. Produce final comparison table: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
