@@ -10183,3 +10183,66 @@ Both games expected LOSS vs h064. Final h070 verdict: 2-3W/9L/3-4T vs h064.
 1. ~4h: rorqual h070 (qbert/solaris) → h070 COMPLETE 15/15
 2. CLOSE h070 with final verdict
 3. Begin Phase 3 planning: 3-seed evaluation of h064 (Rainbow-lite baseline) + h066 (OQE, novel method) + h063 (IQN baseline)
+
+---
+**[2026-03-22 16:44 UTC]**
+
+## Session 173: Bank h070-qbert-s1 (LOSS -8.1% vs IQN, LOSS -20.8% vs h064) — h070 at 14/15
+
+### Triggered by: h070-qbert-s1 (job 8825841, rorqual SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step — 14th result:**
+1. h070-qbert-s1: q4=201.50 vs IQN=219.30 LOSS (-8.1%). vs Rainbow-lite(h064)=254.38 LOSS (-20.8%). vs N-step(h065)=204.51 TIE (-1.5%). vs OQE(h066)=218.18 LOSS (-7.6%). WORST Qbert score of any method! OQE+N-step negative synergy: both components hurt individually on Qbert (N-step 204<IQN 219, OQE 218~IQN 219) and together even worse (201.50). Qbert's dense reward structure punishes optimistic exploration.
+
+### h070 RESULTS TABLE (14/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | vs IQN | vs h064 |
+|------|---------|--------|---------|--------|---------|
+| NTG | 1859.11 | 1564.76 | 2491.14 | WIN +18.8% | LOSS -25.4% |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | WIN +9.9% | TIE +2.1% |
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+| Enduro | 7.04 | 1.24 | 21.97 | WIN +468% | LOSS -68.0% |
+| Venture | 7.14 | 1.05 | 5.17 | WIN +580% | WIN +38.1% |
+| PrivateEye | 519.66 | 423.18 | 0.0 | WIN +22.8% | WIN (massive) |
+| Breakout | 1.92 | 1.85 | 2.04 | TIE +3.9% | LOSS -5.7% |
+| Amidar | 32.68 | 34.27 | 31.0 | TIE -4.6% | WIN +5.4% |
+| DoubleDunk | -22.62 | -22.59 | -19.35 | TIE -0.1% | LOSS -16.9% |
+| MontezumaRevenge | 0.0 | 0.0 | 0.0 | TIE 0.0% | TIE 0.0% |
+| MsPacman | 443.41 | 496.64 | 555.97 | LOSS -10.7% | LOSS -20.2% |
+| Alien | 252.45 | 311.13 | 275.49 | LOSS -18.9% | LOSS -8.4% |
+| Qbert | 201.50 | 219.30 | 254.38 | LOSS -8.1% | LOSS -20.8% |
+
+### INTERIM IQM (14/15):
+- vs IQN: IQM dHNS=+0.0027 (8W/4L/2T) — weakening with each LOSS
+- vs h064 Rainbow-lite: IQM dHNS=-0.0057 (3W/8L/3T) — h070 CLEARLY LOSING
+
+### VERDICT CONFIRMED: OQE CANNOT replace NoisyNet.
+14/15 games locked. h070 vs h064 is 3W/8L/3T. The only h070 WINs are sparse-reward games (PrivateEye, Venture, Amidar) where NoisyNet's noise is counterproductive. On dense-reward games where NoisyNet excels (Enduro, BattleZone, NTG, DoubleDunk, MsPacman, Breakout, Qbert, Alien), h064 dominates.
+
+### QBERT ANALYSIS: Both OQE and N-step HURT individually and together
+- IQN: 219.30 (baseline)
+- h066 OQE: 218.18 (neutral, -0.5%)
+- h065 N-step: 204.51 (HURTS, -6.7%)
+- h070 OQE+N-step: 201.50 (WORST, -8.1%)
+- h064 NoisyNet+N-step: 254.38 (NoisyNet RESCUES N-step, +16.0%)
+Qbert has very dense rewards and fast feedback. N-step's delayed bootstrap hurts. NoisyNet's noise helps exploration of different board states. OQE's optimistic quantiles don't add value because the dense reward signal already guides exploration well.
+
+### CLUSTER STATUS (~16:43 UTC / ~12:43 local Mar 22):
+**Rorqual (1R):** h070-solaris-s1 — 5:43 elapsed / 10h walltime → ~4:17 remaining → ~21:00 UTC
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 14/15 | 1 job | rorqual solaris ~21:00 UTC |
+
+### SOLARIS PREDICTION:
+- IQN: 696.07, h064(NoisyNet+N-step): 1658.26, h065(N-step): 843.63, h066(OQE): 904.10
+- Expected h070: ~800-1100. N-step helps (+21% in h065) and OQE helps (+30% in h066). But NoisyNet's +138% in h064 is unbeatable.
+- Expected verdict: LOSS vs h064. WIN vs IQN.
+
+### NEXT SESSION TODO:
+1. ~4h: rorqual h070-solaris-s1 → h070 COMPLETE 15/15 → FINAL VERDICT
+2. CLOSE h070 with complete analysis
+3. Begin Phase 3 planning: 3-seed evaluation of h064 (Rainbow-lite) + h066 (OQE, novel) + baselines
