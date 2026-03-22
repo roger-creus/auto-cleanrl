@@ -10333,3 +10333,46 @@ Rorqual is backlogged (all PENDING). fir/narval/nibi jobs should complete first.
 3. h001 gap-fills should complete ~4-6h after start (PPO at 40M is faster than IQN)
 4. When all 3 seeds complete for h063/h064/h066: compute 3-seed IQM with confidence intervals
 5. Final comparison: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline
+
+---
+**[2026-03-22 21:27 UTC]**
+
+## Session 176: Bank h001-alien-s2 + fix old-format h001 metrics — Phase 3 running
+
+### Triggered by: h001-alien-s2 (job 58106161, narval SUCCESS)
+
+### RESULT BANKED:
+h001-alien-s2: PPO Alien-v5 seed 2, q4=196.87. Consistent with s1 (207.63) and s3 (196.30).
+
+### OLD-FORMAT h001 METRICS FIXED:
+Discovered 11 old-format h001 entries that only had mean_return_last_25 (no q4/auc). Recomputed proper metrics from curve files:
+- Enduro s1/s2/s3: q4=0.0 (legitimate — PPO genuinely scores 0 on Enduro)
+- Amidar s2: q4=2.74 (consistent with s1=2.04, s3=2.02)
+- Venture s1/s2/s3: q4=0.0 (legitimate — PPO scores 0 on Venture)
+- MontezumaRevenge s1/s3: q4=0.0, s2: q4=0.72 (essentially 0, expected for PPO)
+- Breakout s3: q4=1.74 (was missing; consistent with s1=1.37, s2=1.39)
+
+h001 coverage: 40/45 banked. 5 remaining gap-fills still running/pending:
+- BattleZone s2 (rorqual PENDING), DoubleDunk s3 (nibi RUNNING), NameThisGame s2 (fir RUNNING), Solaris s2 (narval RUNNING), Solaris s3 (fir RUNNING)
+
+### PHASE 3 STATUS (~21:30 UTC Mar 22):
+Jobs have been running ~3-3.5h of 11h walltime on fir/narval/nibi.
+- fir: 24 RUNNING (~3h elapsed)
+- narval: 24 RUNNING (~2.5-3h elapsed)
+- nibi: 24 RUNNING (~3h elapsed)
+- rorqual: 23 PENDING (priority queue, 8h+ wait)
+
+Phase 3 breakdown:
+- h063 IQN: 23R/7P (rorqual). ETA ~05:00-07:00 UTC Mar 23.
+- h064 Rainbow-lite: 22R/8P (rorqual). ETA ~05:00-07:00 UTC Mar 23.
+- h066 OQE: 23R/7P (rorqual). ETA ~05:00-07:00 UTC Mar 23.
+- h001 PPO gaps: 4R/1P (rorqual). ETA ~01:00-03:00 UTC Mar 23 (PPO faster).
+
+Rorqual's 23 jobs stuck in priority queue — should start eventually. 72/95 active jobs are running.
+
+### NEXT SESSION TODO:
+1. ~4-6h: first Phase 3 results arrive (h001 PPO gap-fills complete first ~01:00 UTC)
+2. ~6-8h: bulk Phase 3 IQN results complete on fir/narval/nibi (~05:00-07:00 UTC)
+3. Bank all completed results as they arrive
+4. Rorqual jobs may be delayed — track separately
+5. When enough seeds arrive: compute 3-seed IQM with confidence intervals
