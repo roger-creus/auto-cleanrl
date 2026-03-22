@@ -9579,3 +9579,51 @@ Submitted 15 games x 1 seed across all 4 clusters (nibi:3, narval:4, fir:4, rorq
 3. h069-BZ/enduro/NTG complete (~5.5h) → h069 COMPLETE 15/15 → final comparison vs h064
 4. h070 first results arrive (~8-10h) → start banking
 5. Cancel fir h069 backups (BZ/enduro/NTG) when nibi versions complete
+
+---
+**[2026-03-22 08:30 UTC]**
+
+## Session 161: h069 COMPLETE 15/15 — OQE redundant with NoisyNet. Bank h069-BZ/enduro/NTG/PE + h068-phoenix.
+
+### Triggered by: h069-battlezone-s1 (job 10738475, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 5
+1. h069-battlezone-s1: q4=4024.17 vs IQN=3109.48 WIN (+29.4%). vs h064=5310.42 LOSS (-24.2%). OQE+NoisyNet helps vs IQN but worse than Rainbow-lite.
+2. h069-enduro-s1: q4=21.97 vs IQN=19.01 WIN (+15.6%). vs h064=21.97 TIE (0%). Identical to Rainbow-lite.
+3. h069-namethisgame-s1: q4=2543.84 vs IQN=1776.81 WIN (+43.2%). vs h064=2491.14 TIE (+2.1%). Slight OQE benefit.
+4. h069-privateeye-s1: q4=24.60 vs IQN=-2.46 WIN. vs h064=0.0 WIN. OQE helps PE but much less than h066(OQE-only=471) or h068(Replay=436).
+5. h068-phoenix-s1: q4=241.68 vs IQN=93.03 WIN (+159.8%). vs h064=188.31 WIN (+28.3%). Strong Replay result.
+
+### h069 FINAL RESULTS (15/15) — Rainbow-OQE (IQN + NoisyNet + N-step + OQE):
+vs IQN: 12W/2L/1T, IQM dHNS = +0.0088
+vs h064 Rainbow-lite: 2W/5L/8T, IQM dHNS = -0.0012
+
+### ABLATION STUDY RANKING (IQM dHNS vs IQN):
+1. h064 Rainbow-lite (IQN+NN+N-step): +0.0131 (11W/2L/2T) — BEST
+2. h069 Rainbow-OQE (IQN+NN+N-step+OQE): +0.0088 (10W/2L/3T) — OQE HURTS when added to h064
+3. h068 IQN+OQE+Replay: +0.0057 (14/15, 8W/5L/1T)
+4. h065 IQN+N-step: +0.0054 (9W/4L/2T)
+5. h067 IQN+NoisyNet: +0.0054 (8W/4L/3T)
+6. h066 IQN+OQE: +0.0030 (7W/3L/5T)
+
+### KEY FINDING: OQE is REDUNDANT with NoisyNet.
+- Adding OQE to Rainbow-lite (h069 vs h064): 2W/5L/8T, IQM=-0.0012 — NEGATIVE
+- Both are exploration mechanisms: NoisyNet via weight-space noise, OQE via optimistic quantile selection
+- When NoisyNet present, OQE adds no benefit (8 TIEs, 5 LOSSES)
+- OQE has independent value WITHOUT NoisyNet: h066 IQM=+0.0030 (7W/3L/5T vs IQN)
+
+### CANCELLED: fir h069 backup jobs (BZ/enduro/NTG) — already done on nibi.
+
+### h068 UPDATE: 14/15, waiting h068-MR (narval, ~1.5h left at 10:19/11:59)
+
+### h070 STATUS (IQN+OQE+N-step — THE CRITICAL TEST):
+RUNNING (11): nibi(alien/amidar/BZ ~2h/10h), narval(breakout/DD/enduro/MR ~2h/10h), fir(mspacman/NTG/phoenix/SI ~2h/10h)
+PENDING (4): rorqual(PE/qbert/solaris/venture — Priority queue 6h+)
+
+h070 is THE experiment: if OQE+N-step (no NoisyNet) matches h064 NoisyNet+N-step, then OQE REPLACES NoisyNet as a simpler, zero-parameter exploration mechanism. This would be a novel contribution.
+
+### NEXT SESSION TODO:
+1. ~1.5h: h068-MR completes → h068 COMPLETE 15/15 → compute final IQM → close
+2. ~6-8h: h070 first results arrive from nibi/narval/fir
+3. Submit backup h070 jobs for rorqual-pending (PE/qbert/solaris/venture) on nibi when slots free
+4. Monitor h070 results — this determines the paper narrative

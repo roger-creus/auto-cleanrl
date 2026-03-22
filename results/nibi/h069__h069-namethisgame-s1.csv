@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+NameThisGame-v5,1,h069,h069-namethisgame-s1,iqn_rainbow_oqe,40000000,13744,2485.4365234375,2543.841796875,34159840.0,1824.0
