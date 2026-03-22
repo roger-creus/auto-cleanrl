@@ -10453,3 +10453,48 @@ No h063/h064/h066 seed 2/3 results yet. First expected ~05:00-07:00 UTC Mar 23.
 2. Bank all completed results as they arrive
 3. h001 gap-fills: 2 running + 1 pending → should complete before Phase 3 IQN jobs
 4. If rorqual still pending when fir/narval/nibi finish: resubmit seed-3 elsewhere
+
+---
+**[2026-03-22 22:11 UTC]**
+
+## Session 179: Bank h064-amidar-s3 (seed 3, q4=36.43) — FIRST Phase 3 multi-seed result
+
+### Triggered by: h064-amidar-s3 (job 10754934, nibi SUCCESS)
+
+### RESULT BANKED: 1
+h064-amidar-s3: Rainbow-lite Amidar-v5 seed 3, q4=36.43, auc=2831472.0.
+Compare: s1=31.0. Seed 3 is better (+17.5%). IQN baseline s1=34.27.
+This suggests h064 Amidar performance is noisy — 3-seed average will clarify.
+
+### h064 Phase 3 Progress: 1/15 seed-3 games banked (amidar-s3 from nibi)
+
+### PHASE 3 STATUS (~22:30 UTC Mar 22):
+**Running (69 jobs):**
+- fir: 23 RUNNING (~3.5-4.5h elapsed / 11h walltime)
+- narval: 23 RUNNING (~4-4.5h elapsed / 11h walltime)
+- nibi: 23 RUNNING (~1-4.5h elapsed / 11h walltime)
+**Pending (23 jobs):**
+- rorqual: 23 PENDING (10h+ in priority queue — ALL seed-3)
+
+Job breakdown:
+- h001 PPO gaps: 2 running (doubledunk-s3 nibi 1h, solaris-s3 fir 3h), 1 pending (battlezone-s2 rorqual)
+- h063 IQN: 23 running (all seed-2 + nibi seed-3), 7 pending rorqual
+- h064 Rainbow-lite: 21 running (all seed-2 + some nibi seed-3), 8 pending rorqual
+- h066 OQE: 23 running (all seed-2 + nibi seed-3), 7 pending rorqual
+
+### ETA FOR BULK COMPLETIONS:
+IQN-based jobs take ~8-10h at 40M steps. Most are 4-5h elapsed → ~4-6h remaining.
+Expected bulk completion: ~02:00-06:00 UTC Mar 23.
+h001 PPO gaps should complete sooner (PPO faster, ~4-6h total).
+
+### RORQUAL CONCERN:
+23 rorqual jobs stuck in Priority queue for 10h+. These are exclusively seed-3 experiments.
+Seed-2 is fully covered on fir/narval/nibi.
+When fir/narval/nibi jobs complete and free up slots, consider resubmitting rorqual seed-3 jobs to those clusters.
+
+### NEXT SESSION TODO:
+1. ~4-6h: Phase 3 results start completing on fir/narval/nibi
+2. Bank all h063/h064/h066 seed 2/3 results as they arrive
+3. h001 PPO gap-fills complete soon (doubledunk-s3, solaris-s3)
+4. If rorqual still stuck: cancel and resubmit seed-3 to fir/narval/nibi
+5. When enough seeds arrive: start computing 3-seed IQM with confidence intervals
