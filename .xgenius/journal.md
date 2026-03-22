@@ -10582,3 +10582,62 @@ Phase 3 coverage so far:
 2. Bank all completed h063/h064/h066 seed 2/3 results
 3. When enough seeds arrive: compute early 2-seed IQM estimates
 4. After all 3 seeds: final comparison with confidence intervals
+
+---
+**[2026-03-22 22:30 UTC]**
+
+## Session 182: Bank h063-venture-s3 — Phase 3 bulk still running
+
+### Triggered by: h063-venture-s3 (job 10754933, nibi SUCCESS)
+
+### RESULT BANKED: 1
+h063-venture-s3: IQN Venture-v5 seed 3, q4=3.57 (vs s1=1.05). Both near-zero on Venture but seed 3 slightly better.
+
+### PHASE 3 COVERAGE:
+- h063 IQN: 17/45 (15 s1 + phoenix-s2 + venture-s3)
+- h064 Rainbow-lite: 16/45 (15 s1 + amidar-s3)
+- h066 OQE: 15/45 (15 s1 only)
+
+### PHASE 3 STATUS (~00:30 UTC Mar 23):
+80 jobs RUNNING across fir/narval/nibi, ~5h elapsed out of 11h walltime. ~6h remaining.
+ETA for bulk completions: ~06:00-08:00 UTC Mar 23.
+
+### NEXT SESSION TODO:
+1. ~6h: bulk Phase 3 results arrive (seed 2/3 for h063/h064/h066)
+2. Bank all completed results as they arrive
+3. When enough seeds arrive: compute 3-seed IQM with confidence intervals
+4. Final comparison: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline
+
+---
+**[2026-03-22 22:45 UTC]**
+
+## Session 183: Bank h064-breakout-s3 (seed 3, q4=2.01) — Phase 3 bulk running
+
+### Triggered by: h064-breakout-s3 (job 10754948, nibi SUCCESS)
+
+### RESULT BANKED: 1
+h064-breakout-s3: Rainbow-lite Breakout-v5 seed 3, q4=2.01, auc=386720.0.
+Compare: s1=2.04. Very consistent — Breakout is a near-zero game for Rainbow-lite too.
+
+### PHASE 3 COVERAGE:
+- h063 IQN: 17/45 (15 s1 + phoenix-s2 + venture-s3)
+- h064 Rainbow-lite: 17/45 (15 s1 + amidar-s3 + breakout-s3)
+- h066 OQE: 15/45 (15 s1 only)
+- h001 PPO: 43/45 (missing battlezone-s2 running fir 26m, doubledunk-s3 running nibi 1h40m)
+
+### PHASE 3 STATUS (~01:00 UTC Mar 23):
+**Running (81 jobs):**
+- fir: 28 running (original seed-2 ~5h elapsed + resubmitted seed-3 ~15-26m elapsed)
+- narval: ~23 running (original seed-2 ~5h elapsed + resubmitted seed-3 recently started)
+- nibi: ~21 running (original seed-2 ~5h elapsed, some seed-3 from original batch)
+
+**Timeline:**
+- ~06:00-08:00 UTC Mar 23: Original batch (seed-2 + some nibi seed-3) complete
+- ~10:00-14:00 UTC Mar 23: Resubmitted seed-3 (from cancelled rorqual) complete
+- h001 gap-fills: battlezone-s2 ~3-5h, doubledunk-s3 ~2-4h remaining
+
+### NEXT SESSION TODO:
+1. Bank all completed Phase 3 seed 2/3 results as they arrive
+2. h001 last 2 gap-fills complete in ~2-5h
+3. After first batch completes: compute 2-seed averages for early signal
+4. After all 3 seeds: final comparison with IQM and confidence intervals
