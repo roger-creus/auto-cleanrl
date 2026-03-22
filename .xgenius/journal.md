@@ -9711,3 +9711,53 @@ Too early to conclude (2/15). BattleZone is NoisyNet's BEST game (+53% over IQN)
 4. If h070 IQM ≈ h064: PAPER-WORTHY — OQE replaces NoisyNet as simpler zero-parameter exploration
 5. If h070 IQM << h064: NoisyNet irreplaceable — h064 Rainbow-lite is the final answer, but h066 OQE is still novel
 6. Either way, start thinking about Phase 3: 3-seed evaluation of best methods + ablation study
+
+---
+**[2026-03-22 11:34 UTC]**
+
+## Session 164: Bank h070-alien-s1 (LOSS -18.9% vs IQN, LOSS -8.4% vs h064) — h070 at 3/15
+
+### Triggered by: h070-alien-s1 (job 10746723, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step (novel Rainbow-lite without NoisyNet) — 3rd result:**
+1. h070-alien-s1: q4=252.45 vs IQN=311.13 LOSS (-18.9%). vs Rainbow-lite(h064)=275.49 LOSS (-8.4%). vs N-step(h065)=252.32 TIE (+0.05%). vs OQE(h066)=310.64 LOSS (-18.7%). OQE adds NOTHING on Alien — result matches h065 N-step alone exactly. N-step hurts IQN on Alien (-18.9% both h065 and h070), while OQE preserves Alien (h066 TIE -0.2%). N-step is the problem on Alien, not OQE.
+
+### h070 RESULTS TABLE (3/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | h070 vs IQN | h070 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| Alien | 252.45 | 311.13 | 275.49 | LOSS -18.9% | LOSS -8.4% |
+
+### INTERIM IQM (3/15):
+- vs IQN: IQM dHNS=+0.0044 (2W/1L/0T)
+- vs h064 Rainbow-lite: IQM dHNS=-0.0143 (0W/2L/1T) — BattleZone LOSS dominates
+
+### PATTERN: N-step hurts on Alien regardless of exploration mechanism
+- h064 (NN+N-step) Alien: 275.49 vs IQN=311.13 → -11.5%
+- h065 (N-step) Alien: 252.32 vs IQN=311.13 → -18.9%
+- h070 (OQE+N-step) Alien: 252.45 vs IQN=311.13 → -18.9%
+- h066 (OQE) Alien: 310.64 vs IQN=311.13 → -0.2%
+N-step consistently hurts Alien. NoisyNet partially compensates (h064 only -11.5% vs h065/h070 -18.9%).
+
+### CLUSTER STATUS (~11:45 UTC / ~07:45 local Mar 22):
+**Nibi (1R):** amidar (~5h elapsed, should complete within 30min)
+**Narval (4R):** breakout/DD/enduro/MR (~5h elapsed, A100 MIG → ~2-3h left → ~14:00 UTC)
+**Fir (3R):** mspacman/NTG/SI (~5h elapsed, H100 → should complete within 30min-1h)
+**Rorqual (4R):** PE/qbert/solaris/venture (~30min elapsed → ~9.5h left → ~21:00 UTC)
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 3/15 | 12 jobs | nibi/fir ~30min, narval ~2-3h, rorqual ~9.5h |
+
+### NEXT SESSION TODO:
+1. ~30min: nibi amidar + fir mspacman/NTG/SI complete → bank 4 → h070 at 7/15
+2. ~2-3h: narval breakout/DD/enduro/MR complete → bank 4 → h070 at 11/15
+3. ~9.5h: rorqual PE/qbert/solaris/venture → h070 COMPLETE 15/15
+4. KEY games: PE (h066-OQE=471, h064-NN=0!), Venture (h064=5.17 vs h066=3.62), Enduro (h064=21.97 vs h066=2.32)
+5. When h070 complete: final comparison → decide if OQE replaces NoisyNet
+6. If h070 IQM ≈ h064: paper narrative — OQE as zero-param NoisyNet replacement
+7. If h070 IQM << h064: NoisyNet irreplaceable. h064 Rainbow-lite final answer, h066 OQE novel standalone
