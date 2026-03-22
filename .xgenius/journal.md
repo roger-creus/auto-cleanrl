@@ -10498,3 +10498,87 @@ When fir/narval/nibi jobs complete and free up slots, consider resubmitting rorq
 3. h001 PPO gap-fills complete soon (doubledunk-s3, solaris-s3)
 4. If rorqual still stuck: cancel and resubmit seed-3 to fir/narval/nibi
 5. When enough seeds arrive: start computing 3-seed IQM with confidence intervals
+
+---
+**[2026-03-22 22:21 UTC]**
+
+## Session 180: Bank h001-solaris-s3 + cancel/resubmit 23 stuck rorqual jobs
+
+### Triggered by: h001-solaris-s3 (job 28941758, fir SUCCESS)
+
+### RESULT BANKED: 1
+h001-solaris-s3: PPO Solaris-v5 seed 3, q4=2207.27, auc=14584320.0.
+Compare: s1=2163.56, s2=2468.84. Seed 3 is mid-range. 3-seed avg=2279.89.
+
+### h001 PPO baseline coverage: 43/45
+Still missing:
+- BattleZone-v5 seed 2: resubmitted to fir (29021317)
+- DoubleDunk-v5 seed 3: running on nibi (1.2h elapsed)
+
+### RORQUAL RESUBMISSION:
+23 rorqual jobs stuck PENDING for 12+ hours (submitted 13:39 UTC Mar 22, now ~02:30 UTC Mar 23).
+All were seed-3 experiments for h063/h064/h066 + h001-battlezone-s2.
+- CANCELLED all 23 rorqual jobs
+- RESUBMITTED all 23 to fir(8)/narval(8)/nibi(7)
+- These will queue behind currently running seed-2 jobs and start when slots free up (~6-7h)
+- Rorqual is unreliable for this batch — no more submissions there
+
+### PHASE 3 STATUS (~02:30 UTC Mar 23):
+**Currently running (68 jobs on fir/narval/nibi):**
+- fir: 22 running (3.5-4.5h elapsed / 11h) → complete ~08:00-09:00 UTC
+- narval: 23 running (4.3-4.6h elapsed / 11h) → complete ~07:30-08:00 UTC
+- nibi: 23 running (1-4.5h elapsed / 11h) → complete ~08:00-10:00 UTC
+
+**Newly queued (23 resubmitted jobs):**
+- Will start after current batch finishes → complete ~18:00-20:00 UTC Mar 23
+
+**Phase 3 job breakdown:**
+- h063 IQN: 23 running (s2+s3 on fir/narval/nibi) + 7 resubmitted s3
+- h064 Rainbow-lite: 21 running + 8 resubmitted s3
+- h066 OQE: 23 running + 7 resubmitted s3
+- h001 PPO: 1 running (doubledunk-s3 nibi) + 1 resubmitted (battlezone-s2 fir)
+
+### TIMELINE:
+1. ~08:00 UTC Mar 23: First batch of seed-2/3 results arrive from fir/narval/nibi
+2. ~10:00 UTC Mar 23: All first-batch jobs complete, resubmitted seed-3 jobs start
+3. ~18:00-20:00 UTC Mar 23: Second batch (resubmitted seed-3) complete
+4. Full Phase 3 completion: ~20:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank all completed Phase 3 results as they arrive
+2. h001 PPO: bank doubledunk-s3, battlezone-s2 when done (43→45/45)
+3. After first batch: start computing 2-seed IQM for early signal
+4. After all 3 seeds: compute final IQM with confidence intervals
+5. Produce comparison table: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline
+
+---
+**[2026-03-22 22:26 UTC]**
+
+## Session 181: Bank h063-phoenix-s2 + h001-battlezone-s2 + h001-doubledunk-s3 — Phase 3 running
+
+### Triggered by: h063-phoenix-s2 (job 28939137, fir SUCCESS)
+
+### RESULTS BANKED: 3
+1. h063-phoenix-s2: IQN Phoenix-v5 seed 2, q4=137.49 (vs s1=134.16). Consistent.
+2. h001-battlezone-s2: PPO BattleZone-v5 seed 2, q4=2390.98 (vs s1=2364.31, s3=1736.84). Good.
+3. h001-doubledunk-s3: PPO DoubleDunk-v5 seed 3, q4=-17.64 (vs s1=-18.10, s2=-17.57). Consistent.
+
+### h001 PPO BASELINE: 45/45 COMPLETE!
+All 15 games × 3 seeds now banked. h001 is fully done.
+
+### PHASE 3 STATUS (~22:25 UTC Mar 22):
+90 active jobs across 3 clusters:
+- **narval**: 31 RUNNING (4-8h elapsed / 11h) → first completions ~01:00-03:00 UTC Mar 23
+- **fir**: 27 RUNNING + 2 PENDING (2-7h elapsed / 11h) → completions ~03:00-07:00 UTC
+- **nibi**: 23 RUNNING + 7 PENDING (1-5h elapsed / 11h) → completions ~05:00-09:00 UTC
+
+Phase 3 coverage so far:
+- h063 IQN: 16/45 (all s1 + phoenix-s2)
+- h064 Rainbow-lite: 16/45 (all s1 + amidar-s3)
+- h066 OQE: 15/45 (all s1 only)
+
+### NEXT SESSION TODO:
+1. ~4-8h: bulk Phase 3 results arrive from narval/fir/nibi
+2. Bank all completed h063/h064/h066 seed 2/3 results
+3. When enough seeds arrive: compute early 2-seed IQM estimates
+4. After all 3 seeds: final comparison with confidence intervals

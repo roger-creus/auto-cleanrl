@@ -1160,3 +1160,6 @@ h001-solaris-s2,h001,,PPO 40M seed 2 gap-fill (Phase 3),Solaris-v5,2,ppo,4000000
 h001-namethisgame-s2,h001,,PPO NameThisGame seed 2 (Phase 3 gap-fill),NameThisGame-v5,2,ppo,40000000,16768,1869.6947021484375,2293.43505859375,31351040.0,980.0
 h064-amidar-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Amidar-v5 --seed 3,Phase 3 seed 3. q4=36.43 (s1=31.0). Improved over s1.,Amidar-v5,3,dqn_rainbow_lite,40000000.0,65104.0,43.49,36.43,2831472.0,31.0
 h001-solaris-s3,h001,,"PPO 40M seed 3 gap-fill (Phase 3). q4=2207.27. s1=2163.56, s2=2468.84. Consistent.",Solaris-v5,3,ppo,40000000,5632,2589.55,2207.27,14584320.0,780.0
+h063-phoenix-s2,h063,,IQN Phoenix seed 2. q4=137.49 vs s1=134.16. Consistent.,Phoenix-v5,2,iqn,40000000,48496,172.07,137.49,8344800.0,116.0
+h001-battlezone-s2,h001,,"PPO BattleZone seed 2. q4=2390.98, consistent with s1=2364.31, s3=1736.84.",BattleZone-v5,2,ppo,40000000,34048,7000.0,2390.98,103453568000.0,7000.0
+h001-doubledunk-s3,h001,,"PPO DoubleDunk seed 3. q4=-17.64, consistent with s1=-18.10, s2=-17.57.",DoubleDunk-v5,3,ppo,40000000,19968,-20.0,-17.64,-684673536.0,-20.0
