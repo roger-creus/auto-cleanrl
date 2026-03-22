@@ -10975,3 +10975,36 @@ Rainbow-lite dominates. IQN and OQE have negative IQM due to DoubleDunk/Phoenix/
 1. Bank seed-2/3 results as they complete
 2. When 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-22 23:42 UTC]**
+
+## Session 192: Bank h063-montezumarevenge-s2 + h066-namethisgame-s2 — 60 Phase 3 jobs running
+
+### Triggered by: h063-montezumarevenge-s2 (job 58105256, narval SUCCESS) + h066-namethisgame-s2 (job 58105378, narval SUCCESS)
+
+### RESULTS BANKED: 2
+1. h063-montezumarevenge-s2: IQN MontezumaRevenge seed 2, q4=0.0 (same as s1=0.0). MR always 0 for basic DQN variants.
+2. h066-namethisgame-s2: IQN+OQE NameThisGame seed 2, q4=1635.70 (vs s1=1680.44). Slight drop but consistent range.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 28/45 (s1=15, s2=8, s3=5) — 17 running
+- h064 Rainbow-lite: 28/45 (s1=15, s2=8, s3=5) — 17 running
+- h066 IQN+OQE: 19/45 (s1=15, s2=4, s3=0) — 26 running
+
+### CLUSTER STATUS (~19:41 UTC Mar 22):
+60 jobs RUNNING across 3 clusters:
+- narval: 25 (seed-2 batch ~6h/11h, seed-3 resubmit ~1.3h/11h)
+- nibi: 22 (mix ~0.3-5.9h/11h)
+- fir: 13 (seed-2 ~5.9h/11h, seed-3 ~1.3h/11h)
+
+### ETA:
+- Seed-2 bulk: ~01:00-02:00 UTC Mar 23 (~5h remaining)
+- Seed-3 bulk: ~05:00-06:00 UTC Mar 23 (~10h remaining)
+- Full Phase 3 completion: ~06:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they complete
+2. When 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
