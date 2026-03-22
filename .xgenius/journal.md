@@ -9121,3 +9121,52 @@ Submitted 15 experiments across 3 clusters (5 each: nibi/narval/fir). All succee
 3. h069 first results start completing (~7-10h after queue start)
 4. When h067/h068 complete: close both, compute final comparison
 5. When h069 results arrive: compare vs h064 and h066 — does OQE add value to Rainbow-lite?
+
+---
+**[2026-03-22 00:35 UTC]**
+
+## Session 152: Bank h069-phoenix-s1 (+83.3% WIN vs IQN, +30.6% vs Rainbow-lite) — h069 at 1/15
+
+### Triggered by: h069-phoenix-s1 (job 10711259, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — first result:**
+1. h069-phoenix-s1: q4=245.90 vs IQN=134.16 WIN (+83.3%). Also beats Rainbow-lite(h064)=188.31 (+30.6%), OQE(h066)=139.71 (+76.0%). Close to Replay(h067)=256.43 (-4.1%).
+
+### PHOENIX HIERARCHY:
+Replay(256.43) > **Rainbow-OQE(245.90)** > Rainbow-lite(188.31) > N-step(174.29) > OQE(139.71) > IQN(134.16)
+- OQE adds +30.6% over Rainbow-lite on Phoenix — substantial improvement
+- Both NoisyNet and OQE contribute to the gain over plain IQN
+
+### CLUSTER STATUS (~00:35 UTC / ~20:35 local Mar 21):
+**Nibi (5R):** h067-enduro(5:07/10h ~5h left), h069-alien/breakout/MR/solaris (3:54/10h ~6h left)
+**Narval (8R):** h067-enduro(2:33/10h ~7.5h left), h068-MR/phoenix(2:24/12h ~9.5h left), h069-amidar/DD/mspacman/PE/SI (~2h/10h ~8h left)
+**Fir (5P):** h069-BZ/enduro/NTG/qbert/venture — all PENDING (Priority)
+
+### ESTIMATED COMPLETION TIMES:
+- h069 nibi batch (alien/breakout/MR/solaris): ~02:30-03:30 UTC (Phoenix took ~3h50m)
+- h067-enduro nibi: ~01:30-02:30 UTC
+- h069 narval batch (amidar/DD/mspacman/PE/SI): ~06:00-08:00 UTC
+- h068-MR/phoenix narval: ~07:00-09:00 UTC
+- h067-enduro narval (backup): ~06:00 UTC
+- h069 fir (BZ/enduro/NTG/qbert/venture): TBD — waiting for slot
+
+### COVERAGE:
+| Hyp | Banked | Running/Pending | W/L/T | Key Signal |
+|-----|--------|-----------------|-------|------------|
+| h064 Rainbow-lite | **15/15 COMPLETE** | — | 11/3/1 | IQM +0.0133 vs IQN |
+| h066 OQE | **15/15 COMPLETE** | — | 9/1/5 | IQM +0.0025 vs IQN |
+| h067 Replay | 14/15 | enduro(nibi 5h, narval 7.5h) | 8/5/1 | +0.0038 (14g) |
+| h068 OQE+Replay | 13/15 | MR+phoenix(narval 9.5h) | 8/5/0 | TBD |
+| h069 Rainbow-OQE | 1/15 | 8R(nibi+narval) + 5P(fir) | 1/0/0 | FIRST RESULT: Phoenix +83.3% vs IQN, +30.6% vs h064! |
+
+### EARLY SIGNAL FOR h069:
+Phoenix is the FIRST h069 game completed. +30.6% improvement over Rainbow-lite (h064) on this game. If this pattern holds across games, Rainbow-OQE could significantly outperform the already-strong Rainbow-lite baseline. Key test: does OQE add value in the games where Rainbow-lite had LOSSES (Amidar, Alien, PE)?
+
+### NEXT SESSION TODO:
+1. ~2-6h: nibi h069 batch completes (alien/breakout/MR/solaris) → bank 4 more h069 results
+2. ~5h: h067-enduro completes → h067 COMPLETE at 15/15 → compute final IQM
+3. ~8h: narval batch completes (h069 amidar/DD/mspacman/PE/SI + h068 MR/phoenix)
+4. fir h069 pending: BZ/enduro/NTG/qbert/venture — will start after current fir jobs finish
+5. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
