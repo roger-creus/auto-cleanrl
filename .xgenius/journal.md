@@ -9170,3 +9170,48 @@ Phoenix is the FIRST h069 game completed. +30.6% improvement over Rainbow-lite (
 3. ~8h: narval batch completes (h069 amidar/DD/mspacman/PE/SI + h068 MR/phoenix)
 4. fir h069 pending: BZ/enduro/NTG/qbert/venture — will start after current fir jobs finish
 5. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
+
+---
+**[2026-03-22 01:12 UTC]**
+
+## Session 153: Bank h069-breakout-s1 (+10.2% WIN vs IQN, TIE vs Rainbow-lite) — h069 at 2/15
+
+### Triggered by: h069-breakout-s1 (job 10711218, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — 2nd result:**
+1. h069-breakout-s1: q4=2.04 vs IQN=1.85 WIN (+10.2%). vs Rainbow-lite(h064)=2.04 TIE (+0.1%). Near-zero game (both ~2 out of max 864). OQE adds nothing to Rainbow-lite on Breakout — identical performance.
+
+### h069 RESULTS SO FAR (2/15):
+| Game | h069 q4 | IQN q4 | h064 q4 | h069 vs IQN | h069 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 245.90 | 134.16 | 188.31 | WIN +83.3% | WIN +30.6% |
+| Breakout | 2.04 | 1.85 | 2.04 | WIN +10.2% | TIE +0.1% |
+
+### EARLY SIGNAL:
+- Phoenix: OQE adds +30.6% over Rainbow-lite — STRONG
+- Breakout: OQE adds +0.1% over Rainbow-lite — NEUTRAL (near-zero game)
+- 1 strong win, 1 neutral = promising but needs more data. Key test games: Amidar/Alien/PE (where Rainbow-lite lost vs IQN)
+
+### CLUSTER STATUS (~01:12 UTC Mar 22 / ~21:12 local Mar 21):
+**Nibi (4R):** h067-enduro(5:44/10h ~4.3h left), h069-alien/MR/solaris(4:31/10h ~1-3h left)
+**Narval (8R):** h067-enduro(3:21/10h), h068-MR/phoenix(3:01/12h), h069-amidar/DD/mspacman/PE/SI(2.5-3h/10h)
+**Fir (5P):** h069-BZ/enduro/NTG/qbert/venture — all PENDING
+
+### REMAINING:
+| Hyp | Banked | Running/Pending | Est completion |
+|-----|--------|-----------------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | 14/15 | enduro(nibi 4.3h, narval 6.7h) | ~Mar 22 05:30 UTC |
+| h068 | 13/15 | MR+phoenix(narval 9h) | ~Mar 22 10:00 UTC |
+| h069 | 2/15 | 3R nibi(1-3h) + 5R narval(5-6h) + 5P fir | Batch: nibi ~02-04 UTC, narval ~07-09 UTC |
+
+### NEXT SESSION TODO:
+1. ~1-3h: nibi h069 batch (alien/MR/solaris) completes → bank 3 results
+2. ~4.3h: h067-enduro completes on nibi → h067 COMPLETE at 15/15 → compute final IQM
+3. ~5-6h: narval h069 batch (amidar/DD/mspacman/PE/SI) completes → bank 5 results. KEY: amidar/PE are games where h064 LOST vs IQN!
+4. ~9h: h068-MR/phoenix narval → h068 COMPLETE at 15/15
+5. fir h069 (BZ/enduro/NTG/qbert/venture) PENDING — TBD
+6. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
