@@ -10014,3 +10014,51 @@ Even PrivateEye (h066-OQE=423 vs h064=0) would only add ~+0.006 dHNS. With curre
 3. KEY remaining: PrivateEye (h066-OQE=471 vs h064-NN=0!), Qbert (h064=277 vs IQN=218), Solaris, Venture
 4. When h070 complete: CLOSE h070, finalize verdict. Begin Phase 3 planning.
 5. Phase 3: 3-seed eval of h064 (Rainbow-lite) + h066 (OQE) + baselines
+
+---
+**[2026-03-22 15:06 UTC]**
+
+## Session 170: Bank h070-montezumarevenge-s1 (TIE vs IQN, TIE vs h064) — h070 at 11/15
+
+### Triggered by: h070-montezumarevenge-s1 (job 58099448, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step — 11th result:**
+1. h070-montezumarevenge-s1: q4=0.0 vs IQN=0.0 TIE. vs Rainbow-lite(h064)=0.0 TIE. All methods score 0 on MontezumaRevenge at 40M steps — hard exploration game, no algorithm solves it.
+
+### h070 RESULTS TABLE (11/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | vs IQN | vs h064 |
+|------|---------|--------|---------|--------|---------|
+| NTG | 1859.11 | 1564.76 | 2491.14 | WIN +18.8% | LOSS -25.4% |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | WIN +9.9% | TIE +2.1% |
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+| Enduro | 7.04 | 1.24 | 21.97 | WIN +468% | LOSS -68.0% |
+| Breakout | 1.92 | 1.85 | 2.04 | TIE +3.9% | LOSS -5.7% |
+| Amidar | 32.68 | 34.27 | 31.0 | TIE -4.6% | WIN +5.4% |
+| DoubleDunk | -22.62 | -22.59 | -19.35 | TIE -0.1% | LOSS -16.9% |
+| MontezumaRevenge | 0.0 | 0.0 | 0.0 | TIE 0.0% | TIE 0.0% |
+| MsPacman | 443.41 | 496.64 | 555.97 | LOSS -10.7% | LOSS -20.2% |
+| Alien | 252.45 | 311.13 | 275.49 | LOSS -18.9% | LOSS -8.4% |
+
+### INTERIM IQM (11/15):
+- vs IQN: IQM dHNS=+0.0031 (5W/2L/4T) — weakening further (was +0.0032 at 10/15)
+- vs h064 Rainbow-lite: IQM dHNS=-0.0116 (1W/7L/3T) — h070 clearly LOSING
+
+### VERDICT LOCKED: OQE CANNOT replace NoisyNet.
+11/15 games confirm it beyond doubt. h070 vs h064 is 1W/7L/3T with IQM -0.0116. NoisyNet provides exploration benefits OQE cannot match when combined with N-step returns.
+
+### CLUSTER STATUS (~15:05 UTC / ~11:05 local Mar 22):
+**Rorqual (4R):** PE/qbert/solaris/venture — 4:04/10h elapsed → ~6h remaining → ~21:00 UTC
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 11/15 | 4 jobs | rorqual PE/qbert/solaris/venture ~21:00 UTC |
+
+### NEXT SESSION TODO:
+1. ~6h: rorqual h070 (PE/qbert/solaris/venture) → h070 COMPLETE 15/15
+2. KEY games: PrivateEye (h066-OQE=423 vs h064-NN=0!), Qbert (h064=277 vs IQN=218), Solaris (h064=3220 vs IQN=1370), Venture (h064=5.17 vs IQN=1.05)
+3. When h070 complete: CLOSE h070. Expected final verdict: h064 Rainbow-lite > h070 OQE+N-step.
+4. After h070 closes: BEGIN PHASE 3 — 3-seed evaluation of h064 (Rainbow-lite) + h066 (OQE) + baselines (PPO/DQN/IQN)
