@@ -9865,3 +9865,50 @@ KEY PATTERN: NoisyNet > OQE for combined methods:
 4. h066 OQE remains the NOVEL publishable contribution (9W/1L/5T, essentially undefeated standalone)
 5. After h070 closes: Phase 3 planning — 3-seed evaluation of h064 + h066 + PPO baseline
 
+
+---
+**[2026-03-22 13:32 UTC]**
+
+## Session 167: Bank h070-doubledunk-s1 (TIE vs IQN, LOSS -16.9% vs h064) — h070 at 8/15
+
+### Triggered by: h070-doubledunk-s1 (job 58099441, narval SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step — 8th result:**
+1. h070-doubledunk-s1: q4=-22.62 vs IQN=-22.59 TIE (-0.1%). vs Rainbow-lite(h064)=-19.35 LOSS (-16.9%). vs N-step(h065)=-22.44 TIE (-0.8%). vs OQE(h066)=-22.45 TIE (-0.7%). OQE+N-step adds NOTHING on DoubleDunk — result is identical to IQN baseline. NoisyNet (h064=-19.35) is the ONLY thing that improves DoubleDunk.
+
+### h070 RESULTS TABLE (8/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | vs IQN | vs h064 |
+|------|---------|--------|---------|--------|---------|
+| NTG | 1859.11 | 1564.76 | 2491.14 | WIN +18.8% | LOSS -25.4% |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | WIN +9.9% | TIE +2.1% |
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+| Amidar | 32.68 | 34.27 | 31.0 | TIE -4.6% | WIN +5.4% |
+| DoubleDunk | -22.62 | -22.59 | -19.35 | TIE -0.1% | LOSS -16.9% |
+| MsPacman | 443.41 | 496.64 | 555.97 | LOSS -10.7% | LOSS -20.2% |
+| Alien | 252.45 | 311.13 | 275.49 | LOSS -18.9% | LOSS -8.4% |
+
+### INTERIM IQM (8/15):
+- vs IQN: IQM dHNS=+0.0032 (4W/2L/2T) — decent but much weaker than h064's +0.0133
+- vs h064 Rainbow-lite: IQM dHNS=-0.0149 (1W/5L/2T) — h070 clearly LOSING
+
+### VERDICT SOLIDIFYING: OQE CANNOT replace NoisyNet.
+NoisyNet in h064 provides something OQE does not: undirected weight-space exploration that improves games like DoubleDunk, BattleZone, NTG, MsPacman where OQE+N-step matches baseline IQN.
+
+### CLUSTER STATUS (~14:00 UTC / ~10:00 local Mar 22):
+**Narval (3R):** breakout/enduro/MR — ~7.5h elapsed / 10h → ~2.5h remaining → ~16:30 UTC
+**Rorqual (4R):** PE/qbert/solaris/venture — ~3h elapsed / 10h → ~7h remaining → ~21:00 UTC
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 8/15 | 7 jobs | narval ~16:30, rorqual ~21:00 UTC |
+
+### NEXT SESSION TODO:
+1. ~2.5h: narval h070 (breakout/enduro/MR) → bank 3 → h070 at 11/15. KEY: Enduro (h064=21.97 massive +1673% vs IQN)
+2. ~7h: rorqual h070 (PE/qbert/solaris/venture) → h070 COMPLETE 15/15. KEY: PrivateEye (h066-OQE=423 vs h064-NN=0!!)
+3. When h070 complete: FINAL verdict. Expected: h064 Rainbow-lite wins, OQE not a NoisyNet replacement.
+4. h066 OQE remains the NOVEL publishable contribution (standalone, not as NoisyNet replacement)
+5. After h070: Phase 3 planning — 3-seed evaluation of h064 + h066 + PPO/DQN baselines
