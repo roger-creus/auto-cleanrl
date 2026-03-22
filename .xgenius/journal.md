@@ -9761,3 +9761,54 @@ N-step consistently hurts Alien. NoisyNet partially compensates (h064 only -11.5
 5. When h070 complete: final comparison → decide if OQE replaces NoisyNet
 6. If h070 IQM ≈ h064: paper narrative — OQE as zero-param NoisyNet replacement
 7. If h070 IQM << h064: NoisyNet irreplaceable. h064 Rainbow-lite final answer, h066 OQE novel standalone
+
+---
+**[2026-03-22 12:01 UTC]**
+
+## Session 165: Bank h070-spaceinvaders-s1 (WIN +9.9% vs IQN, TIE +2.1% vs h064) + h070-mspacman-s1 (LOSS -10.7% vs IQN, LOSS -20.2% vs h064) — h070 at 5/15
+
+### Triggered by: h070-spaceinvaders-s1 (job 28903390, fir SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h070 IQN+OQE+N-step (novel Rainbow-lite without NoisyNet) — 4th+5th results:**
+1. h070-spaceinvaders-s1: q4=275.67 vs IQN=250.88 WIN (+9.9%). vs Rainbow-lite(h064)=270.0 TIE (+2.1%). vs N-step(h065)=278.67 TIE (-1.1%). vs OQE(h066)=262.71 WIN (+4.9%). OQE+N-step competitive on SI — matches h064.
+2. h070-mspacman-s1: q4=443.41 vs IQN=496.64 LOSS (-10.7%). vs Rainbow-lite(h064)=555.97 LOSS (-20.2%). vs N-step(h065)=446.79 TIE (-0.8%). N-step hurts MsPacman consistently (h065 also -10%). h070 = h065 exactly — OQE adds nothing when N-step already dominates the result.
+
+### h070 RESULTS TABLE (5/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | h070 vs IQN | h070 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | WIN +9.9% | TIE +2.1% |
+| Alien | 252.45 | 311.13 | 275.49 | LOSS -18.9% | LOSS -8.4% |
+| MsPacman | 443.41 | 496.64 | 555.97 | LOSS -10.7% | LOSS -20.2% |
+
+### INTERIM IQM (5/15):
+- vs IQN: IQM dHNS=+0.0046 (3W/2L/0T) — decent but weaker than h064's +0.0133
+- vs h064 Rainbow-lite: IQM dHNS=-0.0067 (0W/3L/2T) — h070 LOSING to h064. BZ(-26%) and MsPacman(-20.2%) are heavy losses.
+
+### PATTERN EMERGING: N-step is the dominant factor.
+On 3/5 games, h070 = h065(N-step alone) — OQE adds nothing when N-step already determines outcome:
+- Alien: h070=252.45 ≈ h065=252.32 (TIE)
+- MsPacman: h070=443.41 ≈ h065=446.79 (TIE)
+- Phoenix: h070=189.18 > h065=174.29 (+8.6%) — OQE helps here
+NoisyNet in h064 compensates for N-step's weaknesses (Alien: -11.5% vs -18.9%, MsPacman: +11.9% vs -10.7%).
+
+### CLUSTER STATUS (~12:00 UTC / ~08:00 local Mar 22):
+**Nibi (1R):** amidar — ~5.5h elapsed / 10h → ~1-1.5h remaining → ~13:00-13:30 UTC
+**Fir (1R):** NTG — ~5.3h elapsed / 10h → ~1-1.5h remaining → ~13:00-13:30 UTC
+**Narval (4R):** breakout/DD/enduro/MR — ~5.5h elapsed / 10h (A100 MIG) → ~4.5h remaining → ~16:30 UTC
+**Rorqual (4R):** PE/qbert/solaris/venture — ~1h elapsed / 10h → ~6h remaining → ~18:00 UTC
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 5/15 | 10 jobs | nibi/fir ~13:00, narval ~16:30, rorqual ~18:00 UTC |
+
+### NEXT SESSION TODO:
+1. ~1-1.5h: nibi amidar + fir NTG complete → bank 2 → h070 at 7/15
+2. ~4.5h: narval breakout/DD/enduro/MR → bank 4 → h070 at 11/15. KEY: Enduro (h064=21.97 vs h066=2.32 — if NoisyNet helps, big LOSS for h070)
+3. ~6h: rorqual PE/qbert/solaris/venture → h070 COMPLETE 15/15. KEY: PrivateEye (h066-OQE=471 vs h064-NN=0!!)
+4. When h070 complete: FINAL comparison → decide if OQE replaces NoisyNet
+5. Looking likely: h070 IQM << h064. OQE cannot replace NoisyNet. But h066 OQE still valid as standalone novel contribution.
