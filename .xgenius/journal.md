@@ -9360,3 +9360,58 @@ Nibi starts fast (alien took ~5h). These should complete ~8-10h from now.
 4. ~10h: nibi h069 backup batch (BZ/enduro/NTG/qbert/venture) complete
 5. Cancel fir pending jobs when nibi backups complete
 6. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
+
+---
+**[2026-03-22 04:27 UTC]**
+
+## Session 157: Bank h069-amidar-s1 (LOSS -9.5% vs IQN, TIE vs h064) + h069-solaris-s1 (WIN +73.5% vs IQN, LOSS -27.2% vs h064) — h069 at 6/15 (3W/2L/1T)
+
+### Triggered by: h069-amidar-s1 (job 58085996, narval SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — 5th+6th results:**
+1. h069-amidar-s1: q4=31.0 vs IQN=34.27 LOSS (-9.5%). vs Rainbow-lite(h064)=31.0 TIE (0.0%). Exactly matches h064. OQE adds nothing on Amidar.
+2. h069-solaris-s1: q4=1207.42 vs IQN=696.07 WIN (+73.5%). vs Rainbow-lite(h064)=1658.26 LOSS (-27.2%). OQE HURTS Solaris vs h064 — Rainbow-lite was +138% on Solaris but h069 only +73.5%.
+
+Note: h069-solaris-s1 (10711326, nibi) showed as 'disappeared' in DB but actually COMPLETED — CSV saved successfully. Pulled and banked.
+
+### h069 RESULTS TABLE (6/15):
+| Game | h069 q4 | IQN q4 | h064 q4 | h069 vs IQN | h069 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 245.90 | 134.16 | 188.31 | WIN +83.3% | WIN +30.6% |
+| Solaris | 1207.42 | 696.07 | 1658.26 | WIN +73.5% | LOSS -27.2% |
+| Breakout | 2.04 | 1.85 | 2.04 | WIN +10.2% | TIE +0.1% |
+| MR | 0.00 | 0.00 | 0.00 | TIE 0% | TIE 0% |
+| Amidar | 31.0 | 34.27 | 31.0 | LOSS -9.5% | TIE 0% |
+| Alien | 275.35 | 311.13 | 275.49 | LOSS -11.5% | TIE -0.05% |
+
+### INTERIM IQM (6/15 games):
+- vs IQN: IQM dHNS=+0.0055 (driven by Solaris+Phoenix)
+- vs Rainbow-lite (h064): IQM dHNS≈-0.0000 (ZERO — Phoenix +0.0089 cancels Solaris -0.0407)
+- vs PPO: IQM dHNS=-0.0264
+
+### KEY INSIGHT:
+h069 is essentially IDENTICAL to Rainbow-lite (h064) on 4 of 6 games (Alien/Amidar/Breakout/MR all TIE). OQE only diverges on Phoenix (helps +30.6%) and Solaris (hurts -27.2%). This suggests NoisyNet already provides sufficient exploration — OQE is redundant on top of NoisyNet for most games.
+
+### CLUSTER STATUS (~04:25 UTC / ~00:25 local Mar 22):
+**Narval (6R):** h068-MR(6:13/12h ~6h left), h068-phoenix(6:10/12h ~6h left), h069-DD(6:04/10h ~4h left), h069-mspacman(5:57/10h ~4h left), h069-PE(5:50/10h ~4.2h left), h069-SI(5:47/10h ~4.2h left)
+**Nibi (5R):** h069-BZ/enduro/NTG/qbert/venture (2:15 elapsed / 10h, ~4-5h left)
+**Fir (5R):** h069-BZ(1:10/10h), enduro(0:55/10h), NTG(0:51/10h), qbert(0:30/10h), venture(0:26/10h) — backups
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | **15/15 COMPLETE** | — | DONE |
+| h068 | 13/15 | MR+phoenix(narval ~6h) | ~Mar 22 10:00-10:30 UTC |
+| h069 | 6/15 | 4R narval(~4h) + 5R nibi(~5h) + 5R fir(~6-8h) | narval ~08:30, nibi ~09:00, fir ~10:00+ |
+
+### NEXT SESSION TODO:
+1. ~4h: narval h069 (DD/mspacman/PE/SI) complete → bank 4 results. KEY: PE where h064 LOST (-100%)!
+2. ~5h: nibi h069 (BZ/enduro/NTG/qbert/venture) complete → bank 5. KEY: Enduro/Venture where h064 had MASSIVE wins!
+3. ~6h: narval h068 (MR/phoenix) complete → h068 COMPLETE 15/15 → close
+4. Cancel duplicate fir jobs when nibi batch completes
+5. When h069 reaches 15/15: FINAL comparison vs h064 and h066
+6. PRELIMINARY CONCLUSION: OQE appears redundant with NoisyNet. NoisyNet weight-space noise already provides sufficient exploration, making OQE's optimistic quantile sampling unnecessary. If this holds across remaining 9 games, then OQE is specifically valuable ONLY without NoisyNet (as in h066).
