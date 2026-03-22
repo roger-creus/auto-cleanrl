@@ -10676,3 +10676,44 @@ Compare: s1=2.04. Very consistent — Breakout is a near-zero game for Rainbow-l
 3. Bank all results as they arrive
 4. When enough seeds arrive: compute 2-seed then 3-seed IQM with confidence intervals
 5. Final comparison: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline
+
+---
+**[2026-03-22 22:59 UTC]**
+
+## Session 185: Bank 4 completed Phase 3 experiments — 81 jobs still running
+
+### Triggered by: h063-namethisgame-s3, h063-privateeye-s3, h064-phoenix-s3 (all nibi SUCCESS)
+Also picked up h063-battlezone-s3 via check-completions.
+
+### RESULTS BANKED: 4
+1. h063-namethisgame-s3: IQN NameThisGame-v5 seed 3, q4=1631.45 (vs s1=1564.76). Consistent.
+2. h063-privateeye-s3: IQN PrivateEye-v5 seed 3, q4=435.89 (vs s1=423.18). Consistent.
+3. h063-battlezone-s3: IQN BattleZone-v5 seed 3, q4=3080.56 (vs s1=3466.95). Lower seed 3 — variance.
+4. h064-phoenix-s3: Rainbow-lite Phoenix-v5 seed 3, q4=76.90 (vs s1=188.31). BIG drop — seed 3 much worse. Concerning variance.
+
+### PHASE 3 COVERAGE:
+- h063 IQN: 21/45 (15 s1, amidar-s2, phoenix-s2, battlezone-s3, namethisgame-s3, privateeye-s3, venture-s3)
+- h064 Rainbow-lite: 18/45 (15 s1, amidar-s3, breakout-s3, phoenix-s3)
+- h066 OQE: 16/45 (15 s1, phoenix-s2)
+- h001 PPO: 45/45 COMPLETE
+
+### PHASE 3 STATUS (~19:00 UTC Mar 22):
+81 jobs RUNNING across 3 clusters:
+- fir: 26 running (s2 batch ~5h/11h, s3 resubmitted ~3.5h/11h + h001-battlezone-s2 38min/6h)
+- narval: 31 running (~5h18m/11h)
+- nibi: 24 running (~5h/11h)
+
+### TIMELINE:
+- ~21:30-22:00 UTC Mar 22: fir s2 batch completes (breakout-s2, enduro-s2, qbert-s2, spaceinvaders-s2, mspacman-s2 + h064/h066 s2 on fir)
+- ~00:30-01:00 UTC Mar 23: narval + nibi bulk complete
+- ~02:00-02:30 UTC Mar 23: fir resubmitted s3 batch completes (last batch)
+
+### NOTE ON h064 Phoenix variance:
+h064-phoenix-s3 q4=76.90 vs s1=188.31 — a 59% drop. This is the biggest seed variance seen so far. Rainbow-lite Phoenix may be unstable. Will need 3-seed average to judge properly.
+
+### NEXT SESSION TODO:
+1. ~2.5h: fir s2 batch arrives — bank immediately
+2. ~5.5h: narval/nibi bulk arrives — bank all
+3. ~7h: fir s3 batch completes — bank remaining
+4. When all 45/45 for each: compute IQM with confidence intervals
+5. Final comparison: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline vs h001 PPO
