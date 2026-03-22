@@ -51,7 +51,7 @@ CleanRL's envpool scripts log episode returns from ALL parallel environments at 
 ### Performance metric
 The "mean return over last 25 episodes" is **unreliable** because:
 - If the agent was unlucky in the last 25 episodes, the score is unrepresentative
-- With clipped rewards, many episodes may have similar returns, masking real differences
+- Even though the rewards are clipped in the env, info["r"][idx] returns the corect atari score so that's good.
 
 **Use robust metrics instead:**
 - **Q4 metric:** Mean return over the last 25% of ALL episodes during training (not just the last 25)
@@ -94,11 +94,11 @@ END GOAL: State-of-the-art performance competitive with published methods, with 
 4. Record all baseline results in the journal and results bank
 5. Analyze which games each baseline struggles on — these are the targets
 
-### Phase 2: Broad exploration
+### Phase 2: Broad exploration (**this is the longest phase. Must not end untill all the hypothesis space is fully explored**)
 1. Start with the most promising directions based on baseline analysis
 2. Implement a single algorithmic change at a time
 3. **Pilot: run ALL 15 games × 1 seed** (this is cheap — do it for every hypothesis)
-4. If promising (>10% improvement across games): run full 15 games × 3 seeds
+4. If promising: run full 15 games × 3 seeds
 5. If not promising: record detailed findings with comments, move to next idea
 6. **Explore ACROSS categories** — don't just iterate on one algorithm family
 7. Combine successful innovations incrementally
