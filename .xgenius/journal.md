@@ -10421,3 +10421,35 @@ If rorqual hasn't started by ~06:00 UTC Mar 23 (when fir/narval/nibi finish), co
 3. If rorqual still pending: resubmit to other clusters
 4. When enough seeds complete: compute 3-seed IQM with confidence intervals
 5. h001 gap-fills: 3 running + 1 pending → should complete within Phase 3 window
+
+---
+**[2026-03-22 21:53 UTC]**
+
+## Session 178: Bank h001-namethisgame-s2 (PPO seed 2, q4=2293.44) — Phase 3 running
+
+### Triggered by: h001-namethisgame-s2 (job 28941734, fir SUCCESS)
+
+### RESULT BANKED: 1
+h001-namethisgame-s2: PPO NameThisGame-v5 seed 2, q4=2293.44. Consistent with s1 (2522.54) and s3 (2491.16). Slightly lower — seed variance.
+
+### h001 PPO baseline coverage: 42/45
+| Game | s1 | s2 | s3 | Status |
+|------|----|----|-----|--------|
+| BattleZone-v5 | 2364.3 | MISSING | 1736.8 | s2 PENDING (rorqual 8861944) |
+| DoubleDunk-v5 | -18.1 | -17.6 | MISSING | s3 RUNNING (nibi 10756504) |
+| Solaris-v5 | 2163.6 | 2468.8 | MISSING | s3 RUNNING (fir 28941758) |
+
+### PHASE 3 STATUS (~22:30 UTC Mar 22):
+- fir: 23 RUNNING (~3.5h elapsed / 11h)
+- narval: 23 RUNNING (~3.5h elapsed / 11h)
+- nibi: 24 RUNNING (~3.5h elapsed / 11h)
+- rorqual: 23 PENDING (still in queue)
+- Total: 70 running + 23 pending = 93 active
+
+No h063/h064/h066 seed 2/3 results yet. First expected ~05:00-07:00 UTC Mar 23.
+
+### NEXT SESSION TODO:
+1. ~6-8h: Phase 3 results arrive from fir/narval/nibi
+2. Bank all completed results as they arrive
+3. h001 gap-fills: 2 running + 1 pending → should complete before Phase 3 IQN jobs
+4. If rorqual still pending when fir/narval/nibi finish: resubmit seed-3 elsewhere
