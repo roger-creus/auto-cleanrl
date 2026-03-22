@@ -10641,3 +10641,38 @@ Compare: s1=2.04. Very consistent — Breakout is a near-zero game for Rainbow-l
 2. h001 last 2 gap-fills complete in ~2-5h
 3. After first batch completes: compute 2-seed averages for early signal
 4. After all 3 seeds: final comparison with IQM and confidence intervals
+
+---
+**[2026-03-22 22:50 UTC]**
+
+## Session 184: Bank h063-amidar-s2 + h066-phoenix-s2 — Phase 3 progressing
+
+### Triggered by: h063-amidar-s2 (job 28939064, fir SUCCESS)
+
+### RESULTS BANKED: 2
+1. h063-amidar-s2: IQN Amidar-v5 seed 2, q4=34.31 (vs s1=34.27). Extremely consistent.
+2. h066-phoenix-s2: IQN+OQE Phoenix-v5 seed 2, q4=141.33, auc=8147040.0 (vs s1=139.71). Consistent. Slightly above IQN s2 (137.49).
+
+### PHASE 3 COVERAGE:
+- h063 IQN: 18/45 (15 s1 + amidar-s2, phoenix-s2, venture-s3)
+- h064 Rainbow-lite: 17/45 (15 s1 + amidar-s3, breakout-s3)
+- h066 OQE: 16/45 (15 s1 + phoenix-s2)
+- h001 PPO: 45/45 COMPLETE
+
+### PHASE 3 STATUS (~23:00 UTC Mar 22):
+**Running (79 jobs):**
+- fir: 27 running (seed-2 ~5h + resubmitted seed-3 ~30min elapsed)
+- narval: 31 running (seed-2 ~5h + resubmitted seed-3 ~30min elapsed)
+- nibi: 21 running + 7 pending (seed-3 mix: some 5h, some 1.5-3h)
+
+**ETA:**
+- Seed-2 batch (fir/narval original): ~05:00-07:00 UTC Mar 23
+- Seed-3 batch (nibi original): ~05:00-09:00 UTC Mar 23
+- Seed-3 batch (resubmitted from rorqual): ~09:00-11:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. ~5-7h: first wave of seed-2 completions from fir/narval
+2. ~7-10h: seed-3 completions from nibi and resubmitted batch
+3. Bank all results as they arrive
+4. When enough seeds arrive: compute 2-seed then 3-seed IQM with confidence intervals
+5. Final comparison: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline

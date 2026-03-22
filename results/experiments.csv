@@ -1165,3 +1165,5 @@ h001-battlezone-s2,h001,,"PPO BattleZone seed 2. q4=2390.98, consistent with s1=
 h001-doubledunk-s3,h001,,"PPO DoubleDunk seed 3. q4=-17.64, consistent with s1=-18.10, s2=-17.57.",DoubleDunk-v5,3,ppo,40000000,19968,-20.0,-17.64,-684673536.0,-20.0
 h063-venture-s3,h063,,IQN Venture seed 3. q4=3.57 vs s1=1.05. Seed 3 higher. Both near-zero on Venture.,Venture-v5,3,iqn,40000000,17952,2.41,3.57,43200.0,0.0
 h064-breakout-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Breakout-v5 --seed 3,nibi completed. Rainbow-lite Breakout seed 3. q4=2.01 vs s1=2.04. Consistent.,Breakout-v5,3,dqn_rainbow_lite,40000000.0,195952.0,1.9735445976257324,2.0091450214385986,386720.0,2.4000000953674316
+h063-amidar-s2,h063,,IQN Amidar seed 2. q4=34.31 vs s1=34.27. Extremely consistent across seeds.,Amidar-v5,2,iqn,40000000,64048,34.17,34.31,2188288.0,35.4
+h066-phoenix-s2,h066,,IQN+OQE Phoenix seed 2. q4=141.33 vs s1=139.71. Consistent. Slight OQE edge over IQN (137.49).,Phoenix-v5,2,iqn_oqe,40000000,48064,169.50,141.33,8147040.0,348.0
