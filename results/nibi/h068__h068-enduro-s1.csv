@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Enduro-v5,1,h068,h068-enduro-s1,iqn_oqe_replay,40000000,12016,5.2303595542907715,4.878828048706055,62848.0,1.7999999523162842

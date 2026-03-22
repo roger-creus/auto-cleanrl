@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+NameThisGame-v5,1,h068,h068-namethisgame-s1,iqn_oqe_replay,40000000,18448,1834.2584228515625,1780.199462890625,33838400.0,3282.0

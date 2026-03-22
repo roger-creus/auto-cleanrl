@@ -1,0 +1,52 @@
+[
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/iqn_atari_envpool_rainbow_oqe.py --env-id BattleZone-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h069 --experiment-id h069-battlezone-s1 --output-dir /runs",
+    "experiment_id": "h069-battlezone-s1",
+    "hypothesis_id": "h069",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "10:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/iqn_atari_envpool_rainbow_oqe.py --env-id Enduro-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h069 --experiment-id h069-enduro-s1 --output-dir /runs",
+    "experiment_id": "h069-enduro-s1",
+    "hypothesis_id": "h069",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "10:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/iqn_atari_envpool_rainbow_oqe.py --env-id NameThisGame-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h069 --experiment-id h069-namethisgame-s1 --output-dir /runs",
+    "experiment_id": "h069-namethisgame-s1",
+    "hypothesis_id": "h069",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "10:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/iqn_atari_envpool_rainbow_oqe.py --env-id Qbert-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h069 --experiment-id h069-qbert-s1 --output-dir /runs",
+    "experiment_id": "h069-qbert-s1",
+    "hypothesis_id": "h069",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "10:00:00"
+  },
+  {
+    "cluster": "nibi",
+    "command": "python cleanrl/iqn_atari_envpool_rainbow_oqe.py --env-id Venture-v5 --seed 1 --total-timesteps 40000000 --hypothesis-id h069 --experiment-id h069-venture-s1 --output-dir /runs",
+    "experiment_id": "h069-venture-s1",
+    "hypothesis_id": "h069",
+    "gpus": 1,
+    "cpus": 8,
+    "memory": "32G",
+    "walltime": "10:00:00"
+  }
+]

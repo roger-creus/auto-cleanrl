@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+BattleZone-v5,1,h000,BattleZone-v5_s1,ppo_crelu,10000000,8704,2294.11767578125,2117.64697265625,19968000.0,1000.0

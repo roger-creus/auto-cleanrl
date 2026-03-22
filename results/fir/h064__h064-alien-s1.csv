@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Alien-v5,1,h064,h064-alien-s1,dqn_rainbow_lite,40000000,66720,295.87530517578125,275.48681640625,19740800.0,306.0

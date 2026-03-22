@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Solaris-v5,1,h058,h058-solaris-s1,dqn_dueling,40000000,5424,418.466064453125,272.035400390625,2269760.0,276.0

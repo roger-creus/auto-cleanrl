@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Breakout-v5,1,h064,h064-breakout-s1,dqn_rainbow_lite,40000000,197472,1.9474962949752808,2.036623001098633,384576.0,2.799999952316284

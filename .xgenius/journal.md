@@ -9518,3 +9518,64 @@ OQE is REDUNDANT with NoisyNet. On 5 of 9 games h069=h064 (exact TIE). On 3 game
 3. ~6h: nibi h069 batch (BZ/enduro/NTG/qbert/venture) → bank 5. KEY: Enduro (+1673% h064 WIN), Venture (+391% h064 WIN)
 4. Cancel fir backups when nibi batch completes
 5. When h069 reaches 15/15: FINAL comparison → likely conclusion: OQE redundant with NoisyNet, confirm h064 Rainbow-lite as best variant
+
+---
+**[2026-03-22 06:32 UTC]**
+
+## Session 160: Bank h069-qbert-s1 (WIN +12.2%) + h069-venture-s1 (WIN +296.8%) — h069 at 11/15. SUBMIT h070 pilot.
+
+### Triggered by: h069-qbert-s1 (job 10738506, nibi) + h069-venture-s1 (job 10738521, nibi)
+
+### NEW RESULTS BANKED: 2
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — 10th+11th results:**
+1. h069-qbert-s1: q4=246.09 vs IQN=219.30 WIN (+12.2%). vs Rainbow-lite(h064)=254.38 LOSS (-3.3%). OQE+NoisyNet slightly underperforms Rainbow-lite on Qbert.
+2. h069-venture-s1: q4=4.17 vs IQN=1.05 WIN (+296.8%). vs Rainbow-lite(h064)=5.17 LOSS (-19.3%). Both Rainbow-lite and Rainbow-OQE massively improve sparse-reward Venture, but NoisyNet gives edge.
+
+### h069 RESULTS TABLE (11/15):
+| Game | h069 q4 | IQN q4 | h064 q4 | h069 vs IQN | h069 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 245.90 | 134.16 | 188.31 | WIN +83.3% | WIN +30.6% |
+| Venture | 4.17 | 1.05 | 5.17 | WIN +296.8% | LOSS -19.3% |
+| Solaris | 1207.42 | 696.07 | 1658.26 | WIN +73.5% | LOSS -27.2% |
+| Qbert | 246.09 | 219.30 | 254.38 | WIN +12.2% | LOSS -3.3% |
+| Breakout | 2.04 | 1.85 | 2.04 | WIN +10.2% | TIE +0.1% |
+| SpaceInvaders | 270.0 | 250.88 | 270.0 | WIN +7.6% | TIE 0% |
+| DoubleDunk | -21.37 | -22.59 | -19.35 | WIN +5.4% | LOSS -10.4% |
+| MR | 0.00 | 0.00 | 0.00 | TIE 0% | TIE 0% |
+| MsPacman | 493.28 | 496.64 | 555.97 | LOSS -0.7% | LOSS -11.3% |
+| Amidar | 31.0 | 34.27 | 31.0 | LOSS -9.5% | TIE 0% |
+| Alien | 275.35 | 311.13 | 275.49 | LOSS -11.5% | TIE -0.05% |
+
+### INTERIM IQM (11/15):
+- vs IQN: IQM dHNS=+0.0058 (7W/2L/2T)
+- vs h064 Rainbow-lite: IQM dHNS=-0.0016 (1W/3L/7T) — OQE REDUNDANT with NoisyNet confirmed
+- vs PPO: IQM dHNS=+0.0020
+
+### CANCELLED: fir h069-qbert-s1 (28828506) + h069-venture-s1 (28828557) — already completed on nibi.
+
+### NEW HYPOTHESIS SUBMITTED: h070 (IQN + OQE + N-step — novel Rainbow-lite)
+CRITICAL EXPERIMENT for paper narrative. h070 replaces NoisyNet with OQE in Rainbow-lite:
+- h064 = IQN + NoisyNet + N-step: IQM +0.0133 vs IQN (BEST overall)
+- h066 = IQN + OQE: 9W/1L/5T vs IQN (most consistent)
+- h065 = IQN + N-step: IQM +0.0058 vs IQN
+- h070 = IQN + OQE + N-step: ??? — if competitive with h064, OQE replaces NoisyNet
+Submitted 15 games x 1 seed across all 4 clusters (nibi:3, narval:4, fir:4, rorqual:4).
+
+### CLUSTER STATUS (~06:50 UTC / ~02:50 local Mar 22):
+**Still running:** h068-MR/phoenix (narval ~3.5h left), h069-PE (narval ~2h), h069-BZ/enduro/NTG (nibi ~5.5h + fir backups)
+**New h070:** 15 jobs submitted — nibi/narval should start fast, fir/rorqual may queue
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h068 | 13/15 | MR+phoenix(narval ~3.5h) | ~Mar 22 10:00 UTC |
+| h069 | 11/15 | PE(narval ~2h) + BZ/enduro/NTG(nibi ~5.5h) | PE ~08:30, batch ~12:00 |
+| h070 | 0/15 | 15 jobs just submitted | ~Mar 22 16:00-20:00 UTC |
+
+### NEXT SESSION TODO:
+1. h069-PE completes (~2h) → bank. KEY: h064 LOST -100% on PE!
+2. h068-MR/phoenix complete (~3.5h) → h068 COMPLETE 15/15 → compute final IQM → close
+3. h069-BZ/enduro/NTG complete (~5.5h) → h069 COMPLETE 15/15 → final comparison vs h064
+4. h070 first results arrive (~8-10h) → start banking
+5. Cancel fir h069 backups (BZ/enduro/NTG) when nibi versions complete

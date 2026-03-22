@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Amidar-v5,1,h064,h064-amidar-s1,dqn_rainbow_lite,40000000,66528,39.49639129638672,31.0,2627616.0,31.0

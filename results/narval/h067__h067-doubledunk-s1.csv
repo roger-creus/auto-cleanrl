@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+DoubleDunk-v5,1,h067,h067-doubledunk-s1,iqn_replay,40000000,21168,-22.569917678833008,-23.12471580505371,-477760.0,-22.0
