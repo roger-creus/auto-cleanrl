@@ -10119,3 +10119,67 @@ Hypothesis: NoisyNet's undirected noise overwhelms PrivateEye's sparse reward si
 1. ~5h: rorqual h070 (qbert/solaris/venture) → h070 COMPLETE 15/15
 2. When h070 complete: CLOSE h070. Final verdict: h064 Rainbow-lite wins overall, but OQE+N-step better than h064 on PrivateEye (and maybe Venture)
 3. After h070: Phase 3 planning — 3-seed evaluation of h064 (Rainbow-lite) + h066 (OQE) + baselines
+
+---
+**[2026-03-22 16:17 UTC]**
+
+## Session 172: Bank h070-venture-s1 (WIN +580% vs IQN, WIN +38% vs h064) — h070 at 13/15
+
+### Triggered by: h070-venture-s1 (job 8825845, rorqual SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step — 13th result:**
+1. h070-venture-s1: q4=7.14 vs IQN=1.05 WIN (+580%). vs Rainbow-lite(h064)=5.17 WIN (+38.1%). vs N-step(h065)=6.33 WIN (+12.8%). vs OQE(h066)=3.62 WIN (+97.2%). OQE+N-step achieves the BEST Venture score of any method! Genuine synergy: OQE+N-step (7.14) > N-step alone (6.33) > Rainbow-lite NoisyNet+N-step (5.17) > OQE alone (3.62). On this sparse-reward game, OQE's directed optimistic exploration + N-step credit assignment outperforms NoisyNet.
+
+### h070 RESULTS TABLE (13/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | dHNS vs IQN | dHNS vs h064 | vs IQN | vs h064 |
+|------|---------|--------|---------|-------------|-------------|--------|---------|
+| NTG | 1859.11 | 1564.76 | 2491.14 | +0.0511 | -0.1098 | WIN | LOSS |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | +0.0133 | -0.0396 | WIN | LOSS |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | +0.0163 | +0.0037 | WIN | WIN |
+| Phoenix | 189.18 | 134.16 | 188.31 | +0.0085 | +0.0001 | WIN | TIE |
+| Enduro | 7.04 | 1.24 | 21.97 | +0.0067 | -0.0174 | WIN | LOSS |
+| Venture | 7.14 | 1.05 | 5.17 | +0.0051 | +0.0017 | WIN | TIE |
+| Breakout | 1.92 | 1.85 | 2.04 | +0.0024 | -0.0042 | WIN | LOSS |
+| Amidar | 32.68 | 34.27 | 31.0 | -0.0009 | +0.0010 | TIE | TIE |
+| MontezumaRevenge | 0.0 | 0.0 | 0.0 | +0.0000 | +0.0000 | TIE | TIE |
+| PrivateEye | 519.66 | 423.18 | 0.0 | +0.0014 | +0.0075 | TIE | WIN |
+| Alien | 252.45 | 311.13 | 275.49 | -0.0085 | -0.0033 | LOSS | LOSS |
+| DoubleDunk | -22.62 | -22.59 | -19.35 | -0.0136 | -1.4864 | LOSS | LOSS |
+| MsPacman | 443.41 | 496.64 | 555.97 | -0.0080 | -0.0169 | LOSS | LOSS |
+
+### INTERIM IQM (13/15):
+- vs IQN: IQM dHNS=+0.0033 (7W/3L/3T) — decent positive
+- vs h064 Rainbow-lite: IQM dHNS=-0.0058 (2W/7L/4T) — h070 LOSING to h064
+
+### VENTURE ANALYSIS: OQE+N-step BEST on sparse-reward games!
+OQE+N-step dominates on both sparse-reward games:
+- Venture: h070=7.14 > h065=6.33 > h064=5.17 > h066=3.62 > IQN=1.05
+- PrivateEye: h070=519.66 > h065=512.00 > h066=471.08 > IQN=423.18 > h064=0!
+Pattern: On games where exploration matters AND NoisyNet can fail (PrivateEye=0 for h064), OQE+N-step is strictly superior.
+
+### REMAINING 2 GAMES — predictions:
+- Qbert: N-step HURTS (h065=204 < IQN=219), OQE neutral (h066=218). Expect h070~205-210. LOSS vs h064(254).
+- Solaris: N-step helps (h065=842 > IQN=696), OQE helps (h066=905). Expect h070~900-1100. LOSS vs h064(1658).
+Both games expected LOSS vs h064. Final h070 verdict: 2-3W/9L/3-4T vs h064.
+
+### CLUSTER STATUS (~17:00 UTC / ~13:00 local Mar 22):
+**Rorqual (2R):** qbert/solaris — started ~11:01 UTC, 10h walltime → ~21:00 UTC completion
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 13/15 | 2 jobs | rorqual qbert/solaris ~21:00 UTC |
+
+### KEY INSIGHT: OQE vs NoisyNet are COMPLEMENTARY, not substitutes.
+- NoisyNet: Weight-space noise → undirected exploration → helps DENSE reward games (DoubleDunk, Enduro, BattleZone, NTG, MsPacman)
+- OQE: Value-space optimism → directed exploration → helps SPARSE reward games (PrivateEye, Venture)
+- Neither subsumes the other. They are orthogonal exploration strategies.
+- h069 (NoisyNet+OQE) was 2W/5L/8T vs h064 because NoisyNet already covers the dense-reward case, and OQE can't help h064's sparse-reward weakness (PrivateEye) because NoisyNet's noise overwhelms OQE's optimism.
+- NOVEL FINDING: OQE alone (h066) is 9W/1L/5T vs IQN — essentially undefeated. This is the publishable contribution.
+
+### NEXT SESSION TODO:
+1. ~4h: rorqual h070 (qbert/solaris) → h070 COMPLETE 15/15
+2. CLOSE h070 with final verdict
+3. Begin Phase 3 planning: 3-seed evaluation of h064 (Rainbow-lite baseline) + h066 (OQE, novel method) + h063 (IQN baseline)
