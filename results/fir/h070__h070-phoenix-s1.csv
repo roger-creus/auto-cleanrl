@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Phoenix-v5,1,h070,h070-phoenix-s1,iqn_oqe_nstep,40000000,44736,198.91273498535156,189.18455505371094,8898560.0,256.0

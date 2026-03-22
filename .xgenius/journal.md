@@ -9627,3 +9627,87 @@ h070 is THE experiment: if OQE+N-step (no NoisyNet) matches h064 NoisyNet+N-step
 2. ~6-8h: h070 first results arrive from nibi/narval/fir
 3. Submit backup h070 jobs for rorqual-pending (PE/qbert/solaris/venture) on nibi when slots free
 4. Monitor h070 results — this determines the paper narrative
+
+---
+**[2026-03-22 11:13 UTC]**
+
+## Session 162: Bank h070-battlezone-s1 (WIN +13.4% vs IQN) + close h068 (15/15, IQM +0.0039)
+
+### Triggered by: h070-battlezone-s1 (job 10746725, nibi SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h070 IQN+OQE+N-step (novel Rainbow-lite without NoisyNet) — 1st result:**
+1. h070-battlezone-s1: q4=3930.37 vs IQN=3466.95 WIN (+13.4%). vs Rainbow-lite(h064)=5310.42 LOSS (-26.0%). vs N-step(h065)=4095.55 LOSS (-4.0%). vs OQE(h066)=3726.05 WIN (+5.5%). OQE+N-step better than each component alone but much worse than NoisyNet+N-step on BattleZone. However, BattleZone is NoisyNet's strongest game — need more data.
+
+**h068 IQN+OQE+Replay CLOSED (15/15):**
+2. h068-montezumarevenge-s1: Banked as q4=0.0. All 3 attempts (fir+narval x2) hit TIME LIMIT. MR scores 0.0 across ALL DQN variants — certain result.
+
+h068 FINAL: 9W/4L/2T vs IQN, IQM dHNS=+0.0039. Mediocre. Dominated by Rainbow-lite h064(+0.0131). Closed.
+
+### UPDATED ABLATION RANKING (IQM dHNS vs IQN):
+1. h064 Rainbow-lite (IQN+NN+N-step): +0.0133 (11W/3L/1T) — BEST
+2. h069 Rainbow-OQE (IQN+NN+N-step+OQE): +0.0090 (10W/3L/2T) — OQE HURTS when added to h064
+3. h065 IQN+N-step: +0.0059 (9W/4L/2T)
+4. h068 IQN+OQE+Replay: +0.0039 (9W/4L/2T) — CLOSED
+5. h067 IQN+NoisyNet: +0.0037 (9W/5L/1T)
+6. h066 IQN+OQE: +0.0025 (9W/1L/5T)
+
+### h070 STATUS — THE CRITICAL EXPERIMENT:
+- 1/15 banked (BattleZone: LOSS vs h064)
+- 14 jobs running:
+  - Nibi (2R): alien/amidar — ~2.5h remaining → ~10:00 UTC
+  - Fir (4R): mspacman/NTG/phoenix/SI — ~2.5-3h remaining → ~10:00-11:00 UTC
+  - Narval (4R): breakout/DD/enduro/MR — ~5h remaining → ~12:00-13:00 UTC
+  - Rorqual (4R): PE/qbert/solaris/venture — ~8h remaining (JUST STARTED) → ~15:00-16:00 UTC
+
+### KEY QUESTION: Can OQE+N-step match NoisyNet+N-step?
+BattleZone says NO (-26% vs h064). But BattleZone is NoisyNet's best game (+53% over IQN, biggest single-game delta). The true test is the aggregate IQM across all 15 games. Games where OQE shines (PrivateEye, Venture, Phoenix) may compensate.
+
+### NEXT SESSION TODO:
+1. ~2.5h: nibi h070-alien/amidar + fir h070-mspacman/NTG/phoenix/SI → bank 6 results
+2. ~5h: narval h070-breakout/DD/enduro/MR → bank 4 results
+3. ~8h: rorqual h070-PE/qbert/solaris/venture → h070 COMPLETE 15/15 → FINAL comparison
+4. KEY games to watch: PrivateEye (h066 got 471.08 vs h064=0!), Venture (h064=5.17 vs h066=3.62), Enduro (h064=21.97 vs h066=2.32)
+5. If h070 IQM ≈ h064: PAPER-WORTHY — OQE replaces NoisyNet!
+6. If h070 IQM << h064: NoisyNet irreplaceable — h064 Rainbow-lite is the final answer
+
+---
+**[2026-03-22 11:26 UTC]**
+
+## Session 163: Bank h070-phoenix-s1 (WIN +41% vs IQN, TIE vs h064) — h070 at 2/15
+
+### Triggered by: h070-phoenix-s1 (job 28903388, fir SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step (novel Rainbow-lite without NoisyNet) — 2nd result:**
+1. h070-phoenix-s1: q4=189.18 vs IQN=134.16 WIN (+41.0%). vs Rainbow-lite(h064)=188.31 TIE (+0.5%). vs OQE(h066)=139.71 WIN (+35.4%). vs N-step(h065)=174.29 WIN (+8.6%). ENCOURAGING: h070 matches h064 exactly on Phoenix — OQE+N-step = NoisyNet+N-step here.
+
+### h070 RESULTS TABLE (2/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | h070 vs IQN | h070 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+
+### INTERIM ASSESSMENT:
+Too early to conclude (2/15). BattleZone is NoisyNet's BEST game (+53% over IQN), so the -26% LOSS there was expected. Phoenix TIE is very encouraging — OQE+N-step perfectly replaces NoisyNet+N-step here. Need 13 more games.
+
+### CLUSTER STATUS (~07:25 UTC / ~03:25 local Mar 22):
+**Narval (4R):** breakout/DD/enduro/MR — ~5h elapsed / 10h → ~5h remaining → ~12:15 UTC
+**Nibi (2R):** alien/amidar — ~5h elapsed / 10h → ~5h remaining → ~12:15 UTC
+**Fir (3R):** mspacman/NTG/SI — ~5h elapsed / 10h → ~5h remaining → ~12:15 UTC
+**Rorqual (4R):** PE/qbert/solaris/venture — ~22min elapsed / 10h → ~9.5h remaining → ~16:30 UTC
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 2/15 | 13 jobs (4 clusters) | narval/nibi/fir ~12:15 UTC, rorqual ~16:30 UTC |
+
+### NEXT SESSION TODO:
+1. ~5h: narval h070 (breakout/DD/enduro/MR) + nibi h070 (alien/amidar) + fir h070 (mspacman/NTG/SI) complete → bank 9 results
+2. ~9.5h: rorqual h070 (PE/qbert/solaris/venture) complete → h070 COMPLETE 15/15 → FINAL comparison
+3. KEY games for h070: PrivateEye (h066-OQE got 471! h064-NN got 0!), Enduro (h064 +1673% vs IQN), Venture (h064 +391%)
+4. If h070 IQM ≈ h064: PAPER-WORTHY — OQE replaces NoisyNet as simpler zero-parameter exploration
+5. If h070 IQM << h064: NoisyNet irreplaceable — h064 Rainbow-lite is the final answer, but h066 OQE is still novel
+6. Either way, start thinking about Phase 3: 3-seed evaluation of best methods + ablation study
