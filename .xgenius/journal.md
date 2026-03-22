@@ -10292,3 +10292,44 @@ All jobs ~11h walltime. Expected completion: ~8-10h from now (~03:00-05:00 UTC M
 3. After all 3 seeds complete for h063/h064/h066: produce final comparison table
 4. Consider additional ablation seeds (h065 N-step, h062 NoisyNet) if needed
 5. Begin paper narrative: OQE as novel exploration for distributional RL
+
+---
+**[2026-03-22 18:39 UTC]**
+
+## Session 175: Fix h001 10M bug — Phase 3 still running
+
+### Triggered by: h001-doubledunk-s3 (job 58105419, narval SUCCESS)
+
+### BUG FOUND AND FIXED: h001 gap-fills ran at 10M instead of 40M
+The Phase 3 batch (20260322_133859_batch_phase3.json) submitted 6 h001 PPO gap-fills WITHOUT --total-timesteps 40000000. PPO script defaults to 10M. IQN/Rainbow-lite/OQE scripts all default to 40M, so h063/h064/h066 are fine.
+
+**Actions taken:**
+1. h001-doubledunk-s3 completed at 10M — INVALID (need 40M). Result NOT banked.
+2. Cancelled 5 remaining h001 10M jobs: alien-s2(fir), battlezone-s2(rorqual), namethisgame-s2(nibi), solaris-s2(fir), solaris-s3(rorqual)
+3. Resubmitted all 6 h001 gap-fills with --total-timesteps 40000000:
+   - h001-alien-s2 → narval (58106161)
+   - h001-battlezone-s2 → rorqual (8861944)
+   - h001-doubledunk-s3 → nibi (10756504)
+   - h001-namethisgame-s2 → fir (28941734)
+   - h001-solaris-s2 → narval (58106163)
+   - h001-solaris-s3 → fir (28941758)
+
+### PHASE 3 STATUS (as of ~19:00 UTC Mar 22):
+- **fir**: 22 running (7 h063, 8 h064, 7 h066), 2 pending (h001)
+- **narval**: 25 running (2 h001, 8 h063, 7 h064, 8 h066)
+- **nibi**: 16 running (8 h063, 7 h064, 1 h066), 8 pending (1 h001, 7 h066)
+- **rorqual**: 23 pending (1 h001, 7 h063, 8 h064, 7 h066)
+- Total: 63 running + 33 pending = 96 jobs
+
+Running jobs have ~1h elapsed (started after long queue wait). IQN 40M takes ~8-10h.
+ETA for first completions: ~03:00-05:00 UTC Mar 23.
+Rorqual is backlogged (all PENDING). fir/narval/nibi jobs should complete first.
+
+### NO NEW RESULTS TO BANK this session.
+
+### NEXT SESSION TODO:
+1. Phase 3 results should start arriving ~03:00-05:00 UTC Mar 23
+2. Bank all h063/h064/h066 seed-2/3 results as they arrive
+3. h001 gap-fills should complete ~4-6h after start (PPO at 40M is faster than IQN)
+4. When all 3 seeds complete for h063/h064/h066: compute 3-seed IQM with confidence intervals
+5. Final comparison: h066 OQE (novel) vs h064 Rainbow-lite vs h063 IQN baseline
