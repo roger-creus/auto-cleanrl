@@ -9264,3 +9264,99 @@ Phoenix is the FIRST h069 game completed. +30.6% improvement over Rainbow-lite (
 3. h068 narval (MR/phoenix) completes ~09:00-10:00 UTC → h068 COMPLETE 15/15 → close
 4. h069 fir pending (BZ/enduro/NTG/qbert/venture) — waiting for slot
 5. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
+
+---
+**[2026-03-22 01:45 UTC]**
+
+## Session 155: Bank h069-montezumarevenge-s1 (TIE — q4=0.0) — h069 at 3/15
+
+### Triggered by: h069-montezumarevenge-s1 (job 10711221, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — 3rd result:**
+1. h069-montezumarevenge-s1: q4=0.0 vs IQN=0.0 TIE. All methods score 0.0 on MR at 40M steps — hard exploration game. Expected result.
+
+### h069 RESULTS SO FAR (3/15):
+| Game | h069 q4 | IQN q4 | h064 q4 | h069 vs IQN | h069 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 245.90 | 134.16 | 188.31 | WIN +83.3% | WIN +30.6% |
+| Breakout | 2.04 | 1.85 | 2.04 | WIN +10.2% | TIE +0.1% |
+| MR | 0.00 | 0.00 | 0.00 | TIE 0% | TIE 0% |
+
+h069 tally: 2W/0L/1T vs IQN, 1W/0L/2T vs Rainbow-lite.
+
+### CLUSTER STATUS (~01:45 UTC Mar 22 / ~21:45 local Mar 21):
+**Nibi (2R):** h069-alien(5:04/10h ~5h left), h069-solaris(5:04/10h ~5h left)
+**Narval (7R):** h068-MR(3:34/12h ~8.4h), h068-phoenix(3:31/12h ~8.5h), h069-amidar(3:31/10h ~6.5h), h069-DD(3:24/10h ~6.6h), h069-mspacman(3:18/10h ~6.7h), h069-PE(3:11/10h ~6.8h), h069-SI(3:08/10h ~6.9h)
+**Fir (5P):** h069-BZ/enduro/NTG/qbert/venture — all PENDING (Priority, ~8h in queue)
+
+### REMAINING:
+| Hyp | Banked | Remaining | Est completion |
+|-----|--------|-----------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | **15/15 COMPLETE** | — | DONE |
+| h068 | 13/15 | MR+phoenix(narval ~8.5h) | ~Mar 22 10:00 UTC |
+| h069 | 3/15 | 2R nibi(~5h), 5R narval(~6.5h), 5P fir | nibi ~07:00, narval ~08:30, fir TBD |
+
+### NEXT SESSION TODO:
+1. ~5h: nibi h069 (alien, solaris) complete → bank 2 results
+2. ~6.5-7h: narval h069 (amidar, DD, mspacman, PE, SI) complete → bank 5 results. KEY: amidar+PE are games where h064 LOST vs IQN!
+3. ~8.5h: narval h068 (MR, phoenix) complete → h068 COMPLETE at 15/15 → close
+4. fir h069 (BZ, enduro, NTG, qbert, venture) still PENDING — need to start eventually
+5. When h069 reaches 15/15: FINAL comparison vs h064 and h066
+
+---
+**[2026-03-22 02:07 UTC]**
+
+## Session 156: Bank h069-alien-s1 (LOSS -11.5% vs IQN, TIE vs Rainbow-lite) — h069 at 4/15 (2W/1L/1T)
+
+### Triggered by: h069-alien-s1 (job 10711205, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h069 Rainbow-OQE (IQN + NoisyNet + N-step + OQE) — 4th result:**
+1. h069-alien-s1: q4=275.35 vs IQN=311.13 LOSS (-11.5%). vs Rainbow-lite(h064)=275.49 TIE (-0.05%). OQE adds nothing on Alien — identical to Rainbow-lite.
+
+### h069 RESULTS SO FAR (4/15):
+| Game | h069 q4 | IQN q4 | h064 q4 | h069 vs IQN | h069 vs h064 |
+|------|---------|--------|---------|-------------|-------------|
+| Phoenix | 245.90 | 134.16 | 188.31 | WIN +83.3% | WIN +30.6% |
+| Breakout | 2.04 | 1.85 | 2.04 | WIN +10.2% | TIE +0.1% |
+| MR | 0.00 | 0.00 | 0.00 | TIE 0% | TIE 0% |
+| Alien | 275.35 | 311.13 | 275.49 | LOSS -11.5% | TIE -0.05% |
+
+h069 tally vs IQN: 2W/1L/1T. vs Rainbow-lite: 1W/0L/3T.
+KEY INSIGHT: h069 closely tracks Rainbow-lite so far — OQE adds significant value only on Phoenix (+30.6%).
+
+### SUBMITTED BACKUP JOBS ON NIBI:
+Fir has been stuck pending for 8+ hours. Submitted 5 backup h069 jobs on nibi:
+- h069-battlezone-s1 (10738475)
+- h069-enduro-s1 (10738479)
+- h069-namethisgame-s1 (10738496)
+- h069-qbert-s1 (10738506)
+- h069-venture-s1 (10738521)
+Nibi starts fast (alien took ~5h). These should complete ~8-10h from now.
+
+### CLUSTER STATUS (~02:05 UTC Mar 22 / ~22:05 local Mar 21):
+**Narval (7R):** h068-MR(3:55/12h ~8h), h068-phoenix(3:51/12h ~8h), h069-amidar(3:51/10h ~6h), h069-DD(3:45/10h ~6.25h), h069-mspacman(3:38/10h ~6.4h), h069-PE(3:32/10h ~6.5h), h069-SI(3:28/10h ~6.5h)
+**Nibi (6R):** h069-solaris(5:24/10h ~4.6h), h069-BZ/enduro/NTG/qbert/venture (JUST SUBMITTED — starting)
+**Fir (5P):** h069-BZ/enduro/NTG/qbert/venture — still PENDING (8h+). Backups submitted on nibi.
+
+### REMAINING:
+| Hyp | Banked | Running/Pending | Est completion |
+|-----|--------|-----------------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | **15/15 COMPLETE** | — | DONE |
+| h068 | 13/15 | MR+phoenix(narval ~8h) | ~Mar 22 10:00 UTC |
+| h069 | 4/15 | 1R nibi solaris(~4.6h), 5R nibi backup(~10h), 5R narval(~6h), 5P fir | narval ~08:30, nibi solaris ~06:30, nibi batch ~12:00 |
+
+### NEXT SESSION TODO:
+1. ~4.6h: nibi h069-solaris completes → bank
+2. ~6h: narval h069 (amidar/DD/mspacman/PE/SI) complete → bank 5. KEY: amidar+PE where h064 LOST vs IQN
+3. ~8h: narval h068 (MR/phoenix) complete → h068 COMPLETE 15/15 → close
+4. ~10h: nibi h069 backup batch (BZ/enduro/NTG/qbert/venture) complete
+5. Cancel fir pending jobs when nibi backups complete
+6. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
