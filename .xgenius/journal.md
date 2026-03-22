@@ -10062,3 +10062,60 @@ Even PrivateEye (h066-OQE=423 vs h064=0) would only add ~+0.006 dHNS. With curre
 2. KEY games: PrivateEye (h066-OQE=423 vs h064-NN=0!), Qbert (h064=277 vs IQN=218), Solaris (h064=3220 vs IQN=1370), Venture (h064=5.17 vs IQN=1.05)
 3. When h070 complete: CLOSE h070. Expected final verdict: h064 Rainbow-lite > h070 OQE+N-step.
 4. After h070 closes: BEGIN PHASE 3 — 3-seed evaluation of h064 (Rainbow-lite) + h066 (OQE) + baselines (PPO/DQN/IQN)
+
+---
+**[2026-03-22 16:12 UTC]**
+
+## Session 171: Bank h070-privateeye-s1 (WIN +22.8% vs IQN, WIN massive vs h064) — h070 at 12/15
+
+### Triggered by: h070-privateeye-s1 (job 8825839, rorqual SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h070 IQN+OQE+N-step — 12th result:**
+1. h070-privateeye-s1: q4=519.66 vs IQN=423.18 WIN (+22.8%). vs Rainbow-lite(h064)=0.0 WIN (massive). vs N-step(h065)=512.00 WIN (+1.5%). vs OQE(h066)=471.08 WIN (+10.3%). OQE+N-step achieves BEST PrivateEye score of any method! NoisyNet catastrophically collapses on PrivateEye (h064=0), so OQE provides the exploration that NoisyNet cannot. Synergistic combination — OQE+N-step (519.66) > N-step alone (512.00) > OQE alone (471.08) > IQN (423.18).
+
+### h070 RESULTS TABLE (12/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | vs IQN | vs h064 |
+|------|---------|--------|---------|--------|---------|
+| NTG | 1859.11 | 1564.76 | 2491.14 | WIN +18.8% | LOSS -25.4% |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | WIN +13.4% | LOSS -26.0% |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | WIN +9.9% | TIE +2.1% |
+| Phoenix | 189.18 | 134.16 | 188.31 | WIN +41.0% | TIE +0.5% |
+| Enduro | 7.04 | 1.24 | 21.97 | WIN +468% | LOSS -68.0% |
+| PrivateEye | 519.66 | 423.18 | 0.0 | WIN +22.8% | WIN (massive) |
+| Breakout | 1.92 | 1.85 | 2.04 | TIE +3.9% | LOSS -5.7% |
+| Amidar | 32.68 | 34.27 | 31.0 | TIE -4.6% | WIN +5.4% |
+| DoubleDunk | -22.62 | -22.59 | -19.35 | TIE -0.1% | LOSS -16.9% |
+| MontezumaRevenge | 0.0 | 0.0 | 0.0 | TIE 0.0% | TIE 0.0% |
+| MsPacman | 443.41 | 496.64 | 555.97 | LOSS -10.7% | LOSS -20.2% |
+| Alien | 252.45 | 311.13 | 275.49 | LOSS -18.9% | LOSS -8.4% |
+
+### INTERIM IQM (12/15):
+- vs IQN: 6W/2L/4T — PrivateEye adds another win, decent vs IQN
+- vs h064 Rainbow-lite: 2W/7L/3T — PrivateEye is 2nd WIN but PrivateEye dHNS is tiny (+0.0075) because human score is 69571. DoubleDunk/NTG/BZ/Enduro/MsPac losses dominate.
+
+### INTERESTING PATTERN ON PrivateEye:
+NoisyNet HURTS PrivateEye: h064=0, h062(NoisyNet-DQN)=25.89, h069(Rainbow-OQE)=24.60
+OQE HELPS PrivateEye: h066=471.08, h070=519.66
+N-step HELPS PrivateEye: h065=512.00
+Combination: OQE+N-step (519.66) > N-step (512) > OQE (471) > IQN (423) > NoisyNet-DQN (26) > Rainbow-lite (0)
+Hypothesis: NoisyNet's undirected noise overwhelms PrivateEye's sparse reward signal. OQE's directed optimistic exploration is more effective for sparse-reward games.
+
+### CLUSTER STATUS (~16:10 UTC / ~12:10 local Mar 22):
+**Rorqual (3R):** qbert/solaris/venture — started ~11:00 UTC, ~5h elapsed / 10h walltime → ~5h remaining → ~21:00 UTC
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 12/15 | 3 jobs | rorqual qbert/solaris/venture ~21:00 UTC |
+
+### REFERENCE SCORES FOR REMAINING GAMES:
+- Qbert: IQN=219.30, h064=254.38, h065=242.86, h066=218.11 → h064 probably wins
+- Solaris: IQN=696.07, h064=1658.26, h065=843.63, h066=904.10 → h064 probably wins (NoisyNet huge +138%)
+- Venture: IQN=1.05, h064=5.17, h065=6.32, h066=3.58 → h065 probably wins (N-step dominant)
+
+### NEXT SESSION TODO:
+1. ~5h: rorqual h070 (qbert/solaris/venture) → h070 COMPLETE 15/15
+2. When h070 complete: CLOSE h070. Final verdict: h064 Rainbow-lite wins overall, but OQE+N-step better than h064 on PrivateEye (and maybe Venture)
+3. After h070: Phase 3 planning — 3-seed evaluation of h064 (Rainbow-lite) + h066 (OQE) + baselines
