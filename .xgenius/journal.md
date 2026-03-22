@@ -9215,3 +9215,52 @@ Phoenix is the FIRST h069 game completed. +30.6% improvement over Rainbow-lite (
 4. ~9h: h068-MR/phoenix narval → h068 COMPLETE at 15/15
 5. fir h069 (BZ/enduro/NTG/qbert/venture) PENDING — TBD
 6. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
+
+---
+**[2026-03-22 01:23 UTC]**
+
+## Session 154: Bank h067-enduro-s1 (+208.9% WIN) — h067 COMPLETE 15/15 at 9W/5L/1T
+
+### Triggered by: h067-enduro-s1 (job 10695400, nibi SUCCESS)
+
+### NEW RESULT BANKED: 1
+
+**h067 IQN+Replay+Resets (FINAL — 15/15 games COMPLETE):**
+1. h067-enduro-s1: q4=3.83 vs IQN=1.24 WIN (+208.9%). Both near-zero but replay ratio helps. Enduro dHNS=+0.0030.
+
+### h067 FINAL RESULTS (15/15):
+- IQM delta-HNS vs IQN: +0.0020
+- IQM delta-HNS vs PPO: +0.0030
+- 9W/5L/1T vs IQN
+- WINS: Solaris+97%, Phoenix+91%, Amidar+77%, Alien+38%, Qbert+29%, Venture+263%, Enduro+209%, NTG+18%, MsPac+12%
+- LOSSES: DoubleDunk dHNS=-0.24 (catastrophic), BZ-30%, SI-21%, PE-88%, Breakout-21%
+- TIE: MR
+
+### CANCELLED: narval h067-enduro-s1 backup (58069580) — already completed on nibi.
+
+### CROSS-HYPOTHESIS COMPARISON (IQM vs IQN):
+1. h064 Rainbow-lite: +0.0083 — STRONGEST (15/15, 11W/3L/1T)
+2. h067 Replay+Reset: +0.0020 — COMPLETE (15/15, 9W/5L/1T)
+3. h066 OQE: +0.0009 — MOST CONSISTENT (15/15, 7W/2L/6T)
+4. h068 OQE+Replay: -0.0005 — INCOMPLETE (13/15, 7W/5L/1T)
+
+### CLUSTER STATUS (~01:20 UTC Mar 22 / ~21:20 local Mar 21):
+**Narval (8R):** h068-MR(3h10/12h), h068-phoenix(3h7/12h), h069-amidar/DD/mspacman/PE/SI(~3h/10h each)
+**Nibi (3R):** h069-alien/MR/solaris (~4h40/10h each)
+**Fir (5P):** h069-BZ/enduro/NTG/qbert/venture — all PENDING
+
+### REMAINING:
+| Hyp | Banked | Remaining | Est completion |
+|-----|--------|-----------|----------------|
+| h064 | **15/15 COMPLETE** | — | DONE |
+| h066 | **15/15 COMPLETE** | — | DONE |
+| h067 | **15/15 COMPLETE** | — | DONE |
+| h068 | 13/15 | MR+phoenix(narval ~8-9h left) | ~Mar 22 09:00-10:00 UTC |
+| h069 | 2/15 | 3R nibi(~5h), 5R narval(~7h), 5P fir | nibi ~Mar 22 06:00, narval ~08:00, fir TBD |
+
+### NEXT SESSION TODO:
+1. h069 nibi batch (alien/MR/solaris) completes ~06:00 UTC → bank 3 results
+2. h069 narval batch (amidar/DD/mspacman/PE/SI) completes ~08:00 UTC → bank 5 results
+3. h068 narval (MR/phoenix) completes ~09:00-10:00 UTC → h068 COMPLETE 15/15 → close
+4. h069 fir pending (BZ/enduro/NTG/qbert/venture) — waiting for slot
+5. When h069 reaches 15/15: CRITICAL comparison vs h064 and h066
