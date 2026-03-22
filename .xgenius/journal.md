@@ -10840,3 +10840,97 @@ Rainbow-lite leads partly from BattleZone (5310 q4, massive HNS=+0.085) and Endu
 2. When enough 3-seed games available: compute per-game 3-seed averages
 3. After all 45/45: final IQM with bootstrap confidence intervals
 4. Produce comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-22 23:26 UTC]**
+
+## Session 189: Bank 4 h064 seed 2/3 results — 67 Phase 3 jobs running, ~5.5h remaining
+
+### Triggered by: h064-qbert-s3 (nibi SUCCESS) + h064-battlezone-s2 (fir SUCCESS)
+
+### RESULTS BANKED: 4
+1. h064-battlezone-s2: Rainbow-lite BattleZone seed 2, q4=3000.0 (vs s1=5310.4). Significant drop on seed 2.
+2. h064-phoenix-s2: Rainbow-lite Phoenix seed 2, q4=162.21 (vs s1=188.3, s3=76.9). Middle seed.
+3. h064-qbert-s3: Rainbow-lite Qbert seed 3, q4=255.08 (vs s1=254.4). Very consistent.
+4. h064-spaceinvaders-s3: Rainbow-lite SI seed 3, q4=267.73 (vs s1=270.2). Consistent.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 25/45 (s1=15, s2=5, s3=5) — 20 running
+- h064 Rainbow-lite: 24/45 (s1=15, s2=4, s3=5) — 21 running
+- h066 IQN+OQE: 16/45 (s1=15, s2=1, s3=0) — 28 running
+
+### CLUSTER STATUS (~23:22 UTC Mar 22):
+67 jobs RUNNING across 3 clusters:
+- narval: 29 running (seed-2: ~5h43m/11h, seed-3 resubmit: ~5h elapsed)
+- nibi: 20 running (~5h/11h)
+- fir: 17 running (seed-2: ~5h30m/11h, seed-3: ~5h)
+
+All have ~5.5h remaining. ETA for bulk completions: ~04:00-05:00 UTC Mar 23.
+
+### INTERIM IQM COMPARISON (seed 1 only, all pilots):
+| Rank | Algo | IQM dHNS | Status |
+|------|------|----------|--------|
+| 1 | h064 Rainbow-lite | 0.0158 | Phase 3 running (24/45) |
+| 2 | h069 Rainbow+OQE | 0.0107 | Pilot only (closed) |
+| 3 | h067 IQN+Replay | 0.0059 | Pilot only (closed) |
+| 4 | h068 IQN+OQE+Replay | 0.0047 | Pilot only (closed) |
+| 5 | h066 IQN+OQE | 0.0020 | Phase 3 running (16/45) |
+| 6 | h065 IQN+N-step | 0.0019 | Pilot only (closed) |
+| 7 | h001 PPO | 0.0019 | Phase 3 COMPLETE (45/45) |
+| 8 | h070 IQN+OQE+N-step | -0.0000 | Pilot only (closed) |
+| 9 | h063 IQN | -0.0003 | Phase 3 running (25/45) |
+
+### NEXT SESSION TODO:
+1. ~5.5h: bulk Phase 3 results arrive from all 3 clusters (~04:00-05:00 UTC Mar 23)
+2. Bank all completed seed 2/3 results
+3. When 45/45 for each: compute final IQM with bootstrap confidence intervals
+4. Final comparison table for paper: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-22 23:33 UTC]**
+
+## Session 190: Bank 6 Phase 3 seed-2 results — 64 jobs still running (~5h remaining)
+
+### Triggered by: h066-doubledunk-s2 (narval), h063-enduro-s2, h064-alien-s2, h064-privateeye-s2, h066-mspacman-s2, h063-mspacman-s2 (all fir) — all SUCCESS
+
+### RESULTS BANKED: 6
+1. h063-enduro-s2: IQN Enduro seed 2, q4=3.23 (vs s1=1.24). Still near-zero but slightly better seed.
+2. h063-mspacman-s2: IQN MsPacman seed 2, q4=498.58 (vs s1=496.64). Extremely consistent.
+3. h064-alien-s2: Rainbow-lite Alien seed 2, q4=280.74 (vs s1=275.49). Consistent.
+4. h064-privateeye-s2: Rainbow-lite PrivateEye seed 2, q4=-0.46 (vs s1=0.0). NoisyNet catastrophic on PrivateEye across seeds.
+5. h066-mspacman-s2: IQN+OQE MsPacman seed 2, q4=490.84 (vs s1=514.10). Some variance, still strong.
+6. h066-doubledunk-s2: IQN+OQE DoubleDunk seed 2, q4=-22.68 (vs s1=-22.45). Consistent.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 27/45 (s1=15, s2=7, s3=5) — 18 running
+- h064 Rainbow-lite: 26/45 (s1=15, s2=6, s3=5) — 19 running
+- h066 IQN+OQE: 18/45 (s1=15, s2=3, s3=0) — 27 running
+
+### INTERIM MULTI-SEED IQM COMPARISON (using available seeds per game):
+| Algorithm | IQM dHNS | Median dHNS | Wins vs PPO |
+|-----------|----------|-------------|-------------|
+| h064 Rainbow-lite | 0.0101 | 0.0096 | 11/15 |
+| h063 IQN | 0.0065 | 0.0046 | 10/15 |
+| h066 IQN+OQE | 0.0064 | 0.0045 | 10/15 |
+
+Rainbow-lite (NoisyNet+N-step) clearly leads. OQE adds almost nothing over vanilla IQN (+0.0001 IQM).
+
+Key per-game patterns:
+- BattleZone: h064 dominates (0.057 dHNS), h066 second (0.045)
+- SpaceInvaders: all DQN variants strong (0.07-0.08 dHNS)
+- DoubleDunk: catastrophic for all DQN variants (-2.2 dHNS scale outlier — HNS range only 2.2 points)
+- Phoenix/Solaris: all 3 lose vs PPO significantly
+
+### 64 RUNNING JOBS:
+- narval: ~24 jobs (~5:50 elapsed / 11h)
+- fir: ~16 jobs (~5:50 elapsed / 11h)
+- nibi: ~24 jobs (~5:50 elapsed / 11h)
+All ~5h remaining. ETA bulk completions: ~01:00-02:00 UTC Mar 23.
+
+### NEXT SESSION TODO:
+1. ~5h: bulk Phase 3 seed 2/3 results arrive from all clusters
+2. Bank all completed results
+3. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison table: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
