@@ -11008,3 +11008,44 @@ Rainbow-lite dominates. IQN and OQE have negative IQM due to DoubleDunk/Phoenix/
 1. Bank seed-2/3 results as they complete
 2. When 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-22 23:46 UTC]**
+
+## Session 193: Bank h063-battlezone-s2 — 59 Phase 3 jobs running
+
+### Triggered by: h063-battlezone-s2 (job 58105240, narval SUCCESS)
+
+### RESULT BANKED: 1
+h063-battlezone-s2: IQN BattleZone seed 2, q4=3373.07 (vs s1=3240.17, s3=3306.60). Strong and consistent across all 3 seeds.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 29/45 (s1=15, s2=9, s3=5, complete=2/15)
+- h064 Rainbow-lite: 28/45 (s1=15, s2=8, s3=5, complete=1/15)
+- h066 IQN+OQE: 19/45 (s1=15, s2=4, s3=0, complete=0/15)
+
+### INTERIM MULTI-SEED IQM:
+| Algorithm | IQM dHNS | Median | Status |
+|-----------|----------|--------|--------|
+| h064 Rainbow-lite | 0.0153 | 0.0112 | 28/45 LEADER |
+| h066 IQN+OQE | 0.0020 | 0.0032 | 19/45 |
+| h001 PPO | 0.0002 | 0.0000 | 45/45 DONE |
+| h063 IQN | -0.0001 | 0.0042 | 29/45 |
+
+Rainbow-lite still firmly in the lead. OQE provides minimal benefit over vanilla IQN.
+
+### 59 RUNNING JOBS:
+- fir: 15 running (1h15m-6h elapsed / 11h walltime)
+- narval: 24 running
+- nibi: 20 running
+
+### ETA:
+- Seed-2 bulk: ~01:00-02:00 UTC Mar 23 (~5h remaining)
+- Seed-3 bulk: ~05:30-07:00 UTC Mar 23 (~9-10h remaining)
+- Full Phase 3 completion: ~07:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO

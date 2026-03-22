@@ -1191,3 +1191,4 @@ h064-mspacman-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id MsPac
 h064-namethisgame-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id NameThisGame-v5 --seed 2,fir completed. Rainbow-lite NameThisGame seed 2. q4=2437.37 (vs s1=2491.14). Consistent.,NameThisGame-v5,2,dqn_rainbow_lite,40000000.0,14256.0,2356.599365234375,2437.373779296875,33595680.0,1868.0
 h063-montezumarevenge-s2,h063,,narval completed. IQN MontezumaRevenge seed 2. q4=0.0 (same as s1). MR always 0 for DQN variants.,MontezumaRevenge-v5,2,iqn,40000000.0,165680.0,0.0,0.0,0.0,0.0
 h066-namethisgame-s2,h066,,narval completed. IQN+OQE NameThisGame seed 2. q4=1635.70 (vs s1=1680.44). Some variance but consistent range.,NameThisGame-v5,2,iqn_oqe,40000000.0,16688.0,1720.565673828125,1635.7047119140625,28712800.0,2170.0
+h063-battlezone-s2,h063,,IQN BattleZone seed 2 — Phase 3,BattleZone-v5,2,iqn,40000000,22816,3177.42,3373.07,72496000.0,3400.0
