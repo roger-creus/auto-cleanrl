@@ -10376,3 +10376,48 @@ Rorqual's 23 jobs stuck in priority queue — should start eventually. 72/95 act
 3. Bank all completed results as they arrive
 4. Rorqual jobs may be delayed — track separately
 5. When enough seeds arrive: compute 3-seed IQM with confidence intervals
+
+---
+**[2026-03-22 21:32 UTC]**
+
+## Session 177: Bank h001-solaris-s2 (PPO seed 2, q4=2468.84) — Phase 3 running
+
+### Triggered by: h001-solaris-s2 (job 58106163, narval SUCCESS)
+
+### RESULT BANKED: 1
+h001-solaris-s2: PPO Solaris-v5 seed 2, q4=2468.84. Consistent with s1 (2163.56). Good Solaris score for PPO.
+
+### h001 PPO baseline coverage: 41/45
+| Game | s1 | s2 | s3 | Status |
+|------|----|----|-----|--------|
+| BattleZone-v5 | 2364.3 | MISSING | 1736.8 | s2 PENDING (rorqual 8861944) |
+| DoubleDunk-v5 | -18.1 | -17.6 | MISSING | s3 RUNNING (nibi 10756504) |
+| NameThisGame-v5 | 2522.5 | MISSING | 2491.2 | s2 RUNNING (fir 28941734) |
+| Solaris-v5 | 2163.6 | 2468.8 | MISSING | s3 RUNNING (fir 28941758) |
+
+3 running (fir/nibi) should complete in ~4-6h. BattleZone s2 stuck in rorqual queue.
+
+### PHASE 3 STATUS (~22:00 UTC Mar 22):
+- **fir**: 24 RUNNING, avg 3.4h elapsed / 11h walltime → ~7.5h remaining → ~05:30 UTC Mar 23
+- **narval**: 23 RUNNING, avg 3.6h elapsed / 11h walltime → ~7.5h remaining → ~05:30 UTC Mar 23
+- **nibi**: 24 RUNNING, avg 2.5h elapsed / 11h walltime → ~8.5h remaining → ~06:30 UTC Mar 23
+- **rorqual**: 23 PENDING (~10h in queue!) — backlogged
+  - h063: 7 seed-3 games (amidar/breakout/enduro/mspacman/phoenix/qbert/spaceinvaders)
+  - h064: 8 seed-3 games (alien/battlezone/doubledunk/montezumarevenge/namethisgame/privateeye/solaris/venture)
+  - h066: 7 seed-3 games (amidar/breakout/enduro/mspacman/phoenix/qbert/spaceinvaders)
+  - h001: 1 job (battlezone-s2)
+
+Total: 71 running + 23 pending = 94 active.
+
+### RORQUAL CONCERN:
+23 jobs pending ~10h on rorqual. These are ALL seed-3 experiments. Seed-2 is fully covered on fir/narval/nibi.
+If rorqual hasn't started by ~06:00 UTC Mar 23 (when fir/narval/nibi finish), consider:
+1. Cancel rorqual jobs
+2. Resubmit seed-3 experiments to fir/narval/nibi
+
+### NEXT SESSION TODO:
+1. ~6-8h: Phase 3 results arrive from fir/narval/nibi (~05:00-07:00 UTC Mar 23)
+2. Bank all completed results as they arrive
+3. If rorqual still pending: resubmit to other clusters
+4. When enough seeds complete: compute 3-seed IQM with confidence intervals
+5. h001 gap-fills: 3 running + 1 pending → should complete within Phase 3 window
