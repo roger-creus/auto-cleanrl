@@ -9812,3 +9812,56 @@ NoisyNet in h064 compensates for N-step's weaknesses (Alien: -11.5% vs -18.9%, M
 3. ~6h: rorqual PE/qbert/solaris/venture → h070 COMPLETE 15/15. KEY: PrivateEye (h066-OQE=471 vs h064-NN=0!!)
 4. When h070 complete: FINAL comparison → decide if OQE replaces NoisyNet
 5. Looking likely: h070 IQM << h064. OQE cannot replace NoisyNet. But h066 OQE still valid as standalone novel contribution.
+
+---
+**[2026-03-22 13:02 UTC]**
+
+## Session 166: Bank h070-namethisgame-s1 (WIN +18.8% vs IQN, LOSS -25.4% vs h064) + h070-amidar-s1 (recovered from disappeared) — h070 at 7/15
+
+### Triggered by: h070-namethisgame-s1 (job 28903382, fir SUCCESS)
+
+### NEW RESULTS BANKED: 2
+
+**h070 IQN+OQE+N-step — 6th+7th results:**
+1. h070-namethisgame-s1: q4=1859.11 vs IQN=1564.76 WIN (+18.8%). vs Rainbow-lite(h064)=2491.14 LOSS (-25.4%). vs N-step(h065)=1822.19 WIN (+2.0%). vs OQE(h066)=1680.44 WIN (+10.6%). OQE+N-step shows additive benefit on NTG (better than either component alone) but NoisyNet+N-step (h064=2491) is far superior.
+2. h070-amidar-s1: q4=32.68 vs IQN=34.27 LOSS (-4.6%). vs Rainbow-lite(h064)=31.0 WIN (+5.4%). RECOVERED from disappeared status — CSV was saved on nibi but job tracker lost it. Pulled manually. Amidar resists all modifications.
+
+### h070 RESULTS TABLE (7/15):
+| Game | h070 q4 | IQN q4 | h064 q4 | dHNS vs IQN | dHNS vs h064 | vs IQN | vs h064 |
+|------|---------|--------|---------|-------------|-------------|--------|---------|
+| NTG | 1859.11 | 1564.76 | 2491.14 | +0.0511 | -0.1098 | WIN | LOSS |
+| SpaceInvaders | 275.67 | 250.88 | 270.0 | +0.0163 | +0.0037 | WIN | TIE |
+| BattleZone | 3930.37 | 3466.95 | 5310.42 | +0.0133 | -0.0396 | WIN | LOSS |
+| Phoenix | 189.18 | 134.16 | 188.31 | +0.0085 | +0.0001 | WIN | TIE |
+| Amidar | 32.68 | 34.27 | 31.0 | -0.0009 | +0.0010 | LOSS | WIN |
+| MsPacman | 443.41 | 496.64 | 555.97 | -0.0080 | -0.0169 | LOSS | LOSS |
+| Alien | 252.45 | 311.13 | 275.49 | -0.0085 | -0.0033 | LOSS | LOSS |
+
+### INTERIM IQM (7/15):
+- vs IQN: IQM dHNS = +0.0058 (4W/2L/1T) — decent but weaker than h064's +0.0133
+- vs h064 Rainbow-lite: IQM dHNS = -0.0118 (1W/4L/2T) — h070 clearly LOSING to h064
+
+### VERDICT SO FAR: OQE CANNOT replace NoisyNet.
+h070 (OQE+N-step) vs h064 (NoisyNet+N-step) is 1W/4L/2T with IQM -0.0118. The NTG loss (-0.1098 dHNS) is particularly devastating — NoisyNet's weight-space noise gives NTG +59% vs IQN, while OQE's optimistic quantile selection only gives +18.8%.
+
+KEY PATTERN: NoisyNet > OQE for combined methods:
+- NoisyNet adds undirected exploration across ALL state-action dimensions via weight perturbation
+- OQE adds directed exploration via optimistic value estimates, but this is narrower
+- When combined with N-step (which changes the bootstrap depth), NoisyNet's breadth compensates for N-step's biases (Alien, MsPacman) better than OQE does
+
+### CLUSTER STATUS (~13:00 UTC / ~09:00 local Mar 22):
+**Narval (4R):** breakout/DD/enduro/MR — ~6.5h elapsed of 10h → ~3.5h remaining → ~16:30 UTC
+**Rorqual (4R):** PE/qbert/solaris/venture — ~2h elapsed of 10h → ~8h remaining → ~21:00 UTC
+
+### REMAINING:
+| Hyp | Banked | Running | Est completion |
+|-----|--------|---------|----------------|
+| h070 | 7/15 | 8 jobs | narval ~16:30, rorqual ~21:00 UTC |
+
+### NEXT SESSION TODO:
+1. ~3.5h: narval h070 (breakout/DD/enduro/MR) → bank 4 → h070 at 11/15. KEY: Enduro (h064=21.97 massive +1673% vs IQN)
+2. ~8h: rorqual h070 (PE/qbert/solaris/venture) → h070 COMPLETE 15/15. KEY: PrivateEye (h066-OQE=423 vs h064-NN=0!)
+3. When h070 complete: FINAL comparison. Expected verdict: NoisyNet irreplaceable. h064 Rainbow-lite is best engineering baseline.
+4. h066 OQE remains the NOVEL publishable contribution (9W/1L/5T, essentially undefeated standalone)
+5. After h070 closes: Phase 3 planning — 3-seed evaluation of h064 + h066 + PPO baseline
+
