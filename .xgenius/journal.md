@@ -13015,3 +13015,45 @@ Active SLURM jobs: 425 total (184 running + 241 pending)
 3. VERIFY total_timesteps=40000000 before banking (10M CSVs still present)
 4. Begin Atari57 IQM analysis when >20 new games banked
 5. Full Phase 4 completion ETA: ~04:00-06:00 UTC Mar 24
+
+---
+**[2026-03-23 19:22 UTC]**
+
+## Session 239: Banked 2 new Phase 4 40M results (h002 PQN). Phase 4 progressing.
+
+### Triggered by: h002-asteroids-s3 (rorqual), h002-centipede-s2 (rorqual)
+
+### NEW RESULTS BANKED:
+- h002-asteroids-s3: Asteroids-v5 PQN q4=144.07 (40M confirmed, rorqual)
+- h002-centipede-s2: Centipede-v5 PQN q4=2831.48 (40M confirmed, rorqual)
+
+### PHASE 4 BANKING TOTALS:
+- h001 PPO: 45/45 orig15, 0/126 new42 (first completions ~20:20 UTC)
+- h002 PQN: 45/45 orig15, 4/126 new42 (Assault q4=369, BankHeist q4=9.57, Asteroids q4=144, Centipede q4=2831)
+- h064 Rainbow-lite: 45/45 orig15, 0/126 new42 (first completions ~03:00 UTC Mar 24)
+
+### SLURM QUEUE STATUS (19:18 UTC Mar 23):
+- h001 PPO: 31 running (max 2h05m elapsed on rorqual), 110 pending
+- h002 PQN: 29 running (max 2h02m elapsed on rorqual), 117 pending  
+- h064 Rainbow-lite: 118 running (max 3h14m elapsed on nibi), 8 pending
+- Total: 424 active SLURM jobs
+
+### ESTIMATED COMPLETIONS:
+- h001/h002 first new-game completions: ~20:20 UTC Mar 23 (1h from now)
+- h001/h002 all completions: ~04:00-06:00 UTC Mar 24 (batched across 4 clusters)
+- h064 first new-game completions: ~03:00 UTC Mar 24
+- h064 all completions: ~06:00-08:00 UTC Mar 24
+
+### NOTE: Unknown external results found
+Discovered h001B/h002B/h034B/h037-h045 CSVs in results/ directories. These are NOT from our Phase 4 batch:
+- Different CSV format (mean_return_last_25 instead of q4_return)
+- Not tracked in xgenius DB
+- No corresponding batch files
+- Likely human-managed experiments. IGNORING.
+
+### NEXT SESSION TODO:
+1. Bank h001/h002 40M Phase 4 results as they arrive (first ~20:20 UTC)
+2. Bank h064 Phase 4 results (~03:00+ UTC Mar 24)
+3. VERIFY total_timesteps=40000000 before banking (10M CSVs still present)
+4. Begin Atari57 IQM analysis when >20 new games banked per algorithm
+5. Full Phase 4 completion ETA: ~06:00-08:00 UTC Mar 24
