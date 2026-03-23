@@ -12382,3 +12382,56 @@ Nibi job 10786553 still PENDING after 4+ hours (reason: Priority). This is the l
 2. Monitor h063-qbert-s2 — resubmit if still stuck
 3. After 45/45 for all: compute final 3-seed IQM with bootstrap confidence intervals
 4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 05:19 UTC]**
+
+## Session 225: Bank h064-privateeye-s3 → h064 COMPLETE (45/45). Resubmit h063-qbert-s2 to fir via batch.
+
+### Triggered by: h064-privateeye-s3 (job 58109783, narval SUCCESS)
+
+### RESULT BANKED: 1
+h064-privateeye-s3: Rainbow-lite PrivateEye seed 3, q4=0.0 (vs s1=0.0, s2=-0.46). NoisyNet catastrophic on PrivateEye across all 3 seeds. 3-seed avg q4=-0.15. h064 Rainbow-lite NOW 45/45 COMPLETE.
+
+### h063-qbert-s2 RESUBMIT:
+Cancelled nibi job 10786553 (stuck PENDING 4+ hours). Batch-submitted to fir as job 29079898 (batch-submit avoids path quoting bug that killed narval/rorqual attempts).
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 42/45 banked (12/15 games 3-seed complete)
+  Missing: Amidar-s3 (running narval 58109764), MsPacman-s3 (running narval 58109779), Qbert-s2 (pending fir 29079898)
+- h064 Rainbow-lite: 45/45 COMPLETE ★
+- h066 IQN+OQE: 44/45 banked (14/15 games 3-seed complete)
+  Missing: MsPacman-s3 (running narval 58109788)
+
+### FINAL IQM (delta-HNS vs PPO, 15 games, trim3):
+| Algorithm | IQM dHNS | W/L/T | Seeds |
+|-----------|----------|-------|-------|
+| h064 Rainbow-lite | +0.0086 | 10/4/1 | 45/45 FINAL |
+| h066 IQN+OQE | -0.0038 | 10/4/1 | 44/45 |
+| h063 IQN | -0.0042 | 10/4/1 | 42/45 |
+
+Rainbow-lite is the CLEAR LEADER — only algorithm with positive IQM. Advantage driven by much smaller losses on NameThisGame (-0.003 vs -0.135) and Solaris (-0.058 vs -0.135). All three share same W/L/T pattern: beat PPO on 10/15 games, lose on DoubleDunk/NameThisGame(h063,h066)/Phoenix/Solaris.
+
+### KEY PER-GAME INSIGHTS:
+- DoubleDunk: ALL DQN variants catastrophic (delta -2.18 to -3.38). PPO wins by huge margin.
+- Phoenix: All DQN variants ~0.10 worse than PPO.
+- Solaris: h064 loses less (-0.058) vs h063/h066 (-0.13).
+- NameThisGame: h064 essentially ties PPO (-0.003), while h063/h066 lose big (-0.14).
+- SpaceInvaders: Biggest win for all (delta +0.07-0.08).
+- PrivateEye: h066 OQE huge win (+0.011), h063 IQN good (+0.008), h064 Rainbow-lite near-zero.
+
+### 4 REMAINING EXPERIMENTS:
+- narval (3 running, ~7h/11h): h063-amidar-s3, h063-mspacman-s3, h066-mspacman-s3
+- fir (1 pending): h063-qbert-s2
+
+### ETA:
+- 3 narval jobs: ~09:15-09:30 UTC Mar 23 (~4h remaining)
+- h063-qbert-s2 fir: depends on queue, ~11h walltime
+- Full Phase 3 completion: depends on h063-qbert-s2
+
+### NEXT SESSION TODO:
+1. Bank remaining narval results (h063-amidar-s3, h063-mspacman-s3, h066-mspacman-s3)
+2. Bank h063-qbert-s2 from fir when complete
+3. After 45/45 for all: compute final 3-seed IQM with bootstrap CIs
+4. Final comparison and write-up
