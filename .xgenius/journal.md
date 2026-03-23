@@ -12685,3 +12685,36 @@ Discovered h002 PQN was missing 10/45 experiments from original 15-game evaluati
 3. Bank h001/h002 40M Phase 4 results when they complete
 4. Bank h002 gap-fill results
 5. Compute Atari57 IQM comparison when sufficient data available
+
+---
+**[2026-03-23 17:38 UTC]**
+
+## Session 230 (continued): All 252 corrected Phase 4 h001/h002 experiments SUBMITTED + 10 h002 gap-fill.
+
+### BATCH SUBMISSION RESULTS:
+- 252 experiments submitted: 251/252 succeeded in first pass
+- 1 failed (h001-defender-s3 on nibi, SSH timeout) — resubmitted to narval as job 58151473
+- Distribution: narval(65), rorqual(63), fir(63), nibi(61)
+- All commands now include '--total-timesteps 40000000'
+
+### h002 15-GAME GAP-FILL:
+- 10 experiments submitted for missing original-15 games: Alien s1/s3, Amidar s1/s3, BattleZone s1/s3, Breakout s1, NameThisGame s1/s3, Solaris s1
+- Old Phase 1 CSVs existed but used wrong format (no q4/auc metrics)
+- Gap-fill runs use corrected script at 40M
+
+### CURRENT ACTIVE EXPERIMENTS:
+- h001 PPO Phase 4 (40M): 126 submitted, ~71 pending, ~55 will start soon (PPO takes ~3h at 40M)
+- h002 PQN Phase 4 (40M): 126 submitted, similar distribution + 10 gap-fill
+- h064 Rainbow-lite Phase 4 (40M): 55 running + 71 pending (correct from original batch, ~6h remaining)
+
+### TIMELINE:
+- h001/h002 first completions: ~20:30 UTC Mar 23 (PPO/PQN 40M takes ~3h with envpool)
+- h064 first completions: ~23:00 UTC Mar 23 (DQN 40M takes ~11h)
+- Full Phase 4 completion: ~12:00-24:00 UTC Mar 24
+
+### NEXT SESSION TODO:
+1. Bank h064 Phase 4 results as they arrive (these are already correct at 40M)
+2. Bank h001/h002 40M Phase 4 results when they complete
+3. Bank h002 gap-fill results (10 original-15 experiments)
+4. Monitor for failures — check errors/logs
+5. When sufficient data: begin Atari57 IQM analysis
