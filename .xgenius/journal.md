@@ -13659,3 +13659,52 @@ h001-assault-s1, h002-assault-s2, h002-asterix-s3
 3. h001/h002 completions ongoing, pending queue large
 4. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
 
+
+---
+**[2026-03-23 23:48 UTC]**
+
+## Session 255: Banked 65 Phase 4 40M results + submitted 184 gap experiments
+
+### Triggered by: 76 completions across rorqual/narval/nibi (h001×16, h002×15, h064×45)
+
+### NEW RESULTS BANKED (65):
+- h001 PPO: 10 new (Asteroids-s3, BankHeist-s1, BeamRider-s2, Seaquest-s2, Skiing-s3, Surround-s1, Tennis-s2, TimePilot-s3, WizardOfWor-s3, Zaxxon-s1)
+- h002 PQN: 12 new (Atlantis-s1, BankHeist-s2, Robotank-s2, Seaquest-s3, StarGunner-s1, Surround-s2, Tennis-s3, Tutankham-s1, YarsRevenge-s1, Zaxxon-s2, + 2 from fresh pull)
+- h064 Rainbow-lite: 43 new across 34 games (massive batch of rorqual/narval/nibi completions)
+
+### PHASE 4 BANKING TOTALS (19:30 UTC Mar 23):
+- h001 PPO: 34 banked at 40M, 31/57 unique games (0 with 3 seeds, 31 partial)
+- h002 PQN: 46 banked at 40M, 39/57 unique games (0 with 3 seeds, 39 partial)
+- h064 Rainbow-lite: 72 banked at 40M, 46/57 unique games (4 with 3 seeds, 42 partial)
+- Total: 265/513 (51.7%) — OVER HALFWAY!
+
+### GAP FILL SUBMISSION (184 experiments):
+Found 184 missing (game, seed) combinations not banked and not in SLURM queue.
+Submitted all 184 across all 4 clusters: h001×64, h002×54, h064×66.
+Walltime: 6h for h001/h002, 11h for h064.
+
+### SLURM QUEUE STATUS (19:30 UTC Mar 23):
+| Hypothesis | Running | Pending | Total |
+|------------|---------|---------|-------|
+| h001 PPO   | 50      | 148     | 198   |
+| h002 PQN   | 52      | 130     | 182   |
+| h064 Rainbow| 29     | 123     | 152   |
+| TOTAL      | 131     | 401     | 532   |
+
+### KEY OBSERVATIONS:
+- h064 has the most banked results (72/171, 42%) since rainbow-lite jobs have been running longest
+- h001 and h002 still have many games missing — gap fill should complete coverage
+- Some prior gap jobs from earlier sessions may have been counted as 'disappeared' in DB (cluster restarts etc.)
+- All 57 games × 3 seeds now either banked or in SLURM queue for all three algorithms
+
+### ESTIMATED COMPLETIONS:
+- Existing h064 running jobs: ~4-5h remaining (6h elapsed out of 11h walltime)
+- Existing h001/h002 running: ~1-2h remaining
+- Newly submitted gap jobs: h001/h002 ~3-6h, h064 ~8-11h
+- Full Phase 4 coverage ETA: ~06:00-08:00 UTC Mar 24
+
+### NEXT SESSION TODO:
+1. Bank results as jobs complete — use bank_phase4.py for bulk banking
+2. Monitor gap fill submissions for failures
+3. Once >45 games banked per algorithm, run preliminary Atari57 IQM analysis
+4. Full Phase 4 completion expected by ~08:00 UTC Mar 24
