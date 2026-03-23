@@ -1282,3 +1282,6 @@ h001-choppercommand-s2,h001,,Phase 4 Atari57 (rorqual),ChopperCommand-v5,2,ppo,4
 h002-beamrider-s2,h002,,Phase 4 Atari57 (rorqual),BeamRider-v5,2,pqn,40000000,,541.1468505859375,622.9650268554688,9905152.0,
 h002-gopher-s2,h002,,Phase 4 Atari57 (rorqual),Gopher-v5,2,pqn,40000000,,79.67845916748047,44.43729782104492,3171840.0,
 h002-jamesbond-s2,h002,,Phase 4 Atari57 (rorqual),Jamesbond-v5,2,pqn,40000000,,13.559322357177734,9.322033882141113,819200.0,
+h001-gravitar-s2,h001,,Phase 4 Atari57 (rorqual),Gravitar-v5,2,ppo,40000000,,189.0,196.8000030517578,12096000.0,
+h002-defender-s1,h002,,Phase 4 Atari57 (rorqual),Defender-v5,1,pqn,40000000,,2434.5283203125,2458.867919921875,165158400.0,
+h002-frostbite-s1,h002,,Phase 4 Atari57 (rorqual),Frostbite-v5,1,pqn,40000000,,89.59326934814453,99.9719467163086,8176640.0,
