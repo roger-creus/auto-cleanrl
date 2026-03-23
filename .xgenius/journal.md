@@ -11130,3 +11130,38 @@ Rainbow-lite dominant. OQE negligible vs vanilla IQN.
 1. Bank seed-2/3 results as they arrive
 2. After 45/45: final 3-seed IQM with bootstrap CI
 3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 00:06 UTC]**
+
+## Session 196: Bank h066-breakout-s2 — 53 Phase 3 jobs running (~4.5h seed-2, ~9h seed-3)
+
+### Triggered by: h066-battlezone-s2 (narval SUCCESS, already banked) + h066-breakout-s2 (fir SUCCESS)
+
+### RESULTS BANKED: 1
+h066-breakout-s2: IQN+OQE Breakout seed 2, q4=1.83 (vs s1=1.79). Near-zero game, consistent across seeds.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 29/45 (s1=15, s2=9, s3=5, 2/15 games 3-seed complete) + 16 running
+- h064 Rainbow-lite: 31/45 (s1=15, s2=9, s3=7, 3/15 games 3-seed complete) + 14 running
+- h066 IQN+OQE: 22/45 (s1=15, s2=7, s3=0, 0/15 games complete) + 23 running
+
+### INTERIM IQM (delta HNS vs PPO, per-game seed averages):
+| Algorithm | IQM dHNS | Median dHNS | W/L |
+|-----------|----------|-------------|-----|
+| h064 Rainbow-lite | +0.0102 | +0.0072 | 11/3 LEADER |
+| h066 IQN+OQE | -0.0040 | +0.0045 | 10/4 |
+| h063 IQN | -0.0042 | +0.0046 | 10/4 |
+
+Rainbow-lite dominant. OQE adds almost nothing vs vanilla IQN (+0.0002 IQM).
+
+### 53 RUNNING JOBS:
+- Seed-2 batch: ~6.5h elapsed / 11h → ~4.5h remaining
+- Seed-3 batch: ~1-3h elapsed / 11h → ~8-10h remaining
+- Full Phase 3 completion ETA: ~06:00-08:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
