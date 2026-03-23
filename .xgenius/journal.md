@@ -12435,3 +12435,47 @@ Rainbow-lite is the CLEAR LEADER — only algorithm with positive IQM. Advantage
 2. Bank h063-qbert-s2 from fir when complete
 3. After 45/45 for all: compute final 3-seed IQM with bootstrap CIs
 4. Final comparison and write-up
+
+---
+**[2026-03-23 05:37 UTC]**
+
+## Session 226: Bank h066-mspacman-s3 → h066 OQE COMPLETE (45/45). 3 h063 jobs remain.
+
+### Triggered by: h066-mspacman-s3 (job 58109788, narval SUCCESS)
+
+### RESULT BANKED: 1
+h066-mspacman-s3: IQN+OQE MsPacman seed 3, q4=502.37 (vs s1=514.10, s2=490.84). All 3 OQE MsPacman seeds complete. 3-seed avg q4=502.44. PPO avg=319.11 WIN (+57.4%). Rainbow-lite avg=538.98 LOSS (-6.8%). IQN 2-seed avg=497.61 (s3 running).
+
+### h066 OQE NOW 45/45 COMPLETE ★
+All 15 games × 3 seeds banked. Final Phase 3 IQM delta-HNS vs PPO = -0.0038 (W10/L4/T1).
+
+### PHASE 3 FINAL STANDINGS (2 of 3 algorithms complete):
+| Algorithm | IQM dHNS | Seeds | Status |
+|-----------|----------|-------|--------|
+| h064 Rainbow-lite | +0.0086 | 45/45 FINAL | LEADER ★ |
+| h066 IQN+OQE | -0.0038 | 45/45 FINAL | 2nd |
+| h063 IQN | -0.0042 | 42/45 | 3 remaining |
+
+### h063 REMAINING (3 experiments):
+- narval 58109764: h063-amidar-s3 (~7.3h/11h elapsed, ~3.7h left)
+- narval 58109779: h063-mspacman-s3 (~7.3h/11h elapsed, ~3.7h left)
+- fir 29079898: h063-qbert-s2 (PENDING ~30 min, 5th attempt for this cursed experiment)
+
+### KEY OBSERVATIONS:
+- h066 OQE essentially TIED with h063 IQN on IQM (+0.0004 difference) — OQE gains on BattleZone/Venture/PrivateEye offset by trivial losses
+- h064 Rainbow-lite CLEAR LEADER with +0.0086 IQM — only algorithm with POSITIVE IQM vs PPO
+- Rainbow-lite advantage from NoisyNet+N-step: Enduro (+0.025), Breakout (+0.011), and smaller Solaris loss (-0.058 vs -0.13)
+- ALL three DQN variants catastrophic on DoubleDunk (-1.8 to -3.0 HNS delta) and lose on Phoenix/Solaris
+- PPO uniquely good on DoubleDunk and Solaris (on-policy advantage for these games)
+
+### ETA:
+- narval jobs: ~09:15-09:30 UTC Mar 23
+- fir h063-qbert-s2: unknown (still pending)
+- Full Phase 3 completion: depends on h063-qbert-s2 (5th attempt)
+
+### NEXT SESSION TODO:
+1. Bank h063-amidar-s3 and h063-mspacman-s3 when narval jobs complete (~3.5h)
+2. Bank h063-qbert-s2 when fir job completes
+3. After 45/45 for h063: compute FINAL 3-seed IQM with bootstrap confidence intervals
+4. Write final Phase 3 comparison report
+5. Plan Phase 4 (Final Phase): Atari57 evaluation
