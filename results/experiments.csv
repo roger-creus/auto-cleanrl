@@ -1205,3 +1205,4 @@ h063-montezumarevenge-s3,h063,,IQN MontezumaRevenge seed 3 (Phase 3),MontezumaRe
 h066-venture-s2,h066,,IQN+OQE Venture seed 2 (Phase 3),Venture-v5,2,iqn_oqe,40000000,17808,2.7852649688720703,4.312668323516846,49600.0,0.0
 h066-qbert-s2,h066,,IQN+OQE Qbert seed 2 (Phase 3),Qbert-v5,2,iqn_oqe,40000000,111248,223.06918334960938,210.9593048095703,24816000.0,150.0
 h064-montezumarevenge-s2,h064,,Rainbow-lite MontezumaRevenge seed 2 (Phase 3),MontezumaRevenge-v5,2,dqn_rainbow_lite,40000000,150848,0.021213406696915627,0.04242681339383125,3200.0,0.0
+h066-privateeye-s2,h066,,IQN+OQE PrivateEye seed 2 (Phase 3),PrivateEye-v5,2,iqn_oqe,40000000,14832,627.7227783203125,752.172607421875,9310384.0,-77.80000305175781
