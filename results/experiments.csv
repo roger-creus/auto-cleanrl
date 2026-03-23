@@ -1303,3 +1303,6 @@ h002-kungfumaster-s1,h002,,Phase 4 Atari57 (rorqual),KungFuMaster-v5,1,pqn,40000
 h001-kangaroo-s2,h001,,Phase 4 Atari57 (rorqual),Kangaroo-v5,2,ppo,40000000,,42.21556854248047,39.520957946777344,3609600.0,
 h001-fishingderby-s2,h001,,Phase 4 Atari57 (rorqual),FishingDerby-v5,2,ppo,40000000,,-93.86227416992188,-93.82634735107422,-2006400.0,
 h064-assault-s1,h064,,Phase 4 Atari57 (nibi),Assault-v5,1,dqn_rainbow_lite,40000000,,365.5796813964844,362.9069519042969,21876288.0,
+h001-riverraid-s3,h001,,Phase 4 Atari57 (rorqual),Riverraid-v5,3,ppo,40000000,,1481.1644287109375,1466.2100830078125,83040000.0,
+h064-defender-s1,h064,,Phase 4 Atari57 (nibi),Defender-v5,1,dqn_rainbow_lite,40000000,,2592.910400390625,2581.1396484375,122302400.0,
+h064-demonattack-s2,h064,,Phase 4 Atari57 (nibi),DemonAttack-v5,2,dqn_rainbow_lite,40000000,,218.0238800048828,197.7586212158203,5260480.0,

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Assault-v5,1,h064,h064-assault-s1,dqn_rainbow_lite,40000000,59840,365.5796813964844,362.9069519042969,21876288.0,327.6000061035156

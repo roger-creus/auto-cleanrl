@@ -1,2 +1,2 @@
-env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
-Alien-v5,3,40000000,140.00,0.00,70400,9308,h002,h002-alien-s3
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Alien-v5,3,h002,h002-alien-s3,pqn,40000000,69376,190.9409637451172,181.3653106689453,13246720.0,140.0
