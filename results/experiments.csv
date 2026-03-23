@@ -1309,3 +1309,4 @@ h064-demonattack-s2,h064,,Phase 4 Atari57 (nibi),DemonAttack-v5,2,dqn_rainbow_li
 h002-roadrunner-s1,h002,,Phase 4 Atari57 (rorqual),RoadRunner-v5,1,pqn,40000000,,439.6396484375,724.9249267578125,37478400.0,
 h064-bankheist-s1,h064,,Phase 4 Atari57 (nibi),BankHeist-v5,1,dqn_rainbow_lite,40000000,,14.27503776550293,12.257100105285645,611200.0,
 h064-centipede-s2,h064,,Phase 4 Atari57 (nibi),Centipede-v5,2,dqn_rainbow_lite,40000000,,3504.974365234375,5014.4072265625,164649680.0,
+h064-gopher-s2,h064,,Phase 4 Atari57 (nibi),Gopher-v5,2,dqn_rainbow_lite,40000000,,198.872802734375,193.11500549316406,8355840.0,
