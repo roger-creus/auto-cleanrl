@@ -12332,3 +12332,53 @@ The path quoting bug affects individual xgenius submit calls but NOT batch-submi
 2. Bank h063-qbert-s2 from nibi when complete (~10h)
 3. After 45/45 for all: compute final 3-seed IQM with bootstrap confidence intervals
 4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 05:09 UTC]**
+
+## Session 224: Bank h066-amidar-s3 — 5 Phase 3 jobs remaining
+
+### Triggered by: h066-amidar-s3 (job 58109785, narval SUCCESS)
+
+### RESULT BANKED: 1
+h066-amidar-s3: IQN+OQE Amidar seed 3, q4=33.90 (vs s1=33.98, s2=35.78). All 3 OQE Amidar seeds now complete. 3-seed avg q4=34.55. PPO avg=2.27 WIN (+1422%). Rainbow-lite avg=35.31 — OQE slightly lower (-2.2%). IQN avg (2 seeds)=34.29 — OQE very close.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 42/45 banked (12/15 games 3-seed complete)
+  Missing: Amidar-s3 (running narval), MsPacman-s3 (running narval), Qbert-s2 (PENDING nibi — stuck 4h+ on Priority)
+- h064 Rainbow-lite: 44/45 banked (14/15 games 3-seed complete)
+  Missing: PrivateEye-s3 (running narval)
+- h066 IQN+OQE: 44/45 banked (14/15 games 3-seed complete)
+  Missing: MsPacman-s3 (running narval)
+
+### h066 (OQE) 3-SEED COMPLETE GAMES (14/15):
+Alien, Amidar, BattleZone, Breakout, DoubleDunk, Enduro, MontezumaRevenge, NameThisGame, Phoenix, PrivateEye, Qbert, Solaris, SpaceInvaders, Venture
+Remaining (1 running): MsPacman-s3
+
+### IQM COMPARISON (delta-HNS vs PPO, all 15 games):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0065 | +0.0046 | 10/4/1 LEADER |
+| h066 IQN+OQE | -0.0067 | +0.0043 | 10/4/1 |
+| h063 IQN | -0.0070 | +0.0045 | 10/4/1 |
+
+Rainbow-lite's IQM advantage is driven by smaller losses on Solaris (-0.058 vs -0.13) and NameThisGame (-0.003 vs -0.14). All three DQN variants beat PPO on 10/15 games with identical W/L/T records. Rainbow-lite is the only one with positive IQM.
+
+### h063-qbert-s2 STATUS:
+Nibi job 10786553 still PENDING after 4+ hours (reason: Priority). This is the last h063 experiment not covered by a running job. If it doesn't start soon, may need to resubmit to a different cluster.
+
+### 5 REMAINING EXPERIMENTS:
+- narval (4 running, ~8h/11h): h063-amidar-s3, h063-mspacman-s3, h064-privateeye-s3, h066-mspacman-s3
+- nibi (1 pending): h063-qbert-s2
+
+### ETA:
+- 4 narval jobs: ~09:22 UTC Mar 23 (~2h remaining)
+- h063-qbert-s2 nibi: unknown (still pending) — if it starts now, ~16:00 UTC
+- Full Phase 3 completion: depends on h063-qbert-s2
+
+### NEXT SESSION TODO:
+1. Bank remaining 4 narval results when they complete (~2h)
+2. Monitor h063-qbert-s2 — resubmit if still stuck
+3. After 45/45 for all: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
