@@ -11332,3 +11332,140 @@ Rainbow-lite dominant. OQE provides marginal benefit over vanilla IQN (+0.0003 I
 1. Bank seed-2/3 results as they arrive
 2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 00:54 UTC]**
+
+## Session 201: Bank h063-privateeye-s2 + h066-montezumarevenge-s2 — 42 Phase 3 jobs running
+
+### Triggered by: h063-privateeye-s2 (narval SUCCESS) + h066-montezumarevenge-s2 (narval SUCCESS)
+
+### RESULTS BANKED: 2
+1. h063-privateeye-s2: IQN PrivateEye seed 2, q4=375.91 (vs s1=423.18, s3=435.89). All 3 seeds complete. 3-seed avg q4=411.66. IQN learns PrivateEye well.
+2. h066-montezumarevenge-s2: IQN+OQE MontezumaRevenge seed 2, q4=0.0. As expected — no algo solves MR at 40M steps.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 33/45 (s1=15, s2=11, s3=7, 5/15 games 3-seed complete) + 12 running
+- h064 Rainbow-lite: 33/45 (s1=15, s2=11, s3=7, 4/15 games 3-seed complete) + 12 running
+- h066 IQN+OQE: 27/45 (s1=15, s2=12, s3=0, 0/15 games 3-seed complete) + 18 running
+
+### INTERIM MULTI-SEED IQM COMPARISON (delta HNS vs PPO, all 15 games):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0103 | +0.0072 | 11/3/1 LEADER |
+| h066 IQN+OQE | -0.0038 | +0.0042 | 10/4/1 |
+| h063 IQN | -0.0043 | +0.0046 | 10/4/1 |
+
+Rainbow-lite dominant (+0.0103 IQM). IQN/OQE negative IQM due to DoubleDunk outlier. By median (robust), all beat PPO. OQE adds almost nothing vs vanilla IQN (+0.0005 IQM).
+
+### 42 RUNNING JOBS (~01:15 UTC Mar 23):
+All gaps covered by running jobs:
+- h063: 12 running (alien-s2, amidar-s3, breakout-s3, enduro-s3, mspacman-s3, namethisgame-s2, phoenix-s3, qbert-s2/s3, solaris-s2/s3, spaceinvaders-s3)
+- h064: 12 running (alien-s3, battlezone-s3, breakout-s2, doubledunk-s3, enduro-s2, montezumarevenge-s3, namethisgame-s3, privateeye-s3, qbert-s2, solaris-s2/s3, venture-s3)
+- h066: 18 running (alien-s2/s3, amidar-s3, battlezone-s3, breakout-s3, doubledunk-s3, enduro-s2/s3, montezumarevenge-s3, mspacman-s3, namethisgame-s3, phoenix-s3, privateeye-s3, qbert-s3, solaris-s2/s3, spaceinvaders-s3, venture-s3)
+
+### ETA:
+- Seed-2 remaining: ~3-4h remaining (~04:30-05:30 UTC Mar 23)
+- Seed-3 bulk: ~7-9h remaining (~08:00-10:00 UTC Mar 23)
+- Full Phase 3 completion: ~10:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 00:59 UTC]**
+
+## Session 202: Bank 4 Phase 3 results — 37 jobs still running
+
+### Triggered by: h063-namethisgame-s2 (narval SUCCESS) + h064-enduro-s2 (narval SUCCESS)
+
+### RESULTS BANKED: 4
+1. h063-namethisgame-s2: IQN NameThisGame seed 2, q4=1774.44 (vs PPO s2=2293.44 LOSS -22.6%). vs s1=1564.76, s3=1631.45. 3-seed avg q4=1656.88.
+2. h064-enduro-s2: Rainbow-lite Enduro seed 2, q4=20.99 (vs PPO=0.0 WIN). vs s1=21.97, s3=22.57. All 3 seeds complete. 3-seed avg q4=21.84.
+3. h064-qbert-s2: Rainbow-lite Qbert seed 2, q4=251.61 (vs PPO s2=158.16 WIN +59.1%). vs s1=254.38, s3=255.08. All 3 seeds complete. 3-seed avg q4=253.69.
+4. h066-venture-s3: IQN+OQE Venture seed 3, q4=2.49 (vs s1=3.62, s2=4.31). All 3 seeds complete. 3-seed avg q4=3.47.
+
+Also found via check-completions: h066-venture-s3 (nibi completed). Reconciled 2 stale jobs (h064-qbert-s2, h064-enduro-s2 were completed but DB showed running).
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 34/45 banked (6/15 games 3-seed complete) + 11 running
+- h064 Rainbow-lite: 35/45 banked (6/15 games 3-seed complete) + 10 running
+- h066 IQN+OQE: 28/45 banked (1/15 games 3-seed complete) + 17 running
+All missing experiments covered by running jobs.
+
+### INTERIM MULTI-SEED IQM COMPARISON (delta HNS vs PPO):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0102 | +0.0072 | 11/3/1 LEADER |
+| h066 IQN+OQE | -0.0039 | +0.0042 | 10/4/1 |
+| h063 IQN | -0.0043 | +0.0046 | 10/4/1 |
+
+Rainbow-lite dominant. IQN/OQE still negative IQM due to DoubleDunk outlier.
+
+### 37 RUNNING JOBS:
+- h063: 11 running (alien-s2, amidar-s3, breakout-s3, enduro-s3, mspacman-s3, phoenix-s3, qbert-s2, qbert-s3, solaris-s2, solaris-s3, spaceinvaders-s3)
+- h064: 10 running (alien-s3, battlezone-s3, breakout-s2, doubledunk-s3, montezumarevenge-s3, namethisgame-s3, privateeye-s3, solaris-s2, solaris-s3, venture-s3)
+- h066: 17 running (alien-s2/s3, amidar-s3, battlezone-s3, breakout-s3, doubledunk-s3, enduro-s2/s3, montezumarevenge-s3, mspacman-s3, namethisgame-s3, phoenix-s3, privateeye-s3, qbert-s3, solaris-s2/s3, spaceinvaders-s3)
+
+### ETA:
+- Seed-2 remaining: ~3h remaining (~04:00 UTC Mar 23)
+- Seed-3 bulk: ~7-8h remaining (~08:00-09:00 UTC Mar 23)
+- Full Phase 3 completion: ~09:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 01:06 UTC]**
+
+## Session 203: Bank h063-solaris-s3 + h066-enduro-s2 + h066-namethisgame-s3 — 35 Phase 3 jobs running
+
+### Triggered by: h063-solaris-s3 (job 10754731, nibi SUCCESS)
+
+### RESULTS BANKED: 3
+1. h063-solaris-s3: IQN Solaris seed 3, q4=816.29 (vs s1=696.07). PPO avg=2279.89 LOSS. Only 2 seeds so far (s2 still running).
+2. h066-enduro-s2: IQN+OQE Enduro seed 2, q4=1.90 (vs s1=2.32, IQN s2=3.23). PPO=0.0 WIN. Found via gap analysis — CSV was on fir but not yet pulled.
+3. h066-namethisgame-s3: IQN+OQE NameThisGame seed 3, q4=1583.22 (vs s1=1598.0, s2=1718.24). 3-seed avg q4=1633.15. PPO avg=2435.7 LOSS -33%. Found via reconcile — job had completed but DB was stale.
+
+### DB FIX: h066-namethisgame-s3 (job 10755013, nibi) was stale in DB (running but absent from SLURM). Reconciled to completed.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 35/45 banked (6/15 games 3-seed complete) + 10 running
+- h064 Rainbow-lite: 35/45 banked (6/15 games 3-seed complete) + 10 running
+- h066 IQN+OQE: 30/45 banked (2/15 games 3-seed complete) + 15 running
+All missing experiments covered by running jobs. No gaps.
+
+### INTERIM MULTI-SEED IQM COMPARISON (delta HNS vs PPO):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0102 | +0.0072 | 11/3/1 LEADER |
+| h066 IQN+OQE | -0.0039 | +0.0042 | 10/4/1 |
+| h063 IQN | -0.0043 | +0.0046 | 10/4/1 |
+
+Rainbow-lite dominant. IQN/OQE still negative IQM due to DoubleDunk outlier.
+
+### 35 RUNNING JOBS (~21:05 UTC Mar 22):
+- Seed-2 remaining (7 jobs): ~3.5h remaining → ~00:30 UTC Mar 23
+  - narval: h063-alien-s2, h063-solaris-s2, h064-breakout-s2, h066-alien-s2, h066-solaris-s2
+  - fir: h063-qbert-s2, h064-solaris-s2
+- Seed-3 (28 jobs): ~8-9h remaining → ~05:00-06:00 UTC Mar 23
+  - narval (8): h063-amidar/mspacman/spaceinvaders, h064-doubledunk/privateeye, h066-amidar/mspacman/spaceinvaders
+  - nibi (11): h063-breakout/phoenix, h064-alien/montezumarevenge/solaris, h066-alien/battlezone/breakout/doubledunk/montezumarevenge/phoenix/privateeye/solaris (6-8h remaining)
+  - fir (7): h063-enduro/qbert, h064-battlezone/namethisgame/venture, h066-enduro/qbert
+
+### ETA:
+- Seed-2 bulk: ~00:30 UTC Mar 23 (~3.5h)
+- Seed-3 bulk: ~05:00-06:00 UTC Mar 23 (~8-9h)
+- Full Phase 3 completion: ~06:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
