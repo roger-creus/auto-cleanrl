@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-BankHeist-v5,1,h001,h001-bankheist-s1,ppo,10000000,18432,11.94444465637207,13.61111068725586,220160.0,10.0
+BankHeist-v5,1,h001,h001-bankheist-s1,ppo,40000000,74368,11.308089256286621,10.757314682006836,840960.0,10.0

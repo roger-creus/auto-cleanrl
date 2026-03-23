@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Tennis-v5,3,h002,h002-tennis-s3,pqn,10000000,768,-23.83333396911621,-24.0,-18304.0,-24.0
+Tennis-v5,3,h002,h002-tennis-s3,pqn,40000000,3328,-23.846153259277344,-23.846153259277344,-79360.0,-24.0

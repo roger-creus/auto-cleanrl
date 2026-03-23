@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Pong-v5,3,h064,h064-pong-s3,dqn_rainbow_lite,40000000,48032,-20.808794021606445,-20.833444595336914,-999488.0,-20.799999237060547

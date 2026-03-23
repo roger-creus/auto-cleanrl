@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-WizardOfWor-v5,3,h001,h001-wizardofwor-s3,ppo,10000000,6144,606.25,558.3333129882812,3724800.0,600.0
+WizardOfWor-v5,3,h001,h001-wizardofwor-s3,ppo,40000000,25344,640.9091186523438,679.7979736328125,16243200.0,800.0

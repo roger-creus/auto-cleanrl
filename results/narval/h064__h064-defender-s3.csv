@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Defender-v5,3,h064,h064-defender-s3,dqn_rainbow_lite,40000000,28832,3005.88232421875,3206.603759765625,86665600.0,3250.0

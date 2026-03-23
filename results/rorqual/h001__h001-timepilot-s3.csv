@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-TimePilot-v5,3,h001,h001-timepilot-s3,ppo,10000000,5632,3445.45458984375,3654.54541015625,19404800.0,7900.0
+TimePilot-v5,3,h001,h001-timepilot-s3,ppo,40000000,23296,3400.549560546875,2608.791259765625,79219200.0,4200.0

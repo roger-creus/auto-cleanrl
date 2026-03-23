@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+KungFuMaster-v5,2,h064,h064-kungfumaster-s2,dqn_rainbow_lite,40000000,52768,112.1285629272461,106.12492370605469,5916800.0,320.0

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Centipede-v5,3,h064,h064-centipede-s3,dqn_rainbow_lite,40000000,43312,4752.60986328125,8487.2978515625,205845040.0,3020.199951171875

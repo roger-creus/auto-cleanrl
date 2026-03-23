@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+DemonAttack-v5,3,h064,h064-demonattack-s3,dqn_rainbow_lite,40000000,22624,234.75601196289062,186.4144287109375,5311120.0,216.0

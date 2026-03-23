@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Robotank-v5,3,h064,h064-robotank-s3,dqn_rainbow_lite,40000000,9952,9.209003448486328,10.37942123413086,91648.0,10.199999809265137

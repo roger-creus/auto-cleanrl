@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Boxing-v5,1,h064,h064-boxing-s1,dqn_rainbow_lite,40000000,22432,-22.27246856689453,-22.221113204956055,-499616.0,-12.800000190734863

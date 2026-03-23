@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Asterix-v5,2,h064,h064-asterix-s2,dqn_rainbow_lite,40000000,136096,220.50904846191406,226.3461151123047,30010400.0,150.0

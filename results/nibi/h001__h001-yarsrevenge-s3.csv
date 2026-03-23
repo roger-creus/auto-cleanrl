@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+YarsRevenge-v5,3,h001,h001-yarsrevenge-s3,ppo,10000000,9088,3519.140869140625,3596.35205078125,31981952.0,3864.0
