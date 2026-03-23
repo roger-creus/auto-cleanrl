@@ -12002,3 +12002,54 @@ Still legitimately running on fir: 10:22/11:00 elapsed. Should complete in ~37 m
 2. Bank remaining seed-3 results as they complete
 3. After 45/45 for each: compute final 3-seed IQM with bootstrap CI
 4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 04:14 UTC]**
+
+## Session 216: Bank h064-alien-s3 + h063-qbert-s3 + h063-spaceinvaders-s3 — 13 Phase 3 jobs running
+
+### Triggered by: h064-alien-s3 (job 10769691, nibi SUCCESS), h063-qbert-s3 (job 29021323, fir SUCCESS)
+### Also detected: h063-spaceinvaders-s3 (job 58109780, narval SUCCESS — pulled manually)
+
+### RESULTS BANKED: 3
+1. h064-alien-s3: Rainbow-lite Alien seed 3, q4=139.34 (vs s1=275.49, s2=280.74). HUGE OUTLIER — seed 3 catastrophically worse. 3-seed avg q4=231.86. PPO avg=200.27 WIN (+15.8%). IQN avg=311.24 LOSS (-25.5%). High variance on Alien for Rainbow-lite.
+2. h063-qbert-s3: IQN Qbert seed 3, q4=217.19 (vs s1=219.30). s2 still running (~35 min). 2-seed avg q4=218.24. PPO avg=158.44 BIG WIN (+37.7%).
+3. h063-spaceinvaders-s3: IQN SI seed 3, q4=248.97 (vs s1=250.88, s2=256.21). All 3 seeds complete. 3-seed avg q4=252.02. PPO avg=147.36 BIG WIN (+71.1%). Very consistent.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 41/45 banked (11/15 games 3-seed) + 4 running (amidar-s3, enduro-s3, mspacman-s3, qbert-s2)
+- h064 Rainbow-lite: 42/45 banked (12/15 games 3-seed) + 3 running (battlezone-s3, privateeye-s3, solaris-s3)
+- h066 IQN+OQE: 39/45 banked (9/15 games 3-seed) + 6 running (amidar-s3, breakout-s3, enduro-s3, mspacman-s3, qbert-s3, spaceinvaders-s3)
+All 13 missing experiments covered by running jobs. No gaps.
+
+### IQM COMPARISON (delta HNS vs PPO, 15 games):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0086 | +0.0046 | 10/4/1 LEADER |
+| h066 IQN+OQE | -0.0039 | +0.0042 | 10/5/0 |
+| h063 IQN | -0.0043 | +0.0045 | 10/5/0 |
+
+Rainbow-lite continues to lead despite h064-alien-s3 outlier (139 vs ~278). IQM properly trims the DoubleDunk extreme delta. All three methods beat PPO by median.
+
+### KEY OBSERVATIONS:
+- h064-alien-s3 is a massive variance outlier (q4=139 vs seeds 1,2 at ~278). This is Rainbow-lite's biggest instability.
+- h063 IQN is remarkably consistent across seeds on most games
+- OQE (h066) tracks IQN very closely on IQM (-0.0039 vs -0.0043), OQE slight edge
+
+### 13 RUNNING JOBS (~04:20 UTC Mar 23):
+- fir (5): h063-qbert-s2 (10:26h/11h → ~35 min!), h063-enduro-s3 (5:52/11), h064-battlezone-s3 (5:50/11), h066-enduro-s3 (5:48/11), h066-qbert-s3 (5:41/11)
+- narval (6): h063-amidar-s3, h063-mspacman-s3, h064-privateeye-s3, h066-amidar-s3, h066-mspacman-s3, h066-spaceinvaders-s3 (~5:50/11)
+- nibi (2): h064-solaris-s3 (5:01/11), h066-breakout-s3 (4:57/11)
+
+### ETA:
+- h063-qbert-s2 (fir): ~04:55 UTC Mar 23 (~35 min)
+- Seed-3 bulk (fir+narval): ~09:30-10:00 UTC Mar 23
+- Seed-3 nibi: ~10:00-11:00 UTC Mar 23
+- Full Phase 3 completion: ~10:30 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank h063-qbert-s2 when it arrives (~35 min)
+2. Bank remaining seed-3 results as they complete (~5-6h)
+3. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
