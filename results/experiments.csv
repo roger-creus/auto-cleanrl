@@ -1292,3 +1292,4 @@ h001-demonattack-s1,h001,,Phase 4 Atari57 (rorqual),DemonAttack-v5,1,ppo,4000000
 h002-kangaroo-s3,h002,,Phase 4 Atari57 (rorqual),Kangaroo-v5,3,pqn,40000000,,159.6491241455078,355.5555419921875,13977600.0,
 h002-fishingderby-s3,h002,,Phase 4 Atari57 (rorqual),FishingDerby-v5,3,pqn,40000000,,-96.65908813476562,-95.81818389892578,-2177536.0,
 h002-pong-s3,h002,,Phase 4 Atari57 (rorqual),Pong-v5,3,pqn,40000000,,-20.91348648071289,-20.979642868041992,-1052032.0,
+h001-freeway-s3,h001,,Phase 4 Atari57 (rorqual),Freeway-v5,3,ppo,40000000,,0.0,0.0,0.0,
