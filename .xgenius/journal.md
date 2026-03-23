@@ -11469,3 +11469,43 @@ Rainbow-lite dominant. IQN/OQE still negative IQM due to DoubleDunk outlier.
 1. Bank seed-2/3 results as they arrive
 2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 01:13 UTC]**
+
+## Session 204: Bank h063-solaris-s2 — 34 Phase 3 jobs running
+
+### Triggered by: h063-solaris-s2 (job 58105264, narval SUCCESS)
+
+### RESULT BANKED: 1
+h063-solaris-s2: IQN Solaris seed 2, q4=822.79 (vs s1=696.07, s3=816.29). All 3 seeds now complete. 3-seed avg q4=778.38. PPO avg=2279.89 BIG LOSS (-65.9%). IQN consistently bad on Solaris.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 36/45 banked (7/15 games 3-seed complete) + 9 running
+- h064 Rainbow-lite: 35/45 banked (6/15 games 3-seed complete) + 10 running
+- h066 IQN+OQE: 30/45 banked (2/15 games 3-seed complete) + 15 running
+All missing experiments covered by running jobs. No gaps.
+
+### INTERIM MULTI-SEED IQM COMPARISON (delta HNS vs PPO):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0083 | +0.0072 | 10/3/2 LEADER |
+| h066 IQN+OQE | -0.0068 | +0.0042 | 10/4/1 |
+| h063 IQN | -0.0071 | +0.0046 | 9/4/2 |
+
+Rainbow-lite dominant. IQN/OQE negative IQM due to DoubleDunk outlier. By median (robust), all beat PPO. OQE adds negligible benefit over vanilla IQN (+0.0003 IQM).
+
+### 34 RUNNING JOBS (~01:10 UTC Mar 23):
+- Seed-2 remaining (6 jobs): h063-alien-s2, h063-qbert-s2, h064-breakout-s2, h064-solaris-s2, h066-alien-s2, h066-solaris-s2 — ~7.5h elapsed / 11h → ~3.5h remaining → ~04:30 UTC
+- Seed-3 (28 jobs): ~1-3h elapsed / 11h → ~8-10h remaining → ~09:00-11:00 UTC
+
+### ETA:
+- Seed-2 bulk completions: ~04:30-05:00 UTC Mar 23
+- Seed-3 bulk completions: ~09:00-11:00 UTC Mar 23
+- Full Phase 3 completion: ~11:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
