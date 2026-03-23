@@ -12797,3 +12797,56 @@ h002 PQN NOW 45/45 COMPLETE for original 15 games.
 3. Verify total_timesteps=40000000 in EVERY CSV before banking
 4. Begin Atari57 IQM analysis when sufficient data available
 5. Full Phase 4 completion ETA: ~12:00-24:00 UTC Mar 24
+
+---
+**[2026-03-23 18:34 UTC]**
+
+## Session 233: Status check — Phase 4 40M jobs still running. Banked h002 gap-fill, updated analysis script.
+
+### Triggered by: 13 completions (h001/h002 from narval/nibi/fir)
+
+### FINDING: ALL triggered completions are from WRONG 10M batch (Session 229 bug)
+Verified: every triggered CSV has total_timesteps=10000000. NOT BANKED.
+
+### h002 GAP-FILL BANKED: 10 experiments
+Found proper q4 data in old-format CSVs (h002__GameName-v5_sN.csv) from Phase 1.
+Banked: Alien s1/s3, Amidar s1/s3, BattleZone s1/s3, Breakout s1, NameThisGame s1/s3, Solaris s1
+Cleaned up 10 duplicate entries (old-format vs new h002-xxx format).
+h002 PQN now properly 45/45 for original 15 games.
+
+### PHASE 4 REAL STATUS (corrected 40M batch):
+All Phase 4 new-game 40M jobs are STILL RUNNING across all clusters:
+
+| Algorithm | Running | Pending | Total | Est. first completion |
+|-----------|---------|---------|-------|-----------------------|
+| h001 PPO (40M) | 36 | 125 | 161 | ~21:00-21:30 UTC Mar 23 |
+| h002 PQN (40M) | 38 | 131 | 169 | ~21:00-21:30 UTC Mar 23 |
+| h064 Rainbow-lite (40M) | 106 | 20 | 126 | ~00:00-03:00 UTC Mar 24 |
+
+ZERO Phase 4 new-game 40M results are available yet.
+
+NOTE: DB has stale 'completed' entries from wrong 10M batch for same experiment IDs.
+The corrected 40M batch creates separate DB entries (different job_ids).
+ALWAYS verify total_timesteps=40000000 and walltime > 2h before banking Phase 4 results.
+
+### ANALYSIS INFRASTRUCTURE UPDATED:
+1. analyze_iqm_hns.py: Extended HUMAN_RANDOM to full Atari57 (was 15 games only)
+   - Added --game-set flag: '15' (original), '57' (full Atari57), 'all' (whatever available)
+   - Added ORIG_15_GAMES constant for backward compatibility
+2. Created bank_phase4.py: Automated banking script for Phase 4 results
+   - Reads CSVs from results/{cluster}/, verifies 40M, appends to experiments.csv
+   - Skips already-banked experiments, handles deduplication
+
+### 15-GAME IQM VERIFICATION (unchanged from Phase 3):
+| Algorithm | IQM HNS | Games |
+|-----------|---------|-------|
+| h064 Rainbow-lite | 0.0131 | 15 |
+| h001 PPO | 0.0002 | 15 |
+| h002 PQN | -0.0130 | 15 |
+
+### NEXT SESSION TODO:
+1. Bank h001/h002 40M Phase 4 results when they complete (first ~21:00-21:30 UTC Mar 23)
+2. Bank h064 Phase 4 results (~00:00-03:00 UTC Mar 24)
+3. VERIFY total_timesteps=40000000 in every CSV (use bank_phase4.py --dry-run first)
+4. Begin Atari57 IQM analysis when sufficient data (>30 games) available
+5. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
