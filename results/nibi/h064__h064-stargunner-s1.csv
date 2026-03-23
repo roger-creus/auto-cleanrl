@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+StarGunner-v5,1,h064,h064-stargunner-s1,dqn_rainbow_lite,40000000,47328,547.4644775390625,570.6558227539062,25910400.0,920.0

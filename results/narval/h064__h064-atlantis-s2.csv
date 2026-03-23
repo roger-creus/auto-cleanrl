@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Atlantis-v5,2,h064,h064-atlantis-s2,dqn_rainbow_lite,40000000,59840,4752.48681640625,4620.427734375,284388800.0,2840.0

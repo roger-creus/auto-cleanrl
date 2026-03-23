@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+FishingDerby-v5,1,h064,h064-fishingderby-s1,dqn_rainbow_lite,40000000,21760,-93.72940826416016,-92.85588073730469,-2039552.0,-91.80000305175781
