@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Pong-v5,3,h002,h002-pong-s3,pqn,40000000,50304,-20.91348648071289,-20.979642868041992,-1052032.0,-21.0
+WizardOfWor-v5,2,h002,h002-wizardofwor-s2,pqn,10000000,16000,153.60000610351562,211.1999969482422,2457600.0,100.0
