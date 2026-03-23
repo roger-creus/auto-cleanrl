@@ -1207,3 +1207,5 @@ h066-qbert-s2,h066,,IQN+OQE Qbert seed 2 (Phase 3),Qbert-v5,2,iqn_oqe,40000000,1
 h064-montezumarevenge-s2,h064,,Rainbow-lite MontezumaRevenge seed 2 (Phase 3),MontezumaRevenge-v5,2,dqn_rainbow_lite,40000000,150848,0.021213406696915627,0.04242681339383125,3200.0,0.0
 h066-privateeye-s2,h066,,IQN+OQE PrivateEye seed 2 (Phase 3),PrivateEye-v5,2,iqn_oqe,40000000,14832,627.7227783203125,752.172607421875,9310384.0,-77.80000305175781
 h066-spaceinvaders-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id SpaceInvaders-v5 --seed 2,fir completed. IQN+OQE SpaceInvaders seed 2. q4=247.63 vs s1=262.71. vs PPO s2=147.18 WIN (+68.2%). Consistent across seeds.,SpaceInvaders-v5,2,iqn_oqe,40000000,60576,245.783,247.628,14888560,297.0
+h063-privateeye-s2,h063,,IQN PrivateEye seed 2 (Phase 3). q4=375.91 vs s1=423.18 s3=435.89. All 3 seeds now complete.,PrivateEye-v5,2,iqn,40000000,14832,476.248,375.909,7063712.0,20.0
+h066-montezumarevenge-s2,h066,,IQN+OQE MontezumaRevenge seed 2 (Phase 3). q4=0.0 as expected. All 3 seeds likely zero.,MontezumaRevenge-v5,2,iqn_oqe,40000000,166016,0.019,0.0,3200.0,0.0
