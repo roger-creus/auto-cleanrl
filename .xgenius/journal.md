@@ -12198,3 +12198,91 @@ Remaining (2 running): Amidar-s3, MsPacman-s3
 2. Bank remaining 6 seed-3 results as they complete (~5h)
 3. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 04:50 UTC]**
+
+## Session 221: Bank h063-enduro-s3 + resubmit h063-qbert-s2 — 6 Phase 3 jobs remaining
+
+### Triggered by: h063-enduro-s3 (job 29021320, fir SUCCESS)
+
+### RESULT BANKED: 1
+h063-enduro-s3: IQN Enduro seed 3, q4=4.34 (vs s1=1.24, s2=3.23). All 3 IQN Enduro seeds complete. 3-seed avg q4=2.94. PPO avg=0.0 WIN. Rainbow-lite avg=21.84 BIG LOSS (-86.5%). OQE avg=2.90 TIE.
+
+### h063-qbert-s2 FAILURE & RESUBMIT:
+Job 28939139 on fir FAILED — CUDA initialization error ('CUDA unknown error - Setting available devices to be zero'). No training happened, no CSV produced. Timed out after 11h walltime. Resubmitted to narval as job 58120116.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 42/45 banked (12/15 games 3-seed) + 3 remaining (qbert-s2 resubmitted, amidar-s3 running, mspacman-s3 running)
+- h064 Rainbow-lite: 44/45 banked (14/15 games 3-seed) + 1 running (privateeye-s3)
+- h066 IQN+OQE: 43/45 banked (13/15 games 3-seed) + 2 running (amidar-s3, mspacman-s3)
+
+### IQM COMPARISON (delta HNS vs PPO, all 15 games):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0086 | +0.0046 | 10/4/1 LEADER |
+| h066 IQN+OQE | -0.0038 | +0.0043 | 10/4/1 |
+| h063 IQN | -0.0042 | +0.0045 | 10/4/1 |
+
+Rainbow-lite leads by wide margin on IQM. All three beat PPO on median and 10/15 games, but IQN/OQE dragged down by large losses on NameThisGame (-0.14), Solaris (-0.13), Phoenix (-0.10).
+
+### 6 REMAINING EXPERIMENTS:
+- narval (5 running, ~6.5h elapsed/11h): h063-amidar-s3, h063-mspacman-s3, h064-privateeye-s3, h066-amidar-s3, h066-mspacman-s3
+- narval (just submitted): h063-qbert-s2 (job 58120116)
+
+### ETA:
+- 5 running narval jobs: ~09:30-10:00 UTC Mar 23
+- h063-qbert-s2 resubmit: ~15:00-16:00 UTC Mar 23
+- Full Phase 3 completion: ~16:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank remaining 5 narval results when they complete (~4h)
+2. Bank h063-qbert-s2 when it completes (~10h)
+3. After 45/45 for all: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 04:57 UTC]**
+
+## Session 222: Bank h063-qbert-s2 FAILED (again) — resubmitted to rorqual
+
+### Triggered by: h063-qbert-s2 (job 58120116, narval SUCCESS marker but actually FAILED)
+
+### h063-qbert-s2 FAILURE:
+Job 58120116 on narval completed in 47 seconds with exit code 0 but produced NO results. SLURM log shows path quoting issue:
+- `slurmstepd: error: couldn't chdir to /home/rogercc/'/scratch/rogercc/cleanrl'` — embedded single quotes in path
+- `python: can't open file '/src/cleanrl/dqn_atari_envpool_iqn.py': [Errno 2] No such file or directory` — bind mount failed
+- This is the SECOND failure for h063-qbert-s2 (first was CUDA error on fir)
+- Resubmitted to RORQUAL as job 8909264 to try a different cluster
+
+### PHASE 3 COVERAGE (unchanged):
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 42/45 banked — missing: amidar-s3 (running narval), mspacman-s3 (running narval), qbert-s2 (resubmitted rorqual)
+- h064 Rainbow-lite: 44/45 banked — missing: privateeye-s3 (running narval)
+- h066 IQN+OQE: 43/45 banked — missing: amidar-s3 (running narval), mspacman-s3 (running narval)
+
+### 5 NARVAL JOBS (~6.5h elapsed/11h):
+58109764: h063-amidar-s3, 58109779: h063-mspacman-s3, 58109783: h064-privateeye-s3, 58109785: h066-amidar-s3, 58109788: h066-mspacman-s3
+
+### h063-qbert-s2 resubmit: rorqual job 8909264
+
+### INTERIM IQM (15-game delta-HNS vs PPO):
+| Algorithm | IQM dHNS | W/L/T |
+|-----------|----------|-------|
+| h064 Rainbow-lite | +0.0086 | 10/4/1 LEADER |
+| h066 IQN+OQE | -0.0038 | 10/4/1 |
+| h063 IQN | -0.0042 | 10/4/1 |
+
+Rainbow-lite remains the clear leader. Missing seeds are all in top-quartile games (not the 4 loss games), so final IQM unlikely to change much.
+
+### ETA:
+- 5 narval jobs: ~10:00-11:00 UTC Mar 23
+- h063-qbert-s2 rorqual: ~16:00-17:00 UTC Mar 23
+- Full Phase 3 completion: ~17:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank remaining 5 narval results as they complete (~4h)
+2. Bank h063-qbert-s2 from rorqual when complete (~10h)
+3. After 45/45 for all: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison and write-up

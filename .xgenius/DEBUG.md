@@ -136,3 +136,14 @@ Additionally, many correctly-flagged jobs were stuck running 44+ hours (SLURM el
 - Resubmitted 22 jobs (11 h051 + 11 h056) with correct flags and fresh code
 
 **Lesson:** Always use explicit flags AND update defaults when scripts are used for a specific hypothesis. Never rely on defaults being correct across resubmissions.
+
+## 2026-03-23 ~05:00 — h063-qbert-s2 narval resubmit failed (path quoting)
+Job 58120116 on narval completed in 47 seconds with exit_code=0 but produced no CSV. SLURM log shows:
+- `slurmstepd: error: couldn't chdir to /home/rogercc/'/scratch/rogercc/cleanrl'` — embedded single quotes around project_path
+- `-H` flag in SBATCH template rendered with quotes, causing bind mount failure
+- `python: can't open file '/src/cleanrl/dqn_atari_envpool_iqn.py': [Errno 2] No such file or directory`
+- This is the 2nd failure for h063-qbert-s2 (1st was CUDA error on fir job 28939139)
+- Resubmitted to rorqual as job 8909264
+- Other narval jobs from same batch (submitted 22:17 UTC) worked fine — issue may be intermittent or specific to the resubmission path
+
+**Note:** 5 other narval jobs from the original batch are still running normally at ~6.5h elapsed.
