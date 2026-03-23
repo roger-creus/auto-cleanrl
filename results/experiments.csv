@@ -1262,3 +1262,4 @@ h002-namethisgame-s1,h002,,Phase 1 gap-fill from rorqual old-format CSV,NameThis
 h002-namethisgame-s3,h002,,Phase 1 gap-fill from nibi old-format CSV,NameThisGame-v5,3,pqn,40000000,,1308.0281982421875,1591.267578125,23774720.0,
 h002-solaris-s1,h002,,Phase 1 gap-fill from fir old-format CSV,Solaris-v5,1,pqn,40000000,,576.0,504.0,2949120.0,
 h002-assault-s1,h002,python cleanrl/pqn_atari_envpool.py --env-id Assault-v5 --seed 1 --total-timesteps 40000000,"Phase 4 Atari57 PQN baseline (Assault-v5, seed 1)",Assault-v5,1,pqn,40000000,45824,307.3156433105469,369.08380126953125,14082432.0,441.0
+h002-bankheist-s1,h002,,Phase 4 Atari57 (rorqual),BankHeist-v5,1,pqn,40000000,,9.492753982543945,9.565217018127441,335360.0,

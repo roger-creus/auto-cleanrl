@@ -12986,3 +12986,32 @@ SLURM active jobs:
 2. Bank h064 Phase 4 results (~23:00+ UTC)
 3. ALWAYS verify total_timesteps=40000000 before banking (10M CSVs still present)
 4. Begin Atari57 IQM analysis when >20 new games available
+
+---
+**[2026-03-23 19:12 UTC]**
+
+## Session 238: Status check — banked 1 new Phase 4 result, 425 jobs still active.
+
+### Triggered by: h002-robotank-s1 (nibi) — 10M wrong batch, NOT banked.
+
+### NEW RESULT BANKED:
+- h002-bankheist-s1 (rorqual): 40M confirmed, q4=9.57. Phase 4 new-game result #2 for PQN.
+
+### PHASE 4 STATUS (19:15 UTC Mar 23):
+Active SLURM jobs: 425 total (184 running + 241 pending)
+- h001 PPO (40M): 36 running, 111 pending → first completions ~20:00-20:30 UTC
+- h002 PQN (40M): 33 running, 119 pending → first completions ~20:00-20:30 UTC
+- h064 Rainbow-lite (40M): 116 running, 10 pending → first completions ~23:00+ UTC
+
+### BANKED TOTALS:
+- h001 PPO: 45 (orig15 complete, 0 Phase 4 new-game)
+- h002 PQN: 47 (45 orig15 + 2 Phase 4: Assault q4=369.08, BankHeist q4=9.57)
+- h064 Rainbow-lite: 45 (orig15 complete, 0 Phase 4 new-game)
+- Need: 42 new games × 3 seeds × 3 algorithms = ~378 more results
+
+### NEXT SESSION TODO:
+1. Bank h001/h002 40M Phase 4 results (first wave ~20:00-20:30 UTC)
+2. Bank h064 Phase 4 results (~23:00+ UTC)
+3. VERIFY total_timesteps=40000000 before banking (10M CSVs still present)
+4. Begin Atari57 IQM analysis when >20 new games banked
+5. Full Phase 4 completion ETA: ~04:00-06:00 UTC Mar 24
