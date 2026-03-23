@@ -13455,3 +13455,163 @@ h064 jobs started completing! More h064 results expected around 03:00-04:00 UTC 
 2. Bank h064 Phase 4 results (first wave ~03:00 UTC Mar 24)
 3. Begin Atari57 IQM analysis when >40 games covered per algorithm
 4. Full Phase 4 completion ETA: ~08:00-12:00 UTC Mar 24
+
+---
+**[2026-03-23 20:34 UTC]**
+
+## Session 250: Banked 3 Phase 4 40M results. 353 SLURM jobs active.
+
+### Triggered by: h001-riverraid-s3 (rorqual), h064-assault-s1 (nibi), h064-defender-s1 (nibi)
+
+### NEW RESULTS BANKED (3):
+- h001-riverraid-s3: Riverraid-v5 PPO q4=1466.21 (rorqual, 40M)
+- h064-defender-s1: Defender-v5 Rainbow-lite q4=2581.14 (nibi, 40M)
+- h064-demonattack-s2: DemonAttack-v5 Rainbow-lite q4=197.76 (nibi, 40M, found via pull)
+
+### NOTE: h064-assault-s1 was already banked in session 249
+
+### PHASE 4 BANKING TOTALS (20:35 UTC Mar 23):
+- h001 PPO: 66 banked (45 orig15 + 21 new42), 36/57 games
+- h002 PQN: 66 banked (45 orig15 + 21 new42), 36/57 games
+- h064 Rainbow-lite: 48 banked (45 orig15 + 3 new42), 18/57 games
+- Target: 171 per algorithm (57 games × 3 seeds), Total: 180/513 (35%)
+
+### SLURM QUEUE STATUS (~20:35 UTC Mar 23):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| rorqual | 53      | 0       | 53    |
+| fir     | 71      | 25      | 96    |
+| narval  | 40      | 59      | 99    |
+| nibi    | 23      | 82      | 105   |
+| TOTAL   | 187     | 166     | 353   |
+
+Per-hypothesis: h001 34R/77P (max 56min), h002 37R/82P (max 9min), h064 116R/7P (max 4h25m/11h)
+
+### ESTIMATED COMPLETIONS:
+- h001/h002 rorqual: ~2-3h (56 min elapsed out of ~3h typical)
+- h001/h002 fir/narval: ~2-3h
+- h001/h002 nibi: ~3h (mostly pending)
+- h064 all clusters: ~6.5h remaining (4h25m elapsed out of 11h walltime)
+
+### NEXT SESSION TODO:
+1. Bank more h001/h002 40M results as they arrive (~2-3h for next wave)
+2. Bank h064 Phase 4 results (~03:00+ UTC Mar 24)
+3. VERIFY total_timesteps=40000000 before banking (bank_phase4.py handles this)
+4. Begin Atari57 IQM analysis when >40 games covered per algorithm
+5. Full Phase 4 completion ETA: ~08:00-12:00 UTC Mar 24
+
+---
+**[2026-03-23 20:40 UTC]**
+
+## Session 251: Banked 3 Phase 4 40M results. 350 SLURM jobs active.
+
+### Triggered by: h002-roadrunner-s1 (rorqual), h064-bankheist-s1 (nibi), h064-centipede-s2 (nibi)
+
+### NEW RESULTS BANKED (3):
+- h002-roadrunner-s1: RoadRunner-v5 PQN q4=724.92 (rorqual, 40M)
+- h064-bankheist-s1: BankHeist-v5 Rainbow-lite q4=12.26 (nibi, 40M)
+- h064-centipede-s2: Centipede-v5 Rainbow-lite q4=5014.41 (nibi, 40M)
+
+### PHASE 4 BANKING TOTALS (20:45 UTC Mar 23):
+- h001 PPO: 66 banked, 36/57 games (15 complete 3-seed, 21 partial)
+- h002 PQN: 55 banked, 33/57 games (11 complete, 22 partial)
+- h064 Rainbow-lite: 50 banked, 20/57 games (15 complete, 5 partial)
+- Target: 171 per algorithm (57 games × 3 seeds), Total: 171/513 (33%)
+
+### SLURM QUEUE STATUS (~20:45 UTC Mar 23):
+| Cluster | h001 R/P | h002 R/P | h064 R/P | Total |
+|---------|----------|----------|----------|-------|
+| rorqual | 10R/0P   | 10R/0P   | 32R/0P   | 52    |
+| fir     | 19R/11P  | 21R/11P  | 31R/0P   | 93    |
+| narval  | 5R/28P   | 4R/31P   | 31R/0P   | 99    |
+| nibi    | 0R/36P   | 1R/39P   | 21R/6P   | 103   |
+| TOTAL   | 34R/75P  | 36R/81P  | 115R/6P  | 350   |
+
+### ELAPSED TIMES:
+- h001 PPO: 34 running, 6min-2h42m elapsed (3h typical)
+- h002 PQN: 36 running, 6min-1h48m elapsed (3h typical)  
+- h064 Rainbow-lite: 115 running, 4min-4h30m elapsed (11h walltime)
+
+### NEXT SESSION TODO:
+1. Bank more h001/h002 40M results as rorqual/fir/narval complete (next wave ~1-2h)
+2. Bank h064 Phase 4 results (most still 4-5h in, ~6h remaining)
+3. VERIFY total_timesteps=40000000 before banking (bank_phase4.py handles this)
+4. Begin Atari57 IQM analysis when >40 games covered per algorithm
+5. Full Phase 4 completion ETA: ~08:00-12:00 UTC Mar 24
+
+---
+**[2026-03-23 20:48 UTC]**
+
+## Session 252: Banked 1 Phase 4 40M result (h064 Rainbow-lite: Gopher-v5 s2)
+
+### Triggered by: h064-gopher-s2 (nibi SUCCESS)
+
+### NEW RESULTS BANKED (1):
+- h064-gopher-s2: Gopher-v5 Rainbow-lite q4=193.12 (nibi, 40M)
+
+### PHASE 4 BANKING TOTALS (20:50 UTC Mar 23):
+- h001 PPO: 66 banked, 36/57 games (15 with 3 seeds), 105 remaining
+- h002 PQN: 55 banked, 33/57 games (11 with 3 seeds), 116 remaining
+- h064 Rainbow-lite: 51 banked, 21/57 games (15 with 3 seeds), 120 remaining
+- Target: 171 per algorithm (57 games × 3 seeds), Total: 172/513 (33.5%)
+
+### SLURM QUEUE STATUS (~20:50 UTC Mar 23):
+| Cluster | h001 R/P | h002 R/P | h064 R/P | Total |
+|---------|----------|----------|----------|-------|
+| rorqual | 10R/0P   | 10R/0P   | 32R/0P   | 52    |
+| fir     | 19R/11P  | 21R/11P  | 31R/0P   | 93    |
+| narval  | 5R/28P   | 4R/31P   | 31R/0P   | 99    |
+| nibi    | 1R/35P   | 1R/39P   | 20R/6P   | 102   |
+| TOTAL   | 35R/74P  | 36R/81P  | 114R/6P  | 346   |
+
+### ELAPSED TIMES:
+- rorqual h001: max 2h49m (near completion ~3h typical)
+- fir h001/h002: max 1h19m
+- narval h001/h002: max 1h55m
+- h064 all clusters: max 4h36m out of 11h walltime (~6-7h remaining)
+
+### NEXT SESSION TODO:
+1. Bank rorqual h001/h002 results (should be completing very soon, ~10-20 min)
+2. Bank narval h001/h002 results (~1h remaining)
+3. Bank fir h001/h002 results (~2h remaining)
+4. Bank h064 Phase 4 results (~6-7h remaining for most)
+5. Full Phase 4 completion ETA: ~06:00-12:00 UTC Mar 24
+
+---
+**[2026-03-23 21:12 UTC]**
+
+## Session 253: Banked 5 Phase 4 40M results. ~284 SLURM jobs active.
+
+### Triggered by: h064-assault-s2 (rorqual SUCCESS), h001-robotank-s1 (rorqual SUCCESS), h002-surround-s1 (nibi SUCCESS — 10M wrong batch, NOT banked)
+
+### NEW RESULTS BANKED (5):
+h001 PPO (2): Robotank-v5 q4=2.78 (rorqual), Assault-v5 q4=238.57 (narval)
+h002 PQN (2): Assault-v5 q4=347.01 (narval), Asterix-v5 q4=430.14 (narval)
+h064 Rainbow-lite (1): Assault-v5 q4=374.16 (rorqual)
+
+### NOT BANKED:
+- h002-surround-s1 (nibi): CSV shows 10M (wrong batch) — NOT banked
+
+### PHASE 4 BANKING TOTALS (20:55 UTC Mar 23):
+- h001 PPO: 68 banked, 38/57 unique games (15 with 3 seeds), 19 missing
+- h002 PQN: 69 banked, 37/57 unique games (15 with 3 seeds), 20 missing
+- h064 Rainbow-lite: 52 banked, 21/57 unique games (15 with 3 seeds), 36 missing
+- Target: 171 per algorithm (57 games × 3 seeds), Total: 189/513 (36.8%)
+
+### SLURM QUEUE STATUS (~20:55 UTC Mar 23):
+- rorqual: 49R/0P (max 57min)
+- narval: 39R/57P (max 7min — just started new wave)
+- nibi: 20R/79P (max 7min — just started new wave)
+- fir: pull still running, status pending
+- Total estimated: ~108R + 136P = ~284 active
+
+### ESTIMATED COMPLETIONS:
+- rorqual: completing in ~2h (57min elapsed out of ~3h typical for h001/h002)
+- narval/nibi: completing in ~3h (just started)
+- h064: still 6-7h remaining for most clusters
+
+### NEXT SESSION TODO:
+1. Bank more h001/h002 40M results as rorqual completes (~2h)
+2. Bank h064 Phase 4 results (continuing to trickle in from nibi)
+3. Begin Atari57 IQM analysis when >40 games banked per algorithm
+4. Full Phase 4 completion ETA: ~08:00-14:00 UTC Mar 24

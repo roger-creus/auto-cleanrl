@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Assault-v5,1,h001,h001-assault-s1,ppo,10000000,16768,247.83206176757812,229.0763397216797,4155648.0,252.0
+Assault-v5,1,h001,h001-assault-s1,ppo,40000000,69248,246.64324951171875,238.56932067871094,17079552.0,210.0
