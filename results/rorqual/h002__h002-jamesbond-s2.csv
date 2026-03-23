@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Jamesbond-v5,2,h002,h002-jamesbond-s2,pqn,40000000,60416,13.559322357177734,9.322033882141113,819200.0,0.0
