@@ -12641,3 +12641,47 @@ Need to:
 4. Compare PPO vs PQN vs Rainbow-lite on full Atari57
 5. Identify any failure modes / inconsistencies on new games
 6. Write final paper narrative
+
+---
+**[2026-03-23 17:19 UTC]**
+
+## Session 230: CRITICAL BUG — Phase 4 h001/h002 ran at 10M instead of 40M. Fixed and resubmitting.
+
+### CRITICAL BUG FOUND:
+Phase 4 Atari57 batch (Session 229) was missing '--total-timesteps 40000000' for h001 (PPO) and h002 (PQN) commands. Scripts default to 10M. All h001/h002 experiments completed at WRONG 10M steps (~35 min each instead of ~3h).
+
+h064 (Rainbow-lite) is UNAFFECTED — dqn_atari_envpool_rainbow_lite.py defaults to 40M.
+
+### ACTIONS TAKEN:
+1. Identified bug: compared completed walltimes (~35 min) vs expected (~3h for PPO/PQN at 40M)
+2. Verified: ppo_atari_envpool.py and pqn_atari_envpool.py default to total_timesteps=10000000
+3. Created corrected batch (batch_phase4_h001_h002_40M_fix.json) with --total-timesteps 40000000
+4. Submitting 252 corrected experiments (126 h001 + 126 h002) across 4 clusters — submission in progress
+5. 10M results NOT banked (wrong timestep count, will be overwritten by 40M runs)
+
+### h002 15-GAME GAP-FILL:
+Discovered h002 PQN was missing 10/45 experiments from original 15-game evaluation:
+- Missing: Alien s1/s3, Amidar s1/s3, BattleZone s1/s3, Breakout s1, NameThisGame s1/s3, Solaris s1
+- Old CSVs exist but in wrong format (missing q4/auc metrics)
+- Submitted 10 gap-fill experiments with corrected script at 40M
+
+### CURRENT STATE:
+- h064 Rainbow-lite Phase 4: 55 running + 71 pending (CORRECT 40M, ETA ~23:00 UTC)
+- h001 PPO Phase 4: Resubmission in progress (252 exp batch submitting)
+- h002 PQN Phase 4: Resubmission in progress + 10 gap-fill for original 15 games
+
+### h001 PPO Phase 1-3: 45/45 COMPLETE (15 games × 3 seeds at 40M) — all banked
+### h002 PQN Phase 1: 35/45 banked + 10 gap-fill submitted → will be 45/45
+### h064 Rainbow-lite Phase 3: 45/45 COMPLETE (15 games × 3 seeds at 40M) — all banked
+
+### ETA FOR CORRECTED PHASE 4:
+- h001/h002 PPO/PQN: ~3h per job (PPO at 40M with envpool) → first completions ~20:30 UTC Mar 23
+- h064 Rainbow-lite: ~11h per job → first completions ~23:00 UTC Mar 23
+- Full Phase 4 completion: ~12:00-24:00 UTC Mar 24
+
+### NEXT SESSION TODO:
+1. Verify 252-job batch submitted successfully (check output)
+2. Bank h064 Phase 4 results as they complete
+3. Bank h001/h002 40M Phase 4 results when they complete
+4. Bank h002 gap-fill results
+5. Compute Atari57 IQM comparison when sufficient data available

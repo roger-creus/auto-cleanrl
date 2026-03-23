@@ -157,3 +157,21 @@ Job 8909264 on rorqual had the SAME path quoting failure as narval:
 - Resubmitted to nibi as job 10786553 (attempt #4)
 - The path quoting issue appears to be a xgenius bug in individual resubmissions (vs batch submissions which work fine)
 - All batch-submitted narval jobs are running normally — only individual `xgenius submit` calls produce the quoting error
+
+## 2026-03-23 17:00 — Phase 4 h001/h002 missing --total-timesteps 40000000
+
+The Phase 4 Atari57 batch (batch_phase4_atari57.json, Session 229) omitted `--total-timesteps 40000000` 
+from h001 (PPO) and h002 (PQN) commands. Both scripts default to 10M steps, so all 252 h001/h002 Phase 4 
+experiments ran at 10M instead of the required 40M.
+
+h064 (Rainbow-lite) was NOT affected — dqn_atari_envpool_rainbow_lite.py defaults to 40M.
+
+**Symptoms**: Jobs completed in ~35 min (expected ~3h for PPO/PQN at 40M). CSVs showed total_timesteps=10000000.
+
+**Fix**: Created corrected batch (batch_phase4_h001_h002_40M_fix.json) with explicit --total-timesteps 40000000 
+and resubmitted all 252 experiments.
+
+**Root cause**: Batch generation script didn't include total_timesteps flag, relying on script defaults which 
+differ between PPO/PQN (10M default) and DQN/Rainbow-lite (40M default).
+
+**Prevention**: Always include --total-timesteps explicitly in batch commands regardless of script defaults.
