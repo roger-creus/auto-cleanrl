@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Qbert-v5,2,h064,h064-qbert-s2,dqn_rainbow_lite,40000000,117296,261.6048278808594,251.60960388183594,30685200.0,315.0

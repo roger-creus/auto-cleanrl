@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Solaris-v5,2,h001,h001-solaris-s2,ppo,40000000,5504,2193.953369140625,2468.837158203125,12075520.0,2100.0
+MsPacman-v5,2,h063,h063-mspacman-s2,iqn,40000000,70704,519.5406494140625,498.58111572265625,36733600.0,754.0

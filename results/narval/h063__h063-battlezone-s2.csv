@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Solaris-v5,2,h001,h001-solaris-s2,ppo,40000000,5504,2193.953369140625,2468.837158203125,12075520.0,2100.0
+BattleZone-v5,2,h063,h063-battlezone-s2,iqn,40000000,22816,3177.41943359375,3373.071533203125,72496000.0,3400.0

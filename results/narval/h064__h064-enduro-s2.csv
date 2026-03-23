@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Enduro-v5,2,h064,h064-enduro-s2,dqn_rainbow_lite,40000000,12016,20.4340877532959,20.985353469848633,245536.0,12.199999809265137
