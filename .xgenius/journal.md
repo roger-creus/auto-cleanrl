@@ -12286,3 +12286,49 @@ Rainbow-lite remains the clear leader. Missing seeds are all in top-quartile gam
 2. Bank h063-qbert-s2 from rorqual when complete (~10h)
 3. After 45/45 for all: compute final 3-seed IQM with bootstrap confidence intervals
 4. Final comparison and write-up
+
+---
+**[2026-03-23 05:02 UTC]**
+
+## Session 223: h063-qbert-s2 rorqual FAILED (path quoting) — resubmitted to nibi (attempt #4)
+
+### Triggered by: h063-qbert-s2 (job 8909264, rorqual SUCCESS marker but ACTUALLY FAILED)
+
+### h063-qbert-s2 FAILURE (3rd time):
+Job 8909264 on rorqual had IDENTICAL path quoting error as narval job 58120116:
+- slurmstepd: error: couldn't chdir to /home/rogercc/'/scratch/rogercc/cleanrl' — embedded single quotes
+- python: can't open file '/src/cleanrl/dqn_atari_envpool_iqn.py': No such file or directory
+- Exit code 0 but NO results produced
+- Failure history: fir (CUDA error), narval (path quoting), rorqual (path quoting)
+- Resubmitted to NIBI as job 10786553 (attempt #4)
+
+### DIAGNOSIS:
+The path quoting bug affects individual xgenius submit calls but NOT batch-submitted jobs. All 5 currently running narval jobs (from original batch) work fine. The issue is specific to how xgenius renders the SBATCH template for individual submissions.
+
+### PHASE 3 COVERAGE (unchanged):
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 42/45 banked — missing: qbert-s2 (nibi 10786553), amidar-s3 (narval running), mspacman-s3 (narval running)
+- h064 Rainbow-lite: 44/45 banked — missing: privateeye-s3 (narval running)
+- h066 IQN+OQE: 43/45 banked — missing: amidar-s3 (narval running), mspacman-s3 (narval running)
+
+### 6 REMAINING EXPERIMENTS:
+- narval (5 running, ~7h/11h): h063-amidar-s3, h063-mspacman-s3, h064-privateeye-s3, h066-amidar-s3, h066-mspacman-s3
+- nibi (just submitted): h063-qbert-s2 (job 10786553)
+
+### ETA:
+- 5 narval jobs: ~10:00-10:30 UTC Mar 23
+- h063-qbert-s2 nibi: ~16:00-17:00 UTC Mar 23
+- Full Phase 3 completion: ~17:00 UTC Mar 23
+
+### INTERIM IQM (delta HNS vs PPO, 15 games):
+| Algorithm | IQM dHNS | W/L/T |
+|-----------|----------|-------|
+| h064 Rainbow-lite | +0.0086 | 10/4/1 LEADER |
+| h066 IQN+OQE | -0.0038 | 10/4/1 |
+| h063 IQN | -0.0042 | 10/4/1 |
+
+### NEXT SESSION TODO:
+1. Bank remaining 5 narval results when they complete (~3-4h)
+2. Bank h063-qbert-s2 from nibi when complete (~10h)
+3. After 45/45 for all: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO

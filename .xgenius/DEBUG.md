@@ -147,3 +147,13 @@ Job 58120116 on narval completed in 47 seconds with exit_code=0 but produced no 
 - Other narval jobs from same batch (submitted 22:17 UTC) worked fine — issue may be intermittent or specific to the resubmission path
 
 **Note:** 5 other narval jobs from the original batch are still running normally at ~6.5h elapsed.
+
+## 2026-03-23 ~05:00 — h063-qbert-s2 rorqual resubmit ALSO failed (same path quoting)
+Job 8909264 on rorqual had the SAME path quoting failure as narval:
+- `slurmstepd: error: couldn't chdir to /home/rogercc/'/scratch/rogercc/cleanrl'`
+- `python: can't open file '/src/cleanrl/dqn_atari_envpool_iqn.py': [Errno 2] No such file or directory`
+- Exit code 0 but no results produced
+- This is the 3rd failure for h063-qbert-s2 (fir CUDA error, narval path quoting, rorqual path quoting)
+- Resubmitted to nibi as job 10786553 (attempt #4)
+- The path quoting issue appears to be a xgenius bug in individual resubmissions (vs batch submissions which work fine)
+- All batch-submitted narval jobs are running normally — only individual `xgenius submit` calls produce the quoting error
