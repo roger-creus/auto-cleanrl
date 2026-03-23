@@ -12718,3 +12718,82 @@ Discovered h002 PQN was missing 10/45 experiments from original 15-game evaluati
 3. Bank h002 gap-fill results (10 original-15 experiments)
 4. Monitor for failures — check errors/logs
 5. When sufficient data: begin Atari57 IQM analysis
+
+---
+**[2026-03-23 18:05 UTC]**
+
+## Session 231: Phase 4 status check — all jobs still in progress, no new results to bank
+
+### Triggered by: Large batch of h001/h002 completions from rorqual/narval/nibi/fir
+
+### FINDING: Triggered completions are ALL from the INCORRECT 10M batch (Session 229 bug)
+These jobs lack --total-timesteps 40000000. CSVs show total_timesteps=10000000. NOT BANKED.
+The corrected 40M batch (Session 230) jobs are still running/pending.
+
+IMPORTANT: When banking future results, VERIFY total_timesteps=40000000 in the CSV. The 10M CSVs exist in results/ directories but must be ignored. The 40M jobs will overwrite them on the cluster when they complete.
+
+### PHASE 4 CURRENT STATUS (all new 42-game experiments):
+
+| Algorithm | Completed | Running | Pending | Total | ETA first completion |
+|-----------|-----------|---------|---------|-------|---------------------|
+| h064 Rainbow-lite | 0 | 89 | 37 | 126 | ~04:00 UTC Mar 24 |
+| h001 PPO (40M fix) | 0 | 16 | 110 | 126 | ~20:30 UTC Mar 23 |
+| h002 PQN (40M fix) | 0 | 16 | 110 | 126 | ~19:30 UTC Mar 23 |
+| h002 gap-fill | 0 | 3 | 7 | 10 | ~19:00 UTC Mar 23 |
+
+Jobs well-distributed across narval/rorqual/nibi/fir (~30 per cluster per algorithm).
+h064 has priority in the queue (89 running) while h001/h002 mostly pending behind them.
+
+### ALREADY BANKED (from Phase 1-3, still valid):
+- h001 PPO: 45/45 (15 games × 3 seeds at 40M) ✓
+- h002 PQN: 35/45 (missing 10 gap-fill experiments)
+- h064 Rainbow-lite: 45/45 (15 games × 3 seeds at 40M) ✓
+
+### NEXT SESSION TODO:
+1. When h001/h002 40M Phase 4 jobs complete: VERIFY total_timesteps in CSV = 40000000 before banking
+2. Bank h064 Phase 4 results when Rainbow-lite 11h jobs complete (~04:00 UTC Mar 24)
+3. Bank h002 gap-fill results (10 original-15 experiments) when they complete
+4. Begin Atari57 IQM analysis as results accumulate
+5. WARNING: 10M CSVs exist in results/ dirs — always check total_timesteps field
+
+---
+**[2026-03-23 18:17 UTC]**
+
+## Session 232: Banked h002 gap-fill (45/45 orig15 complete). Phase 4 40M jobs still running.
+
+### Triggered by: h001-seaquest-s3, h002-stargunner-s2, h001-kungfumaster-s3, h001-demonattack-s3
+
+### FINDING: Triggered completions are from WRONG 10M batch (Session 229 bug)
+All 4 triggered jobs show total_timesteps=10000000 in their CSVs. These are from the first Phase 4 batch that was missing --total-timesteps 40000000 for h001/h002. NOT BANKED.
+
+The corrected 40M batch (Session 230, submitted ~17:38 UTC) is still running:
+- h001 PPO: 36 running, 127 pending (corrected 40M, ~3h per job → first completions ~21:00 UTC)
+- h002 PQN: 36 running, 134 pending (corrected 40M, ~3h per job → first completions ~21:00 UTC)
+- h064 Rainbow-lite: 103 running, 23 pending (original batch, already 40M, ~11h → first completions ~23:00 UTC)
+
+### BANKED: 10 h002 gap-fill experiments (orig15)
+Banked 10 missing h002 PQN experiments for original 15 games:
+- Alien s1 (q4=176.38), Alien s3 (q4=181.37)
+- Amidar s1 (q4=32.16), Amidar s3 (q4=30.99)
+- BattleZone s1 (q4=3349.28), BattleZone s3 (q4=3473.43)
+- Breakout s1 (q4=1.65)
+- NameThisGame s1 (q4=1282.28), NameThisGame s3 (q4=1591.27)
+- Solaris s1 (q4=504.0)
+h002 PQN NOW 45/45 COMPLETE for original 15 games.
+
+### PHASE 4 STATUS:
+- h001 PPO orig15: 45/45 COMPLETE ✓
+- h002 PQN orig15: 45/45 COMPLETE ✓ (just completed gap-fill)
+- h064 Rainbow-lite orig15: 45/45 COMPLETE ✓
+- Phase 4 new 42 games: ZERO results available yet (corrected batch still running)
+- No failures detected in corrected batch
+
+### IMPORTANT WARNING FOR FUTURE SESSIONS:
+10M CSVs from wrong batch exist in results/ directories. ALWAYS verify total_timesteps=40000000 before banking any Phase 4 results. The old 10M CSVs use experiment IDs like h001-assault-s1 (same as corrected batch) — the corrected 40M results will OVERWRITE them on the cluster when they complete.
+
+### NEXT SESSION TODO:
+1. Bank h001/h002 corrected 40M Phase 4 results as they complete (first ~21:00 UTC Mar 23)
+2. Bank h064 Phase 4 results when they complete (~23:00-24:00 UTC Mar 23)
+3. Verify total_timesteps=40000000 in EVERY CSV before banking
+4. Begin Atari57 IQM analysis when sufficient data available
+5. Full Phase 4 completion ETA: ~12:00-24:00 UTC Mar 24

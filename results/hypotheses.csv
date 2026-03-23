@@ -1,6 +1,6 @@
 hypothesis_id,description,motivation,status,comment
 h001,,,closed,"BASELINE. IQM HNS=-0.0002 (15g, 38 seeds)."
-h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,closed,PQN BASELINE. IQM HNS=-0.0145 (15 games). Significantly worse than PPO by IQM. DoubleDunk HNS=-2.45 dominates mean but IQM trims it.
+h002,PQN baseline (envpool),Establish PQN performance baseline on 15-game Atari subset,closed,PQN baseline. 45/45 orig15 banked (gap-fill complete). Phase 4 Atari57 42 new games at 40M in progress.
 h003,PPO + LayerNorm,Add LayerNorm to PPO NatureCNN — known plasticity intervention from CHAIN-SP paper,closed,IQM HNS=-0.0014 (15g). Below PPO baseline. Neutral. Closed.
 h004,PQN + NaP (weight projection),"Add Normalize-and-Project to PQN — complement existing LayerNorm, top plasticity method from Plasticine",closed,IQM HNS=-0.0092 (15g). Better than PQN baseline (-0.0145) but well below PPO. Not competitive. Closed.
 h005,PPO + LayerNorm + CHAIN-SP,Full CHAIN-SP approach: LayerNorm + churn reduction loss for PPO,closed,"IQM HNS=-0.0004 (15g, 3-seed). BELOW PPO baseline. W/L net+1 was misleading — IQM reveals no real improvement. Closed."
