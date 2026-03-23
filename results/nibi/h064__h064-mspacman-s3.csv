@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+MsPacman-v5,3,h064,h064-mspacman-s3,dqn_rainbow_lite,40000000,67872,534.2079467773438,512.828857421875,36257760.0,702.0
