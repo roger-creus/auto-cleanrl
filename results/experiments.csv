@@ -1285,3 +1285,8 @@ h002-jamesbond-s2,h002,,Phase 4 Atari57 (rorqual),Jamesbond-v5,2,pqn,40000000,,1
 h001-gravitar-s2,h001,,Phase 4 Atari57 (rorqual),Gravitar-v5,2,ppo,40000000,,189.0,196.8000030517578,12096000.0,
 h002-defender-s1,h002,,Phase 4 Atari57 (rorqual),Defender-v5,1,pqn,40000000,,2434.5283203125,2458.867919921875,165158400.0,
 h002-frostbite-s1,h002,,Phase 4 Atari57 (rorqual),Frostbite-v5,1,pqn,40000000,,89.59326934814453,99.9719467163086,8176640.0,
+h001-centipede-s1,h001,,Phase 4 Atari57 (rorqual),Centipede-v5,1,ppo,40000000,,2260.80908203125,2235.358642578125,125881856.0,
+h002-icehockey-s1,h002,,Phase 4 Atari57 (rorqual),IceHockey-v5,1,pqn,40000000,,-12.977777481079102,-13.155555725097656,-149504.0,
+h001-asteroids-s2,h001,,Phase 4 Atari57 (rorqual),Asteroids-v5,2,ppo,40000000,,834.5201416015625,815.8513793945312,34502400.0,
+h001-demonattack-s1,h001,,Phase 4 Atari57 (rorqual),DemonAttack-v5,1,ppo,40000000,,152.453125,147.0625,6244480.0,
+h002-kangaroo-s3,h002,,Phase 4 Atari57 (rorqual),Kangaroo-v5,3,pqn,40000000,,159.6491241455078,355.5555419921875,13977600.0,

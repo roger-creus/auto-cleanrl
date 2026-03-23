@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+StarGunner-v5,2,h002,h002-stargunner-s2,pqn,10000000,10112,477.2151794433594,465.8227844238281,4825600.0,400.0

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+DemonAttack-v5,2,h002,h002-demonattack-s2,pqn,40000000,18432,715.5555419921875,922.2222290039062,13189120.0,1540.0

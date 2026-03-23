@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Asteroids-v5,3,h002,h002-asteroids-s3,pqn,40000000,64128,197.624755859375,144.0718536376953,12673280.0,110.0

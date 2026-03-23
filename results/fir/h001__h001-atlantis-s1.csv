@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Atlantis-v5,1,h001,h001-atlantis-s1,ppo,10000000,7680,15865.0,14633.3330078125,121843200.0,15600.0

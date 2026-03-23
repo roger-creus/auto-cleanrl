@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Krull-v5,3,h001,h001-krull-s3,ppo,10000000,7424,1551.72412109375,1475.5172119140625,11520000.0,1910.0

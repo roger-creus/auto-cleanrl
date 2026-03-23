@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Skiing-v5,3,h002,h002-skiing-s3,pqn,10000000,2560,-27668.400390625,-29984.19921875,-70831104.0,-29965.0

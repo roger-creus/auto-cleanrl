@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Frostbite-v5,2,h002,h002-frostbite-s2,pqn,10000000,26112,85.78431701660156,87.45098114013672,2240000.0,200.0

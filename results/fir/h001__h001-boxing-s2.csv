@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Boxing-v5,2,h001,h001-boxing-s2,ppo,10000000,5504,0.7441860437393188,-1.116279125213623,4096.0,-12.0

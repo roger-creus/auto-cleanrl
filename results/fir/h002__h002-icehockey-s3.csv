@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+IceHockey-v5,3,h002,h002-icehockey-s3,pqn,10000000,2816,-11.363636016845703,-10.545454978942871,-32000.0,-9.0

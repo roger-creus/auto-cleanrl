@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Tutankham-v5,2,h002,h002-tutankham-s2,pqn,10000000,1536,14.0,0.3333333432674408,21504.0,1.0
