@@ -12563,3 +12563,81 @@ Rainbow-lite CLEAR LEADER. IQM will not change meaningfully when h063-qbert-s2 c
 2. Compute final 3-seed IQM with bootstrap CIs for all algorithms
 3. Final Phase 3 comparison report
 4. Plan Phase 4 (Final Phase): Atari57 evaluation
+
+---
+**[2026-03-23 16:02 UTC]**
+
+## Session 229: h063 COMPLETE (45/45). PHASE 3 FINAL RESULTS.
+
+### Triggered by: h063-qbert-s2 (job 58120899, narval SUCCESS) — attempt #6 finally worked
+
+### RESULT BANKED: 1
+h063-qbert-s2: IQN Qbert seed 2, q4=216.61 (vs s1=219.30, s3=217.19). Very consistent. 3-seed avg q4=217.70. PPO avg=158.44 BIG WIN (+37%).
+
+### ALL PHASE 3 ALGORITHMS NOW 45/45 COMPLETE ★
+
+### FINAL 3-SEED IQM (delta-HNS vs PPO, bootstrap 95% CI):
+| Algorithm | IQM dHNS | 95% CI | W/L/T |
+|-----------|----------|--------|-------|
+| h064 Rainbow-lite | +0.0082 | [-0.0045, +0.0144] | 10/4/1 LEADER ★ |
+| h066 IQN+OQE | +0.0027 | [-0.0283, +0.0120] | 10/4/1 |
+| h063 IQN | +0.0025 | [-0.0282, +0.0114] | 10/4/1 |
+
+### ABSOLUTE HNS IQM:
+| Algorithm | Abs IQM | 95% CI |
+|-----------|---------|--------|
+| h064 Rainbow-lite | 0.0112 | [0.0048, 0.0183] ★ only CI fully > 0 |
+| h066 IQN+OQE | 0.0038 | [-0.0158, 0.0104] |
+| h063 IQN | 0.0032 | [-0.0166, 0.0096] |
+| h001 PPO | -0.0003 | [-0.0012, 0.0057] |
+
+### KEY FINDINGS:
+1. Rainbow-lite (h064) is the CLEAR LEADER — only algorithm with positive delta-HNS IQM and absolute HNS IQM CI fully above 0
+2. IQN (h063) and OQE (h066) are essentially TIED (IQM difference = 0.0002, CIs overlap completely)
+3. ALL three DQN variants beat PPO on 10/15 games with identical W/L/T = 10/4/1
+4. Common losses across all DQN: DoubleDunk (-2.18 to -3.38 dHNS), Phoenix (-0.10), Solaris (-0.06 to -0.14), NameThisGame (-0.003 to -0.14)
+5. Rainbow-lite advantage: much smaller losses on Solaris (-0.058 vs -0.13) and NameThisGame (-0.003 vs -0.14), plus big Enduro gain (+0.025)
+6. OQE adds essentially nothing over IQN — the novel exploration method didn't produce statistically distinguishable results in the 3-seed evaluation
+
+### PHASE 3 SUMMARY:
+Phase 3 evaluated the top 3 algorithms from Phase 2 with 3 seeds × 15 games (45 experiments each, 135 total + 45 PPO baseline = 180 experiments).
+- Rainbow-lite is the clear winner with IQM dHNS = +0.0082 vs PPO
+- This beats every PPO variant tested in Phase 2 (best was h020 at +0.0038)
+- However, the 95% CI for delta-HNS still includes 0, so the improvement is not statistically significant at p<0.05
+
+### NEXT: Phase 4 (Final Phase) — Atari57 evaluation
+Per research_goal.md: Run PPO, PQN, and Rainbow-lite on full Atari57 suite × 40M steps.
+Need to:
+1. Set up Atari57 game list
+2. Adapt Rainbow-lite script for all 57 games
+3. Submit 57 games × 3 seeds × 3 algorithms = 513 experiments
+4. This will be the definitive benchmark
+
+---
+**[2026-03-23 16:52 UTC]**
+
+## Session 229 (continued): Phase 4 Atari57 batch SUBMITTED — 378 experiments
+
+### ALL 378 PHASE 4 EXPERIMENTS SUBMITTED SUCCESSFULLY:
+- 126 PPO (h001) × 42 new games × 3 seeds
+- 126 PQN (h002) × 42 new games × 3 seeds  
+- 126 Rainbow-lite (h064) × 42 new games × 3 seeds
+- Distributed: narval(95), rorqual(95), nibi(94), fir(94)
+- Walltime: 11h each
+
+### Combined with existing 15-game results:
+- Total Atari57 coverage after Phase 4: 57 games × 3 seeds × 3 algorithms = 513 experiments
+- (15 games × 3 seeds already banked from Phases 1-3 for h001 and h064)
+- PQN (h002) has 15 games from Phase 1 but may need revalidation
+
+### ETA:
+- First completions: ~23:00 UTC Mar 23 (11h from now)
+- All completions: ~12:00-24:00 UTC Mar 24 (depending on queue delays)
+
+### NEXT SESSION TODO:
+1. As jobs complete, bank results to experiments.csv
+2. Monitor for failures (check errors/logs)
+3. After all 378 complete: compute Atari57 IQM with bootstrap CIs
+4. Compare PPO vs PQN vs Rainbow-lite on full Atari57
+5. Identify any failure modes / inconsistencies on new games
+6. Write final paper narrative
