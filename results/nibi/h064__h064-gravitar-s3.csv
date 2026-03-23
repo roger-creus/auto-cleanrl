@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Gravitar-v5,3,h064,h064-gravitar-s3,dqn_rainbow_lite,40000000,67952,104.43843078613281,101.37744140625,7096800.0,0.0

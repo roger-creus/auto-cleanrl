@@ -13615,3 +13615,47 @@ h064 Rainbow-lite (1): Assault-v5 q4=374.16 (rorqual)
 2. Bank h064 Phase 4 results (continuing to trickle in from nibi)
 3. Begin Atari57 IQM analysis when >40 games banked per algorithm
 4. Full Phase 4 completion ETA: ~08:00-14:00 UTC Mar 24
+
+---
+**[2026-03-23 21:30 UTC]**
+
+## Session 254: Banked 12 Phase 4 40M results (10 triggered + 2 from pull)
+
+### Triggered by: 13 completions across rorqual/narval/nibi
+
+### NEW RESULTS BANKED (12):
+h001 PPO (1): Asterix-v5 s2 q4=234.15 (narval)
+h064 Rainbow-lite (11):
+- BankHeist-v5 s2 q4=17.55 (rorqual)
+- Bowling-v5 s1 q4=30.01 (rorqual)
+- CrazyClimber-v5 s1 q4=626.61 (rorqual)
+- Defender-v5 s2 q4=3547.22 (rorqual)
+- Gopher-v5 s3 q4=170.29 (rorqual)
+- Jamesbond-v5 s3 q4=34.02 (rorqual)
+- BeamRider-v5 s2 q4=714.60 (nibi)
+- ChopperCommand-v5 s3 q4=746.87 (nibi)
+- Gravitar-v5 s3 q4=101.38 (nibi)
+- Atlantis-v5 s1 q4=4744.29 (found via pull)
+- Surround-v5 s3 q4=-9.96 (found via pull)
+
+### ALREADY BANKED (3, from prior session):
+h001-assault-s1, h002-assault-s2, h002-asterix-s3
+
+### PHASE 4 BANKING TOTALS (21:15 UTC Mar 23):
+- h001 PPO: 69 banked, 38/57 unique games
+- h002 PQN: 69 banked, 37/57 unique games
+- h064 Rainbow-lite: 63 banked, 29/57 unique games
+- Target: 171 per algorithm (57 games × 3 seeds), Total: 201/513 (39.2%)
+
+### SLURM STATUS:
+- h001: 35 running, 73 pending
+- h002: 37 running, 78 pending
+- h064: 105 running, 5 pending
+- Total: 177R + 156P = 333 active SLURM jobs
+
+### NEXT SESSION TODO:
+1. Bank more h001/h002/h064 40M results as they arrive
+2. h064 bulk completions expected ~03:00-06:00 UTC Mar 24
+3. h001/h002 completions ongoing, pending queue large
+4. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+

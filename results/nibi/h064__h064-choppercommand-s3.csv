@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+ChopperCommand-v5,3,h064,h064-choppercommand-s3,dqn_rainbow_lite,40000000,95168,731.758544921875,746.8729248046875,69640000.0,1080.0

@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+BankHeist-v5,2,h064,h064-bankheist-s2,dqn_rainbow_lite,40000000,26480,15.11178207397461,17.54682731628418,400160.0,10.0

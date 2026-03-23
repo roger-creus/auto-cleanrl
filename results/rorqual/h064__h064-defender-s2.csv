@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Asterix-v5,2,h001,h001-asterix-s2,ppo,40000000,164736,236.55789184570312,234.14918518066406,38969600.0,250.0
+Defender-v5,2,h064,h064-defender-s2,dqn_rainbow_lite,40000000,25888,3353.275634765625,3547.21875,86809600.0,4890.0
