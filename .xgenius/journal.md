@@ -11739,3 +11739,82 @@ Seed-3 (22 jobs, ~3-4h elapsed / 11h → ~7-8h remaining):
 1. Bank seed-2/3 results as they arrive
 2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 02:15 UTC]**
+
+## Session 210: Bank h064-breakout-s2 — 24 Phase 3 jobs running
+
+### Triggered by: h064-breakout-s2 (job 58105283, narval SUCCESS)
+
+### RESULT BANKED: 1
+h064-breakout-s2: Rainbow-lite Breakout seed 2, q4=2.03 (vs s1=2.04, s3=2.01). All 3 seeds complete. 3-seed avg q4=2.024. PPO avg=1.50 WIN (+35%). Very consistent ~2.0 across all seeds.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 37/45 banked (8/15 games 3-seed complete) + 8 running
+- h064 Rainbow-lite: 37/45 banked (7/15 games 3-seed complete) + 8 running
+- h066 IQN+OQE: 37/45 banked (7/15 games 3-seed complete) + 8 running
+All 24 missing experiments covered by running jobs. No gaps.
+
+### 24 RUNNING JOBS (~02:30 UTC Mar 23):
+All remaining are seed-3, plus 2 seed-2 stragglers:
+- Seed-2 remaining (2): h063-qbert-s2 (fir), h066-solaris-s2 (narval)
+- Seed-3 (22): spread across narval/nibi/fir
+
+### ETA:
+- Seed-2 completions: ~05:00 UTC Mar 23 (~2.5h)
+- Seed-3 bulk completions: ~07:00-10:00 UTC Mar 23
+- Full Phase 3 completion: ~10:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 03:26 UTC]**
+
+## Session 211: Bank h066-solaris-s2 — 23 Phase 3 jobs running
+
+### Triggered by: h066-solaris-s2 (job 58105403, narval SUCCESS)
+
+### RESULT BANKED: 1
+h066-solaris-s2: IQN+OQE Solaris seed 2, q4=791.39 (vs s1=904.98, s3=862.54). All 3 OQE Solaris seeds now complete. 3-seed avg q4=852.97. PPO avg=2279.89 BIG LOSS (-62.6%). IQN avg=778.38. OQE slightly better than IQN (+9.6%).
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 37/45 banked (8/15 games 3-seed complete) + 8 running
+- h064 Rainbow-lite: 37/45 banked (7/15 games 3-seed complete) + 8 running
+- h066 IQN+OQE: 38/45 banked (8/15 games 3-seed complete) + 7 running
+All 23 missing experiments covered by running jobs. No gaps.
+
+### KEY OBSERVATION: h063/h066 and h064 have COMPLEMENTARY completion patterns
+h063/h066 complete: Alien, BattleZone, DoubleDunk, MontezumaRevenge, NameThisGame, PrivateEye, Solaris, Venture (8 games)
+h064 complete: Amidar, Breakout, Enduro, MsPacman, Phoenix, Qbert, SpaceInvaders (7 games)
+Zero overlap — no game has all 3 methods at 3 seeds yet. Next batch of completions will start filling the overlap.
+
+### IQM COMPARISON (delta HNS vs PPO, 15 games, using available seeds):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T |
+|-----------|----------|-------------|-------|
+| h064 Rainbow-lite | +0.0083 | +0.0072 | 8/3/4 LEADER |
+| h066 IQN+OQE | -0.0068 | +0.0042 | 7/4/4 |
+| h063 IQN | -0.0071 | +0.0046 | 7/4/4 |
+
+Rainbow-lite continues to lead. Both IQN variants pulled negative by DoubleDunk outlier. By median all beat PPO.
+
+### 23 RUNNING JOBS (~23:30 UTC Mar 22):
+- h063-qbert-s2 (fir): 9:41/11:00 — completing ~01:00 UTC Mar 23
+- narval seed-3 (8): ~5:05/11:00 — completing ~05:30 UTC Mar 23
+- nibi seed-3 (7): ~4:15-4:33/11:00 — completing ~06:00 UTC Mar 23
+- fir seed-3 (7): ~4:56-5:07/11:00 — completing ~05:30 UTC Mar 23
+
+### ETA:
+- h063-qbert-s2: ~01:00 UTC Mar 23
+- Seed-3 bulk completions: ~05:30-06:00 UTC Mar 23
+- Full Phase 3 completion: ~06:00 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank seed-2/3 results as they arrive
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
