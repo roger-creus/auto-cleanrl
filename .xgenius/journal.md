@@ -12479,3 +12479,87 @@ All 15 games × 3 seeds banked. Final Phase 3 IQM delta-HNS vs PPO = -0.0038 (W1
 3. After 45/45 for h063: compute FINAL 3-seed IQM with bootstrap confidence intervals
 4. Write final Phase 3 comparison report
 5. Plan Phase 4 (Final Phase): Atari57 evaluation
+
+---
+**[2026-03-23 05:45 UTC]**
+
+## Session 227: Bank h063-mspacman-s3 — h063 at 43/45, 2 jobs remaining
+
+### Triggered by: h063-mspacman-s3 (job 58109779, narval SUCCESS)
+
+### RESULT BANKED: 1
+h063-mspacman-s3: IQN MsPacman seed 3, q4=505.31 (vs s1=496.64, s2=498.58). All 3 IQN MsPacman seeds complete. 3-seed avg q4=500.18. PPO avg=319.11 WIN (+56.7%). Rainbow-lite avg=538.98 LOSS (-7.2%). OQE avg=502.44 — essentially tied.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 43/45 banked (13/15 games 3-seed complete)
+  Missing: Amidar-s3 (RUNNING narval 58109764, ~7.5h/11h elapsed), Qbert-s2 (PENDING fir 29079898, 5th attempt)
+- h064 Rainbow-lite: 45/45 COMPLETE
+- h066 IQN+OQE: 45/45 COMPLETE
+
+### IQM COMPARISON (delta-HNS vs PPO, 15 games, trim-3):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T | Seeds |
+|-----------|----------|-------------|-------|-------|
+| h064 Rainbow-lite | +0.0086 | +0.0046 | 10/4/1 | 45/45 FINAL |
+| h066 IQN+OQE | -0.0038 | +0.0043 | 10/4/1 | 45/45 FINAL |
+| h063 IQN | -0.0042 | +0.0045 | 10/4/1 | 43/45 |
+
+Rainbow-lite CLEAR LEADER — only algorithm with positive IQM. Final h063 IQM unlikely to change (missing seeds are for Amidar and Qbert, both already wins with 2 seeds).
+
+### 2 REMAINING EXPERIMENTS:
+- narval 58109764: h063-amidar-s3 (~3.5h remaining)
+- fir 29079898: h063-qbert-s2 (PENDING, 5th attempt — batch-submitted to avoid path quoting bug)
+
+### ETA:
+- h063-amidar-s3: ~09:00-09:30 UTC Mar 23
+- h063-qbert-s2: depends on fir queue — could be many hours if still pending
+
+### NEXT SESSION TODO:
+1. Bank h063-amidar-s3 when narval job completes (~3.5h)
+2. Bank h063-qbert-s2 when fir job completes
+3. After 45/45 for h063: compute FINAL 3-seed IQM with bootstrap CIs
+4. Write final Phase 3 comparison report
+5. Plan Phase 4 (Final Phase): Atari57 evaluation
+
+---
+**[2026-03-23 05:54 UTC]**
+
+## Session 228: Bank h063-amidar-s3 (44/45). Resubmit h063-qbert-s2 to narval (attempt #6).
+
+### Triggered by: h063-amidar-s3 (job 58109764, narval SUCCESS)
+
+### RESULT BANKED: 1
+h063-amidar-s3: IQN Amidar seed 3, q4=34.41 (vs s1=34.27, s2=34.31). Very consistent across all 3 seeds. 3-seed avg q4=34.33. PPO avg=2.04 WIN (+1583%).
+
+### h063-qbert-s2:
+Cancelled fir job 29079898 (stuck PENDING 7+ hours with reason '(None)'). Resubmitted to narval via batch-submit as job 58120899 (attempt #6). Batch-submit avoids the path quoting bug that killed narval/rorqual individual submissions.
+
+Failure history for h063-qbert-s2:
+1. fir 28399... - CUDA error
+2. narval 58120116 - path quoting bug (xgenius submit)
+3. rorqual 8909264 - path quoting bug (xgenius submit)
+4. nibi 10786553 - stuck PENDING, cancelled
+5. fir 29079898 - stuck PENDING 7h, cancelled
+6. narval 58120899 - batch-submit (current, should work)
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 44/45 banked (14/15 games 3-seed complete)
+  Missing: Qbert-s2 (narval 58120899, just submitted)
+- h064 Rainbow-lite: 45/45 COMPLETE
+- h066 IQN+OQE: 45/45 COMPLETE
+
+### IQM COMPARISON (delta-HNS vs PPO, 15 games, trim-3):
+| Algorithm | IQM dHNS | Median dHNS | W/L/T | Seeds |
+|-----------|----------|-------------|-------|-------|
+| h064 Rainbow-lite | +0.0086 | +0.0046 | 10/4/1 | 45/45 FINAL |
+| h066 IQN+OQE | -0.0038 | +0.0043 | 10/4/1 | 45/45 FINAL |
+| h063 IQN | -0.0042 | +0.0045 | 10/4/1 | 44/45 |
+
+Rainbow-lite CLEAR LEADER. IQM will not change meaningfully when h063-qbert-s2 completes (Qbert already a win with 2 seeds).
+
+### NEXT SESSION TODO:
+1. Bank h063-qbert-s2 when narval job 58120899 completes (~11h walltime)
+2. Compute final 3-seed IQM with bootstrap CIs for all algorithms
+3. Final Phase 3 comparison report
+4. Plan Phase 4 (Final Phase): Atari57 evaluation
