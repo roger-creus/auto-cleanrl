@@ -1295,3 +1295,8 @@ h002-pong-s3,h002,,Phase 4 Atari57 (rorqual),Pong-v5,3,pqn,40000000,,-20.9134864
 h001-freeway-s3,h001,,Phase 4 Atari57 (rorqual),Freeway-v5,3,ppo,40000000,,0.0,0.0,0.0,
 h001-pitfall-s1,h001,,Phase 4 Atari57 (rorqual),Pitfall-v5,1,ppo,40000000,,-287.09375,-342.40625,-4703744.0,
 h002-pitfall-s2,h002,,Phase 4 Atari57 (rorqual),Pitfall-v5,2,pqn,40000000,,-65.0543441772461,-61.69565200805664,-1532160.0,
+h001-hero-s3,h001,,Phase 4 Atari57 (rorqual),Hero-v5,3,ppo,40000000,,427.95574951171875,527.0442504882812,30949760.0,
+h001-jamesbond-s1,h001,,Phase 4 Atari57 (rorqual),Jamesbond-v5,1,ppo,40000000,,28.828125,32.8125,2361600.0,
+h001-krull-s3,h001,,Phase 4 Atari57 (rorqual),Krull-v5,3,ppo,40000000,,1688.3983154296875,1742.597412109375,49922560.0,
+h001-pong-s2,h001,,Phase 4 Atari57 (rorqual),Pong-v5,2,ppo,40000000,,-20.296829223632812,-20.21613883972168,-901504.0,
+h002-kungfumaster-s1,h002,,Phase 4 Atari57 (rorqual),KungFuMaster-v5,1,pqn,40000000,,38.202247619628906,9.887639999389648,2176000.0,

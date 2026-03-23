@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Freeway-v5,3,h001,h001-freeway-s3,ppo,10000000,4864,0.0,0.0,0.0,0.0
+Freeway-v5,3,h001,h001-freeway-s3,ppo,40000000,19456,0.0,0.0,0.0,0.0

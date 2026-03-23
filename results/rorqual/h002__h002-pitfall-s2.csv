@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Pitfall-v5,2,h002,h002-pitfall-s2,pqn,10000000,5504,-60.53488540649414,-61.86046600341797,-333184.0,-24.0
+Pitfall-v5,2,h002,h002-pitfall-s2,pqn,40000000,23552,-65.0543441772461,-61.69565200805664,-1532160.0,-24.0
