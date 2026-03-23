@@ -12162,3 +12162,39 @@ Remaining (3 running): Amidar-s3, MsPacman-s3, SpaceInvaders-s3
 1. Bank remaining 8 results as they complete
 2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 04:34 UTC]**
+
+## Session 220: Bank h066-spaceinvaders-s3 — 7 Phase 3 jobs running
+
+### Triggered by: h066-spaceinvaders-s3 (job 58109790, narval SUCCESS)
+
+### RESULT BANKED: 1
+h066-spaceinvaders-s3: IQN+OQE SpaceInvaders seed 3, q4=247.79 (vs s1=262.71, s2=247.63). All 3 OQE SI seeds complete. 3-seed avg q4=252.71. PPO avg=147.36 WIN (+71.5%). IQN avg=252.02 TIE (+0.3%). Rainbow-lite avg=268.30 LOSS (-5.8%). Very consistent OQE results, slightly below Rainbow-lite on SI.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 41/45 banked (11/15 games 3-seed) + 4 running (qbert-s2, amidar-s3, enduro-s3, mspacman-s3)
+- h064 Rainbow-lite: 44/45 banked (14/15 games 3-seed) + 1 running (privateeye-s3)
+- h066 IQN+OQE: 43/45 banked (13/15 games 3-seed) + 2 running (amidar-s3, mspacman-s3)
+All 7 missing experiments covered by running jobs. No gaps.
+
+### h066 (OQE) 3-SEED COMPLETE GAMES (13/15):
+Alien, BattleZone, Breakout, DoubleDunk, Enduro, MontezumaRevenge, NameThisGame, Phoenix, PrivateEye, Qbert, Solaris, SpaceInvaders, Venture
+Remaining (2 running): Amidar-s3, MsPacman-s3
+
+### 7 RUNNING JOBS (~04:35 UTC Mar 23):
+- fir (2): h063-qbert-s2 (10:49/11:00 → ~11 min!), h063-enduro-s3 (6:15/11:00)
+- narval (5): h063-amidar-s3, h063-mspacman-s3, h064-privateeye-s3, h066-amidar-s3, h066-mspacman-s3 (~6:15/11:00)
+
+### ETA:
+- h063-qbert-s2 (fir): ~04:45 UTC Mar 23 (~11 min)
+- Seed-3 bulk (fir+narval): ~09:15-09:30 UTC Mar 23
+- Full Phase 3 completion: ~09:30 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank h063-qbert-s2 when it arrives (~11 min)
+2. Bank remaining 6 seed-3 results as they complete (~5h)
+3. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
