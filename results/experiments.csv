@@ -1199,3 +1199,9 @@ h064-mspacman-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id 
 h066-battlezone-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id BattleZone-v5 --seed 2,narval completed. IQN+OQE BattleZone seed 2. q4=3681.27 (vs s1=3726.05). Slightly lower but consistent.,BattleZone-v5,2,iqn_oqe,40000000.0,24096.0,3154.71435546875,3681.27490234375,76016000.0,4800.0
 h066-breakout-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Breakout-v5 --seed 2,fir completed. IQN+OQE Breakout seed 2. q4=1.83 (vs s1=1.79). Near-zero game consistent across seeds.,Breakout-v5,2,iqn_oqe,40000000.0,207248.0,1.7560410499572754,1.8327800035476685,363936.0,0.0
 h064-amidar-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Amidar-v5 --seed 2,"narval completed. Rainbow-lite Amidar seed 2, q4=38.51 (vs s1=31.0, s3=36.43). 3-seed avg q4=35.31. All seeds complete for Amidar.",Amidar-v5,2,dqn_rainbow_lite,40000000,72400,39.16883850097656,38.50563430786133,2835824.0,40.79999923706055
+h063-doubledunk-s2,h063,,IQN DoubleDunk seed 2 (Phase 3),DoubleDunk-v5,2,iqn,40000000,14864,-22.101184844970703,-22.533906936645508,-328512.0,-23.600000381469727
+h063-doubledunk-s3,h063,,IQN DoubleDunk seed 3 (Phase 3),DoubleDunk-v5,3,iqn,40000000,14784,-21.978355407714844,-22.571428298950195,-324928.0,-22.0
+h063-montezumarevenge-s3,h063,,IQN MontezumaRevenge seed 3 (Phase 3),MontezumaRevenge-v5,3,iqn,40000000,165648,0.0,0.0,0.0,0.0
+h066-venture-s2,h066,,IQN+OQE Venture seed 2 (Phase 3),Venture-v5,2,iqn_oqe,40000000,17808,2.7852649688720703,4.312668323516846,49600.0,0.0
+h066-qbert-s2,h066,,IQN+OQE Qbert seed 2 (Phase 3),Qbert-v5,2,iqn_oqe,40000000,111248,223.06918334960938,210.9593048095703,24816000.0,150.0
+h064-montezumarevenge-s2,h064,,Rainbow-lite MontezumaRevenge seed 2 (Phase 3),MontezumaRevenge-v5,2,dqn_rainbow_lite,40000000,150848,0.021213406696915627,0.04242681339383125,3200.0,0.0
