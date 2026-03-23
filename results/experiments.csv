@@ -1265,3 +1265,9 @@ h002-assault-s1,h002,python cleanrl/pqn_atari_envpool.py --env-id Assault-v5 --s
 h002-bankheist-s1,h002,,Phase 4 Atari57 (rorqual),BankHeist-v5,1,pqn,40000000,,9.492753982543945,9.565217018127441,335360.0,
 h002-asteroids-s3,h002,python cleanrl/pqn_atari_envpool.py --env-id Asteroids-v5 --seed 3 --hypothesis-id h002 --experiment-id h002-asteroids-s3 --total-timesteps 40000000,Phase 4 42-game. PQN Asteroids seed 3. q4=144.07,Asteroids-v5,3,pqn,40000000,64128,197.624755859375,144.0718536376953,12673280.0,110.0
 h002-centipede-s2,h002,python cleanrl/pqn_atari_envpool.py --env-id Centipede-v5 --seed 2 --hypothesis-id h002 --experiment-id h002-centipede-s2 --total-timesteps 40000000,Phase 4 42-game. PQN Centipede seed 2. q4=2831.48,Centipede-v5,2,pqn,40000000,66560,2290.990478515625,2831.484619140625,152488320.0,1492.0
+h001-asterix-s1,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Asterix-v5,1,ppo,40000000,163712,236.3174285888672,249.02267456054688,38688000.0,450.0
+h001-berzerk-s2,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Berzerk-v5,2,ppo,40000000,174592,165.10264587402344,163.4604034423828,28825600.0,150.0
+h001-bowling-s3,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Bowling-v5,3,ppo,40000000,18944,23.62162208557129,22.027027130126953,447488.0,17.0
+h002-asterix-s2,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Asterix-v5,2,pqn,40000000,56320,339.8863525390625,400.4545593261719,19142400.0,550.0
+h002-berzerk-s3,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Berzerk-v5,3,pqn,40000000,88576,257.32659912109375,279.94219970703125,22792960.0,50.0
+h002-demonattack-s2,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),DemonAttack-v5,2,pqn,40000000,18432,715.5555419921875,922.2222290039062,13189120.0,1540.0
