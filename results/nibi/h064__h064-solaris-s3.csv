@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Solaris-v5,3,h064,h064-solaris-s3,dqn_rainbow_lite,40000000,7232,1360.4425048828125,1735.044189453125,9838720.0,1260.0
