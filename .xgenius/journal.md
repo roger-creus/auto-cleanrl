@@ -12053,3 +12053,39 @@ Rainbow-lite continues to lead despite h064-alien-s3 outlier (139 vs ~278). IQM 
 2. Bank remaining seed-3 results as they complete (~5-6h)
 3. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 04:19 UTC]**
+
+## Session 217: Bank h066-breakout-s3 — 12 Phase 3 jobs running
+
+### Triggered by: h066-breakout-s3 (job 10769697, nibi SUCCESS)
+
+### RESULT BANKED: 1
+h066-breakout-s3: IQN+OQE Breakout seed 3, q4=1.76 (vs s1=1.79, s2=1.83). All 3 OQE Breakout seeds now complete. 3-seed avg q4=1.795. PPO avg=1.50 WIN (+20%). IQN avg=1.83 — OQE marginally lower (-1.9%). Rainbow-lite avg=2.02 — both IQN variants lose on Breakout vs Rainbow-lite. Near-zero game (~1.8/864 possible) so difference is negligible.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 41/45 banked (remaining: amidar-s3, enduro-s3, mspacman-s3, qbert-s2) + 4 running
+- h064 Rainbow-lite: 42/45 banked (remaining: battlezone-s3, privateeye-s3, solaris-s3) + 3 running
+- h066 IQN+OQE: 40/45 banked (remaining: amidar-s3, enduro-s3, mspacman-s3, qbert-s3, spaceinvaders-s3) + 5 running
+All 12 missing experiments covered by running jobs. No gaps.
+
+### h066 (OQE) 3-SEED COMPLETE GAMES (10/15):
+Alien, BattleZone, Breakout, DoubleDunk, MontezumaRevenge, NameThisGame, Phoenix, PrivateEye, Solaris, Venture
+
+### 12 RUNNING JOBS (~04:35 UTC Mar 23):
+- fir (5): h063-qbert-s2 (10:33/11:00 → ~27 min!), h063-enduro-s3, h064-battlezone-s3, h066-enduro-s3, h066-qbert-s3 (~5:00 remaining)
+- narval (5): h063-amidar-s3, h063-mspacman-s3, h064-privateeye-s3, h066-amidar-s3, h066-mspacman-s3, h066-spaceinvaders-s3 (~5:00 remaining)
+- nibi (1): h064-solaris-s3 (~5:00 remaining)
+
+### ETA:
+- h063-qbert-s2 (fir): ~05:00 UTC Mar 23 (~27 min)
+- Seed-3 bulk completions: ~10:00-11:00 UTC Mar 23
+- Full Phase 3 completion: ~10:30 UTC Mar 23
+
+### NEXT SESSION TODO:
+1. Bank h063-qbert-s2 when it arrives (~27 min)
+2. Bank remaining seed-3 results as they complete
+3. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
