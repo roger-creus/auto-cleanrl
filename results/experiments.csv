@@ -1306,3 +1306,6 @@ h064-assault-s1,h064,,Phase 4 Atari57 (nibi),Assault-v5,1,dqn_rainbow_lite,40000
 h001-riverraid-s3,h001,,Phase 4 Atari57 (rorqual),Riverraid-v5,3,ppo,40000000,,1481.1644287109375,1466.2100830078125,83040000.0,
 h064-defender-s1,h064,,Phase 4 Atari57 (nibi),Defender-v5,1,dqn_rainbow_lite,40000000,,2592.910400390625,2581.1396484375,122302400.0,
 h064-demonattack-s2,h064,,Phase 4 Atari57 (nibi),DemonAttack-v5,2,dqn_rainbow_lite,40000000,,218.0238800048828,197.7586212158203,5260480.0,
+h002-roadrunner-s1,h002,,Phase 4 Atari57 (rorqual),RoadRunner-v5,1,pqn,40000000,,439.6396484375,724.9249267578125,37478400.0,
+h064-bankheist-s1,h064,,Phase 4 Atari57 (nibi),BankHeist-v5,1,dqn_rainbow_lite,40000000,,14.27503776550293,12.257100105285645,611200.0,
+h064-centipede-s2,h064,,Phase 4 Atari57 (nibi),Centipede-v5,2,dqn_rainbow_lite,40000000,,3504.974365234375,5014.4072265625,164649680.0,
