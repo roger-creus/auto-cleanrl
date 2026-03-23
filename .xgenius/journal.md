@@ -12125,3 +12125,40 @@ Remaining (2 running): BattleZone-s3, PrivateEye-s3
 2. Bank remaining seed-3 results as they complete (~5h)
 3. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
 4. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
+
+---
+**[2026-03-23 04:27 UTC]**
+
+## Session 219: Bank h064-battlezone-s3 + h066-enduro-s3 + h066-qbert-s3 — 8 Phase 3 jobs running
+
+### Triggered by: h064-battlezone-s3 (job 29021324, fir SUCCESS), h066-enduro-s3 (job 29021416, fir SUCCESS)
+### Also detected: h066-qbert-s3 (job 29021418, fir SUCCESS — pulled manually)
+
+### RESULTS BANKED: 3
+1. h064-battlezone-s3: Rainbow-lite BattleZone seed 3, q4=2000.0 (vs s1=5310.42, s2=3000.0). HIGH VARIANCE OUTLIER — seed 3 is worst by far. 3-seed avg q4=3436.81. PPO avg=2164.04 WIN (+58.8%). IQN avg=3306.86 WIN (+3.9%). OQE avg=3637.81 LOSS (-5.5%). BattleZone seeds range 2000-5310 for Rainbow-lite — most volatile game.
+2. h066-enduro-s3: IQN+OQE Enduro seed 3, q4=4.49 (vs s1=2.32, s2=1.90). All 3 OQE Enduro seeds complete. 3-seed avg q4=2.90. PPO avg=0.0 WIN. Rainbow-lite avg=21.84 BIG LOSS (-86.7%). IQN s1=1.24, s2=3.23 (s3 still running). OQE slightly better than IQN on Enduro but both far behind Rainbow-lite.
+3. h066-qbert-s3: IQN+OQE Qbert seed 3, q4=217.55 (vs s1=218.18, s2=210.96). All 3 OQE Qbert seeds complete. 3-seed avg q4=215.56. PPO avg=158.44 WIN (+36.0%). IQN avg so far (s1=219.30, s3=217.19, s2 still running). OQE very close to IQN on Qbert.
+
+### PHASE 3 COVERAGE:
+- h001 PPO: 45/45 COMPLETE
+- h063 IQN: 41/45 banked (11/15 games 3-seed complete) + 4 running (qbert-s2, amidar-s3, enduro-s3, mspacman-s3)
+- h064 Rainbow-lite: 44/45 banked (14/15 games 3-seed complete) + 1 running (privateeye-s3)
+- h066 IQN+OQE: 42/45 banked (12/15 games 3-seed complete) + 3 running (amidar-s3, mspacman-s3, spaceinvaders-s3)
+All 8 missing experiments covered by running jobs. No gaps.
+
+### h064 (Rainbow-lite) 3-SEED COMPLETE GAMES (14/15):
+Alien, Amidar, BattleZone, Breakout, DoubleDunk, Enduro, MontezumaRevenge, MsPacman, NameThisGame, Phoenix, Qbert, Solaris, SpaceInvaders, Venture
+Remaining (1 running): PrivateEye-s3
+
+### h066 (OQE) 3-SEED COMPLETE GAMES (12/15):
+Alien, BattleZone, Breakout, DoubleDunk, Enduro, MontezumaRevenge, NameThisGame, Phoenix, PrivateEye, Qbert, Solaris, Venture
+Remaining (3 running): Amidar-s3, MsPacman-s3, SpaceInvaders-s3
+
+### 8 RUNNING JOBS:
+- fir (2): h063-qbert-s2, h063-enduro-s3
+- narval (6): h063-amidar-s3, h063-mspacman-s3, h064-privateeye-s3, h066-amidar-s3, h066-mspacman-s3, h066-spaceinvaders-s3
+
+### NEXT SESSION TODO:
+1. Bank remaining 8 results as they complete
+2. After 45/45 for each: compute final 3-seed IQM with bootstrap confidence intervals
+3. Final comparison: h064 Rainbow-lite vs h066 OQE vs h063 IQN vs h001 PPO
