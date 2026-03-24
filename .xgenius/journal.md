@@ -15356,3 +15356,35 @@ All jobs ~4h elapsed, expected completion in 3-5 more hours (~09:00-11:00 UTC).
 1. Bank newly completed h064 results as they arrive
 2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
 3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
+
+---
+**[2026-03-24 10:22 UTC]**
+
+## Session 297: Banked tennis-s2 and choppercommand-s2. Now 147/171 h064 (86.0%), 24 remaining all running.
+
+### Triggered by: h064-tennis-s2 (nibi job 10847944) — SUCCESS. Also caught h064-choppercommand-s2 (nibi job 10847870) completing.
+
+### ACTIONS:
+1. Banked h064-tennis-s2: q4=-26.39, mean=-24.0, auc=-23808 (Tennis is typically very low-scoring)
+2. Banked h064-choppercommand-s2: q4=723.45, mean=711.93, auc=73072000
+3. Now 147/171 h064 banked (86.0%)
+
+### CLUSTER STATUS (~06:22 UTC Mar 24):
+All 26 running jobs at 4-4.5h elapsed (11h walltime limit):
+- rorqual: 7R (bowling-s3, fishingderby-s2, jamesbond-s1, pong-s2, skiing-s3, upndown-s1, riverraid-s3)
+- narval: 8R (atlantis-s3, centipede-s1, freeway-s3, kangaroo-s2, surround-s1, videopinball-s2, riverraid-s3)
+- nibi: 5R (beamrider-s1, gravitar-s2, krull-s3, robotank-s1, wizardofwor-s3)
+- fir: 6R (berzerk-s2, crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3)
+24 unique experiments remaining (riverraid-s3 running on 2 clusters as backup).
+Expected completion: ~09:00-11:00 UTC.
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 147/171 (86.0%), 24 running
+- TOTAL: 489/513 (95.3%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. The h064 vs h001 CI should narrow with more data — may achieve statistical significance
