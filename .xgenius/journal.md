@@ -14983,3 +14983,50 @@ Even without the missing 31 experiments, we have sufficient data for IQM analysi
 2. If STILL failing: try full H100 GPUs (not MIG), or investigate envpool compatibility
 3. Consider proceeding with analysis using 140/171 (2+ seeds per game) if 31 continue to fail
 4. Once all banked (or decided to proceed), run final paper-quality IQM analysis
+
+---
+**[2026-03-24 04:33 UTC]**
+
+## Session 289: Phase 4 IQM analysis complete. Resubmitted 31 missing h064 with FULL GPUs (attempt 7).
+
+### Triggered by: 7 completions (all h001/h002, already banked)
+
+### KEY FINDING: All 4 clusters EMPTY again — 31 h064 experiments failed for 6th time.
+SLURM logs empty (no output at all). Jobs disappeared without trace.
+Hypothesis: MIG GPU slices (1g.10gb, 2g.20gb) may have CUDA/envpool compatibility issues.
+
+### ACTION: Resubmitted all 31 with FULL GPUs (h100 on rorqual/nibi/fir, a100 on narval).
+Job IDs: rorqual 8962575-8962660, narval 58212367-58212636, nibi 10845808-10845977, fir 29207426-29207594.
+48G memory, 11h walltime, 8 CPUs.
+
+### FIXED: Jamesbond-v5 env_id case mismatch in experiments.csv (JamesBond->Jamesbond).
+
+### PHASE 4 IQM ANALYSIS (Atari-57, q4 metric, bootstrap 10K iterations):
+
+| Algorithm | IQM HNS | 95% CI | Median HNS | Above Random | Games |
+|-----------|---------|--------|------------|--------------|-------|
+| h064 Rainbow-lite | 0.0081 | [-0.009, 0.022] | 0.0033 | 34/57 | 57 |
+| h001 PPO | 0.0023 | [-0.000, 0.009] | 0.0007 | 32/57 | 57 |
+| h002 PQN | -0.0136 | [-0.041, 0.001] | -0.0074 | 19/57 | 57 |
+
+Pairwise: P(h064>h001)=0.72, P(h064>h002)=0.97, P(h001>h002)=0.98
+h064 vs PPO: 23W/15T/19L
+
+### INTERPRETATION:
+- h064 Rainbow-lite is best but NOT statistically significant vs PPO (p=0.72, need >0.95)
+- All algorithms near random on most games (median HNS ~0) — 40M steps insufficient for Atari57
+- h064 has wider CIs due to 31 games having only 2 seeds — completing the remaining 31 experiments will tighten CIs
+- Biggest h064 wins: Robotank (+0.91), Freeway (+0.72), Centipede (+0.47), IceHockey (+0.42)
+- Biggest h064 losses: VideoPinball (-9.91), DoubleDunk (-3.38), Boxing (-1.89), Krull (-1.48)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE, 3 seeds per game
+- h002 PQN: 171/171 (100%) COMPLETE, 3 seeds per game
+- h064 Rainbow-lite: 140/171 (81.9%), 31 resubmitted with full GPUs
+- TOTAL: 482/513 (94.0%)
+
+### NEXT SESSION TODO:
+1. Check if full GPU submission succeeded — bank any new h064 results
+2. If 31 complete successfully, rerun IQM analysis — CIs should narrow
+3. If STILL failing: proceed with 140/171 data, document the limitation
+4. Begin paper write-up with current results
