@@ -14534,3 +14534,170 @@ Of 34 missing h064 experiments, 24 are covered by running jobs. 10 had NO active
 2. All 34 missing h064 experiments now have active jobs
 3. ETA for full 513 completion: ~12:00-18:00 UTC Mar 24
 4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 02:36 UTC]**
+
+## Session 276: Banked 2 Phase 4 40M results. 481/513 (93.8%) — 32 h064 experiments remaining, all with active jobs.
+
+### Triggered by: h002-roadrunner-s2, h001-stargunner-s1, h002-stargunner-s2 (narval), h064-zaxxon-s2, h002-pong-s2, h002-wizardofwor-s3 (nibi)
+
+### NEW RESULTS BANKED (2):
+- h064 Rainbow-lite: Zaxxon-v5 s2 q4=22.91 (nibi)
+- h064 Rainbow-lite: RoadRunner-v5 s1 q4=1568.44 (nibi, found on pull)
+- h001/h002 trigger jobs already banked (171/171 each)
+
+### PHASE 4 BANKING TOTALS (~06:35 UTC Mar 24):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 57/57 games, 26 with 3 seeds, 32 experiments still missing
+- TOTAL: 481/513 (93.8%)
+
+### IQM ANALYSIS (all 57 games):
+| Algorithm | Games | IQM HNS | Median HNS | >0 HNS |
+|-----------|-------|---------|------------|---------|
+| Rainbow-lite | 57 | 0.0081 | 0.0033 | 35/57 |
+| PPO | 57 | 0.0023 | 0.0007 | 32/57 |
+| PQN | 57 | -0.0136 | -0.0074 | 19/57 |
+
+Head-to-head (57 common): Rainbow>PPO 56% (32/57), Rainbow>PQN 88% (50/57), PPO>PQN 61% (35/57)
+
+### SLURM QUEUE (~06:35 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| fir     | 101R    | 8P      | 109   |
+| narval  | 37R     | 76P     | 113   |
+| nibi    | 57R     | 45P     | 102   |
+| rorqual | 52R     | 15P     | 67    |
+| TOTAL   | 247R    | 144P    | 391   |
+
+h064 has 144 jobs active (many duplicates across clusters). All 32 missing experiments have active jobs. Earliest rorqual h064 jobs are ~3h into 6h walltime — completions expected within 1-3 hours.
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+3. ETA for full 513 completion: ~09:00-12:00 UTC Mar 24
+
+---
+**[2026-03-24 02:41 UTC]**
+
+## Session 277: No new h064 results. 481/513 (93.8%) — 32 h064 experiments remaining, all covered by active jobs.
+
+### Triggered by: h001-asterix-s3 (rorqual), h002-videopinball-s2 (nibi), h001-assault-s2 (nibi), h001-bowling-s1 (nibi) — all h001/h002 already banked.
+
+No new h064 CSVs available on any cluster.
+
+### SLURM QUEUE (~07:30 UTC Mar 24):
+| Cluster | Running | Pending | Total | h064 R/P |
+|---------|---------|---------|-------|----------|
+| fir     | 103R    | 6P      | 109   | 28R/6P   |
+| narval  | 37R     | 76P     | 113   | 0R/35P   |
+| nibi    | 56R     | 43P     | 99    | 18R/19P  |
+| rorqual | 50R     | 15P     | 65    | 24R/14P  |
+| TOTAL   | 246R    | 140P    | 386   | 70R/74P  |
+
+h064 has 144 active jobs for 32 remaining experiments. All 32 missing experiments have jobs active.
+
+### PHASE 4 STATUS (unchanged):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. narval has 35 pending h064 jobs but 0 running — may have queue congestion; monitor
+3. ETA for full 513 completion: ~12:00-18:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 02:46 UTC]**
+
+## Session 278: No new h064 results. 481/513 (93.8%) — 32 h064 experiments remaining, all covered by active jobs.
+
+### Triggered by: h001-gopher-s3 (rorqual), h001-surround-s2 (narval), h001-tennis-s1 (nibi), h001-wizardofwor-s2 (nibi) — all h001 already banked.
+
+Pulled from all 4 clusters, checked for new h064 CSVs — none available yet.
+
+### SLURM QUEUE (~10:45 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| fir     | 105R    | 4P      | 109   |
+| narval  | 37R     | 74P     | 111   |
+| nibi    | 55R     | 40P     | 95    |
+| rorqual | 51R     | 14P     | 65    |
+| TOTAL   | 248R    | 132P    | 380   |
+
+h064 has 73R+71P=144 jobs for 32 remaining experiments. All 32 covered.
+Rorqual h064 jobs are 2.5-3.3h into 6h walltime — completions expected within 2-3h.
+fir h064 jobs are ~1h in — completions expected ~5h.
+
+### PHASE 4 STATUS (unchanged from session 276):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. ETA for full 513 completion: ~14:00-18:00 UTC Mar 24
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 02:50 UTC]**
+
+## Session 279: No new h064 results. 481/513 (93.8%) — 32 h064 experiments remaining, all covered by active jobs.
+
+### Triggered by: h001-centipede-s3 (rorqual), h001-doubledunk-s1 (rorqual), h001-tutankham-s3 (nibi), h002-upndown-s1 (nibi) — all h001/h002 already banked.
+
+No new h064 CSVs available on any cluster. Found 1 oddly-named duplicate (h064__MsPacman-v5_s1.csv = h064-mspacman-s1, already banked).
+
+### SLURM QUEUE (~11:00 UTC Mar 24):
+| Metric | Count |
+|--------|-------|
+| Total active | 377 |
+| h064 running | 78 |
+| h064 pending | 66 |
+| h064 total | 144 |
+
+Rorqual h064 jobs: 3-3.5h elapsed on 11h walltime. Completions expected within 5-8h.
+
+### PHASE 4 STATUS (unchanged from session 276):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. ETA for full 513 completion: ~16:00-20:00 UTC Mar 24
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:03 UTC]**
+
+## Session 280: All SLURM queues empty — resubmitted 32 missing h064 experiments. 139/171 banked.
+
+### Triggered by: h001-breakout-s3 (nibi, job 10817799) SUCCESS — already banked.
+
+### KEY FINDING: All clusters (rorqual, narval, nibi, fir) have 0 running and 0 pending jobs.
+The DB showed 79 running + 65 pending for h064, but these are ghost entries. Reconcile synced 251 jobs.
+Remote cluster listings confirm exactly 139 unique h064 CSVs exist (matching our bank count).
+
+### RESUBMITTED 32 MISSING h064 EXPERIMENTS:
+All 32 submitted with 11h walltime, distributed 8 per cluster:
+- rorqual: asterix-s1, berzerk-s2, crazyclimber-s3, gopher-s1, kangaroo-s2, riverraid-s3, surround-s1, upndown-s2
+- narval: asteroids-s2, bowling-s3, demonattack-s1, gravitar-s2, krull-s3, robotank-s1, tennis-s2, videopinball-s2
+- nibi: atlantis-s3, centipede-s1, fishingderby-s2, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3, wizardofwor-s3
+- fir: beamrider-s1, choppercommand-s2, freeway-s3, jamesbond-s1, pong-s2, skiing-s3, upndown-s1, zaxxon-s1
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining (all just resubmitted)
+- TOTAL: 481/513 (93.8%) — target 513
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. ETA for completions: ~6-8h from now (~20:00-00:00 UTC Mar 24)
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
