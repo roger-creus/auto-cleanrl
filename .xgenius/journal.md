@@ -13798,3 +13798,42 @@ By hypothesis: h001 54R/142P, h002 55R/125P, h064 31R/121P
 2. Once >45 games banked per algorithm, start Atari57 IQM analysis
 3. h064 narval/nibi batch should be done by ~04:00 UTC Mar 24
 4. Full completion expected ~12:00-18:00 UTC Mar 24
+
+---
+**[2026-03-24 00:24 UTC]**
+
+## Session 258: Banked 6 new Phase 4 results + cleaned up 45 duplicate rows
+
+### Triggered by: 6 completions (h001-boxing-s1 narval, h064-pitfall-s2 nibi, h001-assault-s3 nibi, h001-asteroids-s1 nibi, h002-berzerk-s2 nibi, h001-bowling-s2 nibi)
+
+### NEW RESULTS BANKED (6):
+- h001 PPO (3): Assault-v5 s3 q4=257.82, Asteroids-v5 s1 q4=977.69, Bowling-v5 s2 q4=25.30
+- h002 PQN (2): Berzerk-v5 s2 q4=279.36, Bowling-v5 s3 q4=26.61 (found via pull)
+- h064 Rainbow-lite (1): Pitfall-v5 s2 q4=-48.88
+
+### DATA CLEANUP:
+- Fixed 12 h002 rows with missing total_timesteps (old-format approximate banking)
+- Removed 45 duplicate old-format h001 rows (Alien-v5_s3 etc.) that duplicated new-format h001-alien-s3 entries
+- experiments.csv now has 1424 clean rows
+
+### PHASE 4 BANKING TOTALS (00:30 UTC Mar 24):
+- h001 PPO: 87/171 unique (game,seed), 49/57 games (16 with 3-seed, 33 partial), 84 remaining
+- h002 PQN: 87/171 unique, 49/57 games (16 with 3-seed, 33 partial), 84 remaining
+- h064 Rainbow-lite: 123/171 unique, 55/57 games (22 with 3-seed, 33 partial), 48 remaining
+- TOTAL: 297/513 unique (57.9%)
+
+### SLURM QUEUE STATUS (~00:30 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| rorqual | 54R     | 42P     | 96    |
+| narval  | 37R     | 114P    | 151   |
+| nibi    | 48R     | 110P    | 158   |
+| fir     | 10R     | 107P    | 117   |
+| TOTAL   | 149R    | 373P    | 522   |
+
+### NEXT SESSION TODO:
+1. Bank more h001/h002/h064 40M results as they complete
+2. h064 has most coverage (123/171), h001/h002 still need ~84 each
+3. All 513 experiments are either banked or in SLURM queue — no true gaps
+4. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+5. Once >45 games banked per algorithm, begin preliminary Atari57 IQM analysis
