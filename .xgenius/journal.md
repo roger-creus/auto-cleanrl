@@ -15081,3 +15081,33 @@ h064 vs h001: 26W/11T/20L
 3. If [DIAG] shows hang at replay buffer: memory issue despite 48G
 4. If diagnostics succeed and we get new CSVs: bank them, rerun IQM analysis
 5. Begin paper write-up with current results regardless
+
+---
+**[2026-03-24 04:59 UTC]**
+
+## Session 291: Banked h064-zaxxon-s1 (141/171). 30 remaining all running — full GPU approach working.
+
+### Triggered by: h064-zaxxon-s1 (rorqual), h001-assault-s3 (rorqual), h001-battlezone-s3 (narval), h002-atlantis-s2 (narval), h002-bowling-s2 (narval), h001-jamesbond-s3 (nibi), h001-phoenix-s1 (nibi), h002-qbert-s3 (fir).
+
+### KEY FINDING: Full GPU approach from attempts 7/8 is WORKING.
+h064-zaxxon-s1 completed successfully with SPS 2436 on rorqual (full h100). All 30 remaining missing experiments have active running jobs across all 4 clusters, many at 3-5+ hours elapsed. Expected completion within 1-2 hours for the longest-running ones.
+
+### STATUS OF 30 REMAINING:
+All 30 have multiple running jobs from attempts 7/8 (full GPUs). Longest elapsed:
+- beamrider-s1: 5h26m, kangaroo-s2: 5h14m, tennis-s2: 4h49m
+- bowling-s3/fishingderby-s2/hero-s3/skiing-s3/upndown-s1/videopinball-s2: ~3h26m
+These should complete soon (zaxxon-s1 took ~4.5h).
+
+### DUPLICATE JOBS: 176 running + 152 pending for h064 alone (many duplicates from 8 resubmission attempts). Also 60 h001/h002 duplicate jobs still running. Not canceling — first completion produces the CSV.
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 141/171 (82.5%), 30 remaining (all running)
+- TOTAL: 483/513 (94.2%)
+
+### NEXT SESSION TODO:
+1. Bank new h064 results as they complete — expect significant progress (many at 3-5h elapsed)
+2. Once all 171 banked (or close), rerun IQM analysis with tighter CIs
+3. Cancel duplicate h001/h002 jobs if convenient (not urgent)
+4. Begin paper write-up
