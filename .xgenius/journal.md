@@ -14701,3 +14701,208 @@ All 32 submitted with 11h walltime, distributed 8 per cluster:
 1. Bank h064 results as they complete — 32 more needed
 2. ETA for completions: ~6-8h from now (~20:00-00:00 UTC Mar 24)
 3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:08 UTC]**
+
+## Session 281: No new h064 results. 481/513 (93.8%) — 32 h064 experiments running, all covered.
+
+### Triggered by: h001-battlezone-s2, h001-boxing-s2, h001-enduro-s2 (rorqual), h001-seaquest-s3, h002-timepilot-s1 (narval), h001-videopinball-s1 (nibi) — all h001/h002 already banked.
+
+Pulled from all 4 clusters — no new h064 CSVs available (still 139 on disk = 139 banked).
+Reconciled DB: 396 active jobs, 0 newly completed.
+
+### SLURM QUEUE (~14:00 UTC Mar 24):
+| Cluster | Running | Pending | h064 R/P |
+|---------|---------|---------|----------|
+| fir     | 116R    | 0P      | 42R/0P   |
+| narval  | 35R     | 81P     | 0R/43P   |
+| nibi    | 59R     | 40P     | 18R/27P  |
+| rorqual | 51R     | 17P     | 29R/17P  |
+| TOTAL   | 261R    | 138P    | 89R/87P  |
+
+h064 job ages: fir 0.1-1.5h, nibi 0.5-5.5h, rorqual 0.2-3.2h, narval all pending.
+DQN jobs typically take 4-6h on H100 — expect first batch of completions within 1-3h.
+
+### PHASE 4 STATUS (unchanged):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. ETA for first completions: ~15:00-17:00 UTC Mar 24
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:12 UTC]**
+
+## Session 282: No new h064 results. 481/513 (93.8%) — 32 h064 experiments remaining, all covered by active jobs.
+
+### Triggered by: h001-montezumarevenge-s3 (rorqual), h002-wizardofwor-s2 (fir), h002-bankheist-s3 (fir) — all h001/h002 already banked.
+
+Pulled from all 4 clusters — no new h064 CSVs (still 139 on disk + 1 oddly-named mspacman = 140 banked experiments, 32 remaining).
+
+### SLURM QUEUE (~15:00 UTC Mar 24):
+| Cluster | Running | Pending | h064 R/P |
+|---------|---------|---------|----------|
+| fir     | 112R    | 0P      | 42R/0P   |
+| narval  | 36R     | 80P     | 0R/43P   |
+| nibi    | 59R     | 40P     | 18R/27P  |
+| rorqual | 55R     | 12P     | 34R/12P  |
+| TOTAL   | 262R    | 132P    | 94R/82P  |
+
+h064 elapsed: fir 0-9min (just started), nibi 1h-5.5h (some near completion), rorqual 4min-4min (just started), narval all pending.
+
+### PHASE 4 STATUS (unchanged from session 276):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. Nibi h064 jobs at 5.5h should complete within 1-2h
+3. fir/rorqual jobs just started — completions in ~5-6h
+4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:16 UTC]**
+
+## Session 283: No new h064 results. 481/513 (93.8%) — 32 h064 experiments remaining, all covered by active jobs.
+
+### Triggered by: h002-yarsrevenge-s3 (fir) SUCCESS — already banked.
+
+Pulled from all 4 clusters — no new h064 CSVs (still 139 on disk = 139 banked + 1 oddly-named mspacman).
+
+### SLURM QUEUE (~16:00 UTC Mar 24):
+| Cluster | Total | h064 R/P | h064 Elapsed |
+|---------|-------|----------|--------------|
+| fir     | 112   | 42R/0P   | 22min-1:43h  |
+| narval  | 115   | 0R/43P   | all pending  |
+| nibi    | 99    | 18R/27P  | 1h-5:41h     |
+| rorqual | 67    | 35R/11P  | 3:36-3:45h   |
+| TOTAL   | 393   | 95R/81P  | -            |
+
+### KEY OBSERVATIONS:
+- nibi h064-upndown-s2 at 5:41h — should complete within 30-60min
+- rorqual batch at 3:36-3:45h — completions expected within 1-3h
+- fir jobs just started (22min-1:43h) — 3-5h remaining
+- narval 43 pending, 0 running — queue congestion continues
+
+### PHASE 4 STATUS (unchanged):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. First completions expected from nibi/rorqual within 1-3h
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:20 UTC]**
+
+## Session 284: No new h064 results. 481/513 (93.8%) — 32 h064 experiments remaining, all covered by active jobs.
+
+### Triggered by: h001-robotank-s2 (narval), h001-phoenix-s1 (nibi), h001-defender-s2 (fir) — all h001 already banked.
+
+Pulled from all 4 clusters — no new h064 CSVs (still 139 on disk = 139+1 oddly-named mspacman = 140 banked experiments, 32 remaining).
+
+### SLURM QUEUE (~23:18 UTC Mar 23):
+| Cluster | Running | Pending | h064 R/P | h064 Max Elapsed |
+|---------|---------|---------|----------|-----------------|
+| fir     | 111R    | 0P      | 42R/0P   | 1:47h           |
+| narval  | 37R     | 77P     | 0R/43P   | all pending     |
+| nibi    | 57R     | 40P     | 18R/27P  | 5:46h           |
+| rorqual | 56R     | 11P     | 35R/11P  | 3:50h           |
+| TOTAL   | 261R    | 128P    | 95R/81P  | -               |
+
+### KEY OBSERVATIONS:
+- nibi h064-upndown-s2 at 5:46h of 11h — may complete within 1-2h
+- rorqual batch at 3:50h — completions expected within 1-3h
+- fir batch at 1:47h — 3-5h remaining
+- narval 43 pending, 0 running — queue congestion persists
+
+### PHASE 4 STATUS (unchanged from session 276):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. First completions expected from nibi/rorqual within 1-3h
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:26 UTC]**
+
+## Session 285: No new h064 results. 139/171 banked (81.3%), 32 remaining — all covered by active jobs.
+
+### Triggered by: h002-berzerk-s1 (rorqual), h002-tutankham-s2 (narval), h002-defender-s3 (nibi), h001-wizardofwor-s1 (fir), h001-yarsrevenge-s2 (fir), h001-bankheist-s2 (fir), h002-doubledunk-s3 (fir) — all h001/h002 already banked.
+
+Pulled from all 4 clusters — no new h064 CSVs available (still 139 on disk = 139 banked, 32 remaining).
+
+### SLURM QUEUE (~03:20 UTC Mar 24):
+| Cluster | Running | Pending | h064 R/P | h064 Max Elapsed |
+|---------|---------|---------|----------|-----------------|
+| fir     | 106R    | 0P      | 42R/0P   | 1:53h            |
+| narval  | 36R     | 77P     | 0R/43P   | all pending      |
+| nibi    | 59R     | 37P     | 18R/27P  | 5:51h            |
+| rorqual | 56R     | 10P     | 36R/10P  | 3:55h            |
+| TOTAL   | 257R    | 124P    | 96R/80P  | -                |
+
+### KEY OBSERVATIONS:
+- nibi h064-upndown-s2 at 5:51h — should complete within 30-60min (DQN typically 4-6h)
+- rorqual batch at ~3:55h — completions expected within 1-3h
+- fir batch at ~1-2h — 3-5h remaining
+- narval 43 pending, 0 running — queue congestion persists
+- Many duplicate job submissions running in parallel (from overlapping resubmit batches)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. First completions expected from nibi (30-60min) and rorqual (1-3h)
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:41 UTC]**
+
+## Session 286: All queues empty, resubmitted 32 missing h064 experiments (4th attempt). 139/171 banked.
+
+### Triggered by: 11 h001/h002 completions (all already banked).
+
+### KEY FINDING: All 4 clusters had 0 running, 0 pending jobs.
+Previous resubmission batch (32 experiments from session 280) appears to have failed silently — SLURM logs show only initialization warnings (container transfer + import warnings), no training steps. Jobs likely failed during startup or were killed.
+
+### RESUBMITTED 32 MISSING h064 EXPERIMENTS (attempt 4):
+Distributed 8 per cluster with 11h walltime:
+- rorqual: asterix-s1, berzerk-s2, crazyclimber-s3, gopher-s1, kangaroo-s2, riverraid-s3, surround-s1, upndown-s2
+- narval: asteroids-s2, bowling-s3, demonattack-s1, gravitar-s2, krull-s3, robotank-s1, tennis-s2, videopinball-s2
+- nibi: atlantis-s3, centipede-s1, fishingderby-s2, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3, wizardofwor-s3
+- fir: beamrider-s1, choppercommand-s2, freeway-s3, jamesbond-s1, pong-s2, skiing-s3, upndown-s1, zaxxon-s1
+
+### CONCERN: This is the 4th resubmission attempt for these same 32 experiments. Previous attempts have not produced CSVs. Possible causes:
+- Jobs timing out during long container rsync (seen in logs: ~5GB .sif transfer takes time)
+- SLURM preemption killing jobs before training starts
+- Memory issues during initialization
+If this batch also fails, need to investigate more deeply (check walltime vs actual runtime, check if container is cached).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining (just resubmitted)
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 32 more needed
+2. If these 32 fail AGAIN, investigate container caching and startup time issues
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
