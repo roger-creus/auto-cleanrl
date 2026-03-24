@@ -15291,3 +15291,37 @@ h064 vs h002: SIGNIFICANT
 4. If NO log output at all → issue is in SLURM/container, not Python
 5. Bank any completed results, rerun IQM analysis if we get new data
 6. If 27 still fail after this attempt, accept 144/171 and proceed with paper write-up
+
+---
+**[2026-03-24 05:59 UTC]**
+
+## Session 295: Fixed riverraid-s3 env_id bug, all 26 other missing h064 experiments running successfully.
+
+### Triggered by: h064-seaquest-s1, h064-spaceinvaders-s1, h064-venture-s2 (rorqual), h064-diag-asterix-s1 (rorqual), h064-riverraid-s3 (narval), plus h001/h002 duplicates from narval/nibi.
+
+### KEY FINDINGS:
+1. h064-riverraid-s3 (narval job 58215667) FAILED: wrong env_id `RiverRaid-v5` → should be `Riverraid-v5` (envpool casing). Resubmitted with correct env_id on rorqual (8964068) and narval (58215830).
+2. All other 26 missing h064 experiments are RUNNING across 4 clusters (5-11 min elapsed). They appear to be past the envpool.make() hang point that caused all previous failures.
+3. h064-diag-asterix-s1 completed successfully: envpool.make() and reset() work fine, confirming the SIGALRM timeout + correct env_ids resolved the issue.
+4. h001 and h002 are fully banked at 171/171 each. New CSVs from this trigger were duplicates.
+5. No new h064 data to bank this session — still at 144/171.
+
+### CLUSTER STATUS (~06:00 UTC Mar 24):
+fir: 6R, narval: 6R/1P, nibi: 7R, rorqual: 7R/1P
+All 26+1=27 missing h064 experiments accounted for (26 running, 1 resubmitted).
+Expected completion: 3-5 hours (by ~09:00-11:00 UTC).
+
+### ROOT CAUSE OF 27 FAILURES ACROSS 11 ATTEMPTS:
+The primary issue was NOT envpool hangs. The RiverRaid env_id casing was wrong, and the other 26 experiments likely had issues with MIG GPU slices in early attempts. The SIGALRM timeout added in attempt 11 plus full GPU allocation seems to have resolved it. The current batch (attempt 11) uses correct env_ids and includes diagnostic prints.
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 144/171 (84.2%), 26 running + 1 resubmitted
+- TOTAL: 486/513 (94.7%)
+
+### NEXT SESSION TODO:
+1. Bank new h064 results as they arrive
+2. Once all 171 complete, rerun IQM analysis with full 3-seed data for all 57 games
+3. CIs should narrow significantly — may achieve statistical significance for h064 vs h001
+4. Begin paper write-up with complete results
