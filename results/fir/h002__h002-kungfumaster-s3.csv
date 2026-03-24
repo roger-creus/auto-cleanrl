@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-KungFuMaster-v5,3,h002,h002-kungfumaster-s3,pqn,10000000,14464,28.318584442138672,14.159292221069336,409600.0,0.0
+KungFuMaster-v5,3,h002,h002-kungfumaster-s3,pqn,40000000,57600,30.0,5.333333492279053,1728000.0,0.0

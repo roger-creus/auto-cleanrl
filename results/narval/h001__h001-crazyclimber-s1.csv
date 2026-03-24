@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+CrazyClimber-v5,1,h001,h001-crazyclimber-s1,ppo,40000000,13696,7458.87841796875,7515.8876953125,102156800.0,9800.0

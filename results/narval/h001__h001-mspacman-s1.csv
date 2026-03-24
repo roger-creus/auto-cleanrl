@@ -1,2 +1,2 @@
-env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
-MsPacman-v5,1,40000000,240.00,0.00,78976,8935,h001,h001-mspacman-s1
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+MsPacman-v5,1,h001,h001-mspacman-s1,ppo,40000000,72576,356.04937744140625,383.7919006347656,25840640.0,190.0

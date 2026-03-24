@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Pong-v5,2,h002,h002-pong-s2,pqn,10000000,12416,-20.87628936767578,-20.98969078063965,-259200.0,-21.0
+Pong-v5,2,h002,h002-pong-s2,pqn,40000000,50304,-20.923664093017578,-20.979642868041992,-1052544.0,-21.0

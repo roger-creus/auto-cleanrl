@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Robotank-v5,2,h001,h001-robotank-s2,ppo,10000000,3840,2.366666555404663,2.4000000953674316,9088.0,5.0
+Robotank-v5,2,h001,h001-robotank-s2,ppo,40000000,16000,2.359999895095825,2.200000047683716,37760.0,1.0

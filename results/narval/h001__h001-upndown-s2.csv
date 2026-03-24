@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-UpNDown-v5,2,h001,h001-upndown-s2,ppo,10000000,21376,395.988037109375,279.82037353515625,8464640.0,110.0
+UpNDown-v5,2,h001,h001-upndown-s2,ppo,40000000,84352,425.2351989746094,438.01214599609375,35869440.0,780.0

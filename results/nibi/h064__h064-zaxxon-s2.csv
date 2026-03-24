@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Zaxxon-v5,2,h064,h064-zaxxon-s2,dqn_rainbow_lite,40000000,44704,17.680744171142578,22.906227111816406,790400.0,0.0

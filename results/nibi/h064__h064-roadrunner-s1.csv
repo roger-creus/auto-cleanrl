@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+RoadRunner-v5,1,h064,h064-roadrunner-s1,dqn_rainbow_lite,40000000,58704,1531.2891845703125,1568.438232421875,89892800.0,1380.0

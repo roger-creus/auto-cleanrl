@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-VideoPinball-v5,3,h001,h001-videopinball-s3,ppo,10000000,3712,20822.37890625,21236.068359375,77292672.0,6310.0
+VideoPinball-v5,3,h001,h001-videopinball-s3,ppo,40000000,7040,21160.455078125,28049.25390625,148969600.0,62072.0

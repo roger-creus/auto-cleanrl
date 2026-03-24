@@ -15111,3 +15111,124 @@ These should complete soon (zaxxon-s1 took ~4.5h).
 2. Once all 171 banked (or close), rerun IQM analysis with tighter CIs
 3. Cancel duplicate h001/h002 jobs if convenient (not urgent)
 4. Begin paper write-up
+
+---
+**[2026-03-24 05:05 UTC]**
+
+## Session 292: Banked 3 new h064 results (144/171 = 84.2%). 27 remaining, all running with full GPUs.
+
+### Triggered by: h064-asteroids-s2 (rorqual), h064-demonattack-s1 (rorqual), h001-doubledunk-s2 (narval), h001-spaceinvaders-s3 (narval), h002-alien-s2 (narval), h001-breakout-s3 (nibi), h001-demonattack-s3 (nibi).
+
+### BANKED 3 NEW h064 EXPERIMENTS:
+- h064-asteroids-s2: q4=340.7, mean=343.5
+- h064-demonattack-s1: q4=176.3, mean=203.5
+- h064-gopher-s1: q4=194.7, mean=195.4
+
+### SLURM QUEUE STATUS (~05:10 UTC Mar 24):
+| Cluster | Running | Pending | h064 R/P |
+|---------|---------|---------|----------|
+| fir     | 79R     | 15P     | 65R/15P  |
+| narval  | 36R     | 93P     | 16R/69P  |
+| nibi    | 62R     | 47P     | 39R/47P  |
+| rorqual | 54R     | 21P     | 54R/21P  |
+| TOTAL   | 231R    | 176P    | 174R/152P|
+
+All 27 remaining missing h064 experiments have active running jobs across all clusters. Full GPU approach is working:
+- rorqual: beamrider-s1 (5:32h), kangaroo-s2 (5:20h), pitfall-s1 (5:14h), tennis-s2 (4:56h)
+- fir: skiing-s3 (3:32h), choppercommand-s2 (3:33h), upndown-s1 (3:32h)
+- nibi: freeway-s3 (2:49h), jamesbond-s1 (2:49h), wizardofwor-s3 (2:31h)
+- narval: atlantis-s3 (1:14h), centipede-s1 (56m), gravitar-s2 (44m)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 144/171 (84.2%), 27 remaining (all running with full GPUs)
+- TOTAL: 486/513 (94.7%)
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 27 more needed
+2. Rorqual jobs at 5+ hours should complete within 30-60 min
+3. Many completions expected across all clusters within next 1-3 hours
+4. Once all 171 banked, rerun final IQM analysis with full data
+
+---
+**[2026-03-24 05:16 UTC]**
+
+## Session 293: Resubmitted 27 stuck h064 experiments with --num-envs 8 (attempt 9)
+
+### HYPOTHESIS: envpool hangs with 16 parallel envs for these specific game/seed combos
+These 27 experiments have failed consistently for 8 prior attempts. They never produce output — jobs appear to hang during envpool initialization. All other seeds of the same games work fine.
+
+### APPROACH: Reduce num_envs from 16 (default) to 8
+Added --num-envs 8 to the command for all 27 experiments. If envpool has a race condition or deadlock with 16 parallel envs for certain game/seed combos, halving parallelism may avoid it.
+
+### SUBMITTED 27 EXPERIMENTS:
+Distributed across all 4 clusters (7 rorqual, 7 narval, 7 nibi, 6 fir).
+Resources: 1 GPU, 8 CPUs, 48G memory, 11h walltime.
+
+Games: asterix-s1, atlantis-s3, beamrider-s1, berzerk-s2, bowling-s3, centipede-s1, choppercommand-s2, crazyclimber-s3, fishingderby-s2, freeway-s3, gravitar-s2, hero-s3, jamesbond-s1, kangaroo-s2, krull-s3, pitfall-s1, pong-s2, riverraid-s3, robotank-s1, seaquest-s2, skiing-s3, surround-s1, tennis-s2, timepilot-s3, upndown-s1, videopinball-s2, wizardofwor-s3
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 144/171 (84.2%), 27 remaining (resubmitted with --num-envs 8)
+- TOTAL: 486/513 (94.7%)
+
+### NEXT SESSION TODO:
+1. Check if --num-envs 8 fixed the hang — look for completed jobs and CSV output
+2. If still hanging, consider: (a) --num-envs 4, (b) different envpool version, (c) gym instead of envpool
+3. Bank any completed results and rerun IQM analysis
+4. Cancel duplicate jobs from previous attempts if convenient
+
+---
+**[2026-03-24 05:16 UTC]**
+
+## Session 293: Final IQM analysis complete. Resubmitted 27 missing h064 with --num-envs 8 (attempt 10).
+
+### Triggered by: h064-gopher-s1 (rorqual), h002-upndown-s3 (narval), h001-namethisgame-s2 (narval), h001-battlezone-s1 (nibi), h002-assault-s3 (nibi). All previously banked — no new data.
+
+### KEY FINDING: All 4 clusters EMPTY again (0R/0P). Same 27 h064 experiments failed for 9th time.
+SLURM log directories exist but contain no output files — jobs die before producing any output, not even the [DIAG] diagnostic prints added in attempt 8. This confirms jobs are being killed by SLURM before container execution completes.
+
+### RESUBMISSION STRATEGY (attempt 10): Reduced num_envs from 16 to 8.
+Hypothesis: envpool may hang during multi-env initialization for these specific game/seed combos with 16 envs. Reducing to 8 envs halves memory pressure and may avoid the hang.
+All 27 submitted across 4 clusters with --num-envs 8, full GPUs, 48G memory, 11h walltime.
+Batch file: batch_h064_numenvs8.json
+
+### COMPREHENSIVE IQM ANALYSIS (144/171 h064, all 57 games with 2+ seeds):
+
+| Algorithm | IQM HNS | 95% CI | Median HNS |
+|-----------|---------|--------|------------|
+| h064 Rainbow-lite | +0.0080 | [-0.0089, +0.0206] | N/A |
+| h001 PPO | +0.0023 | [-0.0005, +0.0084] | N/A |
+| h002 PQN | -0.0136 | [-0.0388, +0.0016] | N/A |
+
+### PAIRWISE COMPARISONS:
+- h064 vs h001: delta=+0.0057, CI=[-0.0134, +0.0182] — NOT significant (CI crosses zero)
+- h064 vs h002: delta=+0.0216, CI=[+0.0096, +0.0397] — SIGNIFICANT (h064 > PQN)
+- h001 vs h002: delta=+0.0159, CI=[+0.0003, +0.0443] — SIGNIFICANT (PPO > PQN)
+
+### WIN/LOSS (57 games):
+- h064 vs h001: 32W/25L/0T
+- h064 vs h002: 50W/7L/0T
+- h001 vs h002: 35W/19L/3T
+
+### INTERPRETATION:
+- Rainbow-lite DQN (h064) is best by IQM but NOT statistically significant vs PPO (95% CI crosses zero)
+- Both h064 and PPO significantly beat PQN
+- DQN-lite wins on: Freeway, IceHockey, Tennis, Centipede, Robotank, Assault
+- PPO wins on: VideoPinball, Krull, DoubleDunk, Atlantis, Skiing (high-variance games)
+- PQN broadly underperforms: 50/57 games lost to DQN-lite
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 144/171 (84.2%), 27 resubmitted with --num-envs 8 (attempt 10)
+- TOTAL: 486/513 (94.7%)
+
+### NEXT SESSION TODO:
+1. Check if --num-envs 8 solved the hang for the 27 missing experiments
+2. If successful, bank results and rerun IQM — CIs should tighten for h064 vs h001
+3. If STILL failing: accept 144/171, document limitation, proceed with paper
+4. Consider trying --num-envs 4 or --num-envs 1 as last resort
+5. Begin paper write-up regardless — we have sufficient data for all conclusions

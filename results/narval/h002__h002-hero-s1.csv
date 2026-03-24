@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Hero-v5,1,h002,h002-hero-s1,pqn,10000000,16512,173.79844665527344,27.9069766998291,2869760.0,0.0
+Hero-v5,1,h002,h002-hero-s1,pqn,40000000,71424,156.02149963378906,43.978492736816406,11143680.0,0.0

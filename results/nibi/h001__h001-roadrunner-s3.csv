@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-RoadRunner-v5,3,h001,h001-roadrunner-s3,ppo,10000000,54912,15.617715835571289,18.64801788330078,857600.0,0.0
+RoadRunner-v5,3,h001,h001-roadrunner-s3,ppo,40000000,220032,12.216404914855957,14.19429874420166,2688000.0,0.0

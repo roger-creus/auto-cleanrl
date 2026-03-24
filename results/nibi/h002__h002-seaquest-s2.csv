@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Seaquest-v5,2,h002,h002-seaquest-s2,pqn,10000000,13184,141.94174194335938,185.4368896484375,1871360.0,320.0
+Seaquest-v5,2,h002,h002-seaquest-s2,pqn,40000000,53120,131.51806640625,147.18072509765625,6986240.0,180.0

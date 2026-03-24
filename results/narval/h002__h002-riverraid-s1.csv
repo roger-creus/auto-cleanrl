@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Riverraid-v5,1,h002,h002-riverraid-s1,pqn,10000000,21248,841.7470092773438,945.3012084960938,17885440.0,970.0
+Riverraid-v5,1,h002,h002-riverraid-s1,pqn,40000000,86912,809.7054443359375,1047.142822265625,70373120.0,1130.0

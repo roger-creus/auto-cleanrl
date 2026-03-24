@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Zaxxon-v5,3,h001,h001-zaxxon-s3,ppo,10000000,11264,9.090909004211426,27.272727966308594,102400.0,0.0
+Zaxxon-v5,3,h001,h001-zaxxon-s3,ppo,40000000,45312,8.757061958312988,4.519773960113525,396800.0,0.0

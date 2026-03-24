@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Tutankham-v5,3,h001,h001-tutankham-s3,ppo,10000000,11776,10.32608699798584,13.391304016113281,121600.0,1.0
+Tutankham-v5,3,h001,h001-tutankham-s3,ppo,40000000,43776,11.605262756347656,11.532163619995117,508032.0,2.0

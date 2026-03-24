@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-BeamRider-v5,3,h001,h001-beamrider-s3,ppo,10000000,7552,378.16949462890625,325.1525573730469,2855936.0,352.0
+BeamRider-v5,3,h001,h001-beamrider-s3,ppo,40000000,28928,382.6371765136719,382.3716735839844,11068928.0,484.0

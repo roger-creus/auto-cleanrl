@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-CrazyClimber-v5,2,h002,h002-crazyclimber-s2,pqn,10000000,2560,1640.0,600.0,4198400.0,500.0
+CrazyClimber-v5,2,h002,h002-crazyclimber-s2,pqn,40000000,9344,1856.1644287109375,686.3013916015625,17344000.0,400.0
