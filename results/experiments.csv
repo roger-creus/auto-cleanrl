@@ -1630,3 +1630,4 @@ h064-centipede-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id
 h064-robotank-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Robotank-v5 --seed 1,"Phase 4 Atari57 (nibi). Rainbow-lite Robotank s1. q4=14.42, mean=10.38, auc=93168.",Robotank-v5,1,dqn_rainbow_lite,40000000.0,8976,10.379678726196289,14.42424201965332,93168.0,19.0,,,
 h064-atlantis-s3,h064,,Phase 4 Atari57 (narval),Atlantis-v5,3,dqn_rainbow_lite,40000000.0,59136.0,4905.708984375,4943.50634765625,290104000.0,6040.0,,,
 h064-riverraid-s3,h064,,Phase 4 Atari57 (narval),Riverraid-v5,3,dqn_rainbow_lite,40000000.0,,496.1061706542969,410.9026794433594,78789600.0,,,,
+h064-freeway-s3,h064,,Phase 4 Atari57 (narval),Freeway-v5,3,dqn_rainbow_lite,40000000.0,,21.018003463745117,21.587560653686523,410944.0,,,,

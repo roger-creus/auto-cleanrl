@@ -15767,3 +15767,82 @@ All jobs ~62% through 11h walltime. Expected completion: ~3.5-4.5h (~12:00-13:00
 ### NEXT SESSION TODO:
 1. Bank newly completed h064 results as they arrive
 2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+
+---
+**[2026-03-24 12:40 UTC]**
+
+## Session 311: Banked h064-riverraid-s3. Now 162/171 h064 (94.7%), 9 unique experiments still running.
+
+### Triggered by: h064-riverraid-s3 (narval job 58215830) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-riverraid-s3: q4=410.90, mean=496.11, auc=78789600 (narval). All 3 Riverraid seeds complete: avg q4=412.13.
+2. Now 162/171 h064 banked (94.7%)
+
+### REMAINING 9 (all running, ~7h into 11h walltime):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3
+- narval (4): freeway-s3, kangaroo-s2, surround-s1, videopinball-s2
+- rorqual (1): riverraid-s3 backup (already banked from narval)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 162/171 (94.7%), 9 unique still running
+- TOTAL: 504/513 (98.2%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+
+---
+**[2026-03-24 12:50 UTC]**
+
+## Session 312: No new results to bank. Rorqual riverraid-s3 backup completed (already banked from narval in session 311).
+
+### Triggered by: h064-riverraid-s3 (rorqual job 8964068) — SUCCESS (backup, already banked)
+
+### ACTIONS:
+1. Verified rorqual riverraid-s3 is a duplicate — narval version already banked in session 311.
+2. All 9 remaining unique experiments confirmed running healthy at ~7h elapsed (11h walltime).
+
+### CLUSTER STATUS (~12:55 UTC Mar 24):
+- fir (5): crazyclimber-s3 (7:02), hero-s3 (6:58), pitfall-s1 (6:58), seaquest-s2 (6:58), timepilot-s3 (6:58)
+- narval (4): freeway-s3 (7:02), kangaroo-s2 (7:01), surround-s1 (6:57), videopinball-s2 (6:57)
+All ~64% through walltime. Expected completion: ~16:50-17:00 UTC.
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 162/171 (94.7%), 9 unique still running
+- TOTAL: 504/513 (98.2%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+
+---
+**[2026-03-24 13:21 UTC]**
+
+## Session 313: Banked h064-freeway-s3. Now 163/171 h064 (95.3%), 8 unique experiments still running.
+
+### Triggered by: h064-freeway-s3 (narval job 58215610) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-freeway-s3: q4=21.59, mean=21.02, auc=410944 (narval). All 3 Freeway seeds complete: highly consistent (q4: 21.40, 21.29, 21.59).
+2. Now 163/171 h064 banked (95.3%)
+
+### REMAINING 8 (all running ~7.5h into 11h walltime):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3
+- narval (3): kangaroo-s2, surround-s1, videopinball-s2
+All ~68% through walltime. Expected completion: ~3-3.5 more hours (~12:45-13:15 UTC).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 163/171 (95.3%), 8 unique still running
+- TOTAL: 505/513 (98.4%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
