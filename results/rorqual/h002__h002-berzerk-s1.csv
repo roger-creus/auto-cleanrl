@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Freeway-v5,2,h001,h001-freeway-s2,ppo,40000000,19456,0.0,0.0,0.0,0.0
+Berzerk-v5,1,h002,h002-berzerk-s1,pqn,40000000,93056,243.09490966796875,282.9986267089844,22621440.0,450.0

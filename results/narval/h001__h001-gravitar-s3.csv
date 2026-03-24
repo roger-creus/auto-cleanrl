@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Gravitar-v5,3,h001,h001-gravitar-s3,ppo,10000000,16640,162.6923065185547,161.53846740722656,2707200.0,0.0
+Gravitar-v5,3,h001,h001-gravitar-s3,ppo,40000000,64256,192.92828369140625,214.1434326171875,12396800.0,500.0

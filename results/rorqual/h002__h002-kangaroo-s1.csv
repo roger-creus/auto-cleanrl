@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Freeway-v5,2,h001,h001-freeway-s2,ppo,40000000,19456,0.0,0.0,0.0,0.0
+Kangaroo-v5,1,h002,h002-kangaroo-s1,pqn,40000000,86016,198.0654754638672,335.71429443359375,17036800.0,400.0
