@@ -15232,3 +15232,62 @@ Batch file: batch_h064_numenvs8.json
 3. If STILL failing: accept 144/171, document limitation, proceed with paper
 4. Consider trying --num-envs 4 or --num-envs 1 as last resort
 5. Begin paper write-up regardless — we have sufficient data for all conclusions
+
+---
+**[2026-03-24 05:50 UTC]**
+
+## Session 294: Cancelled 416 hung/duplicate jobs, resubmitted 27 missing h064 with SIGALRM timeout (attempt 11).
+
+### Triggered by: h001-hero-s1, h001-qbert-s1, h001-solaris-s2, h002-doubledunk-s2, h002-enduro-s3, h002-krull-s2, h001-alien-s3, h001-venture-s2 — ALL already banked.
+
+### KEY FINDINGS:
+1. No new h064 data this session — still at 144/171 (84.2%). All 57 games have 2+ seeds.
+2. --num-envs 8 attempt (attempt 10) ALSO failed — same 27 experiments never produce any output.
+3. h001 (PPO) and h002 (PQN) BOTH succeeded for all 27 of the same game/seed combos — confirms the issue is specific to the DQN Rainbow-lite script, NOT envpool in general.
+
+### ROOT CAUSE ANALYSIS:
+- Old SLURM logs (pre-DIAG) show: rsync OK → Python imports OK → hang (no further output)
+- The hang occurs after module-level imports but before any __main__ output
+- This could be during tyro.cli() arg parsing, SummaryWriter creation, or envpool.make()
+- Pattern: 27 games × 1 seed each (8×s1, 9×s2, 10×s3) — evenly distributed, not seed-biased
+
+### ACTIONS TAKEN:
+1. CANCELLED 416 wasted jobs across all clusters:
+   - 191 h064 RUNNING (118 stuck on missing 27, 73 duplicates of banked experiments)
+   - 163 h064 PENDING
+   - 23 h001 + 41 h002 (all banked, pure duplicates)
+   These were consuming GPUs for 2-6+ hours without producing any output.
+
+2. ADDED signal.alarm(300) timeout wrapper around envpool.make() in the DQN script.
+   If envpool.make() hangs for >5min, the alarm fires with a clear error message and exit code 99.
+   Also added [DIAG] prints BEFORE tyro.cli() to confirm script execution reaches __main__.
+
+3. RESUBMITTED 27 missing across 4 clusters (7/7/7/6 per cluster):
+   rorqual: 8963831,8963833,8963838,8963840,8963844,8963868,8963870
+   narval: 58215599,58215602,58215610,58215634,58215667,58215675,58215682
+   nibi: 10847865,10847870,10847924,10847936,10847937,10847944,10847948
+   fir: 29211075,29211084,29211117,29211140,29211141,29211143
+   Resources: 1 GPU, 8 CPUs, 48G memory, 11h walltime.
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 144/171 (84.2%), 27 resubmitted with SIGALRM timeout (attempt 11)
+- TOTAL: 486/513 (94.7%)
+
+### IQM ANALYSIS (unchanged from session 293):
+| Algorithm | IQM HNS | 95% CI |
+|-----------|---------|--------|
+| h064 Rainbow-lite | +0.0080 | [-0.0089, +0.0206] |
+| h001 PPO | +0.0023 | [-0.0005, +0.0084] |
+| h002 PQN | -0.0136 | [-0.0388, +0.0016] |
+h064 vs h001: delta=+0.0057, NOT significant (CI crosses zero)
+h064 vs h002: SIGNIFICANT
+
+### NEXT SESSION TODO:
+1. CHECK SLURM LOGS for [DIAG] output from the 27 experiments
+2. If logs show 'TIMEOUT: envpool.make() hung' → confirmed envpool bug for specific game/seed combos
+3. If logs show 'Script started, parsing args...' but no further DIAG → hang is in tyro.cli or SummaryWriter
+4. If NO log output at all → issue is in SLURM/container, not Python
+5. Bank any completed results, rerun IQM analysis if we get new data
+6. If 27 still fail after this attempt, accept 144/171 and proceed with paper write-up

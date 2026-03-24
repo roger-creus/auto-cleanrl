@@ -7,6 +7,8 @@
 import csv
 import os
 import random
+import signal
+import sys
 import time
 from collections import deque
 from dataclasses import dataclass
@@ -281,7 +283,9 @@ class QNetwork(nn.Module):
 
 
 if __name__ == "__main__":
+    print("[DIAG] Script started, parsing args...", flush=True)
     args = tyro.cli(Args)
+    print(f"[DIAG] Args parsed: env_id={args.env_id}, seed={args.seed}, num_envs={args.num_envs}", flush=True)
     if not args.experiment_id:
         args.experiment_id = f"{args.env_id}_s{args.seed}"
     run_name = f"{args.env_id}__{args.exp_name}__{args.seed}__{int(time.time())}"
@@ -312,8 +316,14 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() and args.cuda else "cpu")
     print(f"[DIAG] device={device}, cuda_available={torch.cuda.is_available()}", flush=True)
 
-    # env setup
+    # env setup — with timeout to detect envpool hangs
+    def _alarm_handler(signum, frame):
+        print(f"[DIAG] TIMEOUT: envpool.make() hung for 300s — env_id={args.env_id}, seed={args.seed}, num_envs={args.num_envs}", flush=True)
+        sys.exit(99)
+
+    signal.signal(signal.SIGALRM, _alarm_handler)
     print(f"[DIAG] Creating envpool env: {args.env_id}, num_envs={args.num_envs}, seed={args.seed}", flush=True)
+    signal.alarm(300)  # 5-minute timeout
     envs = envpool.make(
         args.env_id,
         env_type="gym",
@@ -322,6 +332,7 @@ if __name__ == "__main__":
         reward_clip=True,
         seed=args.seed,
     )
+    signal.alarm(0)  # cancel alarm
     print(f"[DIAG] envpool.make() done", flush=True)
     envs.num_envs = args.num_envs
     envs.single_action_space = envs.action_space

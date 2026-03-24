@@ -1,0 +1,312 @@
+{
+  "experiments": [
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-asteroids-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Asteroids-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-asteroids-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-atlantis-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Atlantis-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-atlantis-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-beamrider-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id BeamRider-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-beamrider-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-berzerk-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Berzerk-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-berzerk-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-bowling-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Bowling-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-bowling-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-centipede-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Centipede-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-centipede-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-choppercommand-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id ChopperCommand-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-choppercommand-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-crazyclimber-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id CrazyClimber-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-crazyclimber-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-demonattack-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id DemonAttack-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-demonattack-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "narval",
+      "experiment_id": "h064-fishingderby-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id FishingDerby-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-fishingderby-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "a100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-freeway-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Freeway-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-freeway-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-gravitar-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Gravitar-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-gravitar-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-hero-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Hero-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-hero-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-jamesbond-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Jamesbond-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-jamesbond-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-kangaroo-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Kangaroo-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-kangaroo-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-krull-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Krull-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-krull-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-pitfall-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Pitfall-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-pitfall-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-riverraid-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Riverraid-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-riverraid-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-robotank-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Robotank-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-robotank-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "nibi",
+      "experiment_id": "h064-seaquest-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Seaquest-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-seaquest-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-skiing-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Skiing-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-skiing-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-surround-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Surround-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-surround-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-tennis-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Tennis-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-tennis-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-timepilot-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id TimePilot-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-timepilot-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-upndown-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id UpNDown-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-upndown-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-videopinball-s2",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id VideoPinball-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-videopinball-s2 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-wizardofwor-s3",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id WizardOfWor-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-wizardofwor-s3 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    },
+    {
+      "cluster": "fir",
+      "experiment_id": "h064-zaxxon-s1",
+      "hypothesis_id": "h064",
+      "command": "python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Zaxxon-v5 --seed 1 --hypothesis-id h064 --experiment-id h064-zaxxon-s1 --output-dir /runs",
+      "gpus": 1,
+      "gpu_type": "h100",
+      "cpus": 8,
+      "memory": "48G",
+      "walltime": "11:00:00"
+    }
+  ]
+}
