@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-DemonAttack-v5,3,h002,h002-demonattack-s3,pqn,40000000,19968,647.7564086914062,716.7948608398438,12934400.0,540.0
+BattleZone-v5,1,h002,h002-battlezone-s1,pqn,40000000,26752,2851.674560546875,3349.2822265625,76288000.0,2000.0
