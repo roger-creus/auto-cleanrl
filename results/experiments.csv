@@ -1605,3 +1605,5 @@ h002-wizardofwor-s3,h002,,Phase 4 40M auto-banked,WizardOfWor-v5,3,pqn,10000000,
 h002-zaxxon-s1,h002,,Phase 4 40M auto-banked,Zaxxon-v5,1,pqn,10000000,11392,0.0,0.0,0.0,0.0
 h064-videopinball-s3,h064,,Phase 4 Atari57 40M (nibi),VideoPinball-v5,3,dqn_rainbow_lite,40000000,22240,4523.20,4519.92,100595936,
 h064-yarsrevenge-s1,h064,,Phase 4 Atari57 40M (nibi),YarsRevenge-v5,1,dqn_rainbow_lite,40000000,147200,4723.93,4612.97,695362688,
+h064-zaxxon-s2,h064,,Rainbow-lite 40M seed 2 (nibi),Zaxxon-v5,2,dqn_rainbow_lite,40000000,44704,17.680744171142578,22.906227111816406,790400.0,0.0
+h064-roadrunner-s1,h064,,Rainbow-lite 40M seed 1 (nibi),RoadRunner-v5,1,dqn_rainbow_lite,40000000,58704,1531.2891845703125,1568.438232421875,89892800.0,1380.0
