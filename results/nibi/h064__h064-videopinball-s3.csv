@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+VideoPinball-v5,3,h064,h064-videopinball-s3,dqn_rainbow_lite,40000000,22240,4523.19873046875,4519.9150390625,100595936.0,2287.39990234375

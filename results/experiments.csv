@@ -1603,3 +1603,5 @@ h002-upndown-s1,h002,,Phase 4 40M auto-banked,UpNDown-v5,1,pqn,10000000,11008,59
 h002-videopinball-s2,h002,,Phase 4 40M auto-banked,VideoPinball-v5,2,pqn,10000000,4480,2714.857177734375,2393.228515625,12162560.0,1.0
 h002-wizardofwor-s3,h002,,Phase 4 40M auto-banked,WizardOfWor-v5,3,pqn,10000000,16000,129.60000610351562,77.5999984741211,2073600.0,0.0
 h002-zaxxon-s1,h002,,Phase 4 40M auto-banked,Zaxxon-v5,1,pqn,10000000,11392,0.0,0.0,0.0,0.0
+h064-videopinball-s3,h064,,Phase 4 Atari57 40M (nibi),VideoPinball-v5,3,dqn_rainbow_lite,40000000,22240,4523.20,4519.92,100595936,
+h064-yarsrevenge-s1,h064,,Phase 4 Atari57 40M (nibi),YarsRevenge-v5,1,dqn_rainbow_lite,40000000,147200,4723.93,4612.97,695362688,

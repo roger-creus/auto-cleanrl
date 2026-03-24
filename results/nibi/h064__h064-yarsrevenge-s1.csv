@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+YarsRevenge-v5,1,h064,h064-yarsrevenge-s1,dqn_rainbow_lite,40000000,147200,4723.93115234375,4612.96533203125,695362688.0,4427.7998046875

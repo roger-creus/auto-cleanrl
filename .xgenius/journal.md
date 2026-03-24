@@ -14356,3 +14356,97 @@ Jobs by hypothesis: h001=159(113R/46P), h002=134(83R/51P), h064=138(38R/100P)
 3. h001 still missing 3 games entirely, h002 missing 2 games
 4. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
 5. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 02:07 UTC]**
+
+## Session 272: MASSIVE banking — h001+h002 100% COMPLETE, 477/513 (93.0%)
+
+### Triggered by: h002-pitfall-s3 (narval), h001-krull-s2 (nibi), h002-surround-s1 (nibi), h001-roadrunner-s2 (fir) SUCCESS
+
+### BANKING:
+Comprehensive scan found 224 unbanked CSVs across all clusters. Banked 104 new entries:
+- h001 PPO: +53 entries → 171/171 (100%) — ALL DONE
+- h002 PQN: +51 entries → 171/171 (100%) — ALL DONE
+- h064 Rainbow-lite: 135/171 (78.9%) — 36 still running/pending
+- TOTAL: 477/513 (93.0%)
+
+Also pulled 2 newly completed: h002-enduro-s2, h002-solaris-s3 from rorqual.
+
+### IQM ANALYSIS (full Atari57, 57 games each):
+| Algorithm | Games | IQM HNS | Mean HNS | Median HNS | >0 HNS |
+|-----------|-------|---------|----------|------------|---------|
+| h064 Rainbow-lite | 57 | 0.0073 | -0.1652 | 0.0033 | 34/57 |
+| h001 PPO | 57 | 0.0019 | 0.0807 | 0.0007 | 32/57 |
+| h002 PQN | 57 | -0.0147 | -0.3465 | -0.0074 | 19/57 |
+
+Head-to-head (all 57 games): Rainbow beats PPO 56%, Rainbow beats PQN 88%, PPO beats PQN 61%
+
+### KEY INSIGHTS:
+- Rainbow-lite IQM 3.8x higher than PPO (0.0073 vs 0.0019)
+- Rainbow-lite wins on 32/57 games vs PPO by raw score
+- Rainbow huge advantages: Robotank (+0.91 HNS), Freeway (+0.72), Centipede (+0.47), IceHockey (+0.42)
+- PPO big advantages: VideoPinball (-8.25 HNS delta), DoubleDunk (-3.38), Boxing (-1.89)
+- Mean HNS is misleading due to extreme outliers (VideoPinball, Skiing)
+
+### SLURM QUEUE (~04:00 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| fir     | 87R     | 20P     | 107   |
+| narval  | 37R     | 86P     | 123   |
+| nibi    | 57R     | 65P     | 122   |
+| rorqual | 53R     | 16P     | 69    |
+| TOTAL   | 234R    | 187P    | 421   |
+
+h001 and h002 jobs are now running for already-banked experiments (these will just overwrite existing CSVs).
+h064 has 38R/100P = 138 jobs for 36 remaining experiments.
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — only 36 more needed
+2. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+3. h001+h002 are fully done — no more banking needed for these
+4. ETA for h064 completion: ~08:00-12:00 UTC Mar 24
+
+---
+**[2026-03-24 02:13 UTC]**
+
+## Session 273: Banked 2 Phase 4 40M results. 479/513 (93.4%)
+
+### Triggered by: 11 completions (h001-boxing-s2, h001-namethisgame-s1, h001-spaceinvaders-s2, h002-breakout-s3, h002-hero-s1, h002-icehockey-s2, h001-jamesbond-s2, h064-videopinball-s3, h064-yarsrevenge-s1, h002-skiing-s3, h001-stargunner-s3)
+
+### NEW RESULTS BANKED (2):
+- h064 Rainbow-lite: VideoPinball-v5 s3 q4=4519.92 (nibi)
+- h064 Rainbow-lite: YarsRevenge-v5 s1 q4=4612.97 (nibi)
+- h001/h002 trigger jobs already banked (171/171 each)
+
+### PHASE 4 BANKING TOTALS (~05:00 UTC Mar 24):
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 137/171 (80.1%), 57/57 games, 25 with 3 seeds, 34 experiments still missing
+- TOTAL: 479/513 (93.4%)
+
+### IQM ANALYSIS (all 57 games):
+| Algorithm | Games | IQM HNS | Mean HNS | Median HNS | >0 HNS |
+|-----------|-------|---------|----------|------------|---------|
+| h064 Rainbow-lite | 57 | 0.0081 | -0.1943 | 0.0033 | 34/57 |
+| h001 PPO | 57 | 0.0023 | 0.0807 | 0.0007 | 32/57 |
+| h002 PQN | 57 | -0.0136 | -0.3465 | -0.0074 | 19/57 |
+
+Head-to-head: Rainbow vs PPO 54% (31W/22L/4T), Rainbow vs PQN 82% (47W/7L/3T), PPO vs PQN 58% (33W/19L/5T)
+
+### SLURM QUEUE (~05:00 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| fir     | 88R     | 19P     | 107   |
+| narval  | 36R     | 83P     | 119   |
+| nibi    | 58R     | 58P     | 116   |
+| rorqual | 53R     | 12P     | 65    |
+| TOTAL   | 235R    | 172P    | 407   |
+
+By hypothesis: h001=146(106R/40P), h002=125(81R/44P), h064=136(48R/88P)
+
+### NEXT SESSION TODO:
+1. Bank more h064 results as they complete — 34 more needed
+2. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+3. h001+h002 fully done, running duplicate jobs will just overwrite
+4. ETA for h064 completion: ~12:00-18:00 UTC Mar 24
