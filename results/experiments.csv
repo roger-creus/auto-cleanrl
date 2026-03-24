@@ -1620,3 +1620,4 @@ h064-bowling-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id B
 h064-gravitar-s2,h064,,nibi completed. Rainbow-lite Gravitar seed 2.,Gravitar-v5,2,dqn_rainbow_lite,40000000.0,65216.0,71.798,51.521,4682400.0,0.0,nibi,,
 h064-berzerk-s2,h064,,fir completed. Rainbow-lite Berzerk seed 2.,Berzerk-v5,2,dqn_rainbow_lite,40000000.0,65584.0,332.996,395.479,21839200.0,410.0,fir,,
 h064-wizardofwor-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id WizardOfWor-v5 --seed 3,"nibi completed. Rainbow-lite WizardOfWor s3. q4=283.70, mean=289.88",WizardOfWor-v5,3,dqn_rainbow_lite,40000000.0,45552.0,289.884,283.702,13204800.0,300.0,,,
+h064-beamrider-s1,h064,,"Rainbow-lite DQN 40M beamrider seed 1 (nibi, attempt 11)",BeamRider-v5,1,dqn_rainbow_lite,40000000,19232,601.5973510742188,691.2944946289062,11569920.0,688.7999877929688,nibi,,

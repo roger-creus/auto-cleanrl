@@ -15501,3 +15501,33 @@ All jobs ~5h into 11h walltime. Expected completion: ~3-5 more hours (~10:00-12:
 1. Bank newly completed h064 results as they arrive
 2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
 3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
+
+---
+**[2026-03-24 10:56 UTC]**
+
+## Session 302: Banked h064-beamrider-s1. Now 153/171 h064 (89.5%), 18 unique experiments still running.
+
+### Triggered by: h064-beamrider-s1 (nibi job 10847865) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-beamrider-s1: q4=691.29, mean=601.60, auc=11569920 (nibi)
+2. Now 153/171 h064 banked (89.5%). Total bank has 153 unique standard experiments + diag-asterix-s1.
+
+### CLUSTER STATUS (~07:00 UTC Mar 24):
+All 19 jobs running (18 unique experiments, riverraid-s3 on 2 clusters):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3
+- narval (7): atlantis-s3, centipede-s1, freeway-s3, kangaroo-s2, riverraid-s3, surround-s1, videopinball-s2
+- nibi (2): krull-s3, robotank-s1
+- rorqual (5): fishingderby-s2, pong-s2, riverraid-s3, skiing-s3, upndown-s1
+All jobs ~5h into 11h walltime. Expected completion: ~3-5 more hours (~10:00-12:00 UTC).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 153/171 (89.5%), 18 unique still running
+- TOTAL: 495/513 (96.5%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
