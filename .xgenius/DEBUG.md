@@ -202,3 +202,14 @@ differ between PPO/PQN (10M default) and DQN/Rainbow-lite (40M default).
 - Check dmesg/journal for OOM killer events
 - Try submitting with larger MIG slices (2g.20gb instead of 1g.10gb)
 - Try submitting without MIG (full GPU) on one cluster as test
+
+## 2026-03-24 04:10 — h064 resubmission attempt 6 with larger GPU slices
+Jobs keep dying silently on 1g.10gb MIG slices — rsync completes, Python imports fire, then no training output.
+All 4 clusters showed 0 running/0 pending despite DB showing 239+ active jobs (stale entries).
+Strategy change: upgraded from 1g.10gb to 2g.20gb MIG slices (20GB VRAM instead of 10GB).
+- rorqual: h100_2g.20gb (8 experiments)
+- narval: a100_3g.20gb (same as before, 8 experiments)
+- nibi: nvidia_h100_80gb_hbm3_2g.20gb (8 experiments)
+- fir: nvidia_h100_80gb_hbm3_2g.20gb (7 experiments)
+Memory also kept at 48G. All 31 submitted successfully. If these still fail, the issue is likely
+not GPU memory but something else (envpool process hanging, MIG compatibility, SLURM preemption).

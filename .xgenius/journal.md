@@ -14947,3 +14947,39 @@ This is the 5th time the queues have emptied for these 32 experiments. SLURM log
 2. If diagnostics reveal OOM: try larger MIG slices (2g.20gb) or full GPU
 3. If diagnostics reveal clean exit with code 0 but no CSV: check if envpool env creation is hanging
 4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 04:16 UTC]**
+
+## Session 288: Banked h064-upndown-s2 (140/171), resubmitted 31 missing with 2g.20gb GPU slices (attempt 6).
+
+### Triggered by: 21 completions (20 h001/h002 already banked + 1 new h064-upndown-s2).
+
+### KEY FINDINGS:
+1. All 4 SLURM clusters EMPTY again (0R/0P). This is the 6th time the 31 missing h064 experiments have failed silently.
+2. SLURM logs show: container rsync completes, Python imports fire, then... nothing. No training output. No error. Jobs just die.
+3. h064-upndown-s2 completed (was from earlier batch) — banked as 140th experiment. 31 remain.
+
+### STRATEGY CHANGE: Upgraded GPU slices from 1g.10gb to 2g.20gb for all clusters.
+Hypothesis: the 10GB MIG slices may have insufficient VRAM for envpool + replay buffer + model, or MIG 1g slices have compatibility issues with certain CUDA operations.
+- rorqual: h100_2g.20gb (8 experiments)
+- narval: a100_3g.20gb (8 experiments, same as before)
+- nibi: nvidia_h100_80gb_hbm3_2g.20gb (8 experiments)
+- fir: nvidia_h100_80gb_hbm3_2g.20gb (7 experiments)
+All 31 submitted with 48G RAM and 11h walltime.
+
+### GAME COVERAGE:
+All 57 Atari games have at least 2 seeds. 26 games have 3 seeds, 31 have 2 seeds.
+Even without the missing 31 experiments, we have sufficient data for IQM analysis.
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 140/171 (81.9%), 31 remaining (just resubmitted with larger GPU)
+- TOTAL: 482/513 (94.0%)
+
+### NEXT SESSION TODO:
+1. Check if 2g.20gb GPU slices solved the issue — bank any new h064 results
+2. If STILL failing: try full H100 GPUs (not MIG), or investigate envpool compatibility
+3. Consider proceeding with analysis using 140/171 (2+ seeds per game) if 31 continue to fail
+4. Once all banked (or decided to proceed), run final paper-quality IQM analysis
