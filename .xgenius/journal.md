@@ -14021,3 +14021,192 @@ h064 CLEAR LEADER with ~5x PPO's IQM HNS on common games. Key h064 strengths: Ce
 2. h064 almost done (39 remaining), h001/h002 need ~75 each
 3. Full completion ETA: ~12:00-18:00 UTC Mar 24
 4. Once all 513 banked, run final paper-quality IQM analysis with confidence intervals
+
+---
+**[2026-03-24 01:00 UTC]**
+
+## Session 264: Banked 1 Phase 4 result (h001-gravitar-s1). 489 SLURM jobs active.
+
+### Triggered by: h001-gravitar-s1 (job 10796691, nibi) SUCCESS
+
+### NEW RESULTS BANKED (1):
+- h001 PPO: Gravitar-v5 s1 q4=192.37
+
+### PHASE 4 BANKING TOTALS (~01:00 UTC Mar 24):
+- h001 PPO: 96/171 banked, 50/57 games (18 complete, 32 partial), 7 missing
+- h002 PQN: 99/171 banked, 50/57 games (18 complete, 32 partial), 7 missing
+- h064 Rainbow-lite: 132/171 banked, 56/57 games (23 complete, 33 partial), 1 missing (VideoPinball)
+- TOTAL: 327/513 (63.7%)
+
+### SLURM QUEUE STATUS (~01:00 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| rorqual | 57R     | 37P     | 94    |
+| narval  | 38R     | 102P    | 140   |
+| nibi    | 51R     | 87P     | 138   |
+| fir     | 10R     | 107P    | 117   |
+| TOTAL   | 156R    | 333P    | 489   |
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. h064 approaching done (132/171, 77.2%)
+3. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with confidence intervals
+
+---
+**[2026-03-24 01:08 UTC]**
+
+## Session 265: Banked 1 Phase 4 result (h001-frostbite-s3). 488 SLURM jobs active.
+
+### Triggered by: h001-frostbite-s3 (job 10796638, nibi) SUCCESS
+
+### NEW RESULTS BANKED (1):
+- h001 PPO: Frostbite-v5 s3 q4=73.67
+
+### PHASE 4 BANKING TOTALS (~01:10 UTC Mar 24):
+- h001 PPO: 97/171 banked (56.7%)
+- h002 PQN: 99/171 banked (57.9%)
+- h064 Rainbow-lite: 132/171 banked (77.2%)
+- TOTAL: 328/513 (63.9%)
+
+### SLURM QUEUE STATUS (~01:10 UTC Mar 24):
+| Cluster | h001 R/P | h002 R/P | h064 R/P | Total |
+|---------|----------|----------|----------|-------|
+| rorqual | 27R/6P   | 13R/13P  | 17R/18P  | 94    |
+| narval  | 18R/37P  | 19R/33P  | 1R/32P   | 140   |
+| nibi    | 24R/27P  | 19R/26P  | 7R/34P   | 137   |
+| fir     | 29R/16P  | 17R/23P  | 0R/32P   | 117   |
+| TOTAL   | 98R/86P  | 68R/95P  | 25R/116P | 488   |
+
+### NOTE: fir cluster now actively running (46R total, up from 10R last session)
+- h001/h002 running on fir now, h064 still pending (32P)
+- h064 fir jobs will start once h001/h002 fir jobs complete
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. h064 closest to done (132/171, 77.2%)
+3. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with confidence intervals
+
+---
+**[2026-03-24 01:12 UTC]**
+
+## Session 266: Banked 2 Phase 4 40M results. 486 SLURM jobs active.
+
+### Triggered by: h001-asterix-s3 (rorqual SUCCESS), h002-demonattack-s3 (narval SUCCESS)
+
+### NEW RESULTS BANKED (2):
+- h001 PPO: Asterix-v5 s3 q4=231.25
+- h002 PQN: DemonAttack-v5 s3 q4=716.79
+
+### PHASE 4 BANKING TOTALS (~01:20 UTC Mar 24):
+- h001 PPO: 98/171 banked, 51/57 games (19 complete, 32 partial), 6 missing
+- h002 PQN: 100/171 banked, 50/57 games (19 complete, 31 partial), 7 missing
+- h064 Rainbow-lite: 132/171 banked, 56/57 games (23 complete, 33 partial), 1 missing
+- TOTAL: 330/513 (64.3%)
+
+### SLURM QUEUE STATUS (~01:20 UTC Mar 24):
+| Cluster | h001 R/P | h002 R/P | h064 R/P | Total |
+|---------|----------|----------|----------|-------|
+| rorqual | 26R/6P   | 13R/13P  | 17R/18P  | 93    |
+| narval  | 19R/36P  | 18R/32P  | 1R/32P   | 138   |
+| nibi    | 24R/27P  | 19R/26P  | 7R/34P   | 137   |
+| fir     | 29R/16P  | 18R/22P  | 0R/32P   | 117   |
+| TOTAL   | 98R/85P  | 68R/93P  | 25R/116P | 485   |
+
+### NOTE: fir now actively running h001/h002 (47R). h064 fir still 0R/32P — will start once shorter jobs clear.
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. h064 closest to done (132/171, 77.2%)
+3. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with confidence intervals
+
+---
+**[2026-03-24 01:24 UTC]**
+
+## Session 267: Banked 3 Phase 4 40M results, fixed data corruption, updated IQM analysis
+
+### Triggered by: h002-alien-s1 (narval), h001-fishingderby-s1 (nibi), h001-hero-s2 (nibi) SUCCESS
+
+### DATA INTEGRITY FIX:
+Discovered that results/fir/, results/narval/, and results/nibi/ directories contain a MIX of old 10M Phase 2/3 CSVs and new 40M Phase 4 CSVs. Bulk banking initially added 144 entries, but 142 were actually 10M (old phase) — removed them. Also fixed 3 entries that had misaligned columns (n_episodes field missing from DictWriter caused column shift). IMPORTANT for future banking: always check total_timesteps=40000000 before banking, and include n_episodes in DictWriter fieldnames.
+
+### NEW RESULTS BANKED (3):
+- h002 PQN: Alien-v5 s1 q4=176.38 (narval)
+- h001 PPO: FishingDerby-v5 s1 q4=-92.66 (nibi)
+- h001 PPO: Hero-v5 s2 q4=511.51 (nibi)
+
+### PHASE 4 BANKING TOTALS (~01:30 UTC Mar 24):
+- h001 PPO: 100/171 banked (58.5%), 51/57 games
+- h002 PQN: 100/171 banked (58.5%), 50/57 games
+- h064 Rainbow-lite: 132/171 banked (77.2%), 56/57 games (missing VideoPinball)
+- TOTAL: 332/513 (64.7%)
+
+### UPDATED IQM ANALYSIS (corrected data):
+| Algorithm | Games | IQM HNS | Median HNS |
+|-----------|-------|---------|------------|
+| h064 Rainbow-lite | 56 | 0.0089 | 0.0036 |
+| h001 PPO | 51 | 0.0027 | 0.0009 |
+| h002 PQN | 50 | -0.0099 | -0.0033 |
+
+Head-to-head: Rainbow vs PPO 56%, Rainbow vs PQN 84%, PPO vs PQN 57%
+
+### SLURM QUEUE (~01:30 UTC Mar 24):
+- h001: 105R / 75P (180 in queue)
+- h002: 66R / 93P (159 in queue)
+- h064: 25R / 116P (141 in queue)
+- Total: 480 jobs
+
+### NEXT SESSION TODO:
+1. Bank more results as h001/h002/h064 jobs complete
+2. h001/h002 approaching 100/171 — large batch of fir/narval/nibi results still coming
+3. h064 has 141 jobs still in queue including all fir jobs
+4. When banking: ALWAYS verify total_timesteps=40000000 and use proper column alignment
+5. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+6. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 01:35 UTC]**
+
+## Session 268: Banked 8 Phase 4 40M results + cleaned duplicate entries. 465 SLURM jobs active.
+
+### Triggered by: 6 completions (h001-gopher-s3, h001-demonattack-s2, h002-namethisgame-s3, h002-hero-s3, h001-icehockey-s3, h002-stargunner-s3) + 3 live completions (h001-centipede-s3, h001-gopher-s2, h001-kangaroo-s1)
+
+### NEW RESULTS BANKED (8):
+- h001 PPO: Gopher-v5 s3 q4=340.85, DemonAttack-v5 s2 q4=154.12, IceHockey-v5 s3 q4=-8.60, Centipede-v5 s3 q4=1925.87, Gopher-v5 s2 q4=341.39, Kangaroo-v5 s1 q4=43.50
+- h002 PQN: Hero-v5 s3 q4=20.47, StarGunner-v5 s3 q4=429.28
+- h002-namethisgame-s3 already banked from prior session (skipped)
+
+### DATA CLEANUP:
+Removed 45 duplicate old-format entries (experiment_ids like 'Alien-v5_s2' instead of 'h001-alien-s2') that were redundant with properly-named entries.
+
+### PHASE 4 BANKING TOTALS (~01:45 UTC Mar 24):
+- h001 PPO: 106/171 banked (62.0%), 52/57 games (21 complete, 31 partial, 5 missing)
+- h002 PQN: 102/171 banked (59.6%), 51/57 games (19 complete, 32 partial, 6 missing)
+- h064 Rainbow-lite: 132/171 banked (77.2%), 56/57 games (23 complete, 33 partial, 1 missing)
+- TOTAL: 340/513 (66.3%)
+
+### IQM ANALYSIS (current data):
+| Algorithm | Games | IQM HNS | Median HNS |
+|-----------|-------|---------|------------|
+| h064 Rainbow-lite | 55 | 0.0089 | 0.0038 |
+| h001 PPO | 51 | 0.0026 | 0.0009 |
+| h002 PQN | 51 | -0.0118 | -0.0036 |
+
+Head-to-head (45 common games): h064 beats h001 62%, h064 beats h002 84%, h001 beats h002 58%
+
+### SLURM QUEUE (~01:45 UTC Mar 24):
+| Cluster | h001 R/P | h002 R/P | h064 R/P | Total |
+|---------|----------|----------|----------|-------|
+| fir     | 28R/16P  | 15R/22P  | 0R/32P   | 113   |
+| narval  | 17R/35P  | 18R/31P  | 1R/32P   | 134   |
+| nibi    | 31R/16P  | 19R/24P  | 7R/34P   | 131   |
+| rorqual | 28R/1P   | 13R/10P  | 17R/18P  | 87    |
+| TOTAL   | 194R + 271P = 465                        |
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. h064 closest to done (132/171, 77.2%), h001 catching up (106/171, 62%)
+3. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs

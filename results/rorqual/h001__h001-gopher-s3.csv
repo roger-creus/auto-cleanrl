@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Kangaroo-v5,1,h001,h001-kangaroo-s1,ppo,40000000,84736,42.90030288696289,43.50453186035156,3635200.0,0.0
+Gopher-v5,3,h001,h001-gopher-s3,ppo,40000000,36096,344.68084716796875,340.85107421875,12441600.0,180.0
