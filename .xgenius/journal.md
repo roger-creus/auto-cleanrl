@@ -15680,3 +15680,90 @@ All jobs ~50-55% through walltime. Expected completion: ~3-5 more hours (~15:00-
 1. Bank newly completed h064 results as they arrive
 2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
 3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
+
+---
+**[2026-03-24 11:50 UTC]**
+
+## Session 308: Banked h064-centipede-s1. Now 159/171 h064 (93.0%), 12 unique experiments still running.
+
+### Triggered by: h064-centipede-s1 (narval job 58215602) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-centipede-s1: q4=3766.19, mean=3175.32, auc=151602448 (narval). All 3 Centipede seeds complete: avg q4=5755.96 vs PPO avg=2235.36 WIN (+157.5%).
+2. Now 159/171 h064 banked (93.0%)
+3. Verified all 13 jobs (12 unique + riverraid-s3 backup) running healthy at ~6h elapsed (11h walltime)
+
+### CLUSTER STATUS (~12:00 UTC Mar 24):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3 (~6h elapsed)
+- narval (6): atlantis-s3, freeway-s3, kangaroo-s2, surround-s1, videopinball-s2, riverraid-s3 (~6h elapsed)
+- nibi (1): robotank-s1 (~6h elapsed)
+- rorqual (1): riverraid-s3 (~5.6h elapsed)
+12 unique experiments remaining. All ~55% through 11h walltime. Expected completion: ~3-5 more hours (~15:00-17:00 UTC).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 159/171 (93.0%), 12 unique still running
+- TOTAL: 501/513 (97.7%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
+
+---
+**[2026-03-24 12:17 UTC]**
+
+## Session 309: Banked h064-robotank-s1. Now 160/171 h064 (93.6%), 11 unique experiments still running.
+
+### Triggered by: h064-robotank-s1 (nibi job 10847937) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-robotank-s1: q4=14.42, mean=10.38, auc=93168 (nibi). All 3 Robotank seeds complete: avg q4=12.44 vs PPO avg=2.62 WIN (+375%).
+2. Now 160/171 h064 banked (93.6%)
+3. Verified all 12 jobs (11 unique + riverraid-s3 backup) running healthy at ~6-6.5h elapsed (11h walltime)
+
+### CLUSTER STATUS (~08:15 UTC Mar 24):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3 (~6.4h elapsed)
+- narval (6): atlantis-s3, freeway-s3, kangaroo-s2, surround-s1, videopinball-s2, riverraid-s3 (~6.2-6.5h elapsed)
+- rorqual (1): riverraid-s3 (~6h elapsed)
+11 unique experiments remaining (riverraid-s3 on 2 clusters as backup). All ~58% through 11h walltime.
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 160/171 (93.6%), 11 unique still running
+- TOTAL: 502/513 (97.9%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. Expected completion: ~3-4 more hours (~11:00-12:00 UTC Mar 24)
+
+---
+**[2026-03-24 12:36 UTC]**
+
+## Session 310: Banked h064-atlantis-s3. Now 161/171 h064 (94.2%), 10 unique experiments still running.
+
+### Triggered by: h064-atlantis-s3 (narval job 58215599) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-atlantis-s3: q4=4943.51, mean=4905.71, auc=290104000 (narval). All 3 Atlantis seeds complete: avg q4=4769.41 vs PPO avg=15682.41 LOSS (-69.6%). Atlantis is one of the worst games for Rainbow-lite.
+2. Now 161/171 h064 banked (94.2%)
+
+### CLUSTER STATUS (~08:36 UTC Mar 24):
+10 running jobs (all unique, narval riverraid-s3 backup appears to have finished):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3 (~6.75h elapsed)
+- narval (3): freeway-s3, kangaroo-s2, surround-s1, videopinball-s2 (~6.75h elapsed)
+- rorqual (1): riverraid-s3 (~6.35h elapsed)
+All jobs ~62% through 11h walltime. Expected completion: ~3.5-4.5h (~12:00-13:00 UTC).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 161/171 (94.2%), 10 unique still running
+- TOTAL: 503/513 (98.1%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
