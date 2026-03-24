@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Bowling-v5,3,h064,h064-bowling-s3,dqn_rainbow_lite,40000000,17024,36.57988739013672,40.53007507324219,622736.0,24.399999618530273
