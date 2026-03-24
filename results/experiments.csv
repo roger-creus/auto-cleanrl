@@ -1632,3 +1632,4 @@ h064-atlantis-s3,h064,,Phase 4 Atari57 (narval),Atlantis-v5,3,dqn_rainbow_lite,4
 h064-riverraid-s3,h064,,Phase 4 Atari57 (narval),Riverraid-v5,3,dqn_rainbow_lite,40000000.0,,496.1061706542969,410.9026794433594,78789600.0,,,,
 h064-freeway-s3,h064,,Phase 4 Atari57 (narval),Freeway-v5,3,dqn_rainbow_lite,40000000.0,,21.018003463745117,21.587560653686523,410944.0,,,,
 h064-kangaroo-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Kangaroo-v5 --seed 2,narval completed. Rainbow-lite Kangaroo seed 2. q4=400.45.,Kangaroo-v5,2,dqn_rainbow_lite,40000000,84656,372.27,400.45,31515200.0,400.0,narval,,
+h064-videopinball-s2,h064,,Phase 4 Atari57 40M (narval),VideoPinball-v5,2,dqn_rainbow_lite,40000000.0,20512.0,5307.814453125,4535.7392578125,108873888.0,,,,
