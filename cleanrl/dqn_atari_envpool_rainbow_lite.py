@@ -310,8 +310,10 @@ if __name__ == "__main__":
     torch.backends.cudnn.deterministic = args.torch_deterministic
 
     device = torch.device("cuda" if torch.cuda.is_available() and args.cuda else "cpu")
+    print(f"[DIAG] device={device}, cuda_available={torch.cuda.is_available()}", flush=True)
 
     # env setup
+    print(f"[DIAG] Creating envpool env: {args.env_id}, num_envs={args.num_envs}, seed={args.seed}", flush=True)
     envs = envpool.make(
         args.env_id,
         env_type="gym",
@@ -320,22 +322,26 @@ if __name__ == "__main__":
         reward_clip=True,
         seed=args.seed,
     )
+    print(f"[DIAG] envpool.make() done", flush=True)
     envs.num_envs = args.num_envs
     envs.single_action_space = envs.action_space
     envs.single_observation_space = envs.observation_space
     envs = RecordEpisodeStatistics(envs)
     assert isinstance(envs.action_space, gym.spaces.Discrete), "only discrete action space is supported"
 
+    print(f"[DIAG] Creating Q-network", flush=True)
     q_network = QNetwork(envs).to(device)
     optimizer = optim.Adam(q_network.parameters(), lr=args.learning_rate)
     target_network = QNetwork(envs).to(device)
     target_network.load_state_dict(q_network.state_dict())
+    print(f"[DIAG] Q-network created, allocating replay buffer ({args.buffer_size} transitions)", flush=True)
 
     rb = SimpleReplayBuffer(
         args.buffer_size,
         envs.single_observation_space.shape,
         device,
     )
+    print(f"[DIAG] Replay buffer allocated", flush=True)
 
     # N-step transition buffer
     nstep_buffer = NStepBuffer(args.num_envs, args.n_step, args.gamma)
@@ -346,7 +352,9 @@ if __name__ == "__main__":
     all_episode_returns = []
 
     # TRY NOT TO MODIFY: start the game
+    print(f"[DIAG] Calling envs.reset()", flush=True)
     obs = envs.reset()
+    print(f"[DIAG] envs.reset() done, starting training loop", flush=True)
     global_step = 0
 
     while global_step < args.total_timesteps:

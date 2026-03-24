@@ -15030,3 +15030,54 @@ h064 vs PPO: 23W/15T/19L
 2. If 31 complete successfully, rerun IQM analysis — CIs should narrow
 3. If STILL failing: proceed with 140/171 data, document the limitation
 4. Begin paper write-up with current results
+
+---
+**[2026-03-24 04:52 UTC]**
+
+## Session 290: Diagnostic resubmission (attempt 8) for 31 stuck h064 experiments. No new data.
+
+### Triggered by: h064-namethisgame-s3 (rorqual), h002-venture-s1 (rorqual), h001-upndown-s2 (narval), h001-breakout-s1 (narval), h001-bowling-s1 (nibi), h002-privateeye-s2 (fir) — all already banked.
+
+### KEY FINDING: All 4 SLURM queues EMPTY again (8th consecutive failure of these 31 experiments).
+143 h064 CSVs on disk = 140 unique experiments, all already banked. No new data this session.
+
+### ROOT CAUSE INVESTIGATION:
+The Explore agent analyzed SLURM logs and the training script. Findings:
+1. ALL 31 failures show identical truncated logs: container rsync → Python imports → EOF (no training output)
+2. The hang occurs BEFORE envpool.make() or during it — Python argument parsing completes but training never starts
+3. NOT random: same 31 game/seed combos fail every time across all clusters and GPU types
+4. NOT seed-biased: 11×s1, 10×s2, 10×s3
+5. Other seeds of same games succeed (e.g., Asterix-s2/s3 OK, only s1 fails)
+6. Hypothesis: envpool initialization deadlock/hang for specific game/seed combinations
+
+### DIAGNOSTIC APPROACH (attempt 8):
+Added [DIAG] print statements to dqn_atari_envpool_rainbow_lite.py at key initialization points:
+- Before/after envpool.make()
+- Before/after envs.reset()
+- Before/after Q-network creation
+- Before/after replay buffer allocation
+All 31 resubmitted with full GPUs (h100/a100), 48G memory, 11h walltime.
+
+### BOOTSTRAP CI ANALYSIS (10K iterations, 57 games):
+| Algorithm | IQM HNS | 95% CI | 
+|-----------|---------|--------|
+| h064 Rainbow-lite | 0.0081 | [-0.0081, 0.0208] |
+| h001 PPO | 0.0023 | [-0.0006, 0.0090] |
+| h002 PQN | -0.0136 | [-0.0384, 0.0010] |
+
+P(h064>h001) = 77.2%, P(h064>h002) = 100%
+h064 vs h001: 26W/11T/20L
+30 games have only 2 seeds for h064 (inflates CIs)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE  
+- h064 Rainbow-lite: 140/171 (81.9%), 31 resubmitted with diagnostics (attempt 8)
+- TOTAL: 482/513 (94.0%)
+
+### NEXT SESSION TODO:
+1. CHECK DIAGNOSTIC LOGS: Look for [DIAG] markers to see where exactly the 31 hang
+2. If [DIAG] shows hang at envpool.make(): file is envpool bug, try upgrading or reducing num_envs
+3. If [DIAG] shows hang at replay buffer: memory issue despite 48G
+4. If diagnostics succeed and we get new CSVs: bank them, rerun IQM analysis
+5. Begin paper write-up with current results regardless

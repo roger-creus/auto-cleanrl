@@ -213,3 +213,17 @@ Strategy change: upgraded from 1g.10gb to 2g.20gb MIG slices (20GB VRAM instead 
 - fir: nvidia_h100_80gb_hbm3_2g.20gb (7 experiments)
 Memory also kept at 48G. All 31 submitted successfully. If these still fail, the issue is likely
 not GPU memory but something else (envpool process hanging, MIG compatibility, SLURM preemption).
+
+## 2026-03-24 05:00 — 31 h064 experiments stuck failing after 7 attempts (PERSISTENT)
+
+**Problem:** 31 specific h064 (Rainbow-lite DQN) experiments have failed 7+ consecutive times across all 4 clusters (rorqual, narval, nibi, fir) with various GPU configurations (MIG 1g.10gb, 2g.20gb, full H100, A100). Meanwhile, 140 other h064 experiments succeeded with identical code.
+
+**SLURM log pattern:** Container rsync completes (5GB, ~10s), Python imports fire (warnings about treevalue, gym, tyro), then... silence. No training output, no error, no crash. The job simply dies.
+
+**Key observation:** The same 31 game/seed combos fail EVERY TIME. Other seeds of the same games succeed. Not seed-specific (11×s1, 10×s2, 10×s3).
+
+**Root cause hypothesis:** Envpool initialization hangs for these specific game/seed combinations. The training script dies silently between Python argument parsing and the envpool.make() call.
+
+**Attempt 8:** Added diagnostic print statements ([DIAG] markers) before/after envpool.make(), envs.reset(), Q-network creation, and replay buffer allocation. Submitted all 31 with full GPUs (h100/a100) and 48G memory. If diagnostics show the hang is in envpool.make(), the issue is an envpool bug.
+
+**Impact:** 140/171 (82%) coverage is sufficient for analysis — all 57 games have 2+ seeds. IQM analysis already completed with current data.
