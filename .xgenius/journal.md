@@ -14210,3 +14210,98 @@ Head-to-head (45 common games): h064 beats h001 62%, h064 beats h002 84%, h001 b
 2. h064 closest to done (132/171, 77.2%), h001 catching up (106/171, 62%)
 3. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
 4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 01:43 UTC]**
+
+## Session 269: Banked 15 Phase 4 40M results + fixed env_id casing. 454 SLURM jobs active.
+
+### Triggered by: h002-frostbite-s3 (rorqual), h002-jamesbond-s3 (narval), h001-surround-s3 (fir) SUCCESS
+
+### NEW RESULTS BANKED (15):
+- h001 PPO: StarGunner s2(641), Surround s3(-10.0), Frostbite s1(69.3), Gravitar s3(214.1), Freeway s2(0.0)
+- h002 PQN: Seaquest s1(156), Skiing s2(-30229), Asteroids s1(149), Berzerk s1(283), Frostbite s3(128), Kangaroo s1(336), JamesBond s3(8.9), FishingDerby s2(-98), Freeway s3(0.0)
+- h064 Rainbow: Tennis s3(-19.7)
+
+### DATA FIX: Fixed 7 env_id casing issues (Jamesbond->JamesBond, RoadRunner->Roadrunner)
+
+### PHASE 4 BANKING TOTALS (~02:10 UTC Mar 24):
+- h001 PPO: 111/171 (64.9%), 53/57 games, 22 complete, 4 missing
+- h002 PQN: 111/171 (64.9%), 53/57 games, 21 complete, 4 missing
+- h064 Rainbow-lite: 133/171 (77.8%), 56/57 games, 23 complete, 1 missing
+- TOTAL: 355/513 (69.2%)
+
+### IQM ANALYSIS (355 entries):
+| Algorithm | Games | IQM HNS | Median HNS |
+|-----------|-------|---------|------------|
+| h064 Rainbow-lite | 56 | 0.0083 | 0.0038 |
+| h001 PPO | 53 | 0.0028 | 0.0008 |
+| h002 PQN | 53 | -0.0117 | -0.0054 |
+
+Head-to-head (48 common games): Rainbow beats PPO 60%, Rainbow beats PQN 85%, PPO beats PQN 58%
+
+### SLURM QUEUE (~02:10 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| fir     | 89R     | 23P     | 112   |
+| narval  | 34R     | 97P     | 131   |
+| nibi    | 58R     | 70P     | 128   |
+| rorqual | 59R     | 24P     | 83    |
+| TOTAL   | 240R    | 214P    | 454   |
+
+Jobs by hypothesis: h001=168, h002=146, h064=140
+
+### MISSING GAMES:
+- h001: JamesBond, KungFuMaster, Roadrunner, Tutankham (4 games)
+- h002: Krull, Riverraid, Roadrunner, TimePilot (4 games, fixed WizardOfWor)
+- h064: VideoPinball (1 game)
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. 454 jobs still in queue — ETA ~12:00-18:00 UTC Mar 24 for full completion
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 01:52 UTC]**
+
+## Session 270: Banked 8 Phase 4 40M results, fixed env_id casing. 234 jobs running.
+
+### Triggered by: 9 completions (h001-montezumarevenge-s3, h002-montezumarevenge-s2, h002-venture-s1, h002-gopher-s3, h002-krull-s1, h064-tutankham-s1, h002-riverraid-s2, h002-roadrunner-s3, h001-skiing-s1)
+
+### NEW RESULTS BANKED (8):
+- h001 PPO: Skiing-v5 s1 q4=-16323.28
+- h002 PQN: Gopher-v5 s3 q4=47.85, Krull-v5 s1 q4=183.54, Riverraid-v5 s2 q4=943.68, RoadRunner-v5 s3 q4=760.12, Freeway-v5 s1 q4=0.0, JamesBond-v5 s1 q4=10.66
+- h064 Rainbow: Tutankham-v5 s1 q4=11.85
+- h001-montezumarevenge-s3, h002-montezumarevenge-s2, h002-venture-s1 already banked (updated incomplete fields)
+
+### DATA FIX: Fixed 4 env_id casing issues (Jamesbond->JamesBond, Roadrunner->RoadRunner)
+
+### PHASE 4 BANKING TOTALS (~02:30 UTC Mar 24):
+- h001 PPO: 112/171 (65.5%), 53/57 games, 22 with 3 seeds
+- h002 PQN: 117/171 (68.4%), 57/57 games, 22 with 3 seeds
+- h064 Rainbow-lite: 134/171 (78.4%), 56/57 games, 24 with 3 seeds
+- TOTAL: 363/513 (70.8%)
+
+### SLURM QUEUE (~02:30 UTC Mar 24):
+| Cluster | Running | Total |
+|---------|---------|-------|
+| fir     | 86R     | 86    |
+| narval  | 34R     | 34    |
+| nibi    | 57R     | 57    |
+| rorqual | 57R     | 57    |
+| TOTAL   | 234R    | 234   |
+
+Jobs by hypothesis: h001=113R, h002=82R, h064=39R
+
+### MISSING GAMES:
+- h001: 60 missing across all 57 games (mostly s2/s3 gaps)
+- h002: 57 missing (all 57 games covered with at least 1 seed)
+- h064: 41 missing (VideoPinball still 0/3, otherwise filling in)
+
+### NOTE: No pending jobs — all 234 are running. Queue has fully cleared.
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. h002 now has all 57 games with at least 1 seed (117/171)
+3. Full Phase 4 completion ETA: ~06:00-12:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
