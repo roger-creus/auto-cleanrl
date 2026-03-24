@@ -15956,3 +15956,29 @@ Expected completion: ~1.5h (~17:45-18:00 UTC Mar 24)
 ### NEXT SESSION TODO:
 1. Bank final 3 h064 results as they arrive
 2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+
+---
+**[2026-03-24 15:43 UTC]**
+
+## Session 318: Banked h064-pitfall-s1. Now 169/171 h064 (98.8%), 2 unique experiments still running on fir.
+
+### Triggered by: h064-pitfall-s1 (fir job 29211140) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-pitfall-s1: q4=-20.79, mean=-39.80, auc=-177648 (fir). All 3 Pitfall seeds complete: avg q4=-39.07 vs PPO avg q4=-353.33, PQN avg q4=-66.74. Rainbow-lite significantly better on this hard exploration game.
+2. Now 169/171 h064 banked (98.8%)
+
+### REMAINING 2 (both on fir, ~10h into 11h walltime, ~91%):
+- hero-s3 (29211117)
+- seaquest-s2 (29211141)
+Expected completion: ~1h (~18:30-19:00 UTC Mar 24)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 169/171 (98.8%), 2 running on fir
+- TOTAL: 511/513 (99.6%)
+
+### NEXT SESSION TODO:
+1. Bank final 2 h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
