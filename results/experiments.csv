@@ -1415,3 +1415,5 @@ h064-stargunner-s1,h064,,Phase 4 Atari57 (nibi),StarGunner-v5,1,dqn_rainbow_lite
 h064-tutankham-s3,h064,,Phase 4 Atari57 (narval),Tutankham-v5,3,dqn_rainbow_lite,40000000,,13.786517143249512,12.269662857055664,78528.0,
 h064-timepilot-s2,h064,,Phase 4 Atari57 (narval),TimePilot-v5,2,dqn_rainbow_lite,40000000,,1592.7711181640625,1376.9156494140625,52880000.0,
 h002-asterix-s1,h002,,Phase 4 Atari57 (nibi),Asterix-v5,1,pqn,40000000,,355.3571472167969,409.047607421875,19104000.0,
+h001-boxing-s1,h001,,Phase 4 Atari57 (narval),Boxing-v5,1,ppo,40000000,,0.6000000238418579,0.8914285898208618,13440.0,
+h002-centipede-s3,h002,,Phase 4 Atari57 (narval),Centipede-v5,3,pqn,40000000,,1789.449951171875,247.46665954589844,137429760.0,

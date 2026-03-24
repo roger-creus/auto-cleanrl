@@ -13708,3 +13708,93 @@ Walltime: 6h for h001/h002, 11h for h064.
 2. Monitor gap fill submissions for failures
 3. Once >45 games banked per algorithm, run preliminary Atari57 IQM analysis
 4. Full Phase 4 completion expected by ~08:00 UTC Mar 24
+
+---
+**[2026-03-23 23:59 UTC]**
+
+## Session 256: Banked 23 Phase 4 40M results (h001×4, h002×3, h064×16)
+
+### Triggered by: 23 completions across rorqual/narval/nibi
+
+### NEW RESULTS BANKED (23):
+h001 PPO (4): Berzerk-s3 q4=150.45, Centipede-s2 q4=2044.14, UpNDown-s1 q4=448.43, VideoPinball-s2 q4=15715.49
+h002 PQN (3): BeamRider-s3 q4=628.86, Bowling-s1 q4=19.29, Asterix-s1 q4=409.05
+h064 Rainbow-lite (16): Atlantis-s2 q4=4620.43, FishingDerby-s1 q4=-92.86, Freeway-s2 q4=21.29, Frostbite-s3 q4=150.00, IceHockey-s3 q4=-5.71, Kangaroo-s1 q4=77.62, Krull-s1 q4=787.30, Krull-s2 q4=7345.20, KungFuMaster-s3 q4=2125.40, Roadrunner-s3 q4=2682.44, Robotank-s2 q4=12.52, Seaquest-s1 q4=276.73, Seaquest-s3 q4=272.90, Skiing-s2 q4=-29988.93, StarGunner-s1 q4=913.70, TimePilot-s2 q4=1376.92, Tutankham-s3 q4=64.39
+
+### PHASE 4 BANKING TOTALS (00:00 UTC Mar 24):
+- h001 PPO: 38 banked, 33/57 games (0 complete 3-seed, 33 partial), 133 slots remaining
+- h002 PQN: 49 banked, 41/57 games (0 complete 3-seed, 41 partial), 122 slots remaining
+- h064 Rainbow-lite: 88 banked, 50/57 games (7 complete 3-seed, 43 partial), 83 slots remaining
+- TOTAL: 175/513 (34.1%)
+
+### SLURM QUEUE STATUS (~00:00 UTC Mar 24):
+| Cluster | h001 R/P | h002 R/P | h064 R/P | Total |
+|---------|----------|----------|----------|-------|
+| rorqual | 16R/16P  | 13R/13P  | 13R/23P  | 94    |
+| narval  | 14R/44P  | 17R/40P  | 7R/32P   | 154   |
+| nibi    | 17R/45P  | 19R/40P  | 10R/34P  | 165   |
+| fir     | 5R/40P   | 5R/35P   | 0R/32P   | 117   |
+| TOTAL   | 52R/145P | 54R/128P | 30R/121P | 530   |
+
+### COVERAGE ANALYSIS:
+- All 513 experiments (57 games × 3 seeds × 3 algorithms) are either banked or in SLURM queue
+- No true gaps remain — gap fill batch from Session 255 is running
+- h064 furthest ahead (50 games covered), h001 has most to go (24 games still missing)
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete — rorqual h001/h002 should finish first (~2h)
+2. h064 bulk completions from fir/narval/nibi expected ~06:00-10:00 UTC Mar 24
+3. Begin Atari57 IQM analysis once >45 games banked per algorithm
+4. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+
+---
+**[2026-03-24 00:06 UTC]**
+
+## Session 257: Banked 2 Phase 4 results, submitted 2 final gaps. 528 SLURM jobs active.
+
+### Triggered by: h002-centipede-s3 (narval SUCCESS)
+
+### NEW RESULTS BANKED (2):
+- h001 PPO: Boxing-v5 s1 q4=0.89 (found via fresh pull)
+- h002 PQN: Centipede-v5 s3 q4=247.47 (narval, trigger)
+
+### PHASE 4 BANKING TOTALS (00:10 UTC Mar 24):
+- h001 PPO: 84/171 banked, 48 unique games (15 with 3-seed), 8 fully missing
+- h002 PQN: 85/171 banked, 49 unique games (16 with 3-seed), 8 fully missing
+- h064 Rainbow-lite: 122/171 banked, 55 unique games (22 with 3-seed), 2 fully missing
+- TOTAL: 291/513 (56.7%) — over halfway!
+
+### GAP ANALYSIS:
+- Found only 2 TRUE gaps (not banked AND not in SLURM queue):
+  - h001-assault-s3: never submitted — submitted to rorqual
+  - h064-pitfall-s2: never submitted — submitted to rorqual
+- All 513 experiments now either banked or in SLURM queue
+
+### SLURM QUEUE STATUS (~00:10 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| rorqual | 44R     | 52P     | 96    |
+| narval  | 37R     | 114P    | 151   |
+| nibi    | 49R     | 115P    | 164   |
+| fir     | 10R     | 107P    | 117   |
+| TOTAL   | 140R    | 388P    | 528   |
+
+By hypothesis: h001 54R/142P, h002 55R/125P, h064 31R/121P
+
+### MAX ELAPSED TIMES (running jobs):
+- h001/h002: mostly <1h elapsed (2-3h typical walltime)
+- h064 narval: 7h19m elapsed (11h walltime, ~4h remaining)
+- h064 nibi: 6h36m elapsed (~4-5h remaining)
+
+### ESTIMATED COMPLETIONS:
+- rorqual h064: only 8min elapsed — these just started, ~8-10h remaining
+- narval/nibi h064: ~4h remaining for current running batch
+- h001/h002 currently running: ~2-3h remaining
+- Pending backlog (388 jobs): will take 6-12h to clear depending on cluster throughput
+- Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+
+### NEXT SESSION TODO:
+1. Bank more h001/h002/h064 40M results as they arrive
+2. Once >45 games banked per algorithm, start Atari57 IQM analysis
+3. h064 narval/nibi batch should be done by ~04:00 UTC Mar 24
+4. Full completion expected ~12:00-18:00 UTC Mar 24
