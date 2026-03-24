@@ -15846,3 +15846,86 @@ All ~68% through walltime. Expected completion: ~3-3.5 more hours (~12:45-13:15 
 1. Bank newly completed h064 results as they arrive
 2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
 3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
+
+---
+**[2026-03-24 13:31 UTC]**
+
+## Session 314: Banked h064-kangaroo-s2. Now 164/171 h064 (95.9%), 7 unique experiments still running.
+
+### Triggered by: h064-kangaroo-s2 (narval job 58215634) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-kangaroo-s2: q4=400.45, mean=372.27, auc=31515200 (narval). All 3 Kangaroo seeds complete: avg q4=399.11 (very consistent: 398.52/398.37/400.45).
+2. Now 164/171 h064 banked (95.9%)
+
+### REMAINING 7 (all running ~7.5h into 11h walltime):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3
+- narval (2): surround-s1, videopinball-s2
+All ~69% through walltime. Expected completion: ~3-3.5 more hours (~13:00-13:30 UTC).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 164/171 (95.9%), 7 unique still running
+- TOTAL: 506/513 (98.6%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
+
+---
+**[2026-03-24 14:06 UTC]**
+
+## Session 315: Banked h064-videopinball-s2. Now 165/171 h064 (96.5%), 6 unique experiments still running.
+
+### Triggered by: h064-videopinball-s2 (narval job 58215682) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-videopinball-s2: q4=4535.74, mean=5307.81, auc=108873888 (narval). All 3 VideoPinball seeds complete: avg q4=6083.12 vs PPO avg=20837.22 LOSS (-70.8%).
+2. Now 165/171 h064 banked (96.5%)
+
+### REMAINING 6 (all running ~8:12 elapsed of 11:00 walltime, ~75% done):
+- fir (5): crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3
+- narval (1): surround-s1
+Expected completion: ~2.5-3h (~13:00-13:30 UTC Mar 24)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 165/171 (96.5%), 6 unique still running
+- TOTAL: 507/513 (98.8%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
+
+---
+**[2026-03-24 15:14 UTC]**
+
+## Session 316: Banked h064-surround-s1 and h064-crazyclimber-s3. Now 167/171 h064 (97.7%), 4 unique experiments still running on fir.
+
+### Triggered by: h064-surround-s1 (narval 58215675) + h064-crazyclimber-s3 (fir 29211084) — both SUCCESS
+
+### ACTIONS:
+1. Banked h064-surround-s1: q4=-9.97, mean=-9.96, auc=-305632 (narval). All 3 Surround seeds complete: both PPO and Rainbow-lite near floor (-10.0). Effectively tied.
+2. Banked h064-crazyclimber-s3: q4=638.49, mean=1360.11, auc=12382400 (fir). All 3 CrazyClimber seeds complete: avg q4=644.40 vs PPO avg=7739 massive LOSS (-91.7%).
+3. Now 167/171 h064 banked (97.7%)
+
+### REMAINING 4 (all on fir, ~9h22m into 11h walltime, ~85%):
+- hero-s3 (29211117)
+- pitfall-s1 (29211140)
+- seaquest-s2 (29211141)
+- timepilot-s3 (29211143)
+Expected completion: ~1.5-2h (~17:00-17:30 UTC Mar 24)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 167/171 (97.7%), 4 running on fir
+- TOTAL: 509/513 (99.2%)
+
+### NEXT SESSION TODO:
+1. Bank final 4 h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
