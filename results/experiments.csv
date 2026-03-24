@@ -5,18 +5,69 @@ h001-alien-s3,h001,,auto-ingested,Alien-v5,3,ppo,40000000.0,60544.0,193.42494201
 h001-amidar-s1,h001,,auto-ingested,Amidar-v5,1,ppo,40000000.0,71552.0,2.3237924575805664,2.039355993270874,166272.0,5.0
 h001-amidar-s2,h001,see batch file,Recomputed from curve file,Amidar-v5,2,ppo,40000000.0,68736.0,2.76,2.74,189440.0,0.0
 h001-amidar-s3,h001,,auto-ingested,Amidar-v5,3,ppo,40000000.0,70656.0,2.346014499664306,2.02173924446106,165760.0,1.0
+h001-assault-s1,h001,,Phase 4 Atari57 (narval),Assault-v5,1,ppo,40000000,,246.64324951171875,238.56932067871094,17079552.0,
+h001-assault-s3,h001,,Phase 4 Atari57 (nibi),Assault-v5,3,ppo,40000000,,247.0842742919922,257.8202209472656,16888704.0,
+h001-asterix-s1,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Asterix-v5,1,ppo,40000000,163712,236.3174285888672,249.02267456054688,38688000.0,450.0
+h001-asterix-s2,h001,,Phase 4 Atari57 (narval),Asterix-v5,2,ppo,40000000,,236.55789184570312,234.14918518066406,38969600.0,
+h001-asterix-s3,h001,,Phase 4 Atari57 (rorqual),Asterix-v5,3,ppo,40000000,,234.12083435058594,231.2548370361328,38688000.0,
+h001-asteroids-s1,h001,,Phase 4 Atari57 (nibi),Asteroids-v5,1,ppo,40000000,,937.8671264648438,977.6923217773438,34333440.0,
+h001-asteroids-s2,h001,,Phase 4 Atari57 (rorqual),Asteroids-v5,2,ppo,40000000,,834.5201416015625,815.8513793945312,34502400.0,
+h001-asteroids-s3,h001,,Phase 4 Atari57 (narval),Asteroids-v5,3,ppo,40000000,,893.974365234375,911.1538696289062,35701760.0,
+h001-atlantis-s2,h001,,Phase 4 Atari57 (nibi),Atlantis-v5,2,ppo,40000000,,15993.75,15516.6669921875,491328000.0,
+h001-atlantis-s3,h001,,Phase 4 Atari57 (rorqual),Atlantis-v5,3,ppo,40000000,,15951.8515625,15848.1484375,496166400.0,
+h001-bankheist-s1,h001,,Phase 4 Atari57 (narval),BankHeist-v5,1,ppo,40000000,,11.308089256286621,10.757314682006836,840960.0,
+h001-bankheist-s3,h001,,Phase 4 Atari57 (nibi),BankHeist-v5,3,ppo,40000000,,12.291666984558105,11.875,906240.0,
 h001-battlezone-s1,h001,,auto-ingested,BattleZone-v5,1,ppo,40000000.0,34432.0,2449.814208984375,2364.312255859375,84352000.0,6000.0
 h001-battlezone-s2,h001,,"PPO BattleZone seed 2. q4=2390.98, consistent with s1=2364.31, s3=1736.84.",BattleZone-v5,2,ppo,40000000.0,34048.0,7000.0,2390.98,103453568000.0,7000.0
 h001-battlezone-s3,h001,,auto-ingested,BattleZone-v5,3,ppo,40000000.0,34048.0,2090.2255859375,1736.8421630859375,71168000.0,1000.0
+h001-beamrider-s1,h001,,Phase 4 Atari57 (rorqual),BeamRider-v5,1,ppo,40000000,,358.0251159667969,338.0251159667969,10952704.0,
+h001-beamrider-s2,h001,,Phase 4 Atari57 (narval),BeamRider-v5,2,ppo,40000000,,395.1091613769531,407.5633239746094,11581440.0,
+h001-berzerk-s1,h001,,Phase 4 Atari57 (nibi),Berzerk-v5,1,ppo,40000000,,157.9574432373047,148.15602111816406,28508160.0,
+h001-berzerk-s2,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Berzerk-v5,2,ppo,40000000,174592,165.10264587402344,163.4604034423828,28825600.0,150.0
+h001-berzerk-s3,h001,,Phase 4 Atari57 (narval),Berzerk-v5,3,ppo,40000000,,149.39125061035156,150.45143127441406,27956480.0,
+h001-bowling-s2,h001,,Phase 4 Atari57 (nibi),Bowling-v5,2,ppo,40000000,,24.695945739746094,25.29729652404785,467840.0,
+h001-bowling-s3,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Bowling-v5,3,ppo,40000000,18944,23.62162208557129,22.027027130126953,447488.0,17.0
+h001-boxing-s1,h001,,Phase 4 Atari57 (narval),Boxing-v5,1,ppo,40000000,,0.6000000238418579,0.8914285898208618,13440.0,
+h001-boxing-s3,h001,,Phase 4 Atari57 (nibi),Boxing-v5,3,ppo,40000000,,0.8342857360839844,0.2571428716182709,18688.0,
 h001-breakout-s1,h001,,auto-ingested,Breakout-v5,1,ppo,40000000.0,224256.0,1.3413242101669312,1.3652968406677246,300800.0,2.0
 h001-breakout-s2,h001,,auto-ingested,Breakout-v5,2,ppo,40000000.0,220544.0,1.4004642963409424,1.3929193019866943,308864.0,0.0
 h001-breakout-s3,h001,see batch file,Recomputed from curve file,Breakout-v5,3,ppo,40000000.0,197120.0,1.6669,1.7403,328576.0,1.0
+h001-centipede-s1,h001,,Phase 4 Atari57 (rorqual),Centipede-v5,1,ppo,40000000,,2260.80908203125,2235.358642578125,125881856.0,
+h001-centipede-s2,h001,,Phase 4 Atari57 (narval),Centipede-v5,2,ppo,40000000,,2090.779296875,2044.1441650390625,118823168.0,
+h001-centipede-s3,h001,,Phase 4 40M from rorqual,Centipede-v5,3,ppo,40000000,56192,2169.6376953125,1925.867919921875,121916288.0,934.0
+h001-choppercommand-s1,h001,,Phase 4 Atari57 (nibi),ChopperCommand-v5,1,ppo,40000000,,828.7769775390625,877.6978149414062,29491200.0,
+h001-choppercommand-s2,h001,,Phase 4 Atari57 (rorqual),ChopperCommand-v5,2,ppo,40000000,,815.4385986328125,845.9649047851562,29747200.0,
+h001-choppercommand-s3,h001,,Phase 4 Atari57 (narval),ChopperCommand-v5,3,ppo,40000000,,791.6083984375,781.118896484375,28979200.0,
+h001-crazyclimber-s2,h001,,Phase 4 Atari57 (nibi),CrazyClimber-v5,2,ppo,40000000,,7810.0,8032.0,99968000.0,
+h001-crazyclimber-s3,h001,,Phase 4 Atari57 (rorqual),CrazyClimber-v5,3,ppo,40000000,,7676.1904296875,7844.76171875,103168000.0,
+h001-defender-s1,h001,,Phase 4 Atari57 (narval),Defender-v5,1,ppo,40000000,,3167.277587890625,3272.251220703125,77433600.0,
+h001-demonattack-s1,h001,,Phase 4 Atari57 (rorqual),DemonAttack-v5,1,ppo,40000000,,152.453125,147.0625,6244480.0,
+h001-demonattack-s2,h001,,Phase 4 40M from narval,DemonAttack-v5,2,ppo,40000000,43776,151.33041381835938,154.122802734375,6624640.0,130.0
 h001-doubledunk-s1,h001,,auto-ingested,DoubleDunk-v5,1,ppo,40000000.0,20480.0,-17.962499618530273,-18.100000381469727,-367872.0,-20.0
 h001-doubledunk-s2,h001,,auto-ingested,DoubleDunk-v5,2,ppo,40000000.0,20096.0,-17.923566818237305,-17.566879272460938,-360192.0,-22.0
 h001-doubledunk-s3,h001,,"PPO DoubleDunk seed 3. q4=-17.64, consistent with s1=-18.10, s2=-17.57.",DoubleDunk-v5,3,ppo,40000000.0,19968.0,-20.0,-17.64,-684673536.0,-20.0
 h001-enduro-s1,h001,,Recomputed from curve; PPO genuinely scores 0 on Enduro,Enduro-v5,1,ppo,40000000.0,11904.0,0.0,0.0,0.0,0.0
 h001-enduro-s2,h001,see batch file,Recomputed from curve; PPO genuinely scores 0 on Enduro,Enduro-v5,2,ppo,40000000.0,11904.0,0.0,0.0,0.0,0.0
 h001-enduro-s3,h001,see batch file,Recomputed from curve; PPO genuinely scores 0 on Enduro,Enduro-v5,3,ppo,40000000.0,11904.0,0.0,0.0,0.0,0.0
+h001-fishingderby-s1,h001,,Phase 4 Atari57 (nibi),FishingDerby-v5,1,ppo,40000000,21120,-93.1697006225586,-92.66060638427734,-1967744.0,-93.0
+h001-fishingderby-s2,h001,,Phase 4 Atari57 (rorqual),FishingDerby-v5,2,ppo,40000000,,-93.86227416992188,-93.82634735107422,-2006400.0,
+h001-freeway-s2,h001,Phase 4 40M Atari57,nibi,Freeway-v5,2,,40000000,19456,0.0,0.0,,
+h001-freeway-s3,h001,,Phase 4 Atari57 (rorqual),Freeway-v5,3,ppo,40000000,,0.0,0.0,0.0,
+h001-frostbite-s1,h001,Phase 4 40M Atari57,narval,Frostbite-v5,1,,40000000,105216,74.24574279785156,69.29440307617188,,
+h001-frostbite-s3,h001,,Phase 4 Atari57 (nibi),Frostbite-v5,3,ppo,40000000,,70.8452377319336,73.66666412353516,7617280.0,
+h001-gopher-s1,h001,,Phase 4 Atari57 (rorqual),Gopher-v5,1,ppo,40000000,,328.91229248046875,309.1929931640625,11998720.0,
+h001-gopher-s2,h001,,Phase 4 40M from narval,Gopher-v5,2,ppo,40000000,36864,350.1388854980469,341.3888854980469,12907520.0,420.0
+h001-gopher-s3,h001,,Phase 4 40M from rorqual,Gopher-v5,3,ppo,40000000,36096,344.68084716796875,340.85107421875,12441600.0,180.0
+h001-gravitar-s1,h001,,Phase 4 Atari57 (nibi),Gravitar-v5,1,ppo,40000000,,176.90762329101562,192.36947631835938,11276800.0,
+h001-gravitar-s2,h001,,Phase 4 Atari57 (rorqual),Gravitar-v5,2,ppo,40000000,,189.0,196.8000030517578,12096000.0,
+h001-gravitar-s3,h001,Phase 4 40M Atari57,narval,Gravitar-v5,3,,40000000,64256,192.92828369140625,214.1434326171875,,
+h001-hero-s2,h001,,Phase 4 Atari57 (nibi),Hero-v5,2,ppo,40000000,71168,466.4028625488281,511.51080322265625,33192960.0,0.0
+h001-hero-s3,h001,,Phase 4 Atari57 (rorqual),Hero-v5,3,ppo,40000000,,427.95574951171875,527.0442504882812,30949760.0,
+h001-icehockey-s3,h001,,Phase 4 40M from nibi,IceHockey-v5,3,ppo,40000000,12032,-8.968085289001465,-8.595745086669922,-107904.0,-14.0
+h001-jamesbond-s1,h001,,Phase 4 Atari57 (rorqual),JamesBond-v5,1,ppo,40000000,,28.828125,32.8125,2361600.0,
+h001-kangaroo-s1,h001,,Phase 4 40M from nibi,Kangaroo-v5,1,ppo,40000000,84736,42.90030288696289,43.50453186035156,3635200.0,0.0
+h001-kangaroo-s2,h001,,Phase 4 Atari57 (rorqual),Kangaroo-v5,2,ppo,40000000,,42.21556854248047,39.520957946777344,3609600.0,
+h001-krull-s3,h001,,Phase 4 Atari57 (rorqual),Krull-v5,3,ppo,40000000,,1688.3983154296875,1742.597412109375,49922560.0,
 h001-montezumarevenge-s1,h001,see batch file,Recomputed from curve; PPO gets 0 on MontezumaRevenge,MontezumaRevenge-v5,1,ppo,40000000.0,70528.0,0.0,0.0,0.0,0.0
 h001-montezumarevenge-s2,h001,,Recomputed from curve; PPO gets 0 on MontezumaRevenge,MontezumaRevenge-v5,2,ppo,40000000.0,71040.0,0.1802,0.7207,12800.0,0.0
 h001-montezumarevenge-s3,h001,see batch file,Recomputed from curve; PPO gets 0 on MontezumaRevenge,MontezumaRevenge-v5,3,ppo,40000000.0,73088.0,0.1751,0.0,12800.0,0.0
@@ -29,56 +80,154 @@ h001-namethisgame-s3,h001,,auto-ingested,NameThisGame-v5,3,ppo,40000000.0,15488.
 h001-phoenix-s1,h001,,auto-ingested,Phoenix-v5,1,ppo,40000000.0,30336.0,807.7637329101562,892.4894409179688,24504320.0,1450.0
 h001-phoenix-s2,h001,,auto-ingested,Phoenix-v5,2,ppo,40000000.0,40064.0,742.7476196289062,760.8945922851562,29757440.0,380.0
 h001-phoenix-s3,h001,,auto-ingested,Phoenix-v5,3,ppo,40000000.0,19328.0,752.2516479492188,735.099365234375,14539520.0,650.0
+h001-pitfall-s1,h001,,Phase 4 Atari57 (rorqual),Pitfall-v5,1,ppo,40000000,,-287.09375,-342.40625,-4703744.0,
+h001-pong-s2,h001,,Phase 4 Atari57 (rorqual),Pong-v5,2,ppo,40000000,,-20.296829223632812,-20.21613883972168,-901504.0,
 h001-privateeye-s1,h001,,recovered from rorqual CSV,PrivateEye-v5,1,ppo,40000000.0,14720.0,-114.86087036132812,-170.71304321289062,-1690752.0,0.0
 h001-privateeye-s2,h001,,auto-ingested,PrivateEye-v5,2,ppo,40000000.0,14720.0,54.12173843383789,46.64347839355469,796672.0,-1000.0
 h001-privateeye-s3,h001,,auto-ingested,PrivateEye-v5,3,ppo,40000000.0,14720.0,-148.04347229003906,-280.1043395996094,-2179200.0,0.0
 h001-qbert-s1,h001,,auto-ingested,Qbert-v5,1,ppo,40000000.0,122240.0,169.08377075195312,162.48690795898438,20668800.0,275.0
 h001-qbert-s2,h001,,auto-ingested,Qbert-v5,2,ppo,40000000.0,123904.0,159.86570739746094,158.16116333007812,19808000.0,100.0
 h001-qbert-s3,h001,,auto-ingested,Qbert-v5,3,ppo,40000000.0,123392.0,155.83506774902344,154.6680450439453,19228800.0,0.0
+h001-riverraid-s3,h001,,Phase 4 Atari57 (rorqual),Riverraid-v5,3,ppo,40000000,,1481.1644287109375,1466.2100830078125,83040000.0,
+h001-robotank-s1,h001,,Phase 4 Atari57 (rorqual),Robotank-v5,1,ppo,40000000,,2.038167953491211,2.778625965118408,34176.0,
+h001-seaquest-s2,h001,,Phase 4 Atari57 (rorqual),Seaquest-v5,2,ppo,40000000,,90.80342102050781,93.94871520996094,6799360.0,
+h001-skiing-s1,h001,see batch file,"Phase4 40M, cluster=fir",Skiing-v5,1,ppo,40000000.0,33408,-16241.294921875,-16323.283203125,-542589184.0,-14743.0
+h001-skiing-s3,h001,,Phase 4 Atari57 (rorqual),Skiing-v5,3,ppo,40000000,,-16638.03515625,-16232.111328125,-534546816.0,
 h001-solaris-s1,h001,,auto-ingested,Solaris-v5,1,ppo,40000000.0,5760.0,2051.111083984375,2163.5556640625,11814400.0,2480.0
 h001-solaris-s2,h001,,PPO 40M seed 2 gap-fill (Phase 3),Solaris-v5,2,ppo,40000000.0,5504.0,2193.95,2468.84,12075520.0,2100.0
 h001-solaris-s3,h001,,"PPO 40M seed 3 gap-fill (Phase 3). q4=2207.27. s1=2163.56, s2=2468.84. Consistent.",Solaris-v5,3,ppo,40000000.0,5632.0,2589.55,2207.27,14584320.0,780.0
 h001-spaceinvaders-s1,h001,,auto-ingested,SpaceInvaders-v5,1,ppo,40000000.0,78720.0,152.22764587402344,150.18699645996094,11983360.0,365.0
 h001-spaceinvaders-s2,h001,,auto-ingested,SpaceInvaders-v5,2,ppo,40000000.0,78720.0,147.7154541015625,147.17886352539062,11628160.0,150.0
 h001-spaceinvaders-s3,h001,,auto-ingested,SpaceInvaders-v5,3,ppo,40000000.0,78720.0,145.7886199951172,144.7073211669922,11476480.0,180.0
+h001-stargunner-s2,h001,Phase 4 40M Atari57,fir,StarGunner-v5,2,,40000000,36608,666.0839233398438,640.5594482421875,,
+h001-surround-s1,h001,,Phase 4 Atari57 (rorqual),Surround-v5,1,ppo,40000000,,-9.989361763000488,-9.98581600189209,-360576.0,
+h001-surround-s3,h001,Phase 4 40M Atari57,fir,Surround-v5,3,,40000000,36096,-9.989361763000488,-9.978723526000977,,
+h001-tennis-s2,h001,,Phase 4 Atari57 (rorqual),Tennis-v5,2,ppo,40000000,,-23.9289608001709,-23.956283569335938,-560512.0,
+h001-timepilot-s3,h001,,Phase 4 Atari57 (rorqual),TimePilot-v5,3,ppo,40000000,,3400.549560546875,2608.791259765625,79219200.0,
+h001-upndown-s1,h001,,Phase 4 Atari57 (rorqual),UpNDown-v5,1,ppo,40000000,,407.740966796875,448.4337463378906,34654720.0,
 h001-venture-s1,h001,see batch file,Recomputed from curve; PPO genuinely scores 0 on Venture,Venture-v5,1,ppo,40000000.0,18432.0,0.0,0.0,0.0,0.0
 h001-venture-s2,h001,,Recomputed from curve; PPO genuinely scores 0 on Venture,Venture-v5,2,ppo,40000000.0,18944.0,0.0,0.0,0.0,0.0
 h001-venture-s3,h001,,Recomputed from curve; PPO genuinely scores 0 on Venture,Venture-v5,3,ppo,40000000.0,19584.0,0.0,0.0,0.0,0.0
+h001-videopinball-s2,h001,,Phase 4 Atari57 (rorqual),VideoPinball-v5,2,ppo,40000000,,16613.18359375,15715.4931640625,301961216.0,
+h001-wizardofwor-s3,h001,,Phase 4 Atari57 (rorqual),WizardOfWor-v5,3,ppo,40000000,,640.9091186523438,679.7979736328125,16243200.0,
+h001-zaxxon-s1,h001,,Phase 4 Atari57 (rorqual),Zaxxon-v5,1,ppo,40000000,,49.42856979370117,27.428571701049805,2214400.0,
+h002-alien-s1,h002,,Phase 1 gap-fill from fir old-format CSV,Alien-v5,1,pqn,40000000,70784,187.4141082763672,176.38336181640625,13265920.0,140.0
 h002-alien-s2,h002,,auto-ingested,Alien-v5,2,pqn,40000000.0,70144.0,197.20802307128903,176.42335510253906,13832960.0,230.0
+h002-alien-s3,h002,,Phase 1 gap-fill from narval old-format CSV,Alien-v5,3,pqn,40000000,,190.9409637451172,181.3653106689453,13246720.0,
+h002-amidar-s1,h002,,Phase 1 gap-fill from rorqual old-format CSV,Amidar-v5,1,pqn,40000000,,31.112403869628906,32.15503692626953,2054912.0,
 h002-amidar-s2,h002,,auto-ingested,Amidar-v5,2,pqn,40000000.0,65664.0,30.633527755737305,31.914230346679688,2011520.0,32.0
+h002-amidar-s3,h002,,Phase 1 gap-fill from nibi old-format CSV,Amidar-v5,3,pqn,40000000,,30.250965118408203,30.98841667175293,2005760.0,
+h002-assault-s1,h002,python cleanrl/pqn_atari_envpool.py --env-id Assault-v5 --seed 1 --total-timesteps 40000000,"Phase 4 Atari57 PQN baseline (Assault-v5, seed 1)",Assault-v5,1,pqn,40000000,45824,307.3156433105469,369.08380126953125,14082432.0,441.0
+h002-assault-s2,h002,,Phase 4 Atari57 (narval),Assault-v5,2,pqn,40000000,,320.6000061035156,347.00689697265625,17851008.0,
+h002-asterix-s1,h002,,Phase 4 Atari57 (nibi),Asterix-v5,1,pqn,40000000,,355.3571472167969,409.047607421875,19104000.0,
+h002-asterix-s2,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Asterix-v5,2,pqn,40000000,56320,339.8863525390625,400.4545593261719,19142400.0,550.0
+h002-asterix-s3,h002,,Phase 4 Atari57 (narval),Asterix-v5,3,pqn,40000000,,345.3810729980469,430.1385803222656,19142400.0,
+h002-asteroids-s1,h002,Phase 4 40M Atari57,rorqual,Asteroids-v5,1,,40000000,64384,200.2982177734375,149.16500854492188,,
+h002-asteroids-s2,h002,,Phase 4 Atari57 (nibi),Asteroids-v5,2,pqn,40000000,,199.98016357421875,153.88888549804688,12901120.0,
+h002-asteroids-s3,h002,python cleanrl/pqn_atari_envpool.py --env-id Asteroids-v5 --seed 3 --hypothesis-id h002 --experiment-id h002-asteroids-s3 --total-timesteps 40000000,Phase 4 42-game. PQN Asteroids seed 3. q4=144.07,Asteroids-v5,3,pqn,40000000,64128,197.624755859375,144.0718536376953,12673280.0,110.0
+h002-atlantis-s1,h002,,Phase 4 Atari57 (narval),Atlantis-v5,1,pqn,40000000,,2537.44287109375,2136.37744140625,213388800.0,
+h002-atlantis-s3,h002,,Phase 4 Atari57 (nibi),Atlantis-v5,3,pqn,40000000,,2503.603515625,2135.73583984375,213427200.0,
+h002-bankheist-s1,h002,,Phase 4 Atari57 (rorqual),BankHeist-v5,1,pqn,40000000,,9.492753982543945,9.565217018127441,335360.0,
+h002-bankheist-s2,h002,,Phase 4 Atari57 (narval),BankHeist-v5,2,pqn,40000000,,9.0625,7.638888835906982,334080.0,
+h002-battlezone-s1,h002,,Phase 1 gap-fill from nibi old-format CSV,BattleZone-v5,1,pqn,40000000,,2851.674560546875,3349.2822265625,76288000.0,
 h002-battlezone-s2,h002,,auto-ingested,BattleZone-v5,2,pqn,40000000.0,27904.0,2958.715576171875,3064.22021484375,82560000.0,1000.0
+h002-battlezone-s3,h002,,Phase 1 gap-fill from rorqual old-format CSV,BattleZone-v5,3,pqn,40000000,,2946.85986328125,3473.429931640625,78080000.0,
+h002-beamrider-s1,h002,,Phase 4 Atari57 (nibi),BeamRider-v5,1,pqn,40000000,,569.9860229492188,592.58740234375,10433024.0,
+h002-beamrider-s2,h002,,Phase 4 Atari57 (rorqual),BeamRider-v5,2,pqn,40000000,,541.1468505859375,622.9650268554688,9905152.0,
+h002-beamrider-s3,h002,,Phase 4 Atari57 (narval),BeamRider-v5,3,pqn,40000000,,524.0,628.8648681640625,9926656.0,
+h002-berzerk-s1,h002,Phase 4 40M Atari57,rorqual,Berzerk-v5,1,,40000000,93056,243.09490966796875,282.9986267089844,,
+h002-berzerk-s2,h002,,Phase 4 Atari57 (nibi),Berzerk-v5,2,pqn,40000000,,257.81158447265625,279.3623046875,22769920.0,
+h002-berzerk-s3,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Berzerk-v5,3,pqn,40000000,88576,257.32659912109375,279.94219970703125,22792960.0,50.0
+h002-bowling-s1,h002,,Phase 4 Atari57 (narval),Bowling-v5,1,pqn,40000000,,23.653846740722656,19.292306900024414,393600.0,
+h002-bowling-s3,h002,,Phase 4 Atari57 (nibi),Bowling-v5,3,pqn,40000000,,25.770992279052734,26.610687255859375,432128.0,
+h002-boxing-s1,h002,,Phase 4 Atari57 (rorqual),Boxing-v5,1,pqn,40000000,,-30.6971435546875,-34.40571594238281,-687616.0,
+h002-boxing-s2,h002,,Phase 4 Atari57 (narval),Boxing-v5,2,pqn,40000000,,-31.662857055664062,-33.4514274597168,-709248.0,
+h002-breakout-s1,h002,,Phase 1 gap-fill from nibi old-format CSV,Breakout-v5,1,pqn,40000000,,1.585882306098938,1.6494117975234985,345088.0,
 h002-breakout-s2,h002,see batch file,cluster=fir,Breakout-v5,2,,40000000.0,,,0.0,,
 h002-breakout-s3,h002,,auto-ingested,Breakout-v5,3,pqn,40000000.0,216832.0,1.587957501411438,1.8654073476791384,344320.0,2.0
+h002-centipede-s1,h002,,Phase 4 Atari57 (nibi),Centipede-v5,1,pqn,40000000,,2201.494873046875,239.48251342773438,161184640.0,
+h002-centipede-s2,h002,python cleanrl/pqn_atari_envpool.py --env-id Centipede-v5 --seed 2 --hypothesis-id h002 --experiment-id h002-centipede-s2 --total-timesteps 40000000,Phase 4 42-game. PQN Centipede seed 2. q4=2831.48,Centipede-v5,2,pqn,40000000,66560,2290.990478515625,2831.484619140625,152488320.0,1492.0
+h002-centipede-s3,h002,,Phase 4 Atari57 (narval),Centipede-v5,3,pqn,40000000,,1789.449951171875,247.46665954589844,137429760.0,
+h002-choppercommand-s2,h002,,Phase 4 Atari57 (nibi),ChopperCommand-v5,2,pqn,40000000,,752.3529663085938,791.1764526367188,65484800.0,
+h002-choppercommand-s3,h002,,Phase 4 Atari57 (rorqual),ChopperCommand-v5,3,pqn,40000000,,741.2023315429688,903.51904296875,64704000.0,
+h002-crazyclimber-s1,h002,,Phase 4 Atari57 (narval),CrazyClimber-v5,1,pqn,40000000,,1822.22216796875,638.888916015625,16793600.0,
+h002-crazyclimber-s3,h002,,Phase 4 Atari57 (nibi),CrazyClimber-v5,3,pqn,40000000,,1800.0,658.4415283203125,17740800.0,
+h002-defender-s1,h002,,Phase 4 Atari57 (rorqual),Defender-v5,1,pqn,40000000,,2434.5283203125,2458.867919921875,165158400.0,
+h002-defender-s2,h002,,Phase 4 Atari57 (narval),Defender-v5,2,pqn,40000000,,2412.710205078125,2381.5126953125,147001600.0,
+h002-demonattack-s1,h002,,Phase 4 Atari57 (nibi),DemonAttack-v5,1,pqn,40000000,,619.7000122070312,700.4000244140625,11898240.0,
+h002-demonattack-s2,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),DemonAttack-v5,2,pqn,40000000,18432,715.5555419921875,922.2222290039062,13189120.0,1540.0
+h002-demonattack-s3,h002,,Phase 4 Atari57 (narval),DemonAttack-v5,3,pqn,40000000,,647.7564086914062,716.7948608398438,12934400.0,
 h002-doubledunk-s1,h002,see batch file,"Phase4 40M (rorqual, updated from CSV)",DoubleDunk-v5,1,,40000000,,,-24.0,,
 h002-doubledunk-s2,h002,see batch file,"Phase4 40M (nibi, updated from CSV)",DoubleDunk-v5,2,,40000000,,,-24.0,,
 h002-doubledunk-s3,h002,see batch file,"Phase4 40M (fir, updated from CSV)",DoubleDunk-v5,3,,40000000,,,-24.0,,
 h002-enduro-s1,h002,see batch file,cluster=rorqual,Enduro-v5,1,,40000000.0,,,0.0,,
 h002-enduro-s2,h002,,nibi (old_format),Enduro-v5,2,,40000000.0,11904.0,0.0,0.0,,0.0
 h002-enduro-s3,h002,,fir (old_format),Enduro-v5,3,,40000000.0,11904.0,0.0,0.0,,0.0
+h002-fishingderby-s2,h002,Phase 4 40M Atari57,nibi,FishingDerby-v5,2,,40000000,22528,-96.94318389892578,-98.04545593261719,,
+h002-fishingderby-s3,h002,,Phase 4 Atari57 (rorqual),FishingDerby-v5,3,pqn,40000000,,-96.65908813476562,-95.81818389892578,-2177536.0,
+h002-freeway-s1,h002,see batch file,"Phase4 40M, cluster=narval",Freeway-v5,1,pqn,40000000.0,19456,0.0,0.0,0.0,0.0
+h002-freeway-s3,h002,Phase 4 40M Atari57,nibi,Freeway-v5,3,,40000000,19456,0.0,0.0,,
+h002-frostbite-s1,h002,,Phase 4 Atari57 (rorqual),Frostbite-v5,1,pqn,40000000,,89.59326934814453,99.9719467163086,8176640.0,
+h002-frostbite-s3,h002,Phase 4 40M Atari57,rorqual,Frostbite-v5,3,,40000000,76032,102.23905944824219,127.97979736328125,,
+h002-gopher-s1,h002,,Phase 4 Atari57 (nibi),Gopher-v5,1,pqn,40000000,,82.6031723022461,51.238094329833984,3330560.0,
+h002-gopher-s2,h002,,Phase 4 Atari57 (rorqual),Gopher-v5,2,pqn,40000000,,79.67845916748047,44.43729782104492,3171840.0,
+h002-gopher-s3,h002,see batch file,"Phase4 40M, cluster=narval",Gopher-v5,3,pqn,40000000.0,40448,80.0,47.84810256958008,3235840.0,140.0
+h002-gravitar-s2,h002,,Phase 4 Atari57 (nibi),Gravitar-v5,2,pqn,40000000,,80.6629867553711,57.45856475830078,5606400.0,
+h002-gravitar-s3,h002,,Phase 4 Atari57 (rorqual),Gravitar-v5,3,pqn,40000000,,74.04022216796875,46.0694694519043,5184000.0,
+h002-hero-s3,h002,,Phase 4 40M from nibi,Hero-v5,3,pqn,40000000,76928,176.61398315429688,20.465890884399414,13586560.0,0.0
+h002-icehockey-s1,h002,,Phase 4 Atari57 (rorqual),IceHockey-v5,1,pqn,40000000,,-12.977777481079102,-13.155555725097656,-149504.0,
+h002-jamesbond-s1,h002,see batch file,"Phase4 40M, cluster=nibi",JamesBond-v5,1,pqn,40000000.0,60032,14.498933792114258,10.660981178283691,870400.0,0.0
+h002-jamesbond-s2,h002,,Phase 4 Atari57 (rorqual),JamesBond-v5,2,pqn,40000000,,13.559322357177734,9.322033882141113,819200.0,
+h002-jamesbond-s3,h002,Phase 4 40M Atari57,narval,JamesBond-v5,3,,40000000,60544,14.164904594421387,8.87949275970459,,
+h002-kangaroo-s1,h002,Phase 4 40M Atari57,rorqual,Kangaroo-v5,1,,40000000,86016,198.0654754638672,335.71429443359375,,
+h002-kangaroo-s3,h002,,Phase 4 Atari57 (rorqual),Kangaroo-v5,3,pqn,40000000,,159.6491241455078,355.5555419921875,13977600.0,
+h002-krull-s1,h002,see batch file,"Phase4 40M, cluster=narval",Krull-v5,1,pqn,40000000.0,14464,526.106201171875,183.53982543945312,7609600.0,160.0
+h002-kungfumaster-s1,h002,,Phase 4 Atari57 (rorqual),KungFuMaster-v5,1,pqn,40000000,,38.202247619628906,9.887639999389648,2176000.0,
 h002-montezumarevenge-s1,h002,,nibi (old_format),MontezumaRevenge-v5,1,,40000000.0,5504.0,0.0,0.0,,0.0
-h002-montezumarevenge-s2,h002,see batch file,cluster=fir,MontezumaRevenge-v5,2,,40000000.0,,,0.0,,
+h002-montezumarevenge-s2,h002,see batch file,"Phase4 40M, cluster=rorqual",MontezumaRevenge-v5,2,pqn,40000000.0,6656,0.0,0.0,0.0,0.0
 h002-montezumarevenge-s3,h002,,narval (old_format),MontezumaRevenge-v5,3,,40000000.0,6016.0,0.0,0.0,,0.0
 h002-mspacman-s1,h002,see batch file,"Phase4 40M (narval, updated from CSV)",MsPacman-v5,1,,40000000,,,210.0,,
 h002-mspacman-s2,h002,see batch file,"Phase4 40M (rorqual, updated from CSV)",MsPacman-v5,2,,40000000,,,210.0,,
 h002-mspacman-s3,h002,see batch file,"Phase4 40M (nibi, updated from CSV)",MsPacman-v5,3,,40000000,,,210.0,,
+h002-namethisgame-s1,h002,,Phase 1 gap-fill from rorqual old-format CSV,NameThisGame-v5,1,pqn,40000000,,1100.50634765625,1282.2784423828125,22256640.0,
 h002-namethisgame-s2,h002,,auto-ingested,NameThisGame-v5,2,pqn,40000000.0,20608.0,1096.7701416015625,1270.3726806640625,22602240.0,2060.0
+h002-namethisgame-s3,h002,,Phase 1 gap-fill from nibi old-format CSV,NameThisGame-v5,3,pqn,40000000,,1308.0281982421875,1591.267578125,23774720.0,
 h002-phoenix-s1,h002,see batch file,cluster=fir,Phoenix-v5,1,,40000000.0,,,0.0,,
 h002-phoenix-s2,h002,see batch file,cluster=narval,Phoenix-v5,2,,40000000.0,,,0.0,,
 h002-phoenix-s3,h002,see batch file,cluster=rorqual,Phoenix-v5,3,,40000000.0,,,0.0,,
+h002-pitfall-s2,h002,,Phase 4 Atari57 (rorqual),Pitfall-v5,2,pqn,40000000,,-65.0543441772461,-61.69565200805664,-1532160.0,
+h002-pong-s3,h002,,Phase 4 Atari57 (rorqual),Pong-v5,3,pqn,40000000,,-20.91348648071289,-20.979642868041992,-1052032.0,
 h002-privateeye-s1,h002,,auto-ingested,PrivateEye-v5,1,pqn,40000000.0,14720.0,-164.6434783935547,-36.017391204833984,-2423552.0,-1000.0
 h002-privateeye-s2,h002,see batch file,cluster=rorqual,PrivateEye-v5,2,,40000000.0,,,0.0,,
 h002-privateeye-s3,h002,see batch file,cluster=nibi,PrivateEye-v5,3,,40000000.0,,,0.0,,
 h002-qbert-s1,h002,see batch file,"Phase4 40M (nibi, updated from CSV)",Qbert-v5,1,,40000000,,,150.0,,
 h002-qbert-s2,h002,see batch file,"Phase4 40M (fir, updated from CSV)",Qbert-v5,2,,40000000,,,150.0,,
 h002-qbert-s3,h002,see batch file,"Phase4 40M (narval, updated from CSV)",Qbert-v5,3,,40000000,,,150.0,,
+h002-riverraid-s2,h002,see batch file,"Phase4 40M, cluster=fir",Riverraid-v5,2,pqn,40000000.0,88448,806.5557250976562,943.6758422851562,71338240.0,1300.0
+h002-roadrunner-s1,h002,,Phase 4 Atari57 (rorqual),RoadRunner-v5,1,pqn,40000000,,439.6396484375,724.9249267578125,37478400.0,
+h002-roadrunner-s3,h002,see batch file,"Phase4 40M, cluster=fir",RoadRunner-v5,3,pqn,40000000.0,84096,452.9680480957031,760.1217651367188,38092800.0,1100.0
+h002-robotank-s2,h002,,Phase 4 Atari57 (rorqual),Robotank-v5,2,pqn,40000000,,4.965909004211426,7.0,55936.0,
+h002-seaquest-s1,h002,Phase 4 40M Atari57,fir,Seaquest-v5,1,,40000000,54016,135.40284729003906,155.92416381835938,,
+h002-seaquest-s3,h002,,Phase 4 Atari57 (rorqual),Seaquest-v5,3,pqn,40000000,,129.13876342773438,150.14353942871094,6909440.0,
+h002-skiing-s2,h002,Phase 4 40M Atari57,fir,Skiing-v5,2,,40000000,10624,-27074.794921875,-30229.109375,,
+h002-solaris-s1,h002,,Phase 1 gap-fill from fir old-format CSV,Solaris-v5,1,pqn,40000000,,576.0,504.0,2949120.0,
 h002-solaris-s2,h002,,auto-ingested,Solaris-v5,2,pqn,40000000.0,5888.0,346.521728515625,161.7391357421875,2040320.0,500.0
 h002-solaris-s3,h002,,auto-ingested,Solaris-v5,3,pqn,40000000.0,5504.0,787.906982421875,532.093017578125,4336640.0,0.0
 h002-spaceinvaders-s1,h002,see batch file,"Phase4 40M (rorqual, updated from CSV)",SpaceInvaders-v5,1,,40000000,,,285.0,,
 h002-spaceinvaders-s2,h002,see batch file,"Phase4 40M (nibi, updated from CSV)",SpaceInvaders-v5,2,,40000000,,,270.0,,
 h002-spaceinvaders-s3,h002,see batch file,"Phase4 40M (fir, updated from CSV)",SpaceInvaders-v5,3,,40000000,,,285.0,,
-h002-venture-s1,h002,,fir (old_format),Venture-v5,1,,40000000.0,22528.0,0.0,0.0,,0.0
+h002-stargunner-s1,h002,,Phase 4 Atari57 (rorqual),StarGunner-v5,1,pqn,40000000,,455.7275390625,450.77398681640625,18841600.0,
+h002-stargunner-s3,h002,,Phase 4 40M from fir,StarGunner-v5,3,pqn,40000000,41088,465.4205627441406,429.2834777832031,19123200.0,600.0
+h002-surround-s2,h002,,Phase 4 Atari57 (rorqual),Surround-v5,2,pqn,40000000,,-10.0,-10.0,-352000.0,
+h002-tennis-s3,h002,,Phase 4 Atari57 (rorqual),Tennis-v5,3,pqn,40000000,,-23.846153259277344,-23.846153259277344,-79360.0,
+h002-tutankham-s1,h002,,Phase 4 Atari57 (rorqual),Tutankham-v5,1,pqn,40000000,,9.706896781921387,3.1034483909606934,72064.0,
+h002-upndown-s2,h002,,Phase 4 Atari57 (rorqual),UpNDown-v5,2,pqn,40000000,,754.732421875,765.859130859375,34295040.0,
+h002-venture-s1,h002,,"Phase4 40M, cluster=rorqual",Venture-v5,1,pqn,40000000.0,24576,0.0,0.0,0.0,0.0
 h002-venture-s2,h002,see batch file,cluster=narval,Venture-v5,2,,40000000.0,,,0.0,,
 h002-venture-s3,h002,see batch file,cluster=rorqual,Venture-v5,3,,40000000.0,,,0.0,,
+h002-videopinball-s3,h002,,Phase 4 Atari57 (rorqual),VideoPinball-v5,3,pqn,40000000,,3058.908447265625,4196.2666015625,46984832.0,
+h002-yarsrevenge-s1,h002,,Phase 4 Atari57 (rorqual),YarsRevenge-v5,1,pqn,40000000,,4692.09521484375,4775.80126953125,562751104.0,
+h002-zaxxon-s2,h002,,Phase 4 Atari57 (rorqual),Zaxxon-v5,2,pqn,40000000,,0.0,0.0,0.0,
 h003-alien-s1,h003,python cleanrl/ppo_atari_envpool_layernorm.py --env-id Alien-v5 --seed 1,,Alien-v5,1,ppo_layernorm,40000000.0,60416.0,197.6271209716797,207.6271209716797,11939840.0,100.0
 h003-alien-s2,h003,,"ppo_layernorm Alien-v5 seed 2 (fir, 40000000)",Alien-v5,2,ppo_layernorm,40000000.0,61312.0,550.0,196.86846923828125,12023040.0,130.0
 h003-alien-s3,h003,,"ppo_layernorm Alien-v5 seed 3 (narval, 40000000)",Alien-v5,3,ppo_layernorm,40000000.0,60544.0,380.0,196.3002166748047,11710720.0,140.0
@@ -714,7 +863,7 @@ h030-spaceinvaders-s1,h030,,"SEM SpaceInvaders s1 (fir, log-extracted q4=158.90,
 h030-venture-s1,h030,,"SEM Venture s1 (narval, log-extracted q4=0.00, output-dir /output bug)",Venture-v5,1,ppo_sem,40000000.0,144.0,,0.0,,
 h031-alien-s1,h031,,"SPR Alien s1 (fir, log-extracted q4=207.63, output-dir /output bug, old-code, 472 episodes)",Alien-v5,1,ppo_spr,40000000.0,472.0,197.63,207.63,,
 h031-amidar-s1,h031,,curve-derived q4 (nibi old-code),Amidar-v5,1,ppo_spr,40000000.0,61568.0,2.58,2.56,158848.0,33.0
-h031-breakout-s1,h031,,curve-derived q4 (narval old-code),Breakout-v5,1,ppo_spr,40000000.0,145536.0,2.01,1.94,293120.0,0.0
+h031-breakout-s1,h031,,"SPR Breakout s1 (narval new-code CSV, 145536 episodes) CONFIRMS WIN",Breakout-v5,1,ppo_spr,40000000.0,145536.0,2.01,1.94,,
 h031-breakout-s1,h031,,"SPR Breakout s1 (narval new-code CSV, 145536 episodes) CONFIRMS WIN",Breakout-v5,1,ppo_spr,40000000.0,145536.0,2.01,1.94,,
 h031-namethisgame-s1,h031,,"SPR NameThisGame s1 (fir, log-extracted q4=2405.81, output-dir /output bug)",NameThisGame-v5,1,ppo_spr,40000000.0,125.0,,2405.81,,
 h031-phoenix-s1,h031,,"SPR Phoenix s1 (fir, log-extracted q4=895.08, output-dir /output bug, NEW CODE)",Phoenix-v5,1,ppo_spr,40000000.0,30336.0,,895.08,,
@@ -1042,54 +1191,184 @@ h062-solaris-s1,h062,,NoisyNet DQN. q4=787.78 vs PPO=2163.56 LOSS (-63.6%). DQN 
 h062-spaceinvaders-s1,h062,,auto-ingested,SpaceInvaders-v5,1,dqn_noisy,40000000.0,69232.0,170.632080078125,171.40628051757812,11813200.0,144.0
 h062-venture-s1,h062,,auto-ingested,Venture-v5,1,dqn_noisy,40000000.0,19232.0,2.246256351470948,3.993344306945801,43200.0,0.0
 h063-alien-s1,h063,,nibi completed. IQN. q4=311.13 vs PPO=207.63 WIN (+50%). vs DQN=353.11 LOSS (-11.9%).,Alien-v5,1,iqn,40000000.0,67136.0,335.1644287109375,311.1343994140625,22501600.0,328.0
+h063-alien-s2,h063,python src/iqn_atari_envpool.py --env-id Alien-v5 --seed 2 --total-timesteps 40000000,IQN Alien seed 2. q4=314.65 vs PPO=196.87 WIN (+59.8%). 3-seed avg q4=311.24.,Alien-v5,2,iqn,40000000.0,67312.0,335.21,314.65,22563840.0,390.0
 h063-alien-s3,h063,python src/iqn_atari_envpool.py --env-id Alien-v5 --seed 3 --total-timesteps 40000000,IQN Alien seed 3. q4=307.93 vs s1=332.24. Seed 3 lower.,Alien-v5,3,iqn,40000000.0,67904.0,335.67,307.93,22793280.0,176.0
 h063-amidar-s1,h063,,IQN. q4=34.27 vs PPO=2.04 WIN (+1580%). vs DQN=34.30 TIE (-0.1%). IQN matches DQN on Amidar.,Amidar-v5,1,iqn,40000000.0,64192.0,34.38783645629883,34.2731819152832,2207424.0,43.79999923706055
 h063-amidar-s2,h063,,IQN Amidar seed 2. q4=34.31 vs s1=34.27. Extremely consistent across seeds.,Amidar-v5,2,iqn,40000000.0,64048.0,34.17,34.31,2188288.0,35.4
+h063-amidar-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Amidar-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-amidar-s3 --output-dir /runs,IQN Amidar seed 3. q4=34.41 (vs s1=34.27 s2=34.31). 3-seed avg q4=34.33. PPO avg=2.04 WIN (+1583%). Very consistent.,Amidar-v5,3,iqn,40000000,64192,34.25971984863281,34.4107666015625,2199200.0,35.0
 h063-battlezone-s1,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id BattleZone-v5 --seed 1,rorqual completed. IQN. q4=3466.95 vs PPO=2364.31 WIN (+47%). vs DQN=3109.48 WIN (+11.5%).,BattleZone-v5,1,iqn,40000000.0,22992.0,3260.96044921875,3466.945068359375,74976000.0,1200.0
+h063-battlezone-s2,h063,,IQN BattleZone seed 2 — Phase 3,BattleZone-v5,2,iqn,40000000.0,22816.0,3177.42,3373.07,72496000.0,3400.0
 h063-battlezone-s3,h063,python src/iqn_atari_envpool.py --env-id BattleZone-v5 --seed 3 --total-timesteps 40000000,"IQN BattleZone seed 3, q4=3080.56. Compare s1=4008.84. Seed 3 lower — variance.",BattleZone-v5,3,iqn,40000000.0,23040.0,3135.42,3080.56,72240000.0,400.0
 h063-breakout-s1,h063,,rorqual completed. IQN. q4=1.85 vs PPO=1.37 WIN (+35%). vs DQN=1.83 TIE.,Breakout-v5,1,iqn,40000000.0,205152.0,1.7948057651519775,1.8505693674087524,368208.0,0.2000000029802322
 h063-breakout-s2,h063,python src/iqn_atari_envpool.py --env-id Breakout-v5 --seed 2 --total-timesteps 40000000,IQN Breakout seed 2. q4=1.85 vs s1=1.85. Identical across seeds.,Breakout-v5,2,iqn,40000000.0,206048.0,1.78,1.85,367344.0,2.8
+h063-breakout-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Breakout-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-breakout-s3 --output-dir /runs,"IQN Breakout seed 3. q4=1.79 (vs s1=1.85, s2=1.85). All 3 seeds complete. 3-seed avg q4=1.83. PPO avg=1.50 WIN (+22%).",Breakout-v5,3,iqn,40000000,208048,1.7429823875427246,1.7899715900421143,362624.0,2.4000000953674316
 h063-doubledunk-s1,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id DoubleDunk-v5 --seed 1,rorqual completed. IQN DoubleDunk. q4=-22.59 vs PPO=-18.10 LOSS. vs DQN=-24.00 WIN (+5.9%). IQN improves over DQN on DoubleDunk. Completes h063 at 15/15.,DoubleDunk-v5,1,iqn,40000000.0,14848.0,-22.01939582824707,-22.586206436157227,-326944.0,-24.0
+h063-doubledunk-s2,h063,,IQN DoubleDunk seed 2 (Phase 3),DoubleDunk-v5,2,iqn,40000000,14864,-22.101184844970703,-22.533906936645508,-328512.0,-23.600000381469727
+h063-doubledunk-s3,h063,,IQN DoubleDunk seed 3 (Phase 3),DoubleDunk-v5,3,iqn,40000000,14784,-21.978355407714844,-22.571428298950195,-324928.0,-22.0
 h063-enduro-s1,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id Enduro-v5 --seed 1,narval completed. IQN Enduro. q4=1.24 vs PPO=0.0 WIN (both near zero). vs DQN=19.01 BIG LOSS (-93.5%). IQN fails on Enduro.,Enduro-v5,1,iqn,40000000.0,12016.0,3.442077159881592,1.2356857061386108,41360.0,0.0
+h063-enduro-s2,h063,python cleanrl/iqn_atari_envpool.py --env-id Enduro-v5 --seed 2,fir completed. IQN Enduro seed 2. q4=3.23 (vs s1=1.24). Slightly higher seed 2 but still near-zero. IQN bad at Enduro.,Enduro-v5,2,iqn,40000000.0,12016.0,6.977363586425781,3.226364850997925,83840.0,1.7999999523162842
+h063-enduro-s3,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id Enduro-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-enduro-s3 --output-dir /runs,"IQN Enduro seed 3. q4=4.34 (vs s1=1.24, s2=3.23). All 3 IQN Enduro seeds complete. 3-seed avg q4=2.94. PPO avg=0.0 WIN. Rainbow-lite avg=21.84 BIG LOSS (-86.5%). OQE avg=2.90 TIE.",Enduro-v5,3,iqn,40000000,12016,4.447403430938721,4.340878963470459,53440.0,2.4000000953674316
 h063-montezumarevenge-s1,h063,,auto-ingested,MontezumaRevenge-v5,1,iqn,40000000.0,165152.0,0.0,0.0,0.0,0.0
+h063-montezumarevenge-s2,h063,,narval completed. IQN MontezumaRevenge seed 2. q4=0.0 (same as s1). MR always 0 for DQN variants.,MontezumaRevenge-v5,2,iqn,40000000.0,165680.0,0.0,0.0,0.0,0.0
+h063-montezumarevenge-s3,h063,,IQN MontezumaRevenge seed 3 (Phase 3),MontezumaRevenge-v5,3,iqn,40000000,165648,0.0,0.0,0.0,0.0
 h063-mspacman-s1,h063,nibi,IQN MsPacman. q4=496.64 vs PPO=287.07 WIN (+73.0%). vs DQN=465.18 WIN (+6.8%). IQN beats both baselines.,MsPacman-v5,1,iqn,40000000.0,70512.0,518.2595825195312,496.6394348144531,36543520.0,366.0
+h063-mspacman-s2,h063,python cleanrl/iqn_atari_envpool.py --env-id MsPacman-v5 --seed 2,fir completed. IQN MsPacman seed 2. q4=498.58 (vs s1=496.64). Extremely consistent across seeds.,MsPacman-v5,2,iqn,40000000.0,70704.0,519.5406494140625,498.58111572265625,36733600.0,754.0
+h063-mspacman-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id MsPacman-v5 --seed 3,"IQN MsPacman seed 3. q4=505.31 (vs s1=496.64, s2=498.58). All 3 IQN MsPacman seeds complete. 3-seed avg q4=500.18. PPO avg=319.11 WIN (+56.7%). Rainbow-lite avg=538.98 LOSS (-7.2%). OQE avg=502.44 — essentially tied.",MsPacman-v5,3,iqn,40000000,71088,509.8919677734375,505.3094787597656,36247200.0,330.0
 h063-namethisgame-s1,h063,nibi,"q4=1564.76, IQN first result",NameThisGame-v5,1,iqn,40000000.0,16928.0,1697.27783203125,1564.763671875,28731520.0,2476.0
+h063-namethisgame-s2,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id NameThisGame-v5 --seed 2,"narval completed. IQN NameThisGame seed 2. q4=1774.44 vs PPO s2=2293.44. LOSS (-22.6%). vs s1=1564.76, s3=1631.45. 3-seed avg q4=1656.88.",NameThisGame-v5,2,iqn,40000000,16704,1708.515380859375,1774.4444580078125,28539040.0,3124.0
 h063-namethisgame-s3,h063,python src/iqn_atari_envpool.py --env-id NameThisGame-v5 --seed 3 --total-timesteps 40000000,"IQN NameThisGame seed 3, q4=1631.45. Compare s1=1576.68.",NameThisGame-v5,3,iqn,40000000.0,16992.0,1665.03,1631.45,28292160.0,2260.0
 h063-phoenix-s1,h063,,IQN. q4=134.16 vs PPO=735.10 LOSS (-81.7%). vs DQN=93.03 WIN (+44.2%). IQN beats DQN on Phoenix but still far below PPO.,Phoenix-v5,1,iqn,40000000.0,46720.0,178.2876739501953,134.1643829345703,8329600.0,132.0
 h063-phoenix-s2,h063,,IQN Phoenix seed 2. q4=137.49 vs s1=134.16. Consistent.,Phoenix-v5,2,iqn,40000000.0,48496.0,172.07,137.49,8344800.0,116.0
+h063-phoenix-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Phoenix-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-phoenix-s3 --output-dir /runs,"IQN Phoenix seed 3. q4=142.23 (vs s1=134.16, s2=137.49). All 3 seeds complete. 3-seed avg q4=137.96. PPO avg=796.16 BIG LOSS (-82.7%). OQE avg=142.90 slightly better.",Phoenix-v5,3,iqn,40000000,46608,178.99417114257812,142.2313690185547,8342560.0,148.0
 h063-privateeye-s1,h063,nibi,IQN PrivateEye. q4=423.18 vs PPO=-2.46 WIN. vs DQN=-2.46 WIN. IQN learns PrivateEye like QR-DQN — distributional RL helps sparse rewards.,PrivateEye-v5,1,iqn,40000000.0,14832.0,575.7205810546875,423.17584228515625,8539088.0,-648.0
+h063-privateeye-s2,h063,,IQN PrivateEye seed 2 (Phase 3). q4=375.91 vs s1=423.18 s3=435.89. All 3 seeds now complete.,PrivateEye-v5,2,iqn,40000000,14832,476.248,375.909,7063712.0,20.0
 h063-privateeye-s3,h063,python src/iqn_atari_envpool.py --env-id PrivateEye-v5 --seed 3 --total-timesteps 40000000,"IQN PrivateEye seed 3, q4=435.89. Compare s1=206.70.",PrivateEye-v5,3,iqn,40000000.0,14832.0,235.91,435.89,3499088.0,11.2
 h063-qbert-s1,h063,,auto-ingested,Qbert-v5,1,iqn,40000000.0,109200.0,222.5201416015625,219.3003692626953,24299200.0,150.0
+h063-qbert-s2,h063,python cleanrl/iqn_atari_envpool.py --env-id Qbert-v5 --seed 2 --hypothesis-id h063 --experiment-id h063-qbert-s2 --output-dir /runs,"IQN Qbert seed 2 (attempt #6 narval). q4=216.61 (vs s1=219.30, s3=217.19). 3-seed avg q4=217.70. PPO avg=158.44 BIG WIN (+37%). h063 NOW 45/45 COMPLETE.",Qbert-v5,2,iqn,40000000,109504,226.249267578125,216.61309814453125,24775200.0,185.0
+h063-qbert-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Qbert-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-qbert-s3 --output-dir /runs,IQN Qbert seed 3. q4=217.19 (vs s1=219.30). Seed 2 still running. PPO avg=158.44 BIG WIN (+37%).,Qbert-v5,3,iqn,40000000,109952,225.82582092285156,217.18568420410156,24830000.0,165.0
 h063-solaris-s1,h063,,fir completed. IQN. q4=696.07 vs PPO=2163.56 LOSS (-68%). DQN Solaris TBD (h047 pending).,Solaris-v5,1,iqn,40000000.0,5296.0,1018.6707153320312,696.072509765625,5394880.0,320.0
+h063-solaris-s2,h063,python src/iqn_atari_envpool.py --env-id Solaris-v5 --seed 2 --total-timesteps 40000000,"narval completed. IQN Solaris seed 2. q4=822.79 (vs s1=696.07, s3=816.29). 3-seed avg q4=778.38. PPO avg=2279.89 BIG LOSS (-65.9%). All 3 seeds complete.",Solaris-v5,2,iqn,40000000,5504,990.3488159179688,822.7907104492188,5450880.0,1188.0
+h063-solaris-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Solaris-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-solaris-s3 --output-dir /runs,IQN Solaris seed 3. q4=816.29 (vs s1=696.07). PPO avg q4=2279.89. LOSS.,Solaris-v5,3,iqn,40000000,5520,1069.97,816.29,5906240.0,1152.0
 h063-spaceinvaders-s1,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id SpaceInvaders-v5 --seed 1,narval completed. IQN. q4=250.88 vs PPO=150.19 WIN (+67%). vs DQN=252.93 TIE (-0.8%).,SpaceInvaders-v5,1,iqn,40000000.0,60704.0,242.92567443847656,250.88034057617188,14746560.0,107.0
 h063-spaceinvaders-s2,h063,python src/iqn_atari_envpool.py --env-id SpaceInvaders-v5 --seed 2 --total-timesteps 40000000,IQN SpaceInvaders seed 2. q4=256.21 vs s1=250.88. Consistent across seeds.,SpaceInvaders-v5,2,iqn,40000000.0,60656.0,243.38,256.21,14762640.0,535.0
+h063-spaceinvaders-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id SpaceInvaders-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-spaceinvaders-s3 --output-dir /runs,"IQN SpaceInvaders seed 3. q4=248.97 (vs s1=250.88, s2=256.21). All 3 seeds complete. 3-seed avg q4=252.02. PPO avg=147.36 BIG WIN (+71.1%). Very consistent.",SpaceInvaders-v5,3,iqn,40000000,60464,244.4548797607422,248.9706268310547,14780720.0,222.0
 h063-venture-s1,h063,,IQN. q4=1.05 vs PPO=0.0 TIE. vs DQN=3.29 LOSS (-68.1%). IQN below DQN on Venture.,Venture-v5,1,iqn,40000000.0,18240.0,2.98245620727539,1.0526316165924072,54400.0,0.0
 h063-venture-s2,h063,python src/iqn_atari_envpool.py --env-id Venture-v5 --seed 2 --total-timesteps 40000000,IQN Venture seed 2. q4=2.17 vs s1=1.05. Near-zero on both seeds.,Venture-v5,2,iqn,40000000.0,17680.0,3.26,2.17,57600.0,0.0
 h063-venture-s3,h063,,IQN Venture seed 3. q4=3.57 vs s1=1.05. Seed 3 higher. Both near-zero on Venture.,Venture-v5,3,iqn,40000000.0,17952.0,2.41,3.57,43200.0,0.0
 h064-alien-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Alien-v5 --seed 1,fir completed. Rainbow-lite (NoisyNet+N-step) Alien. q4=275.49 vs PPO=207.63 WIN (+32.7%). vs IQN=311.13 LOSS (-11.5%). NoisyNet+N-step hurts Alien.,Alien-v5,1,dqn_rainbow_lite,40000000.0,66720.0,295.87530517578125,275.48681640625,19740800.0,306.0
+h064-alien-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id Alien-v5 --seed 2,fir completed. Rainbow-lite Alien seed 2. q4=280.74 (vs s1=275.49). Consistent.,Alien-v5,2,dqn_rainbow_lite,40000000.0,70064.0,290.7261962890625,280.7398986816406,20369440.0,314.0
+h064-alien-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Alien-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-alien-s3 --output-dir /runs,"Rainbow-lite Alien seed 3. q4=139.34 (vs s1=275.49, s2=280.74). HUGE OUTLIER. 3-seed avg q4=231.86. PPO avg=200.27 WIN (+15.8%). IQN avg=311.24 LOSS (-25.5%). Seed 3 catastrophically worse.",Alien-v5,3,dqn_rainbow_lite,40000000,69328,206.0789337158203,139.3353271484375,14287040.0,140.0
 h064-amidar-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Amidar-v5 --seed 1,nibi completed. Rainbow-lite Amidar. q4=31.0 vs PPO=2.04 WIN (+1419%). vs IQN=34.27 LOSS (-9.5%). NoisyNet+N-step regresses on Amidar.,Amidar-v5,1,dqn_rainbow_lite,40000000.0,66528.0,39.49639129638672,31.0,2627616.0,31.0
+h064-amidar-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Amidar-v5 --seed 2,"narval completed. Rainbow-lite Amidar seed 2, q4=38.51 (vs s1=31.0, s3=36.43). 3-seed avg q4=35.31. All seeds complete for Amidar.",Amidar-v5,2,dqn_rainbow_lite,40000000,72400,39.16883850097656,38.50563430786133,2835824.0,40.79999923706055
 h064-amidar-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Amidar-v5 --seed 3,Phase 3 seed 3. q4=36.43 (s1=31.0). Improved over s1.,Amidar-v5,3,dqn_rainbow_lite,40000000.0,65104.0,43.49,36.43,2831472.0,31.0
+h064-assault-s1,h064,,Phase 4 Atari57 (nibi),Assault-v5,1,dqn_rainbow_lite,40000000,,365.5796813964844,362.9069519042969,21876288.0,
+h064-assault-s2,h064,,Phase 4 Atari57 (rorqual),Assault-v5,2,dqn_rainbow_lite,40000000,,365.1494140625,374.1623229980469,21739536.0,
+h064-assault-s3,h064,,Phase 4 Atari57 (narval),Assault-v5,3,dqn_rainbow_lite,40000000,,381.7539978027344,381.8556213378906,23986368.0,
+h064-asterix-s2,h064,,Phase 4 Atari57 (nibi),Asterix-v5,2,dqn_rainbow_lite,40000000,,220.50904846191406,226.3461151123047,30010400.0,
+h064-asterix-s3,h064,,Phase 4 Atari57 (rorqual),Asterix-v5,3,dqn_rainbow_lite,40000000,,233.49301147460938,236.85752868652344,33144800.0,
+h064-asteroids-s1,h064,,Phase 4 Atari57 (narval),Asteroids-v5,1,dqn_rainbow_lite,40000000,,324.88690185546875,320.92919921875,21369760.0,
+h064-asteroids-s3,h064,,Phase 4 Atari57 (nibi),Asteroids-v5,3,dqn_rainbow_lite,40000000,,287.1251220703125,267.1922607421875,22579520.0,
+h064-atlantis-s1,h064,,Phase 4 Atari57 (rorqual),Atlantis-v5,1,dqn_rainbow_lite,40000000,,4718.16259765625,4744.291015625,284297600.0,
+h064-atlantis-s2,h064,,Phase 4 Atari57 (narval),Atlantis-v5,2,dqn_rainbow_lite,40000000,,4752.48681640625,4620.427734375,284388800.0,
+h064-bankheist-s1,h064,,Phase 4 Atari57 (nibi),BankHeist-v5,1,dqn_rainbow_lite,40000000,,14.27503776550293,12.257100105285645,611200.0,
+h064-bankheist-s2,h064,,Phase 4 Atari57 (rorqual),BankHeist-v5,2,dqn_rainbow_lite,40000000,,15.11178207397461,17.54682731628418,400160.0,
+h064-bankheist-s3,h064,,Phase 4 Atari57 (narval),BankHeist-v5,3,dqn_rainbow_lite,40000000,,11.531100273132324,10.817747116088867,424160.0,
 h064-battlezone-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id BattleZone-v5 --seed 1,Rainbow-lite (IQN+NoisyNet+N-step) BattleZone-v5 seed 1 (nibi). q4=5310.42 vs IQN=3466.95 WIN (+53.2%),BattleZone-v5,1,dqn_rainbow_lite,40000000.0,20720.0,3990.73,5310.42,82688000.0,4000.0
 h064-battlezone-s2,h064,,auto-ingested,BattleZone-v5,2,dqn_rainbow_lite,40000000.0,32272.0,3378.28466796875,3000.0,109024000.0,3000.0
+h064-battlezone-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id BattleZone-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-battlezone-s3 --output-dir /runs,"Rainbow-lite BattleZone seed 3. q4=2000.0 (vs s1=5310.42, s2=3000.0). HIGH VARIANCE. 3-seed avg q4=3436.81. PPO avg=2164.04 WIN (+58.8%). IQN avg=3306.86 WIN (+3.9%). OQE avg=3637.81 LOSS (-5.5%).",BattleZone-v5,3,dqn_rainbow_lite,40000000,32432,2553.033935546875,2000.0,82800000.0,2000.0
+h064-beamrider-s2,h064,,Phase 4 Atari57 (nibi),BeamRider-v5,2,dqn_rainbow_lite,40000000,,618.1683959960938,714.6021118164062,9396160.0,
+h064-beamrider-s3,h064,,Phase 4 Atari57 (rorqual),BeamRider-v5,3,dqn_rainbow_lite,40000000,,596.1138916015625,740.4407958984375,10386688.0,
+h064-berzerk-s1,h064,,Phase 4 Atari57 (narval),Berzerk-v5,1,dqn_rainbow_lite,40000000,,251.24111938476562,261.1663513183594,21506240.0,
+h064-berzerk-s3,h064,,Phase 4 Atari57 (nibi),Berzerk-v5,3,dqn_rainbow_lite,40000000,,277.83929443359375,252.40325927734375,24009760.0,
+h064-bowling-s1,h064,,Phase 4 Atari57 (rorqual),Bowling-v5,1,dqn_rainbow_lite,40000000,,36.41363525390625,30.010910034179688,640880.0,
+h064-bowling-s2,h064,,Phase 4 Atari57 (narval),Bowling-v5,2,dqn_rainbow_lite,40000000,,27.098604202270508,30.0,496880.0,
+h064-boxing-s1,h064,,Phase 4 Atari57 (nibi),Boxing-v5,1,dqn_rainbow_lite,40000000,,-22.27246856689453,-22.221113204956055,-499616.0,
+h064-boxing-s2,h064,,Phase 4 Atari57 (rorqual),Boxing-v5,2,dqn_rainbow_lite,40000000,,-23.218259811401367,-23.457918167114258,-520832.0,
+h064-boxing-s3,h064,,Phase 4 Atari57 (narval),Boxing-v5,3,dqn_rainbow_lite,40000000,,-21.611268997192383,-22.393722534179688,-484784.0,
 h064-breakout-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Breakout-v5 --seed 1,narval completed. Rainbow-lite (NoisyNet+N-step) Breakout. q4=2.04 vs PPO=1.37 WIN (+48.6%). vs IQN=1.85 WIN (+10.0%). Near-zero game but consistent improvement.,Breakout-v5,1,dqn_rainbow_lite,40000000.0,197472.0,1.9474962949752808,2.036623001098633,384576.0,2.799999952316284
+h064-breakout-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Breakout-v5 --seed 2,narval completed. Rainbow-lite Breakout seed 2. q4=2.03 vs PPO s2=1.39 WIN (+45.3%). All 3 seeds complete: avg q4=2.024. Consistent ~2.0 across seeds.,Breakout-v5,2,dqn_rainbow_lite,40000000,194976,1.9958969354629517,2.0254390239715576,389152.0,3.200000047683716
 h064-breakout-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Breakout-v5 --seed 3,nibi completed. Rainbow-lite Breakout seed 3. q4=2.01 vs s1=2.04. Consistent.,Breakout-v5,3,dqn_rainbow_lite,40000000.0,195952.0,1.9735445976257324,2.009145021438598,386720.0,2.400000095367432
+h064-centipede-s2,h064,,Phase 4 Atari57 (nibi),Centipede-v5,2,dqn_rainbow_lite,40000000,,3504.974365234375,5014.4072265625,164649680.0,
+h064-centipede-s3,h064,,Phase 4 Atari57 (rorqual),Centipede-v5,3,dqn_rainbow_lite,40000000,,4752.60986328125,8487.2978515625,205845040.0,
+h064-choppercommand-s1,h064,,Phase 4 Atari57 (narval),ChopperCommand-v5,1,dqn_rainbow_lite,40000000,,857.6361694335938,903.1128540039062,56425600.0,
+h064-choppercommand-s3,h064,,Phase 4 Atari57 (nibi),ChopperCommand-v5,3,dqn_rainbow_lite,40000000,,731.758544921875,746.8729248046875,69640000.0,
+h064-crazyclimber-s1,h064,,Phase 4 Atari57 (rorqual),CrazyClimber-v5,1,dqn_rainbow_lite,40000000,,1197.7391357421875,626.6087036132812,11019200.0,
+h064-crazyclimber-s2,h064,,Phase 4 Atari57 (narval),CrazyClimber-v5,2,dqn_rainbow_lite,40000000,,1375.13916015625,668.0890502929688,11859200.0,
+h064-defender-s1,h064,,Phase 4 Atari57 (nibi),Defender-v5,1,dqn_rainbow_lite,40000000,,2592.910400390625,2581.1396484375,122302400.0,
+h064-defender-s2,h064,,Phase 4 Atari57 (rorqual),Defender-v5,2,dqn_rainbow_lite,40000000,,3353.275634765625,3547.21875,86809600.0,
+h064-defender-s3,h064,,Phase 4 Atari57 (narval),Defender-v5,3,dqn_rainbow_lite,40000000,,3005.88232421875,3206.603759765625,86665600.0,
+h064-demonattack-s2,h064,,Phase 4 Atari57 (nibi),DemonAttack-v5,2,dqn_rainbow_lite,40000000,,218.0238800048828,197.7586212158203,5260480.0,
+h064-demonattack-s3,h064,,Phase 4 Atari57 (rorqual),DemonAttack-v5,3,dqn_rainbow_lite,40000000,,234.75601196289062,186.4144287109375,5311120.0,
 h064-doubledunk-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id DoubleDunk-v5 --seed 1,narval completed. Rainbow-lite (NoisyNet+N-step) DoubleDunk. q4=-19.35 vs PPO=-18.10 LOSS (-6.9%). vs IQN=-22.59 WIN (+14.4%). NoisyNet+N-step significantly improves DoubleDunk over IQN!,DoubleDunk-v5,1,dqn_rainbow_lite,40000000.0,3136.0,-22.37755012512207,-19.346939086914062,-70176.0,-26.0
 h064-doubledunk-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id DoubleDunk-v5 --seed 2,fir completed. Rainbow-lite DoubleDunk seed 2. q4=-22.51 vs s1=-19.35. Worse seed 2 — closer to IQN range.,DoubleDunk-v5,2,dqn_rainbow_lite,40000000.0,1584.0,-23.090909957885746,-22.505050659179688,-36576.0,-17.600000381469727
+h064-doubledunk-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id DoubleDunk-v5 --seed 3,"narval completed. Rainbow-lite DoubleDunk seed 3. q4=-33.73 (vs s1=-19.35, s2=-22.51). High variance outlier. 3-seed avg q4=-25.20. PPO avg=-17.77 BIG LOSS (-42%). IQN avg=-22.56 LOSS (-12%). Rainbow-lite worst on DoubleDunk.",DoubleDunk-v5,3,dqn_rainbow_lite,40000000.0,1920.0,-25.91666603088379,-33.733333587646484,-49760.0,-57.599998474121094
 h064-enduro-s1,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id Enduro-v5 --seed 1,narval completed. Rainbow-lite Enduro. q4=21.97 vs IQN=1.24 WIN (+1673%). IQN was catastrophic on Enduro (q4=1.24 vs DQN=19.01). Rainbow-lite at 21.97 BEATS even DQN. N-step/NoisyNet restore Enduro competence.,Enduro-v5,1,iqn_rainbow_lite,40000000.0,12016.0,20.61251640319824,21.973369598388672,247680.0,16.0
+h064-enduro-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Enduro-v5 --seed 2,"narval completed. Rainbow-lite Enduro seed 2. q4=20.99 vs PPO=0.0 WIN. vs s1=21.97, s3=22.57. 3-seed avg q4=21.84. All 3 seeds complete.",Enduro-v5,2,dqn_rainbow_lite,40000000,12016,20.4340877532959,20.985353469848633,245536.0,12.199999809265137
+h064-enduro-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Enduro-v5 --seed 3,nibi completed. Rainbow-lite Enduro seed 3. q4=22.57 (vs s1=21.97 s2=22.12). Very consistent across all 3 seeds.,Enduro-v5,3,dqn_rainbow_lite,40000000.0,12016.0,21.32,22.57,256192.0,26.4
+h064-fishingderby-s1,h064,,Phase 4 Atari57 (narval),FishingDerby-v5,1,dqn_rainbow_lite,40000000,,-93.72940826416016,-92.85588073730469,-2039552.0,
+h064-fishingderby-s3,h064,,Phase 4 Atari57 (nibi),FishingDerby-v5,3,dqn_rainbow_lite,40000000,,-94.42400360107422,-96.02400207519531,-2077328.0,
+h064-freeway-s1,h064,,Phase 4 Atari57 (rorqual),Freeway-v5,1,dqn_rainbow_lite,40000000,,20.97054100036621,21.39934539794922,410016.0,
+h064-freeway-s2,h064,,Phase 4 Atari57 (narval),Freeway-v5,2,dqn_rainbow_lite,40000000,,21.031097412109375,21.2929630279541,411200.0,
+h064-frostbite-s1,h064,,Phase 4 Atari57 (nibi),Frostbite-v5,1,dqn_rainbow_lite,40000000,,138.64749145507812,140.661376953125,6708320.0,
+h064-frostbite-s2,h064,,Phase 4 Atari57 (rorqual),Frostbite-v5,2,dqn_rainbow_lite,40000000,,85.69039916992188,80.0,8856960.0,
+h064-frostbite-s3,h064,,Phase 4 Atari57 (narval),Frostbite-v5,3,dqn_rainbow_lite,40000000,,140.26060485839844,149.9975128173828,9041760.0,
+h064-gopher-s2,h064,,Phase 4 Atari57 (nibi),Gopher-v5,2,dqn_rainbow_lite,40000000,,198.872802734375,193.11500549316406,8355840.0,
+h064-gopher-s3,h064,,Phase 4 Atari57 (rorqual),Gopher-v5,3,dqn_rainbow_lite,40000000,,179.26071166992188,170.2870635986328,7293760.0,
+h064-gravitar-s1,h064,,Phase 4 Atari57 (narval),Gravitar-v5,1,dqn_rainbow_lite,40000000,,94.18074798583984,91.39179229736328,5619200.0,
+h064-gravitar-s3,h064,,Phase 4 Atari57 (nibi),Gravitar-v5,3,dqn_rainbow_lite,40000000,,104.43843078613281,101.37744140625,7096800.0,
+h064-hero-s1,h064,,Phase 4 Atari57 (rorqual),Hero-v5,1,dqn_rainbow_lite,40000000,,667.646728515625,756.1240234375,9646160.0,
+h064-hero-s2,h064,,Phase 4 Atari57 (narval),Hero-v5,2,dqn_rainbow_lite,40000000,,1038.0418701171875,797.6906127929688,11111200.0,
+h064-icehockey-s1,h064,,Phase 4 Atari57 (nibi),IceHockey-v5,1,dqn_rainbow_lite,40000000,,-8.488371849060059,-2.7975375652313232,-99280.0,
+h064-icehockey-s2,h064,,Phase 4 Atari57 (rorqual),IceHockey-v5,2,dqn_rainbow_lite,40000000,,-8.006877899169922,-4.609353542327881,-93136.0,
+h064-icehockey-s3,h064,,Phase 4 Atari57 (narval),IceHockey-v5,3,dqn_rainbow_lite,40000000,,-7.768493175506592,-5.706849098205566,-90736.0,
+h064-jamesbond-s2,h064,,Phase 4 Atari57 (nibi),JamesBond-v5,2,dqn_rainbow_lite,40000000,,27.665576934814453,37.97148895263672,1490400.0,
+h064-jamesbond-s3,h064,,Phase 4 Atari57 (rorqual),JamesBond-v5,3,dqn_rainbow_lite,40000000,,34.957157135009766,34.02094650268555,1762400.0,
+h064-kangaroo-s1,h064,,Phase 4 Atari57 (narval),Kangaroo-v5,1,dqn_rainbow_lite,40000000,,387.094970703125,398.518798828125,33451200.0,
+h064-kangaroo-s3,h064,,Phase 4 Atari57 (nibi),Kangaroo-v5,3,dqn_rainbow_lite,40000000,,390.09991455078125,398.37158203125,33729600.0,
+h064-krull-s1,h064,,Phase 4 Atari57 (rorqual),Krull-v5,1,dqn_rainbow_lite,40000000,,831.0910034179688,787.3035888671875,23523200.0,
+h064-krull-s2,h064,,Phase 4 Atari57 (narval),Krull-v5,2,dqn_rainbow_lite,40000000,,929.06494140625,893.0234985351562,26548960.0,
+h064-kungfumaster-s1,h064,,Phase 4 Atari57 (nibi),KungFuMaster-v5,1,dqn_rainbow_lite,40000000,,71.95767211914062,68.19518280029297,3916800.0,
+h064-kungfumaster-s2,h064,,Phase 4 Atari57 (rorqual),KungFuMaster-v5,2,dqn_rainbow_lite,40000000,,112.1285629272461,106.12492370605469,5916800.0,
+h064-kungfumaster-s3,h064,,Phase 4 Atari57 (narval),KungFuMaster-v5,3,dqn_rainbow_lite,40000000,,81.6112060546875,89.3753662109375,4473600.0,
 h064-montezumarevenge-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id MontezumaRevenge-v5 --seed 1,nibi completed. Rainbow-lite MR. q4=0.0 TIE. Hard exploration — no algorithm solves it.,MontezumaRevenge-v5,1,dqn_rainbow_lite,40000000.0,147088.0,0.0108778420835733,0.0,1600.0,0.0
+h064-montezumarevenge-s2,h064,,Rainbow-lite MontezumaRevenge seed 2 (Phase 3),MontezumaRevenge-v5,2,dqn_rainbow_lite,40000000,150848,0.021213406696915627,0.04242681339383125,3200.0,0.0
+h064-montezumarevenge-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id MontezumaRevenge-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-montezumarevenge-s3 --output-dir /runs,"Rainbow-lite MR seed 3. q4=0.0 (vs s1=0.0, s2=0.04). All 3 seeds complete. TIE — no algorithm solves this.",MontezumaRevenge-v5,3,dqn_rainbow_lite,40000000,154656,0.010345540940761566,0.0,1600.0,0.0
 h064-mspacman-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id MsPacman-v5 --seed 1,nibi completed. Rainbow-lite (NoisyNet+N-step) MsPacman. q4=555.97 vs IQN=496.64 WIN (+11.9%). Consistent improvement.,MsPacman-v5,1,dqn_rainbow_lite,40000000.0,68256.0,588.5184936523438,555.9681396484375,40169920.0,860.0
+h064-mspacman-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id MsPacman-v5 --seed 2,narval completed. Rainbow-lite MsPacman seed 2. q4=548.15 (vs s1=555.97). Consistent across seeds.,MsPacman-v5,2,dqn_rainbow_lite,40000000.0,62560.0,553.7570190429688,548.1534423828125,34643040.0,606.0
+h064-mspacman-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id MsPacman-v5 --seed 3,"nibi completed. Rainbow-lite MsPacman seed 3. q4=512.83 (vs s1=555.97, s2=548.15). All 3 seeds consistent: 556/548/513.",MsPacman-v5,3,dqn_rainbow_lite,40000000.0,67872.0,534.2079467773438,512.828857421875,36257760.0,702.0
 h064-namethisgame-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id NameThisGame-v5 --seed 1,nibi completed. Rainbow-lite NTG. q4=2491.14 vs PPO=2522.54 TIE (-1.2%). vs IQN=1564.76 WIN (+59.2%). Big N-step improvement on NTG.,NameThisGame-v5,1,dqn_rainbow_lite,40000000.0,13792.0,2446.078857421875,2491.136962890625,33736320.0,3580.0
+h064-namethisgame-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id NameThisGame-v5 --seed 2,fir completed. Rainbow-lite NameThisGame seed 2. q4=2437.37 (vs s1=2491.14). Consistent.,NameThisGame-v5,2,dqn_rainbow_lite,40000000.0,14256.0,2356.599365234375,2437.373779296875,33595680.0,1868.0
+h064-namethisgame-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id NameThisGame-v5 --seed 3,Rainbow-lite NTG seed 3. q4=2328.33. All 3 seeds: avg=2418.95. PPO avg=2435.71 TIE (-0.7%). IQN avg=1656.88 WIN (+46%).,NameThisGame-v5,3,dqn_rainbow_lite,40000000.0,13600.0,2241.7294921875,2328.329345703125,30487520.0,2714.0
 h064-phoenix-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Phoenix-v5 --seed 1,nibi completed. Rainbow-lite (NoisyNet+N-step) Phoenix. q4=188.31 vs PPO=892.49 LOSS (-78.9%). vs DQN=93.03 WIN (+102.4%). Better than DQN but worse than NoisyNet alone (301.31). N-step drags NoisyNet down on Phoenix.,Phoenix-v5,1,dqn_rainbow_lite,40000000.0,42272.0,200.7418670654297,188.3118896484375,8485760.0,92.0
 h064-phoenix-s2,h064,,auto-ingested,Phoenix-v5,2,dqn_rainbow_lite,40000000.0,39296.0,188.5545654296875,162.21498107910156,7409440.0,76.0
 h064-phoenix-s3,h064,python src/dqn_rainbow_lite_atari_envpool.py --env-id Phoenix-v5 --seed 3 --total-timesteps 40000000,"Rainbow-lite Phoenix seed 3, q4=76.90. Compare s1=94.65. Lower seed 3.",Phoenix-v5,3,dqn_rainbow_lite,40000000.0,54256.0,123.81,76.9,6717440.0,84.0
+h064-pitfall-s2,h064,,Phase 4 Atari57 (nibi),Pitfall-v5,2,dqn_rainbow_lite,40000000,,-50.76356506347656,-48.88372039794922,-209552.0,
+h064-pitfall-s3,h064,,Phase 4 Atari57 (rorqual),Pitfall-v5,3,dqn_rainbow_lite,40000000,,-36.45833206176758,-47.5476188659668,-196000.0,
+h064-pong-s1,h064,,Phase 4 Atari57 (narval),Pong-v5,1,dqn_rainbow_lite,40000000,,-20.807374954223633,-20.77741241455078,-1011072.0,
+h064-pong-s3,h064,,Phase 4 Atari57 (nibi),Pong-v5,3,dqn_rainbow_lite,40000000,,-20.808794021606445,-20.833444595336914,-999488.0,
 h064-privateeye-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id PrivateEye-v5 --seed 1,narval completed. Rainbow-lite (NoisyNet+N-step) PrivateEye. q4=0.0 vs PPO=-170.71 WIN. vs IQN=423.18 LOSS (-100%). Catastrophic collapse on PrivateEye.,PrivateEye-v5,1,dqn_rainbow_lite,40000000.0,14832.0,41.44336700439453,0.0,614688.0,0.0
+h064-privateeye-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id PrivateEye-v5 --seed 2,fir completed. Rainbow-lite PrivateEye seed 2. q4=-0.46 (vs s1=0.0). Still near-zero — NoisyNet catastrophic on PrivateEye across seeds.,PrivateEye-v5,2,dqn_rainbow_lite,40000000.0,14832.0,0.7605177760124207,-0.4573894143104553,11280.0,0.0
+h064-privateeye-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id PrivateEye-v5 --seed 3,"Rainbow-lite PrivateEye seed 3. q4=0.0 (vs s1=0.0, s2=-0.46). All 3 Rainbow-lite PrivateEye seeds complete. 3-seed avg q4=-0.15. NoisyNet catastrophic on PrivateEye across all seeds. h064 NOW 45/45 COMPLETE.",PrivateEye-v5,3,dqn_rainbow_lite,40000000,14832,0.9320388436317444,0.0,13824.0,0.0
 h064-qbert-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Qbert-v5 --seed 1,fir completed. Rainbow-lite (NoisyNet+N-step) Qbert. q4=254.38 vs PPO=10.0 WIN. vs IQN=219.30 WIN (+16.0%). Strong improvement from NoisyNet+N-step on Qbert!,Qbert-v5,1,dqn_rainbow_lite,40000000.0,124944.0,262.159,254.38,32755200.0,185.0
+h064-qbert-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Qbert-v5 --seed 2,"narval completed. Rainbow-lite Qbert seed 2. q4=251.61 vs PPO s2=158.16 WIN (+59.1%). vs s1=254.38, s3=255.08. 3-seed avg q4=253.69. All 3 seeds complete.",Qbert-v5,2,dqn_rainbow_lite,40000000,117296,261.6048278808594,251.60960388183594,30685200.0,315.0
 h064-qbert-s3,h064,,auto-ingested,Qbert-v5,3,dqn_rainbow_lite,40000000.0,117568.0,265.7798156738281,255.0762176513672,31247200.0,260.0
+h064-riverraid-s1,h064,,Phase 4 Atari57 (rorqual),Riverraid-v5,1,dqn_rainbow_lite,40000000,,537.6279907226562,412.572998046875,81306560.0,
+h064-riverraid-s2,h064,,Phase 4 Atari57 (narval),Riverraid-v5,2,dqn_rainbow_lite,40000000,,411.7784423828125,412.60345458984375,76426080.0,
+h064-roadrunner-s2,h064,,Phase 4 Atari57 (rorqual),RoadRunner-v5,2,dqn_rainbow_lite,40000000,,1485.71826171875,1557.34765625,86219200.0,
+h064-roadrunner-s3,h064,,Phase 4 Atari57 (narval),RoadRunner-v5,3,dqn_rainbow_lite,40000000,,939.0530395507812,1001.544677734375,44744000.0,
+h064-robotank-s2,h064,,Phase 4 Atari57 (nibi),Robotank-v5,2,dqn_rainbow_lite,40000000,,10.295538902282715,12.520445823669434,88624.0,
+h064-robotank-s3,h064,,Phase 4 Atari57 (rorqual),Robotank-v5,3,dqn_rainbow_lite,40000000,,9.209003448486328,10.37942123413086,91648.0,
+h064-seaquest-s1,h064,,Phase 4 Atari57 (narval),Seaquest-v5,1,dqn_rainbow_lite,40000000,,146.5130157470703,180.0,7832000.0,
+h064-seaquest-s3,h064,,Phase 4 Atari57 (nibi),Seaquest-v5,3,dqn_rainbow_lite,40000000,,215.85906982421875,232.1104278564453,9508160.0,
+h064-skiing-s1,h064,,Phase 4 Atari57 (rorqual),Skiing-v5,1,dqn_rainbow_lite,40000000,,-23724.66796875,-24146.201171875,-401990784.0,
+h064-skiing-s2,h064,,Phase 4 Atari57 (narval),Skiing-v5,2,dqn_rainbow_lite,40000000,,-24085.033203125,-24478.533203125,-399233504.0,
 h064-solaris-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Solaris-v5 --seed 1,fir completed. Rainbow-lite (NoisyNet+N-step) Solaris. q4=1658.26 vs IQN=696.07 WIN (+138.2%). Massive improvement from NoisyNet+N-step on Solaris. h064 COMPLETE 15/15.,Solaris-v5,1,dqn_rainbow_lite,40000000.0,6256.0,1253.350341796875,1658.2608642578125,7840960.0,1024.0
+h064-solaris-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Solaris-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-solaris-s2 --output-dir /runs,"Rainbow-lite Solaris seed 2. q4=1532.87 (vs s1=1658.26). PPO s2=2468.84 LOSS (-37.9%). IQN s2=822.79, RBL much better. s3 still running.",Solaris-v5,2,dqn_rainbow_lite,40000000,6864,1300.046630859375,1532.8671875,8923520.0,704.0
+h064-solaris-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Solaris-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-solaris-s3 --output-dir /runs,"Rainbow-lite Solaris seed 3. q4=1735.04 (vs s1=1658.26, s2=1532.87). All 3 seeds complete. 3-seed avg q4=1642.06. PPO avg=2279.89 LOSS (-28.0%). IQN avg=778.38 BIG WIN (+111.0%). OQE avg=852.97 BIG WIN (+92.5%).",Solaris-v5,3,dqn_rainbow_lite,40000000,7232,1360.4425048828125,1735.044189453125,9838720.0,1260.0
 h064-spaceinvaders-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id SpaceInvaders-v5 --seed 1,nibi completed. Rainbow-lite (NoisyNet+N-step) SpaceInvaders. q4=270.0 vs IQN=250.88 WIN (+7.6%). Consistent improvement from NoisyNet+N-step.,SpaceInvaders-v5,1,dqn_rainbow_lite,40000000.0,67840.0,243.583724975586,270.0,16524720.0,270.0
+h064-spaceinvaders-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id SpaceInvaders-v5 --seed 2,narval completed. Rainbow-lite SpaceInvaders seed 2. q4=267.17 (vs s1=270.0). Consistent across seeds.,SpaceInvaders-v5,2,dqn_rainbow_lite,40000000.0,66896.0,249.15,267.17,16667360.0,270.0
 h064-spaceinvaders-s3,h064,,auto-ingested,SpaceInvaders-v5,3,dqn_rainbow_lite,40000000.0,67008.0,242.2206268310547,267.7268371582031,16230720.0,270.0
+h064-stargunner-s1,h064,,Phase 4 Atari57 (nibi),StarGunner-v5,1,dqn_rainbow_lite,40000000,,547.4644775390625,570.6558227539062,25910400.0,
+h064-stargunner-s2,h064,,Phase 4 Atari57 (rorqual),StarGunner-v5,2,dqn_rainbow_lite,40000000,,533.3564453125,535.7810668945312,24636800.0,
+h064-stargunner-s3,h064,,Phase 4 Atari57 (narval),StarGunner-v5,3,dqn_rainbow_lite,40000000,,468.0565490722656,400.0,20654400.0,
+h064-surround-s2,h064,,Phase 4 Atari57 (nibi),Surround-v5,2,dqn_rainbow_lite,40000000,,-9.966822624206543,-9.945568084716797,-307616.0,
+h064-surround-s3,h064,,Phase 4 Atari57 (rorqual),Surround-v5,3,dqn_rainbow_lite,40000000,,-9.971590995788574,-9.96074390411377,-308880.0,
+h064-tennis-s1,h064,,Phase 4 Atari57 (narval),Tennis-v5,1,dqn_rainbow_lite,40000000,,-21.671642303466797,-17.65671730041504,-23232.0,
+h064-tennis-s3,h064,Phase 4 40M Atari57,nibi,Tennis-v5,3,,40000000,976,-21.721311569213867,-19.73770523071289,,
+h064-timepilot-s1,h064,,Phase 4 Atari57 (rorqual),TimePilot-v5,1,dqn_rainbow_lite,40000000,,1701.048583984375,1615.2318115234375,49316800.0,
+h064-timepilot-s2,h064,,Phase 4 Atari57 (narval),TimePilot-v5,2,dqn_rainbow_lite,40000000,,1592.7711181640625,1376.9156494140625,52880000.0,
+h064-tutankham-s1,h064,see batch file,"Phase4 40M, cluster=nibi",Tutankham-v5,1,dqn_rainbow_lite,40000000.0,5840,13.232876777648926,11.84931468963623,77280.0,35.79999923706055
+h064-tutankham-s2,h064,,Phase 4 Atari57 (rorqual),Tutankham-v5,2,dqn_rainbow_lite,40000000,,13.057306289672852,9.249283790588379,72912.0,
+h064-tutankham-s3,h064,,Phase 4 Atari57 (narval),Tutankham-v5,3,dqn_rainbow_lite,40000000,,13.786517143249512,12.269662857055664,78528.0,
+h064-upndown-s3,h064,,Phase 4 Atari57 (rorqual),UpNDown-v5,3,dqn_rainbow_lite,40000000,,1911.3966064453125,2311.942626953125,68320960.0,
 h064-venture-s1,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Venture-v5 --seed 1,fir completed. Rainbow-lite (NoisyNet+N-step) Venture. q4=5.17 vs IQN=1.05 WIN (+392.4%). Massive improvement from NoisyNet+N-step on sparse-reward Venture.,Venture-v5,1,dqn_rainbow_lite,40000000.0,18560.0,3.706896543502808,5.1724138259887695,68800.0,0.0
 h064-venture-s2,h064,python src/dqn_rainbow_lite_atari_envpool.py --env-id Venture-v5 --seed 2 --total-timesteps 40000000,Rainbow-lite Venture seed 2. q4=3.76 vs s1=5.17. Lower seed 2 — both near-zero.,Venture-v5,2,dqn_rainbow_lite,40000000.0,18720.0,4.27,3.76,80000.0,0.0
+h064-venture-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Venture-v5 --seed 3,Rainbow-lite Venture seed 3. q4=4.73. All 3 seeds: avg=4.55. PPO=0 WIN. IQN avg=2.26 WIN (+101%).,Venture-v5,3,dqn_rainbow_lite,40000000.0,18944.0,2.871621608734131,4.729729652404785,54400.0,0.0
+h064-wizardofwor-s1,h064,,Phase 4 Atari57 (rorqual),WizardOfWor-v5,1,dqn_rainbow_lite,40000000,,285.3999938964844,283.77142333984375,15982400.0,
+h064-wizardofwor-s2,h064,,Phase 4 Atari57 (narval),WizardOfWor-v5,2,dqn_rainbow_lite,40000000,,286.2069091796875,262.0689697265625,16467200.0,
+h064-yarsrevenge-s2,h064,,Phase 4 Atari57 (rorqual),YarsRevenge-v5,2,dqn_rainbow_lite,40000000,,4639.083984375,4620.39013671875,702468672.0,
+h064-yarsrevenge-s3,h064,,Phase 4 Atari57 (narval),YarsRevenge-v5,3,dqn_rainbow_lite,40000000,,4619.28466796875,4623.76806640625,668428992.0,
+h064-zaxxon-s3,h064,,Phase 4 Atari57 (rorqual),Zaxxon-v5,3,dqn_rainbow_lite,40000000,,20.6134090423584,17.26105499267578,924800.0,
 h065-alien-s1,h065,python cleanrl/iqn_atari_envpool_nstep.py --env-id Alien-v5 --seed 1,nibi completed (backup job). IQN+N-step Alien. q4=252.32 vs PPO=207.63 WIN (+21.5%). vs IQN=311.13 LOSS (-18.9%). N-step HURTS IQN on Alien significantly.,Alien-v5,1,iqn_nstep,40000000.0,67248.0,291.5036926269531,252.31739807128903,19603040.0,292.0
 h065-amidar-s1,h065,python cleanrl/iqn_atari_envpool_nstep.py --env-id Amidar-v5 --seed 1,fir completed. IQN+N-step Amidar. q4=33.34 vs PPO=2.04 WIN (+1534%). vs IQN=34.27 LOSS (-2.7%). Marginal regression.,Amidar-v5,1,iqn_nstep,40000000.0,64384.0,33.154571533203125,33.33797073364258,2134624.0,34.20000076293945
 h065-battlezone-s1,h065,python cleanrl/iqn_atari_envpool_nstep.py --env-id BattleZone-v5 --seed 1,nibi completed. IQN+N-step BattleZone. q4=4095.55 vs PPO=2364.31 WIN (+73.2%). vs DQN=3109.48 WIN (+31.7%). vs IQN=3466.95 WIN (+18.1%). N-step HELPS IQN on BattleZone!,BattleZone-v5,1,iqn_nstep,40000000.0,19760.0,3621.8623046875,4095.546630859375,71568000.0,1400.0
@@ -1106,21 +1385,50 @@ h065-solaris-s1,h065,python cleanrl/iqn_atari_envpool_nstep.py --env-id Solaris-
 h065-spaceinvaders-s1,h065,python cleanrl/iqn_atari_envpool_nstep.py --env-id SpaceInvaders-v5 --seed 1,narval completed. IQN+N-step SpaceInvaders. q4=278.67 vs PPO=150.19 WIN (+85.5%). vs DQN=252.93 WIN (+10.2%). vs IQN=250.88 WIN (+11.1%). N-step boosts IQN on SpaceInvaders!,SpaceInvaders-v5,1,iqn_nstep,40000000.0,64624.0,265.5335388183594,278.666748046875,17159840.0,263.0
 h065-venture-s1,h065,python cleanrl/iqn_atari_envpool_nstep.py --env-id Venture-v5 --seed 1,fir completed. IQN+N-step Venture. q4=6.33 vs PPO=0.0 WIN. vs IQN=1.05 WIN (+501.8%). Massive N-step improvement on sparse-reward Venture.,Venture-v5,1,iqn_nstep,40000000.0,17200.0,4.279069900512695,6.3255815505981445,73600.0,0.0
 h066-alien-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Alien-v5 --seed 1,nibi completed. IQN+OQE Alien. q4=310.64 vs PPO=207.63 WIN (+49.6%). vs IQN=311.13 TIE (-0.2%). OQE neutral on Alien.,Alien-v5,1,iqn_oqe,40000000.0,67680.0,338.02838134765625,310.6430358886719,22877760.0,420.0
+h066-alien-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Alien-v5 --seed 2,IQN+OQE Alien seed 2. q4=309.54 vs PPO=196.87 WIN (+57.3%). vs IQN s2=314.65 TIE (-1.6%). All 3 seeds now complete. 3-seed avg q4=308.58.,Alien-v5,2,iqn_oqe,40000000.0,67856.0,333.31524658203125,309.5354919433594,22617440.0,188.0
+h066-alien-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Alien-v5 --seed 3,IQN+OQE Alien seed 3. q4=305.57 vs PPO=196.30 WIN (+55.7%). vs IQN s3=307.93 TIE (-0.8%). OQE neutral on Alien.,Alien-v5,3,iqn_oqe,40000000.0,67648.0,336.53,305.57,22765280.0,380.0
 h066-amidar-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Amidar-v5 --seed 1,fir completed. IQN+OQE Amidar. q4=33.98 vs PPO=2.04 WIN (+1565%). vs IQN=34.27 TIE (-0.8%). OQE neutral on Amidar.,Amidar-v5,1,iqn_oqe,40000000.0,63968.0,34.32866287231445,33.98499298095703,2195936.0,29.39999961853028
+h066-amidar-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Amidar-v5 --seed 2,fir completed. IQN+OQE Amidar seed 2. q4=35.78 (vs s1=33.98). Slightly higher seed 2.,Amidar-v5,2,iqn_oqe,40000000.0,64240.0,34.13,35.78,2192752.0,34.0
+h066-amidar-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Amidar-v5 --seed 3,"IQN+OQE Amidar seed 3. q4=33.90 (vs s1=33.98, s2=35.78). 3-seed avg q4=34.55. PPO avg=2.27 WIN (+1422%). IQN s1=34.27 s2=34.31 (s3 still running). Rainbow-lite avg=35.31 LOSS (-2.2%). OQE consistent on Amidar.",Amidar-v5,3,iqn_oqe,40000000,64480,34.175,33.904,2203616.0,30.4
 h066-battlezone-s1,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id BattleZone-v5 --seed 1,narval recovered. IQN+OQE BattleZone. q4=3726.05 vs PPO=2364.31 WIN (+57.6%). vs DQN=3109.48 WIN (+19.8%). vs IQN=3466.95 WIN (+7.5%). OQE modest improvement.,BattleZone-v5,1,iqn_oqe,40000000.0,23712.0,3248.98779296875,3726.0458984375,77040000.0,4200.0
+h066-battlezone-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id BattleZone-v5 --seed 2,narval completed. IQN+OQE BattleZone seed 2. q4=3681.27 (vs s1=3726.05). Slightly lower but consistent.,BattleZone-v5,2,iqn_oqe,40000000.0,24096.0,3154.71435546875,3681.27490234375,76016000.0,4800.0
+h066-battlezone-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id BattleZone-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-battlezone-s3 --output-dir /runs,"IQN+OQE BattleZone seed 3. q4=3506.11 (vs s1=3726.05, s2=3681.27). All 3 seeds complete. 3-seed avg q4=3637.81. PPO avg=2163.71 WIN (+68.1%). IQN avg=3306.86. OQE slightly better than IQN (+10%).",BattleZone-v5,3,iqn_oqe,40000000,23584,3198.77880859375,3506.105712890625,75440000.0,7800.0
 h066-breakout-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Breakout-v5 --seed 1,fir completed. IQN+OQE Breakout. q4=1.79 vs IQN=1.85 LOSS (-3.1%). Near-zero game (both ~1.8/864). FINAL h066 result: 15/15 games — 9W/1L/5T. Only loss is marginal Breakout on near-zero game.,Breakout-v5,1,iqn_oqe,40000000.0,206736.0,1.7706060409545898,1.7925857305526731,366048.0,3.799999952316284
+h066-breakout-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Breakout-v5 --seed 2,fir completed. IQN+OQE Breakout seed 2. q4=1.83 (vs s1=1.79). Near-zero game consistent across seeds.,Breakout-v5,2,iqn_oqe,40000000.0,207248.0,1.7560410499572754,1.8327800035476685,363936.0,0.0
+h066-breakout-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Breakout-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-breakout-s3 --output-dir /runs,"IQN+OQE Breakout seed 3. q4=1.76 (vs s1=1.79, s2=1.83). All 3 OQE Breakout seeds complete. 3-seed avg q4=1.795. PPO avg=1.50 WIN (+20%). IQN avg=1.83 LOSS (-1.9%). Rainbow-lite avg=2.02 LOSS.",Breakout-v5,3,iqn_oqe,40000000,209744,1.7092074155807495,1.760622501373291,358496.0,0.800000011920929
 h066-doubledunk-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id DoubleDunk-v5 --seed 1,nibi completed. IQN+OQE DoubleDunk. q4=-22.45 vs PPO=-18.10 LOSS. vs IQN=-22.59 WIN (+0.6%). Marginal OQE improvement.,DoubleDunk-v5,1,iqn_oqe,40000000.0,14800.0,-22.192432403564453,-22.45189094543457,-328448.0,-23.600000381469727
+h066-doubledunk-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id DoubleDunk-v5 --seed 2,narval completed. IQN+OQE DoubleDunk seed 2. q4=-22.68 (vs s1=-22.45). Consistent — OQE has marginal DoubleDunk improvement over IQN.,DoubleDunk-v5,2,iqn_oqe,40000000.0,14288.0,-22.163494110107425,-22.683090209960938,-316672.0,-22.39999961853028
+h066-doubledunk-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id DoubleDunk-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-doubledunk-s3 --output-dir /runs,"IQN+OQE DoubleDunk seed 3. q4=-22.57 (vs s1=-22.45, s2=-22.68). All 3 seeds complete. 3-seed avg q4=-22.57. PPO avg=-17.77 BIG LOSS. IQN avg=-22.56 TIE.",DoubleDunk-v5,3,iqn_oqe,40000000,14928,-22.1607723236084,-22.574491500854492,-330816.0,-22.399999618530273
 h066-enduro-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Enduro-v5 --seed 1,nibi completed. IQN+OQE Enduro. q4=2.32 vs PPO=0.0 WIN. vs IQN=1.24 WIN (+87.2%). Both near-zero but OQE slightly better.,Enduro-v5,1,iqn_oqe,40000000.0,12016.0,9.370173454284668,2.3209054470062256,112592.0,0.0
+h066-enduro-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Enduro-v5 --seed 2 --hypothesis-id h066 --experiment-id h066-enduro-s2 --output-dir /runs,"IQN+OQE Enduro seed 2. q4=1.90 (vs s1=2.32, IQN s2=3.23). PPO=0.0 WIN.",Enduro-v5,2,iqn_oqe,40000000,12016,7.52,1.9,90304.0,0.2
+h066-enduro-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Enduro-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-enduro-s3 --output-dir /runs,"IQN+OQE Enduro seed 3. q4=4.49 (vs s1=2.32, s2=1.90). All 3 OQE Enduro seeds complete. 3-seed avg q4=2.90. PPO avg=0.0 WIN. Rainbow-lite avg=21.84 BIG LOSS (-86.7%).",Enduro-v5,3,iqn_oqe,40000000,12016,8.617842674255371,4.490013122558594,103552.0,3.200000047683716
 h066-montezumarevenge-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id MontezumaRevenge-v5 --seed 1,nibi completed. IQN+OQE MontezumaRevenge. q4=0.0 vs IQN=0.0 TIE. Hard exploration game — no algorithm solves it at 40M steps.,MontezumaRevenge-v5,1,iqn_oqe,40000000.0,164528.0,0.0194495767354965,0.0,3200.0,0.0
+h066-montezumarevenge-s2,h066,,IQN+OQE MontezumaRevenge seed 2 (Phase 3). q4=0.0 as expected. All 3 seeds likely zero.,MontezumaRevenge-v5,2,iqn_oqe,40000000,166016,0.019,0.0,3200.0,0.0
+h066-montezumarevenge-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id MontezumaRevenge-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-montezumarevenge-s3 --output-dir /runs,IQN+OQE MontezumaRevenge seed 3. q4=0.0 as expected. All 3 seeds complete. All zero.,MontezumaRevenge-v5,3,iqn_oqe,40000000,166048,0.00963576789945364,0.0,1600.0,0.0
 h066-mspacman-s1,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id MsPacman-v5 --seed 1,nibi completed. IQN+OQE MsPacman. q4=514.10 vs PPO=287.07 WIN (+79.1%). vs DQN=465.18 WIN (+10.5%). vs IQN=496.64 WIN (+3.5%). OQE gives slight boost over IQN.,MsPacman-v5,1,iqn_oqe,40000000.0,71520.0,513.4989013671875,514.1029052734375,36725440.0,516.0
+h066-mspacman-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id MsPacman-v5 --seed 2,fir completed. IQN+OQE MsPacman seed 2. q4=490.84 (vs s1=514.10). Lower seed 2 — some variance. Still strong vs PPO=287.,MsPacman-v5,2,iqn_oqe,40000000.0,71456.0,512.781005859375,490.8374328613281,36641280.0,374.0
+h066-mspacman-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id MsPacman-v5 --seed 3,"IQN+OQE MsPacman seed 3. q4=502.37 (vs s1=514.10, s2=490.84). All 3 OQE MsPacman seeds complete. 3-seed avg q4=502.44. PPO avg=319.11 WIN (+57.4%). Rainbow-lite avg=538.98 LOSS (-6.8%). IQN s1=496.64 s2=498.58 (s3 running). h066 OQE NOW 45/45 COMPLETE.",MsPacman-v5,3,iqn_oqe,40000000,71536,506.2670593261719,502.3663635253906,36216320.0,862.0
 h066-namethisgame-s1,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id NameThisGame-v5 --seed 1,nibi completed. IQN+OQE. q4=1680.44 vs PPO=2522.54 LOSS (-33.4%). vs IQN=1697.28 TIE (-1.0%). OQE neutral on NameThisGame.,NameThisGame-v5,1,iqn_oqe,40000000.0,16592.0,1722.902587890625,1680.443603515625,28586400.0,1570.0
+h066-namethisgame-s2,h066,,narval completed. IQN+OQE NameThisGame seed 2. q4=1635.70 (vs s1=1680.44). Some variance but consistent range.,NameThisGame-v5,2,iqn_oqe,40000000.0,16688.0,1720.565673828125,1635.7047119140625,28712800.0,2170.0
+h066-namethisgame-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id NameThisGame-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-namethisgame-s3 --output-dir /runs,"IQN+OQE NameThisGame seed 3. q4=1583.22 (vs s1=1598.0, s2=1718.24). 3-seed avg q4=1633.15. PPO avg=2435.7 LOSS -33%.",NameThisGame-v5,3,iqn_oqe,40000000,16784,1704.49,1583.22,28608160.0,2182.0
 h066-phoenix-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Phoenix-v5 --seed 1,fir completed. IQN+OQE Phoenix. q4=139.71 vs PPO=892.49 LOSS (-84.3%). vs IQN=134.16 WIN (+4.1%). Modest OQE improvement on Phoenix.,Phoenix-v5,1,iqn_oqe,40000000.0,48256.0,165.61338806152344,139.70822143554688,7991840.0,296.0
 h066-phoenix-s2,h066,,IQN+OQE Phoenix seed 2. q4=141.33 vs s1=139.71. Consistent. Slight OQE edge over IQN (137.49).,Phoenix-v5,2,iqn_oqe,40000000.0,48064.0,169.5,141.33,8147040.0,348.0
+h066-phoenix-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Phoenix-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-phoenix-s3 --output-dir /runs,"IQN+OQE Phoenix seed 3. q4=147.66 (vs s1=139.71, s2=141.33). All 3 seeds complete. 3-seed avg q4=142.90. PPO avg=796.16 BIG LOSS (-82.1%). IQN s1=134.16 s2=137.49. OQE slightly better than IQN (+4-8%).",Phoenix-v5,3,iqn_oqe,40000000,48720,181.287353515625,147.65846252441406,8832320.0,212.0
 h066-privateeye-s1,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id PrivateEye-v5 --seed 1,nibi completed. IQN+OQE PrivateEye. q4=471.08 vs PPO=-170.71 MASSIVE WIN. vs DQN=-2.46 MASSIVE WIN. vs IQN=423.18 WIN (+11.3%). OQE explores PrivateEye better!,PrivateEye-v5,1,iqn_oqe,40000000.0,14832.0,460.3689270019531,471.07659912109375,6828192.0,-258.3999938964844
+h066-privateeye-s2,h066,,IQN+OQE PrivateEye seed 2 (Phase 3),PrivateEye-v5,2,iqn_oqe,40000000,14832,627.7227783203125,752.172607421875,9310384.0,-77.80000305175781
+h066-privateeye-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id PrivateEye-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-privateeye-s3 --output-dir /runs,"IQN+OQE PrivateEye seed 3. q4=643.87 (vs s1=471.08, s2=752.17). All 3 seeds complete. 3-seed avg q4=622.37. IQN avg=411.66. OQE +51.2% over IQN! PPO avg=-134.72 BIG WIN.",PrivateEye-v5,3,iqn_oqe,40000000,14832,599.2211303710938,643.868408203125,8887648.0,-985.5999755859375
 h066-qbert-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Qbert-v5 --seed 1,"fir completed. IQN+OQE Qbert. q4=218.18 vs PPO=162.49 WIN (+34.3%). vs IQN=219.30 TIE (-0.5%). OQE neutral on Qbert. 13/15 banked, 8W/0L/5T. STILL UNDEFEATED.",Qbert-v5,1,iqn_oqe,40000000.0,112608.0,222.8047790527344,218.1798858642578,25089600.0,95.0
+h066-qbert-s2,h066,,IQN+OQE Qbert seed 2 (Phase 3),Qbert-v5,2,iqn_oqe,40000000,111248,223.06918334960938,210.9593048095703,24816000.0,150.0
+h066-qbert-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Qbert-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-qbert-s3 --output-dir /runs,"IQN+OQE Qbert seed 3. q4=217.55 (vs s1=218.18, s2=210.96). All 3 OQE Qbert seeds complete. 3-seed avg q4=215.56. PPO avg=158.44 WIN (+36.0%).",Qbert-v5,3,iqn_oqe,40000000,111920,223.24517822265625,217.54824829101562,24985600.0,225.0
 h066-solaris-s1,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Solaris-v5 --seed 1,"nibi completed. IQN+OQE Solaris. q4=904.98 vs IQN=696.07 WIN (+30.0%). OQE gives significant boost on Solaris. 14/15 games banked, 9W/0L/5T. STILL UNDEFEATED.",Solaris-v5,1,iqn_oqe,40000000.0,5328.0,1083.6036376953125,904.9849853515624,5773440.0,824.0
+h066-solaris-s2,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Solaris-v5 --seed 2,"narval completed. IQN+OQE Solaris seed 2. q4=791.39 (vs s1=904.98, s3=862.54). 3-seed avg q4=852.97. PPO avg=2279.89 BIG LOSS (-62.6%). IQN avg=778.38. OQE slightly better than IQN (+9.6%). All 3 seeds complete.",Solaris-v5,2,iqn_oqe,40000000,5280,938.3636474609375,791.3939208984375,4954560.0,428.0
+h066-solaris-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Solaris-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-solaris-s3 --output-dir /runs,IQN+OQE Solaris seed 3. q4=862.54 (vs s1=904.98). PPO s3=2207.27 LOSS (-60.9%). IQN s3=816.29 OQE slightly better (+5.7%). s2 still running.,Solaris-v5,3,iqn_oqe,40000000,5424,989.321533203125,862.536865234375,5366080.0,624.0
 h066-spaceinvaders-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id SpaceInvaders-v5 --seed 1,narval completed. IQN+OQE SpaceInvaders. q4=262.71 vs PPO=150.19 WIN (+74.9%). vs IQN=250.88 WIN (+4.7%). OQE 9th consecutive non-loss (8W/0L/1T). UNDEFEATED.,SpaceInvaders-v5,1,iqn_oqe,40000000.0,60368.0,248.28651428222656,262.7113647460937,14988560.0,116.0
+h066-spaceinvaders-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id SpaceInvaders-v5 --seed 2,fir completed. IQN+OQE SpaceInvaders seed 2. q4=247.63 vs s1=262.71. vs PPO s2=147.18 WIN (+68.2%). Consistent across seeds.,SpaceInvaders-v5,2,iqn_oqe,40000000,60576,245.783,247.628,14888560,297.0
+h066-spaceinvaders-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id SpaceInvaders-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-spaceinvaders-s3 --output-dir /runs,"narval completed. IQN+OQE SpaceInvaders seed 3. q4=247.79 (vs s1=262.71, s2=247.63). All 3 OQE SI seeds complete. 3-seed avg q4=252.71. PPO avg=147.36 WIN (+71.5%). IQN avg=252.02 TIE (+0.3%). Rainbow-lite avg=268.30 LOSS (-5.8%).",SpaceInvaders-v5,3,iqn_oqe,40000000,60848,241.460693359375,247.79385375976562,14692400.0,237.0
 h066-venture-s1,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Venture-v5 --seed 1,fir completed. IQN+OQE Venture. q4=3.62 vs PPO=0.0 WIN. vs IQN=1.05 WIN (+244.8%). Massive OQE improvement on sparse-reward Venture.,Venture-v5,1,iqn_oqe,40000000.0,17696.0,3.978300094604492,3.616636514663696,70400.0,0.0
+h066-venture-s2,h066,,IQN+OQE Venture seed 2 (Phase 3),Venture-v5,2,iqn_oqe,40000000,17808,2.7852649688720703,4.312668323516846,49600.0,0.0
+h066-venture-s3,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Venture-v5 --seed 3,"nibi completed. IQN+OQE Venture seed 3. q4=2.49 vs s1=3.62, s2=4.31. 3-seed avg q4=3.47. All 3 seeds complete.",Venture-v5,3,iqn_oqe,40000000,17984,1.9572954177856445,2.491103172302246,35200.0,0.0
 h067-alien-s1,h067,python cleanrl/iqn_atari_envpool_replay.py --env-id Alien-v5 --seed 1,nibi completed. IQN+Replay+Resets Alien. q4=429.59 vs PPO=207.63 WIN (+106.9%). vs IQN=311.13 WIN (+38.1%). Replay ratio MASSIVELY boosts IQN on Alien!,Alien-v5,1,iqn_replay,40000000.0,67920.0,410.8315734863281,429.58538818359375,27903680.0,422.0
 h067-amidar-s1,h067,python cleanrl/dqn_atari_envpool_iqn_replay.py --env-id Amidar-v5 --seed 1,nibi completed. IQN+ReplayRatio+Resets. q4=60.59 vs PPO=2.04 WIN (+2870%). vs DQN=34.30 WIN (+76.6%). vs IQN=34.27 WIN (+76.8%). Replay ratio MASSIVELY boosts IQN on Amidar — nearly doubles the score!,Amidar-v5,1,iqn_replay,40000000.0,58432.0,56.789,60.594,3318304.0,29.6
 h067-battlezone-s1,h067,python cleanrl/dqn_atari_envpool_iqn_replay.py --env-id BattleZone-v5 --seed 1,"nibi completed. IQN+Replay BattleZone. q4=2441.08 vs IQN=3466.95 LOSS (-29.6%). Replay HURTS BattleZone — worse than all components (OQE=3726, N-step=4096, Rainbow=5310). h067 now 10/15, 5W/4L/1T.",BattleZone-v5,1,iqn_replay,40000000.0,28512.0,2626.2626953125,2441.077392578125,74880000.0,200.0
@@ -1181,303 +1489,3 @@ h070-qbert-s1,h070,python cleanrl/iqn_atari_envpool_oqe_nstep.py --env-id Qbert-
 h070-solaris-s1,h070,python cleanrl/iqn_atari_envpool_oqe_nstep.py --env-id Solaris-v5 --seed 1,rorqual completed. IQN+OQE+N-step Solaris. q4=668.14 vs IQN=696.07 LOSS (-4.0%). vs h064=1658.26 LOSS (-59.7%). vs h065(N-step)=842.21 LOSS (-20.7%). vs h066(OQE)=904.98 LOSS (-26.2%). NEGATIVE SYNERGY: OQE+N-step combined is WORSE than either alone on Solaris. h070 COMPLETE 15/15.,Solaris-v5,1,iqn_oqe_nstep,40000000.0,5424.0,938.7,668.14,5091520.0,1084.0
 h070-spaceinvaders-s1,h070,python cleanrl/iqn_atari_envpool_oqe_nstep.py --env-id SpaceInvaders-v5 --seed 1,fir completed. IQN+OQE+N-step SpaceInvaders. q4=275.67 vs IQN=250.88 WIN (+9.9%). vs Rainbow-lite(h064)=270.0 TIE (+2.1%). vs N-step(h065)=278.67 TIE (-1.1%). vs OQE(h066)=262.71 WIN (+4.9%). OQE+N-step matches h064 on SI.,SpaceInvaders-v5,1,iqn_oqe_nstep,40000000.0,66176.0,266.42,275.67,17630480.0,660.0
 h070-venture-s1,h070,python cleanrl/iqn_atari_envpool_oqe_nstep.py --env-id Venture-v5 --seed 1,rorqual completed. IQN+OQE+N-step Venture. q4=7.14 vs IQN=1.05 WIN (+580%). vs h064=5.17 WIN (+38.1%). BEST Venture score of any method\! OQE+N-step synergy on sparse-reward.,Venture-v5,1,iqn_oqe_nstep,40000000.0,17920.0,3.125,7.142857074737549,56000.0,80.0
-h063-enduro-s2,h063,python cleanrl/iqn_atari_envpool.py --env-id Enduro-v5 --seed 2,fir completed. IQN Enduro seed 2. q4=3.23 (vs s1=1.24). Slightly higher seed 2 but still near-zero. IQN bad at Enduro.,Enduro-v5,2,iqn,40000000.0,12016.0,6.977363586425781,3.226364850997925,83840.0,1.7999999523162842
-h063-mspacman-s2,h063,python cleanrl/iqn_atari_envpool.py --env-id MsPacman-v5 --seed 2,fir completed. IQN MsPacman seed 2. q4=498.58 (vs s1=496.64). Extremely consistent across seeds.,MsPacman-v5,2,iqn,40000000.0,70704.0,519.5406494140625,498.58111572265625,36733600.0,754.0
-h064-alien-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id Alien-v5 --seed 2,fir completed. Rainbow-lite Alien seed 2. q4=280.74 (vs s1=275.49). Consistent.,Alien-v5,2,dqn_rainbow_lite,40000000.0,70064.0,290.7261962890625,280.7398986816406,20369440.0,314.0
-h064-privateeye-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id PrivateEye-v5 --seed 2,fir completed. Rainbow-lite PrivateEye seed 2. q4=-0.46 (vs s1=0.0). Still near-zero — NoisyNet catastrophic on PrivateEye across seeds.,PrivateEye-v5,2,dqn_rainbow_lite,40000000.0,14832.0,0.7605177760124207,-0.4573894143104553,11280.0,0.0
-h066-mspacman-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id MsPacman-v5 --seed 2,fir completed. IQN+OQE MsPacman seed 2. q4=490.84 (vs s1=514.10). Lower seed 2 — some variance. Still strong vs PPO=287.,MsPacman-v5,2,iqn_oqe,40000000.0,71456.0,512.781005859375,490.8374328613281,36641280.0,374.0
-h066-doubledunk-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id DoubleDunk-v5 --seed 2,narval completed. IQN+OQE DoubleDunk seed 2. q4=-22.68 (vs s1=-22.45). Consistent — OQE has marginal DoubleDunk improvement over IQN.,DoubleDunk-v5,2,iqn_oqe,40000000.0,14288.0,-22.163494110107425,-22.683090209960938,-316672.0,-22.39999961853028
-h064-mspacman-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id MsPacman-v5 --seed 2,narval completed. Rainbow-lite MsPacman seed 2. q4=548.15 (vs s1=555.97). Consistent across seeds.,MsPacman-v5,2,dqn_rainbow_lite,40000000.0,62560.0,553.7570190429688,548.1534423828125,34643040.0,606.0
-h064-namethisgame-s2,h064,python cleanrl/iqn_atari_envpool_rainbow.py --env-id NameThisGame-v5 --seed 2,fir completed. Rainbow-lite NameThisGame seed 2. q4=2437.37 (vs s1=2491.14). Consistent.,NameThisGame-v5,2,dqn_rainbow_lite,40000000.0,14256.0,2356.599365234375,2437.373779296875,33595680.0,1868.0
-h063-montezumarevenge-s2,h063,,narval completed. IQN MontezumaRevenge seed 2. q4=0.0 (same as s1). MR always 0 for DQN variants.,MontezumaRevenge-v5,2,iqn,40000000.0,165680.0,0.0,0.0,0.0,0.0
-h066-namethisgame-s2,h066,,narval completed. IQN+OQE NameThisGame seed 2. q4=1635.70 (vs s1=1680.44). Some variance but consistent range.,NameThisGame-v5,2,iqn_oqe,40000000.0,16688.0,1720.565673828125,1635.7047119140625,28712800.0,2170.0
-h063-battlezone-s2,h063,,IQN BattleZone seed 2 — Phase 3,BattleZone-v5,2,iqn,40000000.0,22816.0,3177.42,3373.07,72496000.0,3400.0
-h064-spaceinvaders-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id SpaceInvaders-v5 --seed 2,narval completed. Rainbow-lite SpaceInvaders seed 2. q4=267.17 (vs s1=270.0). Consistent across seeds.,SpaceInvaders-v5,2,dqn_rainbow_lite,40000000.0,66896.0,249.15,267.17,16667360.0,270.0
-h064-enduro-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Enduro-v5 --seed 3,nibi completed. Rainbow-lite Enduro seed 3. q4=22.57 (vs s1=21.97 s2=22.12). Very consistent across all 3 seeds.,Enduro-v5,3,dqn_rainbow_lite,40000000.0,12016.0,21.32,22.57,256192.0,26.4
-h066-amidar-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Amidar-v5 --seed 2,fir completed. IQN+OQE Amidar seed 2. q4=35.78 (vs s1=33.98). Slightly higher seed 2.,Amidar-v5,2,iqn_oqe,40000000.0,64240.0,34.13,35.78,2192752.0,34.0
-h064-mspacman-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id MsPacman-v5 --seed 3,"nibi completed. Rainbow-lite MsPacman seed 3. q4=512.83 (vs s1=555.97, s2=548.15). All 3 seeds consistent: 556/548/513.",MsPacman-v5,3,dqn_rainbow_lite,40000000.0,67872.0,534.2079467773438,512.828857421875,36257760.0,702.0
-h066-battlezone-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id BattleZone-v5 --seed 2,narval completed. IQN+OQE BattleZone seed 2. q4=3681.27 (vs s1=3726.05). Slightly lower but consistent.,BattleZone-v5,2,iqn_oqe,40000000.0,24096.0,3154.71435546875,3681.27490234375,76016000.0,4800.0
-h066-breakout-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Breakout-v5 --seed 2,fir completed. IQN+OQE Breakout seed 2. q4=1.83 (vs s1=1.79). Near-zero game consistent across seeds.,Breakout-v5,2,iqn_oqe,40000000.0,207248.0,1.7560410499572754,1.8327800035476685,363936.0,0.0
-h064-amidar-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Amidar-v5 --seed 2,"narval completed. Rainbow-lite Amidar seed 2, q4=38.51 (vs s1=31.0, s3=36.43). 3-seed avg q4=35.31. All seeds complete for Amidar.",Amidar-v5,2,dqn_rainbow_lite,40000000,72400,39.16883850097656,38.50563430786133,2835824.0,40.79999923706055
-h063-doubledunk-s2,h063,,IQN DoubleDunk seed 2 (Phase 3),DoubleDunk-v5,2,iqn,40000000,14864,-22.101184844970703,-22.533906936645508,-328512.0,-23.600000381469727
-h063-doubledunk-s3,h063,,IQN DoubleDunk seed 3 (Phase 3),DoubleDunk-v5,3,iqn,40000000,14784,-21.978355407714844,-22.571428298950195,-324928.0,-22.0
-h063-montezumarevenge-s3,h063,,IQN MontezumaRevenge seed 3 (Phase 3),MontezumaRevenge-v5,3,iqn,40000000,165648,0.0,0.0,0.0,0.0
-h066-venture-s2,h066,,IQN+OQE Venture seed 2 (Phase 3),Venture-v5,2,iqn_oqe,40000000,17808,2.7852649688720703,4.312668323516846,49600.0,0.0
-h066-qbert-s2,h066,,IQN+OQE Qbert seed 2 (Phase 3),Qbert-v5,2,iqn_oqe,40000000,111248,223.06918334960938,210.9593048095703,24816000.0,150.0
-h064-montezumarevenge-s2,h064,,Rainbow-lite MontezumaRevenge seed 2 (Phase 3),MontezumaRevenge-v5,2,dqn_rainbow_lite,40000000,150848,0.021213406696915627,0.04242681339383125,3200.0,0.0
-h066-privateeye-s2,h066,,IQN+OQE PrivateEye seed 2 (Phase 3),PrivateEye-v5,2,iqn_oqe,40000000,14832,627.7227783203125,752.172607421875,9310384.0,-77.80000305175781
-h066-spaceinvaders-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id SpaceInvaders-v5 --seed 2,fir completed. IQN+OQE SpaceInvaders seed 2. q4=247.63 vs s1=262.71. vs PPO s2=147.18 WIN (+68.2%). Consistent across seeds.,SpaceInvaders-v5,2,iqn_oqe,40000000,60576,245.783,247.628,14888560,297.0
-h063-privateeye-s2,h063,,IQN PrivateEye seed 2 (Phase 3). q4=375.91 vs s1=423.18 s3=435.89. All 3 seeds now complete.,PrivateEye-v5,2,iqn,40000000,14832,476.248,375.909,7063712.0,20.0
-h066-montezumarevenge-s2,h066,,IQN+OQE MontezumaRevenge seed 2 (Phase 3). q4=0.0 as expected. All 3 seeds likely zero.,MontezumaRevenge-v5,2,iqn_oqe,40000000,166016,0.019,0.0,3200.0,0.0
-h063-namethisgame-s2,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id NameThisGame-v5 --seed 2,"narval completed. IQN NameThisGame seed 2. q4=1774.44 vs PPO s2=2293.44. LOSS (-22.6%). vs s1=1564.76, s3=1631.45. 3-seed avg q4=1656.88.",NameThisGame-v5,2,iqn,40000000,16704,1708.515380859375,1774.4444580078125,28539040.0,3124.0
-h064-enduro-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Enduro-v5 --seed 2,"narval completed. Rainbow-lite Enduro seed 2. q4=20.99 vs PPO=0.0 WIN. vs s1=21.97, s3=22.57. 3-seed avg q4=21.84. All 3 seeds complete.",Enduro-v5,2,dqn_rainbow_lite,40000000,12016,20.4340877532959,20.985353469848633,245536.0,12.199999809265137
-h064-qbert-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Qbert-v5 --seed 2,"narval completed. Rainbow-lite Qbert seed 2. q4=251.61 vs PPO s2=158.16 WIN (+59.1%). vs s1=254.38, s3=255.08. 3-seed avg q4=253.69. All 3 seeds complete.",Qbert-v5,2,dqn_rainbow_lite,40000000,117296,261.6048278808594,251.60960388183594,30685200.0,315.0
-h066-venture-s3,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Venture-v5 --seed 3,"nibi completed. IQN+OQE Venture seed 3. q4=2.49 vs s1=3.62, s2=4.31. 3-seed avg q4=3.47. All 3 seeds complete.",Venture-v5,3,iqn_oqe,40000000,17984,1.9572954177856445,2.491103172302246,35200.0,0.0
-h063-solaris-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Solaris-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-solaris-s3 --output-dir /runs,IQN Solaris seed 3. q4=816.29 (vs s1=696.07). PPO avg q4=2279.89. LOSS.,Solaris-v5,3,iqn,40000000,5520,1069.97,816.29,5906240.0,1152.0
-h066-enduro-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Enduro-v5 --seed 2 --hypothesis-id h066 --experiment-id h066-enduro-s2 --output-dir /runs,"IQN+OQE Enduro seed 2. q4=1.90 (vs s1=2.32, IQN s2=3.23). PPO=0.0 WIN.",Enduro-v5,2,iqn_oqe,40000000,12016,7.52,1.9,90304.0,0.2
-h066-namethisgame-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id NameThisGame-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-namethisgame-s3 --output-dir /runs,"IQN+OQE NameThisGame seed 3. q4=1583.22 (vs s1=1598.0, s2=1718.24). 3-seed avg q4=1633.15. PPO avg=2435.7 LOSS -33%.",NameThisGame-v5,3,iqn_oqe,40000000,16784,1704.49,1583.22,28608160.0,2182.0
-h063-solaris-s2,h063,python src/iqn_atari_envpool.py --env-id Solaris-v5 --seed 2 --total-timesteps 40000000,"narval completed. IQN Solaris seed 2. q4=822.79 (vs s1=696.07, s3=816.29). 3-seed avg q4=778.38. PPO avg=2279.89 BIG LOSS (-65.9%). All 3 seeds complete.",Solaris-v5,2,iqn,40000000,5504,990.3488159179688,822.7907104492188,5450880.0,1188.0
-h063-alien-s2,h063,python src/iqn_atari_envpool.py --env-id Alien-v5 --seed 2 --total-timesteps 40000000,IQN Alien seed 2. q4=314.65 vs PPO=196.87 WIN (+59.8%). 3-seed avg q4=311.24.,Alien-v5,2,iqn,40000000.0,67312.0,335.21,314.65,22563840.0,390.0
-h066-battlezone-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id BattleZone-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-battlezone-s3 --output-dir /runs,"IQN+OQE BattleZone seed 3. q4=3506.11 (vs s1=3726.05, s2=3681.27). All 3 seeds complete. 3-seed avg q4=3637.81. PPO avg=2163.71 WIN (+68.1%). IQN avg=3306.86. OQE slightly better than IQN (+10%).",BattleZone-v5,3,iqn_oqe,40000000,23584,3198.77880859375,3506.105712890625,75440000.0,7800.0
-h066-alien-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Alien-v5 --seed 3,IQN+OQE Alien seed 3. q4=305.57 vs PPO=196.30 WIN (+55.7%). vs IQN s3=307.93 TIE (-0.8%). OQE neutral on Alien.,Alien-v5,3,iqn_oqe,40000000.0,67648.0,336.53,305.57,22765280.0,380.0
-h064-solaris-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Solaris-v5 --seed 2 --hypothesis-id h064 --experiment-id h064-solaris-s2 --output-dir /runs,"Rainbow-lite Solaris seed 2. q4=1532.87 (vs s1=1658.26). PPO s2=2468.84 LOSS (-37.9%). IQN s2=822.79, RBL much better. s3 still running.",Solaris-v5,2,dqn_rainbow_lite,40000000,6864,1300.046630859375,1532.8671875,8923520.0,704.0
-h066-doubledunk-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id DoubleDunk-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-doubledunk-s3 --output-dir /runs,"IQN+OQE DoubleDunk seed 3. q4=-22.57 (vs s1=-22.45, s2=-22.68). All 3 seeds complete. 3-seed avg q4=-22.57. PPO avg=-17.77 BIG LOSS. IQN avg=-22.56 TIE.",DoubleDunk-v5,3,iqn_oqe,40000000,14928,-22.1607723236084,-22.574491500854492,-330816.0,-22.399999618530273
-h066-montezumarevenge-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id MontezumaRevenge-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-montezumarevenge-s3 --output-dir /runs,IQN+OQE MontezumaRevenge seed 3. q4=0.0 as expected. All 3 seeds complete. All zero.,MontezumaRevenge-v5,3,iqn_oqe,40000000,166048,0.00963576789945364,0.0,1600.0,0.0
-h066-privateeye-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id PrivateEye-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-privateeye-s3 --output-dir /runs,"IQN+OQE PrivateEye seed 3. q4=643.87 (vs s1=471.08, s2=752.17). All 3 seeds complete. 3-seed avg q4=622.37. IQN avg=411.66. OQE +51.2% over IQN! PPO avg=-134.72 BIG WIN.",PrivateEye-v5,3,iqn_oqe,40000000,14832,599.2211303710938,643.868408203125,8887648.0,-985.5999755859375
-h066-solaris-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Solaris-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-solaris-s3 --output-dir /runs,IQN+OQE Solaris seed 3. q4=862.54 (vs s1=904.98). PPO s3=2207.27 LOSS (-60.9%). IQN s3=816.29 OQE slightly better (+5.7%). s2 still running.,Solaris-v5,3,iqn_oqe,40000000,5424,989.321533203125,862.536865234375,5366080.0,624.0
-h066-alien-s2,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Alien-v5 --seed 2,IQN+OQE Alien seed 2. q4=309.54 vs PPO=196.87 WIN (+57.3%). vs IQN s2=314.65 TIE (-1.6%). All 3 seeds now complete. 3-seed avg q4=308.58.,Alien-v5,2,iqn_oqe,40000000.0,67856.0,333.31524658203125,309.5354919433594,22617440.0,188.0
-h064-breakout-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Breakout-v5 --seed 2,narval completed. Rainbow-lite Breakout seed 2. q4=2.03 vs PPO s2=1.39 WIN (+45.3%). All 3 seeds complete: avg q4=2.024. Consistent ~2.0 across seeds.,Breakout-v5,2,dqn_rainbow_lite,40000000,194976,1.9958969354629517,2.0254390239715576,389152.0,3.200000047683716
-h066-solaris-s2,h066,python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Solaris-v5 --seed 2,"narval completed. IQN+OQE Solaris seed 2. q4=791.39 (vs s1=904.98, s3=862.54). 3-seed avg q4=852.97. PPO avg=2279.89 BIG LOSS (-62.6%). IQN avg=778.38. OQE slightly better than IQN (+9.6%). All 3 seeds complete.",Solaris-v5,2,iqn_oqe,40000000,5280,938.3636474609375,791.3939208984375,4954560.0,428.0
-h064-namethisgame-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id NameThisGame-v5 --seed 3,Rainbow-lite NTG seed 3. q4=2328.33. All 3 seeds: avg=2418.95. PPO avg=2435.71 TIE (-0.7%). IQN avg=1656.88 WIN (+46%).,NameThisGame-v5,3,dqn_rainbow_lite,40000000.0,13600.0,2241.7294921875,2328.329345703125,30487520.0,2714.0
-h064-venture-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Venture-v5 --seed 3,Rainbow-lite Venture seed 3. q4=4.73. All 3 seeds: avg=4.55. PPO=0 WIN. IQN avg=2.26 WIN (+101%).,Venture-v5,3,dqn_rainbow_lite,40000000.0,18944.0,2.871621608734131,4.729729652404785,54400.0,0.0
-h066-phoenix-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Phoenix-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-phoenix-s3 --output-dir /runs,"IQN+OQE Phoenix seed 3. q4=147.66 (vs s1=139.71, s2=141.33). All 3 seeds complete. 3-seed avg q4=142.90. PPO avg=796.16 BIG LOSS (-82.1%). IQN s1=134.16 s2=137.49. OQE slightly better than IQN (+4-8%).",Phoenix-v5,3,iqn_oqe,40000000,48720,181.287353515625,147.65846252441406,8832320.0,212.0
-h063-breakout-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Breakout-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-breakout-s3 --output-dir /runs,"IQN Breakout seed 3. q4=1.79 (vs s1=1.85, s2=1.85). All 3 seeds complete. 3-seed avg q4=1.83. PPO avg=1.50 WIN (+22%).",Breakout-v5,3,iqn,40000000,208048,1.7429823875427246,1.7899715900421143,362624.0,2.4000000953674316
-h064-montezumarevenge-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id MontezumaRevenge-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-montezumarevenge-s3 --output-dir /runs,"Rainbow-lite MR seed 3. q4=0.0 (vs s1=0.0, s2=0.04). All 3 seeds complete. TIE — no algorithm solves this.",MontezumaRevenge-v5,3,dqn_rainbow_lite,40000000,154656,0.010345540940761566,0.0,1600.0,0.0
-h063-phoenix-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Phoenix-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-phoenix-s3 --output-dir /runs,"IQN Phoenix seed 3. q4=142.23 (vs s1=134.16, s2=137.49). All 3 seeds complete. 3-seed avg q4=137.96. PPO avg=796.16 BIG LOSS (-82.7%). OQE avg=142.90 slightly better.",Phoenix-v5,3,iqn,40000000,46608,178.99417114257812,142.2313690185547,8342560.0,148.0
-h064-doubledunk-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id DoubleDunk-v5 --seed 3,"narval completed. Rainbow-lite DoubleDunk seed 3. q4=-33.73 (vs s1=-19.35, s2=-22.51). High variance outlier. 3-seed avg q4=-25.20. PPO avg=-17.77 BIG LOSS (-42%). IQN avg=-22.56 LOSS (-12%). Rainbow-lite worst on DoubleDunk.",DoubleDunk-v5,3,dqn_rainbow_lite,40000000.0,1920.0,-25.91666603088379,-33.733333587646484,-49760.0,-57.599998474121094
-h064-alien-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Alien-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-alien-s3 --output-dir /runs,"Rainbow-lite Alien seed 3. q4=139.34 (vs s1=275.49, s2=280.74). HUGE OUTLIER. 3-seed avg q4=231.86. PPO avg=200.27 WIN (+15.8%). IQN avg=311.24 LOSS (-25.5%). Seed 3 catastrophically worse.",Alien-v5,3,dqn_rainbow_lite,40000000,69328,206.0789337158203,139.3353271484375,14287040.0,140.0
-h063-qbert-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Qbert-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-qbert-s3 --output-dir /runs,IQN Qbert seed 3. q4=217.19 (vs s1=219.30). Seed 2 still running. PPO avg=158.44 BIG WIN (+37%).,Qbert-v5,3,iqn,40000000,109952,225.82582092285156,217.18568420410156,24830000.0,165.0
-h063-spaceinvaders-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id SpaceInvaders-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-spaceinvaders-s3 --output-dir /runs,"IQN SpaceInvaders seed 3. q4=248.97 (vs s1=250.88, s2=256.21). All 3 seeds complete. 3-seed avg q4=252.02. PPO avg=147.36 BIG WIN (+71.1%). Very consistent.",SpaceInvaders-v5,3,iqn,40000000,60464,244.4548797607422,248.9706268310547,14780720.0,222.0
-h066-breakout-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Breakout-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-breakout-s3 --output-dir /runs,"IQN+OQE Breakout seed 3. q4=1.76 (vs s1=1.79, s2=1.83). All 3 OQE Breakout seeds complete. 3-seed avg q4=1.795. PPO avg=1.50 WIN (+20%). IQN avg=1.83 LOSS (-1.9%). Rainbow-lite avg=2.02 LOSS.",Breakout-v5,3,iqn_oqe,40000000,209744,1.7092074155807495,1.760622501373291,358496.0,0.800000011920929
-h064-solaris-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Solaris-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-solaris-s3 --output-dir /runs,"Rainbow-lite Solaris seed 3. q4=1735.04 (vs s1=1658.26, s2=1532.87). All 3 seeds complete. 3-seed avg q4=1642.06. PPO avg=2279.89 LOSS (-28.0%). IQN avg=778.38 BIG WIN (+111.0%). OQE avg=852.97 BIG WIN (+92.5%).",Solaris-v5,3,dqn_rainbow_lite,40000000,7232,1360.4425048828125,1735.044189453125,9838720.0,1260.0
-h064-battlezone-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id BattleZone-v5 --seed 3 --hypothesis-id h064 --experiment-id h064-battlezone-s3 --output-dir /runs,"Rainbow-lite BattleZone seed 3. q4=2000.0 (vs s1=5310.42, s2=3000.0). HIGH VARIANCE. 3-seed avg q4=3436.81. PPO avg=2164.04 WIN (+58.8%). IQN avg=3306.86 WIN (+3.9%). OQE avg=3637.81 LOSS (-5.5%).",BattleZone-v5,3,dqn_rainbow_lite,40000000,32432,2553.033935546875,2000.0,82800000.0,2000.0
-h066-enduro-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Enduro-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-enduro-s3 --output-dir /runs,"IQN+OQE Enduro seed 3. q4=4.49 (vs s1=2.32, s2=1.90). All 3 OQE Enduro seeds complete. 3-seed avg q4=2.90. PPO avg=0.0 WIN. Rainbow-lite avg=21.84 BIG LOSS (-86.7%).",Enduro-v5,3,iqn_oqe,40000000,12016,8.617842674255371,4.490013122558594,103552.0,3.200000047683716
-h066-qbert-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Qbert-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-qbert-s3 --output-dir /runs,"IQN+OQE Qbert seed 3. q4=217.55 (vs s1=218.18, s2=210.96). All 3 OQE Qbert seeds complete. 3-seed avg q4=215.56. PPO avg=158.44 WIN (+36.0%).",Qbert-v5,3,iqn_oqe,40000000,111920,223.24517822265625,217.54824829101562,24985600.0,225.0
-h066-spaceinvaders-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id SpaceInvaders-v5 --seed 3 --hypothesis-id h066 --experiment-id h066-spaceinvaders-s3 --output-dir /runs,"narval completed. IQN+OQE SpaceInvaders seed 3. q4=247.79 (vs s1=262.71, s2=247.63). All 3 OQE SI seeds complete. 3-seed avg q4=252.71. PPO avg=147.36 WIN (+71.5%). IQN avg=252.02 TIE (+0.3%). Rainbow-lite avg=268.30 LOSS (-5.8%).",SpaceInvaders-v5,3,iqn_oqe,40000000,60848,241.460693359375,247.79385375976562,14692400.0,237.0
-h063-enduro-s3,h063,python cleanrl/dqn_atari_envpool_iqn.py --env-id Enduro-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-enduro-s3 --output-dir /runs,"IQN Enduro seed 3. q4=4.34 (vs s1=1.24, s2=3.23). All 3 IQN Enduro seeds complete. 3-seed avg q4=2.94. PPO avg=0.0 WIN. Rainbow-lite avg=21.84 BIG LOSS (-86.5%). OQE avg=2.90 TIE.",Enduro-v5,3,iqn,40000000,12016,4.447403430938721,4.340878963470459,53440.0,2.4000000953674316
-h066-amidar-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id Amidar-v5 --seed 3,"IQN+OQE Amidar seed 3. q4=33.90 (vs s1=33.98, s2=35.78). 3-seed avg q4=34.55. PPO avg=2.27 WIN (+1422%). IQN s1=34.27 s2=34.31 (s3 still running). Rainbow-lite avg=35.31 LOSS (-2.2%). OQE consistent on Amidar.",Amidar-v5,3,iqn_oqe,40000000,64480,34.175,33.904,2203616.0,30.4
-h064-privateeye-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id PrivateEye-v5 --seed 3,"Rainbow-lite PrivateEye seed 3. q4=0.0 (vs s1=0.0, s2=-0.46). All 3 Rainbow-lite PrivateEye seeds complete. 3-seed avg q4=-0.15. NoisyNet catastrophic on PrivateEye across all seeds. h064 NOW 45/45 COMPLETE.",PrivateEye-v5,3,dqn_rainbow_lite,40000000,14832,0.9320388436317444,0.0,13824.0,0.0
-h066-mspacman-s3,h066,python cleanrl/iqn_atari_envpool_oqe.py --env-id MsPacman-v5 --seed 3,"IQN+OQE MsPacman seed 3. q4=502.37 (vs s1=514.10, s2=490.84). All 3 OQE MsPacman seeds complete. 3-seed avg q4=502.44. PPO avg=319.11 WIN (+57.4%). Rainbow-lite avg=538.98 LOSS (-6.8%). IQN s1=496.64 s2=498.58 (s3 running). h066 OQE NOW 45/45 COMPLETE.",MsPacman-v5,3,iqn_oqe,40000000,71536,506.2670593261719,502.3663635253906,36216320.0,862.0
-h063-mspacman-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id MsPacman-v5 --seed 3,"IQN MsPacman seed 3. q4=505.31 (vs s1=496.64, s2=498.58). All 3 IQN MsPacman seeds complete. 3-seed avg q4=500.18. PPO avg=319.11 WIN (+56.7%). Rainbow-lite avg=538.98 LOSS (-7.2%). OQE avg=502.44 — essentially tied.",MsPacman-v5,3,iqn,40000000,71088,509.8919677734375,505.3094787597656,36247200.0,330.0
-h063-amidar-s3,h063,python cleanrl/iqn_atari_envpool.py --env-id Amidar-v5 --seed 3 --hypothesis-id h063 --experiment-id h063-amidar-s3 --output-dir /runs,IQN Amidar seed 3. q4=34.41 (vs s1=34.27 s2=34.31). 3-seed avg q4=34.33. PPO avg=2.04 WIN (+1583%). Very consistent.,Amidar-v5,3,iqn,40000000,64192,34.25971984863281,34.4107666015625,2199200.0,35.0
-h063-qbert-s2,h063,python cleanrl/iqn_atari_envpool.py --env-id Qbert-v5 --seed 2 --hypothesis-id h063 --experiment-id h063-qbert-s2 --output-dir /runs,"IQN Qbert seed 2 (attempt #6 narval). q4=216.61 (vs s1=219.30, s3=217.19). 3-seed avg q4=217.70. PPO avg=158.44 BIG WIN (+37%). h063 NOW 45/45 COMPLETE.",Qbert-v5,2,iqn,40000000,109504,226.249267578125,216.61309814453125,24775200.0,185.0
-h002-alien-s1,h002,,Phase 1 gap-fill from fir old-format CSV,Alien-v5,1,pqn,40000000,70784,187.4141082763672,176.38336181640625,13265920.0,140.0
-h002-alien-s3,h002,,Phase 1 gap-fill from narval old-format CSV,Alien-v5,3,pqn,40000000,,190.9409637451172,181.3653106689453,13246720.0,
-h002-amidar-s1,h002,,Phase 1 gap-fill from rorqual old-format CSV,Amidar-v5,1,pqn,40000000,,31.112403869628906,32.15503692626953,2054912.0,
-h002-amidar-s3,h002,,Phase 1 gap-fill from nibi old-format CSV,Amidar-v5,3,pqn,40000000,,30.250965118408203,30.98841667175293,2005760.0,
-h002-battlezone-s1,h002,,Phase 1 gap-fill from nibi old-format CSV,BattleZone-v5,1,pqn,40000000,,2851.674560546875,3349.2822265625,76288000.0,
-h002-battlezone-s3,h002,,Phase 1 gap-fill from rorqual old-format CSV,BattleZone-v5,3,pqn,40000000,,2946.85986328125,3473.429931640625,78080000.0,
-h002-breakout-s1,h002,,Phase 1 gap-fill from nibi old-format CSV,Breakout-v5,1,pqn,40000000,,1.585882306098938,1.6494117975234985,345088.0,
-h002-namethisgame-s1,h002,,Phase 1 gap-fill from rorqual old-format CSV,NameThisGame-v5,1,pqn,40000000,,1100.50634765625,1282.2784423828125,22256640.0,
-h002-namethisgame-s3,h002,,Phase 1 gap-fill from nibi old-format CSV,NameThisGame-v5,3,pqn,40000000,,1308.0281982421875,1591.267578125,23774720.0,
-h002-solaris-s1,h002,,Phase 1 gap-fill from fir old-format CSV,Solaris-v5,1,pqn,40000000,,576.0,504.0,2949120.0,
-h002-assault-s1,h002,python cleanrl/pqn_atari_envpool.py --env-id Assault-v5 --seed 1 --total-timesteps 40000000,"Phase 4 Atari57 PQN baseline (Assault-v5, seed 1)",Assault-v5,1,pqn,40000000,45824,307.3156433105469,369.08380126953125,14082432.0,441.0
-h002-bankheist-s1,h002,,Phase 4 Atari57 (rorqual),BankHeist-v5,1,pqn,40000000,,9.492753982543945,9.565217018127441,335360.0,
-h002-asteroids-s3,h002,python cleanrl/pqn_atari_envpool.py --env-id Asteroids-v5 --seed 3 --hypothesis-id h002 --experiment-id h002-asteroids-s3 --total-timesteps 40000000,Phase 4 42-game. PQN Asteroids seed 3. q4=144.07,Asteroids-v5,3,pqn,40000000,64128,197.624755859375,144.0718536376953,12673280.0,110.0
-h002-centipede-s2,h002,python cleanrl/pqn_atari_envpool.py --env-id Centipede-v5 --seed 2 --hypothesis-id h002 --experiment-id h002-centipede-s2 --total-timesteps 40000000,Phase 4 42-game. PQN Centipede seed 2. q4=2831.48,Centipede-v5,2,pqn,40000000,66560,2290.990478515625,2831.484619140625,152488320.0,1492.0
-h001-asterix-s1,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Asterix-v5,1,ppo,40000000,163712,236.3174285888672,249.02267456054688,38688000.0,450.0
-h001-berzerk-s2,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Berzerk-v5,2,ppo,40000000,174592,165.10264587402344,163.4604034423828,28825600.0,150.0
-h001-bowling-s3,h001,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Bowling-v5,3,ppo,40000000,18944,23.62162208557129,22.027027130126953,447488.0,17.0
-h002-asterix-s2,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Asterix-v5,2,pqn,40000000,56320,339.8863525390625,400.4545593261719,19142400.0,550.0
-h002-berzerk-s3,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),Berzerk-v5,3,pqn,40000000,88576,257.32659912109375,279.94219970703125,22792960.0,50.0
-h002-demonattack-s2,h002,Phase 4 40M Atari57,Phase 4 Atari57 40M (rorqual),DemonAttack-v5,2,pqn,40000000,18432,715.5555419921875,922.2222290039062,13189120.0,1540.0
-h001-atlantis-s3,h001,,Phase 4 Atari57 (rorqual),Atlantis-v5,3,ppo,40000000,,15951.8515625,15848.1484375,496166400.0,
-h001-beamrider-s1,h001,,Phase 4 Atari57 (rorqual),BeamRider-v5,1,ppo,40000000,,358.0251159667969,338.0251159667969,10952704.0,
-h001-crazyclimber-s3,h001,,Phase 4 Atari57 (rorqual),CrazyClimber-v5,3,ppo,40000000,,7676.1904296875,7844.76171875,103168000.0,
-h001-gopher-s1,h001,,Phase 4 Atari57 (rorqual),Gopher-v5,1,ppo,40000000,,328.91229248046875,309.1929931640625,11998720.0,
-h002-boxing-s1,h002,,Phase 4 Atari57 (rorqual),Boxing-v5,1,pqn,40000000,,-30.6971435546875,-34.40571594238281,-687616.0,
-h002-choppercommand-s3,h002,,Phase 4 Atari57 (rorqual),ChopperCommand-v5,3,pqn,40000000,,741.2023315429688,903.51904296875,64704000.0,
-h002-gravitar-s3,h002,,Phase 4 Atari57 (rorqual),Gravitar-v5,3,pqn,40000000,,74.04022216796875,46.0694694519043,5184000.0,
-h001-choppercommand-s2,h001,,Phase 4 Atari57 (rorqual),ChopperCommand-v5,2,ppo,40000000,,815.4385986328125,845.9649047851562,29747200.0,
-h002-beamrider-s2,h002,,Phase 4 Atari57 (rorqual),BeamRider-v5,2,pqn,40000000,,541.1468505859375,622.9650268554688,9905152.0,
-h002-gopher-s2,h002,,Phase 4 Atari57 (rorqual),Gopher-v5,2,pqn,40000000,,79.67845916748047,44.43729782104492,3171840.0,
-h002-jamesbond-s2,h002,,Phase 4 Atari57 (rorqual),JamesBond-v5,2,pqn,40000000,,13.559322357177734,9.322033882141113,819200.0,
-h001-gravitar-s2,h001,,Phase 4 Atari57 (rorqual),Gravitar-v5,2,ppo,40000000,,189.0,196.8000030517578,12096000.0,
-h002-defender-s1,h002,,Phase 4 Atari57 (rorqual),Defender-v5,1,pqn,40000000,,2434.5283203125,2458.867919921875,165158400.0,
-h002-frostbite-s1,h002,,Phase 4 Atari57 (rorqual),Frostbite-v5,1,pqn,40000000,,89.59326934814453,99.9719467163086,8176640.0,
-h001-centipede-s1,h001,,Phase 4 Atari57 (rorqual),Centipede-v5,1,ppo,40000000,,2260.80908203125,2235.358642578125,125881856.0,
-h002-icehockey-s1,h002,,Phase 4 Atari57 (rorqual),IceHockey-v5,1,pqn,40000000,,-12.977777481079102,-13.155555725097656,-149504.0,
-h001-asteroids-s2,h001,,Phase 4 Atari57 (rorqual),Asteroids-v5,2,ppo,40000000,,834.5201416015625,815.8513793945312,34502400.0,
-h001-demonattack-s1,h001,,Phase 4 Atari57 (rorqual),DemonAttack-v5,1,ppo,40000000,,152.453125,147.0625,6244480.0,
-h002-kangaroo-s3,h002,,Phase 4 Atari57 (rorqual),Kangaroo-v5,3,pqn,40000000,,159.6491241455078,355.5555419921875,13977600.0,
-h002-fishingderby-s3,h002,,Phase 4 Atari57 (rorqual),FishingDerby-v5,3,pqn,40000000,,-96.65908813476562,-95.81818389892578,-2177536.0,
-h002-pong-s3,h002,,Phase 4 Atari57 (rorqual),Pong-v5,3,pqn,40000000,,-20.91348648071289,-20.979642868041992,-1052032.0,
-h001-freeway-s3,h001,,Phase 4 Atari57 (rorqual),Freeway-v5,3,ppo,40000000,,0.0,0.0,0.0,
-h001-pitfall-s1,h001,,Phase 4 Atari57 (rorqual),Pitfall-v5,1,ppo,40000000,,-287.09375,-342.40625,-4703744.0,
-h002-pitfall-s2,h002,,Phase 4 Atari57 (rorqual),Pitfall-v5,2,pqn,40000000,,-65.0543441772461,-61.69565200805664,-1532160.0,
-h001-hero-s3,h001,,Phase 4 Atari57 (rorqual),Hero-v5,3,ppo,40000000,,427.95574951171875,527.0442504882812,30949760.0,
-h001-jamesbond-s1,h001,,Phase 4 Atari57 (rorqual),JamesBond-v5,1,ppo,40000000,,28.828125,32.8125,2361600.0,
-h001-krull-s3,h001,,Phase 4 Atari57 (rorqual),Krull-v5,3,ppo,40000000,,1688.3983154296875,1742.597412109375,49922560.0,
-h001-pong-s2,h001,,Phase 4 Atari57 (rorqual),Pong-v5,2,ppo,40000000,,-20.296829223632812,-20.21613883972168,-901504.0,
-h002-kungfumaster-s1,h002,,Phase 4 Atari57 (rorqual),KungFuMaster-v5,1,pqn,40000000,,38.202247619628906,9.887639999389648,2176000.0,
-h001-kangaroo-s2,h001,,Phase 4 Atari57 (rorqual),Kangaroo-v5,2,ppo,40000000,,42.21556854248047,39.520957946777344,3609600.0,
-h001-fishingderby-s2,h001,,Phase 4 Atari57 (rorqual),FishingDerby-v5,2,ppo,40000000,,-93.86227416992188,-93.82634735107422,-2006400.0,
-h064-assault-s1,h064,,Phase 4 Atari57 (nibi),Assault-v5,1,dqn_rainbow_lite,40000000,,365.5796813964844,362.9069519042969,21876288.0,
-h001-riverraid-s3,h001,,Phase 4 Atari57 (rorqual),Riverraid-v5,3,ppo,40000000,,1481.1644287109375,1466.2100830078125,83040000.0,
-h064-defender-s1,h064,,Phase 4 Atari57 (nibi),Defender-v5,1,dqn_rainbow_lite,40000000,,2592.910400390625,2581.1396484375,122302400.0,
-h064-demonattack-s2,h064,,Phase 4 Atari57 (nibi),DemonAttack-v5,2,dqn_rainbow_lite,40000000,,218.0238800048828,197.7586212158203,5260480.0,
-h002-roadrunner-s1,h002,,Phase 4 Atari57 (rorqual),Roadrunner-v5,1,pqn,40000000,,439.6396484375,724.9249267578125,37478400.0,
-h064-bankheist-s1,h064,,Phase 4 Atari57 (nibi),BankHeist-v5,1,dqn_rainbow_lite,40000000,,14.27503776550293,12.257100105285645,611200.0,
-h064-centipede-s2,h064,,Phase 4 Atari57 (nibi),Centipede-v5,2,dqn_rainbow_lite,40000000,,3504.974365234375,5014.4072265625,164649680.0,
-h064-gopher-s2,h064,,Phase 4 Atari57 (nibi),Gopher-v5,2,dqn_rainbow_lite,40000000,,198.872802734375,193.11500549316406,8355840.0,
-h001-robotank-s1,h001,,Phase 4 Atari57 (rorqual),Robotank-v5,1,ppo,40000000,,2.038167953491211,2.778625965118408,34176.0,
-h064-assault-s2,h064,,Phase 4 Atari57 (rorqual),Assault-v5,2,dqn_rainbow_lite,40000000,,365.1494140625,374.1623229980469,21739536.0,
-h001-assault-s1,h001,,Phase 4 Atari57 (narval),Assault-v5,1,ppo,40000000,,246.64324951171875,238.56932067871094,17079552.0,
-h002-assault-s2,h002,,Phase 4 Atari57 (narval),Assault-v5,2,pqn,40000000,,320.6000061035156,347.00689697265625,17851008.0,
-h002-asterix-s3,h002,,Phase 4 Atari57 (narval),Asterix-v5,3,pqn,40000000,,345.3810729980469,430.1385803222656,19142400.0,
-h001-asterix-s2,h001,,Phase 4 Atari57 (narval),Asterix-v5,2,ppo,40000000,,236.55789184570312,234.14918518066406,38969600.0,
-h064-bankheist-s2,h064,,Phase 4 Atari57 (rorqual),BankHeist-v5,2,dqn_rainbow_lite,40000000,,15.11178207397461,17.54682731628418,400160.0,
-h064-beamrider-s2,h064,,Phase 4 Atari57 (nibi),BeamRider-v5,2,dqn_rainbow_lite,40000000,,618.1683959960938,714.6021118164062,9396160.0,
-h064-bowling-s1,h064,,Phase 4 Atari57 (rorqual),Bowling-v5,1,dqn_rainbow_lite,40000000,,36.41363525390625,30.010910034179688,640880.0,
-h064-choppercommand-s3,h064,,Phase 4 Atari57 (nibi),ChopperCommand-v5,3,dqn_rainbow_lite,40000000,,731.758544921875,746.8729248046875,69640000.0,
-h064-crazyclimber-s1,h064,,Phase 4 Atari57 (rorqual),CrazyClimber-v5,1,dqn_rainbow_lite,40000000,,1197.7391357421875,626.6087036132812,11019200.0,
-h064-defender-s2,h064,,Phase 4 Atari57 (rorqual),Defender-v5,2,dqn_rainbow_lite,40000000,,3353.275634765625,3547.21875,86809600.0,
-h064-gopher-s3,h064,,Phase 4 Atari57 (rorqual),Gopher-v5,3,dqn_rainbow_lite,40000000,,179.26071166992188,170.2870635986328,7293760.0,
-h064-gravitar-s3,h064,,Phase 4 Atari57 (nibi),Gravitar-v5,3,dqn_rainbow_lite,40000000,,104.43843078613281,101.37744140625,7096800.0,
-h064-jamesbond-s3,h064,,Phase 4 Atari57 (rorqual),JamesBond-v5,3,dqn_rainbow_lite,40000000,,34.957157135009766,34.02094650268555,1762400.0,
-h064-atlantis-s1,h064,,Phase 4 Atari57 (rorqual),Atlantis-v5,1,dqn_rainbow_lite,40000000,,4718.16259765625,4744.291015625,284297600.0,
-h064-surround-s3,h064,,Phase 4 Atari57 (rorqual),Surround-v5,3,dqn_rainbow_lite,40000000,,-9.971590995788574,-9.96074390411377,-308880.0,
-h001-asteroids-s3,h001,,Phase 4 Atari57 (narval),Asteroids-v5,3,ppo,40000000,,893.974365234375,911.1538696289062,35701760.0,
-h001-bankheist-s1,h001,,Phase 4 Atari57 (narval),BankHeist-v5,1,ppo,40000000,,11.308089256286621,10.757314682006836,840960.0,
-h001-beamrider-s2,h001,,Phase 4 Atari57 (narval),BeamRider-v5,2,ppo,40000000,,395.1091613769531,407.5633239746094,11581440.0,
-h001-seaquest-s2,h001,,Phase 4 Atari57 (rorqual),Seaquest-v5,2,ppo,40000000,,90.80342102050781,93.94871520996094,6799360.0,
-h001-skiing-s3,h001,,Phase 4 Atari57 (rorqual),Skiing-v5,3,ppo,40000000,,-16638.03515625,-16232.111328125,-534546816.0,
-h001-surround-s1,h001,,Phase 4 Atari57 (rorqual),Surround-v5,1,ppo,40000000,,-9.989361763000488,-9.98581600189209,-360576.0,
-h001-tennis-s2,h001,,Phase 4 Atari57 (rorqual),Tennis-v5,2,ppo,40000000,,-23.9289608001709,-23.956283569335938,-560512.0,
-h001-timepilot-s3,h001,,Phase 4 Atari57 (rorqual),TimePilot-v5,3,ppo,40000000,,3400.549560546875,2608.791259765625,79219200.0,
-h001-wizardofwor-s3,h001,,Phase 4 Atari57 (rorqual),WizardOfWor-v5,3,ppo,40000000,,640.9091186523438,679.7979736328125,16243200.0,
-h001-zaxxon-s1,h001,,Phase 4 Atari57 (rorqual),Zaxxon-v5,1,ppo,40000000,,49.42856979370117,27.428571701049805,2214400.0,
-h002-atlantis-s1,h002,,Phase 4 Atari57 (narval),Atlantis-v5,1,pqn,40000000,,2537.44287109375,2136.37744140625,213388800.0,
-h002-bankheist-s2,h002,,Phase 4 Atari57 (narval),BankHeist-v5,2,pqn,40000000,,9.0625,7.638888835906982,334080.0,
-h002-robotank-s2,h002,,Phase 4 Atari57 (rorqual),Robotank-v5,2,pqn,40000000,,4.965909004211426,7.0,55936.0,
-h002-seaquest-s3,h002,,Phase 4 Atari57 (rorqual),Seaquest-v5,3,pqn,40000000,,129.13876342773438,150.14353942871094,6909440.0,
-h002-stargunner-s1,h002,,Phase 4 Atari57 (rorqual),StarGunner-v5,1,pqn,40000000,,455.7275390625,450.77398681640625,18841600.0,
-h002-surround-s2,h002,,Phase 4 Atari57 (rorqual),Surround-v5,2,pqn,40000000,,-10.0,-10.0,-352000.0,
-h002-tennis-s3,h002,,Phase 4 Atari57 (rorqual),Tennis-v5,3,pqn,40000000,,-23.846153259277344,-23.846153259277344,-79360.0,
-h002-tutankham-s1,h002,,Phase 4 Atari57 (rorqual),Tutankham-v5,1,pqn,40000000,,9.706896781921387,3.1034483909606934,72064.0,
-h002-upndown-s2,h002,,Phase 4 Atari57 (rorqual),UpNDown-v5,2,pqn,40000000,,754.732421875,765.859130859375,34295040.0,
-h002-videopinball-s3,h002,,Phase 4 Atari57 (rorqual),VideoPinball-v5,3,pqn,40000000,,3058.908447265625,4196.2666015625,46984832.0,
-h002-yarsrevenge-s1,h002,,Phase 4 Atari57 (rorqual),YarsRevenge-v5,1,pqn,40000000,,4692.09521484375,4775.80126953125,562751104.0,
-h002-zaxxon-s2,h002,,Phase 4 Atari57 (rorqual),Zaxxon-v5,2,pqn,40000000,,0.0,0.0,0.0,
-h064-assault-s3,h064,,Phase 4 Atari57 (narval),Assault-v5,3,dqn_rainbow_lite,40000000,,381.7539978027344,381.8556213378906,23986368.0,
-h064-asterix-s2,h064,,Phase 4 Atari57 (nibi),Asterix-v5,2,dqn_rainbow_lite,40000000,,220.50904846191406,226.3461151123047,30010400.0,
-h064-asterix-s3,h064,,Phase 4 Atari57 (rorqual),Asterix-v5,3,dqn_rainbow_lite,40000000,,233.49301147460938,236.85752868652344,33144800.0,
-h064-asteroids-s1,h064,,Phase 4 Atari57 (narval),Asteroids-v5,1,dqn_rainbow_lite,40000000,,324.88690185546875,320.92919921875,21369760.0,
-h064-asteroids-s3,h064,,Phase 4 Atari57 (nibi),Asteroids-v5,3,dqn_rainbow_lite,40000000,,287.1251220703125,267.1922607421875,22579520.0,
-h064-bankheist-s3,h064,,Phase 4 Atari57 (narval),BankHeist-v5,3,dqn_rainbow_lite,40000000,,11.531100273132324,10.817747116088867,424160.0,
-h064-beamrider-s3,h064,,Phase 4 Atari57 (rorqual),BeamRider-v5,3,dqn_rainbow_lite,40000000,,596.1138916015625,740.4407958984375,10386688.0,
-h064-berzerk-s1,h064,,Phase 4 Atari57 (narval),Berzerk-v5,1,dqn_rainbow_lite,40000000,,251.24111938476562,261.1663513183594,21506240.0,
-h064-berzerk-s3,h064,,Phase 4 Atari57 (nibi),Berzerk-v5,3,dqn_rainbow_lite,40000000,,277.83929443359375,252.40325927734375,24009760.0,
-h064-bowling-s2,h064,,Phase 4 Atari57 (narval),Bowling-v5,2,dqn_rainbow_lite,40000000,,27.098604202270508,30.0,496880.0,
-h064-boxing-s1,h064,,Phase 4 Atari57 (nibi),Boxing-v5,1,dqn_rainbow_lite,40000000,,-22.27246856689453,-22.221113204956055,-499616.0,
-h064-boxing-s2,h064,,Phase 4 Atari57 (rorqual),Boxing-v5,2,dqn_rainbow_lite,40000000,,-23.218259811401367,-23.457918167114258,-520832.0,
-h064-boxing-s3,h064,,Phase 4 Atari57 (narval),Boxing-v5,3,dqn_rainbow_lite,40000000,,-21.611268997192383,-22.393722534179688,-484784.0,
-h064-centipede-s3,h064,,Phase 4 Atari57 (rorqual),Centipede-v5,3,dqn_rainbow_lite,40000000,,4752.60986328125,8487.2978515625,205845040.0,
-h064-choppercommand-s1,h064,,Phase 4 Atari57 (narval),ChopperCommand-v5,1,dqn_rainbow_lite,40000000,,857.6361694335938,903.1128540039062,56425600.0,
-h064-crazyclimber-s2,h064,,Phase 4 Atari57 (narval),CrazyClimber-v5,2,dqn_rainbow_lite,40000000,,1375.13916015625,668.0890502929688,11859200.0,
-h064-defender-s3,h064,,Phase 4 Atari57 (narval),Defender-v5,3,dqn_rainbow_lite,40000000,,3005.88232421875,3206.603759765625,86665600.0,
-h064-demonattack-s3,h064,,Phase 4 Atari57 (rorqual),DemonAttack-v5,3,dqn_rainbow_lite,40000000,,234.75601196289062,186.4144287109375,5311120.0,
-h064-fishingderby-s3,h064,,Phase 4 Atari57 (nibi),FishingDerby-v5,3,dqn_rainbow_lite,40000000,,-94.42400360107422,-96.02400207519531,-2077328.0,
-h064-frostbite-s1,h064,,Phase 4 Atari57 (nibi),Frostbite-v5,1,dqn_rainbow_lite,40000000,,138.64749145507812,140.661376953125,6708320.0,
-h064-frostbite-s2,h064,,Phase 4 Atari57 (rorqual),Frostbite-v5,2,dqn_rainbow_lite,40000000,,85.69039916992188,80.0,8856960.0,
-h064-gravitar-s1,h064,,Phase 4 Atari57 (narval),Gravitar-v5,1,dqn_rainbow_lite,40000000,,94.18074798583984,91.39179229736328,5619200.0,
-h064-hero-s1,h064,,Phase 4 Atari57 (rorqual),Hero-v5,1,dqn_rainbow_lite,40000000,,667.646728515625,756.1240234375,9646160.0,
-h064-icehockey-s1,h064,,Phase 4 Atari57 (nibi),IceHockey-v5,1,dqn_rainbow_lite,40000000,,-8.488371849060059,-2.7975375652313232,-99280.0,
-h064-icehockey-s2,h064,,Phase 4 Atari57 (rorqual),IceHockey-v5,2,dqn_rainbow_lite,40000000,,-8.006877899169922,-4.609353542327881,-93136.0,
-h064-jamesbond-s2,h064,,Phase 4 Atari57 (nibi),JamesBond-v5,2,dqn_rainbow_lite,40000000,,27.665576934814453,37.97148895263672,1490400.0,
-h064-kangaroo-s3,h064,,Phase 4 Atari57 (nibi),Kangaroo-v5,3,dqn_rainbow_lite,40000000,,390.09991455078125,398.37158203125,33729600.0,
-h064-krull-s1,h064,,Phase 4 Atari57 (rorqual),Krull-v5,1,dqn_rainbow_lite,40000000,,831.0910034179688,787.3035888671875,23523200.0,
-h064-kungfumaster-s2,h064,,Phase 4 Atari57 (rorqual),KungFuMaster-v5,2,dqn_rainbow_lite,40000000,,112.1285629272461,106.12492370605469,5916800.0,
-h064-pitfall-s3,h064,,Phase 4 Atari57 (rorqual),Pitfall-v5,3,dqn_rainbow_lite,40000000,,-36.45833206176758,-47.5476188659668,-196000.0,
-h064-pong-s1,h064,,Phase 4 Atari57 (narval),Pong-v5,1,dqn_rainbow_lite,40000000,,-20.807374954223633,-20.77741241455078,-1011072.0,
-h064-pong-s3,h064,,Phase 4 Atari57 (nibi),Pong-v5,3,dqn_rainbow_lite,40000000,,-20.808794021606445,-20.833444595336914,-999488.0,
-h064-riverraid-s1,h064,,Phase 4 Atari57 (rorqual),Riverraid-v5,1,dqn_rainbow_lite,40000000,,537.6279907226562,412.572998046875,81306560.0,
-h064-robotank-s3,h064,,Phase 4 Atari57 (rorqual),Robotank-v5,3,dqn_rainbow_lite,40000000,,9.209003448486328,10.37942123413086,91648.0,
-h064-skiing-s1,h064,,Phase 4 Atari57 (rorqual),Skiing-v5,1,dqn_rainbow_lite,40000000,,-23724.66796875,-24146.201171875,-401990784.0,
-h064-stargunner-s2,h064,,Phase 4 Atari57 (rorqual),StarGunner-v5,2,dqn_rainbow_lite,40000000,,533.3564453125,535.7810668945312,24636800.0,
-h064-stargunner-s3,h064,,Phase 4 Atari57 (narval),StarGunner-v5,3,dqn_rainbow_lite,40000000,,468.0565490722656,400.0,20654400.0,
-h064-timepilot-s1,h064,,Phase 4 Atari57 (rorqual),TimePilot-v5,1,dqn_rainbow_lite,40000000,,1701.048583984375,1615.2318115234375,49316800.0,
-h064-tutankham-s2,h064,,Phase 4 Atari57 (rorqual),Tutankham-v5,2,dqn_rainbow_lite,40000000,,13.057306289672852,9.249283790588379,72912.0,
-h064-upndown-s3,h064,,Phase 4 Atari57 (rorqual),UpNDown-v5,3,dqn_rainbow_lite,40000000,,1911.3966064453125,2311.942626953125,68320960.0,
-h064-wizardofwor-s1,h064,,Phase 4 Atari57 (rorqual),WizardOfWor-v5,1,dqn_rainbow_lite,40000000,,285.3999938964844,283.77142333984375,15982400.0,
-h064-yarsrevenge-s2,h064,,Phase 4 Atari57 (rorqual),YarsRevenge-v5,2,dqn_rainbow_lite,40000000,,4639.083984375,4620.39013671875,702468672.0,
-h064-zaxxon-s3,h064,,Phase 4 Atari57 (rorqual),Zaxxon-v5,3,dqn_rainbow_lite,40000000,,20.6134090423584,17.26105499267578,924800.0,
-h001-berzerk-s3,h001,,Phase 4 Atari57 (narval),Berzerk-v5,3,ppo,40000000,,149.39125061035156,150.45143127441406,27956480.0,
-h001-centipede-s2,h001,,Phase 4 Atari57 (narval),Centipede-v5,2,ppo,40000000,,2090.779296875,2044.1441650390625,118823168.0,
-h001-upndown-s1,h001,,Phase 4 Atari57 (rorqual),UpNDown-v5,1,ppo,40000000,,407.740966796875,448.4337463378906,34654720.0,
-h001-videopinball-s2,h001,,Phase 4 Atari57 (rorqual),VideoPinball-v5,2,ppo,40000000,,16613.18359375,15715.4931640625,301961216.0,
-h002-beamrider-s3,h002,,Phase 4 Atari57 (narval),BeamRider-v5,3,pqn,40000000,,524.0,628.8648681640625,9926656.0,
-h002-bowling-s1,h002,,Phase 4 Atari57 (narval),Bowling-v5,1,pqn,40000000,,23.653846740722656,19.292306900024414,393600.0,
-h064-atlantis-s2,h064,,Phase 4 Atari57 (narval),Atlantis-v5,2,dqn_rainbow_lite,40000000,,4752.48681640625,4620.427734375,284388800.0,
-h064-fishingderby-s1,h064,,Phase 4 Atari57 (narval),FishingDerby-v5,1,dqn_rainbow_lite,40000000,,-93.72940826416016,-92.85588073730469,-2039552.0,
-h064-freeway-s2,h064,,Phase 4 Atari57 (narval),Freeway-v5,2,dqn_rainbow_lite,40000000,,21.031097412109375,21.2929630279541,411200.0,
-h064-frostbite-s3,h064,,Phase 4 Atari57 (narval),Frostbite-v5,3,dqn_rainbow_lite,40000000,,140.26060485839844,149.9975128173828,9041760.0,
-h064-icehockey-s3,h064,,Phase 4 Atari57 (narval),IceHockey-v5,3,dqn_rainbow_lite,40000000,,-7.768493175506592,-5.706849098205566,-90736.0,
-h064-kangaroo-s1,h064,,Phase 4 Atari57 (narval),Kangaroo-v5,1,dqn_rainbow_lite,40000000,,387.094970703125,398.518798828125,33451200.0,
-h064-krull-s2,h064,,Phase 4 Atari57 (narval),Krull-v5,2,dqn_rainbow_lite,40000000,,929.06494140625,893.0234985351562,26548960.0,
-h064-kungfumaster-s3,h064,,Phase 4 Atari57 (narval),KungFuMaster-v5,3,dqn_rainbow_lite,40000000,,81.6112060546875,89.3753662109375,4473600.0,
-h064-roadrunner-s3,h064,,Phase 4 Atari57 (narval),Roadrunner-v5,3,dqn_rainbow_lite,40000000,,939.0530395507812,1001.544677734375,44744000.0,
-h064-robotank-s2,h064,,Phase 4 Atari57 (nibi),Robotank-v5,2,dqn_rainbow_lite,40000000,,10.295538902282715,12.520445823669434,88624.0,
-h064-seaquest-s1,h064,,Phase 4 Atari57 (narval),Seaquest-v5,1,dqn_rainbow_lite,40000000,,146.5130157470703,180.0,7832000.0,
-h064-seaquest-s3,h064,,Phase 4 Atari57 (nibi),Seaquest-v5,3,dqn_rainbow_lite,40000000,,215.85906982421875,232.1104278564453,9508160.0,
-h064-skiing-s2,h064,,Phase 4 Atari57 (narval),Skiing-v5,2,dqn_rainbow_lite,40000000,,-24085.033203125,-24478.533203125,-399233504.0,
-h064-stargunner-s1,h064,,Phase 4 Atari57 (nibi),StarGunner-v5,1,dqn_rainbow_lite,40000000,,547.4644775390625,570.6558227539062,25910400.0,
-h064-tutankham-s3,h064,,Phase 4 Atari57 (narval),Tutankham-v5,3,dqn_rainbow_lite,40000000,,13.786517143249512,12.269662857055664,78528.0,
-h064-timepilot-s2,h064,,Phase 4 Atari57 (narval),TimePilot-v5,2,dqn_rainbow_lite,40000000,,1592.7711181640625,1376.9156494140625,52880000.0,
-h002-asterix-s1,h002,,Phase 4 Atari57 (nibi),Asterix-v5,1,pqn,40000000,,355.3571472167969,409.047607421875,19104000.0,
-h001-boxing-s1,h001,,Phase 4 Atari57 (narval),Boxing-v5,1,ppo,40000000,,0.6000000238418579,0.8914285898208618,13440.0,
-h002-centipede-s3,h002,,Phase 4 Atari57 (narval),Centipede-v5,3,pqn,40000000,,1789.449951171875,247.46665954589844,137429760.0,
-h001-assault-s3,h001,,Phase 4 Atari57 (nibi),Assault-v5,3,ppo,40000000,,247.0842742919922,257.8202209472656,16888704.0,
-h001-asteroids-s1,h001,,Phase 4 Atari57 (nibi),Asteroids-v5,1,ppo,40000000,,937.8671264648438,977.6923217773438,34333440.0,
-h001-bowling-s2,h001,,Phase 4 Atari57 (nibi),Bowling-v5,2,ppo,40000000,,24.695945739746094,25.29729652404785,467840.0,
-h002-berzerk-s2,h002,,Phase 4 Atari57 (nibi),Berzerk-v5,2,pqn,40000000,,257.81158447265625,279.3623046875,22769920.0,
-h064-pitfall-s2,h064,,Phase 4 Atari57 (nibi),Pitfall-v5,2,dqn_rainbow_lite,40000000,,-50.76356506347656,-48.88372039794922,-209552.0,
-h002-bowling-s3,h002,,Phase 4 Atari57 (nibi),Bowling-v5,3,pqn,40000000,,25.770992279052734,26.610687255859375,432128.0,
-h001-atlantis-s2,h001,,Phase 4 Atari57 (nibi),Atlantis-v5,2,ppo,40000000,,15993.75,15516.6669921875,491328000.0,
-h001-berzerk-s1,h001,,Phase 4 Atari57 (nibi),Berzerk-v5,1,ppo,40000000,,157.9574432373047,148.15602111816406,28508160.0,
-h001-crazyclimber-s2,h001,,Phase 4 Atari57 (nibi),CrazyClimber-v5,2,ppo,40000000,,7810.0,8032.0,99968000.0,
-h002-asteroids-s2,h002,,Phase 4 Atari57 (nibi),Asteroids-v5,2,pqn,40000000,,199.98016357421875,153.88888549804688,12901120.0,
-h002-atlantis-s3,h002,,Phase 4 Atari57 (nibi),Atlantis-v5,3,pqn,40000000,,2503.603515625,2135.73583984375,213427200.0,
-h002-beamrider-s1,h002,,Phase 4 Atari57 (nibi),BeamRider-v5,1,pqn,40000000,,569.9860229492188,592.58740234375,10433024.0,
-h002-boxing-s2,h002,,Phase 4 Atari57 (narval),Boxing-v5,2,pqn,40000000,,-31.662857055664062,-33.4514274597168,-709248.0,
-h002-centipede-s1,h002,,Phase 4 Atari57 (nibi),Centipede-v5,1,pqn,40000000,,2201.494873046875,239.48251342773438,161184640.0,
-h002-choppercommand-s2,h002,,Phase 4 Atari57 (nibi),ChopperCommand-v5,2,pqn,40000000,,752.3529663085938,791.1764526367188,65484800.0,
-h002-crazyclimber-s1,h002,,Phase 4 Atari57 (narval),CrazyClimber-v5,1,pqn,40000000,,1822.22216796875,638.888916015625,16793600.0,
-h002-crazyclimber-s3,h002,,Phase 4 Atari57 (nibi),CrazyClimber-v5,3,pqn,40000000,,1800.0,658.4415283203125,17740800.0,
-h002-defender-s2,h002,,Phase 4 Atari57 (narval),Defender-v5,2,pqn,40000000,,2412.710205078125,2381.5126953125,147001600.0,
-h002-demonattack-s1,h002,,Phase 4 Atari57 (nibi),DemonAttack-v5,1,pqn,40000000,,619.7000122070312,700.4000244140625,11898240.0,
-h064-freeway-s1,h064,,Phase 4 Atari57 (rorqual),Freeway-v5,1,dqn_rainbow_lite,40000000,,20.97054100036621,21.39934539794922,410016.0,
-h064-kungfumaster-s1,h064,,Phase 4 Atari57 (nibi),KungFuMaster-v5,1,dqn_rainbow_lite,40000000,,71.95767211914062,68.19518280029297,3916800.0,
-h064-riverraid-s2,h064,,Phase 4 Atari57 (narval),Riverraid-v5,2,dqn_rainbow_lite,40000000,,411.7784423828125,412.60345458984375,76426080.0,
-h064-roadrunner-s2,h064,,Phase 4 Atari57 (rorqual),Roadrunner-v5,2,dqn_rainbow_lite,40000000,,1485.71826171875,1557.34765625,86219200.0,
-h064-surround-s2,h064,,Phase 4 Atari57 (nibi),Surround-v5,2,dqn_rainbow_lite,40000000,,-9.966822624206543,-9.945568084716797,-307616.0,
-h064-tennis-s1,h064,,Phase 4 Atari57 (narval),Tennis-v5,1,dqn_rainbow_lite,40000000,,-21.671642303466797,-17.65671730041504,-23232.0,
-h064-wizardofwor-s2,h064,,Phase 4 Atari57 (narval),WizardOfWor-v5,2,dqn_rainbow_lite,40000000,,286.2069091796875,262.0689697265625,16467200.0,
-h064-yarsrevenge-s3,h064,,Phase 4 Atari57 (narval),YarsRevenge-v5,3,dqn_rainbow_lite,40000000,,4619.28466796875,4623.76806640625,668428992.0,
-h001-bankheist-s3,h001,,Phase 4 Atari57 (nibi),BankHeist-v5,3,ppo,40000000,,12.291666984558105,11.875,906240.0,
-h001-choppercommand-s3,h001,,Phase 4 Atari57 (narval),ChopperCommand-v5,3,ppo,40000000,,791.6083984375,781.118896484375,28979200.0,
-h001-choppercommand-s1,h001,,Phase 4 Atari57 (nibi),ChopperCommand-v5,1,ppo,40000000,,828.7769775390625,877.6978149414062,29491200.0,
-h002-gopher-s1,h002,,Phase 4 Atari57 (nibi),Gopher-v5,1,pqn,40000000,,82.6031723022461,51.238094329833984,3330560.0,
-h002-gravitar-s2,h002,,Phase 4 Atari57 (nibi),Gravitar-v5,2,pqn,40000000,,80.6629867553711,57.45856475830078,5606400.0,
-h064-hero-s2,h064,,Phase 4 Atari57 (narval),Hero-v5,2,dqn_rainbow_lite,40000000,,1038.0418701171875,797.6906127929688,11111200.0,
-h001-boxing-s3,h001,,Phase 4 Atari57 (nibi),Boxing-v5,3,ppo,40000000,,0.8342857360839844,0.2571428716182709,18688.0,
-h001-defender-s1,h001,,Phase 4 Atari57 (narval),Defender-v5,1,ppo,40000000,,3167.277587890625,3272.251220703125,77433600.0,
-h001-gravitar-s1,h001,,Phase 4 Atari57 (nibi),Gravitar-v5,1,ppo,40000000,,176.90762329101562,192.36947631835938,11276800.0,
-h001-frostbite-s3,h001,,Phase 4 Atari57 (nibi),Frostbite-v5,3,ppo,40000000,,70.8452377319336,73.66666412353516,7617280.0,
-h001-asterix-s3,h001,,Phase 4 Atari57 (rorqual),Asterix-v5,3,ppo,40000000,,234.12083435058594,231.2548370361328,38688000.0,
-h002-demonattack-s3,h002,,Phase 4 Atari57 (narval),DemonAttack-v5,3,pqn,40000000,,647.7564086914062,716.7948608398438,12934400.0,
-h001-fishingderby-s1,h001,,Phase 4 Atari57 (nibi),FishingDerby-v5,1,ppo,40000000,21120,-93.1697006225586,-92.66060638427734,-1967744.0,-93.0
-h001-hero-s2,h001,,Phase 4 Atari57 (nibi),Hero-v5,2,ppo,40000000,71168,466.4028625488281,511.51080322265625,33192960.0,0.0
-h001-gopher-s3,h001,,Phase 4 40M from rorqual,Gopher-v5,3,ppo,40000000,36096,344.68084716796875,340.85107421875,12441600.0,180.0
-h001-demonattack-s2,h001,,Phase 4 40M from narval,DemonAttack-v5,2,ppo,40000000,43776,151.33041381835938,154.122802734375,6624640.0,130.0
-h002-hero-s3,h002,,Phase 4 40M from nibi,Hero-v5,3,pqn,40000000,76928,176.61398315429688,20.465890884399414,13586560.0,0.0
-h001-icehockey-s3,h001,,Phase 4 40M from nibi,IceHockey-v5,3,ppo,40000000,12032,-8.968085289001465,-8.595745086669922,-107904.0,-14.0
-h002-stargunner-s3,h002,,Phase 4 40M from fir,StarGunner-v5,3,pqn,40000000,41088,465.4205627441406,429.2834777832031,19123200.0,600.0
-h001-centipede-s3,h001,,Phase 4 40M from rorqual,Centipede-v5,3,ppo,40000000,56192,2169.6376953125,1925.867919921875,121916288.0,934.0
-h001-gopher-s2,h001,,Phase 4 40M from narval,Gopher-v5,2,ppo,40000000,36864,350.1388854980469,341.3888854980469,12907520.0,420.0
-h001-kangaroo-s1,h001,,Phase 4 40M from nibi,Kangaroo-v5,1,ppo,40000000,84736,42.90030288696289,43.50453186035156,3635200.0,0.0
-h002-asteroids-s1,h002,Phase 4 40M Atari57,rorqual,Asteroids-v5,1,,40000000,64384,200.2982177734375,149.16500854492188,,
-h002-berzerk-s1,h002,Phase 4 40M Atari57,rorqual,Berzerk-v5,1,,40000000,93056,243.09490966796875,282.9986267089844,,
-h002-frostbite-s3,h002,Phase 4 40M Atari57,rorqual,Frostbite-v5,3,,40000000,76032,102.23905944824219,127.97979736328125,,
-h002-kangaroo-s1,h002,Phase 4 40M Atari57,rorqual,Kangaroo-v5,1,,40000000,86016,198.0654754638672,335.71429443359375,,
-h001-frostbite-s1,h001,Phase 4 40M Atari57,narval,Frostbite-v5,1,,40000000,105216,74.24574279785156,69.29440307617188,,
-h001-gravitar-s3,h001,Phase 4 40M Atari57,narval,Gravitar-v5,3,,40000000,64256,192.92828369140625,214.1434326171875,,
-h002-jamesbond-s3,h002,Phase 4 40M Atari57,narval,JamesBond-v5,3,,40000000,60544,14.164904594421387,8.87949275970459,,
-h001-freeway-s2,h001,Phase 4 40M Atari57,nibi,Freeway-v5,2,,40000000,19456,0.0,0.0,,
-h002-fishingderby-s2,h002,Phase 4 40M Atari57,nibi,FishingDerby-v5,2,,40000000,22528,-96.94318389892578,-98.04545593261719,,
-h002-freeway-s3,h002,Phase 4 40M Atari57,nibi,Freeway-v5,3,,40000000,19456,0.0,0.0,,
-h064-tennis-s3,h064,Phase 4 40M Atari57,nibi,Tennis-v5,3,,40000000,976,-21.721311569213867,-19.73770523071289,,
-h001-stargunner-s2,h001,Phase 4 40M Atari57,fir,StarGunner-v5,2,,40000000,36608,666.0839233398438,640.5594482421875,,
-h001-surround-s3,h001,Phase 4 40M Atari57,fir,Surround-v5,3,,40000000,36096,-9.989361763000488,-9.978723526000977,,
-h002-seaquest-s1,h002,Phase 4 40M Atari57,fir,Seaquest-v5,1,,40000000,54016,135.40284729003906,155.92416381835938,,
-h002-skiing-s2,h002,Phase 4 40M Atari57,fir,Skiing-v5,2,,40000000,10624,-27074.794921875,-30229.109375,,
