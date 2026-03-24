@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Surround-v5,1,h002,h002-surround-s1,pqn,10000000,9216,-10.0,-10.0,-92160.0,-10.0
+Surround-v5,1,h002,h002-surround-s1,pqn,40000000,36096,-9.992907524108887,-10.0,-360704.0,-10.0
