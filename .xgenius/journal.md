@@ -15325,3 +15325,34 @@ The primary issue was NOT envpool hangs. The RiverRaid env_id casing was wrong, 
 2. Once all 171 complete, rerun IQM analysis with full 3-seed data for all 57 games
 3. CIs should narrow significantly — may achieve statistical significance for h064 vs h001
 4. Begin paper write-up with complete results
+
+---
+**[2026-03-24 10:11 UTC]**
+
+## Session 296: Banked h064-asterix-s1, 26 remaining jobs progressing well (attempt 11)
+
+### Triggered by: h064-asterix-s1 (rorqual job 8963831) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-asterix-s1: q4=225.23, mean=224.72, auc=30385600. Now 145/171 h064 banked.
+2. Verified asterix-s1 completed full 40M steps (exit code 0, 841KB log).
+3. Checked all 4 clusters: 26 jobs running at 4+ hours (fir 6, narval 7, nibi 6, rorqual 7 including redundant riverraid-s3).
+4. SIGALRM timeout fix from attempt 11 is working — asterix-s1 was one of the 27 previously stuck experiments.
+
+### CLUSTER STATUS (~06:10 UTC Mar 24):
+fir: 6R (berzerk-s2, crazyclimber-s3, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3)
+narval: 7R (atlantis-s3, centipede-s1, freeway-s3, kangaroo-s2, surround-s1, videopinball-s2, riverraid-s3)
+nibi: 6R (beamrider-s1, choppercommand-s2, gravitar-s2, krull-s3, robotank-s1, wizardofwor-s3)
+rorqual: 7R (bowling-s3, fishingderby-s2, jamesbond-s1, pong-s2, skiing-s3, upndown-s1, riverraid-s3)
+All jobs ~4h elapsed, expected completion in 3-5 more hours (~09:00-11:00 UTC).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 145/171 (84.8%), 26 running (all making progress)
+- TOTAL: 487/513 (94.9%)
+
+### NEXT SESSION TODO:
+1. Bank newly completed h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+3. With full data, the h064 vs h001 CI should narrow — may achieve statistical significance
