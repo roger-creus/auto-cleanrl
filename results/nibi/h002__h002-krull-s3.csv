@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Krull-v5,3,h002,h002-krull-s3,pqn,10000000,1408,865.4545288085938,186.36363220214844,1218560.0,180.0
+Krull-v5,3,h002,h002-krull-s3,pqn,40000000,12544,475.8163146972656,182.85714721679688,5968640.0,150.0

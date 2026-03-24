@@ -1,2 +1,2 @@
-env_id,seed,total_timesteps,mean_return_last_25,std_return_last_25,num_episodes,wall_time_s,hypothesis_id,experiment_id
-DoubleDunk-v5,1,40000000,-24.00,0.00,20096,9698,h001,h001-doubledunk-s1
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+DoubleDunk-v5,1,h001,h001-doubledunk-s1,ppo,40000000,20480,-17.962499618530273,-18.100000381469727,-367872.0,-20.0

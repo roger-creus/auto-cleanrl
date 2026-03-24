@@ -14305,3 +14305,54 @@ Jobs by hypothesis: h001=113R, h002=82R, h064=39R
 2. h002 now has all 57 games with at least 1 seed (117/171)
 3. Full Phase 4 completion ETA: ~06:00-12:00 UTC Mar 24
 4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 02:00 UTC]**
+
+## Session 271: Banked 10 Phase 4 40M results + normalized data fields. 431 SLURM jobs active.
+
+### Triggered by: 12 completions (h001-doubledunk-s1, h001-krull-s1, h001-phoenix-s2, h001-privateeye-s3, h001-venture-s3, h002-doubledunk-s1, h002-mspacman-s3, h064-videopinball-s1, h001-fishingderby-s3, h002-frostbite-s2, h002-jamesbond-s1, h002-kangaroo-s2)
+
+### NEW RESULTS BANKED (10):
+- h001 PPO: Krull-v5 s1 q4=2177.34, FishingDerby-v5 s3 q4=-95.10, Pong-v5 s3 q4=-20.30, RoadRunner-v5 s2 q4=13.90, Robotank-v5 s3 q4=2.68, IceHockey-v5 s1 q4=-10.63 (6 new)
+- h002 PQN: Frostbite-v5 s2 q4=107.57, Kangaroo-v5 s2 q4=325.44, Krull-v5 s3 q4=182.86 (3 new)
+- h064 Rainbow: VideoPinball-v5 s1 q4=9193.69 (1 new — this was the LAST missing game for h064!)
+- 9 trigger jobs were already banked in prior sessions (h001-doubledunk-s1, h001-phoenix-s2, h001-privateeye-s3, h001-venture-s3, h002-doubledunk-s1, h002-mspacman-s3, h002-montezumarevenge-s2, h002-venture-s1, h002-jamesbond-s1)
+
+### DATA NORMALIZATION:
+Normalized 2281 fields in experiments.csv: removed .0 suffix from total_timesteps, seed, n_episodes.
+
+### PHASE 4 BANKING TOTALS (~03:15 UTC Mar 24):
+- h001 PPO: 118/171 (69.0%), 54/57 games, 23 with 3 seeds
+- h002 PQN: 120/171 (70.2%), 55/57 games, 25 with 3 seeds
+- h064 Rainbow-lite: 135/171 (78.9%), 57/57 games, 24 with 3 seeds
+- TOTAL: 373/513 (72.7%)
+
+### IQM ANALYSIS (373 entries, 57/55/53 games):
+| Algorithm | Games | IQM HNS | Median HNS |
+|-----------|-------|---------|------------|
+| h064 Rainbow-lite | 57 | 0.0081 | 0.0033 |
+| h001 PPO | 53 | 0.0026 | 0.0006 |
+| h002 PQN | 55 | -0.0139 | -0.0072 |
+
+Head-to-head (51 common games): Rainbow beats PPO 57%, Rainbow beats PQN 84%, PPO beats PQN 61%
+
+### SLURM QUEUE (~03:15 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| fir     | 89R     | 20P     | 109   |
+| narval  | 37R     | 89P     | 126   |
+| nibi    | 57R     | 67P     | 124   |
+| rorqual | 51R     | 21P     | 72    |
+| TOTAL   | 234R    | 197P    | 431   |
+
+Jobs by hypothesis: h001=159(113R/46P), h002=134(83R/51P), h064=138(38R/100P)
+
+### KEY MILESTONE: h064 Rainbow-lite now has at least 1 seed for ALL 57 games!
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. h064 only needs 36 more experiments to fill out 3 seeds per game
+3. h001 still missing 3 games entirely, h002 missing 2 games
+4. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+5. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs

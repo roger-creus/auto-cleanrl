@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-FishingDerby-v5,3,h001,h001-fishingderby-s3,ppo,10000000,5248,-93.29268646240234,-93.63414764404297,-489600.0,-95.0
+FishingDerby-v5,3,h001,h001-fishingderby-s3,ppo,40000000,21504,-94.95237731933594,-95.0952377319336,-2041856.0,-97.0
