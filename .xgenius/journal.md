@@ -13912,3 +13912,112 @@ By hypothesis: h001 54R/142P, h002 55R/125P, h064 31R/121P
 2. h064 jobs on fir still 0 running (all pending) — monitor for scheduling issues
 3. Begin Atari57 IQM analysis once any algorithm reaches 150+ banked
 4. Full completion expected ~12:00-18:00 UTC Mar 24
+
+---
+**[2026-03-24 00:42 UTC]**
+
+## Session 261: Banked 1 Phase 4 result (h001-choppercommand-s3). 494 SLURM jobs active.
+
+### Triggered by: h001-choppercommand-s3 (narval SUCCESS), h002-breakout-s1 (nibi SUCCESS, already banked)
+
+### NEW RESULTS BANKED (1):
+- h001 PPO: ChopperCommand-v5 s3 q4=781.12
+
+### PHASE 4 BANKING TOTALS (~01:00 UTC Mar 24):
+- h001 PPO: 92/171 banked, 49/57 games (17 with 3 seeds), 79 remaining
+- h002 PQN: 97/171 banked, 50/57 games (18 with 3 seeds), 74 remaining
+- h064 Rainbow-lite: 131/171 banked, 56/57 games (23 with 3 seeds), 40 remaining
+- TOTAL: 320/513 (62.4%)
+
+### SLURM QUEUE STATUS (~01:00 UTC Mar 24):
+| Cluster  | h001 R/P  | h002 R/P  | h064 R/P  | Total |
+|----------|-----------|-----------|-----------|-------|
+| rorqual  | 26R/7P    | 13R/13P   | 17R/18P   | 94    |
+| narval   | 17R/39P   | 19R/34P   | 1R/32P    | 142   |
+| nibi     | 26R/28P   | 20R/26P   | 7R/34P    | 141   |
+| fir      | 5R/40P    | 5R/35P    | 0R/32P    | 117   |
+| TOTAL    | 74R/114P  | 57R/108P  | 25R/116P  | 494   |
+
+### fir h064 JOBS: Still 0 running (all 32 pending) — same as last 2 sessions. If fir jobs stay stuck, may need investigation.
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. rorqual h001 jobs mostly running (26R/7P) — these should complete in ~3-4h
+3. fir cluster has large pending backlog — monitor for scheduling issues
+4. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+5. Begin Atari57 IQM analysis once any algorithm reaches 150+ banked
+
+---
+**[2026-03-24 00:46 UTC]**
+
+## Session 262: Banked 6 Phase 4 40M results. 491 SLURM jobs active.
+
+### Triggered by: h064-hero-s2 (narval SUCCESS), h001-choppercommand-s1 (nibi SUCCESS), h002-gravitar-s2 (nibi SUCCESS)
+
+### NEW RESULTS BANKED (6):
+- h001 PPO (3): ChopperCommand-v5 s1 q4=877.70, Boxing-v5 s3 q4=0.26, Defender-v5 s1 q4=3272.25
+- h002 PQN (2): Gopher-v5 s1 q4=51.24, Gravitar-v5 s2 q4=57.46
+- h064 Rainbow-lite (1): Hero-v5 s2 q4=797.69
+
+### PHASE 4 BANKING TOTALS (~01:10 UTC Mar 24):
+- h001 PPO: 95/171 banked, 50/57 games (18 with 3 seeds), 76 remaining
+- h002 PQN: 99/171 banked, 50/57 games (18 with 3 seeds), 72 remaining
+- h064 Rainbow-lite: 132/171 banked, 56/57 games (23 with 3 seeds), 39 remaining
+- TOTAL: 326/513 (63.5%)
+
+### SLURM QUEUE STATUS (~01:10 UTC Mar 24):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| rorqual | 56R     | 38P     | 94    |
+| narval  | 37R     | 104P    | 141   |
+| nibi    | 52R     | 87P     | 139   |
+| fir     | 10R     | 107P    | 117   |
+| TOTAL   | 155R    | 336P    | 491   |
+
+### GAP CHECK: 0 gaps — all 513 experiments either banked or in SLURM queue
+
+### NEXT SESSION TODO:
+1. Bank more results as jobs complete
+2. h064 closest to done (132/171, 77.2%), h001/h002 building steadily
+3. Full Phase 4 completion ETA: ~12:00-18:00 UTC Mar 24
+4. Begin Atari57 IQM analysis once any algorithm reaches 150+ banked
+
+---
+**[2026-03-24 00:54 UTC]**
+
+## Session 263: Preliminary Atari57 IQM analysis, no new results to bank
+
+### Triggered by: h001-defender-s1 (narval) SUCCESS — already banked in prior session
+
+### RESULTS STATUS:
+- No new results to bank (all recently completed jobs were already processed)
+- experiments.csv: 1454 rows, 326/513 Phase 4 experiments banked (63.5%)
+  - h001 PPO: 95/171 (55.6%), 18 complete + 32 partial + 7 missing games
+  - h002 PQN: 99/171 (57.9%), 18 complete + 32 partial + 7 missing games
+  - h064 Rainbow-lite: 132/171 (77.2%), 23 complete + 33 partial + 1 missing (VideoPinball)
+
+### SLURM QUEUE STATUS (~20:50 UTC Mar 23):
+| Cluster | Running | Pending | Total |
+|---------|---------|---------|-------|
+| rorqual | 57R     | 37P     | 94    |
+| narval  | 38R     | 103P    | 141   |
+| nibi    | 52R     | 87P     | 139   |
+| fir     | 10R     | 107P    | 117   |
+| TOTAL   | 157R    | 334P    | 491   |
+
+Note: fir h064 jobs (32) still all pending — expected, waiting for shorter h001/h002 jobs to finish.
+
+### PRELIMINARY ATARI57 IQM ANALYSIS (42 common games):
+| Algorithm        | IQM HNS  | Win vs h001 | Win vs h002 |
+|-----------------|----------|-------------|-------------|
+| h064 Rainbow-lite| 0.0124   | 25/42 (60%) | 35/42 (83%) |
+| h001 PPO         | 0.0025   | baseline    | 24/42 (57%) |
+| h002 PQN         | -0.0081  | 18/42 (43%) | baseline    |
+
+h064 CLEAR LEADER with ~5x PPO's IQM HNS on common games. Key h064 strengths: Centipede(6751 vs 2140/1106), UpNDown(2312 vs 448/766), Kangaroo(398 vs 40/356), MsPacman(539 vs 319/210), Tennis(-17.7 vs -24.0/-23.8), Enduro(21.8 vs 0/0). PPO strong on: CrazyClimber(7938 vs 647), Atlantis(15682 vs 4682), Solaris(2280 vs 1642), Phoenix(796 vs 143).
+
+### NEXT SESSION TODO:
+1. Bank more h001/h002/h064 results as they complete
+2. h064 almost done (39 remaining), h001/h002 need ~75 each
+3. Full completion ETA: ~12:00-18:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with confidence intervals
