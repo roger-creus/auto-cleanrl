@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Defender-v5,1,h001,h001-defender-s1,ppo,40000000,24448,3167.277587890625,3272.251220703125,77433600.0,5150.0
+Hero-v5,2,h064,h064-hero-s2,dqn_rainbow_lite,40000000,10704,1038.0418701171875,797.6906127929688,11111200.0,462.0

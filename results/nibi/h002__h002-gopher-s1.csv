@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Gopher-v5,1,h002,h002-gopher-s1,pqn,10000000,9856,84.15584564208984,48.31168746948242,829440.0,40.0
+Gopher-v5,1,h002,h002-gopher-s1,pqn,40000000,40320,82.6031723022461,51.238094329833984,3330560.0,140.0
