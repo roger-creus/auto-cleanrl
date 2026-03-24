@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Skiing-v5,3,h064,h064-skiing-s3,dqn_rainbow_lite,40000000,16704,-23901.57421875,-24702.302734375,-399251904.0,-24404.80078125
