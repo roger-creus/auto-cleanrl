@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Gopher-v5,1,h064,h064-gopher-s1,dqn_rainbow_lite,40000000,41792,195.38284301757812,194.70138549804688,8165440.0,164.0
