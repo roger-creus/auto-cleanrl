@@ -14906,3 +14906,44 @@ If this batch also fails, need to investigate more deeply (check walltime vs act
 1. Bank h064 results as they complete — 32 more needed
 2. If these 32 fail AGAIN, investigate container caching and startup time issues
 3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 03:58 UTC]**
+
+## Session 287: 32 h064 experiments resubmitted (attempt 5) with diagnostics. 139/171 banked (81.3%).
+
+### Triggered by: 18 completions (h001/h002 jobs, all already banked) across all 4 clusters.
+
+### KEY FINDING: All 4 clusters had 0 running/0 pending jobs — AGAIN.
+This is the 5th time the queues have emptied for these 32 experiments. SLURM logs for failed jobs show:
+1. Container rsync completes (4.9GB)
+2. Python import warnings appear
+3. No training output — job dies silently
+
+### ACTIONS TAKEN:
+1. Synced code to all 4 clusters
+2. Added diagnostics to SBATCH template (slurm_account_template.sbatch):
+   - Job ID, hostname, node info
+   - nvidia-smi GPU info
+   - Timestamps before/after training
+   - Exit code capture
+3. Increased memory from 32G to 48G (replay buffer ~6GB + model + envpool)
+4. Resubmitted all 32 experiments distributed 8 per cluster
+
+### Job IDs for this batch:
+- rorqual: 8960653-8960848 (asterix-s1, berzerk-s2, crazyclimber-s3, gopher-s1, kangaroo-s2, riverraid-s3, surround-s1, upndown-s2)
+- narval: 58210557-58210604 (asteroids-s2, bowling-s3, demonattack-s1, gravitar-s2, krull-s3, robotank-s1, tennis-s2, videopinball-s2)
+- nibi: 10844502-10844512 (atlantis-s3, centipede-s1, fishingderby-s2, hero-s3, pitfall-s1, seaquest-s2, timepilot-s3, wizardofwor-s3)
+- fir: 29205483-29205534 (beamrider-s1, choppercommand-s2, freeway-s3, jamesbond-s1, pong-s2, skiing-s3, upndown-s1, zaxxon-s1)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 139/171 (81.3%), 32 remaining (just resubmitted with diagnostics)
+- TOTAL: 481/513 (93.8%)
+
+### NEXT SESSION TODO:
+1. CHECK DIAGNOSTIC OUTPUT: When these jobs complete/fail, read their SLURM logs for GPU info, exit codes, and any new clues
+2. If diagnostics reveal OOM: try larger MIG slices (2g.20gb) or full GPU
+3. If diagnostics reveal clean exit with code 0 but no CSV: check if envpool env creation is hanging
+4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs

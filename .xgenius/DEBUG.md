@@ -175,3 +175,30 @@ and resubmitted all 252 experiments.
 differ between PPO/PQN (10M default) and DQN/Rainbow-lite (40M default).
 
 **Prevention**: Always include --total-timesteps explicitly in batch commands regardless of script defaults.
+
+## 2026-03-24 04:00 — 32 h064 experiments repeatedly fail silently (5th resubmission)
+
+**Problem:** The same 32 h064 (Rainbow-lite) experiments have failed 4 times (sessions 276-286). Jobs start, rsync 4.9GB container, Python imports begin (FutureWarning + Gym deprecation visible), then jobs die silently with no training output and no error message. All 4 clusters (rorqual, narval, nibi, fir) show 0 running/0 pending after each batch.
+
+**Symptoms:**
+- SLURM .out files show container rsync + Python import warnings, then EOF
+- No `global_step=` or `SPS:` output (training never starts)
+- No error files available
+- Successful h064 jobs (139/171) used identical commands and ran fine
+
+**Investigation:**
+- Commands identical to successful experiments
+- Script exists on all clusters (verified via `xgenius ls`)
+- Code synced to all clusters
+- No env-id-specific pattern (standard Atari games that work elsewhere)
+
+**Actions for attempt 5:**
+1. Added diagnostics to SBATCH template: hostname, GPU info via nvidia-smi, timestamps, exit code capture
+2. Increased memory from 32G to 48G (replay buffer alone needs ~6GB)
+3. Resubmitted all 32 to same distribution of clusters
+
+**Next steps if this fails again:**
+- Check nvidia-smi output to verify GPU allocation on MIG slices
+- Check dmesg/journal for OOM killer events
+- Try submitting with larger MIG slices (2g.20gb instead of 1g.10gb)
+- Try submitting without MIG (full GPU) on one cluster as test

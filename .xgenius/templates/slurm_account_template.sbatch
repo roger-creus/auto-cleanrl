@@ -13,8 +13,19 @@ mkdir -p {{LOG_DIR}}
 
 module load {{MODULES_TO_LOAD}}
 
+echo "=== JOB DIAGNOSTICS ==="
+echo "SLURM_JOB_ID=$SLURM_JOB_ID"
+echo "SLURM_NODELIST=$SLURM_NODELIST"
+echo "SLURM_MEM_PER_NODE=$SLURM_MEM_PER_NODE"
+echo "HOSTNAME=$(hostname)"
+echo "DATE=$(date -u)"
+nvidia-smi --query-gpu=name,memory.total,memory.free --format=csv,noheader 2>/dev/null || echo "nvidia-smi failed"
+echo "========================"
+
 # 1. Copy your container on the compute node
 rsync -avz {{IMAGE_PATH}} $SLURM_TMPDIR
+
+echo "Container rsync done at $(date -u)"
 
 # 2. Executing your code with Apptainer
 {{SINGULARITY_COMMAND}} exec --nv \
@@ -24,3 +35,8 @@ rsync -avz {{IMAGE_PATH}} $SLURM_TMPDIR
         --workdir /src \
         $SLURM_TMPDIR/{{IMAGE_NAME}} \
         bash -c "export PYTHONDONTWRITEBYTECODE=1 && cd /src && {{COMMAND}}"
+EXIT_CODE=$?
+echo "=== JOB FINISHED ==="
+echo "Exit code: $EXIT_CODE"
+echo "Finished at: $(date -u)"
+echo "===================="
