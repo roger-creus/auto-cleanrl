@@ -1444,3 +1444,4 @@ h064-surround-s2,h064,,Phase 4 Atari57 (nibi),Surround-v5,2,dqn_rainbow_lite,400
 h064-tennis-s1,h064,,Phase 4 Atari57 (narval),Tennis-v5,1,dqn_rainbow_lite,40000000,,-21.671642303466797,-17.65671730041504,-23232.0,
 h064-wizardofwor-s2,h064,,Phase 4 Atari57 (narval),WizardOfWor-v5,2,dqn_rainbow_lite,40000000,,286.2069091796875,262.0689697265625,16467200.0,
 h064-yarsrevenge-s3,h064,,Phase 4 Atari57 (narval),YarsRevenge-v5,3,dqn_rainbow_lite,40000000,,4619.28466796875,4623.76806640625,668428992.0,
+h001-bankheist-s3,h001,,Phase 4 Atari57 (nibi),BankHeist-v5,3,ppo,40000000,,12.291666984558105,11.875,906240.0,
