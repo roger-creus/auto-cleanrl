@@ -1635,3 +1635,4 @@ h064-kangaroo-s2,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id 
 h064-videopinball-s2,h064,,Phase 4 Atari57 40M (narval),VideoPinball-v5,2,dqn_rainbow_lite,40000000.0,20512.0,5307.814453125,4535.7392578125,108873888.0,,,,
 h064-surround-s1,h064,,Phase 4 Atari57 (narval),Surround-v5,1,dqn_rainbow_lite,40000000.0,30672,-9.96452808380127,-9.968701362609863,-305632.0,,,,
 h064-crazyclimber-s3,h064,,Phase 4 Atari57 (fir),CrazyClimber-v5,3,dqn_rainbow_lite,40000000.0,9104,1360.10546875,638.4885864257812,12382400.0,680.0,,,,
+h064-timepilot-s3,h064,,Phase 4 Atari57 (fir),TimePilot-v5,3,dqn_rainbow_lite,40000000,30512,1750.03,1710.70,53396800.0,720.0,fir,,

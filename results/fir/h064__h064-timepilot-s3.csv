@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+TimePilot-v5,3,h064,h064-timepilot-s3,dqn_rainbow_lite,40000000,30512,1750.0262451171875,1710.6973876953125,53396800.0,720.0

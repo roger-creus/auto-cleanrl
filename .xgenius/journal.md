@@ -15929,3 +15929,30 @@ Expected completion: ~1.5-2h (~17:00-17:30 UTC Mar 24)
 ### NEXT SESSION TODO:
 1. Bank final 4 h064 results as they arrive
 2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
+
+---
+**[2026-03-24 15:22 UTC]**
+
+## Session 317: Banked h064-timepilot-s3. Now 168/171 h064 (98.2%), 3 unique experiments still running on fir.
+
+### Triggered by: h064-timepilot-s3 (fir job 29211143) — SUCCESS
+
+### ACTIONS:
+1. Banked h064-timepilot-s3: q4=1710.70, mean=1750.03, auc=53396800 (fir). All 3 TimePilot seeds complete: avg q4=1567.62 vs PPO avg q4~3090.34 LOSS (-49.3%).
+2. Now 168/171 h064 banked (98.2%)
+
+### REMAINING 3 (all on fir, ~9.5h into 11h walltime, ~86%):
+- hero-s3 (29211117)
+- pitfall-s1 (29211140)
+- seaquest-s2 (29211141)
+Expected completion: ~1.5h (~17:45-18:00 UTC Mar 24)
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 168/171 (98.2%), 3 running on fir
+- TOTAL: 510/513 (99.4%)
+
+### NEXT SESSION TODO:
+1. Bank final 3 h064 results as they arrive
+2. Once all 171 complete, rerun final IQM analysis with full 3-seed data for all 57 games
