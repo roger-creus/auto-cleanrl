@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Berzerk-v5,1,h001,h001-berzerk-s1,ppo,10000000,44288,175.54913330078125,171.3872833251953,7774720.0,50.0
+Berzerk-v5,1,h001,h001-berzerk-s1,ppo,40000000,180480,157.9574432373047,148.15602111816406,28508160.0,250.0

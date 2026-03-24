@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Atlantis-v5,3,h002,h002-atlantis-s3,pqn,10000000,20992,2582.9267578125,2119.51220703125,54220800.0,2000.0
+Atlantis-v5,3,h002,h002-atlantis-s3,pqn,40000000,85248,2503.603515625,2135.73583984375,213427200.0,2000.0

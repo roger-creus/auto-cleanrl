@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Centipede-v5,1,h002,h002-centipede-s1,pqn,10000000,28672,283.8839416503906,227.125,8139520.0,196.0
+Centipede-v5,1,h002,h002-centipede-s1,pqn,40000000,73216,2201.494873046875,239.48251342773438,161184640.0,195.0

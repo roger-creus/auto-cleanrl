@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Bowling-v5,3,h002,h002-bowling-s3,pqn,10000000,3968,24.19354820251465,21.483871459960938,96000.0,28.0
+Bowling-v5,3,h002,h002-bowling-s3,pqn,40000000,16768,25.770992279052734,26.610687255859375,432128.0,30.0

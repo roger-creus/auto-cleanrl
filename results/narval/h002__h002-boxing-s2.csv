@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Boxing-v5,2,h002,h002-boxing-s2,pqn,10000000,5504,-29.23255729675293,-30.9069766998291,-160896.0,-34.0
+Boxing-v5,2,h002,h002-boxing-s2,pqn,40000000,22400,-31.662857055664062,-33.4514274597168,-709248.0,-27.0

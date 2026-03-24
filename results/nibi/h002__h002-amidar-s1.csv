@@ -1,2 +1,2 @@
 env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
-Centipede-v5,3,h002,h002-centipede-s3,pqn,40000000,76800,1789.449951171875,247.46665954589844,137429760.0,195.0
+Amidar-v5,1,h002,h002-amidar-s1,pqn,40000000,66048,31.112403869628906,32.15503692626953,2054912.0,31.0
