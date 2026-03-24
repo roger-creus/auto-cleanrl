@@ -14450,3 +14450,87 @@ By hypothesis: h001=146(106R/40P), h002=125(81R/44P), h064=136(48R/88P)
 2. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
 3. h001+h002 fully done, running duplicate jobs will just overwrite
 4. ETA for h064 completion: ~12:00-18:00 UTC Mar 24
+
+---
+**[2026-03-24 02:21 UTC]**
+
+## Session 274: No new h064 results to bank. 479/513 (93.4%) — waiting on 34 h064 experiments.
+
+### Triggered by: 7 completions (h001-pitfall-s2, h002-pitfall-s1, h001-pong-s1, h002-riverraid-s3, h001-seaquest-s1, h002-tennis-s2, h002-timepilot-s3)
+
+All trigger jobs are h001/h002, already fully banked (171/171 each). No new h064 CSVs available.
+
+### SLURM QUEUE (~05:30 UTC Mar 24):
+| Cluster | Running | Pending | Total | h064 |
+|---------|---------|---------|-------|------|
+| fir     | 88R     | 19P     | 107   | 32   |
+| narval  | 36R     | 81P     | 117   | 32   |
+| nibi    | 53R     | 55P     | 108   | 37   |
+| rorqual | 52R     | 12P     | 64    | 35   |
+| TOTAL   | 229R    | 167P    | 396   | 136  |
+
+h064 has 51R+85P=136 jobs for 34 remaining experiments (redundancy across clusters).
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 137/171 (80.1%), 34 experiments still running
+- TOTAL: 479/513 (93.4%)
+
+### IQM (unchanged):
+| Algorithm | IQM HNS | Median HNS | >0 HNS |
+|-----------|---------|------------|---------|
+| Rainbow-lite | 0.0073 | 0.0033 | 34/57 |
+| PPO | 0.0019 | 0.0007 | 32/57 |
+| PQN | -0.0147 | -0.0074 | 19/57 |
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 34 more needed
+2. ETA for full completion: ~12:00-18:00 UTC Mar 24
+3. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
+
+---
+**[2026-03-24 02:29 UTC]**
+
+## Session 275: Resubmitted 10 missing h064 experiments. 479/513 (93.4%) banked.
+
+### Triggered by: h001-amidar-s1 (rorqual), h001-kungfumaster-s1 (narval), h002-riverraid-s1 (narval), h001-roadrunner-s3 (nibi), h001-skiing-s2 (nibi) SUCCESS
+
+All trigger jobs are h001/h002 (already 171/171 banked each). No new h064 CSVs available.
+
+### GAP ANALYSIS:
+Reconciled DB: 387 still_active jobs (56 h064 running, 331 h001/h002 duplicates).
+Of 34 missing h064 experiments, 24 are covered by running jobs. 10 had NO active jobs:
+
+### RESUBMITTED 10 h064 GAP EXPERIMENTS:
+| Experiment | Cluster | Job ID |
+|------------|---------|--------|
+| h064-atlantis-s3 | rorqual | 8958716 |
+| h064-berzerk-s2 | narval | 58206911 |
+| h064-centipede-s1 | nibi | 10840043 |
+| h064-gravitar-s2 | fir | 29190166 |
+| h064-krull-s3 | rorqual | 8958718 |
+| h064-pong-s2 | narval | 58206913 |
+| h064-seaquest-s2 | nibi | 10840047 |
+| h064-surround-s1 | fir | 29190175 |
+| h064-timepilot-s3 | rorqual | 8958722 |
+| h064-wizardofwor-s3 | narval | 58206921 |
+
+### PHASE 4 STATUS:
+- h001 PPO: 171/171 (100%) COMPLETE
+- h002 PQN: 171/171 (100%) COMPLETE
+- h064 Rainbow-lite: 137/171 (80.1%), 34 remaining (24 running + 10 just resubmitted)
+- TOTAL: 479/513 (93.4%)
+
+### IQM (unchanged from session 274):
+| Algorithm | IQM HNS | Median HNS | >0 HNS |
+|-----------|---------|------------|---------|
+| Rainbow-lite | 0.0081 | 0.0033 | 34/57 |
+| PPO | 0.0023 | 0.0007 | 32/57 |
+| PQN | -0.0136 | -0.0074 | 19/57 |
+
+### NEXT SESSION TODO:
+1. Bank h064 results as they complete — 34 more needed
+2. All 34 missing h064 experiments now have active jobs
+3. ETA for full 513 completion: ~12:00-18:00 UTC Mar 24
+4. Once all 513 banked, run final paper-quality IQM analysis with bootstrap CIs
