@@ -1615,3 +1615,4 @@ h064-gopher-s1,h064,,Phase 4 Atari57 (rorqual),Gopher-v5,1,dqn_rainbow_lite,4000
 h064-asterix-s1,h064,,rorqual completed. Rainbow-lite Asterix seed 1. q4=225.23.,Asterix-v5,1,dqn_rainbow_lite,40000000,135216,224.71896362304688,225.227783203125,30385600.0,170.0,,,
 h064-tennis-s2,h064,,nibi completed. Rainbow-lite Tennis seed 2.,Tennis-v5,2,dqn_rainbow_lite,40000000,992,-24.0,-26.387096405029297,-23808.0,-60.79999923706055,,,
 h064-choppercommand-s2,h064,,nibi completed. Rainbow-lite ChopperCommand seed 2.,ChopperCommand-v5,2,dqn_rainbow_lite,40000000,102640,711.9251708984375,723.445068359375,73072000.0,680.0,,,
+h064-jamesbond-s1,h064,python cleanrl/dqn_atari_rainbow_lite.py --env-id Jamesbond-v5 --seed 1 --total-timesteps 40000000,Rainbow-lite DQN Atari57 full eval,Jamesbond-v5,1,dqn_rainbow_lite,40000000,51456,28.404850006103516,29.291044235229492,1461600.0,40.0,rorqual,,
