@@ -1617,3 +1617,5 @@ h064-tennis-s2,h064,,nibi completed. Rainbow-lite Tennis seed 2.,Tennis-v5,2,dqn
 h064-choppercommand-s2,h064,,nibi completed. Rainbow-lite ChopperCommand seed 2.,ChopperCommand-v5,2,dqn_rainbow_lite,40000000,102640,711.9251708984375,723.445068359375,73072000.0,680.0,,,
 h064-jamesbond-s1,h064,python cleanrl/dqn_atari_rainbow_lite.py --env-id Jamesbond-v5 --seed 1 --total-timesteps 40000000,Rainbow-lite DQN Atari57 full eval,Jamesbond-v5,1,dqn_rainbow_lite,40000000,51456,28.404850006103516,29.291044235229492,1461600.0,40.0,rorqual,,
 h064-bowling-s3,h064,python cleanrl/dqn_atari_envpool_rainbow_lite.py --env-id Bowling-v5 --seed 3 --total-timesteps 40000000,rorqual completed. Rainbow-lite Bowling seed 3.,Bowling-v5,3,dqn_rainbow_lite,40000000,17024,36.57988739013672,40.53007507324219,622736.0,24.399999618530273,rorqual,,
+h064-gravitar-s2,h064,,nibi completed. Rainbow-lite Gravitar seed 2.,Gravitar-v5,2,dqn_rainbow_lite,40000000,65216,71.798,51.521,4682400.0,0.0,nibi,,
+h064-berzerk-s2,h064,,fir completed. Rainbow-lite Berzerk seed 2.,Berzerk-v5,2,dqn_rainbow_lite,40000000,65584,332.996,395.479,21839200.0,410.0,fir,,

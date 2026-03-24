@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Berzerk-v5,2,h064,h064-berzerk-s2,dqn_rainbow_lite,40000000,65584,332.995849609375,395.4793701171875,21839200.0,410.0
