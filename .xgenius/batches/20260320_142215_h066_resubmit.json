@@ -1,6 +1,0 @@
-[
-  {"cluster": "nibi", "experiment_id": "h066-alien-s1", "hypothesis_id": "h066", "command": "python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Alien-v5 --seed 1", "gpus": 1, "cpus": 8, "memory": "16G", "walltime": "06:00:00"},
-  {"cluster": "narval", "experiment_id": "h066-breakout-s1", "hypothesis_id": "h066", "command": "python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Breakout-v5 --seed 1", "gpus": 1, "cpus": 8, "memory": "16G", "walltime": "06:00:00"},
-  {"cluster": "fir", "experiment_id": "h066-qbert-s1", "hypothesis_id": "h066", "command": "python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id Qbert-v5 --seed 1", "gpus": 1, "cpus": 8, "memory": "16G", "walltime": "06:00:00"},
-  {"cluster": "nibi", "experiment_id": "h066-montezumarevenge-s1", "hypothesis_id": "h066", "command": "python cleanrl/dqn_atari_envpool_iqn_oqe.py --env-id MontezumaRevenge-v5 --seed 1", "gpus": 1, "cpus": 8, "memory": "16G", "walltime": "06:00:00"}
-]

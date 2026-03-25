@@ -1,9 +1,0 @@
-slurmstepd: error: couldn't chdir to `/home/rogercc/'/scratch/rogercc/cleanrl'': No such file or directory: going to /tmp instead
-slurmstepd: error: couldn't chdir to `/home/rogercc/'/scratch/rogercc/cleanrl'': No such file or directory: going to /tmp instead
-sending incremental file list
-auto-cleanrl.sif
-
-sent 4,937,967,815 bytes  received 35 bytes  9,378,856.32 bytes/sec
-total size is 4,945,334,272  speedup is 1.00
-FATAL:   container creation failed: image driver mount failure: image driver squashfuse_ll instance exited with error: squashfuse_ll exited: Something went wrong trying to read the squashfs image.
-slurmstepd: error: run_script_as_user: couldn't change working dir to /home/rogercc/'/scratch/rogercc/cleanrl': No such file or directory
