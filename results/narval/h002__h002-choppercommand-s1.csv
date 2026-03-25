@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+ChopperCommand-v5,1,h002,h002-choppercommand-s1,pqn,40000000,81280,782.8346557617188,963.3070678710938,63628800.0,1500.0

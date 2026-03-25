@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Riverraid-v5,3,h064,h064-riverraid-s3,dqn_rainbow_lite,40000000,182224,413.4866943359375,411.7534484863281,75347200.0,474.0

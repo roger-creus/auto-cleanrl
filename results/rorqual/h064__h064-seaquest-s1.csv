@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Seaquest-v5,1,h064,h064-seaquest-s1,dqn_rainbow_lite,40000000,45472,208.33920288085938,237.8184356689453,9473600.0,156.0

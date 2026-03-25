@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+BeamRider-v5,1,h064,h064-beamrider-s1,dqn_rainbow_lite,40000000,19232,601.5973510742188,691.2944946289062,11569920.0,688.7999877929688

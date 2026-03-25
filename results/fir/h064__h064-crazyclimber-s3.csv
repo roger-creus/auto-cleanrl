@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+CrazyClimber-v5,3,h064,h064-crazyclimber-s3,dqn_rainbow_lite,40000000,9104,1360.10546875,638.4885864257812,12382400.0,680.0

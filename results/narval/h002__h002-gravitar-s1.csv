@@ -1,0 +1,2 @@
+env_id,seed,hypothesis_id,experiment_id,algorithm,total_timesteps,n_episodes,mean_return,q4_return,auc,final_avg20
+Gravitar-v5,1,h002,h002-gravitar-s1,pqn,40000000,68864,80.01858520507812,42.379180908203125,5510400.0,0.0
