@@ -150,3 +150,6 @@ batch_*.json
 
 # Stale analysis artifacts
 STALENESS_ANALYSIS.md
+
+# Cluster config (contains private hostnames/usernames)
+xgenius.toml
